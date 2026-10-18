@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zam Zam Fast Food — Heritage of Bhopal | Mughlai &amp; Mandi, Peer Gate</title>
+<meta name="description" content="Zam Zam Fast Food, opposite Taj-ul-Masajid, Peer Gate, Bhopal. Heritage Mughlai dining — Chicken Mandi platters, Afghani Malai Tikka, Seekh Kebabs. Pre-book your takeaway and skip the counter queue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#100d0a; --bg2:#171310; --card:#1d1813; --card2:#241d16;
+    --line:#33291d; --gold:#d9a441; --gold2:#f0c169; --cream:#f3ead9;
+    --muted:#b8a88f; --muted2:#8d7f68; --red:#c94f3d; --radius:18px;
+    --shadow:0 18px 50px rgba(0,0,0,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif}
+  img{max-width:100%;display:block}
+  a{color:var(--gold2)}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:#171106;padding:10px 16px;z-index:99;font-weight:700}
+  .skip:focus{left:12px;top:12px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(16,13,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream)}
+  .brand .mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#3a2a12,var(--gold));display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:#171106;flex:none}
+  .brand b{font-family:'Fraunces',serif;font-size:20px;line-height:1.1;display:block}
+  .brand small{color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .nav-links{display:none;gap:22px}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+  .nav-links a:hover{color:var(--gold2)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#b9832e);color:#171106;font-weight:800;text-decoration:none;border:none;cursor:pointer;padding:12px 20px;border-radius:99px;font-size:15px;transition:transform .15s, box-shadow .15s;box-shadow:0 8px 24px rgba(217,164,65,.25)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--gold2);border:1.5px solid var(--gold);box-shadow:none}
+  .btn.sm{padding:9px 16px;font-size:14px}
+  @media(min-width:820px){.nav-links{display:flex}}
+
+  .hero{position:relative;padding:64px 0 54px;background:
+    radial-gradient(900px 480px at 85% -10%,rgba(217,164,65,.16),transparent 60%),
+    radial-gradient(700px 420px at -10% 110%,rgba(201,79,61,.10),transparent 60%),var(--bg)}
+  .hero-grid{display:grid;gap:34px;align-items:center}
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);color:var(--gold2);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.04em}
+  .hero h1{font-size:clamp(38px,6.4vw,62px);line-height:1.06;margin:18px 0 14px}
+  .hero h1 em{color:var(--gold);font-style:italic}
+  .hero p.lead{color:var(--muted);font-size:17px;max-width:540px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .hero-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);position:relative}
+  .hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .hero-img figcaption{position:absolute;left:14px;bottom:14px;background:rgba(10,8,6,.82);border:1px solid var(--line);padding:8px 14px;border-radius:12px;font-size:13px;color:var(--cream)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;text-align:center}
+  .stat b{font-family:'Fraunces',serif;font-size:24px;color:var(--gold2);display:block}
+  .stat span{color:var(--muted);font-size:12.5px}
+
+  section{padding:56px 0}
+  .kicker{color:var(--gold);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:12.5px;text-align:center}
+  .sec-title{font-size:clamp(28px,4.4vw,40px);text-align:center;margin:10px 0 8px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px}
+
+  .heritage{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .heritage-grid{display:grid;gap:26px;align-items:center}
+  @media(min-width:900px){.heritage-grid{grid-template-columns:1fr 1fr}}
+  .heritage img{border-radius:24px;border:1px solid var(--line);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .heritage h2{font-size:clamp(26px,4vw,36px);margin-bottom:12px;text-align:left}
+  .heritage .kicker{text-align:left}
+  .heritage p{color:var(--muted);margin-bottom:14px}
+  .heritage ul{list-style:none;margin-top:8px}
+  .heritage li{padding:10px 0;border-top:1px dashed var(--line);display:flex;gap:10px;color:var(--cream)}
+  .heritage li::before{content:"✦";color:var(--gold)}
+
+  .tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
+  .tab{border:1.5px solid var(--line);background:var(--card);color:var(--muted);padding:9px 18px;border-radius:99px;font-weight:700;cursor:pointer;font-size:14.5px;font-family:inherit}
+  .tab[aria-selected="true"]{background:var(--gold);border-color:var(--gold);color:#171106}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:18px}
+  .dish{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+  .dish:hover{transform:translateY(-4px);border-color:var(--gold)}
+  .dish img{height:160px;width:100%;object-fit:cover}
+  .dish-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .dish-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .dish h3{font-size:18px;line-height:1.25}
+  .price{color:var(--gold2);font-weight:800;white-space:nowrap}
+  .dish p{color:var(--muted);font-size:14px;flex:1}
+  .nv{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:#e8b4ab;letter-spacing:.05em}
+  .nv i{width:13px;height:13px;border:1.6px solid var(--red);border-radius:3px;display:inline-grid;place-items:center;font-style:normal}
+  .nv i::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--red)}
+  .tagline{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+
+  .queue{background:linear-gradient(180deg,var(--bg2),var(--bg));border-top:1px solid var(--line)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card .ic{font-size:26px;margin-bottom:10px}
+  .card h3{font-size:19px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:14.5px}
+
+  .book-grid{display:grid;gap:26px}
+  @media(min-width:920px){.book-grid{grid-template-columns:1.1fr .9fr}}
+  form{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}
+  .frow{display:grid;gap:16px;margin-bottom:16px}
+  @media(min-width:560px){.frow.two{grid-template-columns:1fr 1fr}}
+  label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+  input,select,textarea{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;color:var(--cream);padding:12px 14px;font-size:15px;font-family:inherit}
+  input:focus,select:focus,textarea:focus{border-color:var(--gold);outline:none}
+  .hint{color:var(--muted2);font-size:12.5px;margin-top:5px}
+  .confirm{background:var(--card2);border:1.5px dashed var(--gold);border-radius:24px;padding:26px;display:none}
+  .confirm.show{display:block}
+  .confirm h3{color:var(--gold2);margin-bottom:8px}
+  .confirm dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0;font-size:15px}
+  .confirm dt{color:var(--muted)} .confirm dd{font-weight:600}
+  .ref{display:inline-block;background:var(--bg);border:1px solid var(--line);padding:6px 12px;border-radius:8px;font-weight:800;letter-spacing:.08em;color:var(--gold2)}
+  .note{color:var(--muted);font-size:13.5px;margin-top:12px}
+
+  .visit-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  footer{border-top:1px solid var(--line);padding:34px 0;background:#0b0908}
+  .foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:14px}
+  .demo-note{margin-top:16px;color:var(--muted2);font-size:12.5px;border-top:1px dashed var(--line);padding-top:14px}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to menu</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Zam Zam Fast Food — home">
+      <span class="mark" aria-hidden="true">Z</span>
+      <span><b>Zam Zam</b><small>Fast Food · Old Bhopal</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#heritage">Heritage</a><a href="#menu">Menu</a><a href="#visit">Visiting</a><a href="#book">Pre-Book</a>
+    </nav>
+    <a class="btn sm" href="#book">Pre-Book Takeaway</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">🍗 Heritage Mughlai · Opp. Taj-ul-Masajid, Peer Gate</span>
+        <h1>The Heritage of Bhopal, <em>Served on a Platter</em></h1>
+        <p class="lead">In the shadow of the great Taj-ul-Masajid, this family-run Old Bhopal landmark has been feeding the city its favourite Mughlai — smoky seekh kebabs, creamy Afghani tikkas and Mandi platters made for sharing.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#menu">Explore the Menu</a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Zam+Zam+Fast+Food+Peer+Gate+Bhopal" target="_blank" rel="noopener">📍 Get Directions</a>
+        </div>
+        <div class="stats" role="list" aria-label="Zam Zam at a glance">
+          <div class="stat" role="listitem"><b>4.1–4.3 ★</b><span>Average rating</span></div>
+          <div class="stat" role="listitem"><b>16,000+</b><span>Ratings on Justdial &amp; Zomato</span></div>
+          <div class="stat" role="listitem"><b>Old Bhopal</b><span>Peer Gate · Sultania Road</span></div>
+        </div>
+      </div>
+      <figure class="hero-img">
+        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1200&auto=format&fit=crop" alt="A fragrant biryani and Mandi-style rice platter" loading="eager" onerror="this.style.display='none'">
+        <figcaption>Home of the Chicken Mandi platter</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- HERITAGE -->
+  <section class="heritage" id="heritage">
+    <div class="wrap heritage-grid reveal">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop" alt="A warm, bustling heritage restaurant dining hall" loading="lazy" onerror="this.style.display='none'">
+      <div>
+        <p class="kicker">Our Story</p>
+        <h2>A Family Table in the Heart of Old Bhopal</h2>
+        <p>Zam Zam is not just a fast-food counter — it is a piece of Old Bhopal. Run by the family behind the counter, in the lanes opposite one of India's grandest mosques, it has grown into a culinary destination for the whole of Madhya Pradesh.</p>
+        <p>Food travellers arriving by rail and road make a beeline here for a taste of Bhopal's Mughlai heritage — recipes built on slow marinades, charcoal smoke and generous, share-sized platters.</p>
+        <ul>
+          <li>Family-run, in the historic Peer Gate neighbourhood</li>
+          <li>Charcoal-grilled kebabs &amp; tikkas, made through the day</li>
+          <li>Mandi platters built for families and groups</li>
+          <li>A must-stop on every Old Bhopal food walk</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="wrap">
+      <p class="kicker">Signatures</p>
+      <h2 class="sec-title">From the Charcoal &amp; the Handi</h2>
+      <p class="sec-sub">The dishes Bhopal swears by. Prices for dine-in and takeaway — platters are portioned for sharing.</p>
+      <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- SKIP THE QUEUE -->
+  <section class="queue">
+    <div class="wrap">
+      <p class="kicker">Good to Know</p>
+      <h2 class="sec-title">Beat the Rush, Skip the Confusion</h2>
+      <p class="sec-sub">Lunch and dinner here draw a crowd — and the counter queue can be a maze. Three simple fixes:</p>
+      <div class="cards">
+        <div class="card reveal"><div class="ic" aria-hidden="true">⏱️</div><h3>Pre-book your takeaway</h3><p>Use the form below to place a bulk takeaway order ahead of time. You get a booking reference — quote it at the counter and walk out faster.</p></div>
+        <div class="card reveal"><div class="ic" aria-hidden="true">🍽️</div><h3>First visit? Start here</h3><p>Order the Chicken Mandi platter to share, Afghani Malai Tikka to start, and a Seekh Kebab roll for the road. That's the Zam Zam canon.</p></div>
+        <div class="card reveal"><div class="ic" aria-hidden="true">🧭</div><h3>Find us easily</h3><p>We're directly opposite Taj-ul-Masajid at Peer Gate — if you can see the mosque's minarets, you're a minute away. Map link below.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-BOOK -->
+  <section id="book">
+    <div class="wrap">
+      <p class="kicker">Bulk Takeaway</p>
+      <h2 class="sec-title">Pre-Book Your Order</h2>
+      <p class="sec-sub">Family packs, office orders, travel takeaways — tell us what you need and when, and get a booking summary with a reference to quote at the counter.</p>
+      <div class="book-grid">
+        <form id="bookForm" novalidate>
+          <div class="frow two">
+            <div><label for="bkName">Your name</label><input id="bkName" name="name" required autocomplete="name" placeholder="e.g. Imran Khan"></div>
+            <div><label for="bkPhone">Your mobile number</label><input id="bkPhone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="So the counter can reach you"></div>
+          </div>
+          <div class="frow two">
+            <div><label for="bkDate">Pickup date</label><input id="bkDate" name="date" type="date" required></div>
+            <div><label for="bkTime">Pickup time</label><input id="bkTime" name="time" type="time" required></div>
+          </div>
+          <div class="frow">
+            <div><label for="bkItems">What would you like to pre-book?</label>
+            <textarea id="bkItems" name="items" rows="3" required placeholder="e.g. 2 × Chicken Mandi Platter, 4 × Afghani Malai Tikka, 6 × Chicken Biryani"></textarea>
+            <p class="hint">Tip: platters serve 2–3 people each. Mention quantities so the kitchen can plan.</p></div>
+          </div>
+          <div class="frow">
+            <div><label for="bkNote">Anything else? (optional)</label><input id="bkNote" name="note" placeholder="e.g. Extra raita, less spicy for kids, packing for a train journey"></div>
+          </div>
+          <button class="btn" type="submit">Confirm Pre-Booking →</button>
+          <p class="note" id="formErr" role="alert" style="color:#e8b4ab"></p>
+        </form>
+        <div class="confirm" id="confirmBox" aria-live="polite" tabindex="-1">
+          <h3>✅ Pre-booking received</h3>
+          <p>Show this summary at the counter on arrival. Your reference:</p>
+          <p style="margin:10px 0"><span class="ref" id="cRef"></span></p>
+          <dl id="cList"></dl>
+          <p class="note">Please arrive close to your pickup time — Mandi platters are finished fresh so they travel well. If your plans change, simply place a fresh booking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="background:var(--bg2);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <p class="kicker">Tourist Info</p>
+      <h2 class="sec-title">Visiting Zam Zam</h2>
+      <p class="sec-sub">Everything an out-of-towner needs — no phone tag, no guesswork.</p>
+      <div class="visit-grid">
+        <div class="card"><div class="ic" aria-hidden="true">📍</div><h3>Address</h3><p>Zam Zam Fast Food, Opposite Taj-ul-Masajid,<br>Peer Gate Area / Sultania Road,<br>Bhopal, Madhya Pradesh 462001</p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🕌</div><h3>The Landmark</h3><p>We sit in the historic Peer Gate neighbourhood of Old Bhopal, directly opposite the Taj-ul-Masajid — among the largest mosques in India. Pair your meal with a walk through the old city's bazaars.</p></div>
+        <div class="card"><div class="ic" aria-hidden="true">🗺️</div><h3>Directions</h3><p>Open live directions in Google Maps and head for Peer Gate — parking and rickshaws are easiest from the Sultania Road side.</p><p style="margin-top:12px"><a class="btn ghost sm" href="https://www.google.com/maps/search/?api=1&query=Zam+Zam+Fast+Food+Peer+Gate+Bhopal" target="_blank" rel="noopener">Open in Google Maps →</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><strong style="color:var(--cream);font-family:'Fraunces',serif">Zam Zam Fast Food</strong><br>Opposite Taj-ul-Masajid, Peer Gate Area / Sultania Road, Bhopal 462001</div>
+      <div><a href="https://www.google.com/maps/search/?api=1&query=Zam+Zam+Fast+Food+Peer+Gate+Bhopal" target="_blank" rel="noopener">Google Maps</a> · <a href="#menu">Menu</a> · <a href="#book">Pre-Book Takeaway</a></div>
+      <div>Rated 4.1–4.3 ★ · 16,000+ ratings</div>
+    </div>
+    <p class="demo-note">Demo website — built as a concept showcase for Zam Zam Fast Food. Pre-booking here generates an on-screen summary only; please confirm large orders at the counter.</p>
+  </div>
+</footer>
+
+<script>
+var MENU = [
+  {name:"Chicken Mandi Platter", cat:"mandi", price:649, desc:"The legend. Smoky Mandi rice topped with charcoal chicken, served family-style with chutney and salad. Serves 2–3.", tag:"Most Loved", img:"https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=900&auto=format&fit=crop"},
+  {name:"Mandi Family Feast", cat:"mandi", price:1199, desc:"A full Mandi spread for 4–5 — double chicken, extra rice, kebab sides and raita. Built for the whole table.", tag:"For Groups", img:"https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?q=80&w=900&auto=format&fit=crop"},
+  {name:"Mutton Mandi Platter", cat:"mandi", price:899, desc:"Tender mutton over fragrant Mandi rice, finished with fried onions and nuts. Serves 2–3.", tag:"", img:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=900&auto=format&fit=crop"},
+  {name:"Afghani Malai Tikka", cat:"grill", price:299, desc:"Cream-and-cheese marinated chicken, charred at the edges, melting in the middle. The starter everyone fights over.", tag:"Signature", img:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=900&auto=format&fit=crop"},
+  {name:"Chicken Seekh Kebab", cat:"grill", price:249, desc:"Hand-minced chicken seekh with green chilli and coriander, straight off the skewer. Sold by the plate of 4.", tag:"Signature", img:"https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=900&auto=format&fit=crop"},
+  {name:"Mutton Seekh Kebab", cat:"grill", price:349, desc:"Rich, spiced mutton seekh — smoky, juicy, unapologetic. Best with rumali roti and onion rings.", tag:"", img:"https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=900&auto=format&fit=crop"},
+  {name:"Tandoori Chicken (Half)", cat:"grill", price:349, desc:"Overnight-marinated, clay-oven roasted, served sizzling with lemon and chaat masala.", tag:"", img:"https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?q=80&w=900&auto=format&fit=crop"},
+  {name:"Chicken Dum Biryani", cat:"biryani", price:229, desc:"Seeraga samba-style layered biryani, sealed and slow-cooked, opened fresh. With raita and salan.", tag:"", img:"https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=900&auto=format&fit=crop"},
+  {name:"Mutton Dum Biryani", cat:"biryani", price:329, desc:"The Friday favourite — fall-apart mutton layered through saffron rice. Arrive early; it sells out.", tag:"Sells Out Fast", img:"https://images.unsplash.com/photo-1642821373181-696a54913e93?q=80&w=900&auto=format&fit=crop"},
+  {name:"Seekh Kebab Roll", cat:"rolls", price:149, desc:"Chicken seekh wrapped in a flaky paratha with onions and mint chutney. The Peer Gate grab-and-go.", tag:"On the Go", img:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=900&auto=format&fit=crop"},
+  {name:"Chicken Tikka Roll", cat:"rolls", price:169, desc:"Charred tikka chunks, pickled onion and mayo in a warm paratha wrap.", tag:"", img:"https://images.unsplash.com/photo-1626700051175-6818013e1d4f?q=80&w=900&auto=format&fit=crop"},
+  {name:"Rumali Roti (2 pc)", cat:"rolls", price:40, desc:"Handkerchief-thin breads, made to order — the Mandi and kebab essential.", tag:"", img:"https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=900&auto=format&fit=crop"}
+];
+var CATS = [{id:"all",label:"All"},{id:"mandi",label:"Mandi Platters"},{id:"grill",label:"Tikkas & Kebabs"},{id:"biryani",label:"Biryani"},{id:"rolls",label:"Rolls & Breads"}];
+var inr = function(n){ return "₹" + n.toLocaleString("en-IN"); };
+
+var tabsEl = document.getElementById("tabs"), gridEl = document.getElementById("menuGrid");
+CATS.forEach(function(c, i){
+  var b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.textContent = c.label;
+  b.setAttribute("role","tab"); b.setAttribute("aria-selected", i===0 ? "true":"false");
+  b.addEventListener("click", function(){
+    tabsEl.querySelectorAll(".tab").forEach(function(t){ t.setAttribute("aria-selected","false"); });
+    b.setAttribute("aria-selected","true"); render(c.id);
+  });
+  tabsEl.appendChild(b);
+});
+function render(cat){
+  gridEl.innerHTML = "";
+  MENU.filter(function(m){ return cat==="all" || m.cat===cat; }).forEach(function(m){
+    var d = document.createElement("article"); d.className = "dish";
+    d.innerHTML = '<img src="'+m.img+'" alt="'+m.name+'" loading="lazy" onerror="this.style.display=\'none\'">' +
+      '<div class="dish-body">' +
+      (m.tag ? '<span class="tagline">'+m.tag+'</span>' : '') +
+      '<div class="dish-top"><h3>'+m.name+'</h3><span class="price">'+inr(m.price)+'</span></div>' +
+      '<p>'+m.desc+'</p>' +
+      '<span class="nv"><i aria-hidden="true"></i>NON-VEG</span>' +
+      '</div>';
+    gridEl.appendChild(d);
+  });
+}
+render("all");
+
+/* Pre-booking form — front-end only confirmation summary */
+document.getElementById("bookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target, err = document.getElementById("formErr");
+  var name = f.name.value.trim(), phone = f.phone.value.trim(),
+      date = f.date.value, time = f.time.value, items = f.items.value.trim(), note = f.note.value.trim();
+  if(!name || !phone || !date || !time || !items){ err.textContent = "Please fill your name, mobile, pickup date, time and the items you'd like to pre-book."; return; }
+  err.textContent = "";
+  var ref = "ZZ-" + Math.random().toString(36).slice(2,7).toUpperCase();
+  var rows = [["Name", name],["Mobile", phone],["Pickup", date + " at " + time],["Pre-booked items", items]];
+  if(note) rows.push(["Note", note]);
+  document.getElementById("cRef").textContent = ref;
+  document.getElementById("cList").innerHTML = rows.map(function(r){ return "<dt>"+r[0]+"</dt><dd>"+r[1].replace(/</g,"&lt;")+"</dd>"; }).join("");
+  var box = document.getElementById("confirmBox");
+  box.classList.add("show"); box.focus(); box.scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+/* Reveal on scroll */
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

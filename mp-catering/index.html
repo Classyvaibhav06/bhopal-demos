@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Catering &amp; Event Management Services — Corporate Catering in Bhopal</title>
+<meta name="description" content="MP Catering & Event Management Services, Bhopal — 13+ years of corporate & institutional banquet catering. North Indian, Rajasthani & Gujarati live counters for industrial meets and large gatherings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f3a; --navy-2:#10294d; --slate:#475569; --slate-2:#64748b;
+    --steel:#e8edf3; --paper:#f7f9fc; --line:#d7dfea; --accent:#c9a24b; --accent-2:#e3c878;
+    --ink:#12233c; --ok:#157347;
+    --radius:14px; --shadow:0 14px 34px rgba(11,31,58,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  h1,h2,h3,.brand{font-family:'Archivo',sans-serif;line-height:1.15;color:var(--navy)}
+  img{max-width:100%;display:block}
+  a{color:var(--navy)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 8px 0}
+  .skip:focus{left:0}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header.site{position:sticky;top:0;z-index:100;background:rgba(11,31,58,.97);backdrop-filter:blur(6px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+  .brand{color:#fff;font-size:19px;font-weight:800;text-decoration:none;letter-spacing:.2px}
+  .brand span{color:var(--accent-2)}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:11px;color:#aebdd2;letter-spacing:1.6px;text-transform:uppercase}
+  nav.links{display:none;gap:26px}
+  nav.links a{color:#dbe4f0;text-decoration:none;font-size:14.5px;font-weight:500}
+  nav.links a:hover{color:#fff}
+  .btn{display:inline-block;background:var(--accent);color:#231a04;font-weight:700;text-decoration:none;border:none;cursor:pointer;padding:12px 22px;border-radius:10px;font-size:15px;font-family:inherit;transition:transform .15s,background .15s}
+  .btn:hover{background:var(--accent-2);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:#fff;border:1.5px solid #93a7c4}
+  .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn.navy{background:var(--navy);color:#fff}
+  .btn.navy:hover{background:var(--navy-2)}
+  .btn.sm{padding:9px 16px;font-size:14px}
+  .menu-btn{background:none;border:1.5px solid #93a7c4;color:#fff;border-radius:8px;padding:8px 12px;font-size:18px;cursor:pointer}
+  .mobile-nav{display:none;background:var(--navy-2);padding:10px 20px 16px}
+  .mobile-nav.open{display:block}
+  .mobile-nav a{display:block;color:#dbe4f0;text-decoration:none;padding:9px 0;font-weight:500}
+  @media(min-width:860px){nav.links{display:flex}.menu-btn{display:none}}
+
+  /* Hero */
+  .hero{background:linear-gradient(rgba(8,22,40,.82),rgba(8,22,40,.72)),url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1800&auto=format&fit=crop') center/cover;color:#fff;padding:74px 0 66px}
+  .hero .eyebrow{color:var(--accent-2);font-weight:700;letter-spacing:2px;font-size:12.5px;text-transform:uppercase}
+  .hero h1{color:#fff;font-size:clamp(32px,5.4vw,54px);font-weight:800;margin:14px 0 16px;max-width:760px}
+  .hero p.lead{color:#ccd8e8;font-size:clamp(16px,2.2vw,19px);max-width:640px}
+  .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:42px;max-width:820px}
+  @media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:16px}
+  .stat b{display:block;font-family:'Archivo',sans-serif;font-size:26px;color:#fff}
+  .stat span{font-size:13px;color:#aebdd2}
+
+  section{padding:66px 0}
+  .kicker{color:#97792a;font-weight:700;letter-spacing:2px;font-size:12.5px;text-transform:uppercase;text-align:center}
+  h2.title{font-size:clamp(26px,4vw,38px);text-align:center;margin:10px auto 8px;max-width:720px}
+  p.sub{color:var(--slate);text-align:center;max-width:640px;margin:0 auto 40px}
+
+  /* Services */
+  .cards{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 4px 14px rgba(11,31,58,.05)}
+  .card .ic{font-size:30px;margin-bottom:12px}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{color:var(--slate);font-size:15px}
+  .card ul{margin:12px 0 0 18px;color:var(--slate);font-size:14.5px}
+
+  /* Cuisines */
+  .cuisines{background:#fff;border-block:1px solid var(--line)}
+  .cuisine-grid{display:grid;gap:20px;grid-template-columns:1fr}
+  @media(min-width:900px){.cuisine-grid{grid-template-columns:repeat(3,1fr)}}
+  .cuisine{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper)}
+  .cuisine img{height:190px;width:100%;object-fit:cover}
+  .cuisine .body{padding:22px}
+  .cuisine h3{font-size:20px;margin-bottom:6px}
+  .cuisine .live{display:inline-block;background:#e7f6ee;color:var(--ok);font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:10px}
+  .cuisine p{color:var(--slate);font-size:14.5px;margin-bottom:12px}
+  .cuisine ul{margin-left:18px;color:var(--slate);font-size:14.5px;columns:1}
+  .cuisine li{margin:3px 0}
+
+  /* Menu decks */
+  .deck{background:var(--navy);color:#fff;border-radius:18px;padding:28px;margin-bottom:20px}
+  .deck h3{color:#fff;font-size:22px}
+  .deck .meta{color:#aebdd2;font-size:14px;margin:4px 0 16px}
+  .deck-grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:760px){.deck-grid{grid-template-columns:repeat(3,1fr)}}
+  .deck-col{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px}
+  .deck-col h4{font-family:'Archivo',sans-serif;color:var(--accent-2);font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+  .deck-col ul{margin-left:17px;color:#d7e0ee;font-size:14px}
+  .deck .btn{margin-top:18px}
+
+  /* Gallery */
+  .gallery{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+  @media(min-width:760px){.gallery{grid-template-columns:repeat(3,1fr)}}
+  .gallery figure{border-radius:var(--radius);overflow:hidden;position:relative}
+  .gallery img{height:210px;width:100%;object-fit:cover;transition:transform .4s}
+  .gallery figure:hover img{transform:scale(1.045)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(8,22,40,.85));color:#fff;font-size:13.5px;padding:26px 14px 10px}
+
+  /* Trust */
+  .trust{background:var(--steel)}
+  .trust-grid{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:760px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1020px){.trust-grid{grid-template-columns:repeat(4,1fr)}}
+  .review{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .review .stars{color:#d99a17;letter-spacing:2px;margin-bottom:8px}
+  .review p{font-size:15px;color:var(--ink)}
+  .review footer{margin-top:12px;color:var(--slate-2);font-size:13px}
+
+  /* Form */
+  .form-shell{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:28px;max-width:860px;margin:0 auto}
+  .form-grid{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:700px){.form-grid{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}}
+  label{font-weight:600;font-size:14px;display:block;margin-bottom:6px;color:var(--navy)}
+  input,select,textarea{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+  input:focus,select,textarea:focus{border-color:var(--navy)}
+  fieldset{border:1.5px solid var(--line);border-radius:10px;padding:14px 16px}
+  legend{font-weight:600;font-size:14px;color:var(--navy);padding:0 6px}
+  .checks{display:flex;flex-wrap:wrap;gap:10px 20px}
+  .checks label{font-weight:500;display:flex;gap:8px;align-items:center;margin:0}
+  .checks input{width:auto}
+  .hint{font-size:13px;color:var(--slate-2);margin-top:5px}
+  .summary{display:none;background:#eef7f1;border:1.5px solid #bfe6cf;border-radius:12px;padding:22px;margin-top:22px}
+  .summary.show{display:block}
+  .summary h3{color:var(--ok);margin-bottom:8px}
+  .summary dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14.5px}
+  .summary dt{font-weight:600;color:var(--navy)}
+  .form-err{display:none;background:#fdf0f0;border:1.5px solid #f0caca;color:#8a2020;border-radius:10px;padding:12px 16px;margin-top:16px;font-size:14.5px}
+  .form-err.show{display:block}
+
+  footer.site{background:var(--navy);color:#c4d0e0;padding:46px 0 30px;margin-top:0}
+  footer.site h3{color:#fff;font-size:18px;margin-bottom:8px}
+  footer.site a{color:var(--accent-2)}
+  .foot-grid{display:grid;gap:24px;grid-template-columns:1fr}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .foot-note{border-top:1px solid #24405f;margin-top:28px;padding-top:16px;font-size:13px;color:#8fa3bd;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:90;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:99px;box-shadow:var(--shadow);font-size:14.5px}
+  .wa-float:hover{background:var(--navy-2)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s,transform .55s}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.gallery img{transition:none}}
+
+  #print-area{display:none}
+  @media print{
+    body>*{display:none!important}
+    #print-area{display:block!important;color:#000;font-family:Georgia,serif;padding:24px}
+    #print-area h2{font-size:24px;margin-bottom:4px}
+    #print-area h4{margin:14px 0 4px;text-transform:uppercase;font-size:13px;letter-spacing:1px}
+    #print-area ul{margin-left:18px}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#enquiry">Skip to enquiry form</a>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">MP <span>CATERING</span><small>&amp; Event Management Services · Bhopal</small></a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#cuisines">Cuisines</a>
+      <a href="#menus">Sample Menus</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#why">Why Us</a>
+    </nav>
+    <div>
+      <a class="btn sm" href="#enquiry">Request a Proposal</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#services">Services</a><a href="#cuisines">Cuisines</a><a href="#menus">Sample Menus</a><a href="#gallery">Gallery</a><a href="#why">Why Us</a><a href="#enquiry">Request a Proposal</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Corporate &amp; Institutional Catering · 13+ Years</p>
+      <h1>The catering partner behind Bhopal's corporate events.</h1>
+      <p class="lead">For over 13 years, companies across Govindpura and Mandideep have trusted MP Catering for industrial meets, office celebrations and large social gatherings — with live food counters your guests remember.</p>
+      <div class="cta-row">
+        <a class="btn" href="#enquiry">Send a B2B Enquiry</a>
+        <a class="btn ghost" href="#menus">View Sample Menu Decks</a>
+      </div>
+      <div class="stats" role="list" aria-label="Company highlights">
+        <div class="stat" role="listitem"><b>13+ years</b><span>in business</span></div>
+        <div class="stat" role="listitem"><b>4.7 / 5</b><span>B2B client rating</span></div>
+        <div class="stat" role="listitem"><b>33+</b><span>verified B2B reviews</span></div>
+        <div class="stat" role="listitem"><b>3 cuisines</b><span>live counters — North Indian, Rajasthani, Gujarati</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <p class="kicker">What we do</p>
+      <h2 class="title">Catering built for organisations</h2>
+      <p class="sub">One accountable vendor for your company's events — planned formally, presented properly, served at scale.</p>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🏢</div>
+          <h3>Corporate &amp; Industrial Meets</h3>
+          <p>Regular vendor for corporate industrial meets across the Govindpura and Mandideep industrial areas.</p>
+          <ul><li>Plant &amp; office events</li><li>Dealer / distributor meets</li><li>Annual days &amp; milestones</li></ul>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🎉</div>
+          <h3>Large Social Gatherings</h3>
+          <p>Banquet-scale catering for large social gatherings, with the same discipline we bring to corporate work.</p>
+          <ul><li>Community &amp; association events</li><li>Festive celebrations</li><li>Large guest counts, handled calmly</li></ul>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🔥</div>
+          <h3>Live Food Counters</h3>
+          <p>Our most praised feature — chefs cooking live at North Indian, Rajasthani and Gujarati counters.</p>
+          <ul><li>Fresh, hot, made-to-order</li><li>Clean, uniformed counter teams</li><li>Counters matched to your menu</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUISINES -->
+  <section class="cuisines" id="cuisines">
+    <div class="wrap">
+      <p class="kicker">Cuisines</p>
+      <h2 class="title">Three regional kitchens, all live</h2>
+      <p class="sub">The counters our B2B clients ask for by name. Sample items below — final menus are customised per event.</p>
+      <div class="cuisine-grid">
+        <article class="cuisine reveal">
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1000&auto=format&fit=crop" alt="North Indian curry dishes served in bowls" loading="lazy" onerror="this.style.display='none'">
+          <div class="body">
+            <h3>North Indian</h3>
+            <span class="live">● Live Counter</span>
+            <p>The crowd-pleasing core of most corporate menus — rich mains with fresh breads off the tawa.</p>
+            <ul><li>Paneer Butter Masala</li><li>Dal Makhani</li><li>Butter Naan &amp; Missi Roti</li><li>Jeera Rice &amp; Veg Biryani</li><li>Chole Bhature (live)</li></ul>
+          </div>
+        </article>
+        <article class="cuisine reveal">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000&auto=format&fit=crop" alt="Traditional Indian thali with many small dishes" loading="lazy" onerror="this.style.display='none'">
+          <div class="body">
+            <h3>Rajasthani</h3>
+            <span class="live">● Live Counter</span>
+            <p>Royal, hearty flavours that make an event feel like a celebration — a favourite at annual days.</p>
+            <ul><li>Dal Baati Churma</li><li>Gatte ki Sabzi</li><li>Ker Sangri</li><li>Bajre ki Roti with Lehsun Chutney</li><li>Moong Dal Halwa</li></ul>
+          </div>
+        </article>
+        <article class="cuisine reveal">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1000&auto=format&fit=crop" alt="Crisp Indian snacks served hot" loading="lazy" onerror="this.style.display='none'">
+          <div class="body">
+            <h3>Gujarati</h3>
+            <span class="live">● Live Counter</span>
+            <p>Light, flavourful and endlessly snackable — ideal for high-tea sessions and day-long meets.</p>
+            <ul><li>Dhokla &amp; Khandvi</li><li>Handvo</li><li>Gujarati Kadhi &amp; Khichdi</li><li>Thepla &amp; Methi Na Gota (live)</li><li>Shrikhand</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE MENU DECKS -->
+  <section id="menus">
+    <div class="wrap">
+      <p class="kicker">For your approval file</p>
+      <h2 class="title">Sample menu decks</h2>
+      <p class="sub">Formal menu presentations you can forward to management or attach to a purchase order. Print or save any deck as PDF.</p>
+
+      <article class="deck reveal" data-deck="Corporate Lunch Deck">
+        <h3>Deck A — Corporate Lunch</h3>
+        <p class="meta">Working lunch for office &amp; plant events · North Indian core</p>
+        <div class="deck-grid">
+          <div class="deck-col"><h4>Starters</h4><ul><li>Veg Manchurian (dry)</li><li>Hara Bhara Kebab</li><li>Masala Papad &amp; Salad</li></ul></div>
+          <div class="deck-col"><h4>Mains</h4><ul><li>Paneer Butter Masala</li><li>Dal Makhani</li><li>Seasonal Veg</li><li>Jeera Rice, Naan &amp; Roti</li></ul></div>
+          <div class="deck-col"><h4>Dessert &amp; Beverages</h4><ul><li>Gulab Jamun</li><li>Masala Chaas</li><li>Tea &amp; Coffee</li></ul></div>
+        </div>
+        <button class="btn sm" type="button" data-print-deck>🖨 Print / Save This Deck</button>
+      </article>
+
+      <article class="deck reveal" data-deck="Industrial Annual Day Deck">
+        <h3>Deck B — Industrial Annual Day</h3>
+        <p class="meta">Large-format celebration · All three live counters</p>
+        <div class="deck-grid">
+          <div class="deck-col"><h4>Live Counters</h4><ul><li>Chole Bhature (North Indian)</li><li>Dal Baati (Rajasthani)</li><li>Thepla &amp; Gota (Gujarati)</li></ul></div>
+          <div class="deck-col"><h4>Mains</h4><ul><li>Gatte ki Sabzi &amp; Ker Sangri</li><li>Paneer Lababdar</li><li>Veg Biryani &amp; Raita</li><li>Assorted Breads</li></ul></div>
+          <div class="deck-col"><h4>Desserts</h4><ul><li>Moong Dal Halwa</li><li>Shrikhand</li><li>Ice Cream Counter</li></ul></div>
+        </div>
+        <button class="btn sm" type="button" data-print-deck>🖨 Print / Save This Deck</button>
+      </article>
+
+      <article class="deck reveal" data-deck="Executive High-Tea Deck">
+        <h3>Deck C — Executive High-Tea</h3>
+        <p class="meta">Meetings, inaugurations &amp; dealer meets · Gujarati snacks focus</p>
+        <div class="deck-grid">
+          <div class="deck-col"><h4>Savouries</h4><ul><li>Dhokla &amp; Khandvi</li><li>Handvo Squares</li><li>Mini Samosa</li></ul></div>
+          <div class="deck-col"><h4>Live Counter</h4><ul><li>Methi Na Gota</li><li>Masala Thepla Rolls</li></ul></div>
+          <div class="deck-col"><h4>Sweets &amp; Beverages</h4><ul><li>Shrikhand Cups</li><li>Filter Coffee &amp; Masala Tea</li><li>Fresh Lime Cooler</li></ul></div>
+        </div>
+        <button class="btn sm" type="button" data-print-deck>🖨 Print / Save This Deck</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">On the ground</p>
+      <h2 class="title">Banquet setups &amp; live counters</h2>
+      <p class="sub">A look at the kind of setups we deliver for corporate hosts.</p>
+      <div class="gallery">
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1000&auto=format&fit=crop" alt="Large banquet hall set for a corporate event" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Banquet-scale seating</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1000&auto=format&fit=crop" alt="Catering buffet counter with fresh dishes" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Buffet &amp; live counter service</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop" alt="Elegantly set event dining tables" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Formal table settings</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1000&auto=format&fit=crop" alt="Guests dining together at a long event table" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Large gathering service</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1000&auto=format&fit=crop" alt="Plated fine dining dish" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Plated courses on request</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1000&auto=format&fit=crop" alt="Decorated celebration table with candles" loading="lazy" onerror="this.closest('figure').style.display='none'"><figcaption>Celebration setups</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="trust" id="why">
+    <div class="wrap">
+      <p class="kicker">Why corporates choose us</p>
+      <h2 class="title">A vendor your admin team can approve</h2>
+      <p class="sub">Rated 4.7/5 across 33+ verified B2B reviews — and structured the way procurement teams prefer.</p>
+      <div class="trust-grid">
+        <div class="review reveal"><div class="stars" aria-hidden="true">★★★★★</div><p><strong>13+ years, still the regular.</strong> Repeat bookings from industrial clients in Govindpura &amp; Mandideep — the surest sign of delivery.</p><footer>Track record</footer></div>
+        <div class="review reveal"><div class="stars" aria-hidden="true">★★★★★</div><p><strong>Live counters, praised by name.</strong> North Indian, Rajasthani &amp; Gujarati live food counters are what our reviews consistently highlight.</p><footer>From verified B2B reviews</footer></div>
+        <div class="review reveal"><div class="stars" aria-hidden="true">★★★★★</div><p><strong>Paperwork-friendly.</strong> Formal company profile and ready menu decks (above) for management approvals and purchase orders.</p><footer>For admin &amp; procurement</footer></div>
+        <div class="review reveal"><div class="stars" aria-hidden="true">★★★★★</div><p><strong>One enquiry, full plan.</strong> Tell us date, guests and venue — we respond with a structured proposal, not a phone tag.</p><footer>Via the enquiry form below</footer></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section id="enquiry">
+    <div class="wrap">
+      <p class="kicker">B2B Enquiry</p>
+      <h2 class="title">Request a corporate proposal</h2>
+      <p class="sub">Share your event details — you'll get an on-screen summary instantly to keep for your records and approvals.</p>
+      <form class="form-shell" id="enquiryForm" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="fCompany">Company / Organisation *</label>
+            <input id="fCompany" name="company" type="text" autocomplete="organization" required placeholder="e.g. ABC Industries Pvt Ltd">
+          </div>
+          <div>
+            <label for="fPerson">Contact person *</label>
+            <input id="fPerson" name="person" type="text" autocomplete="name" required placeholder="Your name">
+          </div>
+          <div>
+            <label for="fEmail">Work email *</label>
+            <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="you@company.com">
+          </div>
+          <div>
+            <label for="fType">Event type *</label>
+            <select id="fType" name="type" required>
+              <option value="">Select event type…</option>
+              <option>Corporate / industrial meet</option>
+              <option>Annual day / milestone celebration</option>
+              <option>Dealer / distributor meet</option>
+              <option>Office celebration</option>
+              <option>Large social gathering</option>
+              <option>Other institutional event</option>
+            </select>
+          </div>
+          <div>
+            <label for="fDate">Event date *</label>
+            <input id="fDate" name="date" type="date" required>
+          </div>
+          <div>
+            <label for="fGuests">Expected guests *</label>
+            <input id="fGuests" name="guests" type="number" min="25" max="10000" step="5" required placeholder="e.g. 300">
+            <p class="hint">Banquet-scale events welcome.</p>
+          </div>
+          <div class="full">
+            <label for="fVenue">Venue *</label>
+            <input id="fVenue" name="venue" type="text" required placeholder="Venue name / area, city (e.g. Company campus, Mandideep)">
+          </div>
+          <fieldset class="full">
+            <legend>Cuisine counters required</legend>
+            <div class="checks">
+              <label><input type="checkbox" name="cuisine" value="North Indian live counter"> North Indian live counter</label>
+              <label><input type="checkbox" name="cuisine" value="Rajasthani live counter"> Rajasthani live counter</label>
+              <label><input type="checkbox" name="cuisine" value="Gujarati live counter"> Gujarati live counter</label>
+              <label><input type="checkbox" name="cuisine" value="Not sure — advise us"> Not sure — advise us</label>
+            </div>
+          </fieldset>
+          <div class="full">
+            <label for="fDeck">Sample deck closest to your event</label>
+            <select id="fDeck" name="deck">
+              <option value="Not selected">Select a deck (optional)…</option>
+              <option>Deck A — Corporate Lunch</option>
+              <option>Deck B — Industrial Annual Day</option>
+              <option>Deck C — Executive High-Tea</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="fReq">Requirements &amp; notes</label>
+            <textarea id="fReq" name="requirements" rows="4" placeholder="Timings, service style, stage/ seating support, budget band, billing requirements — anything our team should know."></textarea>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <button class="btn navy" type="submit">Submit Enquiry</button>
+          <span class="hint" style="margin:0">Front-end demo form — summary appears on screen.</span>
+        </div>
+        <div class="form-err" id="formErr" role="alert"></div>
+        <div class="summary" id="summary" role="status" aria-live="polite" tabindex="-1">
+          <h3>✓ Enquiry recorded — reference <span id="sumRef"></span></h3>
+          <p style="margin-bottom:12px;color:var(--slate)">Thank you. Here's your enquiry summary — keep it for your approval file. Our team would normally respond with a formal proposal and menu deck.</p>
+          <dl id="sumList"></dl>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>MP Catering &amp; Event Management Services</h3>
+        <p>Corporate &amp; institutional banquet catering in Bhopal — 13+ years, 4.7/5 from 33+ verified B2B reviews.</p>
+      </div>
+      <div>
+        <h3>Visit us</h3>
+        <p>106/2 Kartar Arcade, Near Prabhat Petrol Pump,<br>Raisen Road, Bhopal — 462022 (M.P.)</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p><a href="#menus">Sample menu decks</a><br><a href="#cuisines">Live counters</a><br><a href="#enquiry">B2B enquiry form</a></p>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="year"></span> MP Catering &amp; Event Management Services. All rights reserved.</span>
+      <span>Demo website — built for presentation purposes.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#enquiry" aria-label="Go to the B2B enquiry form">📋 Request a Proposal</a>
+
+<div id="print-area" aria-hidden="true"></div>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* Mobile nav */
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mobileNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){ if(e.target.tagName === 'A'){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } });
+
+  /* Reveal on scroll */
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold: 0.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* Print a single menu deck */
+  var printArea = document.getElementById('print-area');
+  document.querySelectorAll('[data-print-deck]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var deck = b.closest('[data-deck]');
+      var title = deck.getAttribute('data-deck');
+      var html = '<h2>MP Catering &amp; Event Management Services</h2>' +
+        '<p>106/2 Kartar Arcade, Near Prabhat Petrol Pump, Raisen Road, Bhopal — 462022</p>' +
+        '<h3 style="margin-top:16px;font-size:19px">' + title + '</h3>';
+      deck.querySelectorAll('.deck-col').forEach(function(col){ html += col.outerHTML; });
+      html += '<p style="margin-top:16px;font-size:12px">Sample menu — final menus are customised per event. Demo document.</p>';
+      printArea.innerHTML = html;
+      window.print();
+    });
+  });
+
+  /* Enquiry form */
+  var form = document.getElementById('enquiryForm');
+  var errBox = document.getElementById('formErr');
+  var summary = document.getElementById('summary');
+  var dateInput = document.getElementById('fDate');
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  function row(list, label, value){
+    if(!value) return;
+    var dt = document.createElement('dt'); dt.textContent = label;
+    var dd = document.createElement('dd'); dd.textContent = value;
+    list.appendChild(dt); list.appendChild(dd);
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errBox.classList.remove('show'); summary.classList.remove('show');
+    var company = document.getElementById('fCompany').value.trim();
+    var person  = document.getElementById('fPerson').value.trim();
+    var email   = document.getElementById('fEmail').value.trim();
+    var type    = document.getElementById('fType').value;
+    var date    = dateInput.value;
+    var guests  = document.getElementById('fGuests').value;
+    var venue   = document.getElementById('fVenue').value.trim();
+    var deck    = document.getElementById('fDeck').value;
+    var req     = document.getElementById('fReq').value.trim();
+    var cuisines = Array.prototype.map.call(form.querySelectorAll('input[name="cuisine"]:checked'), function(c){ return c.value; });
+
+    var missing = [];
+    if(!company) missing.push('company / organisation');
+    if(!person) missing.push('contact person');
+    if(!email || email.indexOf('@') < 1) missing.push('a valid work email');
+    if(!type) missing.push('event type');
+    if(!date) missing.push('event date');
+    if(!guests || +guests < 1) missing.push('expected guests');
+    if(!venue) missing.push('venue');
+    if(missing.length){
+      errBox.textContent = 'Please add: ' + missing.join(', ') + '.';
+      errBox.classList.add('show');
+      errBox.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    var ref = 'MPC-' + Date.now().toString(36).toUpperCase().slice(-6);
+    document.getElementById('sumRef').textContent = ref;
+    var list = document.getElementById('sumList');
+    list.innerHTML = '';
+    row(list, 'Company', company);
+    row(list, 'Contact person', person);
+    row(list, 'Work email', email);
+    row(list, 'Event type', type);
+    row(list, 'Event date', new Date(date + 'T00:00:00').toLocaleDateString('en-IN', {weekday:'short', day:'numeric', month:'short', year:'numeric'}));
+    row(list, 'Expected guests', (+guests).toLocaleString('en-IN'));
+    row(list, 'Venue', venue);
+    row(list, 'Cuisine counters', cuisines.length ? cuisines.join('; ') : 'To be advised');
+    row(list, 'Sample deck', deck);
+    row(list, 'Requirements', req || '—');
+    summary.classList.add('show');
+    summary.focus();
+    summary.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+})();
+</script>
+</body>
+</html>

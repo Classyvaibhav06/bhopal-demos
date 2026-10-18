@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shri Ganesh Jewellers — Hallmark Gold, Silver & Bridal Jewellery | Kolar Road, Bhopal</title>
+<meta name="description" content="Shri Ganesh Jewellers, Kolar Road Bhopal — BIS hallmark gold, silver and bridal fine jewellery. Fair making charges, custom bridal crafting, VIP showroom consultations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#faf6ee; --ivory2:#f3ead8; --gold:#b8860b; --gold2:#d4af37; --goldsoft:#e9d8a6;
+  --ink:#2b2118; --muted:#7a6a58; --line:#e3d5ba; --card:#fffdf8; --deep:#221a10;
+  --shadow:0 10px 30px rgba(80,58,10,.12); --r:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:0;background:var(--deep);color:#fff;padding:10px 16px;z-index:99}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* Rate ticker */
+.ticker{background:var(--deep);color:var(--goldsoft);overflow:hidden;position:relative}
+.ticker-track{display:flex;gap:0;width:max-content;animation:slide 30s linear infinite;padding:9px 0}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker span{padding:0 26px;font-size:.86rem;letter-spacing:.08em;white-space:nowrap;text-transform:uppercase}
+.ticker b{color:#fff;font-weight:600}
+.ticker .demo-tag{color:#ffb4a2;text-transform:none;letter-spacing:0}
+.rates-note{background:#3a2c14;color:#d9c391;font-size:.8rem;text-align:center;padding:6px 14px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .om{width:46px;height:46px;border-radius:50%;border:2px solid var(--gold2);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);background:#fff}
+.brand h1{font-size:1.45rem;line-height:1.05;color:var(--ink)}
+.brand small{display:block;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:none;gap:24px}
+.nav-links a{text-decoration:none;font-size:.95rem;letter-spacing:.04em}
+.nav-links a:hover{color:var(--gold)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff;text-decoration:none;border:none;cursor:pointer;padding:12px 22px;border-radius:99px;font-family:inherit;font-size:.95rem;font-weight:500;letter-spacing:.03em;box-shadow:var(--shadow);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--gold);border:1.5px solid var(--gold);box-shadow:none}
+@media(min-width:820px){.nav-links{display:flex;align-items:center}}
+
+/* Hero */
+.hero{position:relative;padding:70px 0 60px;background:radial-gradient(1000px 500px at 85% -10%,#f0dfae 0%,transparent 55%),var(--ivory)}
+.hero .grid{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.1fr .9fr}}
+.eyebrow{letter-spacing:.3em;text-transform:uppercase;font-size:.74rem;color:var(--gold);font-weight:600}
+.hero h2{font-size:clamp(2.4rem,6vw,4rem);line-height:1.04;margin:12px 0 14px}
+.hero h2 em{color:var(--gold);font-style:italic}
+.hero p.lead{color:var(--muted);font-size:1.08rem;max-width:34em}
+.rating{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 16px;margin:18px 0;font-size:.92rem;box-shadow:var(--shadow)}
+.stars{color:var(--gold2);letter-spacing:2px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.hero-media{position:relative}
+.hero-media img{border-radius:22px;box-shadow:var(--shadow);aspect-ratio:4/5;object-fit:cover;width:100%}
+.hero-media .badge{position:absolute;bottom:18px;left:18px;background:rgba(34,26,16,.88);color:var(--goldsoft);padding:12px 18px;border-radius:12px;font-size:.88rem;backdrop-filter:blur(4px)}
+.hero-media .badge b{color:#fff;display:block;font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+.trust-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+@media(min-width:700px){.trust-strip{grid-template-columns:repeat(4,1fr)}}
+.trust-strip div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.trust-strip b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);display:block}
+
+/* Sections */
+section{padding:64px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 36px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:8px 0}
+.sec-head p{color:var(--muted)}
+
+/* Catalog */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.chip{border:1.5px solid var(--line);background:#fff;padding:9px 20px;border-radius:99px;cursor:pointer;font-family:inherit;font-size:.92rem;transition:all .2s}
+.chip[aria-pressed="true"]{background:var(--deep);color:var(--goldsoft);border-color:var(--deep)}
+.catalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s}
+.item:hover{transform:translateY(-4px)}
+.item img{height:210px;width:100%;object-fit:cover;background:var(--ivory2)}
+.item .body{padding:16px 18px 20px}
+.item h3{font-size:1.28rem;margin-bottom:2px}
+.item .meta{color:var(--muted);font-size:.88rem}
+.item .row{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.purity{font-size:.78rem;letter-spacing:.06em;background:var(--ivory2);border:1px solid var(--line);padding:3px 10px;border-radius:99px;color:var(--gold);font-weight:600}
+.enquire{font-size:.86rem;color:var(--gold);font-weight:600;text-decoration:none}
+.enquire:hover{text-decoration:underline}
+.hidden{display:none!important}
+
+/* Trust / hallmark */
+.trust-sec{background:var(--deep);color:#efe6d0}
+.trust-sec .sec-head p{color:#c9b98f}
+.trust-grid{display:grid;gap:18px}
+@media(min-width:820px){.trust-grid{grid-template-columns:repeat(3,1fr)}}
+.tcard{border:1px solid #4a3a1e;border-radius:var(--r);padding:26px;background:rgba(255,255,255,.03)}
+.tcard .ic{font-size:1.7rem;margin-bottom:8px}
+.tcard h3{color:var(--goldsoft);font-size:1.4rem;margin-bottom:6px}
+.tcard p{font-size:.94rem;color:#d8cbab}
+.hallmark-marks{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hallmark-marks span{border:1px dashed var(--gold2);color:var(--goldsoft);border-radius:8px;padding:5px 12px;font-size:.8rem;letter-spacing:.05em}
+
+/* Estimator */
+.est{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:28px;display:grid;gap:22px}
+@media(min-width:860px){.est{grid-template-columns:1fr 1fr}}
+.est label{font-weight:500;display:block;margin-bottom:6px;font-size:.94rem}
+.est select,.est input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:1rem;background:var(--ivory)}
+.est .out{background:var(--ivory2);border-radius:14px;padding:20px;text-align:center}
+.est .out .big{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold)}
+.est .out small{color:var(--muted);display:block;margin-top:4px}
+
+/* Booking */
+.book{display:grid;gap:22px;background:linear-gradient(150deg,#fff,#f7efdb);border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow)}
+@media(min-width:860px){.book{grid-template-columns:1fr 1fr}}
+.book .fields{display:grid;gap:14px}
+.book input,.book select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:1rem;background:#fff}
+.book label{font-size:.9rem;font-weight:500}
+.reviews{display:grid;gap:16px}
+@media(min-width:820px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.review{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.review .stars{font-size:.9rem}
+.review p{font-style:italic;color:#54432c;margin:8px 0}
+.review small{color:var(--muted)}
+.contact-band{background:var(--ivory2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-grid{display:grid;gap:18px;text-align:center}
+@media(min-width:760px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+footer{background:var(--deep);color:#cbbd97;padding:38px 0 28px;font-size:.92rem}
+footer .cols{display:grid;gap:20px}
+@media(min-width:760px){footer .cols{grid-template-columns:1.4fr 1fr 1fr}}
+footer h3{color:var(--goldsoft);margin-bottom:8px;font-size:1.25rem}
+footer a{color:#e9d8a6}
+.demo-note{border-top:1px solid #4a3a1e;margin-top:24px;padding-top:16px;font-size:.8rem;color:#9a8a63;text-align:center}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#catalog">Skip to catalog</a>
+
+<!-- ══ RATE TICKER ══ -->
+<div class="ticker" role="region" aria-label="Indicative gold and silver rates">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+<p class="rates-note">⚠ The rates above are <strong>indicative demo rates</strong> for illustration only — please call the showroom for today's exact rate. <span id="updatedLine"></span></p>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Shri Ganesh Jewellers — home">
+      <span class="om" aria-hidden="true">ॐ</span>
+      <span><h1>Shri Ganesh Jewellers<small>Hallmark Gold · Silver · Bridal</small></h1></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#catalog">Catalog</a>
+      <a href="#trust">Why Trust Us</a>
+      <a href="#estimate">Rate Estimator</a>
+      <a href="#visit">Visit Us</a>
+      <a class="btn" href="#book">Book VIP Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="eyebrow">Kolar Road · Bhopal · Family-Run</p>
+        <h2>Jewellery crafted for the <em>biggest day</em> of your life.</h2>
+        <p class="lead">Pure hallmark gold, silver and custom bridal jewellery from a family-run showroom Kolar Road trusts — with fair making charges told to you upfront, and a bridal catalog you can finally browse properly, not scroll for in scattered Instagram posts.</p>
+        <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <strong>~4.6 / 5</strong> local goodwill rating</div>
+        <div class="hero-ctas">
+          <a class="btn" href="#book">Book VIP Showroom Consultation</a>
+          <a class="btn ghost" href="#catalog">Browse the Bridal Catalog</a>
+        </div>
+        <div class="trust-strip" aria-label="Highlights">
+          <div><b>916</b>BIS Hallmark Gold</div>
+          <div><b>100%</b>Transparent Making Charges</div>
+          <div><b>Custom</b>Bridal Crafting</div>
+          <div><b>Family</b>Run Showroom</div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop" alt="Gold wedding rings" onerror="this.style.display='none'">
+        <div class="badge"><b>Bridal Season</b>Custom sets crafted to your design &amp; budget</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CATALOG ══ -->
+<section id="catalog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Digital Catalog</p>
+      <h2>Bridal &amp; Festive Collections</h2>
+      <p>Our signature pieces with weight ranges, so you can plan your budget before you visit. Tap any piece to enquire on WhatsApp.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter catalog by type">
+      <button class="chip" data-filter="all" aria-pressed="true">All Pieces</button>
+      <button class="chip" data-filter="necklace" aria-pressed="false">Necklaces</button>
+      <button class="chip" data-filter="bangles" aria-pressed="false">Bangles</button>
+      <button class="chip" data-filter="rings" aria-pressed="false">Rings</button>
+      <button class="chip" data-filter="jhumkas" aria-pressed="false">Jhumkas</button>
+    </div>
+    <div class="catalog" id="catalogGrid"></div>
+    <p style="text-align:center;color:var(--muted);margin-top:22px;font-size:.92rem" aria-live="polite" id="catCount"></p>
+  </div>
+</section>
+
+<!-- ══ TRUST ══ -->
+<section class="trust-sec" id="trust">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow" style="color:var(--gold2)">Purity You Can Verify</p>
+      <h2>The Hallmark Promise</h2>
+      <p>Every gold piece we sell carries BIS hallmarking — the government-backed stamp that certifies purity. Here's how to read it, and why families on Kolar Road trust us.</p>
+    </div>
+    <div class="trust-grid">
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🏛️</div>
+        <h3>BIS Hallmark Gold</h3>
+        <p>Hallmarked gold is tested and certified by BIS-licensed assay centres. Look for these marks stamped on every piece:</p>
+        <div class="hallmark-marks"><span>BIS Logo</span><span>22K916 Purity</span><span>HUID Number</span></div>
+      </article>
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🧾</div>
+        <h3>Fair Making Charges</h3>
+        <p>Making charges are a big part of any jewellery bill — and the part most shops hide. We state ours clearly before billing, so the price you plan is the price you pay. No surprises at the counter.</p>
+      </article>
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">💍</div>
+        <h3>Bridal Custom Crafting</h3>
+        <p>Bring a photo, a family design, or just an idea — our craftsmen build bridal sets around your outfit, rituals and budget, from a single statement necklace to a complete trousseau.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ESTIMATOR ══ -->
+<section id="estimate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Plan Your Budget</p>
+      <h2>Indicative Price Estimator</h2>
+      <p>A rough idea of metal value at the indicative demo rates shown on top. Making charges and stones are extra — confirmed transparently in store.</p>
+    </div>
+    <div class="est reveal">
+      <div>
+        <div style="margin-bottom:16px">
+          <label for="metalSel">Metal &amp; purity</label>
+          <select id="metalSel">
+            <option value="24k">Gold 24K (999)</option>
+            <option value="22k" selected>Gold 22K (916) — jewellery</option>
+            <option value="silver">Silver (999)</option>
+          </select>
+        </div>
+        <div>
+          <label for="weightIn">Weight (grams): <strong id="weightVal">10 g</strong></label>
+          <input type="range" id="weightIn" min="1" max="100" value="10" step="1" aria-describedby="weightVal">
+        </div>
+      </div>
+      <div class="out" aria-live="polite">
+        <small style="letter-spacing:.15em;text-transform:uppercase">Indicative metal value</small>
+        <div class="big" id="estOut">—</div>
+        <small>At indicative demo rate · making charges extra · call for today's exact rate</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Local Goodwill</p>
+      <h2>Why Kolar Road Families Return</h2>
+    </div>
+    <div class="reviews">
+      <article class="review reveal"><span class="stars" aria-hidden="true">★★★★★</span><p>"Pure hallmark gold and the making charges were told to us before we even asked. That's why our family buys here."</p><small>— The kind of feedback behind our ~4.6/5 goodwill</small></article>
+      <article class="review reveal"><span class="stars" aria-hidden="true">★★★★★</span><p>"They crafted my daughter's bridal set exactly from the photo we carried. Fair pricing, patient people."</p><small>— Bridal custom crafting, as our customers describe it</small></article>
+      <article class="review reveal"><span class="stars" aria-hidden="true">★★★★★</span><p>"A proper family showroom near Kolar Road — no pressure, honest weighing, clear bill."</p><small>— Family-run trust, Mahabali Nagar</small></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOK CONSULTATION ══ -->
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="book reveal">
+      <div>
+        <p class="eyebrow">Skip the Counter Rush</p>
+        <h2 style="font-size:2.1rem;margin:8px 0 10px">Book a VIP Showroom Consultation</h2>
+        <p style="color:var(--muted)">Bridal shopping deserves time and a chair, not a crowded counter. Tell us what you're planning — we'll keep pieces ready in your budget range and attend to you personally. Your enquiry goes straight to our WhatsApp.</p>
+        <p style="margin-top:16px">📞 <a href="tel:+918878155685">+91 88781 55685</a> · <a href="tel:+919893557198">+91 98935 57198</a><br>
+        📸 Instagram: <a href="https://instagram.com/shriganeshjewellers._" target="_blank" rel="noopener">@shriganeshjewellers._</a></p>
+      </div>
+      <form class="fields" id="bookForm">
+        <div><label for="bkName">Your name</label><input id="bkName" type="text" autocomplete="name" placeholder="e.g. Priya Sharma" required></div>
+        <div><label for="bkOccasion">Occasion</label>
+          <select id="bkOccasion"><option>Wedding / Bridal</option><option>Engagement</option><option>Festive purchase</option><option>Gold investment</option><option>Gift</option><option>Other</option></select></div>
+        <div><label for="bkWhen">Preferred visit (optional)</label><input id="bkWhen" type="text" placeholder="e.g. Sunday, 11 AM"></div>
+        <button class="btn" type="submit">Send Enquiry on WhatsApp →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VISIT ══ -->
+<section class="contact-band" id="visit">
+  <div class="wrap contact-grid">
+    <div><h3 class="serif" style="font-size:1.4rem;color:var(--gold)">📍 Visit the Showroom</h3><p>47 Mahabali Nagar, Near HP Petrol Pump,<br>Kolar Road, Bhopal — 462042</p><p style="margin-top:6px"><a href="https://www.google.com/maps/search/?api=1&query=Shri+Ganesh+Jewellers+47+Mahabali+Nagar+Kolar+Road+Bhopal" target="_blank" rel="noopener">Open in Google Maps →</a></p></div>
+    <div><h3 class="serif" style="font-size:1.4rem;color:var(--gold)">📞 Call Us</h3><p><a href="tel:+918878155685">+91 88781 55685</a><br><a href="tel:+919893557198">+91 98935 57198</a></p></div>
+    <div><h3 class="serif" style="font-size:1.4rem;color:var(--gold)">📸 See New Designs</h3><p>Fresh pieces first on Instagram<br><a href="https://instagram.com/shriganeshjewellers._" target="_blank" rel="noopener">@shriganeshjewellers._</a></p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Shri Ganesh Jewellers</h3><p>Family-run hallmark gold, silver &amp; bridal fine jewellery showroom serving Mahabali Nagar, Danish Kunj &amp; the Kolar Road families of Bhopal.</p></div>
+      <div><h3>Explore</h3><p><a href="#catalog">Bridal Catalog</a><br><a href="#trust">Hallmark Promise</a><br><a href="#estimate">Rate Estimator</a><br><a href="#book">Book Consultation</a></p></div>
+      <div><h3>Contact</h3><p>47 Mahabali Nagar, Near HP Petrol Pump, Kolar Road, Bhopal 462042<br>+91 88781 55685 · +91 98935 57198</p></div>
+    </div>
+    <p class="demo-note">Demo website — built as a design demonstration. Rates shown are indicative demo rates, not live market rates. Please contact the showroom for current rates and availability.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918878155685?text=Namaste%2C%20I%20want%20to%20book%20a%20VIP%20showroom%20consultation%20at%20Shri%20Ganesh%20Jewellers." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+"use strict";
+/* ── Indicative DEMO rates (₹ per gram) — NOT live market rates ── */
+var RATES = { "24k": 13250, "22k": 12150, silver: 148 };
+var RATE_LABELS = [
+  ["Gold 24K (999)", RATES["24k"]],
+  ["Gold 22K (916)", RATES["22k"]],
+  ["Silver (999)", RATES.silver]
+];
+function inr(n){ return "₹" + n.toLocaleString("en-IN"); }
+
+/* ── Ticker ── */
+(function(){
+  var seg = RATE_LABELS.map(function(r){
+    return "<span>" + r[0] + " · <b>" + inr(r[1]) + " /g</b></span><span aria-hidden='true'>✦</span>";
+  }).join("");
+  var demo = "<span class='demo-tag'>Indicative demo rates — call for today's exact rate</span><span aria-hidden='true'>✦</span>";
+  document.getElementById("tickerTrack").innerHTML = seg + demo + seg + demo;
+  var d = new Date();
+  document.getElementById("updatedLine").textContent =
+    "Indicative rates last set for this demo on " + d.toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}) + ".";
+})();
+
+/* ── Catalog ── */
+var CATALOG = [
+  {name:"Rajwadi Bridal Necklace Set", type:"necklace", purity:"22K Hallmark", weight:"28–35 g", img:"https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=800&auto=format&fit=crop", note:"Complete bridal set with earrings"},
+  {name:"Temple Work Necklace", type:"necklace", purity:"22K Hallmark", weight:"18–24 g", img:"https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?q=80&w=800&auto=format&fit=crop", note:"Traditional South-Indian inspired craft"},
+  {name:"Polki-Style Choker", type:"necklace", purity:"22K Hallmark", weight:"15–20 g", img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop", note:"Statement choker for receptions"},
+  {name:"Classic Gold Kada Bangles (Pair)", type:"bangles", purity:"22K Hallmark", weight:"20–26 g", img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=800&auto=format&fit=crop", note:"Everyday-to-bridal solid kadas"},
+  {name:"Bridal Chura-Style Bangle Set", type:"bangles", purity:"22K Hallmark", weight:"30–40 g", img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop", note:"Full bridal bangle stack"},
+  {name:"Engagement Solitaire Ring", type:"rings", purity:"18K / 22K Hallmark", weight:"3–5 g", img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop", note:"Custom stone setting available"},
+  {name:"Antique Finish Gold Band", type:"rings", purity:"22K Hallmark", weight:"4–7 g", img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop", note:"For him & her matching bands"},
+  {name:"Traditional Jhumka Earrings", type:"jhumkas", purity:"22K Hallmark", weight:"8–12 g", img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop", note:"The classic bell jhumka, bridal size"},
+  {name:"Pearl Drop Jhumkas", type:"jhumkas", purity:"22K Hallmark", weight:"6–9 g", img:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800&auto=format&fit=crop", note:"Jhumkas finished with pearl drops"}
+];
+var TYPE_NAMES = {necklace:"Necklace", bangles:"Bangles", rings:"Ring", jhumkas:"Jhumkas"};
+var grid = document.getElementById("catalogGrid");
+function renderCatalog(filter){
+  var shown = 0;
+  grid.innerHTML = CATALOG.filter(function(it){ return filter==="all" || it.type===filter; })
+    .map(function(it){
+      shown++;
+      var msg = encodeURIComponent("Namaste, I saw the " + it.name + " (" + it.purity + ", " + it.weight + ") in your online catalog. Please share its price and availability.");
+      return "<article class='item'><img loading='lazy' src='" + it.img + "' alt='" + it.name + " — " + TYPE_NAMES[it.type] + "' onerror=\"this.style.display='none'\">" +
+        "<div class='body'><h3>" + it.name + "</h3><p class='meta'>" + it.note + "<br>Weight range: " + it.weight + "</p>" +
+        "<div class='row'><span class='purity'>" + it.purity + "</span>" +
+        "<a class='enquire' target='_blank' rel='noopener' href='https://wa.me/918878155685?text=" + msg + "'>Enquire →</a></div></div></article>";
+    }).join("");
+  document.getElementById("catCount").textContent = "Showing " + shown + " piece" + (shown===1?"":"s") + " · Visit the showroom for the full collection & today's rates.";
+}
+renderCatalog("all");
+document.querySelectorAll(".chip").forEach(function(chip){
+  chip.addEventListener("click", function(){
+    document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+    chip.setAttribute("aria-pressed","true");
+    renderCatalog(chip.getAttribute("data-filter"));
+  });
+});
+
+/* ── Estimator ── */
+var metalSel = document.getElementById("metalSel"), weightIn = document.getElementById("weightIn");
+function updateEst(){
+  var w = parseInt(weightIn.value, 10);
+  document.getElementById("weightVal").textContent = w + " g";
+  document.getElementById("estOut").textContent = inr(RATES[metalSel.value] * w);
+}
+metalSel.addEventListener("change", updateEst);
+weightIn.addEventListener("input", updateEst);
+updateEst();
+
+/* ── Booking form → WhatsApp ── */
+document.getElementById("bookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = document.getElementById("bkName").value.trim();
+  var occ = document.getElementById("bkOccasion").value;
+  var when = document.getElementById("bkWhen").value.trim();
+  var lines = ["Namaste, I want to book a VIP showroom consultation at Shri Ganesh Jewellers.",
+    "Name: " + name, "Occasion: " + occ];
+  if (when) lines.push("Preferred visit: " + when);
+  window.open("https://wa.me/918878155685?text=" + encodeURIComponent(lines.join("\n")), "_blank");
+});
+
+/* ── Reveal on scroll ── */
+if ("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }); }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

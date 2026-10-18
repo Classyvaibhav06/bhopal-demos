@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaipur Handloom Bhopal — Irani Carpets, Velvet Curtains & Luxury Bedding</title>
+<meta name="description" content="Jaipur Handloom Bhopal: luxury Irani carpets, velvet curtains and fine bedding. Browse the lookbook, note the SKU, and ask price, size & delivery on WhatsApp in one tap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171310; --night:#1d1712; --panel:#241b14; --panel2:#2b2016;
+  --ivory:#f4ead9; --ivory-dim:#cdbfa9; --muted:#a08e76;
+  --gold:#c9a24b; --gold-bright:#e6c877; --gold-dim:#8a6f33;
+  --emerald:#0f4d3e; --emerald-deep:#0a382d; --ruby:#7a2233; --ruby-bright:#a52f45;
+  --sapphire:#1f3a5f;
+  --line:rgba(201,162,75,.28); --line-soft:rgba(244,234,217,.1);
+  --radius:16px; --header-h:66px;
+  --shadow:0 18px 44px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 14px)}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--ink);color:var(--ivory);line-height:1.6;font-weight:300;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--gold-bright)}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#171207;padding:10px 18px;z-index:200;font-weight:600}
+.skip-link:focus{left:8px;top:8px}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif;font-weight:700;line-height:1.15}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{letter-spacing:.32em;text-transform:uppercase;font-size:11px;font-weight:600;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:99px;font:500 15px 'Jost',sans-serif;letter-spacing:.04em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-dim));color:#221a08;box-shadow:0 10px 26px rgba(201,162,75,.3)}
+.btn-ghost{background:transparent;color:var(--ivory);border-color:rgba(244,234,217,.35)}
+.btn-ghost:hover{border-color:var(--gold)}
+.btn-wa{background:#1faa55;color:#fff}
+.btn-wa:hover{background:#22bd5f;box-shadow:0 10px 26px rgba(31,170,85,.35)}
+/* woven pattern band */
+.weave{height:10px;background:
+  repeating-linear-gradient(90deg,var(--ruby) 0 26px,var(--gold) 26px 30px,var(--emerald) 30px 56px,var(--gold) 56px 60px,var(--sapphire) 60px 86px,var(--gold) 86px 90px)}
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(23,19,16,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:18px;min-height:var(--header-h)}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ivory)}
+.logo-mark{width:40px;height:40px;flex:none;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:800;color:var(--gold-bright);background:radial-gradient(circle at 35% 30%,#3a2b16,#1d1712 75%);font-size:15px}
+.logo b{font-family:'Playfair Display',serif;font-size:19px;display:block;line-height:1.05}
+.logo small{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:26px;list-style:none}
+nav.main a{color:var(--ivory-dim);text-decoration:none;font-size:14.5px;letter-spacing:.05em}
+nav.main a:hover{color:var(--gold-bright)}
+.header-call{margin-left:8px;padding:10px 20px;font-size:14px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:10px;color:var(--ivory);padding:8px 13px;font:500 14px 'Jost',sans-serif;cursor:pointer}
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 480px at 85% -10%,rgba(122,34,51,.5),transparent 60%),
+  radial-gradient(800px 500px at -10% 110%,rgba(15,77,62,.55),transparent 60%),
+  linear-gradient(180deg,#201913,var(--ink))}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:64px 0 58px}
+.hero h1{font-size:clamp(38px,6vw,62px);margin:14px 0 16px}
+.hero h1 em{font-style:italic;color:var(--gold-bright)}
+.hero p.lede{font-size:18px;color:var(--ivory-dim);max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.chip{border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:13px;color:var(--ivory-dim);background:rgba(255,255,255,.02)}
+.chip b{color:var(--gold-bright);font-weight:600}
+.hero-fig{position:relative}
+.hero-fig .frame{border:1px solid var(--gold-dim);border-radius:20px;padding:10px;background:linear-gradient(160deg,#2b2013,#191410);box-shadow:var(--shadow)}
+.hero-fig img{border-radius:13px;aspect-ratio:4/5;object-fit:cover;width:100%;background:linear-gradient(140deg,var(--emerald-deep),var(--ruby) 60%,#3a2a12)}
+.hero-badge{position:absolute;left:-14px;bottom:26px;background:var(--night);border:1px solid var(--gold-dim);border-radius:14px;padding:13px 18px;box-shadow:var(--shadow);max-width:250px}
+.hero-badge b{font-family:'Playfair Display',serif;color:var(--gold-bright);display:block;font-size:16px}
+.hero-badge span{font-size:13px;color:var(--ivory-dim)}
+/* ---------- sections ---------- */
+section{padding:70px 0}
+.sec-head{max-width:720px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(28px,4.4vw,42px);margin:10px 0 12px}
+.sec-head p{color:var(--ivory-dim);font-size:16.5px}
+.alt{background:linear-gradient(180deg,#1c1611,#171310)}
+/* reel band */
+.reel-band{border-block:1px solid var(--line);background:
+  radial-gradient(700px 300px at 50% -40%,rgba(201,162,75,.14),transparent 70%),var(--night)}
+.reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reel-q{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:24px}
+.reel-q .q{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold-bright)}
+.reel-q p{color:var(--ivory-dim);font-size:15px;margin-top:6px}
+/* filters */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.filter-btn{padding:10px 20px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--ivory-dim);font:500 14.5px 'Jost',sans-serif;letter-spacing:.04em;cursor:pointer;transition:all .2s}
+.filter-btn:hover{color:var(--ivory);border-color:var(--gold)}
+.filter-btn[aria-pressed="true"]{background:linear-gradient(135deg,var(--gold-bright),var(--gold-dim));color:#221a08;border-color:transparent}
+.count-line{color:var(--muted);font-size:14px;margin:8px 0 24px;letter-spacing:.05em}
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:20px}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold-dim);box-shadow:var(--shadow)}
+.card figure{position:relative;overflow:hidden}
+.card figure img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+.card:hover figure img{transform:scale(1.05)}
+.card figure.noimg img{display:none}
+.card figure.noimg{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#2c2115 0 14px,#241a10 14px 28px)}
+.sku-chip{position:absolute;top:12px;left:12px;background:rgba(15,11,7,.85);border:1px solid var(--gold-dim);color:var(--gold-bright);font-size:12px;font-weight:600;letter-spacing:.12em;padding:5px 11px;border-radius:99px}
+.cat-chip{position:absolute;top:12px;right:12px;background:rgba(15,11,7,.85);color:var(--ivory-dim);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid var(--line-soft)}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:20px;line-height:1.25}
+.spec{list-style:none;font-size:14px;color:var(--ivory-dim);display:grid;gap:4px}
+.spec li{display:flex;gap:8px}
+.spec li::before{content:"◆";color:var(--gold);font-size:9px;margin-top:5px}
+.spec b{color:var(--ivory);font-weight:500}
+.price-row{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.price{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold-bright)}
+.price small{display:block;font-family:'Jost',sans-serif;font-size:11.5px;color:var(--muted);letter-spacing:.06em}
+.inquire{margin-top:12px;width:100%;justify-content:center;padding:12px;font-size:14.5px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:26px}
+.step .num{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold-dim);line-height:1}
+.step h3{font-size:19px;margin:10px 0 6px}
+.step p{color:var(--ivory-dim);font-size:15px}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.visit-card{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--radius);padding:30px}
+.visit-card h3{font-size:22px;margin-bottom:12px}
+.visit-card p,.visit-card li{color:var(--ivory-dim);font-size:15.5px}
+.visit-card ul{list-style:none;display:grid;gap:8px;margin-top:6px}
+.visit-card li::before{content:"◆ ";color:var(--gold);font-size:10px}
+.visit-fig{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-soft);min-height:280px}
+.visit-fig img{width:100%;height:100%;object-fit:cover}
+/* instagram */
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.insta-tile{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line-soft);text-decoration:none}
+.insta-tile img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
+.insta-tile:hover img{transform:scale(1.06)}
+.insta-tile span{position:absolute;inset:auto 0 0 0;padding:26px 13px 11px;font-size:13px;color:#fff;background:linear-gradient(180deg,transparent,rgba(0,0,0,.78));letter-spacing:.03em}
+/* faq */
+.faq{display:grid;gap:12px;max-width:820px}
+.faq details{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:18px 22px}
+.faq summary{cursor:pointer;font-family:'Playfair Display',serif;font-size:18px;color:var(--ivory)}
+.faq p{color:var(--ivory-dim);font-size:15px;margin-top:8px}
+/* footer */
+footer{border-top:1px solid var(--line);background:#120e0b;padding:46px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer h3{font-size:18px;margin-bottom:10px;color:var(--gold-bright)}
+footer p,footer li{color:var(--muted);font-size:14.5px}
+footer ul{list-style:none;display:grid;gap:7px}
+footer a{color:var(--ivory-dim);text-decoration:none}
+footer a:hover{color:var(--gold-bright)}
+.foot-note{margin-top:32px;padding-top:18px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#6f5f4b;font-size:13px}
+/* floating WA */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:120;width:58px;height:58px;border-radius:50%;background:#1faa55;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.5);text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important}
+}
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;padding:46px 0}
+  .hero-fig img{aspect-ratio:16/11}
+  .reel-grid,.steps{grid-template-columns:1fr}
+  .visit{grid-template-columns:1fr}
+  .insta-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  nav.main{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:var(--night);border-bottom:1px solid var(--line);padding:14px 20px 20px}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;gap:14px}
+  .menu-btn{display:block}
+  .header-call{display:none}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#lookbook">Skip to lookbook</a>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Jaipur Handloom Bhopal — home">
+      <span class="logo-mark" aria-hidden="true">JH</span>
+      <span><b>Jaipur Handloom</b><small>Bhopal</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="#how">How to Order</a></li>
+        <li><a href="#visit">Visit Showroom</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold header-call" href="tel:+919907140018">Call +91 99071 40018</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div class="reveal in">
+        <p class="eyebrow">Irani Carpets · Velvet Drapes · Fine Bedding</p>
+        <h1>Bhopal homes,<br>dressed in <em>Jaipur luxury</em>.</h1>
+        <p class="lede">Handpicked Irani carpets, plush velvet curtains and fine handloom bedding — browse the lookbook, note the SKU of anything you love, and get its exact price, size and delivery answer on WhatsApp in one tap.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#lookbook">Browse the Lookbook</a>
+          <a class="btn btn-wa" href="https://wa.me/919907140018?text=Namaste!%20I%20saw%20Jaipur%20Handloom%20Bhopal's%20lookbook%20and%20want%20to%20enquire%20about%20a%20product." target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+        <div class="hero-meta" aria-label="Highlights">
+          <span class="chip"><b>12 pieces</b> in the lookbook</span>
+          <span class="chip">Serving <b>MP Nagar · Arera Colony · Kolar</b></span>
+          <span class="chip">Price &amp; size on <b>WhatsApp</b></span>
+        </div>
+      </div>
+      <div class="hero-fig reveal in">
+        <div class="frame">
+          <img src="https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=1000&auto=format&fit=crop" alt="Ornate hand-knotted Irani carpet with intricate medallion pattern" fetchpriority="high" onerror="this.closest('.frame').style.display='none'">
+        </div>
+        <div class="hero-badge"><b>Saw something on our Reels?</b><span>Find its SKU in the lookbook below and ask us directly — no waiting on DM replies.</span></div>
+      </div>
+    </div>
+    <div class="weave" aria-hidden="true"></div>
+  </div>
+
+  <!-- REEL QUESTIONS -->
+  <section class="reel-band" aria-labelledby="reel-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">From our Instagram comments</p>
+        <h2 id="reel-h">The three questions on every Reel</h2>
+        <p>Our Reels get dozens of comments asking the same things — and honestly, replies get buried. So every piece here carries the answers up front, and one tap gets you the rest.</p>
+      </div>
+      <div class="reel-grid">
+        <div class="reel-q reveal"><p class="q">"Price?"</p><p>An indicative price sits on every product card. Tap <strong>Inquire with SKU</strong> for today's best price on that exact piece.</p></div>
+        <div class="reel-q reveal"><p class="q">"Dimensions?"</p><p>Sizes and fabric specs are printed on each card — carpet sizes in feet, curtain lengths, bedding in inches. Need a custom size? Ask on WhatsApp.</p></div>
+        <div class="reel-q reveal"><p class="q">"Delivery?"</p><p>Send us the SKU and your area — MP Nagar, Arera Colony, Kolar or anywhere in Bhopal — and we'll confirm delivery options right there in chat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOKBOOK -->
+  <section id="lookbook" aria-labelledby="lookbook-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The Lookbook</p>
+        <h2 id="lookbook-h">Pieces ready to take home</h2>
+        <p>Filter by collection, note the SKU, and inquire in one tap. Prices are indicative — the confirmed price, size availability and delivery answer come straight from us on WhatsApp.</p>
+      </div>
+      <div class="filters reveal" role="group" aria-label="Filter products by category">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All Pieces</button>
+        <button type="button" class="filter-btn" data-filter="carpets" aria-pressed="false">Irani Carpets</button>
+        <button type="button" class="filter-btn" data-filter="drapes" aria-pressed="false">Velvet Drapes</button>
+        <button type="button" class="filter-btn" data-filter="bedding" aria-pressed="false">Bedding</button>
+      </div>
+      <p class="count-line" id="countLine" aria-live="polite"></p>
+      <div class="grid" id="productGrid"></div>
+      <noscript><p style="color:var(--ivory-dim)">The lookbook needs JavaScript to load. Please call us on +91 99071 40018 or WhatsApp us and we'll send you the catalogue.</p></noscript>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="alt" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">How to Order</p>
+        <h2 id="how-h">One tap between you and the answer</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><p class="num">1</p><h3>Note the SKU</h3><p>Every piece has a code like <strong>JH-IC-101</strong> printed on its card — that's all we need to identify it instantly.</p></div>
+        <div class="step reveal"><p class="num">2</p><h3>Tap "Inquire with SKU"</h3><p>WhatsApp opens with the SKU already written in the message. Just hit send — no typing prices or sizes from memory.</p></div>
+        <div class="step reveal"><p class="num">3</p><h3>Get the full answer</h3><p>We reply with the confirmed price, available dimensions and delivery options for your area — then you decide, no pressure.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Visit Us</p>
+        <h2 id="visit-h">See the textures in person</h2>
+        <p>Carpets and velvet are things you should touch before you decide. Drop by the showroom — or start on WhatsApp and we'll guide you in.</p>
+      </div>
+      <div class="visit">
+        <div class="visit-card reveal">
+          <h3>Jaipur Handloom, Bhopal</h3>
+          <p>Central Commercial Area, Bhopal, Madhya Pradesh</p>
+          <ul>
+            <li>Serving homes across <strong>MP Nagar, Arera Colony &amp; Kolar</strong></li>
+            <li>Phone / WhatsApp: <a href="tel:+919907140018">+91 99071 40018</a></li>
+            <li>Call ahead to confirm today's timings and that the piece you liked is on the floor</li>
+            <li>Bring your room measurements — we'll match carpet and curtain sizes to your space</li>
+          </ul>
+          <div class="hero-cta" style="margin-top:22px">
+            <a class="btn btn-wa" href="https://wa.me/919907140018?text=Namaste!%20I%20want%20to%20visit%20the%20Jaipur%20Handloom%20showroom%20in%20Bhopal.%20Please%20share%20timings%20and%20directions." target="_blank" rel="noopener">Plan a Visit on WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Jaipur+Handloom+Central+Commercial+Area+Bhopal" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+        <figure class="visit-fig reveal">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1100&auto=format&fit=crop" alt="Living room styled with a patterned carpet, drapes and plush seating" loading="lazy" onerror="this.closest('.visit-fig').style.display='none'">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="alt" id="instagram" aria-labelledby="insta-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Instagram</p>
+        <h2 id="insta-h">As seen on @jaipurhandloom_bhopal</h2>
+        <p>New pieces land on our Reels first. Spot one you like? Comments get crowded — WhatsApp us its SKU from the lookbook above for a faster, complete answer.</p>
+      </div>
+      <div class="insta-grid">
+        <a class="insta-tile reveal" href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=700&auto=format&fit=crop" alt="Irani carpet detail from Instagram collection" loading="lazy" onerror="this.style.display='none'"><span>Irani Carpets →</span></a>
+        <a class="insta-tile reveal" href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=700&auto=format&fit=crop" alt="Room with elegant draped curtains" loading="lazy" onerror="this.style.display='none'"><span>Velvet Drapes →</span></a>
+        <a class="insta-tile reveal" href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=700&auto=format&fit=crop" alt="Crisp handloom bedding set" loading="lazy" onerror="this.style.display='none'"><span>Bedding Sets →</span></a>
+        <a class="insta-tile reveal" href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1567016432779-0903baea30e8?q=80&w=700&auto=format&fit=crop" alt="Luxury bedroom styled with textiles" loading="lazy" onerror="this.style.display='none'"><span>Room Styling →</span></a>
+      </div>
+      <p style="margin-top:22px" class="reveal"><a class="btn btn-ghost" href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener">Follow @jaipurhandloom_bhopal</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Good to Know</p>
+        <h2 id="faq-h">Quick answers</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Are the prices on the cards final?</summary>
+          <p>Prices are indicative, to help you shortlist. Tap "Inquire with SKU" and we'll confirm today's price for that exact piece on WhatsApp — along with any running offer.</p>
+        </details>
+        <details>
+          <summary>Can I get a carpet or curtain in a different size?</summary>
+          <p>Many pieces come in multiple sizes, and curtains can often be matched to your window or door length. Send the SKU with the size you need and we'll tell you what's possible.</p>
+        </details>
+        <details>
+          <summary>Do you deliver in Bhopal?</summary>
+          <p>We serve MP Nagar, Arera Colony, Kolar and the wider Bhopal area. WhatsApp us the SKU and your locality, and we'll confirm delivery options for your address before you order.</p>
+        </details>
+        <details>
+          <summary>I saw a piece on Instagram but can't find it here.</summary>
+          <p>Reels sometimes feature pieces that sell out or are yet to be added. WhatsApp us a screenshot or describe it — we'll check the floor stock for you.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="weave" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Jaipur Handloom — Bhopal</h3>
+        <p>Luxury Irani carpets, velvet curtains &amp; drapery, and fine handloom bedding for Bhopal homes.</p>
+      </div>
+      <div>
+        <h3>Reach Us</h3>
+        <ul>
+          <li>Central Commercial Area, Bhopal (MP)</li>
+          <li><a href="tel:+919907140018">+91 99071 40018</a></li>
+          <li><a href="https://wa.me/919907140018" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#lookbook">The Lookbook</a></li>
+          <li><a href="#visit">Visit the Showroom</a></li>
+          <li><a href="https://www.instagram.com/jaipurhandloom_bhopal" target="_blank" rel="noopener">Instagram — @jaipurhandloom_bhopal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© <span id="year"></span> Jaipur Handloom, Bhopal. Prices shown are indicative.</span>
+      <span>Demo website — built as a design preview.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919907140018?text=Namaste!%20I%20have%20an%20enquiry%20for%20Jaipur%20Handloom%20Bhopal." target="_blank" rel="noopener" aria-label="Chat with Jaipur Handloom on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4.7 28l6.3-1.6c1.5.8 3.2 1.2 5 1.2 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm5.9 16.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+</a>
+
+<script>
+"use strict";
+const WA_NUMBER = "919907140018";
+const inr = n => "₹" + n.toLocaleString("en-IN");
+
+const PRODUCTS = [
+  /* ---- Irani Carpets ---- */
+  { sku:"JH-IC-101", cat:"carpets", catLabel:"Irani Carpet", name:"Isfahan Medallion Irani Carpet",
+    img:"https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=800&auto=format&fit=crop",
+    alt:"Isfahan-style Irani carpet with central medallion",
+    price:84999, specs:[["Size","8 × 10 ft"],["Material","Hand-knotted wool"],["Weave","Fine medallion, classic border"]] },
+  { sku:"JH-IC-102", cat:"carpets", catLabel:"Irani Carpet", name:"Kashan Garden Irani Carpet",
+    img:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800&auto=format&fit=crop",
+    alt:"Kashan garden-pattern carpet in a styled living room",
+    price:62499, specs:[["Size","6 × 9 ft"],["Material","Wool with silk highlights"],["Weave","All-over garden floral"]] },
+  { sku:"JH-IC-103", cat:"carpets", catLabel:"Irani Carpet", name:"Tabriz Heriz Irani Carpet",
+    img:"https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop",
+    alt:"Tabriz Heriz geometric carpet under furniture",
+    price:48999, specs:[["Size","5 × 8 ft"],["Material","Hand-knotted wool"],["Weave","Bold geometric Heriz pattern"]] },
+  { sku:"JH-IC-104", cat:"carpets", catLabel:"Irani Runner", name:"Nain Blue Irani Runner",
+    img:"https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop",
+    alt:"Blue-toned Irani runner along a bedroom passage",
+    price:27999, specs:[["Size","2.5 × 10 ft"],["Material","Wool on cotton warp"],["Weave","Runner — halls & passages"]] },
+  /* ---- Velvet Drapes ---- */
+  { sku:"JH-VD-201", cat:"drapes", catLabel:"Velvet Drapes", name:"Emerald Velvet Curtain Pair",
+    img:"https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
+    alt:"Deep emerald velvet curtains framing a window",
+    price:4999, specs:[["Size","7 ft door · pair of 2 panels"],["Material","Cotton velvet"],["Fit","Eyelet rings, ready to hang"]] },
+  { sku:"JH-VD-202", cat:"drapes", catLabel:"Velvet Drapes", name:"Ruby Velvet Blackout Curtains",
+    img:"https://images.unsplash.com/photo-1567016432779-0903baea30e8?q=80&w=800&auto=format&fit=crop",
+    alt:"Ruby velvet blackout curtains in a luxury bedroom",
+    price:6499, specs:[["Size","9 ft window · pair of 2 panels"],["Material","Velvet with blackout lining"],["Fit","Blocks light — ideal for bedrooms"]] },
+  { sku:"JH-VD-203", cat:"drapes", catLabel:"Velvet Drapes", name:"Sapphire Velvet Drapes with Sheer",
+    img:"https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop",
+    alt:"Sapphire velvet drapes layered with a soft sheer",
+    price:7999, specs:[["Size","7 ft · set of 3 pieces"],["Material","Velvet + voile sheer"],["Fit","Layered day-and-evening look"]] },
+  { sku:"JH-VD-204", cat:"drapes", catLabel:"Velvet Drapes", name:"Gold-Trim Velvet Curtain Panel",
+    img:"https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=800&auto=format&fit=crop",
+    alt:"Velvet curtain panel with gold brocade trim",
+    price:3499, specs:[["Size","7 ft · single panel"],["Material","Velvet with brocade border"],["Fit","Eyelet rings, ready to hang"]] },
+  /* ---- Bedding ---- */
+  { sku:"JH-BD-301", cat:"bedding", catLabel:"Bedding", name:"Jaipuri Hand-Block King Bedsheet Set",
+    img:"https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=800&auto=format&fit=crop",
+    alt:"Jaipuri hand-block printed king bedsheet set",
+    price:2499, specs:[["Size","King · 108 × 108 in"],["Set","1 bedsheet + 2 pillow covers"],["Material","Pure cotton, hand-block print"]] },
+  { sku:"JH-BD-302", cat:"bedding", catLabel:"Bedding", name:"Velvet Quilted Bedcover Set",
+    img:"https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
+    alt:"Plush quilted velvet bedcover on a king bed",
+    price:5999, specs:[["Size","King · 3-piece set"],["Set","1 bedcover + 2 pillow shams"],["Material","Quilted velvet, soft-touch fill"]] },
+  { sku:"JH-BD-303", cat:"bedding", catLabel:"Bedding", name:"Sanganeri Print Double Bedsheet",
+    img:"https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop",
+    alt:"Sanganeri floral print double bedsheet dressed bed",
+    price:1799, specs:[["Size","Double · 90 × 108 in"],["Set","1 bedsheet + 2 pillow covers"],["Material","Cotton, traditional Sanganeri print"]] },
+  { sku:"JH-BD-304", cat:"bedding", catLabel:"Bedding", name:"Silk-Cotton Cushion Cover Set",
+    img:"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=800&auto=format&fit=crop",
+    alt:"Silk-cotton cushion covers arranged on a sofa",
+    price:1299, specs:[["Size","16 × 16 in · set of 5"],["Material","Silk-cotton blend"],["Fit","Hidden zip closure"]] },
+];
+
+const grid = document.getElementById("productGrid");
+const countLine = document.getElementById("countLine");
+
+function waLink(p){
+  const msg = `Namaste! I saw "${p.name}" (${p.sku}) in Jaipur Handloom Bhopal's lookbook.\n` +
+              `Specs shown: ${p.specs.map(s => s[0] + " " + s[1]).join(", ")}. Indicative price: ${inr(p.price)}.\n` +
+              `Please confirm the final price, available sizes and delivery to my area.`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+
+function render(filter){
+  const items = PRODUCTS.filter(p => filter === "all" || p.cat === filter);
+  grid.innerHTML = items.map(p => `
+    <article class="card">
+      <figure>
+        <img src="${p.img}" alt="${p.alt}" loading="lazy" onerror="this.closest('figure').classList.add('noimg')">
+        <span class="sku-chip">${p.sku}</span>
+        <span class="cat-chip">${p.catLabel}</span>
+      </figure>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <ul class="spec">${p.specs.map(s => `<li><span><b>${s[0]}:</b> ${s[1]}</span></li>`).join("")}</ul>
+        <div class="price-row">
+          <p class="price">${inr(p.price)}<small>Indicative price — confirm on WhatsApp</small></p>
+          <a class="btn btn-wa inquire" href="${waLink(p)}" target="_blank" rel="noopener" aria-label="Inquire about ${p.name}, SKU ${p.sku}, on WhatsApp">Inquire with SKU ${p.sku} on WhatsApp</a>
+        </div>
+      </div>
+    </article>`).join("");
+  countLine.textContent = filter === "all"
+    ? `Showing all ${items.length} pieces`
+    : `Showing ${items.length} piece${items.length === 1 ? "" : "s"} in this collection`;
+}
+render("all");
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.setAttribute("aria-pressed", "false"));
+    btn.setAttribute("aria-pressed", "true");
+    render(btn.dataset.filter);
+  });
+});
+
+/* mobile menu */
+const menuBtn = document.getElementById("menuBtn");
+const mainNav = document.getElementById("mainNav");
+menuBtn.addEventListener("click", () => {
+  const open = mainNav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
+mainNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  mainNav.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+/* scroll reveal */
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

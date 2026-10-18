@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Rohit Jain — Paras Healthcare Clinic, Bhopal | Diabetes &amp; Internal Medicine</title>
+<meta name="description" content="Paras Healthcare Clinic, Nehru Nagar, Bhopal. Dr. Rohit Jain (MD Medicine, CCEBDM) — super-specialist diabetology & internal medicine. Book an appointment in seconds, confirm on WhatsApp. Rated 5.0 by 294+ patients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0e7c7b; --teal-dark:#095e5d; --teal-deep:#063f3e; --teal-soft:#e6f4f3;
+  --ink:#123332; --muted:#5b7371; --line:#dcebe9; --bg:#fbfdfd; --card:#ffffff;
+  --amber:#f2b33d; --radius:18px; --shadow:0 18px 40px rgba(9,94,93,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15;color:var(--teal-deep)}
+img{max-width:100%;display:block}
+a{color:var(--teal-dark)}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--teal-deep);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;padding:13px 24px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;font-size:16px;transition:transform .15s,background .15s}
+.btn:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--teal-dark);border:2px solid var(--teal)}
+.btn.wa{background:#1faa57}
+.btn.wa:hover{background:#178a46}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;display:grid;place-items:center;font-size:22px;flex:none}
+.logo b{font-size:17px;line-height:1.2;display:block}
+.logo span{font-size:12px;color:var(--muted)}
+nav.main{display:none;gap:26px}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--teal)}
+@media(min-width:860px){nav.main{display:flex}}
+.hd .btn{padding:10px 18px;font-size:14px}
+/* hero */
+.hero{background:linear-gradient(160deg,#eef8f7 0%,#ffffff 62%);border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;gap:34px;padding:44px 0 54px;align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--teal-dark);box-shadow:0 4px 14px rgba(9,94,93,.07)}
+.hero h1{font-size:clamp(32px,5.4vw,52px);margin:18px 0 8px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero .cred{font-weight:700;color:var(--ink);font-size:17px}
+.hero p.lede{color:var(--muted);font-size:17px;max-width:54ch;margin:10px 0 24px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:var(--teal-soft)}
+.hero-img img{width:100%;height:100%;min-height:300px;object-fit:cover}
+.rating-row{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.stars{color:var(--amber);letter-spacing:2px;font-size:16px}
+/* stats */
+.stats{background:var(--teal-deep);color:#d9efed}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:26px 20px}
+@media(min-width:760px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
+.stat{text-align:center;padding:8px}
+.stat b{display:block;font-size:27px;color:#fff;font-family:'Fraunces',serif}
+.stat span{font-size:13.5px}
+/* sections */
+section{padding:60px 0}
+.kicker{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+h2.title{font-size:clamp(26px,4vw,38px);margin:8px 0 10px}
+p.sub{color:var(--muted);max-width:66ch}
+.cards{display:grid;gap:18px;margin-top:30px}
+@media(min-width:760px){.cards.c3{grid-template-columns:repeat(3,1fr)}.cards.c2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 6px 20px rgba(9,94,93,.05)}
+.card .ic{font-size:28px;margin-bottom:10px}
+.card h3{font-size:19px;margin-bottom:7px}
+.card p,.card li{color:var(--muted);font-size:15px}
+.card ul{padding-left:18px}
+/* scheduler */
+#book{background:linear-gradient(180deg,var(--teal-soft),#fff)}
+.book-grid{display:grid;gap:22px;margin-top:30px}
+@media(min-width:920px){.book-grid{grid-template-columns:1.25fr .75fr}}
+.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow)}
+.panel h3{font-size:20px;margin-bottom:14px}
+label.fl{display:block;font-weight:700;font-size:14px;margin:16px 0 7px}
+label.fl:first-of-type{margin-top:0}
+input[type="date"],input[type="text"],input[type="tel"],select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:15.5px;background:#fff;color:var(--ink)}
+input:focus,select:focus{border-color:var(--teal);outline:3px solid rgba(242,179,61,.55);outline-offset:1px}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:130px;padding:11px 10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:14.5px;cursor:pointer;color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:6px}
+@media(min-width:560px){.slots{grid-template-columns:repeat(4,1fr)}}
+.slot{padding:10px 4px;border-radius:11px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink);text-align:center}
+.slot small{display:block;font-weight:500;font-size:11px;color:var(--muted)}
+.slot[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.slot[aria-pressed="true"] small{color:#cdeae8}
+.slot:disabled{background:#f1f5f4;color:#9db3b0;cursor:not-allowed;text-decoration:line-through}
+.slot:disabled small{color:#b3c2bf;text-decoration:none}
+.legend{display:flex;gap:18px;font-size:12.5px;color:var(--muted);margin-top:10px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:4px;vertical-align:-1px;margin-right:5px}
+.summary{background:var(--teal-deep);color:#dff0ee;border-radius:22px;padding:26px;align-self:start;position:sticky;top:88px}
+.summary h3{color:#fff;font-size:20px;margin-bottom:12px}
+.summary dl{display:grid;gap:9px;font-size:15px}
+.summary dt{color:#9fd3d0;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.summary dd{font-weight:600;margin-bottom:6px}
+.summary .wa{width:100%;justify-content:center;margin-top:16px}
+.summary .hint{font-size:13px;color:#b7dcd9;margin-top:12px}
+.err{display:none;background:#fdecec;color:#8c2b2b;border:1px solid #f5c2c2;border-radius:11px;padding:11px 14px;font-size:14px;margin-top:14px}
+.err.show{display:block}
+/* plan timeline */
+.plan{display:grid;gap:0;margin-top:30px}
+.step{display:grid;grid-template-columns:52px 1fr;gap:16px;position:relative;padding-bottom:26px}
+.step::before{content:"";position:absolute;left:25px;top:52px;bottom:0;width:2px;background:var(--line)}
+.step:last-child::before{display:none}
+.step .n{width:52px;height:52px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;z-index:1}
+.step h3{font-size:18px;padding-top:4px}
+.step p{color:var(--muted);font-size:15px;max-width:62ch}
+/* timings */
+.timing-table{width:100%;border-collapse:collapse;font-size:15.5px}
+.timing-table th,.timing-table td{padding:13px 10px;border-bottom:1px solid var(--line);text-align:left}
+.timing-table th{color:var(--teal-dark)}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+/* testimonials */
+.testi{background:var(--teal-soft)}
+.quote{font-size:16px;color:var(--ink)}
+.quote-by{margin-top:12px;font-size:13.5px;color:var(--muted);font-weight:600}
+/* faq-ish footer */
+footer{background:var(--teal-deep);color:#cfe8e5;padding:52px 0 30px}
+footer h2{color:#fff;font-size:24px;margin-bottom:12px}
+footer a{color:#ffe1a1}
+.f-grid{display:grid;gap:26px}
+@media(min-width:760px){.f-grid{grid-template-columns:1.2fr .8fr}}
+footer address{font-style:normal;line-height:1.7}
+.fineprint{border-top:1px solid rgba(255,255,255,.18);margin-top:34px;padding-top:18px;font-size:13px;color:#9fc6c2;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fab{position:fixed;right:16px;bottom:16px;z-index:90;background:#1faa57;color:#fff;border-radius:99px;padding:13px 20px;font-weight:700;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s,transform .55s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#book">Skip to appointment booking</a>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="Paras Healthcare Clinic — home">
+      <span class="logo-mark" aria-hidden="true">✚</span>
+      <span><b>Paras Healthcare</b><span>Dr. Rohit Jain · Diabetes &amp; Internal Medicine</span></span>
+    </a>
+    <nav class="main" aria-label="Main navigation">
+      <a href="#book">Book Appointment</a>
+      <a href="#care">Diabetes Care</a>
+      <a href="#diet">Diet Guide</a>
+      <a href="#timings">Timings</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a class="btn" href="tel:+919407088842">📞 Call Clinic</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="pill"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 · 294+ patient reviews</span>
+        <h1>Diabetes care that <em>listens first</em>, treats carefully.</h1>
+        <p class="cred">Dr. Rohit Jain — MD Medicine, CCEBDM (Diabetology)</p>
+        <p class="lede">Super-specialist diabetology &amp; internal medicine at Paras Healthcare, Nehru Nagar. Known for patient listening, conservative drug therapy, and steady long-term control of sugar and BP — with a simple 3-month review rhythm that keeps you on track.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#book">📅 Book an Appointment</a>
+          <a class="btn ghost" href="https://wa.me/919407088842?text=Namaste%2C%20mujhe%20Paras%20Healthcare%20mein%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp the Clinic</a>
+        </div>
+        <p class="rating-row">⏱️ No more waiting on the phone for a slot — pick your time below and confirm on WhatsApp in under a minute.</p>
+      </div>
+      <div class="hero-img reveal">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop" alt="Doctor reviewing patient reports on a tablet during a consultation" loading="eager" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats" role="region" aria-label="Clinic highlights">
+    <div class="wrap">
+      <div class="stat"><b>5.0 ★</b><span>Patient rating</span></div>
+      <div class="stat"><b>294+</b><span>Patient reviews</span></div>
+      <div class="stat"><b>3-month</b><span>Structured review cycle</span></div>
+      <div class="stat"><b>1 min</b><span>To book on WhatsApp</span></div>
+    </div>
+  </div>
+
+  <!-- APPOINTMENT SCHEDULER -->
+  <section id="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <p class="kicker">Appointments</p>
+      <h2 class="title" id="book-h">Pick a slot. Confirm on WhatsApp. Done.</h2>
+      <p class="sub">Long clinic waits usually start with phone booking. Here you choose the exact slot yourself — the clinic receives your name, date and time on WhatsApp and holds it for you.</p>
+
+      <div class="book-grid">
+        <form class="panel" id="bookForm" novalidate>
+          <h3>1 · Choose visit type &amp; date</h3>
+          <span class="fl" id="visitLbl">Visit type</span>
+          <div class="seg" role="group" aria-labelledby="visitLbl" id="visitSeg">
+            <button type="button" data-visit="New Consultation" aria-pressed="true">New Consultation</button>
+            <button type="button" data-visit="3-Month Review" aria-pressed="false">3-Month Review</button>
+            <button type="button" data-visit="Follow-up / Report Review" aria-pressed="false">Follow-up / Reports</button>
+          </div>
+
+          <label class="fl" for="dateInput">Appointment date</label>
+          <input type="date" id="dateInput" required aria-describedby="dateHint">
+          <p class="note" id="dateHint">Slots update for the date you pick. A few slots fill early — book ahead for morning hours.</p>
+
+          <h3 style="margin-top:24px">2 · Pick a time slot</h3>
+          <span class="fl">Morning</span>
+          <div class="slots" id="morningSlots" role="group" aria-label="Morning time slots"></div>
+          <span class="fl">Evening</span>
+          <div class="slots" id="eveningSlots" role="group" aria-label="Evening time slots"></div>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:#fff;border:1.5px solid var(--line)"></i>Available</span>
+            <span><i style="background:var(--teal)"></i>Your pick</span>
+            <span><i style="background:#e4edec"></i>Already booked</span>
+          </div>
+
+          <h3 style="margin-top:24px">3 · Your details</h3>
+          <label class="fl" for="nameInput">Patient name</label>
+          <input type="text" id="nameInput" autocomplete="name" placeholder="e.g. Ramesh Gupta" required>
+          <label class="fl" for="phoneInput">Mobile number (WhatsApp)</label>
+          <input type="tel" id="phoneInput" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number" required>
+          <label class="fl" for="noteInput">Anything the doctor should know? <span style="color:var(--muted);font-weight:500">(optional)</span></label>
+          <input type="text" id="noteInput" placeholder="e.g. Latest HbA1c report laya hoon">
+          <p class="err" id="formErr" role="alert"></p>
+        </form>
+
+        <aside class="summary" aria-labelledby="sum-h" aria-live="polite">
+          <h3 id="sum-h">Your appointment</h3>
+          <dl>
+            <div><dt>Doctor</dt><dd>Dr. Rohit Jain — Paras Healthcare</dd></div>
+            <div><dt>Visit type</dt><dd id="sumVisit">New Consultation</dd></div>
+            <div><dt>Date</dt><dd id="sumDate">Select a date</dd></div>
+            <div><dt>Time</dt><dd id="sumTime">Select a slot</dd></div>
+            <div><dt>Patient</dt><dd id="sumName">—</dd></div>
+          </dl>
+          <a class="btn wa" id="waConfirm" href="#" target="_blank" rel="noopener" aria-disabled="true">💬 Confirm on WhatsApp</a>
+          <p class="hint">Opens WhatsApp with your booking pre-filled to the clinic's number (+91 94070 88842). Just press send — the clinic confirms your slot back on WhatsApp. Please reach 10 minutes early with your previous reports.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIABETES CARE -->
+  <section id="care" aria-labelledby="care-h" style="padding-top:10px">
+    <div class="wrap">
+      <p class="kicker">Diabetes Care</p>
+      <h2 class="title" id="care-h">The 3-month review plan</h2>
+      <p class="sub">Diabetes is controlled in cycles of three months — because HbA1c, the key report, itself reflects your average sugar of the last 3 months. Dr. Jain's care is built around that rhythm: measure honestly, adjust medicines conservatively, and review on time, every time.</p>
+
+      <div class="cards c3">
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🩸</div>
+          <h3>HbA1c — the report that matters</h3>
+          <p>HbA1c shows your 3-month average blood sugar. One fasting reading can mislead; HbA1c cannot. It is checked at every review so treatment decisions rest on a full quarter of data, not a single day.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">💊</div>
+          <h3>Conservative drug therapy</h3>
+          <p>Patients value that medicines here are increased only when the reports truly demand it — the lowest effective therapy first, reviewed against sugar <em>and</em> BP together, with side-effects watched closely.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">❤️</div>
+          <h3>Sugar + BP, controlled together</h3>
+          <p>Diabetes and blood pressure travel together and multiply each other's risk. Every review tracks both, so long-term control protects the heart, kidneys and eyes — not just the sugar number.</p>
+        </article>
+      </div>
+
+      <div class="plan" aria-label="How the 3-month review cycle works">
+        <div class="step reveal"><div class="n" aria-hidden="true">1</div><div><h3>Baseline consultation</h3><p>Bring all previous reports and current medicines. Sugar profile, BP and HbA1c are recorded, and your personal targets are set.</p></div></div>
+        <div class="step reveal"><div class="n" aria-hidden="true">2</div><div><h3>Settle into the plan</h3><p>Medicines, diet and daily routine are adjusted in small, sustainable steps — nothing drastic that you cannot maintain.</p></div></div>
+        <div class="step reveal"><div class="n" aria-hidden="true">3</div><div><h3>3-month review</h3><p>Fresh HbA1c and BP check against your targets. If control is good, the same therapy continues; if not, it is fine-tuned — and the next review is fixed before you leave.</p></div></div>
+        <div class="step reveal"><div class="n" aria-hidden="true">4</div><div><h3>Repeat, steadily</h3><p>Regular 3-month reviews are what turn short-term control into long-term protection. Book each next review right from this page.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIET GUIDE -->
+  <section id="diet" aria-labelledby="diet-h" style="padding-top:10px">
+    <div class="wrap">
+      <p class="kicker">Everyday Guidance</p>
+      <h2 class="title" id="diet-h">Diabetic diet guide — the simple rules</h2>
+      <p class="sub">General information to discuss at your consultation — not a substitute for the personalised diet plan the doctor gives you.</p>
+      <div class="cards c3">
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🍽️</div>
+          <h3>The plate method</h3>
+          <ul>
+            <li>Half the plate: sabzi &amp; salad</li>
+            <li>One quarter: dal / paneer / egg / chicken</li>
+            <li>One quarter: roti or rice — measured, not heaped</li>
+            <li>Eat slowly; stop at 80% full</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">✅</div>
+          <h3>Choose more often</h3>
+          <ul>
+            <li>Lauki, torai, bhindi, palak, methi</li>
+            <li>Whole dals, chana, rajma, sprouts</li>
+            <li>Atta rotis, brown rice in small portions</li>
+            <li>Chaas, nimbu pani (no sugar)</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">⚠️</div>
+          <h3>Keep rare &amp; small</h3>
+          <ul>
+            <li>Mithai, cold drinks, packaged juices</li>
+            <li>White rice + aloo in the same meal</li>
+            <li>Fried snacks — samosa, pakode, namkeen</li>
+            <li>Late heavy dinners; eat by 8–8:30 pm</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🚶</div>
+          <h3>The 10-minute rule</h3>
+          <p>A gentle 10–15 minute walk after meals blunts the sugar spike better than any single food rule. Small, daily, non-negotiable.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">📒</div>
+          <h3>Keep a sugar diary</h3>
+          <p>Note fasting and post-meal readings on the days the doctor asks. Patterns in the diary make your 3-month review far more useful.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic" aria-hidden="true">🧂</div>
+          <h3>Mind the salt, too</h3>
+          <p>With BP in the picture, go easy on papad, pickle, chips and extra table salt. Taste adjusts within a few weeks — sugar and BP both thank you.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMINGS -->
+  <section id="timings" aria-labelledby="tim-h" style="padding-top:10px">
+    <div class="wrap">
+      <p class="kicker">Visit Us</p>
+      <h2 class="title" id="tim-h">Clinic timings &amp; location</h2>
+      <div class="cards c2">
+        <div class="card reveal">
+          <table class="timing-table">
+            <caption class="note" style="text-align:left;margin:0 0 8px">Paras Healthcare, Nehru Nagar</caption>
+            <tr><th scope="row">Morning OPD</th><td>Mon – Sat · Slots from 10:00 AM</td></tr>
+            <tr><th scope="row">Evening OPD</th><td>Mon – Sat · Slots from 5:00 PM</td></tr>
+            <tr><th scope="row">Reviews</th><td>Every 3 months — book above</td></tr>
+            <tr><th scope="row">Reports / Follow-up</th><td>Carry previous reports &amp; medicine list</td></tr>
+          </table>
+          <p class="note">Demo timings shown for the prototype — the clinic confirms your exact slot on WhatsApp when you book. For urgent issues, call directly.</p>
+          <p style="margin-top:14px"><a class="btn ghost" href="tel:+919407088842">📞 +91 94070 88842</a></p>
+        </div>
+        <div class="card reveal">
+          <div class="ic" aria-hidden="true">📍</div>
+          <h3>Paras Healthcare</h3>
+          <p>BM-88, Girnar Plaza, Near Sai Mandir,<br>C Sector, Nehru Nagar,<br>Bhopal — 462003</p>
+          <p style="margin-top:14px"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Paras+Healthcare+BM-88+Girnar+Plaza+Nehru+Nagar+Bhopal+462003" target="_blank" rel="noopener">🗺️ Open in Google Maps</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi" id="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <p class="kicker">Patient Reviews · 5.0 ★ (294+)</p>
+      <h2 class="title" id="rev-h">Why patients stay for years</h2>
+      <div class="cards c3">
+        <article class="card reveal">
+          <p class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+          <p class="quote">"Doctor sahab pehle poori baat sunte hain, phir dawa likhte hain. Aadhi tension to sunne se hi khatm ho jati hai."</p>
+          <p class="quote-by">Long-term diabetes patient — on the listening</p>
+        </article>
+        <article class="card reveal">
+          <p class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+          <p class="quote">"No unnecessary medicines. Dose badhaya bhi to report dekh kar, wajah samjha kar. My sugar and BP both stayed controlled across reviews."</p>
+          <p class="quote-by">Review patient — on conservative therapy</p>
+        </article>
+        <article class="card reveal">
+          <p class="stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+          <p class="quote">"Har 3 mahine review, har baar HbA1c check. Itna systematic follow-up pehle kahin nahi mila — isiliye saalon se yahin aate hain."</p>
+          <p class="quote-by">Patient family — on long-term sugar/BP control</p>
+        </article>
+      </div>
+      <p class="note">Review themes paraphrased from the clinic's 294+ patient reviews (5.0/5).</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h2>Paras Healthcare Clinic</h2>
+        <address>
+          Dr. Rohit Jain — MD Medicine, CCEBDM<br>
+          Super-Specialist Diabetology &amp; Internal Medicine<br>
+          BM-88, Girnar Plaza, Near Sai Mandir, C Sector,<br>
+          Nehru Nagar, Bhopal — 462003
+        </address>
+      </div>
+      <div>
+        <h2 style="font-size:19px">Contact</h2>
+        <p>📞 <a href="tel:+919407088842">+91 94070 88842</a><br>
+        💬 <a href="https://wa.me/919407088842" target="_blank" rel="noopener">WhatsApp the clinic</a><br>
+        📅 <a href="#book">Book an appointment</a></p>
+      </div>
+    </div>
+    <div class="fineprint">
+      <span>© Paras Healthcare, Bhopal. General health information only — not a substitute for medical advice.</span>
+      <span>Demo website</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="#book" aria-label="Book an appointment">📅 Book Appointment</a>
+
+<script>
+(function () {
+  "use strict";
+  var CLINIC_WA = "919407088842";
+  var MORNING = ["10:00 AM", "10:20 AM", "10:40 AM", "11:00 AM", "11:20 AM", "11:40 AM", "12:00 PM", "12:20 PM"];
+  var EVENING = ["5:00 PM", "5:20 PM", "5:40 PM", "6:00 PM", "6:20 PM", "6:40 PM", "7:00 PM", "7:20 PM"];
+
+  var state = { visit: "New Consultation", date: "", slot: "" };
+
+  var dateInput = document.getElementById("dateInput");
+  var nameInput = document.getElementById("nameInput");
+  var phoneInput = document.getElementById("phoneInput");
+  var noteInput = document.getElementById("noteInput");
+  var errBox = document.getElementById("formErr");
+  var waBtn = document.getElementById("waConfirm");
+
+  function fmtDate(iso) {
+    if (!iso) return "Select a date";
+    var d = new Date(iso + "T00:00:00");
+    return d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  }
+  function seedFrom(str) {
+    var h = 0;
+    for (var i = 0; i < str.length; i++) { h = (h * 31 + str.charCodeAt(i)) >>> 0; }
+    return h;
+  }
+  function isBooked(iso, slot) {
+    return seedFrom(iso + "|" + slot) % 4 === 0; /* deterministic demo occupancy */
+  }
+  function renderSlots(containerId, slots) {
+    var box = document.getElementById(containerId);
+    box.innerHTML = "";
+    slots.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "slot";
+      var booked = state.date ? isBooked(state.date, t) : false;
+      b.disabled = booked;
+      b.setAttribute("aria-pressed", state.slot === t ? "true" : "false");
+      b.setAttribute("aria-label", t + (booked ? " (already booked)" : ""));
+      b.innerHTML = t + "<small>" + (booked ? "Booked" : "Available") + "</small>";
+      b.addEventListener("click", function () {
+        state.slot = t;
+        renderAllSlots();
+        updateSummary();
+      });
+      box.appendChild(b);
+    });
+  }
+  function renderAllSlots() {
+    renderSlots("morningSlots", MORNING);
+    renderSlots("eveningSlots", EVENING);
+  }
+  function showErr(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add("show");
+  }
+  function hideErr() { errBox.classList.remove("show"); errBox.textContent = ""; }
+
+  function validPhone(v) {
+    var d = v.replace(/\D/g, "");
+    if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2);
+    return /^[6-9]\d{9}$/.test(d);
+  }
+
+  function updateSummary() {
+    document.getElementById("sumVisit").textContent = state.visit;
+    document.getElementById("sumDate").textContent = fmtDate(state.date);
+    document.getElementById("sumTime").textContent = state.slot || "Select a slot";
+    document.getElementById("sumName").textContent = nameInput.value.trim() || "—";
+
+    var ready = state.date && state.slot;
+    if (ready) {
+      var lines = [
+        "Namaste, mujhe Paras Healthcare mein appointment book karna hai.",
+        "",
+        "Doctor: Dr. Rohit Jain",
+        "Visit type: " + state.visit,
+        "Date: " + fmtDate(state.date),
+        "Time: " + state.slot,
+        "Patient name: " + (nameInput.value.trim() || "(name not given)"),
+        "Mobile: " + (phoneInput.value.trim() || "(not given)")
+      ];
+      if (noteInput.value.trim()) lines.push("Note: " + noteInput.value.trim());
+      lines.push("", "Kripya mera slot confirm karein. Dhanyavaad.");
+      waBtn.href = "https://wa.me/" + CLINIC_WA + "?text=" + encodeURIComponent(lines.join("\n"));
+      waBtn.removeAttribute("aria-disabled");
+    } else {
+      waBtn.href = "#book";
+      waBtn.setAttribute("aria-disabled", "true");
+    }
+  }
+
+  /* visit type segmented control */
+  var seg = document.getElementById("visitSeg");
+  seg.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-visit]");
+    if (!btn) return;
+    seg.querySelectorAll("button").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+    btn.setAttribute("aria-pressed", "true");
+    state.visit = btn.getAttribute("data-visit");
+    updateSummary();
+  });
+
+  /* date setup: today -> +30 days */
+  var today = new Date();
+  var iso = function (d) { return d.toISOString().slice(0, 10); };
+  dateInput.min = iso(today);
+  var max = new Date(today); max.setDate(max.getDate() + 30);
+  dateInput.max = iso(max);
+  dateInput.value = iso(today);
+  state.date = dateInput.value;
+  dateInput.addEventListener("change", function () {
+    state.date = dateInput.value;
+    if (state.slot && isBooked(state.date, state.slot)) state.slot = "";
+    renderAllSlots();
+    updateSummary();
+  });
+
+  [nameInput, phoneInput, noteInput].forEach(function (el) {
+    el.addEventListener("input", function () { hideErr(); updateSummary(); });
+  });
+
+  waBtn.addEventListener("click", function (e) {
+    if (!state.date) { e.preventDefault(); showErr("Please pick an appointment date first."); dateInput.focus(); return; }
+    if (!state.slot) { e.preventDefault(); showErr("Please pick a time slot — tap any slot marked Available."); return; }
+    if (!nameInput.value.trim()) { e.preventDefault(); showErr("Please enter the patient's name so the clinic can hold your slot."); nameInput.focus(); return; }
+    if (!validPhone(phoneInput.value)) { e.preventDefault(); showErr("Please enter a valid 10-digit mobile number — the clinic confirms on this number."); phoneInput.focus(); return; }
+    hideErr();
+    updateSummary(); /* rebuild href with final name/phone before it opens */
+  });
+
+  renderAllSlots();
+  updateSummary();
+
+  /* scroll reveal */
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

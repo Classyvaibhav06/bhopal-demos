@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chawla Diagnostic Centre — Budhwara, Bhopal | Blood Tests, Ultrasound & Online Reports</title>
+<meta name="description" content="Chawla Diagnostic Centre, Budhwara, Bhopal — pathology, blood diagnostics and ultrasound at honest prices. Book home sample collection and download reports online. Demo website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e2a32; --ink2:#33525c; --muted:#5d7a83;
+  --teal:#0e7c86; --teal-d:#0a5c64; --teal-soft:#e6f4f5;
+  --green:#1d9e75; --green-soft:#e5f6ef;
+  --bg:#f7faf9; --card:#ffffff; --line:#dcebe9;
+  --amber:#f2b134; --danger:#c0392b;
+  --radius:16px; --shadow:0 10px 30px rgba(10,60,70,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.2;color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:var(--teal-d)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:18px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--green));display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:800;font-size:20px;flex:none}
+.logo b{font-family:'Sora';font-size:17px;display:block;line-height:1.15}
+.logo span{font-size:12px;color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:none;gap:22px}
+nav.main a{color:var(--ink2);text-decoration:none;font-weight:700;font-size:14.5px}
+nav.main a:hover{color:var(--teal)}
+.hcall{margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:10px 16px;border-radius:99px}
+.hcall:hover{background:var(--teal-d)}
+@media(min-width:900px){nav.main{display:flex}.hcall{margin-left:0}}
+
+/* hero */
+.hero{background:linear-gradient(150deg,#eaf6f5 0%,#f7faf9 55%,#eef7f1 100%);border-bottom:1px solid var(--line);overflow:hidden}
+.hero-grid{display:grid;gap:34px;padding:52px 0 58px;align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--teal-d);box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(31px,5.2vw,50px);margin:18px 0 14px;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p.lead{font-size:17.5px;color:var(--ink2);max-width:540px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 20px}
+.btn{display:inline-flex;align-items:center;gap:9px;border:none;cursor:pointer;text-decoration:none;font-weight:800;font-size:15.5px;padding:14px 24px;border-radius:99px;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-d)}
+.btn-wa{background:#1faa55;color:#fff}
+.btn-wa:hover{background:#178a44}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--teal)}
+.hero-points{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;font-weight:700;color:var(--ink2)}
+.hero-points span::before{content:"✓ ";color:var(--green);font-weight:800}
+.hero-img{position:relative}
+.hero-img img{border-radius:22px;box-shadow:0 24px 50px rgba(10,60,70,.18);aspect-ratio:4/3;object-fit:cover;width:100%}
+.hero-card{position:absolute;left:14px;bottom:14px;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:12px 16px;display:flex;gap:12px;align-items:center;max-width:88%}
+.hero-card .big{font-family:'Sora';font-weight:800;font-size:20px;color:var(--teal-d)}
+.hero-card small{color:var(--muted);font-weight:600;line-height:1.35;display:block}
+
+/* trust strip */
+.trust{padding:26px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.trust-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;gap:13px;align-items:flex-start}
+.trust-item .ic{font-size:23px;line-height:1}
+.trust-item b{display:block;font-size:15px}
+.trust-item p{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+/* sections */
+section{padding:58px 0}
+.sec-head{max-width:640px;margin-bottom:28px}
+.sec-head .kicker{color:var(--teal);font-weight:800;font-size:13px;letter-spacing:1.4px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(25px,3.6vw,34px);margin:8px 0 10px}
+.sec-head p{color:var(--ink2)}
+
+/* catalog */
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chip{border:1.5px solid var(--line);background:#fff;color:var(--ink2);font-weight:800;font-size:14px;padding:9px 18px;border-radius:99px;cursor:pointer;font-family:inherit}
+.chip:hover{border-color:var(--teal)}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:16px}
+.test-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .2s,transform .2s}
+.test-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.test-card .cat{font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--teal)}
+.test-card h3{font-size:17.5px}
+.test-card p{font-size:13.5px;color:var(--muted);flex:1;line-height:1.55}
+.test-card .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+.price{font-family:'Sora';font-weight:800;font-size:19px;color:var(--ink)}
+.price small{display:block;font-family:'Manrope';font-weight:600;font-size:11px;color:var(--muted)}
+.book-btn{background:var(--teal-soft);color:var(--teal-d);border:none;font-weight:800;font-size:14px;padding:10px 16px;border-radius:99px;cursor:pointer;font-family:inherit}
+.book-btn:hover{background:var(--teal);color:#fff}
+.price-note{margin-top:16px;font-size:13px;color:var(--muted)}
+
+/* booking + report */
+.duo{display:grid;gap:22px}
+@media(min-width:960px){.duo{grid-template-columns:1fr 1fr;align-items:start}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+.panel h3{font-size:21px;margin-bottom:6px}
+.panel .sub{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-weight:800;font-size:13.5px;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:12px 13px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px var(--teal-soft)}
+.field .err{display:none;color:var(--danger);font-size:13px;font-weight:700;margin-top:5px}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--danger)}
+.field.invalid .err{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+.demo-badge{display:inline-block;background:#fdf3d7;border:1px solid #ecd28a;color:#7a5b00;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.4px;vertical-align:middle;margin-left:8px}
+.success{display:none;background:var(--green-soft);border:1px solid #bfe8d4;border-radius:12px;padding:15px 17px;font-size:14.5px;margin-top:16px}
+.success.show{display:block}
+.report-result{display:none;margin-top:18px;border:1.5px dashed var(--teal);border-radius:14px;padding:18px;background:var(--teal-soft)}
+.report-result.show{display:block}
+.report-result table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.report-result th,.report-result td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+.report-result th{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.status-pill{background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:3px 11px;border-radius:99px}
+.otp-row{display:none}
+.otp-row.show{display:block}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.step .n{width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;font-family:'Sora';font-weight:800;display:grid;place-items:center;margin-bottom:13px}
+.step b{display:block;margin-bottom:5px;font-size:15.5px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* visit */
+.visit{background:var(--ink);color:#eaf3f2;border-radius:24px;padding:36px;display:grid;gap:26px}
+@media(min-width:860px){.visit{grid-template-columns:1.2fr 1fr}}
+.visit h2{color:#fff}
+.visit p{color:#bcd2d0}
+.visit a{color:#7fe0c3;font-weight:800;text-decoration:none}
+.visit .phones{display:grid;gap:10px}
+.visit .phones a{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:13px 17px;border-radius:12px;color:#fff;display:flex;justify-content:space-between;align-items:center}
+footer{padding:34px 0 44px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:90;background:#1faa55;color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:13px 20px;border-radius:99px;box-shadow:0 12px 28px rgba(20,120,60,.35);display:inline-flex;gap:8px;align-items:center}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,90px);background:var(--ink);color:#fff;font-weight:700;font-size:14.5px;padding:13px 22px;border-radius:99px;z-index:120;transition:transform .3s;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn:active{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#tests">Skip to tests &amp; packages</a>
+
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="#top" aria-label="Chawla Diagnostic Centre — home">
+      <span class="logo-mark" aria-hidden="true">C+</span>
+      <span><b>Chawla Diagnostic Centre</b><span>Pathology · Blood Tests · Ultrasound — Budhwara, Bhopal</span></span>
+    </a>
+    <nav class="main" aria-label="Main navigation">
+      <a href="#tests">Tests &amp; Packages</a>
+      <a href="#book">Home Collection</a>
+      <a href="#report">Download Report</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a class="hcall" href="tel:+918401611385">📞 84016 11385</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">⭐ 3.8/5 · 70+ Google reviews · Family-run lab</span>
+        <h1>Accurate tests. Honest prices. <em>Reports without the second trip.</em></h1>
+        <p class="lead">Chawla Diagnostic Centre is a long-established pathology lab in Budhwara, Bhopal — prompt blood work and ultrasound at prices lower than the big corporate chains. Book a home sample collection, and get your report online instead of travelling back to collect a printout.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#book">🧪 Book Home Sample Collection</a>
+          <a class="btn btn-ghost" href="#report">⬇️ Download Report</a>
+        </div>
+        <div class="hero-points">
+          <span>Prompt blood reports</span>
+          <span>Ultrasound facility in-house</span>
+          <span>Branch near Jahangirabad</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" alt="Lab scientist examining samples under a microscope" loading="eager" onerror="this.style.display='none'">
+        <div class="hero-card">
+          <span class="big">🏠</span>
+          <span><b>Home collection available</b><small>Book on WhatsApp — we come to you, you skip the queue and the return trip.</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="wrap trust-grid">
+      <div class="trust-item reveal"><span class="ic" aria-hidden="true">⚡</span><div><b>Prompt blood work</b><p>Known locally for quick, careful sample processing and reporting.</p></div></div>
+      <div class="trust-item reveal"><span class="ic" aria-hidden="true">🩻</span><div><b>Ultrasound in-house</b><p>Imaging facility at the centre — no running to a second location.</p></div></div>
+      <div class="trust-item reveal"><span class="ic" aria-hidden="true">💰</span><div><b>Lower than corporate chains</b><p>A neighbourhood family-run lab without corporate overheads — savings passed to you.</p></div></div>
+      <div class="trust-item reveal"><span class="ic" aria-hidden="true">📄</span><div><b>Reports online</b><p>Download your report from this page — no repeat trip just to collect paper.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <section id="tests" aria-labelledby="tests-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Tests &amp; Packages</span>
+        <h2 id="tests-h">Book a test in under a minute</h2>
+        <p>Pick a test or package and tap Book — we'll confirm your home collection slot on WhatsApp. Prices shown are <strong>indicative demo prices</strong>; exact rates are confirmed before your visit or collection.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter tests by category" id="filters"></div>
+      <div class="cat-grid" id="catalog"></div>
+      <p class="price-note">* All prices are indicative/demo prices for illustration. Please confirm the current rate when booking.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING + REPORT -->
+  <section id="book" style="padding-top:10px" aria-labelledby="book-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Home Collection &amp; Reports</span>
+        <h2 id="book-h">We collect the sample. You download the report.</h2>
+      </div>
+      <div class="duo">
+        <!-- Booking form -->
+        <form class="panel" id="bookForm" novalidate>
+          <h3>🧪 Book Home Sample Collection</h3>
+          <p class="sub">Fill this in — your booking opens in WhatsApp to our Budhwara centre number, ready to send.</p>
+          <div class="field">
+            <label for="bkTest">Select test / package</label>
+            <select id="bkTest" required></select>
+            <p class="err">Please choose a test.</p>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="bkDate">Preferred date</label>
+              <input type="date" id="bkDate" required>
+              <p class="err">Please pick a date (today or later).</p>
+            </div>
+            <div class="field">
+              <label for="bkSlot">Preferred time</label>
+              <select id="bkSlot">
+                <option>Morning (7–11 AM)</option>
+                <option>Midday (11 AM–2 PM)</option>
+                <option>Evening (4–7 PM)</option>
+              </select>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="bkName">Your name</label>
+              <input type="text" id="bkName" autocomplete="name" placeholder="e.g. Ramesh Gupta" required>
+              <p class="err">Please enter your name.</p>
+            </div>
+            <div class="field">
+              <label for="bkPhone">Mobile number</label>
+              <input type="tel" id="bkPhone" autocomplete="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile" required>
+              <p class="err">Enter a valid 10-digit mobile number.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkAddr">Home address for collection</label>
+            <textarea id="bkAddr" rows="2" placeholder="House no., area, landmark — Bhopal" required></textarea>
+            <p class="err">Please enter the collection address.</p>
+          </div>
+          <button class="btn btn-wa" type="submit" style="width:100%;justify-content:center">Confirm Booking on WhatsApp →</button>
+          <div class="success" id="bookSuccess" role="status"></div>
+        </form>
+
+        <!-- Report download (demo) -->
+        <div class="panel" id="report">
+          <h3>⬇️ Download Your Report <span class="demo-badge">DEMO — SAMPLE DATA</span></h3>
+          <p class="sub">Enter the mobile number given at billing. This demo shows how report download will work — the report below is a sample, not a real patient report.</p>
+          <form id="reportForm" novalidate>
+            <div class="field">
+              <label for="rpPhone">Registered mobile number</label>
+              <input type="tel" id="rpPhone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile" required>
+              <p class="err">Enter a valid 10-digit mobile number.</p>
+            </div>
+            <div class="field otp-row" id="otpRow">
+              <label for="rpOtp">Enter OTP</label>
+              <input type="text" id="rpOtp" inputmode="numeric" maxlength="4" placeholder="Any 4-digit code (demo)">
+              <p class="err">Enter any 4 digits to continue in this demo.</p>
+            </div>
+            <button class="btn btn-primary" type="submit" id="rpBtn" style="width:100%;justify-content:center">Send OTP</button>
+          </form>
+          <div class="report-result" id="reportResult" aria-live="polite">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+              <b>Sample Report — Full Body Checkup</b><span class="status-pill">● Ready</span>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);margin-top:6px">Patient: <b>Sample Patient (Demo)</b> · Lab ID: DEMO-2026-001 · This is sample data for demonstration only — not a real medical report.</p>
+            <table aria-label="Sample report values (demo data)">
+              <tr><th>Test</th><th>Result</th><th>Reference</th></tr>
+              <tr><td>Haemoglobin</td><td>13.8 g/dL</td><td>13.0 – 17.0</td></tr>
+              <tr><td>Fasting Sugar</td><td>94 mg/dL</td><td>70 – 100</td></tr>
+              <tr><td>Total Cholesterol</td><td>182 mg/dL</td><td>&lt; 200</td></tr>
+              <tr><td>TSH</td><td>2.4 µIU/mL</td><td>0.4 – 4.2</td></tr>
+            </table>
+            <button class="btn btn-primary" id="dlBtn" type="button">⬇️ Download Sample Report (Demo)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="padding-top:6px" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">How It Works</span>
+        <h2 id="how-h">No queues. No second trip.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="n">1</span><b>Book in a minute</b><p>Choose your test above and confirm on WhatsApp with your address and a time that suits you.</p></div>
+        <div class="step reveal"><span class="n">2</span><b>Sample collected at home</b><p>Our collector visits your home — or walk into the Budhwara centre, opposite Thana Talaiya.</p></div>
+        <div class="step reveal"><span class="n">3</span><b>Tested at our lab</b><p>Blood work is processed promptly at the centre; ultrasound is done in-house.</p></div>
+        <div class="step reveal"><span class="n">4</span><b>Report on your phone</b><p>Download the report online when it's ready — no travelling back just to collect a printout.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="padding-top:6px" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="visit">
+        <div>
+          <h2 id="visit-h">Visit the centre</h2>
+          <p style="margin-top:10px">Opposite Thana Talaiya, Budhwara,<br>Bhopal — 462001<br><br>Also serving patients from our branch near <b style="color:#fff">Jahangirabad</b>. Walk in for blood tests and ultrasound, or call ahead to book a home collection.</p>
+          <p style="margin-top:16px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Chawla+Diagnostic+Centre+Budhwara+Bhopal" target="_blank" rel="noopener">📍 Get directions on Google Maps →</a></p>
+        </div>
+        <div class="phones">
+          <a href="tel:+918401611385"><span>📞 Call the centre</span><b>84016 11385</b></a>
+          <a href="tel:+918120146569"><span>📞 Alternate number</span><b>81201 46569</b></a>
+          <a href="https://wa.me/918401611385?text=Namaste%2C%20I%20want%20to%20book%20a%20test%20at%20Chawla%20Diagnostic%20Centre." target="_blank" rel="noopener"><span>💬 WhatsApp us</span><b>Chat now →</b></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Chawla Diagnostic Centre, Budhwara, Bhopal · Demo website — prices shown are indicative, report download shows sample data.</span>
+    <span>Demo website · Built by Vaibhav Ghoshi</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918401611385?text=Namaste%2C%20I%20want%20to%20book%20a%20test%20at%20Chawla%20Diagnostic%20Centre." target="_blank" rel="noopener" aria-label="Chat with Chawla Diagnostic Centre on WhatsApp">💬 Book on WhatsApp</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+/* ---------- Catalog data (prices are indicative/demo) ---------- */
+var TESTS = [
+  {id:"full-body", name:"Full Body Checkup Package", cat:"Packages", price:999, desc:"CBC, lipid profile, liver & kidney function, thyroid, blood sugar — one package, complete picture."},
+  {id:"lipid", name:"Lipid Profile", cat:"Profiles", price:449, desc:"Total cholesterol, HDL, LDL, VLDL and triglycerides — heart-health basics."},
+  {id:"thyroid", name:"Thyroid Profile (T3 · T4 · TSH)", cat:"Profiles", price:399, desc:"Complete thyroid function panel for weight, energy and hormone balance checks."},
+  {id:"hba1c", name:"HbA1c (Diabetes)", cat:"Blood Tests", price:349, desc:"Your average blood sugar over the last 3 months — the diabetes control test."},
+  {id:"cbc", name:"CBC — Complete Blood Count", cat:"Blood Tests", price:249, desc:"Haemoglobin, WBC, platelets and more — the first test most doctors ask for."},
+  {id:"sugar", name:"Blood Sugar (Fasting)", cat:"Blood Tests", price:99, desc:"Single fasting glucose check. 8–10 hours fasting required."},
+  {id:"lft", name:"Liver Function Test (LFT)", cat:"Profiles", price:549, desc:"Bilirubin, SGOT, SGPT, proteins — full liver health panel."},
+  {id:"kft", name:"Kidney Function Test (KFT)", cat:"Profiles", price:549, desc:"Urea, creatinine, uric acid and electrolytes for kidney health."},
+  {id:"vitd", name:"Vitamin D Total", cat:"Blood Tests", price:1199, desc:"25-OH Vitamin D — for bone health, fatigue and immunity checks."},
+  {id:"usg-abd", name:"Ultrasound — Whole Abdomen", cat:"Imaging", price:900, desc:"In-house ultrasound scan of the abdomen. Done at the centre; appointment confirmed on call."},
+  {id:"usg-kub", name:"Ultrasound — KUB", cat:"Imaging", price:800, desc:"Kidney, ureter and bladder scan at the centre. Appointment confirmed on call."},
+  {id:"full-vitamin", name:"Full Body + Vitamin Package", cat:"Packages", price:1499, desc:"Full body checkup plus Vitamin D & B12 — our most complete routine package."}
+];
+var LAB_WA = "918401611385";
+var inr = function(n){ return "₹" + n.toLocaleString("en-IN"); };
+
+/* ---------- Render catalog + filters ---------- */
+var catalogEl = document.getElementById("catalog");
+var filtersEl = document.getElementById("filters");
+var cats = ["All"]; TESTS.forEach(function(t){ if(cats.indexOf(t.cat) === -1) cats.push(t.cat); });
+
+function renderCatalog(cat){
+  catalogEl.innerHTML = "";
+  TESTS.filter(function(t){ return cat === "All" || t.cat === cat; }).forEach(function(t){
+    var card = document.createElement("article");
+    card.className = "test-card";
+    card.innerHTML = "<span class='cat'></span><h3></h3><p></p>" +
+      "<div class='row'><span class='price'></span><button type='button' class='book-btn'>Book →</button></div>";
+    card.querySelector(".cat").textContent = t.cat;
+    card.querySelector("h3").textContent = t.name;
+    card.querySelector("p").textContent = t.desc;
+    var priceEl = card.querySelector(".price");
+    priceEl.textContent = inr(t.price);
+    var small = document.createElement("small");
+    small.textContent = "indicative price*";
+    priceEl.appendChild(small);
+    card.querySelector(".book-btn").addEventListener("click", function(){ bookTest(t.id); });
+    catalogEl.appendChild(card);
+  });
+}
+cats.forEach(function(c){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.textContent = c;
+  b.setAttribute("aria-pressed", c === "All" ? "true" : "false");
+  b.addEventListener("click", function(){
+    filtersEl.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+    b.setAttribute("aria-pressed","true");
+    renderCatalog(c);
+  });
+  filtersEl.appendChild(b);
+});
+renderCatalog("All");
+
+/* ---------- Booking ---------- */
+var bkTest = document.getElementById("bkTest");
+TESTS.forEach(function(t){
+  var o = document.createElement("option");
+  o.value = t.id; o.textContent = t.name + " — " + inr(t.price) + " (indicative)";
+  bkTest.appendChild(o);
+});
+var bkDate = document.getElementById("bkDate");
+bkDate.min = new Date().toISOString().split("T")[0];
+
+function bookTest(id){
+  bkTest.value = id;
+  document.getElementById("book").scrollIntoView({behavior:"smooth"});
+  showToast("Test selected — complete your details to book home collection.");
+}
+function setInvalid(input, bad){
+  input.closest(".field").classList.toggle("invalid", bad);
+  return !bad;
+}
+var toastTimer;
+function showToast(msg){
+  var el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 3400);
+}
+document.getElementById("bookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = document.getElementById("bkName");
+  var phone = document.getElementById("bkPhone");
+  var addr = document.getElementById("bkAddr");
+  var ok = true;
+  ok = setInvalid(bkTest, !bkTest.value) && ok;
+  ok = setInvalid(bkDate, !bkDate.value || bkDate.value < bkDate.min) && ok;
+  ok = setInvalid(name, name.value.trim().length < 3) && ok;
+  ok = setInvalid(phone, !/^[6-9]\d{9}$/.test(phone.value.trim())) && ok;
+  ok = setInvalid(addr, addr.value.trim().length < 8) && ok;
+  if(!ok){ showToast("Please fix the highlighted fields."); return; }
+  var test = TESTS.filter(function(t){ return t.id === bkTest.value; })[0];
+  var lines = [
+    "Namaste, I want to book a HOME SAMPLE COLLECTION at Chawla Diagnostic Centre.",
+    "",
+    "Test: " + test.name + " (" + inr(test.price) + " indicative)",
+    "Preferred: " + bkDate.value + " · " + document.getElementById("bkSlot").value,
+    "Name: " + name.value.trim(),
+    "Mobile: " + phone.value.trim(),
+    "Address: " + addr.value.trim(),
+    "",
+    "Please confirm my slot and the exact charges."
+  ];
+  window.open("https://wa.me/" + LAB_WA + "?text=" + encodeURIComponent(lines.join("\n")), "_blank");
+  var s = document.getElementById("bookSuccess");
+  s.textContent = "✅ Booking ready in WhatsApp for " + test.name + " on " + bkDate.value + ". Just press Send there — the centre will confirm your slot and exact charges.";
+  s.classList.add("show");
+});
+
+/* ---------- Report download (front-end demo, sample data) ---------- */
+var otpSent = false;
+document.getElementById("reportForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var phone = document.getElementById("rpPhone");
+  var otp = document.getElementById("rpOtp");
+  if(!/^[6-9]\d{9}$/.test(phone.value.trim())){
+    setInvalid(phone, true); return;
+  }
+  setInvalid(phone, false);
+  if(!otpSent){
+    otpSent = true;
+    document.getElementById("otpRow").classList.add("show");
+    document.getElementById("rpBtn").textContent = "Verify & View Report";
+    showToast("Demo OTP sent — enter any 4-digit code to continue.");
+    otp.focus();
+    return;
+  }
+  if(!/^\d{4}$/.test(otp.value.trim())){
+    setInvalid(otp, true); return;
+  }
+  setInvalid(otp, false);
+  document.getElementById("reportResult").classList.add("show");
+  showToast("Sample report loaded (demo data).");
+});
+document.getElementById("dlBtn").addEventListener("click", function(){
+  var text = "CHAWLA DIAGNOSTIC CENTRE — Budhwara, Bhopal (DEMO)\n" +
+    "------------------------------------------------\n" +
+    "SAMPLE REPORT — DEMO DATA ONLY, NOT A REAL MEDICAL REPORT\n" +
+    "Patient: Sample Patient (Demo)   Lab ID: DEMO-2026-001\n" +
+    "Package: Full Body Checkup       Status: Ready\n\n" +
+    "Haemoglobin      13.8 g/dL    (13.0 - 17.0)\n" +
+    "Fasting Sugar    94 mg/dL     (70 - 100)\n" +
+    "Total Cholesterol 182 mg/dL   (< 200)\n" +
+    "TSH              2.4 uIU/mL   (0.4 - 4.2)\n";
+  var blob = new Blob([text], {type:"text/plain"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Chawla-Sample-Report-DEMO.txt";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+});
+
+/* ---------- Reveal on scroll ---------- */
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

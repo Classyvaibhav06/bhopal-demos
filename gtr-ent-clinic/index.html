@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTR Clinic — Dr. Tarun Gurjar | ENT Surgeon in Bhopal | Ear, Nose & Throat</title>
+<meta name="description" content="GTR Clinic, Bhopal — Dr. Tarun Gurjar (MS ENT, MBBS, 14+ years). Septoplasty, tympanoplasty, sinus surgery, pediatric ENT & hearing care. Rated 4.9 by 865+ patients. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d2233; --ink2:#33566e; --mut:#5d7a8c; --bg:#f4f8fa; --card:#ffffff;
+    --teal:#0e7c86; --teal-d:#0a5a62; --teal-soft:#e3f2f3; --cyan:#25b6c9;
+    --gold:#e8a33d; --line:#dce8ee; --wa:#25d366; --wa-d:#1eb856;
+    --rad:18px; --sh:0 18px 44px rgba(13,34,51,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brandname{font-family:'Sora',sans-serif;line-height:1.18;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:var(--teal)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 10px 0}
+  .skip:focus{left:0}
+  :focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;padding:13px 24px;border-radius:99px;text-decoration:none;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-wa{background:var(--wa);color:#07351a;box-shadow:0 10px 24px rgba(37,211,102,.32)}
+  .btn-wa:hover{background:var(--wa-d)}
+  .btn-call{background:var(--ink);color:#fff}
+  .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);border-radius:2px}
+  section{padding:76px 0}
+  .sec-head{max-width:680px;margin-bottom:38px}
+  .sec-head h2{font-size:clamp(26px,4vw,38px);margin:10px 0 12px}
+  .sec-head p{color:var(--mut);font-size:16.5px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .hrow{display:flex;align-items:center;gap:18px;padding:13px 0}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+  .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--teal),var(--cyan));display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:800;font-size:15px;box-shadow:0 8px 18px rgba(14,124,134,.3)}
+  .brandname{font-size:19px;font-weight:800}
+  .brand small{display:block;font-family:'Inter';font-weight:600;font-size:11.5px;color:var(--mut);letter-spacing:.04em}
+  nav.main{margin-left:auto;display:flex;gap:26px}
+  nav.main a{color:var(--ink2);text-decoration:none;font-weight:600;font-size:14.5px}
+  nav.main a:hover{color:var(--teal)}
+  .hcta{margin-left:8px;display:flex;gap:9px}
+  .hcta .btn{padding:10px 18px;font-size:14px}
+  .burger{display:none;margin-left:auto;background:#fff;border:1.5px solid var(--line);border-radius:11px;width:44px;height:44px;font-size:20px;cursor:pointer}
+  @media(max-width:900px){ nav.main{display:none} .hcta{display:none} .burger{display:block}
+    nav.main.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;gap:14px;border-bottom:1px solid var(--line)} }
+
+  /* hero */
+  .hero{padding:56px 0 70px;background:radial-gradient(900px 480px at 85% -10%,#d7eef0 0,transparent 60%),linear-gradient(#fbfdfd,var(--bg))}
+  .hgrid{display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center}
+  @media(max-width:900px){.hgrid{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(33px,5.4vw,54px);font-weight:800}
+  .hero h1 .hl{color:var(--teal)}
+  .hero .lead{color:var(--mut);font-size:17.5px;margin:18px 0 26px;max-width:540px}
+  .ratepill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 16px 8px 10px;font-size:14px;font-weight:600;box-shadow:0 6px 18px rgba(13,34,51,.06);margin-bottom:22px}
+  .ratepill .stars{color:var(--gold);letter-spacing:2px}
+  .ratepill b{font-family:'Sora'}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .heroimg{border-radius:26px;overflow:hidden;box-shadow:var(--sh);position:relative}
+  .heroimg img{width:100%;height:480px;object-fit:cover;background:linear-gradient(135deg,#bfe3e7,#e8f3f5)}
+  .heroimg figcaption{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(255,255,255,.94);border-radius:14px;padding:13px 17px;display:flex;gap:14px;align-items:center;font-size:14px}
+  .heroimg figcaption b{font-family:'Sora'}
+  .pulse{width:11px;height:11px;border-radius:50%;background:var(--wa);flex:none;box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  /* stats */
+  .stats{background:var(--ink);color:#eaf4f7}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:34px;padding-bottom:34px}
+  @media(max-width:760px){.stats .wrap{grid-template-columns:1fr 1fr}}
+  .stat b{display:block;font-family:'Sora';font-size:31px;color:#fff}
+  .stat span{font-size:13.5px;color:#a9c6d2}
+
+  /* why */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.why{grid-template-columns:1fr}}
+  .wcard{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:27px}
+  .wcard .ic{width:50px;height:50px;border-radius:14px;background:var(--teal-soft);display:grid;place-items:center;font-size:24px;margin-bottom:15px}
+  .wcard h3{font-size:18px;margin-bottom:8px}
+  .wcard p{color:var(--mut);font-size:15px}
+
+  /* procedures hub */
+  .hub{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .tabs{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+  .tab{font:inherit;font-weight:600;font-size:14.5px;padding:11px 19px;border-radius:99px;border:1.5px solid var(--line);background:#fff;color:var(--ink2);cursor:pointer;transition:all .18s}
+  .tab:hover{border-color:var(--teal);color:var(--teal)}
+  .tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#fff;box-shadow:0 8px 20px rgba(14,124,134,.3)}
+  .panel{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;animation:fade .35s ease}
+  @media(max-width:860px){.panel{grid-template-columns:1fr}}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .pcard{background:var(--bg);border:1px solid var(--line);border-radius:var(--rad);padding:29px}
+  .pcard h3{font-size:24px;margin-bottom:6px}
+  .pcard .tag{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+  .pcard h4{font-family:'Sora';font-size:15.5px;margin:20px 0 8px}
+  .pcard p,.pcard li{color:var(--ink2);font-size:15px}
+  .pcard ul{padding-left:19px}
+  .pcard li{margin:4px 0}
+  .steps{counter-reset:st;list-style:none;padding:0}
+  .steps li{counter-increment:st;position:relative;padding-left:34px;margin:9px 0}
+  .steps li::before{content:counter(st);position:absolute;left:0;top:1px;width:23px;height:23px;border-radius:50%;background:var(--teal);color:#fff;font-size:12.5px;font-weight:700;display:grid;place-items:center}
+  .recbox{background:var(--teal-soft);border-radius:14px;padding:18px 20px;margin-top:20px}
+  .recbox b{font-family:'Sora';font-size:14.5px;color:var(--teal-d)}
+  .recbox p{font-size:14.5px;color:var(--ink2)}
+  .faq h4{margin-top:0}
+  .acc{border:1px solid var(--line);border-radius:13px;background:#fff;margin-bottom:10px;overflow:hidden}
+  .acc button{width:100%;text-align:left;font:inherit;font-weight:600;font-size:15px;padding:15px 18px;background:none;border:0;cursor:pointer;display:flex;justify-content:space-between;gap:12px;color:var(--ink)}
+  .acc button .arr{color:var(--teal);transition:transform .2s;flex:none}
+  .acc button[aria-expanded="true"] .arr{transform:rotate(180deg)}
+  .acc .body{padding:0 18px 16px;color:var(--mut);font-size:14.5px;display:none}
+  .acc.open .body{display:block}
+
+  /* care section */
+  .care{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:860px){.care{grid-template-columns:1fr}}
+  .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--rad);padding:28px}
+  .ccard h3{font-size:19px;margin-bottom:14px;display:flex;gap:10px;align-items:center}
+  .ccard ul{list-style:none}
+  .ccard li{padding:7px 0 7px 30px;position:relative;color:var(--ink2);font-size:15px;border-bottom:1px dashed var(--line)}
+  .ccard li:last-child{border:0}
+  .ccard li::before{position:absolute;left:2px;top:7px}
+  .do li::before{content:"✓";color:var(--teal);font-weight:800}
+  .dont li::before{content:"✕";color:#c2452d;font-weight:800}
+  .note{font-size:13.5px;color:var(--mut);margin-top:16px}
+
+  /* doctor */
+  .doc{background:linear-gradient(120deg,#0d2233,#0a3c44);color:#eaf4f7}
+  .dgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+  @media(max-width:860px){.dgrid{grid-template-columns:1fr}}
+  .docimg{border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+  .docimg img{width:100%;height:420px;object-fit:cover;background:#16424c}
+  .doc h2{color:#fff;font-size:clamp(26px,4vw,36px);margin:10px 0 6px}
+  .doc .quals{color:#8fd6dc;font-weight:700;font-size:15.5px;letter-spacing:.02em}
+  .doc p{color:#bcd6de;margin:14px 0;font-size:16px}
+  .chips{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 26px}
+  .chip{border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:7px 15px;font-size:13.5px;font-weight:600}
+  .doc .eyebrow{color:#8fd6dc}.doc .eyebrow::before{background:#8fd6dc}
+
+  /* testimonials */
+  .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.tg{grid-template-columns:1fr}}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--rad);padding:26px}
+  .tcard .stars{color:var(--gold);letter-spacing:2px;margin-bottom:11px}
+  .tcard p{color:var(--ink2);font-size:15px}
+  .tcard footer{margin-top:15px;font-size:13.5px;color:var(--mut);font-weight:600}
+
+  /* appointment */
+  .appt{background:#fff;border-top:1px solid var(--line)}
+  .agrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+  @media(max-width:860px){.agrid{grid-template-columns:1fr}}
+  form{display:grid;gap:14px}
+  label{font-weight:600;font-size:14px;display:grid;gap:6px}
+  input,select,textarea{font:inherit;font-size:15px;padding:12.5px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fbfdfd;color:var(--ink);width:100%}
+  input:focus,select:focus,textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px var(--teal-soft)}
+  .formrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.formrow{grid-template-columns:1fr}}
+  .emg{background:#fdf3e7;border:1px solid #f3ddba;border-radius:14px;padding:16px 19px;font-size:14.5px;color:#7a5410;margin-top:20px}
+  .emg b{font-family:'Sora'}
+
+  /* footer + float */
+  footer.site{background:var(--ink);color:#a9c6d2;padding:52px 0 30px;font-size:14.5px}
+  footer.site h3{color:#fff;font-size:18px;margin-bottom:10px}
+  .fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px;margin-bottom:32px}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr}}
+  footer.site a{color:#d7e8ee}
+  .fbot{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;font-size:13px;color:#7d9dab;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .floatwa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;font-size:27px;text-decoration:none;box-shadow:0 12px 28px rgba(18,140,60,.4)}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#procedures">Skip to procedures</a>
+
+<header>
+  <div class="wrap hrow">
+    <a class="brand" href="#top" aria-label="GTR Clinic home">
+      <span class="mark" aria-hidden="true">GTR</span>
+      <span><span class="brandname">GTR Clinic</span><small>EAR · NOSE · THROAT — BHOPAL</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main" id="mainnav" aria-label="Main navigation">
+      <a href="#procedures">Procedures</a>
+      <a href="#care">Pre &amp; Post-Op Care</a>
+      <a href="#doctor">Doctor</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div class="hcta">
+      <a class="btn btn-ghost" href="tel:+917725044832">📞 77250 44832</a>
+      <a class="btn btn-wa" href="https://wa.me/917725044832?text=Namaste%2C%20mujhe%20GTR%20Clinic%20mein%20ENT%20consultation%20ke%20liye%20appointment%20chahiye." target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hgrid">
+      <div>
+        <div class="ratepill"><span aria-hidden="true">⭐</span><b>4.9 / 5</b><span class="stars" aria-hidden="true">★★★★★</span><span>from 865+ patient ratings</span></div>
+        <h1>Expert ENT care, <span class="hl">honest advice</span> — in Bhopal.</h1>
+        <p class="lead">At GTR Clinic, Dr. Tarun Gurjar (MS ENT, MBBS) treats ear, nose and throat problems with 14+ years of surgical experience — and recommends surgery only when you truly need it.</p>
+        <div class="ctas">
+          <a class="btn btn-wa" href="https://wa.me/917725044832?text=Namaste%2C%20mujhe%20GTR%20Clinic%20mein%20ENT%20consultation%20ke%20liye%20appointment%20chahiye." target="_blank" rel="noopener">💬 Book Appointment</a>
+          <a class="btn btn-ghost" href="#procedures">Explore Procedures ↓</a>
+        </div>
+      </div>
+      <figure class="heroimg">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop" alt="Doctor at GTR Clinic, Bhopal" loading="lazy" onerror="this.style.display='none'">
+        <figcaption><span class="pulse" aria-hidden="true"></span><span><b>Emergency ENT problem?</b><br>Patients praise GTR Clinic for prompt emergency care — call <a href="tel:+917725044832"><b>+91 77250 44832</b></a></span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats" aria-label="Clinic highlights">
+    <div class="wrap">
+      <div class="stat"><b>4.9 ★</b><span>Average patient rating</span></div>
+      <div class="stat"><b>865+</b><span>Patient ratings</span></div>
+      <div class="stat"><b>14+ yrs</b><span>ENT surgical experience</span></div>
+      <div class="stat"><b>Ear·Nose·Throat</b><span>Super-specialty care, adults &amp; children</span></div>
+    </div>
+  </div>
+
+  <!-- WHY -->
+  <section aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Why GTR Clinic</span>
+        <h2 id="why-h">Care patients specifically praise</h2>
+      </div>
+      <div class="why">
+        <article class="wcard reveal"><div class="ic" aria-hidden="true">🚑</div><h3>Prompt Emergency Care</h3><p>Sudden ear pain, a nosebleed that won't stop, a child who's swallowed something — patients commend the clinic's quick response when ENT problems can't wait.</p></article>
+        <article class="wcard reveal"><div class="ic" aria-hidden="true">⚖️</div><h3>Ethical Surgery Advice</h3><p>No unnecessary operations. You're told clearly when medicines and time will do — and when surgery is genuinely the better option, and why.</p></article>
+        <article class="wcard reveal"><div class="ic" aria-hidden="true">🧒</div><h3>Gentle Pediatric ENT</h3><p>Children need a different approach. Tonsils, adenoids, ear infections and hearing checks for kids, handled patiently and explained to parents in simple words.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDURES HUB -->
+  <section class="hub" id="procedures" aria-labelledby="proc-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Procedures Hub</span>
+        <h2 id="proc-h">Understand your procedure — before you decide</h2>
+        <p>Pick a procedure to see what it is, who needs it, how it goes, and honest recovery answers. No jargon, no pressure.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="ENT procedures" id="tablist"></div>
+      <div id="panel" role="tabpanel" tabindex="0" aria-live="polite"></div>
+      <p class="note" style="margin-top:18px">General information only — it does not replace medical advice. Your exact procedure, risks and recovery plan are confirmed by Dr. Gurjar after examination.</p>
+    </div>
+  </section>
+
+  <!-- PRE / POST-OP CARE -->
+  <section id="care" aria-labelledby="care-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Surgery Care Guide</span>
+        <h2 id="care-h">Before &amp; after your surgery</h2>
+        <p>The information patients look for online and rarely find — a simple guide for most ENT surgeries at the clinic.</p>
+      </div>
+      <div class="care">
+        <div class="ccard reveal">
+          <h3>📋 Before surgery</h3>
+          <ul class="do">
+            <li>Complete the blood tests and scans advised, and carry all reports on the day</li>
+            <li>Tell the doctor about every medicine you take — especially blood thinners, diabetes and BP medicines</li>
+            <li>Fast for the hours advised before anaesthesia (usually no food or water after midnight)</li>
+            <li>Inform the clinic about allergies, asthma, or previous anaesthesia problems</li>
+            <li>Arrange for a family member to accompany you and take you home</li>
+          </ul>
+        </div>
+        <div class="ccard reveal">
+          <h3>🏠 After surgery — recovery basics</h3>
+          <ul class="do">
+            <li>Take medicines exactly as prescribed and finish the full course</li>
+            <li>Rest for the first few days; avoid heavy lifting and straining</li>
+            <li>Attend every follow-up visit — dressings, pack or splint removal and cleaning happen there</li>
+          </ul>
+          <ul class="dont" style="margin-top:6px">
+            <li>Don't blow your nose, poke, or insert anything in the operated ear/nose unless advised</li>
+            <li>Don't skip follow-ups because you "feel fine" — healing inside needs checking</li>
+            <li>Don't wait on warning signs: heavy bleeding, high fever, worsening pain or swelling — call the clinic immediately</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">These are general guidelines for common ENT procedures. Your written instructions from Dr. Gurjar always come first — follow those over anything on this page.</p>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section class="doc" id="doctor" aria-labelledby="doc-h">
+    <div class="wrap dgrid">
+      <div class="docimg reveal">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1200&auto=format&fit=crop" alt="Dr. Tarun Gurjar, ENT surgeon at GTR Clinic" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Your Doctor</span>
+        <h2 id="doc-h">Dr. Tarun Gurjar</h2>
+        <p class="quals">MS (ENT) · MBBS — ENT Surgeon, 14+ Years of Experience</p>
+        <p>Dr. Gurjar heads GTR Clinic on Narmadapuram Road, Bhopal's southern corridor — a super-specialty ENT practice for ear, nose, throat and pediatric ENT care, rated 4.9 out of 5 by 865+ patients.</p>
+        <p>His approach is conservative-first and evidence-led: thorough examination, a clear explanation of your options, and surgery advised only when it will genuinely help more than medicine.</p>
+        <div class="chips">
+          <span class="chip">ENT Surgery</span><span class="chip">Pediatric ENT</span><span class="chip">Emergency ENT Care</span><span class="chip">Hearing Evaluation</span>
+        </div>
+        <a class="btn btn-wa" href="https://wa.me/917725044832?text=Namaste%2C%20mujhe%20Dr.%20Tarun%20Gurjar%20se%20consultation%20ke%20liye%20appointment%20chahiye." target="_blank" rel="noopener">💬 Consult Dr. Gurjar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Patient Words</span>
+        <h2 id="rev-h">Rated 4.9 ★ by 865+ patients</h2>
+      </div>
+      <div class="tg">
+        <article class="tcard reveal"><div class="stars" aria-label="5 star review">★★★★★</div><p>"My father's ear emergency was handled the same evening — no panic, everything explained calmly. That prompt care is why our whole family comes here."</p><footer>— Family patient, emergency ENT care</footer></article>
+        <article class="tcard reveal"><div class="stars" aria-label="5 star review">★★★★★</div><p>"I went in expecting to be told I need surgery. Instead the doctor said medicines should be tried first — and they worked. Honest advice is rare."</p><footer>— Patient, sinus consultation</footer></article>
+        <article class="tcard reveal"><div class="stars" aria-label="5 star review">★★★★★</div><p>"My 6-year-old was terrified of doctors, but her tonsil treatment was handled so gently. Everything was explained to us in simple words."</p><footer>— Parent, pediatric ENT patient</footer></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT -->
+  <section class="appt" id="book" aria-labelledby="book-h">
+    <div class="wrap agrid">
+      <div class="reveal">
+        <span class="eyebrow">Appointments</span>
+        <h2 id="book-h" style="font-size:clamp(26px,4vw,36px);margin:10px 0 12px">Book in under a minute</h2>
+        <p style="color:var(--mut)">Fill the form — it opens WhatsApp with your details pre-filled. Just press send, and the clinic confirms your slot. Prefer talking? Call <a href="tel:+917725044832"><b>+91 77250 44832</b></a>.</p>
+        <div class="emg"><b>⚠ ENT emergency?</b> Severe bleeding, breathing difficulty, or a foreign object in a child's ear/nose — call <a href="tel:+917725044832"><b>+91 77250 44832</b></a> immediately instead of booking online.</div>
+      </div>
+      <form id="apptForm" class="reveal" aria-label="Appointment request form">
+        <div class="formrow">
+          <label>Your name<input type="text" id="fName" autocomplete="name" placeholder="e.g. Rahul Verma" required></label>
+          <label>Phone number<input type="tel" id="fPhone" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile" required></label>
+        </div>
+        <div class="formrow">
+          <label>Concern / procedure
+            <select id="fConcern">
+              <option>General ENT consultation</option><option>Septoplasty (deviated septum)</option><option>Tympanoplasty (eardrum repair)</option><option>Tonsillectomy</option><option>Sinus Surgery (FESS)</option><option>Pediatric ENT</option><option>Hearing evaluation</option><option>Emergency ENT problem</option><option>Other</option>
+            </select></label>
+          <label>Preferred date<input type="date" id="fDate"></label>
+        </div>
+        <label>Anything we should know? (optional)<textarea id="fNote" rows="3" placeholder="Symptoms, duration, previous treatment…"></textarea></label>
+        <a class="btn btn-wa" id="waSend" href="https://wa.me/917725044832" target="_blank" rel="noopener" style="justify-content:center">💬 Send Appointment Request on WhatsApp</a>
+        <p class="note" style="margin:0">No advance payment. The clinic confirms availability on WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site" id="visit">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>GTR Clinic</h3>
+        <p>Super-specialty ear, nose &amp; throat care by Dr. Tarun Gurjar (MS ENT, MBBS) — ethical advice, prompt emergency care, and gentle pediatric ENT.</p>
+      </div>
+      <div>
+        <h3>Visit Us</h3>
+        <p>GTR Clinic, C-16, Narmadapuram Rd<br>(Hoshangabad Road), Bhopal — 462026</p>
+        <p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&query=GTR+Clinic+C-16+Narmadapuram+Rd+Bhopal+462026" target="_blank" rel="noopener">📍 Get Directions on Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>📞 <a href="tel:+917725044832">+91 77250 44832</a><br>💬 <a href="https://wa.me/917725044832" target="_blank" rel="noopener">WhatsApp the clinic</a></p>
+        <p style="margin-top:8px">Rated 4.9 ★ · 865+ patient ratings</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© GTR Clinic, Bhopal. Medical information on this page is general guidance, not a substitute for a consultation.</span>
+      <span>Demo website</span>
+    </div>
+  </div>
+</footer>
+
+<a class="floatwa" href="https://wa.me/917725044832?text=Namaste%2C%20mujhe%20GTR%20Clinic%20mein%20appointment%20chahiye." target="_blank" rel="noopener" aria-label="Chat with GTR Clinic on WhatsApp">💬</a>
+
+<script>
+'use strict';
+/* ---------- Procedures hub data ---------- */
+var PROCEDURES = [
+  { id:'septoplasty', icon:'👃', name:'Septoplasty', tag:'Nose · Breathing',
+    what:'A surgery to straighten the deviated nasal septum — the wall between your two nostrils. When it is bent to one side, it blocks airflow, causes mouth-breathing, snoring and repeated sinus trouble.',
+    who:['One side of your nose stays blocked most of the time','Frequent sinus infections or headaches from poor drainage','Snoring, dry mouth or disturbed sleep due to nasal blockage','Medicines and sprays have not relieved the blockage'],
+    steps:['Done under anaesthesia — you feel nothing during the procedure','The surgeon straightens the septum from inside the nose; no cut on the face, no visible scar','Usually a short procedure; most patients go home the same or next day'],
+    recovery:'Most people return to desk work in about a week. Nasal packing/splints (if used) are removed at a follow-up visit, and breathing typically keeps improving over the following weeks as swelling settles.',
+    faqs:[
+      ['Will there be a scar on my face?','No. Septoplasty is done entirely through the nostrils, so there is no external cut and no visible scar.'],
+      ['Can I blow my nose after surgery?','Avoid blowing your nose and heavy straining for the period your doctor advises — it can disturb healing. Your follow-up visits include gentle cleaning.'],
+      ['When will I breathe freely?','Some improvement is felt once packing is removed, but full benefit comes gradually over a few weeks as internal swelling reduces.']]},
+  { id:'tympanoplasty', icon:'👂', name:'Tympanoplasty', tag:'Ear · Eardrum Repair',
+    what:'A surgical repair of a perforated (holed) eardrum, sometimes along with the tiny hearing bones behind it. It closes the hole, stops repeated ear discharge and can improve hearing.',
+    who:['A hole in the eardrum that has not healed on its own','Repeated ear discharge / infections from water entering the ear','Hearing loss linked to the perforation','Your doctor has confirmed the ear is dry and suitable for repair'],
+    steps:['Done under anaesthesia, usually through the ear canal or a small cut behind the ear','A graft (often your own tissue) is placed to close the perforation','A dressing/pack supports the graft while it heals'],
+    recovery:'Keep the ear strictly dry — no water entry and no swimming until the doctor clears it. Heavy lifting and forceful nose-blowing are avoided early on. The pack is removed at follow-up and hearing is re-checked as healing completes.',
+    faqs:[
+      ['Will my hearing come back?','Closing the perforation often improves hearing, but the result depends on the condition of the hearing bones and nerve — your doctor will explain what to expect in your case after testing.'],
+      ['Can water enter my ear after surgery?','Not until cleared at follow-up. Water through a healing graft can restart infection and damage the repair.'],
+      ['Is the graft from my own body?','Usually yes — a small piece of your own tissue (from behind the ear) is commonly used, so rejection is not a concern.']]},
+  { id:'tonsillectomy', icon:'🗣️', name:'Tonsillectomy', tag:'Throat · Tonsils',
+    what:'Removal of the tonsils — most often advised when tonsil infections keep coming back, or enlarged tonsils obstruct breathing and sleep, especially in children.',
+    who:['Repeated tonsil infections several times a year despite treatment','Very enlarged tonsils causing snoring or disturbed sleep','Difficulty swallowing or breathing due to tonsil size','A peritonsillar abscess (quinsy) episode'],
+    steps:['A short procedure under general anaesthesia — especially reassuring for children','Tonsils are removed through the mouth; no external cuts','Most patients go home the same day or after one night of observation'],
+    recovery:'A sore throat for about a week to ten days is normal and is managed with prescribed pain relief and soft, cool foods. Rest, fluids and attending the follow-up visit matter more than anything. Any bleeding from the mouth after discharge needs an immediate call to the clinic.',
+    faqs:[
+      ['Will removing tonsils weaken immunity?','No — this is a common worry. The body has plenty of other immune tissue, and removing repeatedly infected tonsils does not lower overall immunity.'],
+      ['What can my child eat after surgery?','Soft, cool foods and plenty of fluids are usually advised first; hot, spicy and hard foods are avoided until healing progresses. You receive a diet guide after surgery.'],
+      ['How many school/work days are missed?','Plan for roughly a week of rest at home for children, and similar for adults in physical jobs — your doctor confirms based on the case.']]},
+  { id:'fess', icon:'🌬️', name:'Sinus Surgery (FESS)', tag:'Nose · Sinuses',
+    what:'Functional Endoscopic Sinus Surgery — a camera-guided procedure through the nostrils that opens blocked sinus passages and removes diseased tissue/polyps, so sinuses drain and ventilate normally again.',
+    who:['Chronic sinusitis that has not responded to full medical treatment','Nasal polyps blocking breathing and smell','Repeated sinus infections with facial pressure and congestion','A CT scan showing blocked sinus drainage pathways'],
+    steps:['Done under anaesthesia using a thin endoscope through the nostrils — no face cuts','Blocked openings are widened and diseased tissue/polyps removed precisely','Often combined with septoplasty if a deviated septum also blocks access'],
+    recovery:'Expect some congestion and blood-tinged discharge for the first days. Saline rinses (when advised) and follow-up endoscopic cleaning are a key part of healing — do not skip them. Most patients resume routine work within about a week.',
+    faqs:[
+      ['Are there any visible cuts or scars?','No. FESS is performed entirely through the nostrils with an endoscope, leaving no external scar.'],
+      ['Will sinusitis never come back after FESS?','Surgery opens drainage and improves how well medicines reach the sinuses, but conditions like allergy still need ongoing care. Follow-ups and prescribed sprays protect the result.'],
+      ['Why are follow-up cleanings needed?','Crusting and early scar bands inside the nose are gently cleaned at follow-ups so passages heal open — it is a normal, important part of FESS aftercare.']]},
+  { id:'pediatric', icon:'🧒', name:'Pediatric ENT', tag:'Children · Ear Nose Throat',
+    what:'Specialised ENT care for children — from repeated ear infections and tonsil/adenoid problems to hearing and speech concerns, foreign objects in the ear or nose, and breathing or snoring issues.',
+    who:['Your child has repeated ear, throat or tonsil infections','Loud snoring, mouth-breathing or disturbed sleep (possible adenoids)','Delayed speech or suspicion of hearing loss','Something stuck in the ear or nose — a common childhood emergency'],
+    steps:['Gentle, child-friendly examination; parents stay involved at every step','Treatment starts conservatively — surgery is discussed only when clearly needed','If a procedure is required, it is done under anaesthesia suitable for children, with clear home-care instructions for parents'],
+    recovery:'Children usually bounce back quickly. You receive simple guidance on food, activity and warning signs, and a follow-up plan — plus a direct number to call if you are worried at home.',
+    faqs:[
+      ['My child snores loudly every night. Is that normal?','Occasional snoring during a cold is common, but nightly loud snoring with mouth-breathing can point to enlarged adenoids/tonsils and disturbed sleep — worth an ENT evaluation.'],
+      ['How do I know if my child hears properly?','Not responding to name-calls, turning the TV up, or speech delay are red flags. A hearing evaluation at the clinic can check objectively, even for young children.'],
+      ['My child put a bead in their nose. What should I do?','Do not try to pull it out with tweezers — it can push deeper. Keep the child calm and come to the clinic promptly; such removals are routine here.']]},
+  { id:'hearing', icon:'🔊', name:'Hearing Evaluation', tag:'Ear · Hearing Tests',
+    what:'A structured assessment of your hearing — starting with ear examination and hearing tests that measure what sounds you can and cannot hear, so treatment is based on measurement, not guesswork.',
+    who:['You feel hearing has reduced in one or both ears','Ringing or buzzing sounds (tinnitus)','Family members say you keep the TV too loud or ask for repeats','A child with speech delay or suspected hearing difficulty'],
+    steps:['Ear examination to rule out wax, infection or eardrum problems first','Standardised hearing testing in a quiet setup; results explained to you in simple terms','A clear plan — treatment, follow-up testing, or hearing-aid guidance if truly needed'],
+    recovery:'There is no recovery — it is a painless, non-surgical evaluation. If a treatable cause like wax or infection is found, addressing it may itself improve hearing, and you will know exactly where you stand.',
+    faqs:[
+      ['Are the tests painful?','No. Hearing tests are completely painless — you simply respond to sounds played at different volumes and pitches.'],
+      ['Will I be forced to buy a hearing aid?','No. You first get a clear diagnosis. Many hearing problems have medical causes that are treated directly; a hearing aid is discussed only if it is genuinely the right option.'],
+      ['Can children be tested too?','Yes. Age-appropriate methods are used for children, and objective testing is possible even when a child is too young to respond reliably.']]}
+];
+
+/* ---------- Render tabs + panel ---------- */
+var tablist = document.getElementById('tablist');
+var panel = document.getElementById('panel');
+var current = 0;
+
+PROCEDURES.forEach(function(p, i){
+  var b = document.createElement('button');
+  b.className = 'tab'; b.type = 'button'; b.textContent = p.icon + ' ' + p.name;
+  b.setAttribute('role','tab'); b.id = 'tab-' + p.id;
+  b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+  b.setAttribute('aria-controls','panel'); b.tabIndex = i === 0 ? 0 : -1;
+  b.addEventListener('click', function(){ select(i, true); });
+  tablist.appendChild(b);
+});
+tablist.addEventListener('keydown', function(e){
+  if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  var next = (current + (e.key === 'ArrowRight' ? 1 : -1) + PROCEDURES.length) % PROCEDURES.length;
+  select(next, true);
+});
+
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+function render(i){
+  var p = PROCEDURES[i];
+  var who = p.who.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('');
+  var steps = p.steps.map(function(s){ return '<li>' + esc(s) + '</li>'; }).join('');
+  var faqs = p.faqs.map(function(f, j){
+    return '<div class="acc"><button type="button" aria-expanded="false" data-acc="' + j + '">' +
+      '<span>' + esc(f[0]) + '</span><span class="arr" aria-hidden="true">▾</span></button>' +
+      '<div class="body">' + esc(f[1]) + '</div></div>';
+  }).join('');
+  panel.innerHTML =
+    '<article class="pcard"><span class="tag">' + esc(p.tag) + '</span>' +
+    '<h3>' + p.icon + ' ' + esc(p.name) + '</h3>' +
+    '<h4>What is it?</h4><p>' + esc(p.what) + '</p>' +
+    '<h4>Who needs it?</h4><ul>' + who + '</ul>' +
+    '<h4>How it goes</h4><ol class="steps">' + steps + '</ol>' +
+    '<div class="recbox"><b>Recovery</b><p>' + esc(p.recovery) + '</p></div></article>' +
+    '<div class="faq"><h4 style="font-family:\'Sora\';font-size:17px;margin-bottom:14px">Recovery FAQs</h4>' + faqs +
+    '<a class="btn btn-wa" style="margin-top:8px" target="_blank" rel="noopener" href="https://wa.me/917725044832?text=' +
+    encodeURIComponent('Namaste, mujhe ' + p.name + ' ke baare mein GTR Clinic se jaankari chahiye.') +
+    '">💬 Ask about ' + esc(p.name) + '</a></div>';
+  panel.querySelectorAll('[data-acc]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var acc = btn.closest('.acc'); var open = acc.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+}
+function select(i, focus){
+  current = i;
+  tablist.querySelectorAll('.tab').forEach(function(t, j){
+    t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1;
+    if(focus && j === i) t.focus();
+  });
+  render(i);
+}
+render(0);
+
+/* ---------- Mobile menu ---------- */
+var burger = document.getElementById('burger'), nav = document.getElementById('mainnav');
+burger.addEventListener('click', function(){
+  var open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); }); });
+
+/* ---------- Appointment form -> WhatsApp ---------- */
+var waSend = document.getElementById('waSend');
+function buildWa(){
+  var name = document.getElementById('fName').value.trim();
+  var phone = document.getElementById('fPhone').value.trim();
+  var concern = document.getElementById('fConcern').value;
+  var date = document.getElementById('fDate').value;
+  var note = document.getElementById('fNote').value.trim();
+  var lines = ['Namaste, mujhe GTR Clinic mein appointment chahiye.', 'Concern: ' + concern];
+  if(name) lines.push('Naam: ' + name);
+  if(phone) lines.push('Mera number: ' + phone);
+  if(date) lines.push('Preferred date: ' + date);
+  if(note) lines.push('Note: ' + note);
+  waSend.href = 'https://wa.me/917725044832?text=' + encodeURIComponent(lines.join('\n'));
+}
+['fName','fPhone','fConcern','fDate','fNote'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', buildWa);
+  document.getElementById(id).addEventListener('change', buildWa);
+});
+buildWa();
+
+/* ---------- Reveal on scroll ---------- */
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+</script>
+</body>
+</html>

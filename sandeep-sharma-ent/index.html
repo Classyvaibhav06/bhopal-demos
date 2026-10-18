@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Sandeep Sharma ENT Clinic — Jawahar Chowk, Bhopal | Ethics-First ENT Care</title>
+<meta name="description" content="Dr. Sandeep Sharma (MBBS, MS-ENT, 15+ years) — ENT & advanced head/neck surgery at Jawahar Chowk, Bhopal. Ethical diagnosis: medicine first, surgery only when truly needed. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b2447; --navy2:#132f5c; --navy3:#1b3a6b; --ink:#16233a;
+    --mut:#5a6580; --line:#dde4ef; --bg:#f6f8fc; --card:#ffffff;
+    --amber:#e8930c; --amber2:#f5a623; --amber-soft:#fdf1de;
+    --ok:#177245; --radius:16px; --shadow:0 10px 30px rgba(11,36,71,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+  h1,h2,h3,.disp{font-family:'Sora',sans-serif;line-height:1.22;color:var(--navy)}
+  img{max-width:100%;display:block}
+  a{color:var(--navy2)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 10px 0}
+  .skip:focus{left:0}
+  :focus-visible{outline:3px solid var(--amber2);outline-offset:2px;border-radius:6px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(11,36,71,.97);backdrop-filter:blur(8px);color:#fff}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}
+  .brand .mark{width:40px;height:40px;border-radius:11px;background:var(--amber);display:grid;place-items:center;font-family:'Sora';font-weight:800;color:var(--navy);font-size:17px;flex:none}
+  .brand b{font-family:'Sora';font-size:16.5px;display:block;line-height:1.2}
+  .brand span{font-size:12px;color:#b9c7e2}
+  nav.main{display:flex;gap:22px}
+  nav.main a{color:#dbe5f7;text-decoration:none;font-size:14.5px;font-weight:500}
+  nav.main a:hover{color:#fff}
+  .bar .cta{display:flex;gap:9px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:12px;transition:transform .15s,box-shadow .15s}
+  .btn:active{transform:scale(.98)}
+  .btn-amber{background:var(--amber);color:#fff}
+  .btn-amber:hover{background:#d07f06}
+  .btn-wa{background:#1faa57;color:#fff}
+  .btn-wa:hover{background:#178a46}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+  .btn-sm{padding:9px 15px;font-size:14px;border-radius:10px}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:24px;cursor:pointer;padding:6px 8px}
+
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 58%,var(--navy3) 100%);color:#eef3fd;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:38px;padding:58px 20px 64px;align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.16);border:1px solid rgba(245,166,35,.5);color:#ffd58a;padding:6px 13px;border-radius:99px;font-size:13.5px;font-weight:600}
+  .hero h1{color:#fff;font-size:clamp(30px,4.6vw,46px);margin:18px 0 6px}
+  .hero h1 em{font-style:normal;color:var(--amber2)}
+  .hero .cred{font-weight:600;color:#c9d7f2;font-size:16.5px}
+  .hero p.lede{color:#c2d0ea;margin:14px 0 24px;font-size:16.5px;max-width:52ch}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .note{margin-top:16px;font-size:13.5px;color:#93a7cc}
+  .hero figure{border-radius:20px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.35);border:4px solid rgba(255,255,255,.12)}
+  .hero figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
+  .stats{background:#fff;border-bottom:1px solid var(--line)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px}
+  .stat{text-align:center;padding:8px 4px}
+  .stat b{font-family:'Sora';font-size:24px;color:var(--navy);display:block}
+  .stat span{font-size:13px;color:var(--mut)}
+
+  section{padding:62px 0}
+  .kicker{color:var(--amber);font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase}
+  h2.title{font-size:clamp(24px,3.4vw,33px);margin:8px 0 10px}
+  .sub{color:var(--mut);max-width:64ch}
+
+  /* Conditions tabs */
+  .tabs{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 0}
+  .tab{border:1.5px solid var(--line);background:#fff;color:var(--navy);font:600 15px 'Inter';padding:11px 18px;border-radius:99px;cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;margin-top:18px}
+  .panel h3{font-size:22px;margin-bottom:6px}
+  .panel .over{color:var(--mut);max-width:70ch}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+  .box{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:19px}
+  .box h4{font-family:'Sora';font-size:15.5px;color:var(--navy);margin-bottom:9px}
+  .box ul{list-style:none}
+  .box li{padding:5px 0 5px 24px;position:relative;font-size:15px}
+  .box li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  .box.warn{background:var(--amber-soft);border-color:#f3d9ae}
+  .box.warn li::before{background:var(--amber)}
+  .approach{margin-top:20px;border-left:4px solid var(--amber);background:#fffaf1;padding:15px 18px;border-radius:0 12px 12px 0}
+  .approach b{color:var(--navy)}
+  .panel .bookrow{margin-top:22px;display:flex;gap:11px;flex-wrap:wrap;align-items:center}
+  .panel .bookrow span{font-size:14px;color:var(--mut)}
+
+  /* Ethics */
+  .ethics{background:var(--navy);color:#e8eefb}
+  .ethics h2,.ethics h3{color:#fff}
+  .ethics .sub{color:#aebfdd}
+  .ecards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .ecard{background:var(--navy2);border:1px solid #274a80;border-radius:var(--radius);padding:24px}
+  .ecard .ic{font-size:26px;margin-bottom:10px}
+  .ecard h3{font-size:17.5px;margin-bottom:7px}
+  .ecard p{font-size:14.8px;color:#bcccec}
+  .esteps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  .estep{background:rgba(255,255,255,.05);border:1px dashed #3c5f96;border-radius:13px;padding:17px}
+  .estep b{font-family:'Sora';color:var(--amber2);font-size:14px;display:block;margin-bottom:5px}
+  .estep p{font-size:14px;color:#c6d4ee}
+
+  /* Stories */
+  .stories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+  .story{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .story .stars{color:var(--amber);letter-spacing:2px;font-size:15px}
+  .story p{font-size:15.3px;margin:11px 0 13px}
+  .story footer{font-size:13.5px;color:var(--mut);font-weight:600}
+
+  /* Booking */
+  .bookgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:28px;align-items:start}
+  form .field{margin-bottom:15px}
+  label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:var(--navy)}
+  input,select,textarea{width:100%;font:400 15.5px 'Inter';padding:12px 13px;border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{border-color:var(--navy2);outline:3px solid rgba(245,166,35,.35)}
+  .err{color:#b3261e;font-size:13px;margin-top:5px;display:none}
+  .field.invalid input,.field.invalid select{border-color:#b3261e}
+  .field.invalid .err{display:block}
+  .summary{background:var(--navy);color:#e8eefb;border-radius:var(--radius);padding:26px;position:sticky;top:86px}
+  .summary h3{color:#fff;font-size:19px;margin-bottom:12px}
+  .summary dl{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-size:14.8px}
+  .summary dt{color:#9db1d6}.summary dd{font-weight:600}
+  .summary .wa{display:flex;width:100%;justify-content:center;margin-top:20px}
+  .summary .wa[aria-disabled="true"]{opacity:.45;pointer-events:none}
+  .summary p.fine{font-size:12.8px;color:#8fa3c8;margin-top:13px}
+  .queue{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:24px;display:flex;gap:16px;align-items:flex-start}
+  .queue .ic{font-size:24px}
+  .queue h3{font-size:16.5px;margin-bottom:4px}
+  .queue p{font-size:14.8px;color:var(--mut)}
+
+  /* Visit */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .vcard h3{font-size:18px;margin-bottom:10px}
+  .vcard p{color:var(--mut);font-size:15.3px}
+  .vcard .row{display:flex;gap:11px;margin-top:14px;flex-wrap:wrap}
+
+  footer.site{background:#081a36;color:#a9bcdf;padding:38px 0 30px;font-size:14px}
+  footer.site .cols2{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer.site b{color:#fff;font-family:'Sora'}
+  footer.site a{color:#ffd58a}
+  .fineprint{margin-top:22px;padding-top:16px;border-top:1px solid #1d3560;font-size:12.8px;color:#7e93ba}
+
+  .floatwa{position:fixed;right:18px;bottom:18px;z-index:60;background:#1faa57;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;text-decoration:none;box-shadow:0 12px 26px rgba(23,138,70,.4)}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;padding:42px 20px 48px}
+    .stats .wrap{grid-template-columns:repeat(2,1fr)}
+    .ecards,.stories{grid-template-columns:1fr}
+    .esteps{grid-template-columns:repeat(2,1fr)}
+    .cols,.bookgrid,.visit{grid-template-columns:1fr}
+    .summary{position:static}
+    nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;padding:16px 20px;gap:14px}
+    nav.main.open{display:flex}
+    .burger{display:block}
+    .bar .cta .btn-ghost{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#conditions">Skip to condition guides</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Dr. Sandeep Sharma ENT Clinic — home">
+      <span class="mark" aria-hidden="true">SS</span>
+      <span><b>Dr. Sandeep Sharma</b><span>ENT Clinic · Jawahar Chowk, Bhopal</span></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav">☰</button>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <a href="#conditions">Condition Guides</a>
+      <a href="#ethics">Ethics-First Care</a>
+      <a href="#stories">Patient Stories</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <div class="cta">
+      <a class="btn btn-ghost btn-sm" href="tel:+919425647694">📞 Call Clinic</a>
+      <a class="btn btn-amber btn-sm" href="#book">Book Appointment</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill">★ 4.8 rating · 480+ patient stories on Practo &amp; Google</span>
+        <h1>ENT care that treats <em>you</em> first — surgery only when it truly helps.</h1>
+        <p class="cred">Dr. Sandeep Sharma · MBBS, MS-ENT · 15+ years of experience</p>
+        <p class="lede">Otolaryngology &amp; advanced head/neck surgery at Jawahar Chowk, Bhopal — known for ethical diagnosis, warm communication, and gentle pediatric care. Most conditions are first treated with medicine; surgery is advised only when it is genuinely needed.</p>
+        <div class="ctas">
+          <a class="btn btn-wa" id="heroWa" href="https://wa.me/919425647694?text=Namaste%2C%20mujhe%20Dr.%20Sandeep%20Sharma%20ENT%20Clinic%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">Book on WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+919425647694">📞 +91 94256 47694</a>
+        </div>
+        <p class="note">Busy clinic, honest queues — booking ahead on WhatsApp helps you plan your visit better.</p>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop" alt="Doctor portrait" loading="lazy" onerror="this.closest('figure').style.display='none'">
+      </figure>
+    </div>
+  </div>
+
+  <div class="stats" role="region" aria-label="Clinic highlights">
+    <div class="wrap">
+      <div class="stat"><b>4.8★</b><span>Patient rating</span></div>
+      <div class="stat"><b>480+</b><span>Patient stories</span></div>
+      <div class="stat"><b>15+ yrs</b><span>ENT experience</span></div>
+      <div class="stat"><b>MS-ENT</b><span>Head &amp; neck surgery</span></div>
+    </div>
+  </div>
+
+  <!-- CONDITIONS -->
+  <section id="conditions">
+    <div class="wrap">
+      <p class="kicker">Condition Guides</p>
+      <h2 class="title">Understand your condition before your visit</h2>
+      <p class="sub">Plain-language guides to the conditions Dr. Sharma treats most often — common symptoms, warning signs, and when it is time to see an ENT specialist. General information only; your diagnosis is confirmed at the clinic.</p>
+
+      <div class="tabs" role="tablist" aria-label="Condition guides" id="tablist"></div>
+      <div id="panelHost"></div>
+    </div>
+  </section>
+
+  <!-- ETHICS -->
+  <section class="ethics" id="ethics">
+    <div class="wrap">
+      <p class="kicker">Ethics-First Care</p>
+      <h2 class="title">Medicine first. Surgery only when truly needed.</h2>
+      <p class="sub">Patients across Bhopal refer Dr. Sharma for one reason above all: he does not rush you to the operation table. This is how every consultation works here.</p>
+      <div class="ecards">
+        <article class="ecard reveal">
+          <div class="ic" aria-hidden="true">💊</div>
+          <h3>Medicine over unnecessary surgery</h3>
+          <p>Lauded in patient stories for treating with medicine rather than forcing surgery. If a course of treatment can solve it, that is the first prescription — not a procedure.</p>
+        </article>
+        <article class="ecard reveal">
+          <div class="ic" aria-hidden="true">🗣️</div>
+          <h3>Warm, clear communication</h3>
+          <p>Your condition, your options and the honest pros and cons of each are explained in simple language, so you decide with full information — never under pressure.</p>
+        </article>
+        <article class="ecard reveal">
+          <div class="ic" aria-hidden="true">🧒</div>
+          <h3>Gentle pediatric ENT care</h3>
+          <p>Children's ear, nose and throat problems handled patiently — from recurrent tonsil infections to ear pain and hearing concerns in young children.</p>
+        </article>
+      </div>
+      <div class="esteps" aria-label="How a consultation proceeds">
+        <div class="estep"><b>STEP 1</b><p>Listen first — your full history and symptoms, without rushing.</p></div>
+        <div class="estep"><b>STEP 2</b><p>Examine &amp; investigate — ENT examination and tests only where needed.</p></div>
+        <div class="estep"><b>STEP 3</b><p>Medicine first — a clear treatment plan with review dates.</p></div>
+        <div class="estep"><b>STEP 4</b><p>Surgery if essential — explained fully, with recovery guidance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section id="stories">
+    <div class="wrap">
+      <p class="kicker">Patient Stories</p>
+      <h2 class="title">Why 480+ patients tell their story</h2>
+      <p class="sub">Themes drawn from verified patient stories on Practo and Google — an exceptionally high referral rate built on trust.</p>
+      <div class="stories">
+        <article class="story reveal">
+          <div class="stars" aria-label="5 star experience">★★★★★</div>
+          <p>"I was told elsewhere that surgery was the only option for my sinus trouble. Dr. Sharma first treated me with medicine — and it worked. That honesty is rare."</p>
+          <footer>Sinus patient · ethics-first diagnosis</footer>
+        </article>
+        <article class="story reveal">
+          <div class="stars" aria-label="5 star experience">★★★★★</div>
+          <p>"He explains everything patiently — what the problem is, what the medicine does, what to expect. You never feel rushed or confused."</p>
+          <footer>Long-term patient · warm communication</footer>
+        </article>
+        <article class="story reveal">
+          <div class="stars" aria-label="5 star experience">★★★★★</div>
+          <p>"My young child was frightened of doctors. The way her ear problem was handled — gently and without any unnecessary procedure — won our whole family's trust."</p>
+          <footer>Parent · pediatric ENT care</footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="padding-top:6px">
+    <div class="wrap">
+      <p class="kicker">Appointments</p>
+      <h2 class="title">Book your consultation</h2>
+      <p class="sub">Fill this short form — it prepares a ready-to-send WhatsApp message to the clinic with your details. Confirm it in WhatsApp and the clinic will confirm your slot. (The clinic can get busy; booking ahead helps you avoid a long wait.)</p>
+
+      <div class="bookgrid">
+        <form id="bookForm" novalidate aria-label="Appointment booking form">
+          <div class="field" id="f-name">
+            <label for="pname">Patient name</label>
+            <input id="pname" name="pname" type="text" autocomplete="name" placeholder="e.g. Ramesh Gupta" required>
+            <p class="err">Please enter the patient's name.</p>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="pphone">Mobile number (10 digits)</label>
+            <input id="pphone" name="pphone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="e.g. 98XXXXXXXX" maxlength="13" required>
+            <p class="err">Please enter a valid 10-digit Indian mobile number.</p>
+          </div>
+          <div class="field" id="f-cond">
+            <label for="pcond">Condition / reason for visit</label>
+            <select id="pcond" name="pcond" required>
+              <option value="">— Select a condition —</option>
+              <option>Sinusitis / Sinus problem</option>
+              <option>Allergy (nose / sneezing)</option>
+              <option>Hearing loss</option>
+              <option>Tinnitus (ringing in ears)</option>
+              <option>Ear pain / ear infection</option>
+              <option>Throat / tonsil problem</option>
+              <option>Child (pediatric) ENT problem</option>
+              <option>Other / not sure</option>
+            </select>
+            <p class="err">Please select a condition.</p>
+          </div>
+          <div class="field" id="f-date">
+            <label for="pdate">Preferred date</label>
+            <input id="pdate" name="pdate" type="date" required>
+            <p class="err">Please pick a preferred date (today or later).</p>
+          </div>
+          <div class="field">
+            <label for="pnote">Anything the doctor should know? <span style="color:var(--mut);font-weight:400">(optional)</span></label>
+            <textarea id="pnote" name="pnote" rows="3" placeholder="Symptoms, duration, previous treatment…"></textarea>
+          </div>
+        </form>
+
+        <aside class="summary" aria-label="Booking summary">
+          <h3>Your booking summary</h3>
+          <dl>
+            <dt>Doctor</dt><dd>Dr. Sandeep Sharma (ENT)</dd>
+            <dt>Patient</dt><dd id="sName">—</dd>
+            <dt>Mobile</dt><dd id="sPhone">—</dd>
+            <dt>Condition</dt><dd id="sCond">—</dd>
+            <dt>Date</dt><dd id="sDate">—</dd>
+          </dl>
+          <a class="btn btn-wa wa" id="waSend" href="#" target="_blank" rel="noopener" aria-disabled="true">Confirm on WhatsApp →</a>
+          <p class="fine">Opens WhatsApp with your booking prefilled for +91 94256 47694. Final slot confirmation comes from the clinic on WhatsApp.</p>
+        </aside>
+      </div>
+
+      <div class="queue reveal">
+        <div class="ic" aria-hidden="true">⏱️</div>
+        <div>
+          <h3>A note on waiting times</h3>
+          <p>Patient stories mention the clinic can get busy — a sign of trust, but we know your time matters. Booking on WhatsApp before you come, and arriving close to your slot, is the best way to keep your wait short.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="padding-top:6px">
+    <div class="wrap">
+      <p class="kicker">Visit Us</p>
+      <h2 class="title">Dr. Sandeep Sharma – ENT Clinic</h2>
+      <div class="visit">
+        <div class="vcard reveal">
+          <h3>📍 Address</h3>
+          <p>50, New MLA Quarters, Behind Canara Bank,<br>Jawahar Chowk / Depot Square, North TT Nagar,<br>Bhopal — 462003 (Madhya Pradesh)</p>
+          <div class="row">
+            <a class="btn btn-amber btn-sm" href="https://www.google.com/maps/search/?api=1&query=Dr.+Sandeep+Sharma+ENT+Clinic+Jawahar+Chowk+Bhopal" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+        <div class="vcard reveal">
+          <h3>📞 Contact &amp; timings</h3>
+          <p>Phone / WhatsApp: <a href="tel:+919425647694"><b>+91 94256 47694</b></a></p>
+          <p style="margin-top:8px">OPD timings can vary by day — please call or message on WhatsApp to confirm today's timings and slot availability before visiting.</p>
+          <div class="row">
+            <a class="btn btn-wa btn-sm" href="https://wa.me/919425647694" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn btn-sm" style="background:var(--navy);color:#fff" href="tel:+919425647694">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols2">
+      <div>
+        <b>Dr. Sandeep Sharma – ENT Clinic</b><br>
+        Otolaryngology &amp; Advanced Head/Neck Surgery<br>
+        Jawahar Chowk / Depot Square, North TT Nagar, Bhopal 462003
+      </div>
+      <div>
+        Phone: <a href="tel:+919425647694">+91 94256 47694</a><br>
+        Rating: 4.8★ · 480+ patient stories (Practo &amp; Google)
+      </div>
+    </div>
+    <p class="fineprint">Demo website — built as a concept presentation for the clinic. Condition guides are general information and are not a substitute for a medical consultation. In an emergency, please visit your nearest hospital.</p>
+  </div>
+</footer>
+
+<a class="floatwa" href="https://wa.me/919425647694?text=Namaste%2C%20mujhe%20Dr.%20Sandeep%20Sharma%20ENT%20Clinic%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+"use strict";
+/* ---------- Condition guides data ---------- */
+var CONDITIONS = [
+  {
+    id:"sinusitis", label:"Sinusitis",
+    title:"Sinusitis — when a 'cold' is more than a cold",
+    over:"Inflammation of the sinuses — the air spaces around the nose and cheeks. It often follows a cold or allergy, and is one of the most common reasons patients visit an ENT.",
+    symptoms:["Blocked nose lasting more than 10 days","Thick yellow/green nasal discharge","Pain or pressure over the cheeks, forehead or between the eyes","Reduced sense of smell","Headache that worsens on bending forward","Cough that is worse at night"],
+    when:["Symptoms lasting beyond 10–12 days without improving","Fever with facial pain or swelling around the eyes","Symptoms that improve, then suddenly worsen","Repeated episodes (3–4 or more in a year)","Any swelling of the eyelid or vision change — see a doctor the same day"],
+    approach:"Most sinusitis improves with medicines — nasal sprays, steam, and antibiotics only when a bacterial infection is likely. Endoscopic sinus surgery is considered only for chronic cases that do not respond to proper medical treatment."
+  },
+  {
+    id:"allergy", label:"Allergy",
+    title:"Allergic rhinitis — the sneezing that never quite leaves",
+    over:"An allergic reaction of the nose to dust, pollen, pollution or pet dander. Very common in Bhopal's changing seasons, and a frequent trigger behind sinus problems and disturbed sleep.",
+    symptoms:["Frequent sneezing bouts, especially on waking","Itchy, watery nose and eyes","Clear, runny nasal discharge","Blocked nose, worse at night","Itching of the throat or ears","Dark circles under the eyes from poor sleep"],
+    when:["Symptoms on most days for more than a month","Sleep, work or studies regularly disturbed","Frequent sinus infections alongside the allergy","Over-the-counter medicines help only briefly","Wheezing or breathlessness along with nasal symptoms"],
+    approach:"Treatment starts with identifying triggers, nasal sprays and anti-allergic medicines — most patients improve well without any procedure. Allergy management also protects the ears and sinuses in the long run."
+  },
+  {
+    id:"hearing", label:"Hearing Loss",
+    title:"Hearing loss — gradual, and too often ignored",
+    over:"Hearing can reduce slowly with age, noise exposure, ear wax, infections or middle-ear disease. Because it is gradual, families usually notice it before the patient does.",
+    symptoms:["Asking people to repeat themselves often","TV or phone volume creeping higher","Difficulty following conversation in noisy places","One ear hearing noticeably less than the other","Blocked or full feeling in the ear","Children responding late or speaking loudly"],
+    when:["Sudden hearing loss in one ear — treat as urgent, see an ENT within 24–48 hours","Hearing loss after an ear infection or injury","Ear discharge along with reduced hearing","A child with delayed speech or poor school response","Hearing loss with dizziness or ringing sounds"],
+    approach:"Many causes are simple and treatable — wax, infection, or fluid behind the eardrum. A hearing test (audiometry) shows the type and degree, and treatment is planned accordingly; surgery is advised only for causes that genuinely need it."
+  },
+  {
+    id:"tinnitus", label:"Tinnitus",
+    title:"Tinnitus — ringing, buzzing or hissing in the ears",
+    over:"Hearing a sound when there is no external source. Tinnitus is a symptom, not a disease — the task is to find its cause, which may be as simple as wax or as significant as inner-ear disease.",
+    symptoms:["Ringing, buzzing, hissing or whistling sounds","Sound in one or both ears","More noticeable in quiet rooms or at night","Difficulty concentrating or sleeping","Sometimes accompanied by reduced hearing","Pulsing sound in time with the heartbeat (less common)"],
+    when:["Tinnitus in only one ear","Tinnitus that pulses with your heartbeat","Tinnitus with hearing loss or dizziness","Started after a head injury or loud blast","Persistent tinnitus affecting sleep or mood for more than a few weeks"],
+    approach:"There is no single 'tinnitus tablet' — honest ENT care means finding and treating the underlying cause, checking hearing, and guiding sound and sleep habits. Be cautious of anyone promising instant cures."
+  }
+];
+
+/* ---------- Tabs ---------- */
+var tablist = document.getElementById("tablist");
+var panelHost = document.getElementById("panelHost");
+var tabs = [];
+
+function renderPanel(c){
+  var li = function(items){ return items.map(function(x){ return "<li>" + x + "</li>"; }).join(""); };
+  panelHost.innerHTML =
+    '<article class="panel" role="tabpanel" id="panel-' + c.id + '" aria-labelledby="tab-' + c.id + '" tabindex="0">' +
+      "<h3>" + c.title + "</h3>" +
+      '<p class="over">' + c.over + "</p>" +
+      '<div class="cols">' +
+        '<div class="box"><h4>Common symptoms</h4><ul>' + li(c.symptoms) + "</ul></div>" +
+        '<div class="box warn"><h4>When to see an ENT</h4><ul>' + li(c.when) + "</ul></div>" +
+      "</div>" +
+      '<div class="approach"><b>Dr. Sharma\u2019s approach:</b> ' + c.approach + "</div>" +
+      '<div class="bookrow">' +
+        '<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="https://wa.me/919425647694?text=' +
+          encodeURIComponent("Namaste, mujhe " + c.label + " ke baare mein Dr. Sandeep Sharma se consultation ke liye appointment book karna hai.") +
+          '">Book for ' + c.label + ' on WhatsApp</a>' +
+        "<span>or call <a href='tel:+919425647694'><b>+91 94256 47694</b></a></span>" +
+      "</div>" +
+    "</article>";
+}
+
+CONDITIONS.forEach(function(c, i){
+  var b = document.createElement("button");
+  b.className = "tab"; b.id = "tab-" + c.id; b.type = "button";
+  b.setAttribute("role","tab");
+  b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  b.setAttribute("tabindex", i === 0 ? "0" : "-1");
+  b.textContent = c.label;
+  b.addEventListener("click", function(){ selectTab(i, true); });
+  tablist.appendChild(b); tabs.push(b);
+});
+function selectTab(i, focus){
+  tabs.forEach(function(t, j){
+    t.setAttribute("aria-selected", j === i ? "true" : "false");
+    t.setAttribute("tabindex", j === i ? "0" : "-1");
+  });
+  renderPanel(CONDITIONS[i]);
+  var sel = document.getElementById("pcond");
+  if (sel) { /* keep booking form in sync if a matching option exists */ 
+    for (var k = 0; k < sel.options.length; k++) {
+      if (sel.options[k].text.toLowerCase().indexOf(CONDITIONS[i].label.toLowerCase()) === 0) { sel.selectedIndex = k; break; }
+    }
+    updateSummary();
+  }
+  if (focus) tabs[i].focus();
+}
+tablist.addEventListener("keydown", function(e){
+  var cur = tabs.indexOf(document.activeElement);
+  if (cur < 0) return;
+  var n = null;
+  if (e.key === "ArrowRight") n = (cur + 1) % tabs.length;
+  if (e.key === "ArrowLeft") n = (cur - 1 + tabs.length) % tabs.length;
+  if (e.key === "Home") n = 0;
+  if (e.key === "End") n = tabs.length - 1;
+  if (n !== null) { e.preventDefault(); selectTab(n, true); }
+});
+renderPanel(CONDITIONS[0]);
+
+/* ---------- Booking form ---------- */
+var els = {
+  name: document.getElementById("pname"), phone: document.getElementById("pphone"),
+  cond: document.getElementById("pcond"), date: document.getElementById("pdate"),
+  note: document.getElementById("pnote"),
+  sName: document.getElementById("sName"), sPhone: document.getElementById("sPhone"),
+  sCond: document.getElementById("sCond"), sDate: document.getElementById("sDate"),
+  wa: document.getElementById("waSend")
+};
+var today = new Date(); 
+var iso = today.getFullYear() + "-" + String(today.getMonth()+1).padStart(2,"0") + "-" + String(today.getDate()).padStart(2,"0");
+els.date.min = iso;
+
+function validPhone(v){ var d = v.replace(/\D/g,""); if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2); return /^[6-9]\d{9}$/.test(d) ? d : null; }
+function setInvalid(id, bad){ document.getElementById(id).classList.toggle("invalid", bad); }
+function fmtDate(v){ if(!v) return "—"; var p = v.split("-"); return p[2] + "-" + p[1] + "-" + p[0]; }
+
+function updateSummary(){
+  var name = els.name.value.trim(), phone = validPhone(els.phone.value), cond = els.cond.value, date = els.date.value;
+  els.sName.textContent = name || "—";
+  els.sPhone.textContent = els.phone.value.trim() || "—";
+  els.sCond.textContent = cond || "—";
+  els.sDate.textContent = fmtDate(date);
+  var ok = name.length >= 2 && !!phone && !!cond && !!date && date >= iso;
+  if (ok) {
+    var msg = "Namaste, mujhe Dr. Sandeep Sharma ENT Clinic mein appointment book karna hai.\n" +
+      "Patient: " + name + "\nMobile: " + phone + "\nCondition: " + cond + "\nPreferred date: " + fmtDate(date) +
+      (els.note.value.trim() ? "\nNote: " + els.note.value.trim() : "") +
+      "\nKripya mera slot confirm karein.";
+    els.wa.href = "https://wa.me/919425647694?text=" + encodeURIComponent(msg);
+    els.wa.setAttribute("aria-disabled","false");
+  } else {
+    els.wa.href = "#"; els.wa.setAttribute("aria-disabled","true");
+  }
+  return ok;
+}
+["input","change"].forEach(function(ev){
+  document.getElementById("bookForm").addEventListener(ev, function(){
+    setInvalid("f-name", els.name.value.trim().length < 2 && els.name.value.length > 0);
+    setInvalid("f-phone", !validPhone(els.phone.value) && els.phone.value.length > 0);
+    setInvalid("f-cond", !els.cond.value);
+    setInvalid("f-date", !!els.date.value && els.date.value < iso);
+    updateSummary();
+  });
+});
+document.getElementById("bookForm").addEventListener("submit", function(e){ e.preventDefault(); });
+els.wa.addEventListener("click", function(e){
+  if (els.wa.getAttribute("aria-disabled") === "true") {
+    e.preventDefault();
+    setInvalid("f-name", els.name.value.trim().length < 2);
+    setInvalid("f-phone", !validPhone(els.phone.value));
+    setInvalid("f-cond", !els.cond.value);
+    setInvalid("f-date", !els.date.value || els.date.value < iso);
+    document.querySelector(".field.invalid input, .field.invalid select").focus();
+  }
+});
+updateSummary();
+
+/* ---------- Mobile menu ---------- */
+var burger = document.getElementById("burger"), mainnav = document.getElementById("mainnav");
+burger.addEventListener("click", function(){
+  var open = mainnav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+});
+mainnav.addEventListener("click", function(e){ if (e.target.tagName === "A") mainnav.classList.remove("open"); });
+
+/* ---------- Reveal on scroll ---------- */
+if ("IntersectionObserver" in window) {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

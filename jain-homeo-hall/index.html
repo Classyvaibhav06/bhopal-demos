@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jain Homeo Hall — Classical Homeopathy &amp; Tele-Consultation, Kolar Road, Bhopal</title>
+<meta name="description" content="Jain Homeo Hall, Kolar Road Bhopal — Dr. Chanchal Kumar Jain (MD, BHMS). Classical homeopathy for skin, asthma, arthritis & pediatric chronic conditions. Online tele-consultation and medicine re-order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ec; --cream2:#f3ead8; --paper:#fffdf8;
+  --green:#2f5d3a; --green-d:#1e4028; --green-l:#e4eddd;
+  --brown:#7a5230; --brown-d:#5d3d22; --gold:#c08a3e;
+  --ink:#2b2620; --muted:#6f6455; --line:#e0d4bd;
+  --radius:18px; --shadow:0 14px 34px rgba(93,61,34,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16.5px}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;line-height:1.2}
+img{max-width:100%;display:block}
+a{color:var(--green)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:0;background:var(--green-d);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(250,245,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+.logo{width:44px;height:44px;border-radius:50%;background:var(--green);color:#f7efdd;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:20px;flex:none}
+.brand b{font-family:'Fraunces',serif;font-size:20px;display:block;line-height:1.1}
+.brand span{font-size:12.5px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+nav.main{display:flex;gap:4px}
+nav.main a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:8px 11px;border-radius:9px}
+nav.main a:hover{background:var(--green-l)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;padding:11px 20px;border-radius:99px;border:0;cursor:pointer;font-size:15.5px;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{background:var(--green-d);transform:translateY(-1px)}
+.btn.wa{background:#1faa55}.btn.wa:hover{background:#178a44}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn.ghost:hover{background:var(--green-l)}
+.menuBtn{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);padding:6px}
+@media(max-width:820px){nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;padding:10px 20px 16px;border-bottom:1px solid var(--line)}nav.main.open{display:flex}.menuBtn{display:block}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,var(--cream2),var(--cream) 55%),var(--cream);border-bottom:1px solid var(--line);overflow:hidden}
+.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:52px 0 60px}
+@media(max-width:880px){.heroGrid{grid-template-columns:1fr;padding:36px 0 44px}}
+.pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-size:14px;font-weight:600;color:var(--brown-d);box-shadow:0 3px 10px rgba(93,61,34,.08)}
+.pill .star{color:var(--gold)}
+.hero h1{font-size:clamp(32px,5vw,50px);margin:16px 0 14px;color:var(--green-d)}
+.hero h1 em{font-style:normal;color:var(--brown)}
+.hero p.lede{font-size:18.5px;color:var(--muted);max-width:34em}
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.heroImg{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.heroImg img{height:100%;min-height:320px;object-fit:cover;width:100%}
+.heroCard{position:absolute;left:14px;bottom:14px;background:rgba(255,253,248,.96);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);max-width:290px}
+.heroCard b{font-family:'Fraunces',serif;color:var(--green-d)}
+.heroCard p{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+/* stats */
+.stats{background:var(--green-d);color:#eaf0e2}
+.statsGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:26px 0;text-align:center}
+@media(max-width:760px){.statsGrid{grid-template-columns:repeat(2,1fr)}}
+.stats b{font-family:'Fraunces',serif;font-size:clamp(24px,3.4vw,34px);display:block;color:#fff}
+.stats span{font-size:14px;color:#c4d4b8}
+
+section{padding:58px 0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--brown);text-align:center}
+h2.title{font-size:clamp(26px,4vw,38px);text-align:center;color:var(--green-d);margin:8px auto 10px;max-width:22em}
+p.sub{text-align:center;color:var(--muted);max-width:44em;margin:0 auto 34px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 6px 18px rgba(93,61,34,.06)}
+.step .num{width:42px;height:42px;border-radius:50%;background:var(--green-l);color:var(--green-d);font-family:'Fraunces',serif;font-weight:700;font-size:19px;display:grid;place-items:center;margin-bottom:13px}
+.step h3{font-size:20px;color:var(--green-d);margin-bottom:7px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* conditions */
+.condWrap{background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.condGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:760px){.condGrid{grid-template-columns:1fr}}
+.cond{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;gap:18px;align-items:flex-start}
+.cond .ico{font-size:30px;flex:none;width:58px;height:58px;border-radius:16px;background:var(--green-l);display:grid;place-items:center}
+.cond h3{font-size:20.5px;color:var(--green-d);margin-bottom:5px}
+.cond p{color:var(--muted);font-size:15.5px;margin-bottom:12px}
+
+/* forms */
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media(max-width:880px){.formGrid{grid-template-columns:1fr}}
+.fcard{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.fcard h3{font-size:23px;color:var(--green-d)}
+.fcard .fh{color:var(--muted);font-size:15px;margin:6px 0 20px}
+.field{margin-bottom:15px}
+.field label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px}
+.field label .opt{color:var(--muted);font-weight:400}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;font:inherit;font-size:15.5px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:3px solid rgba(192,138,62,.35);outline-offset:0}
+.field textarea{resize:vertical;min-height:88px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+@media(max-width:480px){.two{grid-template-columns:1fr}}
+.err{display:none;color:#a12622;font-size:13.5px;margin-top:5px;font-weight:500}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#a12622}
+.field.invalid .err{display:block}
+.fcard .btn{width:100%;justify-content:center;font-size:16.5px;padding:14px}
+.fnote{font-size:13px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* doctor */
+.docWrap{background:var(--green-d);color:#e9efe0;border-radius:26px;padding:42px;display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:center}
+@media(max-width:820px){.docWrap{grid-template-columns:1fr;padding:30px}}
+.docWrap img{border-radius:18px;height:100%;min-height:280px;object-fit:cover;width:100%}
+.docWrap h2{color:#fff;font-size:clamp(25px,3.6vw,34px);margin-bottom:6px}
+.docWrap .cred{color:#bcd0ab;font-weight:600;letter-spacing:.3px;margin-bottom:14px}
+.docWrap p{color:#cfdcc2;font-size:16px;margin-bottom:12px}
+.docTags{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.docTags span{border:1px solid #54755c;border-radius:99px;padding:5px 13px;font-size:13.5px;color:#dce8d2}
+
+/* testimonials */
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.testi{grid-template-columns:1fr}}
+.tcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.tcard .stars{color:var(--gold);font-size:17px;letter-spacing:2px;margin-bottom:10px}
+.tcard p{font-size:16px;color:var(--ink)}
+.tcard span{display:block;margin-top:13px;font-size:13.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+/* visit + footer */
+.visit{background:var(--cream2);border-top:1px solid var(--line)}
+.visitGrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+@media(max-width:760px){.visitGrid{grid-template-columns:1fr}}
+.visitCard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.visitCard h3{color:var(--green-d);font-size:21px;margin-bottom:10px}
+.visitCard p{color:var(--muted);margin-bottom:8px}
+.visitCard a{font-weight:600}
+footer{background:var(--green-d);color:#c9d8ba;padding:38px 0 30px;font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer b{color:#fff;font-family:'Fraunces',serif;font-size:17px}
+.demoNote{width:100%;text-align:center;border-top:1px solid #3c5c44;padding-top:16px;color:#9db48e;font-size:13px}
+.floatWa{position:fixed;right:18px;bottom:18px;z-index:60;background:#1faa55;color:#fff;text-decoration:none;font-weight:700;padding:13px 19px;border-radius:99px;box-shadow:0 10px 26px rgba(0,0,0,.25);font-size:15px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#intake">Skip to consultation form</a>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="#top" aria-label="Jain Homeo Hall — home">
+      <span class="logo" aria-hidden="true">J</span>
+      <span><b>Jain Homeo Hall</b><span>Classical Homeopathy · Bhopal</span></span>
+    </a>
+    <button class="menuBtn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">☰</button>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <a href="#conditions">Conditions</a>
+      <a href="#how">Tele-Consult</a>
+      <a href="#intake">New Consultation</a>
+      <a href="#reorder">Re-Order Medicine</a>
+      <a href="#doctor">Doctor</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn wa" href="https://wa.me/919993166449?text=Namaste%2C%20mujhe%20homeopathy%20consultation%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap heroGrid">
+    <div>
+      <span class="pill"><span class="star" aria-hidden="true">★</span> 4.9 rated · 1,510+ patient reviews</span>
+      <h1>Gentle, classical homeopathy — <em>now consult from anywhere.</em></h1>
+      <p class="lede">For generations, families have trusted Jain Homeo Hall on Kolar Road for chronic care. If you live outside Bhopal, you no longer need to travel: fill a short intake form, consult Dr. Jain on WhatsApp, and get your remedies couriered home.</p>
+      <div class="ctaRow">
+        <a class="btn wa" href="#intake">Start Online Consultation</a>
+        <a class="btn ghost" href="#reorder">Re-Order My Medicine</a>
+      </div>
+    </div>
+    <div class="heroImg">
+      <img src="https://images.unsplash.com/photo-1512678080530-bbffe3f6e290?q=80&w=1200&auto=format&fit=crop" alt="Natural herbs and homeopathic remedy bottles" loading="lazy" onerror="this.style.display='none'">
+      <div class="heroCard">
+        <b>Dr. Chanchal Kumar Jain</b>
+        <p>MD, BHMS — Senior Homeopathic Consultant<br>45/3, SK Plaza, Kolar Road, Bhopal</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats" role="region" aria-label="Clinic at a glance">
+  <div class="wrap statsGrid">
+    <div><b>4.9★</b><span>Patient rating</span></div>
+    <div><b>1,510+</b><span>Reviews across directories</span></div>
+    <div><b>Generations</b><span>Of families treated</span></div>
+    <div><b>Tele-Consult</b><span>For outstation patients</span></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how" aria-labelledby="howTitle">
+  <div class="wrap">
+    <p class="eyebrow">Tele-Homeopathy</p>
+    <h2 class="title" id="howTitle">How an online consultation works</h2>
+    <p class="sub">Classical homeopathy begins with listening. The tele-consult follows the same detailed case-taking as an in-clinic visit — just from your home.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="num" aria-hidden="true">1</div><h3>Send your intake</h3><p>Fill the short form below — your condition, history and city. It opens WhatsApp with everything neatly written for the clinic.</p></div>
+      <div class="step reveal"><div class="num" aria-hidden="true">2</div><h3>Consult on WhatsApp</h3><p>Dr. Jain reviews your case and consults with you on a WhatsApp audio or video call, asking the detailed questions classical prescribing needs.</p></div>
+      <div class="step reveal"><div class="num" aria-hidden="true">3</div><h3>Remedies couriered</h3><p>Your prescribed remedies are packed and couriered to your address, with dosage instructions. Re-order anytime from the form below.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="condWrap" id="conditions" aria-labelledby="condTitle">
+  <div class="wrap">
+    <p class="eyebrow">Areas of Care</p>
+    <h2 class="title" id="condTitle">Conditions families consult us for</h2>
+    <p class="sub">Long-standing, recurring problems are where classical homeopathy is most sought after. These are the areas Jain Homeo Hall is trusted for, generation after generation.</p>
+    <div class="condGrid">
+      <article class="cond reveal"><div class="ico" aria-hidden="true">🌿</div><div><h3>Skin Diseases</h3><p>Eczema, psoriasis, recurring rashes, allergies and other chronic skin complaints that keep coming back.</p><a class="btn ghost" href="#intake" data-cond="Skin Disease">Consult for Skin →</a></div></article>
+      <article class="cond reveal"><div class="ico" aria-hidden="true">🫁</div><div><h3>Asthma &amp; Respiratory</h3><p>Asthma, chronic bronchitis, allergic cough and breathing difficulties — in adults and children alike.</p><a class="btn ghost" href="#intake" data-cond="Asthma / Respiratory">Consult for Asthma →</a></div></article>
+      <article class="cond reveal"><div class="ico" aria-hidden="true">🦴</div><div><h3>Arthritis &amp; Joint Pain</h3><p>Arthritis, stiffness and long-term joint pain, especially in elderly patients seeking gentle, sustained care.</p><a class="btn ghost" href="#intake" data-cond="Arthritis / Joint Pain">Consult for Arthritis →</a></div></article>
+      <article class="cond reveal"><div class="ico" aria-hidden="true">🧒</div><div><h3>Pediatric Chronic Conditions</h3><p>Recurring infections, allergies and chronic complaints in children — treated gently, without harsh medicines.</p><a class="btn ghost" href="#intake" data-cond="Pediatric (Child)">Consult for a Child →</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FORMS -->
+<section id="intake" aria-labelledby="formTitle">
+  <div class="wrap">
+    <p class="eyebrow">Begin Here</p>
+    <h2 class="title" id="formTitle">New consultation &amp; medicine re-order</h2>
+    <p class="sub">Both forms open WhatsApp with your details pre-written — just press send. Nothing is stored on this website.</p>
+    <div class="formGrid">
+
+      <form class="fcard" id="intakeForm" novalidate>
+        <h3>🌱 New Patient — Health Intake</h3>
+        <p class="fh">For a first consultation, in Bhopal or from anywhere in India.</p>
+        <div class="two">
+          <div class="field"><label for="iName">Patient name *</label><input id="iName" name="name" type="text" autocomplete="name" placeholder="Full name"><p class="err">Please enter the patient's name.</p></div>
+          <div class="field"><label for="iAge">Age *</label><input id="iAge" name="age" type="number" min="0" max="120" inputmode="numeric" placeholder="e.g. 42"><p class="err">Please enter a valid age.</p></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="iCond">Condition category *</label>
+            <select id="iCond" name="condition">
+              <option value="">— Select —</option>
+              <option>Skin Disease</option>
+              <option>Asthma / Respiratory</option>
+              <option>Arthritis / Joint Pain</option>
+              <option>Pediatric (Child)</option>
+              <option>Other Chronic Condition</option>
+            </select><p class="err">Please choose a category.</p></div>
+          <div class="field"><label for="iCity">Your city *</label><input id="iCity" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Indore / Bhopal"><p class="err">Please enter your city.</p></div>
+        </div>
+        <div class="field"><label for="iDesc">Describe your problem *</label><textarea id="iDesc" name="description" placeholder="Since when, main symptoms, what makes it better or worse, any current treatment…"></textarea><p class="err">A short description helps Dr. Jain prepare (min. 10 characters).</p></div>
+        <div class="field"><label for="iMode">Preferred consultation</label>
+          <select id="iMode" name="mode"><option>WhatsApp Video Call</option><option>WhatsApp Audio Call</option><option>In-Clinic Visit (Kolar Road)</option></select></div>
+        <button class="btn wa" type="submit">Send Intake on WhatsApp →</button>
+        <p class="fnote">Opens WhatsApp to +91 99931 66449 with your intake prefilled.</p>
+      </form>
+
+      <form class="fcard" id="reorderForm" novalidate>
+        <h3>💊 Returning Patient — Re-Order</h3>
+        <p class="fh">Already under treatment? Re-order your prescribed remedies for courier delivery.</p>
+        <div class="field"><label for="rName">Your name *</label><input id="rName" name="name" type="text" autocomplete="name" placeholder="Name as in clinic records"><p class="err">Please enter your name.</p></div>
+        <div class="field"><label for="rRx">Previous prescription details *</label><textarea id="rRx" name="prescription" placeholder="Remedy name(s), potency, quantity — as on your last prescription or medicine bottle…"></textarea><p class="err">Please add the remedy details from your prescription.</p></div>
+        <div class="field"><label for="rAddr">Delivery address *</label><textarea id="rAddr" name="address" style="min-height:70px" placeholder="House no., street, area, city, PIN code"></textarea><p class="err">Please enter the full delivery address with PIN code.</p></div>
+        <div class="field"><label for="rNote">Note <span class="opt">(optional — e.g. dosage finished, symptoms changed)</span></label><input id="rNote" name="note" type="text" placeholder="Anything the clinic should know"></div>
+        <button class="btn wa" type="submit">Re-Order on WhatsApp →</button>
+        <p class="fnote">The clinic confirms availability and courier charges on WhatsApp before dispatch.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section style="padding-top:0" id="doctor" aria-labelledby="docTitle">
+  <div class="wrap">
+    <div class="docWrap reveal">
+      <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop" alt="Portrait of a senior doctor" loading="lazy" onerror="this.style.display='none'">
+      <div>
+        <h2 id="docTitle">Dr. Chanchal Kumar Jain</h2>
+        <p class="cred">MD, BHMS — Senior Homeopathic Consultant</p>
+        <p>At Jain Homeo Hall on Kolar Road, Dr. Jain practises classical homeopathy the way it has always been done here: one patient at a time, a complete case history, and a remedy chosen for the person — not just the disease name.</p>
+        <p>Families who first came for a child's allergy now bring their grandchildren. With tele-consultation, that same continuity of care now reaches patients across Madhya Pradesh and beyond.</p>
+        <div class="docTags"><span>Skin Diseases</span><span>Asthma</span><span>Arthritis</span><span>Pediatric Chronic Care</span><span>Tele-Consultation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding-top:0" aria-labelledby="testiTitle">
+  <div class="wrap">
+    <p class="eyebrow">Patient Trust</p>
+    <h2 class="title" id="testiTitle">Why families keep coming back</h2>
+    <p class="sub">Themes drawn from 1,510+ reviews of Jain Homeo Hall across Justdial and medical directories.</p>
+    <div class="testi">
+      <div class="tcard reveal"><div class="stars" aria-label="Rated highly">★★★★★</div><p>Three generations of the same families consult here — grandparents treated for arthritis bring their children and grandchildren for chronic care.</p><span>Review theme · Generational trust</span></div>
+      <div class="tcard reveal"><div class="stars" aria-label="Rated highly">★★★★★</div><p>Patients with long-standing skin diseases and asthma value the detailed case-taking and steady, gentle treatment over years of follow-up.</p><span>Review theme · Chronic conditions</span></div>
+      <div class="tcard reveal"><div class="stars" aria-label="Rated highly">★★★★★</div><p>Parents trust the clinic with their children's recurring complaints — and outstation patients can now continue care without travelling to Bhopal.</p><span>Review theme · Pediatric &amp; remote care</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" aria-labelledby="visitTitle">
+  <div class="wrap visitGrid">
+    <div>
+      <p class="eyebrow" style="text-align:left">Visit the Clinic</p>
+      <h2 class="title" id="visitTitle" style="text-align:left;margin-left:0">In Bhopal? Walk in.</h2>
+      <p style="color:var(--muted);max-width:32em">The hall is on Kolar Road, opposite Bank of Baroda — easy to reach from anywhere in the Kolar–Danish Kunj area. Outstation patients: use the tele-consult above, no travel needed.</p>
+      <div class="ctaRow">
+        <a class="btn" href="tel:+919993166449">📞 Call +91 99931 66449</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Jain+Homeo+Hall+SK+Plaza+Kolar+Road+Bhopal" target="_blank" rel="noopener">Get Directions →</a>
+      </div>
+    </div>
+    <div class="visitCard">
+      <h3>Jain Homeo Hall</h3>
+      <p>📍 45/3, SK Plaza, Near Quality Homes,<br>Opp. Bank of Baroda, Kolar Road,<br>Bhopal — 462042 (M.P.)</p>
+      <p>📞 <a href="tel:+919993166449">+91 99931 66449</a></p>
+      <p>💬 Tele-consultation &amp; medicine re-orders available on the same number via WhatsApp, for patients outside Bhopal.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>Jain Homeo Hall</b>
+    <span>Classical Homeopathy · Kolar Road, Bhopal · +91 99931 66449</span>
+    <p class="demoNote">Demo website — built to present the clinic's online consultation concept. Homeopathic consultation does not replace emergency medical care.</p>
+  </div>
+</footer>
+
+<a class="floatWa" href="https://wa.me/919993166449?text=Namaste%2C%20mujhe%20homeopathy%20consultation%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬 WhatsApp Us</a>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "919993166449";
+
+  /* mobile menu */
+  var btn = document.getElementById("menuBtn"), nav = document.getElementById("mainNav");
+  btn.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav.addEventListener("click", function(e){ if(e.target.tagName === "A"){ nav.classList.remove("open"); btn.setAttribute("aria-expanded","false"); } });
+
+  /* reveal on scroll */
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } }); }, {threshold:.12});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); }); }
+
+  /* condition cards pre-select the intake category */
+  document.querySelectorAll("[data-cond]").forEach(function(a){
+    a.addEventListener("click", function(){
+      var sel = document.getElementById("iCond");
+      for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text === a.getAttribute("data-cond")){ sel.selectedIndex = i; break; } }
+    });
+  });
+
+  function mark(field, ok){ field.classList.toggle("invalid", !ok); return ok; }
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function openWa(lines){ window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener"); }
+
+  /* intake form */
+  document.getElementById("intakeForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var ok = true;
+    ok = mark(document.getElementById("iName").closest(".field"), val("iName").length >= 2) && ok;
+    var age = parseInt(val("iAge"), 10);
+    ok = mark(document.getElementById("iAge").closest(".field"), !isNaN(age) && age >= 0 && age <= 120) && ok;
+    ok = mark(document.getElementById("iCond").closest(".field"), val("iCond") !== "") && ok;
+    ok = mark(document.getElementById("iCity").closest(".field"), val("iCity").length >= 2) && ok;
+    ok = mark(document.getElementById("iDesc").closest(".field"), val("iDesc").length >= 10) && ok;
+    if(!ok){ var bad = document.querySelector("#intakeForm .field.invalid input, #intakeForm .field.invalid select, #intakeForm .field.invalid textarea"); if(bad) bad.focus(); return; }
+    openWa([
+      "Namaste, I would like a homeopathy tele-consultation at Jain Homeo Hall.",
+      "",
+      "Patient: " + val("iName") + " (Age " + age + ")",
+      "City: " + val("iCity"),
+      "Condition: " + val("iCond"),
+      "Preferred mode: " + val("iMode"),
+      "",
+      "Problem details:",
+      val("iDesc"),
+      "",
+      "Please confirm a consultation time. Dhanyavaad."
+    ]);
+  });
+
+  /* re-order form */
+  document.getElementById("reorderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var ok = true;
+    ok = mark(document.getElementById("rName").closest(".field"), val("rName").length >= 2) && ok;
+    ok = mark(document.getElementById("rRx").closest(".field"), val("rRx").length >= 5) && ok;
+    ok = mark(document.getElementById("rAddr").closest(".field"), val("rAddr").length >= 12) && ok;
+    if(!ok){ var bad = document.querySelector("#reorderForm .field.invalid input, #reorderForm .field.invalid textarea"); if(bad) bad.focus(); return; }
+    var lines = [
+      "Namaste, I am a returning patient of Jain Homeo Hall and would like to RE-ORDER my medicine.",
+      "",
+      "Name: " + val("rName"),
+      "Previous prescription: " + val("rRx"),
+      "Delivery address: " + val("rAddr")
+    ];
+    if(val("rNote")) lines.push("Note: " + val("rNote"));
+    lines.push("", "Please confirm availability and courier charges. Dhanyavaad.");
+    openWa(lines);
+  });
+
+  /* clear error state as user types */
+  document.querySelectorAll("input, select, textarea").forEach(function(el){
+    el.addEventListener("input", function(){ var f = el.closest(".field"); if(f) f.classList.remove("invalid"); });
+  });
+})();
+</script>
+</body>
+</html>

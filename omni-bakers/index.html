@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omni Bakers &amp; Confectioners — Lalghati, Bhopal | Custom Cake Builder</title>
+<meta name="description" content="Omni Bakers & Confectioners, Lalghati, Bhopal. Design your custom celebration cake online — flavour, sponge, tiers, message — and order on WhatsApp with zero spelling mistakes. Fresh eggless pastries & festive hampers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8F0; --cream2:#FBEEDD; --paper:#FFFDF9;
+    --cocoa:#3E2723; --cocoa2:#5D3A33; --ink:#43302B;
+    --berry:#A63D50; --berry-d:#8A2F42; --berry-soft:#F7DEE3;
+    --caramel:#C98A3D; --gold-soft:#F3DFC0;
+    --line:#EBD9C6; --ok:#2E7D4F;
+    --shadow:0 10px 30px rgba(62,39,35,.12);
+    --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16.5px}
+  img{max-width:100%;display:block}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;color:var(--cocoa);line-height:1.15}
+  a{color:var(--berry-d)}
+  :focus-visible{outline:3px solid var(--berry);outline-offset:2px;border-radius:6px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--cocoa);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 12px 0}
+  .skip:focus{left:0}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,248,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:14px;padding:12px 0}
+  .logo{font-family:'Fraunces',serif;font-weight:900;font-size:1.35rem;color:var(--cocoa);text-decoration:none;line-height:1.05}
+  .logo span{color:var(--berry)}
+  .logo small{display:block;font-family:'Nunito Sans',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cocoa2);font-weight:800}
+  .nav nav{margin-left:auto;display:none;gap:20px}
+  .nav nav a{color:var(--cocoa2);text-decoration:none;font-weight:700;font-size:.95rem}
+  .nav nav a:hover{color:var(--berry-d)}
+  @media(min-width:820px){.nav nav{display:flex}}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--berry);color:#fff;text-decoration:none;font-weight:800;padding:11px 20px;border-radius:99px;border:0;cursor:pointer;font-size:.98rem;transition:transform .15s,background .15s}
+  .btn:hover{background:var(--berry-d);transform:translateY(-1px)}
+  .btn.wa{background:#1FA855}.btn.wa:hover{background:#177D40}
+  .btn.ghost{background:transparent;color:var(--berry-d);border:2px solid var(--berry)}
+  .btn.sm{padding:8px 15px;font-size:.88rem}
+  .nav .btn{margin-left:auto}
+  @media(min-width:820px){.nav .btn{margin-left:0}}
+  /* hero */
+  .hero{padding:52px 0 40px;background:radial-gradient(900px 420px at 85% -60px,var(--berry-soft),transparent 60%),radial-gradient(700px 380px at -80px 110%,var(--gold-soft),transparent 55%)}
+  .hero .grid{display:grid;gap:30px;align-items:center}
+  @media(min-width:900px){.hero .grid{grid-template-columns:1.05fr .95fr}}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-size:.85rem;font-weight:800;color:var(--cocoa2);box-shadow:0 2px 8px rgba(62,39,35,.06)}
+  .pill .star{color:var(--caramel)}
+  .hero h1{font-size:clamp(2.1rem,5.4vw,3.4rem);font-weight:900;margin:16px 0 12px}
+  .hero h1 em{font-style:italic;color:var(--berry)}
+  .hero p.lead{font-size:1.1rem;color:var(--cocoa2);max-width:34rem}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .hero .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:24px;font-weight:700;color:var(--cocoa2);font-size:.95rem}
+  .hero figure{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);border:6px solid #fff;transform:rotate(1.2deg)}
+  .hero figure img{width:100%;height:340px;object-fit:cover}
+  /* strip */
+  .strip{background:var(--cocoa);color:#F7E8DC}
+  .strip .wrap{display:grid;gap:14px;padding-top:20px;padding-bottom:20px}
+  @media(min-width:820px){.strip .wrap{grid-template-columns:repeat(3,1fr)}}
+  .strip .item{display:flex;gap:12px;align-items:flex-start}
+  .strip .ic{font-size:1.45rem;line-height:1.2}
+  .strip b{color:#fff;display:block}
+  .strip p{font-size:.93rem;color:#E9CDBA}
+  /* sections */
+  section.block{padding:56px 0}
+  .kicker{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--berry);text-align:center}
+  h2.title{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:900;text-align:center;margin:8px 0 8px}
+  .sub{text-align:center;color:var(--cocoa2);max-width:42rem;margin:0 auto 34px}
+  /* builder */
+  #builder{background:linear-gradient(180deg,var(--cream2),var(--cream))}
+  .builder-grid{display:grid;gap:24px;align-items:start}
+  @media(min-width:980px){.builder-grid{grid-template-columns:1fr 380px}}
+  fieldset.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:18px;box-shadow:0 3px 12px rgba(62,39,35,.05)}
+  fieldset.step legend{font-family:'Fraunces',serif;font-weight:700;font-size:1.12rem;color:var(--cocoa);padding:0 8px}
+  fieldset.step legend .n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--berry);color:#fff;font-family:'Nunito Sans',sans-serif;font-size:.85rem;margin-right:7px;vertical-align:2px}
+  .opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px;margin-top:8px}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+  .opt label{display:block;height:100%;border:2px solid var(--line);border-radius:13px;padding:11px 12px;cursor:pointer;background:#fff;font-weight:700;font-size:.94rem;color:var(--cocoa2);transition:border-color .12s,background .12s}
+  .opt label .price{display:block;font-size:.82rem;color:var(--berry-d);font-weight:800;margin-top:2px}
+  .opt label .note{display:block;font-size:.8rem;font-weight:600;color:#8a6f63;margin-top:2px}
+  .opt input:checked+label{border-color:var(--berry);background:var(--berry-soft);color:var(--cocoa)}
+  .opt input:focus-visible+label{outline:3px solid var(--berry);outline-offset:2px}
+  .opt .flag{position:absolute;top:-9px;right:8px;background:var(--ok);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.05em;padding:2px 8px;border-radius:99px;z-index:2;text-transform:uppercase}
+  .opt.hero-opt label{border-color:var(--ok);background:#EAF5EE}
+  .fields{display:grid;gap:12px;margin-top:8px}
+  @media(min-width:640px){.fields.two{grid-template-columns:1fr 1fr}}
+  .field label{display:block;font-weight:800;font-size:.9rem;color:var(--cocoa);margin-bottom:5px}
+  .field input,.field select{width:100%;padding:12px 13px;border:2px solid var(--line);border-radius:11px;font:inherit;background:#fff;color:var(--ink)}
+  .field input:focus,.field select:focus{border-color:var(--berry);outline:none}
+  .field .hint{font-size:.82rem;color:#8a6f63;margin-top:4px}
+  .err{display:none;background:#FDECEA;border:1px solid #E5A49E;color:#8C2B20;border-radius:11px;padding:11px 14px;font-weight:700;font-size:.92rem;margin-top:14px}
+  .err.show{display:block}
+  /* preview + summary */
+  .side{position:sticky;top:86px}
+  .preview-card{background:var(--cocoa);border-radius:var(--r);padding:22px 18px 18px;color:#F7E8DC;box-shadow:var(--shadow);text-align:center;overflow:hidden}
+  .preview-card h3{color:#fff;font-size:1.05rem;letter-spacing:.04em}
+  .preview-card .pc-sub{font-size:.83rem;color:#E0BFA9}
+  .cake-stage{margin:20px auto 6px;width:250px}
+  .candles{display:flex;justify-content:center;gap:26px;height:26px}
+  .candle{width:5px;height:22px;background:repeating-linear-gradient(45deg,#fff 0 4px,var(--berry) 4px 8px);border-radius:2px;position:relative}
+  .candle::before{content:"";position:absolute;top:-11px;left:50%;transform:translateX(-50%);width:9px;height:12px;background:radial-gradient(circle at 50% 70%,#FFE9A8,#F5A623 70%);border-radius:50% 50% 50% 50%/62% 62% 38% 38%}
+  .tier{margin:0 auto;border-radius:12px 12px 8px 8px;position:relative;box-shadow:inset 0 -10px 0 rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;transition:all .3s}
+  .tier::before{content:"";position:absolute;top:0;left:0;right:0;height:13px;border-radius:12px 12px 10px 10px;background:rgba(255,255,255,.38)}
+  .t1{width:128px;height:64px;z-index:3}
+  .t2{width:182px;height:58px;z-index:2;margin-top:-4px}
+  .t3{width:232px;height:56px;z-index:1;margin-top:-4px}
+  .cake-msg{font-family:'Dancing Script',cursive;font-weight:700;font-size:1.28rem;color:var(--berry-d);padding:0 8px;text-align:center;line-height:1.1;text-shadow:0 1px 0 rgba(255,255,255,.5);word-break:break-word}
+  .stand{width:200px;height:10px;background:#C9A227;border-radius:6px;margin:8px auto 0}
+  .stand-base{width:70px;height:16px;background:#C9A227;margin:0 auto;border-radius:0 0 8px 8px}
+  .summary{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-top:18px;box-shadow:0 3px 12px rgba(62,39,35,.05)}
+  .summary h3{font-size:1.15rem;margin-bottom:10px}
+  .summary dl{display:grid;gap:5px;font-size:.94rem}
+  .summary .row{display:flex;justify-content:space-between;gap:14px}
+  .summary dt{color:var(--cocoa2);font-weight:700}
+  .summary dd{font-weight:800;color:var(--cocoa);text-align:right}
+  .total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px dashed var(--line);margin-top:12px;padding-top:12px}
+  .total .amt{font-family:'Fraunces',serif;font-size:1.85rem;font-weight:900;color:var(--berry-d)}
+  .summary .fine{font-size:.8rem;color:#8a6f63;margin-top:8px}
+  .summary .btn{width:100%;justify-content:center;margin-top:14px;font-size:1.02rem;padding:14px}
+  /* catalog */
+  .grid-cards{display:grid;gap:18px}
+  @media(min-width:640px){.grid-cards{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:980px){.grid-cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 3px 12px rgba(62,39,35,.05);display:flex;flex-direction:column}
+  .card img{width:100%;height:172px;object-fit:cover}
+  .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .card h3{font-size:1.13rem}
+  .card p{font-size:.93rem;color:var(--cocoa2);flex:1}
+  .tagrow{display:flex;gap:7px;flex-wrap:wrap}
+  .tag{font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--gold-soft);color:var(--cocoa2);padding:3px 9px;border-radius:99px}
+  .tag.egg{background:#EAF5EE;color:var(--ok)}
+  .card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .card .pr{font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;color:var(--berry-d)}
+  /* testimonials / visit */
+  .quotes{display:grid;gap:18px}
+  @media(min-width:860px){.quotes{grid-template-columns:repeat(3,1fr)}}
+  blockquote{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--berry);border-radius:14px;padding:20px}
+  blockquote p{font-size:.98rem}
+  blockquote footer{margin-top:10px;font-weight:800;color:var(--cocoa2);font-size:.88rem}
+  blockquote .star{color:var(--caramel);letter-spacing:2px}
+  .visit{background:var(--cocoa);color:#F7E8DC;border-radius:26px;padding:34px 26px;display:grid;gap:22px}
+  @media(min-width:820px){.visit{grid-template-columns:1.2fr .8fr}}
+  .visit h2{color:#fff;text-align:left}
+  .visit p{color:#E9CDBA}
+  .visit .v-actions{display:flex;flex-direction:column;gap:11px;justify-content:center}
+  footer.site{padding:30px 0 90px;color:#8a6f63;font-size:.9rem;text-align:center}
+  @media(min-width:980px){footer.site{padding-bottom:34px}}
+  .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(62,39,35,.1);padding:10px 16px;display:flex;align-items:center;gap:12px}
+  .mobile-bar .amt{font-family:'Fraunces',serif;font-weight:900;font-size:1.3rem;color:var(--berry-d);white-space:nowrap}
+  .mobile-bar .lbl{font-size:.74rem;font-weight:800;color:var(--cocoa2);text-transform:uppercase;letter-spacing:.06em}
+  .mobile-bar .btn{flex:1;justify-content:center}
+  @media(min-width:980px){.mobile-bar{display:none}}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#builder">Skip to the cake builder</a>
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Omni <span>Bakers</span><small>&amp; Confectioners · Lalghati</small></a>
+    <nav aria-label="Main">
+      <a href="#builder">Cake Builder</a><a href="#menu">Pastries &amp; Hampers</a><a href="#reviews">Reviews</a><a href="#visit">Visit Us</a>
+    </nav>
+    <a class="btn sm" href="tel:+919980149859">📞 +91 99801 49859</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="pill"><span class="star" aria-hidden="true">★</span> 3.8 · 245+ reviews · Lalghati, Bhopal</span>
+        <h1>Your cake, designed by <em>you</em> — baked by Omni.</h1>
+        <p class="lead">Custom celebration cakes from <strong>₹800 to ₹3,500+</strong>, famous custom birthday designs, fresh eggless pastries and festive hampers — near Domino's, Gufa Mandir Road.</p>
+        <div class="cta">
+          <a class="btn" href="#builder">🎂 Build My Cake</a>
+          <a class="btn ghost" href="#menu">See Pastries &amp; Hampers</a>
+        </div>
+        <div class="facts">
+          <span>🥚 100% eggless options</span><span>🌙 Midnight delivery</span><span>✍️ Message typed by you — no spelling errors</span>
+        </div>
+      </div>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?q=80&w=1200&auto=format&fit=crop" alt="A celebration birthday cake with candles from Omni Bakers" loading="eager" onerror="this.closest('figure').style.display='none'">
+      </figure>
+    </div>
+  </div>
+
+  <!-- PAIN-POINT STRIP -->
+  <div class="strip" role="region" aria-label="Why order online">
+    <div class="wrap">
+      <div class="item"><span class="ic" aria-hidden="true">✍️</span><div><b>No more misspelt names</b><p>Phone orders garble names and designs. Here you type the exact message yourself and see it on the cake before you order.</p></div></div>
+      <div class="item"><span class="ic" aria-hidden="true">🎨</span><div><b>The design you picked is the design we bake</b><p>Flavour, sponge, tiers, frosting and theme travel with your order — word for word, choice for choice.</p></div></div>
+      <div class="item"><span class="ic" aria-hidden="true">🕛</span><div><b>Midnight delivery available</b><p>Birthday at 12 AM? Choose the midnight slot in the builder and we'll be there when the clock strikes twelve.</p></div></div>
+    </div>
+  </div>
+
+  <!-- CAKE BUILDER -->
+  <section class="block" id="builder" aria-labelledby="builder-h">
+    <div class="wrap">
+      <p class="kicker">Interactive Cake Builder</p>
+      <h2 class="title" id="builder-h">Design your cake, step by step</h2>
+      <p class="sub">Pick each detail and watch your cake — and its price — update live. When it looks right, send the full design to us on WhatsApp in one tap. <strong>What you type is exactly what we bake.</strong></p>
+
+      <div class="builder-grid">
+        <form id="cakeForm" novalidate>
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">1</span>Choose your flavour</legend>
+            <div class="opts" id="flavorOpts">
+              <div class="opt"><input type="radio" name="flavor" id="f1" value="Chocolate Truffle" data-price="100" checked><label for="f1">Chocolate Truffle<span class="price">+ ₹100</span><span class="note">Rich, dark, bestseller</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f2" value="Black Forest" data-price="0"><label for="f2">Black Forest<span class="price">Included</span><span class="note">The forever classic</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f3" value="Belgian Chocolate" data-price="200"><label for="f3">Belgian Chocolate<span class="price">+ ₹200</span><span class="note">Premium couverture</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f4" value="Red Velvet" data-price="150"><label for="f4">Red Velvet<span class="price">+ ₹150</span><span class="note">With cream-cheese notes</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f5" value="Butterscotch Crunch" data-price="50"><label for="f5">Butterscotch Crunch<span class="price">+ ₹50</span><span class="note">Caramel praline crunch</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f6" value="Fresh Pineapple" data-price="0"><label for="f6">Fresh Pineapple<span class="price">Included</span><span class="note">Light &amp; fruity</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f7" value="Strawberry" data-price="50"><label for="f7">Strawberry<span class="price">+ ₹50</span><span class="note">Berry-cream layers</span></label></div>
+              <div class="opt"><input type="radio" name="flavor" id="f8" value="Vanilla Bean" data-price="0"><label for="f8">Vanilla Bean<span class="price">Included</span><span class="note">Simple, elegant, kid-approved</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">2</span>Pick your sponge</legend>
+            <div class="opts">
+              <div class="opt hero-opt"><span class="flag">Most loved</span><input type="radio" name="sponge" id="s1" value="Eggless" data-price="0" checked><label for="s1">🥚 Eggless Sponge<span class="price">No extra charge</span><span class="note">Our fresh eggless bakes are what regulars swear by — soft, moist, full flavour.</span></label></div>
+              <div class="opt"><input type="radio" name="sponge" id="s2" value="Classic (with egg)" data-price="0"><label for="s2">Classic Sponge<span class="price">No extra charge</span><span class="note">Traditional recipe with egg.</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">3</span>Size &amp; tiers</legend>
+            <div class="opts" id="sizeOpts">
+              <div class="opt"><input type="radio" name="size" id="z1" value="500 g" data-price="800" data-tiers="1"><label for="z1">500 g<span class="price">₹800</span><span class="note">Serves 4–6 · 1 tier</span></label></div>
+              <div class="opt"><input type="radio" name="size" id="z2" value="1 kg" data-price="1150" data-tiers="1" checked><label for="z2">1 kg<span class="price">₹1,150</span><span class="note">Serves 8–10 · 1 tier</span></label></div>
+              <div class="opt"><input type="radio" name="size" id="z3" value="1.5 kg" data-price="1600" data-tiers="1"><label for="z3">1.5 kg<span class="price">₹1,600</span><span class="note">Serves 12–15 · 1 tier</span></label></div>
+              <div class="opt"><input type="radio" name="size" id="z4" value="2 kg" data-price="2000" data-tiers="1"><label for="z4">2 kg<span class="price">₹2,000</span><span class="note">Serves 18–20 · 1 tier</span></label></div>
+              <div class="opt"><input type="radio" name="size" id="z5" value="2-Tier · 2.5 kg" data-price="2700" data-tiers="2"><label for="z5">2-Tier · 2.5 kg<span class="price">₹2,700</span><span class="note">Serves 25–30 · grand look</span></label></div>
+              <div class="opt"><input type="radio" name="size" id="z6" value="3-Tier · 4 kg" data-price="3500" data-tiers="3"><label for="z6">3-Tier · 4 kg<span class="price">₹3,500</span><span class="note">Serves 40+ · showstopper</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">4</span>Frosting &amp; theme</legend>
+            <p style="font-weight:800;color:var(--cocoa);margin-bottom:6px">Frosting</p>
+            <div class="opts" id="frostOpts">
+              <div class="opt"><input type="radio" name="frosting" id="fr1" value="Fresh Cream" data-price="0" data-color="#FFF3E0" checked><label for="fr1">Fresh Cream<span class="price">Included</span></label></div>
+              <div class="opt"><input type="radio" name="frosting" id="fr2" value="Chocolate Ganache" data-price="100" data-color="#5D3A33"><label for="fr2">Chocolate Ganache<span class="price">+ ₹100</span></label></div>
+              <div class="opt"><input type="radio" name="frosting" id="fr3" value="Cream Cheese" data-price="150" data-color="#F1E3D3"><label for="fr3">Cream Cheese<span class="price">+ ₹150</span></label></div>
+              <div class="opt"><input type="radio" name="frosting" id="fr4" value="Fondant Designer Finish" data-price="400" data-color="#D77A93"><label for="fr4">Fondant Designer Finish<span class="price">+ ₹400</span><span class="note">Sculpted, photo-ready</span></label></div>
+            </div>
+            <p style="font-weight:800;color:var(--cocoa);margin:16px 0 6px">Theme</p>
+            <div class="opts" id="themeOpts">
+              <div class="opt"><input type="radio" name="theme" id="t1" value="Classic" data-price="0" checked><label for="t1">Classic<span class="price">Included</span></label></div>
+              <div class="opt"><input type="radio" name="theme" id="t2" value="Floral" data-price="250"><label for="t2">🌸 Floral<span class="price">+ ₹250</span></label></div>
+              <div class="opt"><input type="radio" name="theme" id="t3" value="Kids Cartoon" data-price="300"><label for="t3">🧸 Kids Cartoon<span class="price">+ ₹300</span></label></div>
+              <div class="opt"><input type="radio" name="theme" id="t4" value="Photo Print" data-price="350"><label for="t4">🖼️ Photo Print<span class="price">+ ₹350</span><span class="note">Send the photo on WhatsApp</span></label></div>
+              <div class="opt"><input type="radio" name="theme" id="t5" value="Minimal Chic" data-price="150"><label for="t5">✨ Minimal Chic<span class="price">+ ₹150</span></label></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">5</span>Write the message on the cake</legend>
+            <div class="fields">
+              <div class="field">
+                <label for="cakeMsg">Exact words, exactly as they should appear</label>
+                <input type="text" id="cakeMsg" maxlength="42" value="Happy Birthday Aarav!" autocomplete="off" aria-describedby="msgHint">
+                <p class="hint" id="msgHint">Type it once, check it on the cake preview → — this exact text goes to our bakers. No phone-order spelling mistakes, ever.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="n" aria-hidden="true">6</span>Delivery &amp; your details</legend>
+            <div class="fields two">
+              <div class="field">
+                <label for="delDate">Delivery / pickup date</label>
+                <input type="date" id="delDate" required>
+              </div>
+              <div class="field">
+                <label for="delSlot">Time slot</label>
+                <select id="delSlot">
+                  <option value="10 AM – 12 PM" data-fee="0">10 AM – 12 PM</option>
+                  <option value="12 PM – 3 PM" data-fee="0">12 PM – 3 PM</option>
+                  <option value="3 PM – 6 PM" data-fee="0" selected>3 PM – 6 PM</option>
+                  <option value="6 PM – 9 PM" data-fee="0">6 PM – 9 PM</option>
+                  <option value="Midnight · 12:00 AM" data-fee="199">🌙 Midnight · 12:00 AM (+ ₹199)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="custName">Your name</label>
+                <input type="text" id="custName" placeholder="e.g. Priya Sharma" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="custPhone">Your mobile number</label>
+                <input type="tel" id="custPhone" placeholder="10-digit mobile" maxlength="10" inputmode="numeric" autocomplete="tel">
+              </div>
+            </div>
+            <p class="err" id="orderErr" role="alert"></p>
+          </fieldset>
+        </form>
+
+        <div class="side">
+          <div class="preview-card" role="img" aria-label="Live preview of your cake design">
+            <h3>Your Cake Preview</h3>
+            <p class="pc-sub">Updates as you design · colours are indicative</p>
+            <div class="cake-stage" aria-hidden="true">
+              <div class="candles"><span class="candle"></span><span class="candle"></span><span class="candle"></span></div>
+              <div class="tier t1" id="tier1"><span class="cake-msg" id="previewMsg">Happy Birthday Aarav!</span></div>
+              <div class="tier t2" id="tier2"></div>
+              <div class="tier t3" id="tier3"></div>
+              <div class="stand"></div><div class="stand-base"></div>
+            </div>
+          </div>
+
+          <div class="summary" aria-live="polite">
+            <h3>Your design summary</h3>
+            <dl>
+              <div class="row"><dt>Flavour</dt><dd id="sFlavor">—</dd></div>
+              <div class="row"><dt>Sponge</dt><dd id="sSponge">—</dd></div>
+              <div class="row"><dt>Size</dt><dd id="sSize">—</dd></div>
+              <div class="row"><dt>Frosting</dt><dd id="sFrost">—</dd></div>
+              <div class="row"><dt>Theme</dt><dd id="sTheme">—</dd></div>
+              <div class="row"><dt>Message</dt><dd id="sMsg">—</dd></div>
+              <div class="row"><dt>Delivery</dt><dd id="sWhen">—</dd></div>
+            </dl>
+            <div class="total"><span style="font-weight:800;color:var(--cocoa2)">Estimated total</span><span class="amt" id="totalAmt">₹0</span></div>
+            <p class="fine">Estimate within our custom-cake band of ₹800–₹3,500+. Final confirmation on WhatsApp before we bake.</p>
+            <button type="button" class="btn wa" id="waBtn">🟢 Order This Exact Cake on WhatsApp</button>
+            <p class="fine" style="text-align:center">Your full design — including the exact message spelling — goes straight to our counter. Or call <a href="tel:+919980149859">+91 99801 49859</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="block" id="menu" aria-labelledby="menu-h" style="padding-top:10px">
+    <div class="wrap">
+      <p class="kicker">Fresh Every Day</p>
+      <h2 class="title" id="menu-h">Pastries, cakes &amp; festive hampers</h2>
+      <p class="sub">Counter favourites at Lalghati — baked fresh, with eggless options our regulars come back for. Prices indicative; order anything on WhatsApp.</p>
+      <div class="grid-cards" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="block" id="reviews" aria-labelledby="rev-h" style="padding-top:6px">
+    <div class="wrap">
+      <p class="kicker">Word at the Counter</p>
+      <h2 class="title" id="rev-h">What Bhopal says about Omni</h2>
+      <p class="sub">Rated 3.8★ across 245+ reviews — loved most for custom birthday cake designs, fresh eggless pastries and festive hampers.</p>
+      <div class="quotes">
+        <blockquote class="reveal"><span class="star" aria-hidden="true">★★★★★</span><p>“The birthday cake design came out exactly like the photo we showed. My daughter's name, spelt right, in beautiful letters — that never happened over the phone!”</p><footer>— Birthday order, Lalghati</footer></blockquote>
+        <blockquote class="reveal"><span class="star" aria-hidden="true">★★★★★</span><p>“Their eggless pastries are genuinely fresh — soft sponge, not the dry kind. Our family's default for every small celebration now.”</p><footer>— Regular pastry customer</footer></blockquote>
+        <blockquote class="reveal"><span class="star" aria-hidden="true">★★★★☆</span><p>“Ordered a festive hamper for Diwali gifting. Packed beautifully and delivered on time. The midnight cake for my son was the cherry on top.”</p><footer>— Hamper &amp; midnight delivery order</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="block" id="visit" aria-labelledby="visit-h" style="padding-top:6px">
+    <div class="wrap">
+      <div class="visit reveal">
+        <div>
+          <h2 id="visit-h">Visit us at Lalghati</h2>
+          <p style="margin-top:10px">Omni Bakers &amp; Confectioners<br>Near Domino's, Gufa Mandir Road,<br>Lalghati, Bhopal — 462030</p>
+          <p style="margin-top:10px">Custom cakes made to order · Fresh eggless pastries · Festive hampers<br>Custom designer cakes from ₹800 to ₹3,500+</p>
+        </div>
+        <div class="v-actions">
+          <a class="btn wa" href="https://wa.me/919980149859?text=Namaste%20Omni%20Bakers!%20Mujhe%20cake%20order%20karna%20hai." target="_blank" rel="noopener" style="justify-content:center">🟢 Chat on WhatsApp</a>
+          <a class="btn" href="tel:+919980149859" style="justify-content:center;background:#fff;color:var(--cocoa)">📞 Call +91 99801 49859</a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Omni+Bakers+Confectioners+Gufa+Mandir+Road+Lalghati+Bhopal" target="_blank" rel="noopener" style="justify-content:center;color:#fff;border-color:#fff">📍 Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong style="color:var(--cocoa)">Omni Bakers &amp; Confectioners</strong> · Near Domino's, Gufa Mandir Road, Lalghati, Bhopal 462030 · <a href="tel:+919980149859">+91 99801 49859</a></p>
+    <p style="margin-top:6px">Demo website — prices are estimates for illustration; final quote confirmed on WhatsApp.</p>
+  </div>
+</footer>
+
+<div class="mobile-bar" aria-hidden="false">
+  <div><div class="lbl">Estimate</div><div class="amt" id="mobileAmt">₹0</div></div>
+  <a class="btn wa" href="#builder" id="mobileCta">🎂 Order on WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "919980149859";
+  var inr = function(n){ return "₹" + n.toLocaleString("en-IN"); };
+  function checked(name){ return document.querySelector('input[name="'+name+'"]:checked'); }
+  function val(name){ var el = checked(name); return el ? el.value : ""; }
+  function price(name){ var el = checked(name); return el ? parseInt(el.getAttribute("data-price"),10)||0 : 0; }
+
+  /* ---------- Catalog ---------- */
+  var MENU = [
+    {name:"Chocolate Truffle Pastry", desc:"Dense Belgian-style truffle layers with ganache — the counter's fastest seller.", price:70, unit:"per pc", tags:["Bestseller"], img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=900&auto=format&fit=crop"},
+    {name:"Fresh Pineapple Pastry — Eggless", desc:"Feather-light eggless sponge, whipped cream and juicy pineapple crush.", price:60, unit:"per pc", tags:["Eggless","Fresh daily"], img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=900&auto=format&fit=crop"},
+    {name:"Red Velvet Pastry", desc:"Crimson velvet crumb with cream-cheese frosting — celebration in a slice.", price:90, unit:"per pc", tags:["Premium"], img:"https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=900&auto=format&fit=crop"},
+    {name:"Black Forest Pastry", desc:"Chocolate shavings, cherry and cream — the classic, done the Omni way.", price:65, unit:"per pc", tags:["Classic"], img:"https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=900&auto=format&fit=crop"},
+    {name:"Eggless Choco-Chip Muffins", desc:"Box of 6 soft-centred muffins, baked eggless every morning.", price:240, unit:"box of 6", tags:["Eggless","Kids love it"], img:"https://images.unsplash.com/photo-1587668178277-295251f900ce?q=80&w=900&auto=format&fit=crop"},
+    {name:"Assorted Pastry Box", desc:"8 pastries across our best flavours — office treats and family evenings sorted.", price:499, unit:"box of 8", tags:["Sharing"], img:"https://images.unsplash.com/photo-1557925923-cd4648e211a0?q=80&w=900&auto=format&fit=crop"},
+    {name:"Rich Dry Fruit Cake · 400 g", desc:"Loaded with nuts and tutti-frutti — tea-time royalty, great for gifting too.", price:350, unit:"400 g", tags:["Tea-time"], img:"https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=900&auto=format&fit=crop"},
+    {name:"Festive Dry Cake Hamper", desc:"Dry cake, cookies and sweets in festive packing — Diwali & celebration ready.", price:999, unit:"per hamper", tags:["Festive","Gifting"], img:"https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=900&auto=format&fit=crop"},
+    {name:"Celebration Hamper Deluxe", desc:"Our grand hamper: cake, pastries, dry fruits and festive treats in a keepsake box.", price:1499, unit:"per hamper", tags:["Festive","Premium"], img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=900&auto=format&fit=crop"}
+  ];
+  var grid = document.getElementById("menuGrid");
+  grid.innerHTML = MENU.map(function(m){
+    var tags = m.tags.map(function(t){
+      var cls = /eggless/i.test(t) ? "tag egg" : "tag";
+      return '<span class="'+cls+'">'+t+'</span>';
+    }).join("");
+    var wa = "https://wa.me/"+WA+"?text="+encodeURIComponent("Namaste Omni Bakers! Mujhe order karna hai: "+m.name+" ("+inr(m.price)+", "+m.unit+").");
+    return '<article class="card reveal"><img src="'+m.img+'" alt="'+m.name+' at Omni Bakers" loading="lazy" onerror="this.style.display=\'none\'">'
+      + '<div class="body"><div class="tagrow">'+tags+'</div><h3>'+m.name+'</h3><p>'+m.desc+'</p>'
+      + '<div class="foot"><span class="pr">'+inr(m.price)+' <small style="font-size:.72rem;color:#8a6f63;font-family:\'Nunito Sans\',sans-serif;font-weight:700">/ '+m.unit+'</small></span>'
+      + '<a class="btn wa sm" href="'+wa+'" target="_blank" rel="noopener">Order</a></div></div></article>';
+  }).join("");
+
+  /* ---------- Builder ---------- */
+  var msgInput = document.getElementById("cakeMsg"),
+      previewMsg = document.getElementById("previewMsg"),
+      dateInput = document.getElementById("delDate"),
+      slotSel = document.getElementById("delSlot"),
+      totalAmt = document.getElementById("totalAmt"),
+      mobileAmt = document.getElementById("mobileAmt"),
+      errBox = document.getElementById("orderErr");
+
+  var today = new Date(); 
+  dateInput.min = today.toISOString().split("T")[0];
+
+  function fmtDate(iso){
+    if(!iso) return "";
+    var d = new Date(iso+"T00:00:00");
+    return d.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+  }
+
+  function calc(){
+    var sizeEl = checked("size");
+    var tiers = sizeEl ? parseInt(sizeEl.getAttribute("data-tiers"),10) : 1;
+    var frostEl = checked("frosting");
+    var color = frostEl ? frostEl.getAttribute("data-color") : "#FFF3E0";
+    var slotFee = parseInt(slotSel.options[slotSel.selectedIndex].getAttribute("data-fee"),10)||0;
+    var total = price("flavor") + price("sponge") + price("size") + price("frosting") + price("theme") + slotFee;
+
+    /* preview cake */
+    var t1 = document.getElementById("tier1"), t2 = document.getElementById("tier2"), t3 = document.getElementById("tier3");
+    [t1,t2,t3].forEach(function(t){ t.style.background = color; });
+    t1.style.filter = "none";
+    t2.style.filter = "brightness(.93)";
+    t3.style.filter = "brightness(.86)";
+    t2.style.display = tiers >= 2 ? "flex" : "none";
+    t3.style.display = tiers >= 3 ? "flex" : "none";
+    var dark = (color === "#5D3A33");
+    previewMsg.style.color = dark ? "#FFE9C9" : "";
+    previewMsg.style.textShadow = dark ? "none" : "";
+    var msg = msgInput.value.trim();
+    previewMsg.textContent = msg || "Your message here";
+
+    /* summary */
+    document.getElementById("sFlavor").textContent = val("flavor");
+    document.getElementById("sSponge").textContent = val("sponge");
+    document.getElementById("sSize").textContent = val("size");
+    document.getElementById("sFrost").textContent = val("frosting");
+    document.getElementById("sTheme").textContent = val("theme");
+    document.getElementById("sMsg").textContent = msg ? "\u201C"+msg+"\u201D" : "—";
+    var when = fmtDate(dateInput.value);
+    document.getElementById("sWhen").textContent = when ? when + " · " + slotSel.value : "Pick a date · " + slotSel.value;
+    totalAmt.textContent = inr(total);
+    mobileAmt.textContent = inr(total);
+    return total;
+  }
+
+  document.getElementById("cakeForm").addEventListener("change", calc);
+  msgInput.addEventListener("input", calc);
+  dateInput.addEventListener("change", calc);
+  slotSel.addEventListener("change", calc);
+  calc();
+
+  /* ---------- Order on WhatsApp ---------- */
+  function order(){
+    var name = document.getElementById("custName").value.trim();
+    var phone = document.getElementById("custPhone").value.replace(/\D/g,"");
+    var problems = [];
+    if(!dateInput.value) problems.push("delivery date (Step 6)");
+    if(name.length < 3) problems.push("your name (Step 6)");
+    if(!/^[6-9]\d{9}$/.test(phone)) problems.push("a valid 10-digit mobile number (Step 6)");
+    if(problems.length){
+      errBox.textContent = "Almost there — please add: " + problems.join(", ") + ".";
+      errBox.classList.add("show");
+      errBox.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+    errBox.classList.remove("show");
+    var total = calc();
+    var slotFee = parseInt(slotSel.options[slotSel.selectedIndex].getAttribute("data-fee"),10)||0;
+    var lines = [
+      "🎂 *New Cake Order — Omni Bakers*",
+      "",
+      "*My Cake Design*",
+      "Flavour: " + val("flavor"),
+      "Sponge: " + val("sponge"),
+      "Size: " + val("size"),
+      "Frosting: " + val("frosting"),
+      "Theme: " + val("theme"),
+      "Message on cake (exact spelling): \"" + (msgInput.value.trim() || "—") + "\"",
+      "",
+      "*Delivery*",
+      "Date: " + fmtDate(dateInput.value),
+      "Slot: " + slotSel.value + (slotFee ? " (midnight delivery)" : ""),
+      "",
+      "*My Details*",
+      "Name: " + name,
+      "Phone: " + phone,
+      "",
+      "*Estimated Total: " + inr(total) + "*",
+      "Please confirm my order. Dhanyavaad!"
+    ];
+    window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("\n")), "_blank");
+  }
+  document.getElementById("waBtn").addEventListener("click", order);
+  document.getElementById("mobileCta").addEventListener("click", function(e){ e.preventDefault(); order(); });
+
+  /* ---------- Reveal on scroll ---------- */
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

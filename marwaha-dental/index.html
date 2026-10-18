@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marwaha Multispeciality Dental Clinic — Dr. Neeta Marwaha | Bittan Market, Bhopal</title>
+<meta name="description" content="Marwaha Multispeciality Dental Clinic by Dr. Neeta Marwaha (BDS, 31+ years) — painless root canals, implants, clear aligners, kids dentistry at Bittan Market, Arera Colony, Bhopal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0b6bcb; --blue-d:#084e96; --mint:#e6f6f0; --mint2:#cdeee0; --ink:#10222e; --mut:#55707f;
+  --bg:#fbfdfe; --card:#ffffff; --line:#dcecf3; --gold:#c9962e; --shadow:0 10px 30px rgba(11,107,203,.09); --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:10px 16px;z-index:200;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{display:flex;gap:11px;align-items:center;text-decoration:none;color:var(--ink)}
+.logo-badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#25b98a);display:grid;place-items:center;color:#fff;font-size:22px}
+.logo b{font-family:'Fraunces',serif;font-size:19px;display:block;line-height:1.1}
+.logo small{color:var(--mut);font-size:12px;font-weight:600}
+.navlinks{display:none;gap:22px}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14.5px}
+.cta{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px;box-shadow:var(--shadow)}
+.cta:hover{background:var(--blue-d)}
+@media(min-width:860px){.navlinks{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,#eaf6fd,var(--mint) 130%);padding:52px 0 64px}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--blue-d);box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(32px,5.4vw,52px);margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.lead{font-size:17px;color:#33505f;max-width:34em}
+.hero-img{border-radius:26px;overflow:hidden;box-shadow:0 24px 50px rgba(8,78,150,.18)}
+.hero-img img{width:100%;height:340px;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
+.stat b{font-family:'Fraunces',serif;font-size:clamp(20px,3vw,27px);color:var(--blue-d);display:block}
+.stat span{font-size:12px;color:var(--mut);font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn-ghost{background:#fff;border:1.5px solid var(--blue);color:var(--blue-d);text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px}
+/* sections */
+section{padding:60px 0}
+.sec-head{max-width:720px;margin-bottom:30px}
+.sec-head .kicker{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(26px,4vw,36px);margin:8px 0 10px}
+.sec-head p{color:var(--mut)}
+/* treatment cards */
+.grid{display:grid;gap:18px}
+@media(min-width:720px){.grid.cols2{grid-template-columns:1fr 1fr}.grid.cols3{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.tcard .ic{font-size:30px;margin-bottom:10px}
+.tcard h3{font-size:20px;margin-bottom:8px}
+.tcard p{color:var(--mut);font-size:15px}
+.tcard ul{list-style:none;margin-top:12px;font-size:14.5px}
+.tcard li{padding:5px 0 5px 24px;position:relative;color:#33505f}
+.tcard li::before{content:"✓";position:absolute;left:0;color:#159a6c;font-weight:800}
+.price-tag{margin-top:14px;background:var(--mint);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:700;color:#0c5c41}
+/* table */
+.tblwrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:15px 18px;text-align:left;font-size:15px}
+thead th{background:var(--blue);color:#fff;font-family:'Fraunces',serif;font-size:16px}
+tbody tr{border-top:1px solid var(--line)}
+tbody tr:nth-child(even){background:#f4fafc}
+td.price{font-weight:800;color:var(--blue-d);white-space:nowrap}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+/* legacy */
+.legacy{background:linear-gradient(120deg,#084e96,#0b6bcb 55%,#159a6c);color:#fff;border-radius:26px;padding:38px 28px}
+.legacy h2{font-size:clamp(25px,4vw,34px);margin-bottom:12px}
+.legacy p{color:#dff1ff;max-width:44em}
+.legacy .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.legacy .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:7px 15px;font-size:13.5px;font-weight:700}
+/* testimonials */
+.tst{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.tst .stars{color:var(--gold);letter-spacing:2px}
+.tst p{font-size:15.5px;margin:10px 0}
+.tst footer{font-size:13.5px;color:var(--mut);font-weight:600}
+/* booker */
+.booker{background:var(--mint);border-radius:26px;padding:34px 26px}
+form .frow{display:grid;gap:14px}
+@media(min-width:720px){form .frow{grid-template-columns:1fr 1fr}}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+input,select{width:100%;padding:13px 14px;border:1.5px solid #bcd8e4;border-radius:12px;font:inherit;font-size:15px;background:#fff}
+input[aria-invalid="true"]{border-color:#d33}
+.err{color:#b3261e;font-size:13px;font-weight:600;margin-top:4px;min-height:1em}
+.submit{margin-top:18px;background:var(--blue);color:#fff;border:0;width:100%;padding:15px;border-radius:99px;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.submit:hover{background:var(--blue-d)}
+.confirm{display:none;margin-top:22px;background:#fff;border:2px solid #159a6c;border-radius:16px;padding:22px}
+.confirm.show{display:block}
+.confirm h3{color:#0c5c41;margin-bottom:8px}
+.confirm dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px;margin-top:10px}
+.confirm dt{font-weight:700;color:var(--mut)}
+/* contact + footer */
+.contact-grid{display:grid;gap:18px}
+@media(min-width:720px){.contact-grid{grid-template-columns:1fr 1fr}}
+.acard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.acard h3{margin-bottom:8px}
+.acard p{color:var(--mut);font-size:15px}
+footer.site{background:#0d2735;color:#cfe4ee;padding:36px 0;font-size:14px}
+footer.site b{color:#fff}
+.demo-note{margin-top:14px;font-size:12.5px;color:#8fb2c2}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Marwaha Multispeciality Dental Clinic — home">
+      <span class="logo-badge" aria-hidden="true">🦷</span>
+      <span><b>Marwaha Dental</b><small>Multispeciality Dental Clinic</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#treatments">Treatments</a><a href="#costs">Costs</a><a href="#legacy">31 Years</a><a href="#reviews">Reviews</a><a href="#visit">Visit Us</a>
+    </nav>
+    <a class="cta" href="#book">Book a Slot</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">★ 5.0 · 640+ verified patient stories on Practo</span>
+        <h1>Gentle dentistry, <em>three decades</em> of trust.</h1>
+        <p class="lead">Dr. <strong>Neeta Marwaha</strong> (BDS) — senior dental surgeon with <strong>31+ years of experience</strong> — is admired across Bhopal for painless root canals, gentle care for children, and honest, ethical treatment. No unnecessary procedures. Ever.</p>
+        <div class="hero-btns">
+          <a class="cta" href="#book">Book an Appointment</a>
+          <a class="btn-ghost" href="#costs">See Treatment Costs</a>
+        </div>
+        <div class="stats" role="list" aria-label="Clinic highlights">
+          <div class="stat" role="listitem"><b>31+</b><span>Years of practice</span></div>
+          <div class="stat" role="listitem"><b>5.0★</b><span>Patient rating</span></div>
+          <div class="stat" role="listitem"><b>640+</b><span>Verified patient stories</span></div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop" alt="Bright, modern dental clinic treatment room" loading="lazy" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+
+  <!-- TREATMENTS -->
+  <section id="treatments" aria-labelledby="treat-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Treatments</span>
+        <h2 id="treat-h">What we treat — explained simply</h2>
+        <p>Every procedure is explained before we begin: what it involves, how many sittings it usually takes, and how to look after it at home.</p>
+      </div>
+      <div class="grid cols2" id="treatmentGrid"></div>
+    </div>
+  </section>
+
+  <!-- COSTS -->
+  <section id="costs" aria-labelledby="cost-h" style="background:#fff;border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Transparent pricing</span>
+        <h2 id="cost-h">Treatment cost breakdown</h2>
+        <p>Honest pricing has been our practice for 31 years. Final cost is always confirmed after examination — before treatment begins.</p>
+      </div>
+      <div class="tblwrap reveal">
+        <table aria-describedby="costnote">
+          <thead><tr><th scope="col">Treatment</th><th scope="col">What&rsquo;s included</th><th scope="col">Indicative price</th></tr></thead>
+          <tbody id="costBody"></tbody>
+        </table>
+      </div>
+      <p class="note" id="costnote">* All prices are indicative &ldquo;starting at&rdquo; figures for this demo. Your exact estimate is given in writing after a clinical examination.</p>
+    </div>
+  </section>
+
+  <!-- LEGACY -->
+  <section aria-labelledby="legacy-h">
+    <div class="wrap">
+      <div class="legacy reveal">
+        <h2 id="legacy-h">31 years. Generations of the same families.</h2>
+        <p>Dr. Neeta Marwaha has treated grandparents, parents and now their children at Bittan Market. Three decades of spotless ethics — treating with medicine and patience first, and recommending only the treatment a tooth genuinely needs — is why families across Arera Colony and BHEL keep coming back.</p>
+        <div class="chips">
+          <span class="chip">🦷 Painless root canal specialist</span>
+          <span class="chip">🧒 Gentle pediatric dentistry</span>
+          <span class="chip">⚖️ Ethics before billing</span>
+          <span class="chip">📍 Bittan Market + BHEL unit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" aria-labelledby="rev-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Patient stories</span>
+        <h2 id="rev-h">Why Bhopal trusts Dr. Marwaha</h2>
+        <p>Themes drawn from 640+ verified patient stories on Practo, where the clinic holds a 5.0★ rating.</p>
+      </div>
+      <div class="grid cols3">
+        <article class="tst reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>&ldquo;I was terrified of root canals. Mine was finished without pain — she explains everything before she starts.&rdquo;</p><footer>Root canal patient · review theme</footer></article>
+        <article class="tst reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>&ldquo;My daughter used to cry at the dentist&rsquo;s name. Here she sits calmly — the doctor is so patient with children.&rdquo;</p><footer>Parent · kids dentistry review theme</footer></article>
+        <article class="tst reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>&ldquo;Another clinic quoted me an implant. Dr. Marwaha saved the same tooth with a filling and honest advice.&rdquo;</p><footer>Long-time patient · review theme</footer></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKER -->
+  <section id="book" aria-labelledby="book-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="booker reveal">
+        <div class="sec-head" style="margin-bottom:20px">
+          <span class="kicker">Direct slot booker</span>
+          <h2 id="book-h">Request your appointment</h2>
+          <p>Fill this in and we&rsquo;ll show your booking summary instantly. (Demo — front-end only, no data is sent anywhere.)</p>
+        </div>
+        <form id="bookForm" novalidate>
+          <div class="frow">
+            <div><label for="fName">Your full name</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="e.g. Anjali Verma"><p class="err" id="eName" aria-live="polite"></p></div>
+            <div><label for="fMobile">Mobile number (10 digits)</label><input id="fMobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="e.g. 98260 00000"><p class="err" id="eMobile" aria-live="polite"></p></div>
+            <div><label for="fTreat">Treatment needed</label><select id="fTreat" name="treatment"><option value="">Select a treatment…</option></select><p class="err" id="eTreat" aria-live="polite"></p></div>
+            <div><label for="fUnit">Preferred clinic</label><select id="fUnit" name="unit"><option>Bittan Market, Arera Colony (Main)</option><option>BHEL Unit</option></select><p class="err"></p></div>
+            <div><label for="fDate">Preferred date</label><input id="fDate" name="date" type="date"><p class="err" id="eDate" aria-live="polite"></p></div>
+            <div><label for="fTime">Preferred time</label><select id="fTime" name="time">
+              <option value="">Select a time…</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option>
+            </select><p class="err" id="eTime" aria-live="polite"></p></div>
+          </div>
+          <button class="submit" type="submit">Request This Slot →</button>
+        </form>
+        <div class="confirm" id="confirmBox" role="status" tabindex="-1">
+          <h3>✅ Booking request received (demo)</h3>
+          <p>Thank you! This is your booking summary. In the live version, the clinic confirms your slot personally — no bots, the same human touch as always.</p>
+          <dl>
+            <dt>Patient</dt><dd id="cName"></dd>
+            <dt>Mobile</dt><dd id="cMobile"></dd>
+            <dt>Treatment</dt><dd id="cTreat"></dd>
+            <dt>Clinic</dt><dd id="cUnit"></dd>
+            <dt>When</dt><dd id="cWhen"></dd>
+            <dt>Reference</dt><dd id="cRef"></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-labelledby="visit-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="kicker">Visit us</span><h2 id="visit-h">Two locations in Bhopal</h2></div>
+      <div class="contact-grid">
+        <div class="acard reveal"><h3>📍 Bittan Market (Main Clinic)</h3><p>Marwaha Multispeciality Dental Clinic<br>12-A, Mezzanine Floor, Tawa Complex,<br>Bittan Market, Arera Colony,<br>Bhopal — 462016 (MP)</p><p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&query=Marwaha+Multispeciality+Dental+Clinic+Tawa+Complex+Bittan+Market+Bhopal" target="_blank" rel="noopener">Get directions on Google Maps →</a></p></div>
+        <div class="acard reveal"><h3>🏥 BHEL Unit</h3><p>Marwaha Multispeciality Dental Clinic also runs an additional unit in BHEL, Bhopal, for patients on that side of the city.</p><p style="margin-top:10px">Use the <a href="#book">slot booker above</a> and select &ldquo;BHEL Unit&rdquo; as your preferred clinic.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <b>Marwaha Multispeciality Dental Clinic</b> · Dr. Neeta Marwaha, BDS — Senior Dental Surgeon, 31+ years<br>
+    12-A Mezzanine Floor, Tawa Complex, Bittan Market, Arera Colony, Bhopal 462016 · Additional unit in BHEL
+    <p class="demo-note">Demo website built for presentation purposes. Treatment prices shown are indicative. No phone number is listed on this demo — please book via the form above.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+var TREATMENTS = [
+  {icon:"🦷", name:"Painless Root Canal Treatment", price:"₹3,500", unit:"per tooth",
+   desc:"Save an infected or deeply decayed tooth — without the pain people fear. Dr. Marwaha's gentle, single-visit-where-possible technique is the clinic's most praised treatment.",
+   points:["What it involves: infected pulp is removed, canals are cleaned, sealed and usually crowned","Sittings: typically 1–3, depending on infection","Aftercare: mild sensitivity for 2–3 days is normal; avoid hard food on the tooth until crowned"]},
+  {icon:"🔩", name:"Dental Implants", price:"₹24,999", unit:"per implant",
+   desc:"A permanent, natural-feeling replacement for a missing tooth — a titanium root topped with a crown that lets you eat and smile with confidence.",
+   points:["What it involves: implant placement, healing period, then a custom crown","Sittings: spread over 2–3 stages across a few months","Aftercare: soft diet initially; regular cleaning keeps implants healthy for years"]},
+  {icon:"😁", name:"Clear Aligners & Orthodontics", price:"₹59,999", unit:"full treatment",
+   desc:"Straighten teeth discreetly with removable, nearly invisible aligner trays — no metal brackets, no food restrictions, planned digitally from the start.",
+   points:["What it involves: digital scan, a series of custom trays changed every few weeks","Sittings: check-ups every 6–8 weeks; wear trays 20–22 hrs/day","Aftercare: retainer at the end keeps your new smile in place"]},
+  {icon:"✨", name:"Smile Designing", price:"₹14,999", unit:"per smile plan",
+   desc:"A complete smile makeover planned around your face — combining veneers, whitening and reshaping so the result looks natural, not 'done'.",
+   points:["What it involves: smile analysis, digital preview, then veneers/whitening as planned","Sittings: usually 2–4 visits","Aftercare: normal brushing and flossing; avoid biting very hard objects with veneered teeth"]},
+  {icon:"🧒", name:"Kids Dentistry (Pediatric)", price:"₹499", unit:"consultation",
+   desc:"Fear-free dentistry for children — patient, playful and gentle. Fillings, fluoride applications, habit correction and first-checkup hand-holding for parents too.",
+   points:["What it involves: friendly examination, cleaning, fluoride and fillings if needed","Sittings: short, child-paced visits — never rushed","Aftercare: brushing twice daily with a pea-sized amount of toothpaste; limit sticky sweets"]},
+  {icon:"🪥", name:"General & Family Dentistry", price:"₹499", unit:"consultation",
+   desc:"Complete everyday care for the whole family — cleaning & polishing, tooth-coloured fillings, crowns & bridges, dentures and gum care, all under one roof.",
+   points:["What it involves: examination and X-ray if needed, then a clear written plan","Sittings: most routine work finished in 1–2 visits","Aftercare: a professional cleaning every 6 months keeps small problems small"]}
+];
+var COSTS = [
+  ["Root Canal Treatment","Single tooth, includes X-ray & medication guidance","starting at ₹3,500"],
+  ["Dental Implants","Implant + crown, staged plan explained upfront","starting at ₹24,999"],
+  ["Clear Aligners","Full-course trays with periodic reviews","starting at ₹59,999"],
+  ["Smile Designing","Per smile plan after digital preview","starting at ₹14,999"],
+  ["Kids Dentistry","Consultation & examination for children","starting at ₹499"],
+  ["Cleaning & Polishing","Full-mouth scaling and polish","starting at ₹999"],
+  ["Tooth-Coloured Filling","Per tooth, shade-matched composite","starting at ₹1,199"],
+  ["Crown (Ceramic)","Per tooth, lab-crafted","starting at ₹4,999"]
+];
+/* render treatments */
+var grid = document.getElementById("treatmentGrid");
+TREATMENTS.forEach(function(t){
+  var d = document.createElement("article"); d.className = "tcard reveal";
+  d.innerHTML = '<div class="ic" aria-hidden="true">'+t.icon+'</div><h3>'+t.name+'</h3><p>'+t.desc+'</p><ul>'+
+    t.points.map(function(p){return "<li>"+p+"</li>";}).join("")+
+    '</ul><div class="price-tag">Indicative: starting at '+t.price+' <span style="font-weight:500">('+t.unit+')</span></div>';
+  grid.appendChild(d);
+});
+/* render costs */
+document.getElementById("costBody").innerHTML = COSTS.map(function(r){
+  return '<tr><td><strong>'+r[0]+'</strong></td><td>'+r[1]+'</td><td class="price">'+r[2]+'</td></tr>';
+}).join("");
+/* populate treatment select */
+var sel = document.getElementById("fTreat");
+TREATMENTS.forEach(function(t){ var o=document.createElement("option"); o.textContent=t.name; sel.appendChild(o); });
+var o2=document.createElement("option"); o2.textContent="General Checkup / Not Sure"; sel.appendChild(o2);
+/* date min = today */
+var dateEl = document.getElementById("fDate");
+dateEl.min = new Date().toISOString().split("T")[0];
+/* form validation + confirmation */
+function setErr(input, errEl, msg){ errEl.textContent = msg||""; if(input) input.setAttribute("aria-invalid", msg?"true":"false"); return !msg; }
+document.getElementById("bookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name=document.getElementById("fName"), mob=document.getElementById("fMobile"),
+      treat=sel, date=dateEl, time=document.getElementById("fTime"), unit=document.getElementById("fUnit");
+  var ok = true;
+  ok = setErr(name, document.getElementById("eName"), name.value.trim().length>=3 ? "" : "Please enter your full name.") && ok;
+  var digits = mob.value.replace(/\D/g,"").replace(/^91(?=\d{10}$)/,"");
+  ok = setErr(mob, document.getElementById("eMobile"), /^\d{10}$/.test(digits) ? "" : "Please enter a valid 10-digit mobile number.") && ok;
+  ok = setErr(treat, document.getElementById("eTreat"), treat.value ? "" : "Please select a treatment.") && ok;
+  ok = setErr(date, document.getElementById("eDate"), date.value ? "" : "Please pick a preferred date.") && ok;
+  ok = setErr(time, document.getElementById("eTime"), time.value ? "" : "Please pick a preferred time.") && ok;
+  if(!ok){ var bad=document.querySelector('[aria-invalid="true"]'); if(bad) bad.focus(); return; }
+  var ref = "MDC-" + Math.random().toString(36).slice(2,7).toUpperCase();
+  var when = new Date(date.value+"T00:00:00").toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"}) + " at " + time.value;
+  document.getElementById("cName").textContent = name.value.trim();
+  document.getElementById("cMobile").textContent = "+91 " + digits;
+  document.getElementById("cTreat").textContent = treat.value;
+  document.getElementById("cUnit").textContent = unit.value;
+  document.getElementById("cWhen").textContent = when;
+  document.getElementById("cRef").textContent = ref;
+  var box = document.getElementById("confirmBox");
+  box.classList.add("show"); box.focus(); box.scrollIntoView({behavior:"smooth", block:"center"});
+});
+/* reveal on scroll */
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }); },{threshold:.1});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else { document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); }); }
+</script>
+</body>
+</html>

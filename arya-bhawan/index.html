@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arya Bhawan Restaurant — MP Nagar, Bhopal | Veg Thalis, Lunch Subscriptions & Party Boxes</title>
+<meta name="description" content="Arya Bhawan Restaurant, Zone-2 MP Nagar Bhopal — authentic North Indian vegetarian thalis, student meal passes, corporate lunch plans and party boxes. Weekly menu preview and direct subscription booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#e07b1f; --saffron-dark:#b85c0e; --saffron-soft:#fdeeda;
+  --green:#2e7d32; --green-dark:#1b4d1e; --green-soft:#e6f2e4;
+  --cream:#fffaf1; --paper:#fffdf8; --ink:#2c2118; --muted:#6f6154;
+  --line:#eadfce; --red:#c0392b; --radius:18px;
+  --shadow:0 10px 30px rgba(90,50,10,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--saffron-dark)}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:6px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--green-dark);color:#fff;padding:10px 18px;z-index:200;border-radius:0 0 10px 0}
+.skip-link:focus{left:0;color:#fff}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.15}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;margin-bottom:10px}
+.section{padding:64px 0}
+.section-head{max-width:680px;margin-bottom:30px}
+.section-head p{color:var(--muted)}
+.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green);background:var(--green-soft);padding:5px 12px;border-radius:99px;margin-bottom:14px}
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,250,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--saffron),var(--saffron-dark));display:grid;place-items:center;font-size:24px;box-shadow:var(--shadow)}
+.brand b{font-family:'Fraunces',serif;font-size:20px;display:block;line-height:1.1}
+.brand span{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+nav.main-nav{display:flex;gap:22px}
+nav.main-nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px}
+nav.main-nav a:hover{color:var(--saffron-dark)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border:none;text-decoration:none;font-weight:700;font-size:15px;padding:12px 22px;border-radius:12px;cursor:pointer;transition:transform .15s,background .15s;font-family:inherit}
+.btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn.saffron{background:var(--saffron)}
+.btn.saffron:hover{background:var(--saffron-dark)}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--saffron)}
+.menu-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;font-size:18px;cursor:pointer}
+/* hero */
+.hero{padding:56px 0 64px;background:radial-gradient(900px 420px at 85% -80px,var(--saffron-soft),transparent),radial-gradient(700px 380px at -10% 110%,var(--green-soft),transparent)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,54px);font-weight:900}
+.hero h1 em{font-style:normal;color:var(--saffron-dark)}
+.hero p.lead{color:var(--muted);font-size:18px;margin:18px 0 24px;max-width:520px}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:13.5px;font-weight:700;box-shadow:0 2px 8px rgba(90,50,10,.05)}
+.pill .star{color:var(--saffron)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
+.hero-badge{position:absolute;left:16px;bottom:16px;background:rgba(27,77,30,.94);color:#fff;padding:12px 16px;border-radius:14px;font-size:14px;font-weight:700;max-width:250px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;text-align:center}
+.stat b{font-family:'Fraunces',serif;font-size:26px;display:block;color:var(--saffron-dark)}
+.stat span{font-size:13px;color:var(--muted);font-weight:600}
+/* today's thali */
+.thali-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.thali-card img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.thali-body{padding:32px}
+.thali-body h3{font-size:26px;margin-bottom:6px}
+.thali-items{list-style:none;margin:16px 0 20px;display:grid;gap:8px}
+.thali-items li{display:flex;gap:10px;font-size:15.5px}
+.thali-items li::before{content:"🌿";font-size:14px}
+.price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-line b{font-family:'Fraunces',serif;font-size:30px;color:var(--green-dark)}
+.price-line span{color:var(--muted);font-size:13.5px}
+.demo-tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--saffron-soft);color:var(--saffron-dark);padding:3px 9px;border-radius:99px}
+/* weekly menu tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:10px 20px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.menu-panel{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:var(--shadow)}
+.menu-panel h3{font-size:23px;margin-bottom:4px}
+.menu-panel .day-note{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+.menu-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.menu-col h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron-dark);margin-bottom:10px}
+.menu-col ul{list-style:none;display:grid;gap:7px;font-size:15.5px}
+.menu-col li{display:flex;gap:8px}
+.menu-col li::before{content:"•";color:var(--green);font-weight:800}
+.veg-dot{display:inline-block;width:13px;height:13px;border:2px solid var(--green);border-radius:3px;position:relative;flex:none;margin-top:5px}
+.veg-dot::after{content:"";position:absolute;inset:2px;background:var(--green);border-radius:50%}
+/* plans */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.plan{background:#fff;border:2px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,box-shadow .15s}
+.plan.selected{border-color:var(--green);box-shadow:var(--shadow)}
+.plan h3{font-size:21px}
+.plan p{color:var(--muted);font-size:14.5px;flex:1}
+.plan .p-price{font-family:'Fraunces',serif;font-size:29px;color:var(--green-dark)}
+.plan .p-price small{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--muted);font-weight:600}
+.plan ul{list-style:none;display:grid;gap:6px;font-size:14.5px}
+.plan ul li::before{content:"✓ ";color:var(--green);font-weight:800}
+.plan .btn{justify-content:center}
+.plan .btn[aria-pressed="true"]{background:var(--green-dark)}
+.pop{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--saffron);color:#fff;align-self:flex-start;padding:3px 10px;border-radius:99px}
+/* booking */
+.book-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+form.book{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:14.5px;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font:inherit;font-size:15px;background:var(--paper)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px var(--green-soft)}
+.field .err{color:var(--red);font-size:13px;font-weight:600;display:none;margin-top:4px}
+.field.invalid input,.field.invalid select{border-color:var(--red)}
+.field.invalid .err{display:block}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary{background:var(--green-dark);color:#eaf5e9;border-radius:22px;padding:28px;position:sticky;top:92px}
+.summary h3{color:#fff;font-size:22px;margin-bottom:14px}
+.summary dl{display:grid;gap:9px;font-size:15px}
+.summary dt{color:#b9d8b4;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.summary dd{font-weight:600}
+.summary .total{border-top:1px dashed rgba(255,255,255,.35);margin-top:16px;padding-top:14px;display:flex;justify-content:space-between;align-items:baseline}
+.summary .total b{font-family:'Fraunces',serif;font-size:30px;color:#ffd9ad}
+.summary .fine{font-size:12.5px;color:#b9d8b4;margin-top:12px}
+.confirm{display:none;background:#fff;border:1px solid var(--line);border-left:6px solid var(--green);border-radius:16px;padding:22px 24px;margin-top:22px}
+.confirm.show{display:block}
+.confirm h3{color:var(--green-dark);font-size:20px;margin-bottom:6px}
+.confirm p{font-size:15px;color:var(--muted)}
+.confirm code{background:var(--green-soft);padding:2px 9px;border-radius:7px;font-weight:800;color:var(--green-dark)}
+/* why / testimonials */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.why{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.why .ic{font-size:26px;margin-bottom:8px}
+.why h3{font-size:18px;margin-bottom:6px}
+.why p{color:var(--muted);font-size:14.5px}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.testi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+.testi .stars{color:var(--saffron);letter-spacing:2px;margin-bottom:8px}
+.testi p{font-size:15.5px}
+.testi footer{margin-top:12px;color:var(--muted);font-size:13.5px;font-weight:700}
+/* visit */
+.visit{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px;box-shadow:var(--shadow)}
+.visit dl{display:grid;gap:12px;font-size:15.5px}
+.visit dt{font-weight:800}
+.visit dd{color:var(--muted)}
+.site-foot{background:var(--green-dark);color:#cfe6cb;padding:44px 0 30px;margin-top:20px}
+.site-foot .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+.site-foot h3,.site-foot h4{color:#fff;margin-bottom:10px}
+.site-foot a{color:#ffd9ad}
+.site-foot p,.site-foot li{font-size:14.5px}
+.site-foot ul{list-style:none;display:grid;gap:6px}
+.demo-note{border-top:1px solid rgba(255,255,255,.18);margin-top:28px;padding-top:18px;font-size:13px;color:#a9cca4;text-align:center}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn:hover{transform:none}}
+@media (max-width:860px){
+  .hero-grid,.thali-card,.book-grid,.visit{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .summary{position:static}
+  nav.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line);gap:14px}
+  nav.main-nav.open{display:flex}
+  .menu-toggle{display:block}
+  header .wrap{position:relative}
+  .header-cta{display:none}
+  .f-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="Arya Bhawan Restaurant — home">
+      <span class="brand-mark" aria-hidden="true">🍛</span>
+      <span><b>Arya Bhawan</b><span>RESTAURANT · MP NAGAR, BHOPAL</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#today">Today's Thali</a>
+      <a href="#weekly">Weekly Menu</a>
+      <a href="#plans">Meal Plans</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a class="btn saffron header-cta" href="#book">Subscribe / Order</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Authentic North Indian · Pure Veg</span>
+        <h1>Ghar jaisa khana, <em>MP Nagar</em> ke dil mein.</h1>
+        <p class="lead">Arya Bhawan is the lunch hub Zone-2 swears by — executive vegetarian thalis, paneer specialties and quick, honest North Indian food for coaching students and corporate offices alike. Now with monthly meal passes and corporate lunch plans you can book directly — no aggregator delays.</p>
+        <div class="pill-row" aria-label="Restaurant highlights">
+          <span class="pill"><span class="star" aria-hidden="true">★</span> 3.9 rating</span>
+          <span class="pill">2,260+ ratings on Google &amp; Justdial</span>
+          <span class="pill">🌿 100% vegetarian</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn" href="#plans">See meal plans</a>
+          <a class="btn ghost" href="#weekly">This week's menu</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1200&auto=format&fit=crop" alt="North Indian vegetarian thali with curries, breads and rice" loading="eager" onerror="this.parentElement.style.background='linear-gradient(135deg,#e07b1f,#2e7d32)';this.remove()">
+        <div class="hero-badge">🍱 Executive thalis served fresh through the lunch rush — quick turnover, no long waits.</div>
+      </div>
+    </div>
+    <div class="stats" role="list" aria-label="Arya Bhawan at a glance">
+      <div class="stat" role="listitem"><b>3.9★</b><span>across 2,260+ ratings</span></div>
+      <div class="stat" role="listitem"><b>Zone-2</b><span>MP Nagar's lunch hub</span></div>
+      <div class="stat" role="listitem"><b>6 days</b><span>of rotating weekly menus</span></div>
+      <div class="stat" role="listitem"><b>3 plans</b><span>student · corporate · party</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TODAY'S THALI -->
+<section class="section" id="today" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fresh today</span>
+      <h2>Today's Executive Thali</h2>
+      <p id="todayLine">Served at lunch and dinner. The thali changes daily — check the weekly menu below for the full rotation.</p>
+    </div>
+    <div class="thali-card reveal">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1200&auto=format&fit=crop" alt="Vegetarian Indian dishes served in bowls" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#fdeeda,#e6f2e4)';this.removeAttribute('src')">
+      <div class="thali-body">
+        <h3 id="todayTitle">Today's Thali</h3>
+        <p style="color:var(--muted)" id="todayNote">A complete, balanced meal — dal, seasonal sabzi, a paneer or special curry on rotation, breads, rice and salad.</p>
+        <ul class="thali-items" id="todayItems"></ul>
+        <div class="price-line">
+          <b>₹199</b><span>per thali ·</span><span class="demo-tag">Indicative demo price</span>
+        </div>
+        <p style="margin-top:18px"><a class="btn saffron" href="#book">Book a meal plan instead &amp; save</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY MENU -->
+<section class="section" id="weekly" style="background:var(--paper);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Plan your week</span>
+      <h2>Weekly Menu Preview</h2>
+      <p>Subscribers always know what's cooking. Tap a day to preview its thali — paneer specialties rotate through the week, and Saturday is special-thali day.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Day of week menu" id="dayTabs"></div>
+    <div class="menu-panel reveal" role="tabpanel" id="menuPanel" aria-live="polite"></div>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:14px">Menus shown are a representative weekly rotation for this demo and may change with season and availability. All dishes are vegetarian.</p>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="section" id="plans">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Subscriptions &amp; group orders</span>
+      <h2>Meal Plans for Every Routine</h2>
+      <p>Skip the daily queue and the aggregator markup. Pick a plan, tell us the details, and your subscription summary is built right here on screen.</p>
+    </div>
+    <div class="plans-grid" id="plansGrid"></div>
+    <p style="color:var(--muted);font-size:13.5px;margin-top:14px">All plan prices are <strong>indicative demo prices</strong> for this preview — the restaurant confirms the final price when it confirms your booking.</p>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section" id="book" style="background:var(--paper);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Book in under a minute</span>
+      <h2>Start Your Subscription / Group Order</h2>
+      <p>Fill the form — your order summary updates live on the right. Submitting shows your booking summary with a reference code on this screen.</p>
+    </div>
+    <div class="book-grid">
+      <form class="book reveal" id="bookForm" novalidate>
+        <div class="field">
+          <label for="fPlan">Choose a plan</label>
+          <select id="fPlan"></select>
+        </div>
+        <div class="f-row">
+          <div class="field" id="wName">
+            <label for="fName">Your name</label>
+            <input id="fName" type="text" autocomplete="name" placeholder="e.g. Rahul Verma">
+            <p class="err">Please enter your name.</p>
+          </div>
+          <div class="field" id="wPhone">
+            <label for="fPhone">Mobile number</label>
+            <input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile">
+            <p class="err">Enter a valid 10-digit mobile number.</p>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="field">
+            <label for="fQty" id="qtyLabel">Number of passes</label>
+            <input id="fQty" type="number" min="1" max="500" value="1">
+          </div>
+          <div class="field" id="monthsField">
+            <label for="fMonths">Duration (months)</label>
+            <select id="fMonths">
+              <option value="1">1 month</option>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="12">12 months</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="field">
+            <label for="fDate">Start date</label>
+            <input id="fDate" type="date">
+          </div>
+          <div class="field">
+            <label for="fMode">Meal delivery / pickup</label>
+            <select id="fMode">
+              <option>Dine-in at restaurant</option>
+              <option>Pickup from counter</option>
+              <option>Delivery to office / hostel (Zone-2)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fNote">Note (optional)</label>
+          <textarea id="fNote" rows="3" placeholder="Office / hostel name, landmark, Jain or less-spicy preference, event details for a party box…"></textarea>
+        </div>
+        <button class="btn" type="submit" style="width:100%;justify-content:center">Confirm subscription / order</button>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:10px;text-align:center">Demo form — your summary appears on this screen. No payment is taken here.</p>
+      </form>
+      <aside class="summary reveal" aria-live="polite" aria-label="Your order summary">
+        <h3>Your Summary</h3>
+        <dl>
+          <div><dt>Plan</dt><dd id="sPlan">—</dd></div>
+          <div><dt>Quantity</dt><dd id="sQty">—</dd></div>
+          <div><dt>Duration</dt><dd id="sDur">—</dd></div>
+          <div><dt>Start</dt><dd id="sStart">—</dd></div>
+          <div><dt>Mode</dt><dd id="sMode">—</dd></div>
+        </dl>
+        <div class="total"><span>Estimated total</span><b id="sTotal">₹0</b></div>
+        <p class="fine">Indicative demo pricing. Final price, availability and delivery schedule are confirmed by the restaurant. Party Box is priced per person for a one-time order (minimum 20 persons).</p>
+      </aside>
+    </div>
+    <div class="confirm" id="confirmBox" role="status" tabindex="-1">
+      <h3>✅ Booking summary ready</h3>
+      <p id="confirmText"></p>
+      <p style="margin-top:8px">Your booking reference: <code id="confirmRef"></code> — please save it. In the live version, the restaurant confirms every subscription personally before it starts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIRECT -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why book direct</span>
+      <h2>Built for MP Nagar's Lunch Rush</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="ic" aria-hidden="true">⏱️</div><h3>No aggregator delays</h3><p>Regulars know the complaint — delivery apps arrive late at peak hour. Subscribers get their thali on a fixed schedule, straight from our kitchen.</p></div>
+      <div class="why reveal"><div class="ic" aria-hidden="true">🎓</div><h3>Made for students</h3><p>Coaching schedules are brutal. A monthly meal pass means one less decision every day — and home-style veg food near your institute.</p></div>
+      <div class="why reveal"><div class="ic" aria-hidden="true">🏢</div><h3>Offices run on it</h3><p>Corporate lunch plans with a single monthly summary for the whole team — no daily ordering chaos, no per-order commissions.</p></div>
+      <div class="why reveal"><div class="ic" aria-hidden="true">🎉</div><h3>Groups &amp; parties covered</h3><p>Party boxes and group catering menus are planned in advance — the thing walk-ins always said was missing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews" style="background:var(--paper);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Word in Zone-2</span>
+      <h2>What Lunch Regulars Say</h2>
+      <p>Review themes from Arya Bhawan's 2,260+ ratings — the executive thali and the quick lunch turnover come up again and again.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi reveal"><div class="stars" aria-label="Rated positively">★★★★☆</div><p>"The executive thali is my daily lunch between coaching classes. Proper North Indian taste, and it's on the table fast even in the rush."</p><footer>Review theme — coaching students, MP Nagar</footer></article>
+      <article class="testi reveal"><div class="stars" aria-label="Rated positively">★★★★☆</div><p>"Our office orders from here whenever the team eats together. The paneer specialties are the ones everyone asks for by name."</p><footer>Review theme — corporate offices, Zone-2</footer></article>
+      <article class="testi reveal"><div class="stars" aria-label="Rated positively">★★★★☆</div><p>"Good, honest vegetarian food near Sargam Cinema. Exactly what you want from a neighbourhood thali place — filling and consistent."</p><footer>Review theme — regular diners</footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>Visit Arya Bhawan</h2>
+    </div>
+    <div class="visit reveal">
+      <dl>
+        <div><dt>📍 Address</dt><dd>202, Near Railway Line &amp; Sargam Cinema,<br>Zone-2, MP Nagar, Bhopal — 462011</dd></div>
+        <div><dt>🧭 Landmark</dt><dd>Near Sargam Cinema, by the railway line — minutes from MP Nagar's coaching institutes and corporate offices.</dd></div>
+        <div><dt>🗺️ Directions</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Arya+Bhawan+Restaurant+Zone-2+MP+Nagar+Bhopal" target="_blank" rel="noopener">Open in Google Maps →</a></dd></div>
+      </dl>
+      <div>
+        <h3 style="font-size:20px;margin-bottom:8px">Subscriptions &amp; group orders</h3>
+        <p style="color:var(--muted);font-size:15.5px">There is no phone booking in this demo — meal passes, corporate plans and party boxes are booked through the <a href="#book">subscription form above</a>, and walk-in enquiries are welcome at the counter during lunch and dinner hours.</p>
+        <p style="margin-top:14px"><a class="btn saffron" href="#book">Go to the booking form</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Arya Bhawan Restaurant</h3>
+        <p>Authentic North Indian &amp; vegetarian thali restaurant — an established hospitality brand serving MP Nagar's students, offices and families.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#today">Today's thali</a></li>
+          <li><a href="#weekly">Weekly menu</a></li>
+          <li><a href="#plans">Meal plans</a></li>
+          <li><a href="#book">Subscribe / order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>202, Near Railway Line &amp; Sargam Cinema,<br>Zone-2, MP Nagar, Bhopal — 462011</p>
+      </div>
+    </div>
+    <p class="demo-note">Demo website built for presentation purposes. Menu rotation and all prices are indicative demo values; the restaurant confirms final details. No phone number is listed, as none was provided.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* ---------- Weekly menu data ---------- */
+var WEEK = [
+  {day:"Monday", note:"The week starts light and homestyle.", mains:["Dal Tadka","Aloo Gobi Masala","Mix Veg"], special:null, sides:["Jeera Rice","4 Butter Roti","Green Salad","Papad"]},
+  {day:"Tuesday", note:"Paneer day — a Zone-2 favourite.", mains:["Dal Makhani","Paneer Butter Masala","Seasonal Sabzi"], special:"Paneer Butter Masala", sides:["Steamed Rice","4 Butter Roti","Green Salad","Boondi Raita"]},
+  {day:"Wednesday", note:"Mid-week comfort classics.", mains:["Dal Fry","Bhindi Masala","Aloo Matar"], special:null, sides:["Jeera Rice","4 Roti","Green Salad","Papad"]},
+  {day:"Thursday", note:"Chole day, with a tangy twist.", mains:["Dal Tadka","Chole Masala","Baingan Bharta"], special:"Chole Masala", sides:["Steamed Rice","4 Bhature-style Roti","Onion Salad","Pickle"]},
+  {day:"Friday", note:"Paneer returns for the weekend run-up.", mains:["Dal Makhani","Shahi Paneer","Mix Veg"], special:"Shahi Paneer", sides:["Jeera Rice","4 Butter Roti","Green Salad","Boondi Raita"]},
+  {day:"Saturday", note:"Special Thali Saturday — with a sweet to finish.", mains:["Dal Tadka","Paneer Lababdar","Seasonal Sabzi","Veg Pulao"], special:"Special Thali + Gulab Jamun", sides:["4 Butter Roti","Green Salad","Papad","Gulab Jamun (sweet)"]}
+];
+var PLANS = [
+  {id:"student", name:"Student Monthly Meal Pass", tag:"Most popular with coaching students", price:2799, unit:"per pass / month", qtyLabel:"Number of passes", months:true,
+   desc:"One executive thali every working day for a month — built for coaching routines in MP Nagar.",
+   points:["1 executive thali per day (Mon–Sat)","Dine-in or hostel pickup (Zone-2)","Menu preview for the full week","Pause-friendly student routine"]},
+  {id:"corporate", name:"Corporate Lunch Plan", tag:"For offices & teams", price:3299, unit:"per person / month", qtyLabel:"Number of team members", months:true,
+   desc:"Daily team lunches on one monthly plan — no per-order aggregator commissions, no daily ordering chaos.",
+   points:["Daily executive thali per member","Delivery to Zone-2 offices","Single monthly summary for the office","Group catering menu on request"]},
+  {id:"party", name:"Party Box / Group Catering", tag:"One-time group order", price:249, unit:"per person · min. 20", qtyLabel:"Number of persons (min. 20)", months:false,
+   desc:"Pre-planned group boxes for office parties, coaching celebrations and family gatherings.",
+   points:["Custom group menu planned in advance","Paneer specialty included","Boxes packed for pickup or delivery","Booked via the form — no phone needed"]}
+];
+function inr(n){ return "₹" + n.toLocaleString("en-IN"); }
+function $(id){ return document.getElementById(id); }
+
+/* ---------- Mobile nav ---------- */
+var toggle = $("menuToggle"), nav = $("mainNav");
+toggle.addEventListener("click", function(){
+  var open = nav.classList.toggle("open");
+  toggle.setAttribute("aria-expanded", open ? "true" : "false");
+});
+nav.addEventListener("click", function(e){ if(e.target.tagName === "A"){ nav.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); } });
+
+/* ---------- Today's thali (from JS day) ---------- */
+(function(){
+  var jsDay = new Date().getDay(); /* 0=Sun..6=Sat */
+  var idx = jsDay === 0 ? 5 : jsDay - 1; /* Sunday shows Saturday's special */
+  var d = WEEK[idx];
+  $("todayTitle").textContent = d.day + " Thali" + (d.special ? " · " + d.special : "");
+  $("todayLine").textContent = "Today is " + d.day + " — here is what the thali looks like. Served at lunch and dinner; the full week's rotation is below.";
+  var items = d.mains.concat(d.sides);
+  $("todayItems").innerHTML = items.map(function(i){ return "<li>" + i + "</li>"; }).join("");
+})();
+
+/* ---------- Weekly menu tabs ---------- */
+var tabsBox = $("dayTabs"), panel = $("menuPanel"), currentDay = 0;
+WEEK.forEach(function(d, i){
+  var b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.textContent = d.day.slice(0,3);
+  b.setAttribute("role","tab"); b.id = "tab-" + i;
+  b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  b.setAttribute("aria-controls","menuPanel");
+  b.tabIndex = i === 0 ? 0 : -1;
+  b.addEventListener("click", function(){ showDay(i); });
+  b.addEventListener("keydown", function(e){
+    var n = null;
+    if(e.key === "ArrowRight") n = (i + 1) % WEEK.length;
+    if(e.key === "ArrowLeft") n = (i - 1 + WEEK.length) % WEEK.length;
+    if(n !== null){ e.preventDefault(); showDay(n); tabsBox.children[n].focus(); }
+  });
+  tabsBox.appendChild(b);
+});
+function showDay(i){
+  currentDay = i;
+  var d = WEEK[i];
+  Array.prototype.forEach.call(tabsBox.children, function(t, j){
+    t.setAttribute("aria-selected", j === i ? "true" : "false"); t.tabIndex = j === i ? 0 : -1;
+  });
+  var specialHtml = d.special ? '<p style="margin-top:16px"><span class="demo-tag">Day special</span> <strong>' + d.special + '</strong></p>' : "";
+  panel.innerHTML =
+    "<h3>" + d.day + " Thali</h3><p class='day-note'>" + d.note + "</p>" +
+    "<div class='menu-cols'>" +
+    "<div class='menu-col'><h4>Dal &amp; Sabzi</h4><ul>" + d.mains.map(function(m){ return "<li><span class='veg-dot' aria-hidden='true'></span>" + m + "</li>"; }).join("") + "</ul></div>" +
+    "<div class='menu-col'><h4>Rice, Breads &amp; Sides</h4><ul>" + d.sides.map(function(s){ return "<li><span class='veg-dot' aria-hidden='true'></span>" + s + "</li>"; }).join("") + "</ul></div>" +
+    "<div class='menu-col'><h4>Good to know</h4><ul><li><span class='veg-dot' aria-hidden='true'></span>100% vegetarian</li><li><span class='veg-dot' aria-hidden='true'></span>Included in every meal plan</li><li><span class='veg-dot' aria-hidden='true'></span>Less-spicy option on request</li></ul></div>" +
+    "</div>" + specialHtml;
+}
+showDay((new Date().getDay() + 6) % 7 === 6 ? 5 : (new Date().getDay() + 6) % 7);
+
+/* ---------- Plans ---------- */
+var grid = $("plansGrid"), planSelect = $("fPlan"), selectedPlan = PLANS[0];
+PLANS.forEach(function(p, i){
+  var card = document.createElement("article");
+  card.className = "plan reveal" + (i === 0 ? " selected" : "");
+  card.id = "plan-" + p.id;
+  card.innerHTML = "<span class='pop'>" + p.tag + "</span><h3>" + p.name + "</h3>" +
+    "<div class='p-price'>" + inr(p.price) + " <small>" + p.unit + "</small></div>" +
+    "<p>" + p.desc + "</p><ul>" + p.points.map(function(x){ return "<li>" + x + "</li>"; }).join("") + "</ul>" +
+    "<button type='button' class='btn " + (i === 0 ? "" : "ghost") + "' aria-pressed='" + (i === 0) + "'>Select this plan</button>";
+  card.querySelector("button").addEventListener("click", function(){ selectPlan(p.id, true); });
+  grid.appendChild(card);
+  var opt = document.createElement("option");
+  opt.value = p.id; opt.textContent = p.name + " — " + inr(p.price) + " " + p.unit;
+  planSelect.appendChild(opt);
+});
+function selectPlan(id, scroll){
+  selectedPlan = PLANS.filter(function(p){ return p.id === id; })[0];
+  planSelect.value = id;
+  PLANS.forEach(function(p){
+    var card = $("plan-" + p.id), btn = card.querySelector("button");
+    var sel = p.id === id;
+    card.classList.toggle("selected", sel);
+    btn.setAttribute("aria-pressed", sel ? "true" : "false");
+    btn.className = "btn" + (sel ? "" : " ghost");
+  });
+  $("qtyLabel").textContent = selectedPlan.qtyLabel;
+  $("monthsField").style.display = selectedPlan.months ? "" : "none";
+  var q = $("fQty");
+  if(selectedPlan.id === "party" && Number(q.value) < 20) q.value = 20;
+  if(selectedPlan.id !== "party" && Number(q.value) > 500) q.value = 500;
+  updateSummary();
+  if(scroll) $("book").scrollIntoView({behavior:"smooth"});
+}
+planSelect.addEventListener("change", function(){ selectPlan(planSelect.value, false); });
+
+/* ---------- Summary + form ---------- */
+var fDate = $("fDate");
+(function(){ var t = new Date(); t.setDate(t.getDate() + 1); fDate.min = new Date().toISOString().slice(0,10); fDate.value = t.toISOString().slice(0,10); })();
+function fmtDate(v){
+  if(!v) return "—";
+  return new Date(v + "T00:00:00").toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short", year:"numeric"});
+}
+function updateSummary(){
+  var qty = Math.max(1, Number($("fQty").value) || 1);
+  var months = selectedPlan.months ? Number($("fMonths").value) : 0;
+  var total = selectedPlan.price * qty * (selectedPlan.months ? months : 1);
+  $("sPlan").textContent = selectedPlan.name;
+  $("sQty").textContent = qty + (selectedPlan.id === "party" ? " persons" : selectedPlan.id === "corporate" ? " team members" : " pass(es)");
+  $("sDur").textContent = selectedPlan.months ? months + (months === 1 ? " month" : " months") : "One-time order";
+  $("sStart").textContent = fmtDate(fDate.value);
+  $("sMode").textContent = $("fMode").value;
+  $("sTotal").textContent = inr(total);
+  return total;
+}
+["fQty","fMonths","fMode"].forEach(function(id){ $(id).addEventListener("input", updateSummary); $(id).addEventListener("change", updateSummary); });
+fDate.addEventListener("change", updateSummary);
+
+$("bookForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var nameOk = $("fName").value.trim().length >= 2;
+  var phoneOk = /^[6-9]\d{9}$/.test($("fPhone").value.replace(/\s/g, ""));
+  $("wName").classList.toggle("invalid", !nameOk);
+  $("wPhone").classList.toggle("invalid", !phoneOk);
+  if(selectedPlan.id === "party" && Number($("fQty").value) < 20){ $("fQty").value = 20; updateSummary(); }
+  if(!nameOk || !phoneOk){ (!nameOk ? $("fName") : $("fPhone")).focus(); return; }
+  var total = updateSummary();
+  var ref = "AB-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+  $("confirmRef").textContent = ref;
+  $("confirmText").textContent = "Thank you, " + $("fName").value.trim() + ". Your " + selectedPlan.name +
+    " (" + $("sQty").textContent + ", " + $("sDur").textContent.toLowerCase() + ") starting " + fmtDate(fDate.value) +
+    " via " + $("fMode").value.toLowerCase() + " is summarised here with an estimated total of " + inr(total) +
+    " (indicative demo price). The restaurant will confirm the final details with you.";
+  var box = $("confirmBox");
+  box.classList.add("show");
+  box.focus();
+  box.scrollIntoView({behavior:"smooth", block:"center"});
+});
+selectPlan("student", false);
+
+/* ---------- Reveal on scroll ---------- */
+if("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

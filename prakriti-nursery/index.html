@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prakriti Organic Nursery — Plants, Pots &amp; Landscaping in Arera Colony, Bhopal</title>
+<meta name="description" content="Prakriti Organic Nursery, Dana Pani Road, Arera Colony, Bhopal. Healthy fruit plants, indoor & air-purifying plants, ceramics and organic soil mixes — browse the catalog, pick your size, order on WhatsApp for home delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-950:#0c2417; --green-900:#123420; --green-800:#1a4a2c; --green-700:#22673c;
+  --green-600:#2e8b4f; --green-500:#3fa563; --green-100:#dff2e2; --green-50:#f0f8f1;
+  --cream:#f7f4ea; --paper:#fffdf6; --ink:#17251b; --muted:#5b6e5f;
+  --gold:#d9a83c; --line:#dde7dc; --red:#c04434;
+  --shadow:0 10px 30px rgba(12,36,23,.12); --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--green-700)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--green-900);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;line-height:1.18}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(247,244,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green-950)}
+.logo .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--green-700),var(--green-500));display:grid;place-items:center;font-size:22px}
+.logo b{font-family:'Fraunces',serif;font-size:19px;display:block;line-height:1.1}
+.logo span{font-size:11.5px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+nav.main{margin-left:auto;display:none;gap:22px}
+nav.main a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--green-700)}
+@media(min-width:860px){nav.main{display:flex}}
+.cartbtn{margin-left:auto;border:0;cursor:pointer;background:var(--green-800);color:#fff;font-weight:700;padding:11px 18px;border-radius:99px;font-size:15px;display:flex;gap:8px;align-items:center}
+@media(min-width:860px){.cartbtn{margin-left:0}}
+.cartbtn .count{background:var(--gold);color:#231a02;border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:13px;padding:0 6px}
+
+/* hero */
+.hero{background:radial-gradient(1000px 500px at 85% -10%,#2e8b4f33,transparent),linear-gradient(160deg,var(--green-950),var(--green-900) 55%,var(--green-800));color:#eef7ee;padding:56px 0 64px;position:relative;overflow:hidden}
+.hero .grid{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:800}
+.hero h1 em{color:#9be15d;font-style:normal}
+.hero p.lead{margin:16px 0 24px;color:#cfe6cf;font-size:17.5px;max-width:54ch}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#ffffff1a;border:1px solid #ffffff33;padding:6px 14px;border-radius:99px;font-size:14px;font-weight:600;margin-bottom:18px}
+.stars{color:var(--gold);letter-spacing:2px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:99px;font-size:15.5px;border:0;cursor:pointer}
+.btn.gold{background:var(--gold);color:#231a02}
+.btn.ghost{background:transparent;color:#eef7ee;border:1.5px solid #ffffff55}
+.heroimg{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--green-700),var(--green-950));aspect-ratio:4/3}
+.heroimg img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:#ffffff12;border:1px solid #ffffff22;border-radius:14px;padding:14px 16px}
+.stat b{font-family:'Fraunces',serif;font-size:24px;display:block}
+.stat span{font-size:13px;color:#cfe6cf}
+
+/* sections */
+section{padding:60px 0}
+.kicker{color:var(--green-600);font-weight:800;letter-spacing:1.6px;text-transform:uppercase;font-size:12.5px}
+.sec-head{max-width:720px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);font-weight:750;margin:8px 0 10px}
+.sec-head p{color:var(--muted)}
+
+/* toolbar */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:10px}
+.search{flex:1 1 260px;display:flex;align-items:center;gap:9px;background:var(--paper);border:1.5px solid var(--line);border-radius:99px;padding:11px 18px}
+.search input{border:0;outline:0;background:transparent;font:inherit;flex:1;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:8px 0 4px}
+.chip{border:1.5px solid var(--green-700);background:transparent;color:var(--green-800);font-weight:700;padding:8px 16px;border-radius:99px;cursor:pointer;font-size:14.5px}
+.chip[aria-pressed="true"]{background:var(--green-800);color:#fff}
+.resultline{color:var(--muted);font-size:14px;margin:10px 0 18px}
+
+/* catalog */
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(12,36,23,.05)}
+.card .ph{aspect-ratio:4/3;background:linear-gradient(135deg,var(--green-100),var(--green-600));position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;background:#fffffff2;color:var(--green-900);font-size:12px;font-weight:800;padding:4px 10px;border-radius:99px}
+.stock{position:absolute;bottom:12px;left:12px;background:var(--green-950);color:#bff0c6;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+.card .body{padding:17px 18px 19px;display:flex;flex-direction:column;gap:9px;flex:1}
+.card h3{font-size:20px}
+.card .latin{font-size:13px;color:var(--muted);font-style:italic;margin-top:-6px}
+.card .desc{font-size:14.5px;color:#3c4f40}
+.meta{display:flex;gap:12px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.meta b{color:var(--green-800)}
+label.size-lab{font-size:13px;font-weight:700;color:var(--green-900)}
+select.size{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;background:#fff}
+.pricerow{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px}
+.price{font-family:'Fraunces',serif;font-size:23px;font-weight:800;color:var(--green-900)}
+.price small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--muted);font-weight:600}
+.addbtn{background:var(--green-700);color:#fff;border:0;font-weight:700;padding:11px 17px;border-radius:99px;cursor:pointer;font-size:14.5px}
+.addbtn:hover{background:var(--green-800)}
+.empty{display:none;text-align:center;padding:44px 16px;color:var(--muted);border:1.5px dashed var(--line);border-radius:var(--radius);background:var(--paper)}
+
+/* services */
+.services{background:var(--green-50)}
+.svc-grid{display:grid;gap:18px}
+@media(min-width:820px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.svc .ic{font-size:30px;margin-bottom:10px}
+.svc h3{font-size:21px;margin-bottom:7px}
+.svc p{color:#3c4f40;font-size:15px}
+
+/* strip / testimonials / visit */
+.strip{background:linear-gradient(120deg,var(--green-900),var(--green-700));color:#eaf6ea;border-radius:24px;padding:32px;display:grid;gap:14px}
+@media(min-width:820px){.strip{grid-template-columns:1fr auto;align-items:center}}
+.strip h2{font-size:27px}
+.tgrid{display:grid;gap:18px}
+@media(min-width:820px){.tgrid{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.tcard p{font-size:15.5px;color:#33463a}
+.tcard .who{margin-top:12px;font-size:13.5px;color:var(--muted);font-weight:700}
+.visit{display:grid;gap:22px}
+@media(min-width:860px){.visit{grid-template-columns:1fr 1fr}}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.vcard h3{font-size:22px;margin-bottom:10px}
+.vcard p{margin-bottom:10px;color:#3c4f40}
+.vcard a.tel{font-weight:800;font-size:19px;text-decoration:none}
+
+footer{background:var(--green-950);color:#cfe0cf;padding:40px 0 30px;font-size:14.5px}
+footer a{color:#9be15d}
+footer .cols{display:grid;gap:20px}
+@media(min-width:760px){footer .cols{grid-template-columns:1.4fr 1fr 1fr}}
+.demo-note{margin-top:26px;border-top:1px solid #ffffff22;padding-top:16px;font-size:13px;color:#9db89d}
+
+/* cart drawer */
+.scrim{position:fixed;inset:0;background:rgba(7,20,12,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:150}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);background:var(--paper);z-index:160;transform:translateX(105%);transition:transform .3s ease;display:flex;flex-direction:column;box-shadow:-14px 0 40px rgba(0,0,0,.25)}
+.drawer.open{transform:none}
+.drawer header{position:static;background:var(--green-900);color:#fff;padding:17px 20px;display:flex;align-items:center;justify-content:space-between;border:0}
+.drawer header h2{font-size:21px}
+.drawer .close{background:transparent;border:0;color:#fff;font-size:24px;cursor:pointer;line-height:1}
+.dbody{padding:18px 20px;overflow-y:auto;flex:1}
+.citem{display:flex;gap:12px;border-bottom:1px solid var(--line);padding:13px 0}
+.citem .info{flex:1}
+.citem b{font-size:15.5px}
+.citem .sz{font-size:13px;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--line);border-radius:99px;margin-top:7px}
+.qty button{width:29px;height:29px;border:0;background:transparent;font-size:17px;cursor:pointer}
+.qty output{min-width:22px;text-align:center;font-weight:700}
+.citem .lt{text-align:right;font-weight:800;color:var(--green-900);white-space:nowrap}
+.citem .rm{display:block;margin-left:auto;background:none;border:0;color:var(--red);font-size:12.5px;cursor:pointer;font-weight:700}
+.dfoot{border-top:1px solid var(--line);padding:17px 20px;background:var(--green-50)}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:800;margin-bottom:6px}
+.dfoot label{font-size:13px;font-weight:700;display:block;margin-top:11px}
+.dfoot input,.dfoot textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;margin-top:5px;background:#fff}
+.wa{width:100%;margin-top:15px;background:#1faa55;color:#fff;font-size:16px}
+.wa:disabled{opacity:.5;cursor:not-allowed}
+.emptycart{text-align:center;color:var(--muted);padding:34px 8px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,80px);background:var(--green-950);color:#eaf6ea;padding:12px 20px;border-radius:99px;font-weight:700;z-index:200;transition:transform .3s;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s,transform .55s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#catalog">Skip to plant catalog</a>
+
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="#top" aria-label="Prakriti Organic Nursery — home">
+      <span class="mark" aria-hidden="true">🌿</span>
+      <span><b>Prakriti Organic Nursery</b><span>Arera Colony · Bhopal</span></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#catalog">Plants</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#visit">Visit Us</a>
+    </nav>
+    <button class="cartbtn" id="openCart" aria-haspopup="dialog">🛒 Cart <span class="count" id="cartCount" aria-label="items in cart">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="pill"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 · 80+ happy plant parents</span>
+        <h1>Healthy plants, honest sizes, <em>delivered home.</em></h1>
+        <p class="lead">Bhopal's beloved organic nursery on Dana Pani Road — fruit plants, rubber plants, ceramics and organic soil mixes. Browse the live catalog, pick your exact pot size, and order on WhatsApp. No more calling again and again to ask what's in stock.</p>
+        <div class="ctas">
+          <a class="btn gold" href="#catalog">🌱 Browse the catalog</a>
+          <a class="btn ghost" href="tel:+919425673015">📞 +91 94256 73015</a>
+        </div>
+        <div class="stats" aria-label="Nursery highlights">
+          <div class="stat"><b>5.0★</b><span>Rating · 80+ reviews</span></div>
+          <div class="stat"><b>14+</b><span>Plants, pots &amp; ceramics listed</span></div>
+          <div class="stat"><b>3 sizes</b><span>Shown upfront for every plant</span></div>
+          <div class="stat"><b>Home</b><span>Delivery on WhatsApp orders</span></div>
+        </div>
+      </div>
+      <div class="heroimg"><img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=1200&auto=format&fit=crop" alt="Shelves of lush green potted plants at Prakriti Organic Nursery" fetchpriority="high" onerror="this.remove()"></div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <section id="catalog" aria-labelledby="catH">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Plant catalog</p>
+        <h2 id="catH">Pick your plant, pick your size</h2>
+        <p>Every plant lists its available pot sizes and price upfront — the exact thing customers used to phone us for. Prices are indicative; final confirmation happens on WhatsApp before delivery.</p>
+      </div>
+      <div class="toolbar reveal">
+        <div class="search" role="search">
+          <span aria-hidden="true">🔍</span>
+          <input type="search" id="q" placeholder="Search plants — try 'mango', 'palm', 'ceramic'…" aria-label="Search the plant catalog">
+        </div>
+      </div>
+      <div class="chips" role="group" aria-label="Filter by category" id="chips"></div>
+      <p class="resultline" id="resultLine" aria-live="polite"></p>
+      <div class="grid-cards" id="grid"></div>
+      <div class="empty" id="emptyState">🌵 No plants match that search. Try a different word, or call us on <a href="tel:+919425673015">+91 94256 73015</a> — new stock arrives often.</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services" aria-labelledby="svcH">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Care &amp; services</p>
+        <h2 id="svcH">More than a nursery</h2>
+        <p>From a single balcony plant to a full garden, Prakriti helps Bhopal homes grow greener.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal"><div class="ic" aria-hidden="true">🏡</div><h3>Landscaping &amp; Garden Setup</h3><p>Planning and planting for homes, balconies and terraces in Arera Colony and across Bhopal — tell us your space and sunlight, and we'll suggest the right mix of plants.</p></article>
+        <article class="svc reveal"><div class="ic" aria-hidden="true">🪱</div><h3>Organic Soil Mixes</h3><p>Our organic soil mixes and compost blends, prepared for fruit plants, indoor greens and kitchen gardens. Add a bag to any plant order on WhatsApp.</p></article>
+        <article class="svc reveal"><div class="ic" aria-hidden="true">🩺</div><h3>Plant Care Guidance</h3><p>Bought a plant that's struggling? Bring a photo when you visit — watering, light and repotting guidance comes free with every plant we sell.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <section aria-label="Home delivery">
+    <div class="wrap">
+      <div class="strip reveal">
+        <div>
+          <h2>🚚 Home delivery across Bhopal</h2>
+          <p style="color:#cfe6cf">Add plants to the cart, choose your sizes, and send the order on WhatsApp — we'll confirm availability and delivery before you pay anything.</p>
+        </div>
+        <button class="btn gold" id="stripCart">Review my cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" aria-labelledby="revH" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Reviews · 5.0★ · 80+</p>
+        <h2 id="revH">Loved by plant parents in E-7 &amp; Dana Pani</h2>
+      </div>
+      <div class="tgrid">
+        <article class="tcard reveal"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>"The fruit plants are genuinely healthy — they settle in fast and actually grow. You can tell the nursery raises them with care, not just resells them."</p><p class="who">Review theme · Fruit plant buyers</p></article>
+        <article class="tcard reveal"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>"My rubber plant from Prakriti is the healthiest plant in my house. Good size options, and the organic soil mix made repotting easy."</p><p class="who">Review theme · Indoor plant buyers</p></article>
+        <article class="tcard reveal"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>"Beautiful ceramics and honest advice on which pot suits which plant. A small nursery with a big heart for gardening."</p><p class="who">Review theme · Ceramics &amp; soil buyers</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-labelledby="visH" style="padding-top:10px">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="kicker">Visit us</p><h2 id="visH">Find the nursery</h2></div>
+      <div class="visit">
+        <div class="vcard reveal">
+          <h3>📍 Prakriti Organic Nursery</h3>
+          <p>Near Sabji Farm, Ansal Pradhan Colony,<br>Dana Pani Road, Arera Colony,<br>Bhopal — 462016</p>
+          <p><a class="btn gold" style="margin-top:6px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prakriti+Organic+Nursery+Ansal+Pradhan+Colony+Dana+Pani+Road+Arera+Colony+Bhopal">Get directions →</a></p>
+        </div>
+        <div class="vcard reveal">
+          <h3>📞 Talk to us</h3>
+          <p><a class="tel" href="tel:+919425673015">+91 94256 73015</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/prakriti_organic_nursery" target="_blank" rel="noopener">@prakriti_organic_nursery</a></p>
+          <p>Fastest way to order: build your cart here and send it on WhatsApp — sizes and prices are already in the message.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><b class="serif" style="font-size:19px;color:#fff">🌿 Prakriti Organic Nursery</b><p style="margin-top:8px">Exotic plants, landscaping &amp; organic gardening — Dana Pani Road, Arera Colony, Bhopal.</p></div>
+      <div><b style="color:#fff">Explore</b><p style="margin-top:8px"><a href="#catalog">Plant catalog</a><br><a href="#services">Services</a><br><a href="#visit">Visit us</a></p></div>
+      <div><b style="color:#fff">Contact</b><p style="margin-top:8px"><a href="tel:+919425673015">+91 94256 73015</a><br><a href="https://www.instagram.com/prakriti_organic_nursery" target="_blank" rel="noopener">@prakriti_organic_nursery</a></p></div>
+    </div>
+    <p class="demo-note">Demo website — built as a presentation sample for Prakriti Organic Nursery. Catalog prices are indicative and confirmed on WhatsApp; availability changes with nursery stock.</p>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cartH" hidden>
+  <header>
+    <h2 id="cartH">🛒 Your order</h2>
+    <button class="close" id="closeCart" aria-label="Close cart">✕</button>
+  </header>
+  <div class="dbody" id="cartBody"></div>
+  <div class="dfoot">
+    <div class="total"><span>Total (indicative)</span><span id="cartTotal">₹0</span></div>
+    <p style="font-size:13px;color:var(--muted)">Home delivery — we confirm stock, delivery slot &amp; final total on WhatsApp.</p>
+    <label for="buyerName">Your name</label>
+    <input id="buyerName" type="text" autocomplete="name" placeholder="e.g. Anjali Sharma">
+    <label for="buyerAddr">Delivery address (Bhopal)</label>
+    <textarea id="buyerAddr" rows="2" placeholder="House no, area, landmark…"></textarea>
+    <button class="btn wa" id="waOrder">📲 Order on WhatsApp for Home Delivery</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+const WA = "919425673015";
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+
+/* ---------- catalog data ---------- */
+/* sizes: label + price-multiplier over base price */
+const POT = [{label:'4" nursery pot',m:1},{label:'6" pot',m:1.6},{label:'8" pot',m:2.4}];
+const TREE = [{label:'3 ft plant',m:1},{label:'4 ft plant',m:1.5},{label:'5 ft plant',m:2.1}];
+const CERAMIC = [{label:'Small',m:1},{label:'Medium',m:1.5},{label:'Large',m:2.2}];
+
+const PLANTS = [
+ {id:"monstera", name:"Monstera Deliciosa", latin:"Monstera deliciosa", cat:"indoor", base:499, sizes:POT, light:"Bright, indirect light", care:"Easy", img:"https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=900&auto=format&fit=crop", desc:"The statement indoor plant — big split leaves that love a bright corner."},
+ {id:"rubber", name:"Rubber Plant", latin:"Ficus elastica", cat:"indoor", base:399, sizes:POT, light:"Medium to bright light", care:"Easy", img:"https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=900&auto=format&fit=crop", desc:"A Bhopal favourite — glossy, sturdy and one of the nursery's most-loved plants."},
+ {id:"snake", name:"Snake Plant", latin:"Sansevieria trifasciata", cat:"indoor", base:299, sizes:POT, light:"Low to bright light", care:"Very easy", img:"https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=900&auto=format&fit=crop", desc:"Nearly indestructible. Perfect first plant for bedrooms and offices."},
+ {id:"pothos", name:"Money Plant — Golden Pothos", latin:"Epipremnum aureum", cat:"indoor", base:199, sizes:POT, light:"Low to medium light", care:"Very easy", img:"https://images.unsplash.com/photo-1616694548293-5ecf83c60c24?q=80&w=900&auto=format&fit=crop", desc:"Trailing golden-green leaves for shelves, balconies and hanging baskets."},
+ {id:"areca", name:"Areca Palm", latin:"Dypsis lutescens", cat:"air", base:449, sizes:POT, light:"Bright, indirect light", care:"Easy", img:"https://images.unsplash.com/photo-1508020268086-b7ce323578d3?q=80&w=900&auto=format&fit=crop", desc:"Feathery palm that freshens living-room air and fills empty corners softly."},
+ {id:"peace-lily", name:"Peace Lily", latin:"Spathiphyllum wallisii", cat:"air", base:349, sizes:POT, light:"Low to medium light", care:"Easy", img:"https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?q=80&w=900&auto=format&fit=crop", desc:"Elegant white blooms and air-cleansing leaves — a calm gift plant."},
+ {id:"spider", name:"Spider Plant", latin:"Chlorophytum comosum", cat:"air", base:249, sizes:POT, light:"Medium light", care:"Very easy", img:"https://images.unsplash.com/photo-1572688484438-313a6b50c333?q=80&w=900&auto=format&fit=crop", desc:"Arching striped leaves with baby plantlets — great for hanging pots."},
+ {id:"zz", name:"ZZ Plant", latin:"Zamioculcas zamiifolia", cat:"air", base:549, sizes:POT, light:"Low to bright light", care:"Very easy", img:"https://images.unsplash.com/photo-1632380211596-b96123699389?q=80&w=900&auto=format&fit=crop", desc:"Glossy, drought-tolerant and happy with neglect — the office favourite."},
+ {id:"mango", name:"Mango Plant (Grafted)", latin:"Mangifera indica", cat:"fruit", base:599, sizes:TREE, light:"Full sun", care:"Moderate", img:"https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=900&auto=format&fit=crop", desc:"Grafted, healthy mango saplings from the nursery's fruit-plant rows."},
+ {id:"lemon", name:"Lemon Plant", latin:"Citrus limon", cat:"fruit", base:349, sizes:TREE, light:"Full sun", care:"Easy", img:"https://images.unsplash.com/photo-1590502593747-42a996133562?q=80&w=900&auto=format&fit=crop", desc:"Terrace-friendly lemon that fruits well in Bhopal's sun with regular feeding."},
+ {id:"guava", name:"Guava Plant", latin:"Psidium guajava", cat:"fruit", base:399, sizes:TREE, light:"Full sun", care:"Easy", img:"https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?q=80&w=900&auto=format&fit=crop", desc:"Fast-growing guava for home gardens — plant it once, harvest for years."},
+ {id:"anar", name:"Pomegranate Plant", latin:"Punica granatum", cat:"fruit", base:449, sizes:TREE, light:"Full sun", care:"Easy", img:"https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=900&auto=format&fit=crop", desc:"Hardy anar that suits pots and garden corners, with pretty orange blooms."},
+ {id:"ceramic-planter", name:"Handmade Ceramic Planter", latin:"Nursery ceramics", cat:"pots", base:699, sizes:CERAMIC, light:"Indoor / balcony", care:"—", img:"https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=900&auto=format&fit=crop", desc:"From the nursery's ceramics shelf — drainage-ready planters in earthy glazes."},
+ {id:"terracotta-set", name:"Terracotta Pot Set (3 pc)", latin:"Natural clay pots", cat:"pots", base:499, sizes:CERAMIC, light:"Indoor / balcony", care:"—", img:"https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=900&auto=format&fit=crop", desc:"Breathable clay pots that keep roots happy — a set of three matched sizes."}
+];
+const CATS = [{id:"all",label:"All plants"},{id:"indoor",label:"🌿 Indoor"},{id:"air",label:"🍃 Air-Purifying"},{id:"fruit",label:"🥭 Fruit Trees"},{id:"pots",label:"🏺 Pots & Ceramics"}];
+const priceFor = (p,sizeLabel) => { const s = p.sizes.find(x=>x.label===sizeLabel) || p.sizes[0]; return Math.round(p.base * s.m / 10) * 10 - 1; };
+
+/* ---------- state ---------- */
+let activeCat = "all", query = "";
+const cart = new Map(); // key: id|size -> {id,size,qty}
+
+/* ---------- render catalog ---------- */
+const grid = document.getElementById("grid"), chipsEl = document.getElementById("chips"),
+      emptyEl = document.getElementById("emptyState"), resultLine = document.getElementById("resultLine");
+
+CATS.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="chip"; b.textContent=c.label; b.dataset.cat=c.id;
+  b.setAttribute("aria-pressed", c.id==="all" ? "true":"false");
+  b.addEventListener("click",()=>{ activeCat=c.id;
+    chipsEl.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x.dataset.cat===c.id ? "true":"false"));
+    render(); });
+  chipsEl.appendChild(b);
+});
+
+function card(p){
+  const el=document.createElement("article"); el.className="card";
+  const opts = p.sizes.map((s,i)=>`<option value="${s.label}"${i===0?" selected":""}>${s.label} — ${fmt(priceFor(p,s.label))}</option>`).join("");
+  el.innerHTML = `
+    <div class="ph"><img loading="lazy" src="${p.img}" alt="${p.name} at Prakriti Organic Nursery" onerror="this.remove()">
+      <span class="badge">${CATS.find(c=>c.id===p.cat).label}</span>
+      <span class="stock">● Sizes &amp; prices below — no call needed</span></div>
+    <div class="body">
+      <h3>${p.name}</h3><p class="latin">${p.latin}</p>
+      <p class="desc">${p.desc}</p>
+      <div class="meta"><span>☀️ <b>${p.light}</b></span><span>💧 Care: <b>${p.care}</b></span></div>
+      <label class="size-lab" for="size-${p.id}">Choose size</label>
+      <select class="size" id="size-${p.id}">${opts}</select>
+      <div class="pricerow">
+        <div class="price"><span data-price>${fmt(priceFor(p,p.sizes[0].label))}</span><small>indicative price</small></div>
+        <button class="addbtn" data-add="${p.id}">Add to cart</button>
+      </div>
+    </div>`;
+  const sel = el.querySelector("select.size");
+  sel.addEventListener("change",()=>{ el.querySelector("[data-price]").textContent = fmt(priceFor(p, sel.value)); });
+  el.querySelector("[data-add]").addEventListener("click",()=> addToCart(p, sel.value));
+  return el;
+}
+
+function render(){
+  const q = query.trim().toLowerCase();
+  const list = PLANTS.filter(p =>
+    (activeCat==="all" || p.cat===activeCat) &&
+    (!q || (p.name+" "+p.latin+" "+p.desc+" "+CATS.find(c=>c.id===p.cat).label).toLowerCase().includes(q)));
+  grid.replaceChildren(...list.map(card));
+  emptyEl.style.display = list.length ? "none" : "block";
+  resultLine.textContent = `Showing ${list.length} of ${PLANTS.length} items` + (activeCat!=="all" ? ` in ${CATS.find(c=>c.id===activeCat).label}` : "") + (q ? ` matching “${query.trim()}”` : "");
+}
+document.getElementById("q").addEventListener("input", e=>{ query=e.target.value; render(); });
+
+/* ---------- cart ---------- */
+const drawer=document.getElementById("drawer"), scrim=document.getElementById("scrim"),
+      cartBody=document.getElementById("cartBody"), cartTotal=document.getElementById("cartTotal"),
+      cartCount=document.getElementById("cartCount"), waBtn=document.getElementById("waOrder"),
+      toast=document.getElementById("toast");
+let lastFocus=null;
+
+function cartQty(){ let n=0; cart.forEach(i=>n+=i.qty); return n; }
+function cartSum(){ let s=0; cart.forEach(i=>{ const p=PLANTS.find(x=>x.id===i.id); s+=priceFor(p,i.size)*i.qty; }); return s; }
+
+function addToCart(p, size){
+  const key=p.id+"|"+size, cur=cart.get(key);
+  cart.set(key,{id:p.id,size,qty: cur? cur.qty+1 : 1});
+  renderCart(); showToast(`Added ${p.name} (${size}) to cart 🌿`);
+}
+function renderCart(){
+  cartCount.textContent = cartQty();
+  cartTotal.textContent = fmt(cartSum());
+  waBtn.disabled = cart.size===0;
+  if(!cart.size){ cartBody.innerHTML = `<div class="emptycart">🪴 Your cart is empty.<br>Add a plant or two from the catalog — sizes and prices are listed on every card.</div>`; return; }
+  cartBody.replaceChildren(...[...cart.entries()].map(([key,i])=>{
+    const p=PLANTS.find(x=>x.id===i.id), unit=priceFor(p,i.size);
+    const row=document.createElement("div"); row.className="citem";
+    row.innerHTML=`<div class="info"><b>${p.name}</b><div class="sz">${i.size} · ${fmt(unit)} each</div>
+      <span class="qty"><button aria-label="Decrease quantity of ${p.name}">−</button><output>${i.qty}</output><button aria-label="Increase quantity of ${p.name}">+</button></span>
+      <button class="rm">Remove</button></div><div class="lt">${fmt(unit*i.qty)}</div>`;
+    const [dec,inc]=row.querySelectorAll(".qty button");
+    dec.addEventListener("click",()=>{ i.qty--; if(i.qty<1) cart.delete(key); renderCart(); });
+    inc.addEventListener("click",()=>{ i.qty++; renderCart(); });
+    row.querySelector(".rm").addEventListener("click",()=>{ cart.delete(key); renderCart(); });
+    return row;
+  }));
+}
+function openCart(){ lastFocus=document.activeElement; drawer.hidden=false; requestAnimationFrame(()=>{ drawer.classList.add("open"); scrim.classList.add("open"); }); document.getElementById("closeCart").focus(); }
+function closeCart(){ drawer.classList.remove("open"); scrim.classList.remove("open"); setTimeout(()=>{ drawer.hidden=true; },300); if(lastFocus) lastFocus.focus(); }
+document.getElementById("openCart").addEventListener("click",openCart);
+document.getElementById("stripCart").addEventListener("click",openCart);
+document.getElementById("closeCart").addEventListener("click",closeCart);
+scrim.addEventListener("click",closeCart);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape" && !drawer.hidden) closeCart(); });
+
+let toastTimer;
+function showToast(msg){ toast.textContent=msg; toast.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove("show"),2600); }
+
+/* ---------- WhatsApp order ---------- */
+waBtn.addEventListener("click",()=>{
+  if(!cart.size) return;
+  const name=document.getElementById("buyerName").value.trim();
+  const addr=document.getElementById("buyerAddr").value.trim();
+  const lines=[...cart.values()].map(i=>{ const p=PLANTS.find(x=>x.id===i.id); const u=priceFor(p,i.size);
+    return `• ${p.name} — ${i.size} × ${i.qty} = ${fmt(u*i.qty)}`; });
+  const msg = ["Namaste Prakriti Organic Nursery, I want to order for home delivery:","",...lines,"",
+    `Total (indicative): ${fmt(cartSum())}`,
+    name ? `Name: ${name}` : "Name: ",
+    addr ? `Delivery address: ${addr}` : "Delivery address: ",
+    "Please confirm availability and delivery time. Dhanyavaad!"].join("\n");
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+});
+
+/* ---------- reveal on scroll ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+render(); renderCart();
+</script>
+</body>
+</html>

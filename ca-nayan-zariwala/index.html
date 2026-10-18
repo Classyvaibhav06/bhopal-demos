@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA Nayan Zariwala &amp; Associates — Chartered Accountants, Bhopal | GST, Tax, Audit &amp; Startup Advisory</title>
+<meta name="description" content="CA Nayan Zariwala & Associates, Bhopal — chartered accountancy, GST audits & appeals, direct tax, ROC, project finance, NRI taxation and RERA advisory for startups, real estate promoters and trading firms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a1f33; --navy2:#0e2c49; --navy3:#123a5f;
+    --gold:#c19a3d; --gold2:#d9b45f; --gold-soft:#f4ead2;
+    --ink:#17222e; --muted:#5a6a7a; --line:#dde3ea;
+    --bg:#ffffff; --bg-soft:#f5f7fa; --card:#ffffff;
+    --ok:#0f7a4d; --err:#b3261e;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(10,31,51,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;line-height:1.18;color:var(--navy)}
+  img{max-width:100%}
+  a{color:var(--navy3)}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+  .skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:60;border-radius:0 0 8px 0}
+  .skip:focus{left:0}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .sec-head{max-width:720px;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(26px,4vw,36px);margin-bottom:10px}
+  .sec-head p{color:var(--muted)}
+  /* header */
+  header.top{position:sticky;top:0;z-index:50;background:rgba(10,31,51,.97);backdrop-filter:blur(8px);border-bottom:3px solid var(--gold)}
+  .top-in{display:flex;align-items:center;gap:18px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;min-width:0}
+  .brand .monogram{flex:0 0 auto;width:44px;height:44px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;color:var(--gold2);font-size:17px}
+  .brand b{display:block;font-family:'Fraunces',serif;font-size:17px;line-height:1.15;color:#fff}
+  .brand span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b9c8d8}
+  nav.main{margin-left:auto;display:none;gap:26px}
+  nav.main a{color:#dbe5ef;text-decoration:none;font-size:14px;font-weight:600}
+  nav.main a:hover{color:var(--gold2)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#181203;font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;text-decoration:none;border:2px solid var(--gold);cursor:pointer;transition:transform .15s,background .15s}
+  .btn:hover{background:var(--gold2);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:#fff;border-color:#54708f}
+  .btn.ghost:hover{border-color:var(--gold2);color:var(--gold2)}
+  .btn.navy{background:var(--navy);border-color:var(--navy);color:#fff}
+  .btn.navy:hover{background:var(--navy3)}
+  header .btn{margin-left:auto;padding:10px 18px}
+  @media(min-width:900px){nav.main{display:flex}header .btn{margin-left:0}}
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--navy) 55%,var(--navy2));color:#eaf0f6;padding:72px 0 84px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:480px;height:480px;border:60px solid rgba(193,154,61,.10);border-radius:50%}
+  .hero h1{color:#fff;font-size:clamp(32px,5.4vw,52px);max-width:760px}
+  .hero h1 em{font-style:normal;color:var(--gold2)}
+  .hero p.lead{margin:18px 0 28px;max-width:640px;font-size:17px;color:#c6d4e2}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;position:relative;z-index:1}
+  .trustrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;position:relative;z-index:1}
+  .trustrow li{list-style:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600;color:#dbe5ef}
+  .trustrow li b{color:var(--gold2)}
+  /* stats */
+  .stats{background:var(--gold-soft);border-bottom:1px solid #e5d9b8}
+  .stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding-top:26px;padding-bottom:26px}
+  @media(min-width:800px){.stats .wrap{grid-template-columns:repeat(4,1fr)}}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:24px;color:var(--navy)}
+  .stat span{font-size:13px;color:#6b5a25;font-weight:600}
+  /* services */
+  .grid{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 2px 10px rgba(10,31,51,.04)}
+  .card .ic{width:46px;height:46px;border-radius:12px;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .card ul{margin:10px 0 0 18px;font-size:14px;color:var(--muted)}
+  /* calculator */
+  .calc-sec{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .calc-grid{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:940px){.calc-grid{grid-template-columns:5fr 7fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .panel h3{font-size:21px;margin-bottom:6px}
+  .panel .hint{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  label.fl{display:block;font-size:13.5px;font-weight:600;margin:16px 0 6px;color:var(--navy)}
+  label.fl:first-of-type{margin-top:0}
+  input[type=text],input[type=number],input[type=date],input[type=email],select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{border-color:var(--navy3);outline:3px solid rgba(193,154,61,.35)}
+  .money{position:relative}
+  .money::before{content:"₹";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600}
+  .money input{padding-left:30px}
+  fieldset{border:0;margin-top:16px}
+  legend{font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .seg label{border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;font-size:14px;font-weight:600;cursor:pointer;display:flex;gap:8px;align-items:center;background:#fff}
+  .seg input{accent-color:var(--navy)}
+  .seg label:has(input:checked){border-color:var(--gold);background:var(--gold-soft)}
+  .ded-fields[hidden]{display:none}
+  table.slabs{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+  table.slabs th,table.slabs td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+  table.slabs th:first-child,table.slabs td:first-child{text-align:left}
+  table.slabs thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line)}
+  table.slabs tr.tot td{font-weight:700;color:var(--navy);border-top:2px solid var(--navy);border-bottom:0}
+  table.slabs tr.sub td{color:var(--muted)}
+  .big-total{display:flex;justify-content:space-between;align-items:baseline;background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px;margin-top:16px}
+  .big-total b{font-family:'Fraunces',serif;font-size:26px;color:var(--gold2)}
+  .big-total span{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .disclaimer{font-size:12.5px;color:var(--muted);background:#fff8e8;border:1px solid #ecd9a0;border-radius:10px;padding:12px 14px;margin-top:16px}
+  .eff{font-size:13.5px;color:var(--muted);margin-top:10px}
+  .eff b{color:var(--navy)}
+  /* calendar */
+  .cal-grid{display:grid;gap:18px;grid-template-columns:1fr}
+  @media(min-width:860px){.cal-grid{grid-template-columns:1fr 1fr}}
+  .due{list-style:none}
+  .due li{display:flex;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .due li:last-child{border-bottom:0}
+  .due .day{flex:0 0 86px;font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:15px}
+  .due .what b{display:block;font-size:15px}
+  .due .what span{font-size:13.5px;color:var(--muted)}
+  .pill{display:inline-block;background:var(--gold-soft);border:1px solid #e5d9b8;color:#6b5a25;font-size:11px;font-weight:700;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+  /* upload + booking */
+  .two{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:940px){.two{grid-template-columns:1fr 1fr}}
+  .drop{border:2px dashed #b9c6d4;border-radius:12px;padding:22px;text-align:center;background:var(--bg-soft)}
+  .drop p{font-size:14px;color:var(--muted);margin-bottom:12px}
+  .filelist{list-style:none;margin-top:16px;text-align:left}
+  .filelist li{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin-bottom:8px;font-size:14px;background:#fff}
+  .filelist .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+  .filelist .sz{color:var(--muted);font-size:12.5px}
+  .filelist button{background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;font-size:13px}
+  .filelist button:hover{border-color:var(--err);color:var(--err)}
+  .empty-note{font-size:13.5px;color:var(--muted);margin-top:12px}
+  .formgrid{display:grid;gap:0 14px;grid-template-columns:1fr}
+  @media(min-width:560px){.formgrid{grid-template-columns:1fr 1fr}.span2{grid-column:span 2}}
+  .err-msg{display:none;color:var(--err);font-size:13px;font-weight:600;margin-top:5px}
+  .invalid input,.invalid select,.invalid textarea{border-color:var(--err)}
+  .invalid .err-msg{display:block}
+  .confirm{display:none;border:1.5px solid var(--ok);background:#eefaf3;border-radius:12px;padding:20px;margin-top:20px}
+  .confirm.show{display:block}
+  .confirm h4{font-family:'Fraunces',serif;color:var(--ok);font-size:19px;margin-bottom:8px}
+  .confirm dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14.5px;margin-top:8px}
+  .confirm dt{font-weight:700;color:var(--navy)}
+  .refcode{display:inline-block;background:var(--navy);color:var(--gold2);font-weight:700;letter-spacing:.08em;border-radius:8px;padding:4px 12px;margin-top:10px}
+  /* about / why */
+  .why{background:var(--navy);color:#dbe5ef}
+  .why h2{color:#fff}
+  .why .sec-head p{color:#a9bfd4}
+  .why .card{background:var(--navy2);border-color:#1d4568;box-shadow:none}
+  .why .card h3{color:#fff}
+  .why .card p{color:#a9bfd4}
+  .why .card .ic{background:var(--gold);color:#181203}
+  /* visit */
+  .visit-card{display:grid;gap:0;grid-template-columns:1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  @media(min-width:860px){.visit-card{grid-template-columns:1fr 1fr}}
+  .visit-a{padding:30px;background:#fff}
+  .visit-b{padding:30px;background:var(--gold-soft)}
+  .visit-a h3,.visit-b h3{font-size:20px;margin-bottom:12px}
+  address{font-style:normal;font-size:15.5px;line-height:1.7}
+  .visit-b ul{margin-left:18px;font-size:14.5px;color:#54491f}
+  /* footer */
+  footer{background:#071627;color:#8fa5ba;padding:40px 0;font-size:13.5px}
+  footer .cols{display:grid;gap:22px;grid-template-columns:1fr}
+  @media(min-width:800px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+  footer b{color:#dbe5ef}
+  footer a{color:#b9c8d8}
+  .demo-note{margin-top:26px;border-top:1px solid #16324e;padding-top:16px;font-size:12.5px;color:#6e869c}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="CA Nayan Zariwala and Associates — home">
+      <span class="monogram" aria-hidden="true">NZ</span>
+      <span><b>CA Nayan Zariwala</b><span>&amp; Associates · Chartered Accountants</span></span>
+    </a>
+    <nav class="main" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#calculator">Tax Calculator</a>
+      <a href="#calendar">Due Dates</a>
+      <a href="#upload">Client Upload</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a class="btn" href="#book">Book Consultation</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow">Chartered Accountants · Bhopal</span>
+      <h1>Tax, GST &amp; audit counsel that growing businesses <em>can rely on</em>.</h1>
+      <p class="lead">CA Nayan Zariwala &amp; Associates advises Bhopal's startups, real estate promoters and trading firms on direct tax, GST appeals, audits, company law and project finance — with the rigour of a senior practice and the responsiveness of a boutique firm.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#book">Book a Consultation</a>
+        <a class="btn ghost" href="#calculator">Try the Tax Calculator</a>
+      </div>
+      <ul class="trustrow" aria-label="Practice highlights">
+        <li><b>FCA-led</b> senior practice</li>
+        <li><b>GST appeals</b> &amp; audit defence</li>
+        <li><b>Startup</b> registrations &amp; advisory</li>
+        <li><b>Project finance</b> assistance</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats" role="region" aria-label="Who we serve">
+    <div class="wrap">
+      <div class="stat"><b>Startups</b><span>registrations, funding-readiness &amp; compliance</span></div>
+      <div class="stat"><b>Real Estate / RERA</b><span>promoter advisory &amp; project finance</span></div>
+      <div class="stat"><b>Trading Firms</b><span>GST, audit &amp; working-capital support</span></div>
+      <div class="stat"><b>NRIs &amp; Individuals</b><span>tax planning, filings &amp; FEMA-aware advice</span></div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Services</h2>
+        <p>End-to-end chartered accountancy services — from day-to-day compliance to contested matters and growth financing.</p>
+      </div>
+      <div class="grid">
+        <article class="card reveal"><div class="ic" aria-hidden="true">🧾</div><h3>Direct Tax</h3><p>Income-tax planning, return filing, assessments and advance-tax management for companies, firms and individuals.</p><ul><li>Returns &amp; tax planning</li><li>Assessments &amp; notices</li><li>TDS compliance</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">⚖️</div><h3>GST &amp; Appeals</h3><p>Our most commended practice area — GST audits, departmental notices, refunds and appeal representation handled end to end.</p><ul><li>GST audit &amp; annual returns</li><li>Appeals &amp; litigation support</li><li>Refunds &amp; notices</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🔍</div><h3>Audit</h3><p>Statutory, internal and tax audits conducted with clear documentation and practical, board-ready reporting.</p><ul><li>Statutory &amp; tax audit</li><li>Internal audit</li><li>Stock &amp; concurrent audit</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🏢</div><h3>ROC &amp; Company Registration</h3><p>Private limited, LLP and OPC incorporation with complete ROC compliance — a core strength for Bhopal's startup founders.</p><ul><li>Incorporation &amp; MCA filings</li><li>Annual ROC compliance</li><li>Startup India / DPIIT support</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">📈</div><h3>Project Finance</h3><p>Assistance with project reports, CMA data and lender documentation that promoters and businesses need to raise finance.</p><ul><li>Project reports &amp; CMA data</li><li>Loan documentation support</li><li>Subsidy &amp; scheme guidance</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🌐</div><h3>NRI Taxation</h3><p>Taxation for non-resident Indians — Indian income, property sales, repatriation and double-taxation relief.</p><ul><li>NRI returns &amp; capital gains</li><li>Lower-TDS certificates</li><li>DTAA &amp; repatriation support</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🏗️</div><h3>RERA Advisory</h3><p>Advisory for real estate promoters — RERA registration, project accounting, certification and ongoing compliance.</p><ul><li>RERA registration &amp; filings</li><li>Project accounts &amp; certificates</li><li>Promoter compliance calendar</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🤝</div><h3>Startup Advisory</h3><p>Founder-friendly guidance across the journey — entity choice, registrations, bookkeeping systems and investor readiness.</p><ul><li>Entity &amp; structure advice</li><li>Books &amp; MIS setup</li><li>Compliance hand-holding</li></ul></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">📚</div><h3>Bookkeeping &amp; Compliance</h3><p>Systematic books, payroll and a compliance calendar that keeps GST, TDS and ROC deadlines from ever surprising you.</p><ul><li>Books &amp; payroll</li><li>Monthly compliance pack</li><li>Deadline tracking</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="calc-sec" id="calculator">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Plan ahead</span>
+        <h2>Income Tax Calculator</h2>
+        <p>Estimate your individual income tax for FY 2024-25 (AY 2025-26) under the old or new regime, with a slab-by-slab breakdown. Compare both regimes before you file.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="panel reveal">
+          <h3>Your details</h3>
+          <p class="hint">For resident individuals below 60 years. Salary-style standard deduction is applied automatically.</p>
+          <label class="fl" for="income">Gross annual income</label>
+          <div class="money"><input type="number" id="income" inputmode="numeric" min="0" step="1000" value="1200000" aria-describedby="income-hint"></div>
+          <p class="hint" id="income-hint" style="margin:6px 0 0">Total income from all sources, before deductions.</p>
+          <fieldset>
+            <legend>Tax regime</legend>
+            <div class="seg" role="radiogroup" aria-label="Tax regime">
+              <label><input type="radio" name="regime" value="new" checked> New regime (115BAC)</label>
+              <label><input type="radio" name="regime" value="old"> Old regime</label>
+            </div>
+          </fieldset>
+          <div class="ded-fields" id="dedFields" hidden>
+            <label class="fl" for="ded80c">Section 80C deductions (max ₹1,50,000)</label>
+            <div class="money"><input type="number" id="ded80c" inputmode="numeric" min="0" max="150000" step="500" value="150000"></div>
+            <label class="fl" for="ded80d">Section 80D — health insurance premium</label>
+            <div class="money"><input type="number" id="ded80d" inputmode="numeric" min="0" step="500" value="25000"></div>
+          </div>
+          <div class="disclaimer" role="note"><strong>Indicative estimate only — not tax advice.</strong> Figures use standard FY 2024-25 slabs, standard deduction (₹75,000 new / ₹50,000 old), rebate u/s 87A and 4% health &amp; education cess. Surcharge, special-rate income (e.g. capital gains) and other deductions are not modelled. Your actual liability depends on your full facts — please consult the firm before acting.</div>
+        </div>
+        <div class="panel reveal" aria-live="polite">
+          <h3 id="resTitle">Estimated tax — New regime</h3>
+          <p class="hint" id="resSub">Taxable income: ₹11,25,000</p>
+          <table class="slabs" aria-label="Slab-wise tax breakdown">
+            <thead><tr><th scope="col">Income slab</th><th scope="col">Rate</th><th scope="col">Taxable in slab</th><th scope="col">Tax</th></tr></thead>
+            <tbody id="slabBody"></tbody>
+            <tbody id="sumBody"></tbody>
+          </table>
+          <div class="big-total"><span>Total tax payable (incl. cess)</span><b id="grandTotal">₹0</b></div>
+          <p class="eff" id="effRate"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section id="calendar">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Never miss a deadline</span>
+        <h2>GST &amp; Compliance Due-Date Calendar</h2>
+        <p>The recurring dates our clients plan around. These are standard statutory due dates for general reference — exact applicability varies by registration type, turnover and state notifications.</p>
+      </div>
+      <div class="cal-grid">
+        <div class="card reveal">
+          <h3 style="margin-bottom:8px">Every month</h3>
+          <ul class="due">
+            <li><span class="day">7th</span><span class="what"><b>TDS / TCS deposit</b><span>Deposit tax deducted/collected for the previous month.</span></span></li>
+            <li><span class="day">11th</span><span class="what"><b>GSTR-1</b><span>Outward supplies statement (monthly filers).</span></span></li>
+            <li><span class="day">13th</span><span class="what"><b>GSTR-1 (quarterly, QRMP)</b><span>Quarterly GSTR-1 / Invoice Furnishing Facility window.</span></span></li>
+            <li><span class="day">20th</span><span class="what"><b>GSTR-3B</b><span>Summary return &amp; tax payment (monthly filers).</span></span></li>
+            <li><span class="day">22nd / 24th</span><span class="what"><b>GSTR-3B (quarterly, QRMP)</b><span>Staggered by state for quarterly filers.</span></span></li>
+            <li><span class="day">25th</span><span class="what"><b>PMT-06 challan</b><span>Monthly tax payment for QRMP quarterly filers.</span></span></li>
+            <li><span class="day">30th</span><span class="what"><b>TDS returns &amp; payroll compliances</b><span>Quarterly TDS statements fall due in the month after each quarter.</span></span></li>
+          </ul>
+        </div>
+        <div class="card reveal">
+          <h3 style="margin-bottom:8px">Key annual dates</h3>
+          <ul class="due">
+            <li><span class="day">15 Jun / Sep / Dec / Mar</span><span class="what"><b>Advance tax instalments</b><span>Payable in four instalments — 15% / 45% / 75% / 100% cumulative.</span></span></li>
+            <li><span class="day">31 Jul</span><span class="what"><b>Income-tax return — individuals</b><span>ITR due date for non-audit cases (as extended by CBDT notifications, if any).</span></span></li>
+            <li><span class="day">31 Oct</span><span class="what"><b>Income-tax return — audit cases</b><span>Companies and assessees covered by tax audit.</span></span></li>
+            <li><span class="day">30 Sep</span><span class="what"><b>Tax audit report</b><span>Furnishing of audit report u/s 44AB ahead of the return due date.</span></span></li>
+            <li><span class="day">AGM +30 / +60 days</span><span class="what"><b>ROC annual filings</b><span>AOC-4 (financial statements) within 30 days and MGT-7 (annual return) within 60 days of the AGM.</span></span></li>
+            <li><span class="day">31 Dec</span><span class="what"><b>GSTR-9 / 9C</b><span>GST annual return and reconciliation statement for the financial year.</span></span></li>
+          </ul>
+          <div class="disclaimer" role="note"><strong>Educational reference only.</strong> Due dates are frequently extended by official notifications. The firm maintains a live compliance calendar for every client — <a href="#book">book a consultation</a> to get yours set up.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Why clients choose the firm</span>
+        <h2>A senior practice, without the big-firm distance</h2>
+        <p>Every matter is led by CA Nayan Zariwala (FCA) personally — the reason clients across Bhopal's startup, real-estate and trading communities recommend the firm.</p>
+      </div>
+      <div class="grid">
+        <article class="card reveal"><div class="ic" aria-hidden="true">⚖️</div><h3>GST appeals, handled thoroughly</h3><p>Commended for careful GST appeal handling — notices answered on facts, documentation built methodically, and representation through the appellate process.</p></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">📈</div><h3>Project finance that lenders accept</h3><p>Project reports and CMA data prepared the way bankers actually read them — a practical edge for promoters and growing businesses raising finance.</p></article>
+        <article class="card reveal"><div class="ic" aria-hidden="true">🚀</div><h3>Startup registrations, done right</h3><p>From incorporation and DPIIT recognition to first-year compliance, founders get the structure right at the start instead of paying to fix it later.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD + BOOKING -->
+  <section id="upload" style="background:var(--bg-soft);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Client desk</span>
+        <h2>Document Upload &amp; Consultation Booking</h2>
+        <p>Existing clients can stage documents for a matter, and new clients can request a consultation. Both tools below are front-end demonstrations.</p>
+      </div>
+      <div class="two">
+        <div class="panel reveal">
+          <h3>📁 Client Document Upload</h3>
+          <p class="hint">Stage PAN, financial statements, notices or agreements for your matter. In this demo, files are listed locally only.</p>
+          <div class="drop">
+            <p><strong>Select documents to stage</strong><br>PDF, JPG, PNG, XLSX or ZIP — multiple files allowed.</p>
+            <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.xlsx,.zip" aria-label="Choose documents to stage">
+          </div>
+          <ul class="filelist" id="fileList" aria-live="polite"></ul>
+          <p class="empty-note" id="fileEmpty">No documents staged yet.</p>
+          <p class="empty-note" id="fileSummary" aria-live="polite"></p>
+          <div class="disclaimer" role="note"><strong>Demo only:</strong> selected files are <strong>not uploaded, transmitted or stored</strong> anywhere — the list exists only in your browser until you close this page. In the live client portal, uploads are encrypted and access-controlled.</div>
+        </div>
+
+        <div class="panel reveal" id="book">
+          <h3>🗓️ Book a Consultation</h3>
+          <p class="hint">Tell us what you need help with. This demo confirms your request on screen — the firm confirms appointments personally.</p>
+          <form id="bookForm" novalidate>
+            <div class="formgrid">
+              <div class="f-field"><label class="fl" for="bkName">Full name *</label><input type="text" id="bkName" autocomplete="name" placeholder="e.g. Rohit Agrawal"><p class="err-msg">Please enter your name.</p></div>
+              <div class="f-field"><label class="fl" for="bkOrg">Company / Firm (optional)</label><input type="text" id="bkOrg" autocomplete="organization" placeholder="e.g. Agrawal Trading Co."></div>
+              <div class="f-field"><label class="fl" for="bkService">Service needed *</label>
+                <select id="bkService">
+                  <option value="">Select a service…</option>
+                  <option>Direct Tax</option><option>GST &amp; Appeals</option><option>Audit</option>
+                  <option>ROC / Company Registration</option><option>Project Finance</option>
+                  <option>NRI Taxation</option><option>RERA Advisory</option><option>Startup Advisory</option><option>Other</option>
+                </select><p class="err-msg">Please choose a service.</p></div>
+              <div class="f-field"><label class="fl" for="bkMode">Consultation mode *</label>
+                <select id="bkMode">
+                  <option value="">Select mode…</option>
+                  <option>At the office — Gulmohar Colony</option><option>Phone / Video call</option>
+                </select><p class="err-msg">Please choose a consultation mode.</p></div>
+              <div class="f-field"><label class="fl" for="bkDate">Preferred date *</label><input type="date" id="bkDate"><p class="err-msg">Please pick a date (today or later).</p></div>
+              <div class="f-field"><label class="fl" for="bkSlot">Preferred time *</label>
+                <select id="bkSlot">
+                  <option value="">Select a time…</option>
+                  <option>11:00 AM</option><option>12:30 PM</option><option>3:00 PM</option><option>4:30 PM</option><option>6:00 PM</option>
+                </select><p class="err-msg">Please choose a time slot.</p></div>
+              <div class="f-field span2"><label class="fl" for="bkNote">Brief about your matter (optional)</label><textarea id="bkNote" rows="3" placeholder="e.g. Received a GST notice for FY 2022-23 and need help replying."></textarea></div>
+            </div>
+            <button class="btn navy" type="submit" style="margin-top:18px">Request Consultation</button>
+          </form>
+          <div class="confirm" id="bkConfirm" role="status" aria-live="polite" tabindex="-1">
+            <h4>✓ Request noted — thank you</h4>
+            <p>Your consultation request is recorded with the reference below. Please carry this reference when you visit or call the office.</p>
+            <span class="refcode" id="bkRef">NZ-000000</span>
+            <dl id="bkSummary"></dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Visit us</span>
+        <h2>Our Office</h2>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-a">
+          <h3>CA Nayan Zariwala &amp; Associates</h3>
+          <address>
+            F-19, 1st Floor, Maruti Nandan Complex,<br>
+            Sahyog Vihar, Rohit Nagar / Gulmohar Colony,<br>
+            Bhopal — 462039, Madhya Pradesh
+          </address>
+          <p style="margin-top:14px"><a href="https://www.google.com/maps/search/?api=1&query=Maruti+Nandan+Complex+Sahyog+Vihar+Gulmohar+Colony+Bhopal+462039" target="_blank" rel="noopener">Get directions on Google Maps →</a></p>
+          <p style="margin-top:10px;font-size:14px;color:var(--muted)">Proprietor: <strong style="color:var(--navy)">CA Nayan Zariwala</strong> (FCA), Senior Tax Consultant</p>
+        </div>
+        <div class="visit-b">
+          <h3>Before you visit</h3>
+          <ul>
+            <li>Consultations are by appointment — please use the booking form above.</li>
+            <li>Carry a government ID and, for tax matters, your PAN and the relevant notices or filings.</li>
+            <li>For GST appeals, bring the complete notice and your GSTR filings for the period in question.</li>
+            <li>Serving clients across Bhopal — startups, real estate promoters (RERA) and trading firms.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>CA Nayan Zariwala &amp; Associates</b><br>
+        Chartered Accountants — Direct Tax · GST &amp; Appeals · Audit · ROC · Project Finance · NRI Taxation · RERA Advisory
+      </div>
+      <div>
+        <b>Office</b><br>
+        F-19, 1st Floor, Maruti Nandan Complex, Sahyog Vihar, Rohit Nagar / Gulmohar Colony, Bhopal — 462039
+      </div>
+      <div>
+        <b>Explore</b><br>
+        <a href="#services">Services</a><br>
+        <a href="#calculator">Tax Calculator</a><br>
+        <a href="#calendar">Due-Date Calendar</a><br>
+        <a href="#book">Book Consultation</a>
+      </div>
+    </div>
+    <p class="demo-note">Demo website — built as a design concept for presentation purposes. Tax figures shown by the calculator are indicative estimates only and are not tax, legal or financial advice. Document upload and booking tools on this page are front-end demonstrations: no files are uploaded and no data leaves your browser.</p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+var INR = new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 });
+function fmt(n) { return "₹" + INR.format(Math.round(n)); }
+
+/* ---------- Tax calculator (FY 2024-25, resident individual < 60) ---------- */
+var REGIMES = {
+  new: {
+    label: "New regime",
+    stdDeduction: 75000,
+    slabs: [
+      { from: 0,       to: 300000,   rate: 0    },
+      { from: 300000,  to: 700000,   rate: 0.05 },
+      { from: 700000,  to: 1000000,  rate: 0.10 },
+      { from: 1000000, to: 1200000,  rate: 0.15 },
+      { from: 1200000, to: 1500000,  rate: 0.20 },
+      { from: 1500000, to: Infinity, rate: 0.30 }
+    ],
+    rebateLimit: 700000, rebateCap: 25000
+  },
+  old: {
+    label: "Old regime",
+    stdDeduction: 50000,
+    slabs: [
+      { from: 0,       to: 250000,   rate: 0    },
+      { from: 250000,  to: 500000,   rate: 0.05 },
+      { from: 500000,  to: 1000000,  rate: 0.20 },
+      { from: 1000000, to: Infinity, rate: 0.30 }
+    ],
+    rebateLimit: 500000, rebateCap: 12500
+  }
+};
+
+function computeTax(income, regimeKey, ded80c, ded80d) {
+  var cfg = REGIMES[regimeKey];
+  var deductions = cfg.stdDeduction;
+  if (regimeKey === "old") {
+    deductions += Math.min(Math.max(ded80c || 0, 0), 150000) + Math.max(ded80d || 0, 0);
+  }
+  var taxable = Math.max(0, income - deductions);
+  var rows = [], tax = 0;
+  for (var i = 0; i < cfg.slabs.length; i++) {
+    var s = cfg.slabs[i];
+    if (taxable <= s.from) break;
+    var inSlab = Math.min(taxable, s.to) - s.from;
+    var slabTax = inSlab * s.rate;
+    tax += slabTax;
+    rows.push({ from: s.from, to: s.to, rate: s.rate, inSlab: inSlab, tax: slabTax });
+  }
+  var rebate = (taxable <= cfg.rebateLimit) ? Math.min(tax, cfg.rebateCap) : 0;
+  var afterRebate = tax - rebate;
+  var cess = afterRebate * 0.04;
+  return {
+    label: cfg.label, deductions: deductions, taxable: taxable,
+    rows: rows, taxBeforeRebate: tax, rebate: rebate,
+    cess: cess, total: afterRebate + cess
+  };
+}
+
+function renderCalc() {
+  var income = parseFloat(document.getElementById("income").value) || 0;
+  var regime = document.querySelector('input[name="regime"]:checked').value;
+  var ded80c = parseFloat(document.getElementById("ded80c").value) || 0;
+  var ded80d = parseFloat(document.getElementById("ded80d").value) || 0;
+  document.getElementById("dedFields").hidden = (regime !== "old");
+  var r = computeTax(income, regime, ded80c, ded80d);
+
+  document.getElementById("resTitle").textContent = "Estimated tax — " + r.label;
+  document.getElementById("resSub").textContent =
+    "Gross income " + fmt(income) + " · Deductions " + fmt(r.deductions) + " · Taxable income " + fmt(r.taxable);
+
+  var html = "";
+  r.rows.forEach(function (row) {
+    var range = (row.to === Infinity) ? fmt(row.from) + " and above" : fmt(row.from) + " – " + fmt(row.to);
+    html += "<tr><td>" + range + "</td><td>" + (row.rate * 100) + "%</td><td>" + fmt(row.inSlab) + "</td><td>" + fmt(row.tax) + "</td></tr>";
+  });
+  if (!r.rows.length) html = '<tr><td colspan="4" style="text-align:left">No taxable income at this level.</td></tr>';
+  document.getElementById("slabBody").innerHTML = html;
+
+  var sum = '<tr class="sub"><td colspan="3">Tax before rebate</td><td>' + fmt(r.taxBeforeRebate) + "</td></tr>";
+  if (r.rebate > 0) sum += '<tr class="sub"><td colspan="3">Less: rebate u/s 87A</td><td>− ' + fmt(r.rebate) + "</td></tr>";
+  sum += '<tr class="sub"><td colspan="3">Health &amp; education cess (4%)</td><td>' + fmt(r.cess) + "</td></tr>";
+  document.getElementById("sumBody").innerHTML = sum;
+
+  document.getElementById("grandTotal").textContent = fmt(r.total);
+  var eff = income > 0 ? (r.total / income * 100) : 0;
+  document.getElementById("effRate").innerHTML =
+    "Effective tax rate on gross income: <b>" + eff.toFixed(2) + "%</b> · Indicative estimate, not tax advice.";
+}
+
+/* ---------- Document upload mock (front-end only) ---------- */
+var stagedFiles = [];
+function humanSize(bytes) {
+  if (bytes < 1024) return bytes + " B";
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+  return (bytes / 1048576).toFixed(2) + " MB";
+}
+function renderFiles() {
+  var list = document.getElementById("fileList");
+  var empty = document.getElementById("fileEmpty");
+  var summary = document.getElementById("fileSummary");
+  list.innerHTML = "";
+  empty.style.display = stagedFiles.length ? "none" : "block";
+  stagedFiles.forEach(function (f, idx) {
+    var li = document.createElement("li");
+    var nm = document.createElement("span"); nm.className = "nm"; nm.textContent = f.name;
+    var sz = document.createElement("span"); sz.className = "sz"; sz.textContent = humanSize(f.size);
+    var btn = document.createElement("button"); btn.type = "button"; btn.textContent = "Remove";
+    btn.setAttribute("aria-label", "Remove " + f.name);
+    btn.addEventListener("click", function () { stagedFiles.splice(idx, 1); renderFiles(); });
+    li.appendChild(nm); li.appendChild(sz); li.appendChild(btn);
+    list.appendChild(li);
+  });
+  var total = stagedFiles.reduce(function (a, f) { return a + f.size; }, 0);
+  summary.textContent = stagedFiles.length
+    ? stagedFiles.length + " document(s) staged · total " + humanSize(total) + " · held in this browser only (demo)."
+    : "";
+}
+
+/* ---------- Booking form ---------- */
+function fieldValid(wrapId, ok) {
+  var el = document.getElementById(wrapId);
+  var wrap = el.closest(".f-field");
+  if (wrap) wrap.classList.toggle("invalid", !ok);
+  return ok;
+}
+function handleBooking(ev) {
+  ev.preventDefault();
+  var name = document.getElementById("bkName").value.trim();
+  var org = document.getElementById("bkOrg").value.trim();
+  var service = document.getElementById("bkService").value;
+  var mode = document.getElementById("bkMode").value;
+  var date = document.getElementById("bkDate").value;
+  var slot = document.getElementById("bkSlot").value;
+  var note = document.getElementById("bkNote").value.trim();
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var ok = true;
+  ok = fieldValid("bkName", name.length >= 2) && ok;
+  ok = fieldValid("bkService", !!service) && ok;
+  ok = fieldValid("bkMode", !!mode) && ok;
+  ok = fieldValid("bkDate", !!date && new Date(date + "T00:00:00") >= today) && ok;
+  ok = fieldValid("bkSlot", !!slot) && ok;
+  if (!ok) return;
+  var ref = "NZ-" + Math.random().toString(36).slice(2, 8).toUpperCase();
+  document.getElementById("bkRef").textContent = ref;
+  var dateTxt = new Date(date + "T00:00:00").toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  var rows = [["Name", name]];
+  if (org) rows.push(["Company / Firm", org]);
+  rows.push(["Service", service.replace(/&amp;/g, "&")]);
+  rows.push(["Mode", mode]);
+  rows.push(["Preferred slot", dateTxt + " · " + slot]);
+  if (note) rows.push(["Your note", note]);
+  document.getElementById("bkSummary").innerHTML = rows.map(function (r) {
+    return "<dt>" + r[0] + "</dt><dd></dd>";
+  }).join("");
+  var dds = document.querySelectorAll("#bkSummary dd");
+  rows.forEach(function (r, i) { dds[i].textContent = r[1]; });
+  var box = document.getElementById("bkConfirm");
+  box.classList.add("show");
+  box.focus();
+}
+
+/* ---------- Wiring ---------- */
+if (typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", function () {
+    ["income", "ded80c", "ded80d"].forEach(function (id) {
+      document.getElementById(id).addEventListener("input", renderCalc);
+    });
+    document.querySelectorAll('input[name="regime"]').forEach(function (r) {
+      r.addEventListener("change", renderCalc);
+    });
+    renderCalc();
+    document.getElementById("fileInput").addEventListener("change", function (ev) {
+      Array.prototype.forEach.call(ev.target.files, function (f) {
+        stagedFiles.push({ name: f.name, size: f.size });
+      });
+      ev.target.value = "";
+      renderFiles();
+    });
+    renderFiles();
+    document.getElementById("bookForm").addEventListener("submit", handleBooking);
+    var dateEl = document.getElementById("bkDate");
+    dateEl.min = new Date().toISOString().slice(0, 10);
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharma &amp; Vishnu Fast Food Center — Bhopal | Order Direct &amp; Skip the Queue</title>
+<meta name="description" content="Sharma & Vishnu Fast Food Center, Bhopal. Paneer Butter Masala, Butter Pav Bhaji & Manchurian. Rated 4.0/5 from 4,500+ reviews. Order direct on WhatsApp — no aggregator markup, no counter queue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>">
+<style>
+:root{
+  --maroon:#7c1d12; --maroon-2:#5f130a; --saffron:#ff8a00; --saffron-2:#ffb340;
+  --cream:#fff8ee; --cream-2:#ffefd7; --ink:#26150e; --muted:#7a5c4d; --line:#f0ddc6;
+  --green:#0f8a3c; --red:#c1272d; --card:#ffffff; --shadow:0 18px 40px rgba(124,29,18,.14);
+  --r:20px; --header-h:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--maroon);color:#fff;padding:.7rem 1rem;z-index:200;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:linear-gradient(135deg,var(--saffron),#f46300);color:#fff;box-shadow:0 12px 26px rgba(244,99,0,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(244,99,0,.4)}
+.btn-dark{background:var(--maroon);color:#fff}
+.btn-dark:hover{background:var(--maroon-2);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--maroon);border:1.5px solid var(--line)}
+.btn-wa{background:#1faa55;color:#fff}
+.btn-wa:hover{background:#178a44;transform:translateY(-2px)}
+/* Header */
+header{position:sticky;top:0;z-index:90;background:rgba(255,248,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--maroon),#a8321c);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:900;font-size:1.15rem;box-shadow:0 8px 18px rgba(124,29,18,.3)}
+.logo strong{font-family:Fraunces,serif;font-size:1.08rem;line-height:1.1;display:block}
+.logo small{color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav.main-nav{display:flex;gap:1.4rem;margin-left:auto}
+nav.main-nav a{text-decoration:none;font-weight:700;font-size:.94rem;color:var(--ink)}
+nav.main-nav a:hover{color:var(--maroon)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main-nav + .header-actions{margin-left:0}
+.outlet-switch{display:flex;flex-direction:column;gap:2px}
+.outlet-switch label{font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.outlet-switch select{font:inherit;font-weight:800;font-size:.9rem;color:var(--maroon);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:.45rem .8rem;cursor:pointer;max-width:210px}
+.cart-btn{position:relative;background:var(--maroon);color:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;border-radius:999px;padding:.65rem 1.1rem;display:inline-flex;gap:.45rem;align-items:center}
+.cart-count{background:var(--saffron);color:#fff;min-width:22px;height:22px;border-radius:999px;display:grid;place-items:center;font-size:.76rem;padding:0 5px}
+.cart-count.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.35)}}
+/* Hero */
+.hero{position:relative;background:radial-gradient(900px 480px at 85% -10%,#ffd9a0 0,transparent 55%),linear-gradient(160deg,#fff3df,var(--cream) 60%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.2rem 0 4.6rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:800;color:var(--maroon);box-shadow:0 6px 16px rgba(124,29,18,.07)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.01em;margin:1.1rem 0 1rem}
+h1 em{font-style:normal;color:var(--maroon);background:linear-gradient(transparent 62%,#ffd9a0 62%)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:34rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.4rem}
+.hero-meta{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.hero-meta span{display:flex;gap:.4rem;align-items:center}
+.stars{color:var(--saffron);letter-spacing:.08em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/3.4;object-fit:cover;width:100%;background:var(--cream-2)}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:280px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--maroon);color:#fff;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow)}
+/* Rating strip */
+.strip{background:var(--maroon);color:#ffeeda}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.7rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.86rem;font-weight:600;opacity:.85}
+/* Sections */
+section{padding:4.4rem 0}
+.sec-head{max-width:42rem;margin-bottom:2.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--red);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;margin:.45rem 0 .6rem}
+.sec-head p{color:var(--muted)}
+/* Signatures */
+.sig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.sig-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 26px rgba(124,29,18,.07);transition:transform .25s ease,box-shadow .25s ease}
+.sig-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.sig-card img{height:190px;width:100%;object-fit:cover;background:var(--cream-2)}
+.sig-body{padding:1.15rem 1.25rem 1.3rem}
+.sig-body h3{font-family:Fraunces,serif;font-size:1.22rem;display:flex;align-items:center;gap:.55rem}
+.sig-body p{color:var(--muted);font-size:.94rem;margin:.35rem 0 .9rem}
+.sig-row{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:800;font-size:1.1rem;color:var(--maroon)}
+.tag{display:inline-block;background:#ffe9c7;color:#8a4a00;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.22rem .6rem}
+/* Veg marker */
+.veg{width:18px;height:18px;border:2px solid var(--green);border-radius:4px;display:inline-grid;place-items:center;flex-shrink:0;background:#fff}
+.veg::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.add-btn{background:var(--maroon);color:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.9rem;border-radius:999px;padding:.55rem 1.15rem;transition:background .18s,transform .18s}
+.add-btn:hover{background:var(--maroon-2);transform:translateY(-1px)}
+.add-btn.added{background:var(--green)}
+/* Why direct */
+.why{background:linear-gradient(180deg,#fff,var(--cream))}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.why-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem}
+.why-card .ico{width:52px;height:52px;border-radius:16px;background:#ffe9c7;display:grid;place-items:center;font-size:1.5rem;margin-bottom:1rem}
+.why-card h3{font-family:Fraunces,serif;font-size:1.2rem;margin-bottom:.4rem}
+.why-card p{color:var(--muted);font-size:.95rem}
+.why-card b{color:var(--maroon)}
+/* Menu */
+.tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.tab{font:inherit;font-weight:800;font-size:.92rem;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.6rem 1.2rem;transition:all .18s}
+.tab:hover{border-color:var(--saffron)}
+.tab[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.menu-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(124,29,18,.06);transition:transform .22s ease,box-shadow .22s ease}
+.menu-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.menu-card img{height:160px;width:100%;object-fit:cover;background:var(--cream-2)}
+.menu-body{padding:1.05rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.menu-body h3{font-size:1.04rem;font-weight:800;display:flex;align-items:center;gap:.5rem;line-height:1.3}
+.menu-body p{color:var(--muted);font-size:.88rem;flex:1}
+.menu-row{display:flex;justify-content:space-between;align-items:center;margin-top:.5rem}
+.qty-ctrl{display:inline-flex;align-items:center;gap:.15rem;border:1.5px solid var(--maroon);border-radius:999px;overflow:hidden}
+.qty-ctrl button{background:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;color:var(--maroon);width:32px;height:34px;font-size:1rem}
+.qty-ctrl button:hover{background:#ffe9c7}
+.qty-ctrl output{min-width:26px;text-align:center;font-weight:800}
+/* Reviews */
+.reviews{background:#fff;border-block:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.rev-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.rev-card blockquote{font-size:.98rem;margin:.6rem 0 .9rem}
+.rev-who{font-weight:800;font-size:.9rem;color:var(--maroon)}
+.rev-who small{display:block;color:var(--muted);font-weight:600}
+/* Outlets */
+.outlet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.outlet-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:1.6rem 1.5rem;cursor:pointer;text-align:left;font:inherit;width:100%;transition:all .2s}
+.outlet-card:hover{border-color:var(--saffron);transform:translateY(-3px)}
+.outlet-card.active{border-color:var(--maroon);box-shadow:var(--shadow);background:#fffdf8}
+.outlet-card h3{font-family:Fraunces,serif;font-size:1.25rem;margin-bottom:.35rem}
+.outlet-card p{color:var(--muted);font-size:.92rem}
+.outlet-card .ph{color:var(--maroon);font-weight:800;margin-top:.6rem;display:block;text-decoration:none}
+.outlet-card .ph:hover{text-decoration:underline}
+/* Footer */
+footer{background:#2a120b;color:#f3ddcb;padding:3.4rem 0 1.6rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:Fraunces,serif;color:#fff;margin-bottom:.8rem;font-size:1.1rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--saffron-2);text-decoration:underline}
+footer li{list-style:none;margin-bottom:.45rem;font-size:.94rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2.4rem;padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;opacity:.85}
+/* Cart drawer */
+.overlay{position:fixed;inset:0;background:rgba(38,15,8,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:100}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100dvh;width:min(430px,94vw);background:#fff;z-index:110;transform:translateX(105%);transition:transform .32s cubic-bezier(.2,.8,.25,1);display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.25)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:1.15rem 1.3rem;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-family:Fraunces,serif;font-size:1.3rem}
+.icon-btn{background:var(--cream);border:1px solid var(--line);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem;display:grid;place-items:center}
+.drawer-outlet{background:#fff6e8;border-bottom:1px solid var(--line);padding:.8rem 1.3rem;font-size:.9rem;font-weight:700;color:var(--maroon)}
+.cart-items{flex:1;overflow-y:auto;padding:1rem 1.3rem;display:flex;flex-direction:column;gap:.9rem}
+.cart-empty{text-align:center;color:var(--muted);padding:3rem 1rem}
+.cart-empty .big{font-size:2.6rem;margin-bottom:.6rem}
+.cart-item{display:flex;gap:.8rem;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:.8rem .9rem}
+.cart-item .info{flex:1}
+.cart-item h4{font-size:.94rem;display:flex;gap:.45rem;align-items:center;line-height:1.3}
+.cart-item small{color:var(--muted);font-weight:700}
+.cart-item .row{display:flex;justify-content:space-between;align-items:center;margin-top:.5rem}
+.remove-btn{background:none;border:0;cursor:pointer;color:var(--red);font:inherit;font-size:.8rem;font-weight:800;padding:.2rem}
+.drawer-foot{border-top:1px solid var(--line);padding:1.15rem 1.3rem;background:#fffdf8}
+.total-row{display:flex;justify-content:space-between;font-weight:800;font-size:1.08rem;margin-bottom:.35rem}
+.drawer-foot small{color:var(--muted);display:block;margin-bottom:.9rem}
+.drawer-foot .btn{width:100%;justify-content:center;font-size:1rem;padding:1rem}
+.drawer-foot .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+/* Toast + sticky mobile bar */
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;padding:.75rem 1.2rem;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:130;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:95;background:var(--maroon);color:#fff;border-radius:999px;padding:.7rem .7rem .7rem 1.3rem;display:none;align-items:center;gap:1rem;box-shadow:0 18px 36px rgba(95,19,10,.45);font-weight:800;border:0;cursor:pointer;font:inherit}
+.mobile-bar button{background:var(--saffron);color:#fff;border:0;font:inherit;font-weight:800;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:960px){
+  nav.main-nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;padding:2.8rem 0 3.4rem}
+  .sig-grid,.why-grid,.menu-grid,.rev-grid,.outlet-grid{grid-template-columns:1fr 1fr}
+  .strip-in{grid-template-columns:1fr 1fr;gap:1.4rem}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .mobile-bar.show{display:flex}
+}
+@media (max-width:600px){
+  .sig-grid,.why-grid,.menu-grid,.rev-grid,.outlet-grid,.foot-grid{grid-template-columns:1fr}
+  .logo small{display:none}
+  .outlet-switch select{max-width:150px}
+  .header-actions{gap:.4rem}
+  .cart-btn .txt{display:none}
+  .hero-card{left:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to menu</a>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Sharma and Vishnu Fast Food Center — home">
+      <span class="logo-mark" aria-hidden="true">S&amp;V</span>
+      <span><strong>Sharma &amp; Vishnu</strong><small>Fast Food Center · Bhopal</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#signatures">Signatures</a><a href="#menu">Menu</a><a href="#why-direct">Why Direct</a><a href="#outlets">Outlets</a>
+    </nav>
+    <div class="header-actions">
+      <div class="outlet-switch">
+        <label for="outletSelect">Ordering from</label>
+        <select id="outletSelect" aria-label="Choose your outlet"></select>
+      </div>
+      <button class="cart-btn" id="cartOpenBtn" aria-haspopup="dialog" aria-controls="cartDrawer">
+        🛒 <span class="txt">Cart</span> <span class="cart-count" id="cartCount" aria-label="Items in cart">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Now taking direct orders — skip the counter queue</span>
+        <h1>Bhopal's favourite fast food, <em>ordered direct.</em></h1>
+        <p class="lead">Paneer Butter Masala, Butter Pav Bhaji and Manchurian — made fresh at Sharma &amp; Vishnu. Order on WhatsApp, pick up hot, and skip both the queue and the aggregator markup.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#menu">🍽️ Browse the menu</a>
+          <a class="btn btn-ghost" id="heroCallBtn" href="tel:+919111016973">📞 <span id="heroPhone">+91 91110 16973</span></a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="stars" aria-hidden="true">★★★★☆</span> <span><strong>4.0/5</strong> · 4,500+ reviews</span></span>
+          <span>📍 3 outlets in Bhopal</span>
+          <span>🟢 Pure veg kitchen</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=1200&auto=format&fit=crop" alt="A rich, creamy paneer curry served in a bowl" fetchpriority="high" onerror="this.style.display='none'">
+        <span class="hero-badge">⭐ Rated 4.0 · 4,500+ reviews</span>
+        <div class="hero-card"><span style="font-size:1.7rem" aria-hidden="true">💬</span><span><strong>Order ahead on WhatsApp</strong><small>Your food is packed &amp; ready when you arrive.</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATING STRIP -->
+  <div class="strip" role="region" aria-label="Ratings and facts">
+    <div class="wrap strip-in">
+      <div><b>4.0 / 5</b><span>Average rating</span></div>
+      <div><b>4,500+</b><span>Customer reviews</span></div>
+      <div><b>3</b><span>Outlets across Bhopal</span></div>
+      <div><b>0%</b><span>Aggregator markup here</span></div>
+    </div>
+  </div>
+
+  <!-- SIGNATURES -->
+  <section id="signatures" aria-label="Signature dishes">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">House legends</span>
+        <h2>The dishes Bhopal keeps coming back for</h2>
+        <p>Our three signatures — rich, buttery and unapologetically indulgent.</p>
+      </div>
+      <div class="sig-grid" id="sigGrid"></div>
+    </div>
+  </section>
+
+  <!-- WHY DIRECT -->
+  <section class="why" id="why-direct" aria-label="Why order direct">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Why order direct?</span>
+        <h2>Better for you. Better for us.</h2>
+        <p>Food apps charge restaurants <b>22–28% commission</b> on every order — and that cost lands somewhere. Ordering direct fixes it for both sides.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">💸</div><h3>No aggregator markup</h3><p>When you order direct, we don't pay a <b>22–28% commission</b> to an app — so you get honest, kitchen-counter prices instead of inflated app prices.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">⏱️</div><h3>Skip the counter queue</h3><p>Send your order on WhatsApp before you leave. We start cooking right away, so there's <b>less waiting at the counter</b> — just walk in and pick up.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">📞</div><h3>Talk to the kitchen</h3><p>Extra spicy? Less butter? A big family order? Ordering direct means you speak to <b>our team at your outlet</b>, not a call-centre bot.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" aria-label="Full menu" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Full menu</span>
+        <h2>Pick your favourites</h2>
+        <p>Tap Add, review your cart, and send the whole order to <strong id="menuOutletName">Narmadapuram Road</strong> on WhatsApp in one message.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" aria-label="What customers say">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">4.0 ★ · 4,500+ reviews</span>
+        <h2>What Bhopal says about us</h2>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span><blockquote>"The Paneer Butter Masala is the reason we drive across town. Rich, creamy, and the butter naan with it is perfect."</blockquote><p class="rev-who">Regular at Narmadapuram Road<small>Narmadapuram Road outlet</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span><blockquote>"Butter Pav Bhaji tastes like the Mumbai original. Ordering on WhatsApp before leaving home means zero waiting now."</blockquote><p class="rev-who">Weekend regular<small>Lalghati outlet</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span><blockquote>"Our family's go-to for Chinese night — the Manchurian and Hakka Noodles combo never disappoints. Great value for money."</blockquote><p class="rev-who">Family customer<small>Shahpura outlet</small></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTLETS -->
+  <section id="outlets" aria-label="Our outlets" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Find us</span>
+        <h2>Three outlets, one taste</h2>
+        <p>Tap an outlet to order from it — the phone number and WhatsApp destination update everywhere on this page.</p>
+      </div>
+      <div class="outlet-grid" id="outletGrid"></div>
+      <p style="margin-top:1.6rem;text-align:center">
+        <a class="btn btn-dark" id="mapsBtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sharma+%26+Vishnu+Fast+Food+Center+Shop+6%2C7+%26+9%2C+A+Block%2C+Surendra+Landmark%2C+Narmadapuram+Rd%2C+Bhopal+462026">📍 Get directions to our main outlet</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Sharma &amp; Vishnu Fast Food Center</h4>
+        <p style="font-size:.94rem;max-width:26rem">Bhopal's own fast-food favourite — signatures, street food, Chinese and family combos, served fresh at three outlets across the city.</p>
+        <p style="margin-top:.9rem;font-size:.94rem">📍 Shop 6, 7 &amp; 9, A Block, Surendra Landmark,<br>Narmadapuram Rd, Bhopal — 462026</p>
+      </div>
+      <div>
+        <h4>Order / Contact</h4>
+        <ul>
+          <li>📞 <a id="footPhone1" href="tel:+919111016973">+91 91110 16973</a></li>
+          <li>📞 <a href="tel:+919111016976">+91 91110 16976</a></li>
+          <li>📞 <a href="tel:+919111016975">+91 91110 16975</a></li>
+          <li>✉️ <a href="mailto:sharmaandvishnufastfood@gmail.com">sharmaandvishnufastfood@gmail.com</a></li>
+          <li>📸 <a href="https://www.instagram.com/sharma_vishnu_official" target="_blank" rel="noopener">@sharma_vishnu_official</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Outlets</h4>
+        <ul><li>Narmadapuram Road (Main)</li><li>Lalghati</li><li>Shahpura</li></ul>
+        <h4 style="margin-top:1.2rem">Quick links</h4>
+        <ul><li><a href="#menu">Menu</a></li><li><a href="#signatures">Signatures</a></li><li><a href="#why-direct">Why order direct</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sharma &amp; Vishnu Fast Food Center, Bhopal. All rights reserved.</span>
+      <span>Demo website — built to preview direct ordering.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="drawer-head">
+    <h3 id="cartTitle">Your order 🧾</h3>
+    <button class="icon-btn" id="cartCloseBtn" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-outlet">Ordering from: <span id="drawerOutlet">Narmadapuram Road</span> · <a id="drawerPhone" href="tel:+919111016973">+91 91110 16973</a></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <small>Pay at the outlet on pickup. Prices are our regular counter prices — no aggregator markup.</small>
+    <button class="btn btn-wa" id="waOrderBtn">💬 Order on WhatsApp</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<button class="mobile-bar" id="mobileBar" aria-haspopup="dialog" aria-controls="cartDrawer">
+  <span id="mobileBarText">Cart is empty</span><span>View cart →</span>
+</button>
+
+<script>
+"use strict";
+/* ---------- Data ---------- */
+const OUTLETS = [
+  { id:"narmadapuram", name:"Narmadapuram Road", short:"Narmadapuram Rd (Main)", phoneDisplay:"+91 91110 16973", phoneIntl:"919111016973", address:"Shop 6, 7 & 9, A Block, Surendra Landmark, Narmadapuram Rd, Bhopal 462026", note:"Our main outlet — full menu, family seating." },
+  { id:"lalghati", name:"Lalghati", short:"Lalghati", phoneDisplay:"+91 91110 16976", phoneIntl:"919111016976", address:"Lalghati, Bhopal", note:"Quick bites & takeaway, near the airport road." },
+  { id:"shahpura", name:"Shahpura", short:"Shahpura", phoneDisplay:"+91 91110 16975", phoneIntl:"919111016975", address:"Shahpura, Bhopal", note:"Evening street-food & family favourite." }
+];
+const IMG = {
+  paneer:"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=900&auto=format&fit=crop",
+  curry:"https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=900&auto=format&fit=crop",
+  thali:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=900&auto=format&fit=crop",
+  samosa:"https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=900&auto=format&fit=crop",
+  noodles:"https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=900&auto=format&fit=crop",
+  rice:"https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=900&auto=format&fit=crop",
+  chinese:"https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=900&auto=format&fit=crop",
+  chaat:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=900&auto=format&fit=crop"
+};
+const MENU = [
+  {id:"paneer-butter-masala", name:"Paneer Butter Masala", cat:"Mains", price:260, desc:"Our legend — cottage cheese simmered in a rich tomato-butter gravy, finished with cream.", img:IMG.paneer, signature:true, tag:"Signature · Bestseller"},
+  {id:"shahi-paneer", name:"Shahi Paneer", cat:"Mains", price:240, desc:"Paneer in a royal cashew-tomato gravy with a hint of cardamom. Mild, creamy, indulgent.", img:IMG.curry},
+  {id:"dal-tadka", name:"Dal Tadka", cat:"Mains", price:170, desc:"Yellow dal tempered with ghee, garlic and red chillies. Comfort in a bowl.", img:IMG.chaat},
+  {id:"veg-kolhapuri", name:"Veg Kolhapuri", cat:"Mains", price:210, desc:"Seasonal vegetables tossed in a fiery Kolhapuri masala. For the spice lovers.", img:IMG.thali},
+  {id:"butter-pav-bhaji", name:"Butter Pav Bhaji", cat:"Street Food", price:180, desc:"Mumbai-style bhaji mashed on the tawa with a generous slab of butter, served with soft pav.", img:IMG.curry, signature:true, tag:"Signature"},
+  {id:"aloo-tikki-chaat", name:"Aloo Tikki Chaat", cat:"Street Food", price:90, desc:"Crisp tikkis, whipped curd, tangy chutneys and a shower of sev.", img:IMG.samosa},
+  {id:"pani-puri", name:"Pani Puri (6 pc)", cat:"Street Food", price:70, desc:"Crisp puris, spiced potato filling and chilled mint pani. Eat fast, smile faster.", img:IMG.chaat},
+  {id:"masala-dosa", name:"Masala Dosa", cat:"Street Food", price:150, desc:"Golden, crisp dosa with spiced potato masala, served with sambar and chutneys.", img:IMG.thali},
+  {id:"veg-manchurian", name:"Veg Manchurian", cat:"Chinese", price:190, desc:"Hand-rolled vegetable dumplings glazed in a garlicky soy sauce — a house signature.", img:IMG.chinese, signature:true, tag:"Signature"},
+  {id:"hakka-noodles", name:"Veg Hakka Noodles", cat:"Chinese", price:160, desc:"Wok-tossed noodles with crunchy vegetables and burnt garlic.", img:IMG.noodles},
+  {id:"veg-fried-rice", name:"Veg Fried Rice", cat:"Chinese", price:170, desc:"Smoky wok rice with spring onion and garden vegetables.", img:IMG.rice},
+  {id:"chilli-paneer", name:"Chilli Paneer Dry", cat:"Chinese", price:250, desc:"Crisp paneer cubes, peppers and onions in a spicy chilli-garlic toss.", img:IMG.paneer},
+  {id:"family-feast", name:"Family Feast Combo", cat:"Combos", price:699, desc:"Paneer Butter Masala + Dal Tadka + Jeera Rice + 4 Butter Naan. Serves 3–4.", img:IMG.thali, tag:"Serves 3–4"},
+  {id:"pav-bhaji-duo", name:"Pav Bhaji Duo Combo", cat:"Combos", price:329, desc:"2 Butter Pav Bhaji + 2 Masala Papad + 2 soft drinks. Perfect for two.", img:IMG.curry},
+  {id:"chinese-combo", name:"Chinese Combo", cat:"Combos", price:449, desc:"Veg Manchurian + Hakka Noodles + Veg Fried Rice. The full Indo-Chinese spread.", img:IMG.noodles, tag:"Most ordered"},
+  {id:"solo-thali", name:"Solo Thali Combo", cat:"Combos", price:249, desc:"Dal, seasonal sabzi, jeera rice, 2 roti, salad and a sweet — a complete meal for one.", img:IMG.thali}
+];
+const CATEGORIES = ["All","Mains","Street Food","Chinese","Combos"];
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+
+/* ---------- State ---------- */
+let currentOutlet = OUTLETS[0];
+let activeCat = "All";
+const cart = new Map(); // id -> qty
+try {
+  const saved = JSON.parse(localStorage.getItem("sv-cart") || "[]");
+  saved.forEach(([id,q]) => { if (MENU.some(m=>m.id===id) && q>0) cart.set(id,q); });
+  const oi = OUTLETS.find(o=>o.id===localStorage.getItem("sv-outlet")); if (oi) currentOutlet = oi;
+} catch(e) {}
+function persist(){ try{ localStorage.setItem("sv-cart", JSON.stringify([...cart])); localStorage.setItem("sv-outlet", currentOutlet.id); }catch(e){} }
+
+/* ---------- DOM helpers ---------- */
+const $ = s => document.querySelector(s);
+const menuGrid = $("#menuGrid"), sigGrid = $("#sigGrid"), tabsEl = $("#tabs"), outletGrid = $("#outletGrid");
+const drawer = $("#cartDrawer"), overlay = $("#overlay"), toastEl = $("#toast");
+let toastTimer;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(()=>toastEl.classList.remove("show"), 2400); }
+function vegMark(){ return '<span class="veg" role="img" aria-label="Vegetarian"></span>'; }
+function qtyCtrlHTML(id){
+  const q = cart.get(id) || 0;
+  if (!q) return `<button class="add-btn" data-add="${id}" aria-label="Add ${itemName(id)} to cart">Add +</button>`;
+  return `<span class="qty-ctrl" aria-label="Quantity for ${itemName(id)}">
+    <button data-dec="${id}" aria-label="Decrease quantity of ${itemName(id)}">−</button><output aria-live="polite">${q}</output><button data-inc="${id}" aria-label="Increase quantity of ${itemName(id)}">+</button></span>`;
+}
+function itemName(id){ const m = MENU.find(x=>x.id===id); return m ? m.name : id; }
+
+/* ---------- Render: signatures ---------- */
+function renderSignatures(){
+  sigGrid.innerHTML = MENU.filter(m=>m.signature).map(m => `
+    <article class="sig-card reveal in">
+      <img src="${m.img}" alt="${m.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="sig-body">
+        <span class="tag">${m.tag || "Signature"}</span>
+        <h3 style="margin-top:.5rem">${vegMark()} ${m.name}</h3>
+        <p>${m.desc}</p>
+        <div class="sig-row"><span class="price">${fmt(m.price)}</span><span data-qty-for="${m.id}">${qtyCtrlHTML(m.id)}</span></div>
+      </div>
+    </article>`).join("");
+}
+/* ---------- Render: tabs + menu ---------- */
+function renderTabs(){
+  tabsEl.innerHTML = CATEGORIES.map(c =>
+    `<button class="tab" role="tab" aria-selected="${c===activeCat}" data-cat="${c}">${c}</button>`).join("");
+}
+function renderMenu(){
+  const items = MENU.filter(m => activeCat==="All" || m.cat===activeCat);
+  menuGrid.innerHTML = items.map(m => `
+    <article class="menu-card">
+      <img src="${m.img}" alt="${m.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="menu-body">
+        <h3>${vegMark()} ${m.name}</h3>
+        <p>${m.desc}</p>
+        ${m.tag ? `<span class="tag" style="align-self:flex-start">${m.tag}</span>` : ""}
+        <div class="menu-row"><span class="price">${fmt(m.price)}</span><span data-qty-for="${m.id}">${qtyCtrlHTML(m.id)}</span></div>
+      </div>
+    </article>`).join("");
+}
+/* ---------- Render: outlets ---------- */
+function renderOutlets(){
+  outletGrid.innerHTML = OUTLETS.map(o => `
+    <article class="outlet-card ${o.id===currentOutlet.id ? "active" : ""}" data-outlet="${o.id}" tabindex="0" role="button" aria-pressed="${o.id===currentOutlet.id}" aria-label="Order from ${o.name} outlet">
+      <h3>📍 ${o.short} ${o.id===currentOutlet.id ? '<span class="tag">Ordering here</span>' : ""}</h3>
+      <p>${o.address}</p><p style="margin-top:.35rem">${o.note}</p>
+      <a class="ph" href="tel:+${o.phoneIntl}">📞 ${o.phoneDisplay}</a>
+    </article>`).join("");
+  const sel = $("#outletSelect");
+  sel.innerHTML = OUTLETS.map(o => `<option value="${o.id}" ${o.id===currentOutlet.id ? "selected" : ""}>${o.short}</option>`).join("");
+}
+/* ---------- Outlet switching ---------- */
+function setOutlet(id, announce=true){
+  const o = OUTLETS.find(x=>x.id===id); if(!o) return;
+  currentOutlet = o; persist();
+  $("#heroPhone").textContent = o.phoneDisplay;
+  $("#heroCallBtn").href = "tel:+" + o.phoneIntl;
+  $("#footPhone1").textContent = o.phoneDisplay;
+  $("#footPhone1").href = "tel:+" + o.phoneIntl;
+  $("#menuOutletName").textContent = o.name;
+  $("#drawerOutlet").textContent = o.name;
+  const dp = $("#drawerPhone"); dp.textContent = o.phoneDisplay; dp.href = "tel:+" + o.phoneIntl;
+  renderOutlets();
+  if (announce) toast("Ordering from " + o.name + " · " + o.phoneDisplay);
+}
+/* ---------- Cart ---------- */
+function cartCountTotal(){ let n=0; cart.forEach(q=>n+=q); return n; }
+function cartPriceTotal(){ let t=0; cart.forEach((q,id)=>{ const m=MENU.find(x=>x.id===id); if(m) t+=m.price*q; }); return t; }
+function refreshQtyControls(){
+  document.querySelectorAll("[data-qty-for]").forEach(el => { el.innerHTML = qtyCtrlHTML(el.dataset.qtyFor); });
+}
+function renderCart(){
+  const n = cartCountTotal(), total = cartPriceTotal();
+  const cc = $("#cartCount"); cc.textContent = n;
+  cc.classList.remove("bump"); void cc.offsetWidth; if(n) cc.classList.add("bump");
+  const box = $("#cartItems");
+  if (!n) {
+    box.innerHTML = `<div class="cart-empty"><div class="big" aria-hidden="true">🍽️</div><strong>Your cart is empty</strong><p>Add something delicious from the menu — the Pav Bhaji is calling.</p></div>`;
+  } else {
+    box.innerHTML = [...cart.entries()].map(([id,q]) => {
+      const m = MENU.find(x=>x.id===id); if(!m) return "";
+      return `<div class="cart-item">
+        <div class="info"><h4>${vegMark()} ${m.name}</h4><small>${fmt(m.price)} each</small>
+          <div class="row"><span class="qty-ctrl"><button data-dec="${id}" aria-label="Decrease quantity of ${m.name}">−</button><output>${q}</output><button data-inc="${id}" aria-label="Increase quantity of ${m.name}">+</button></span>
+          <strong>${fmt(m.price*q)}</strong></div>
+        </div>
+        <button class="remove-btn" data-remove="${id}" aria-label="Remove ${m.name} from cart">Remove</button>
+      </div>`;
+    }).join("");
+  }
+  $("#cartTotal").textContent = fmt(total);
+  const wa = $("#waOrderBtn");
+  wa.disabled = !n;
+  wa.textContent = n ? `💬 Order on WhatsApp · ${fmt(total)}` : "💬 Order on WhatsApp";
+  const mb = $("#mobileBar");
+  mb.classList.toggle("show", n>0 && !drawer.classList.contains("open"));
+  $("#mobileBarText").textContent = n ? `${n} item${n>1?"s":""} · ${fmt(total)}` : "Cart is empty";
+  refreshQtyControls(); persist();
+}
+function changeQty(id, delta){
+  const q = (cart.get(id) || 0) + delta;
+  if (q <= 0) cart.delete(id); else cart.set(id, Math.min(q, 20));
+  if (delta > 0) toast(itemName(id) + " added to cart");
+  renderCart();
+}
+/* ---------- Drawer ---------- */
+let lastFocus = null;
+function openCart(){
+  lastFocus = document.activeElement;
+  drawer.classList.add("open"); overlay.classList.add("open");
+  drawer.setAttribute("aria-hidden","false"); document.body.style.overflow = "hidden";
+  $("#mobileBar").classList.remove("show"); $("#cartCloseBtn").focus();
+}
+function closeCart(){
+  drawer.classList.remove("open"); overlay.classList.remove("open");
+  drawer.setAttribute("aria-hidden","true"); document.body.style.overflow = "";
+  renderCart(); if (lastFocus) lastFocus.focus();
+}
+/* ---------- WhatsApp order ---------- */
+function placeOrder(){
+  if (!cartCountTotal()) return;
+  const lines = ["Hello Sharma & Vishnu Fast Food Center (" + currentOutlet.name + ")! 👋", "", "I would like to order:", ""];
+  cart.forEach((q,id) => { const m = MENU.find(x=>x.id===id); if(m) lines.push("• " + m.name + " x " + q + " — " + fmt(m.price*q)); });
+  lines.push("", "Total: " + fmt(cartPriceTotal()), "", "Name:", "Pickup time:", "", "— Sent from your direct-order website");
+  const url = "https://wa.me/" + currentOutlet.phoneIntl + "?text=" + encodeURIComponent(lines.join("\n"));
+  window.open(url, "_blank", "noopener");
+}
+/* ---------- Events (delegation) ---------- */
+document.addEventListener("click", e => {
+  const add = e.target.closest("[data-add]"); if (add) { changeQty(add.dataset.add, 1); return; }
+  const inc = e.target.closest("[data-inc]"); if (inc) { changeQty(inc.dataset.inc, 1); return; }
+  const dec = e.target.closest("[data-dec]"); if (dec) { changeQty(dec.dataset.dec, -1); return; }
+  const rem = e.target.closest("[data-remove]"); if (rem) { cart.delete(rem.dataset.remove); renderCart(); return; }
+  const tab = e.target.closest("[data-cat]"); if (tab) { activeCat = tab.dataset.cat; renderTabs(); renderMenu(); return; }
+  const oc = e.target.closest("[data-outlet]"); if (oc && !e.target.closest("a")) { setOutlet(oc.dataset.outlet); return; }
+});
+$("#outletSelect").addEventListener("change", e => setOutlet(e.target.value));
+$("#cartOpenBtn").addEventListener("click", openCart);
+$("#mobileBar").addEventListener("click", openCart);
+$("#cartCloseBtn").addEventListener("click", closeCart);
+overlay.addEventListener("click", closeCart);
+$("#waOrderBtn").addEventListener("click", placeOrder);
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && drawer.classList.contains("open")) closeCart();
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("[data-outlet]")) { e.preventDefault(); setOutlet(e.target.dataset.outlet); }
+});
+/* ---------- Reveal on scroll ---------- */
+const io = ("IntersectionObserver" in window) ? new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+}, { threshold: 0.12 }) : null;
+document.querySelectorAll(".reveal").forEach(el => { if (io) io.observe(el); else el.classList.add("in"); });
+/* ---------- Init ---------- */
+renderSignatures(); renderTabs(); renderMenu(); setOutlet(currentOutlet.id, false); renderCart();
+</script>
+</body>
+</html>

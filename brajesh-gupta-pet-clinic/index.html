@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr. Brajesh Gupta Pet Clinic, Bhopal</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#17323a;background:#f7fbfb;line-height:1.5}
+a{color:inherit}.wrap{max-width:980px;margin:auto;padding:0 16px}
+header{background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;padding:28px 0 24px}
+.badge{display:inline-block;background:#ffedd5;color:#9a3412;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:700}
+h1{font-size:32px;line-height:1.15;margin:12px 0 8px}h2{font-size:22px;margin:0 0 12px;color:#0f766e}
+.sub{opacity:.95;max-width:680px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.meta span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:6px 10px;border-radius:999px;font-size:14px}
+.btn{display:inline-block;background:#f97316;color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
+.btn.green{background:#16a34a}.btn.light{background:#fff;color:#0f766e}
+section{padding:26px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px}
+.card b{display:block;margin-bottom:6px}.addr{background:#fff7ed;border:1px solid #fed7aa}
+form{background:#fff;border:2px solid #99f6e4;border-radius:16px;padding:18px;display:grid;gap:12px}
+label{font-weight:700;font-size:14px}select,input{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;margin-top:5px}
+#result{background:#f0fdfa;border:1px dashed #14b8a6;border-radius:12px;padding:14px;display:none}
+#result ul{margin-left:18px}.note{font-size:13px;color:#64748b}
+footer{padding:22px 0 30px;text-align:center;color:#64748b;font-size:13px}
+.sticky{position:sticky;bottom:12px;text-align:center}
+@media(max-width:600px){h1{font-size:27px}}
+</style></head><body>
+<header><div class="wrap">
+<span class="badge">🐾 Open 24 Hrs • Bhopal</span>
+<h1>Dr. Brajesh Gupta Pet Clinic</h1>
+<p class="sub">Care for dogs, cats, birds &amp; rabbits by veterinarian <strong>Dr. Brajesh Gupta</strong> — 26 years in healthcare per Justdial.</p>
+<div class="meta"><span>★ 4.1 • 359 ratings on Justdial</span><span>Consultation: ₹300 as listed on Justdial</span><span>📞 +91 76975 68488</span></div>
+<a class="btn" href="https://wa.me/917697568488?text=Namaste%2C%20mujhe%20apne%20pet%20ke%20liye%20visit%20book%20karni%20hai" target="_blank" rel="noopener">Book on WhatsApp</a>
+<a class="btn light" href="tel:+917697568488">Call Clinic</a>
+</div></header>
+
+<main class="wrap">
+<section><h2>Our Locations</h2><div class="grid">
+<div class="card addr"><b>Tulsi Nagar</b>Mayur Park, F 93/3, Tulsi Nagar, Bhopal<br><span class="note">Also listed as Turtle Rabbit Birds Clinic</span></div>
+<div class="card addr"><b>Panchwati Road</b>Sector C, 230D, Panchwati Road, near Bhopal Girls School, Bhopal</div>
+</div></section>
+
+<section><h2>Services</h2><div class="grid">
+<div class="card"><b>🩺 General Check-up</b>Routine health examination &amp; treatment for common illnesses.</div>
+<div class="card"><b>💉 Vaccination</b>Core vaccines and boosters for dogs, cats &amp; rabbits.</div>
+<div class="card"><b>🪱 Deworming</b>Age-appropriate deworming guidance and schedule.</div>
+<div class="card"><b>🦷 Dental Care</b>Dental check, scaling advice &amp; oral health care.</div>
+<div class="card"><b>🐶 Dogs &amp; Cats</b>Complete treatment for dogs and cats of all ages.</div>
+<div class="card"><b>🦜 Birds &amp; Rabbits</b>Special care for birds, rabbits &amp; turtles.</div>
+</div><p class="note" style="margin-top:10px">No more calling or walking in for everything — book below and confirm on WhatsApp in 2 minutes.</p></section>
+
+<section id="book"><h2>Book a Pet Visit + Vaccination Planner</h2>
+<form id="f">
+<div><label for="pet">Pet type</label><select id="pet" required><option value="dog">Dog</option><option value="cat">Cat</option><option value="bird">Bird</option><option value="rabbit">Rabbit</option></select></div>
+<div><label for="service">Service needed</label><select id="service" required><option>General check-up</option><option>Vaccination</option><option>Deworming</option><option>Dental check</option><option>Grooming referral / consult</option></select></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div><label for="age">Pet age</label><select id="age" required><option value="young">Under 6 months</option><option value="adult">6 months – 7 years</option><option value="senior">Over 7 years</option></select></div>
+<div><label for="date">Preferred visit date</label><input type="date" id="date" required></div>
+</div>
+<div><label for="name">Pet name (optional)</label><input id="name" placeholder="e.g. Bruno, Mimi"></div>
+<button class="btn" type="submit">Show My Care Plan →</button>
+<div id="result" aria-live="polite"><b id="rTitle"></b><ul id="rList"></ul><p class="note">General guidance / demo only — final vaccination &amp; treatment plan is confirmed by Dr. Gupta at the visit. Consultation ₹300 as listed on Justdial (indicative/demo).</p><br><a id="wa" class="btn green" href="#" target="_blank" rel="noopener">✓ Confirm on WhatsApp</a></div>
+</form></section>
+
+<section><div class="card" style="text-align:center"><h2>Need urgent help?</h2><p>Clinic is listed as Open 24 Hrs on Justdial. Call or WhatsApp anytime.</p><br><a class="btn green" href="https://wa.me/917697568488" target="_blank" rel="noopener">WhatsApp: +91 76975 68488</a></div></section>
+<div class="sticky"><a class="btn" href="#book">📅 Book a Visit</a></div>
+</main>
+<footer><div class="wrap">Demo website built by Vaibhav Ghoshi — not the official website<br>Dr. Brajesh Gupta Pet Clinic, Bhopal • +91 76975 68488</div></footer>
+<script>
+const plans={
+dog:{young:["Core vaccination series as advised by vet","Deworming every 2–4 weeks initially","Weight, diet & socialisation check","Dental & nail check"],adult:["Annual booster vaccination review","Deworming every 3 months (general guidance)","Annual dental & weight check","Tick/flea prevention review"],senior:["Senior health screening & blood work advised","Booster review, joint & dental check","Deworming & weight management","More frequent check-ups (every 6 months)"]},
+cat:{young:["Kitten vaccination series as advised by vet","Deworming schedule for kittens","Litter, diet & growth check","First dental check"],adult:["Annual vaccination booster review","Deworming every 3–6 months (general guidance)","Dental, weight & coat check","Indoor/outdoor risk review"],senior:["Senior screening: kidney, thyroid & dental","Booster review with vet","Weight & appetite monitoring","Check-ups every 6 months"]},
+bird:{young:["New-bird health check & beak/feather review","Diet conversion & nutrition guidance","Habitat, light & hygiene check","Parasite screening if advised"],adult:["Annual avian health check","Beak, nail & feather care","Balanced diet & enrichment review","Watch breathing / droppings changes"],senior:["More frequent avian check-ups","Nutrition for ageing birds","Joint, feather & respiratory review","Stress-free habitat adjustments"]},
+rabbit:{young:["First vet check & sexing confirmation","Deworming / parasite guidance if advised","Hay-first diet & teeth check","Handling & habitat setup review"],adult:["Annual check-up & dental (teeth) review","Vaccination discussion with vet (as applicable)","Diet, weight & gut health check","Nail & fur care"],senior:["Senior rabbit screening & dental check","Mobility, appetite & gut monitoring","Gentle handling & diet tweaks","Check-ups every 6 months"]}};
+document.getElementById('date').min=new Date().toISOString().split('T')[0];
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();
+const p=document.getElementById('pet').value,s=document.getElementById('service').value,a=document.getElementById('age').value,d=document.getElementById('date').value,n=document.getElementById('name').value.trim();
+const items=[`Service booked: ${s}`,...plans[p][a]];document.getElementById('rTitle').textContent=`Care checklist for your ${p} (${s}) — ${d}`;
+document.getElementById('rList').innerHTML=items.map(x=>`<li>${x}</li>`).join('');
+const msg=`Namaste Dr. Brajesh Gupta Pet Clinic, mujhe visit book karni hai.%0A%0APet: ${p}${n?' ('+encodeURIComponent(n)+')':''}%0AService: ${encodeURIComponent(s)}%0APet age group: ${encodeURIComponent(a)}%0APreferred date: ${d}%0A%0AKripya confirm kijiye. Dhanyavaad!`;
+document.getElementById('wa').href=`https://wa.me/917697568488?text=${msg}`;
+const r=document.getElementById('result');r.style.display='block';r.scrollIntoView({behavior:'smooth',block:'nearest'});});
+</script></body></html>

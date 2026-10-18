@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Business Performance &amp; Revenue Analytics Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f3ef;
+        --card: #ffffff;
+        --card-2: #f7f6f2;
+        --ink: #1c1a16;
+        --muted: #6f6a60;
+        --faint: #a29b8e;
+        --line: #eae7e0;
+        --accent: #f4501e;
+        --accent-soft: #fdeee7;
+        --green: #2e9e66;
+        --green-soft: #e5f3ec;
+        --amber: #b57a0e;
+        --amber-soft: #faf0da;
+        --red: #d64541;
+        --red-soft: #fceaea;
+        --teal: #5f7a68;
+        --teal-soft: #e8efe9;
+        --violet: #8a7c66;
+        --violet-soft: #f0ebdf;
+        --shadow: 0 1px 2px rgba(28, 26, 22, .04), 0 10px 30px rgba(28, 26, 22, .05);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14120f;
+          --card: #1e1c18;
+          --card-2: #26241f;
+          --ink: #f3f0ea;
+          --muted: #a49d92;
+          --faint: #756f66;
+          --line: #302d28;
+          --accent: #ff6a3d;
+          --accent-soft: #3a2317;
+          --green: #3cb179;
+          --green-soft: #173327;
+          --amber: #dfa63e;
+          --amber-soft: #382b12;
+          --red: #ef7070;
+          --red-soft: #3a1f1f;
+          --teal: #7d9b8a;
+          --teal-soft: #22312a;
+          --violet: #b3a58f;
+          --violet-soft: #322b21;
+          --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px rgba(0, 0, 0, .28);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+      .wrap { max-width: 1460px; margin: 0 auto; padding: 18px 18px 60px; }
+
+      /* ---------- filter toolbar ---------- */
+      .toolbar {
+        display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+        background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 12px 14px; box-shadow: var(--shadow); position: sticky; top: 10px; z-index: 40;
+      }
+      .seg { display: inline-flex; background: var(--card-2); border: 1px solid var(--line); border-radius: 99px; padding: 3px; gap: 2px; }
+      .seg button {
+        border: 0; background: transparent; color: var(--muted); font: inherit; font-weight: 600; font-size: 13px;
+        padding: 6px 13px; border-radius: 99px; cursor: pointer; white-space: nowrap;
+      }
+      .seg button.active { background: var(--ink); color: var(--card); box-shadow: 0 2px 6px rgba(28, 26, 22, .18); }
+      .seg button:focus-visible, .btn:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+      .custom-range { display: none; align-items: center; gap: 6px; }
+      .custom-range.open { display: inline-flex; }
+      .custom-range input[type="date"] {
+        font: inherit; font-size: 13px; color: var(--ink); background: var(--card-2);
+        border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px;
+      }
+      .toolbar select {
+        font: inherit; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--card-2);
+        border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; max-width: 190px;
+      }
+      .toolbar .spacer { flex: 1; }
+      .period-label { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+      .period-label b { color: var(--ink); }
+      .btn {
+        font: inherit; font-weight: 700; font-size: 13px; border-radius: 99px; cursor: pointer;
+        border: 1px solid var(--ink); background: var(--ink); color: var(--card); padding: 8px 18px;
+        display: inline-flex; align-items: center; gap: 7px;
+      }
+      .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+      .btn:active { transform: translateY(1px); }
+
+      /* ---------- KPI cards ---------- */
+      .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+      .kpi {
+        background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 18px 18px 15px; box-shadow: var(--shadow); min-width: 0;
+      }
+      .kpi .k-label { display: flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: var(--muted); }
+      .kpi .k-ico { width: 24px; height: 24px; border-radius: 8px; display: grid; place-items: center; flex: none; }
+      .kpi .k-ico svg { width: 13px; height: 13px; }
+      .kpi .k-main { display: flex; align-items: baseline; gap: 10px; margin-top: 9px; flex-wrap: wrap; }
+      .kpi .k-value { font-size: 30px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+      .kpi .k-sub { font-size: 12px; color: var(--faint); font-weight: 600; text-align: right; margin-left: auto; }
+      .kpi .k-sub b { display: block; font-size: 14px; color: var(--ink); }
+      .delta { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; font-weight: 700; margin-top: 11px; padding: 3px 9px; border-radius: 99px; }
+      .delta.up { color: var(--green); background: var(--green-soft); }
+      .delta.down { color: var(--red); background: var(--red-soft); }
+      .delta.flat { color: var(--faint); background: var(--card-2); }
+      .delta .vs { color: var(--muted); font-weight: 500; }
+
+      /* ---------- sections & cards ---------- */
+      .section-head { display: flex; align-items: center; gap: 9px; margin: 26px 2px 12px; }
+      .section-head .s-ico { width: 22px; height: 22px; background: transparent; color: var(--accent); display: grid; place-items: center; }
+      .section-head .s-ico svg { width: 19px; height: 19px; }
+      .section-head h2 { font-size: 18px; font-weight: 700; margin: 0; letter-spacing: -.01em; }
+      .section-head p { margin: 0; color: var(--muted); font-size: 12.5px; }
+      .grid { display: grid; gap: 12px; }
+      .g-leads { grid-template-columns: 1.05fr 1fr 1.7fr 1.05fr; }
+      .g-quotes { grid-template-columns: 1.1fr 1.1fr 1.7fr .9fr; }
+      .g-deals { grid-template-columns: 1.3fr 1.1fr 1fr; }
+      .g-deals > .card:nth-child(4) { grid-column: span 2; }
+      .g-orders { grid-template-columns: 1fr 1.35fr 1.35fr; }
+      .g-tables { grid-template-columns: 1fr 1fr; }
+      .card {
+        background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 20px; box-shadow: var(--shadow); min-width: 0; overflow: hidden;
+      }
+      .card h3 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
+      .card .hint { font-size: 12px; color: var(--faint); margin: 0 0 8px; }
+      .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); font-weight: 600; }
+      .legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: 1px; }
+      .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+
+      /* funnel */
+      .funnel { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-top: 10px; }
+      .f-stage { color: #fff; text-align: center; padding: 8px 6px 7px; clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); }
+      .f-stage b { display: block; font-size: 15px; line-height: 1.15; }
+      .f-stage span { font-size: 11px; opacity: .92; font-weight: 600; }
+      .f-note { margin-top: 10px; background: var(--card-2); color: var(--muted); border: 1px dashed var(--line);
+        border-radius: 10px; padding: 7px 10px; font-size: 12px; font-weight: 600; text-align: center; }
+
+      /* target */
+      .target-big { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+      .t-row { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); padding: 3px 0; }
+      .t-row b { color: var(--ink); font-variant-numeric: tabular-nums; }
+      .progress { height: 9px; background: var(--card-2); border: 1px solid var(--line); border-radius: 99px; overflow: hidden; }
+      .progress > i { display: block; height: 100%; background: var(--accent); border-radius: 99px; transition: width .5s ease; }
+      .progress > i.green { background: var(--green); }
+      .progress > i.amber { background: var(--amber); }
+
+      /* hbars */
+      .hbar-row { display: grid; grid-template-columns: 118px 1fr auto; align-items: center; gap: 10px; padding: 5px 0; font-size: 12.5px; }
+      .hbar-row .hb-name { color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .hbar-track { height: 10px; background: var(--card-2); border-radius: 99px; overflow: hidden; }
+      .hbar-fill { height: 100%; border-radius: 99px; background: var(--accent); transition: width .5s ease; }
+      .hbar-val { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      .hbar-val small { color: var(--faint); font-weight: 600; }
+
+      /* tables */
+      .tbl-wrap { overflow-x: auto; margin: 0 -20px; padding: 0 20px; }
+      table { border-collapse: collapse; width: 100%; font-size: 13px; }
+      th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--faint);
+        font-weight: 700; padding: 8px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+      td { padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+      tbody tr:last-child td { border-bottom: 0; }
+      tr.clickable { cursor: pointer; }
+      tr.clickable:hover td { background: var(--card-2); }
+      td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+      .who { display: flex; align-items: center; gap: 9px; min-width: 0; }
+      .avatar { width: 30px; height: 30px; border-radius: 50%; color: #fff; font-weight: 700; font-size: 12px;
+        display: grid; place-items: center; flex: none; }
+      .who .w-name { font-weight: 700; white-space: nowrap; }
+      .who .w-sub { font-size: 11.5px; color: var(--faint); white-space: nowrap; }
+      .chip { display: inline-block; padding: 2.5px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+      .chip.blue { background: var(--accent-soft); color: var(--accent); }
+      .chip.green { background: var(--green-soft); color: var(--green); }
+      .chip.amber { background: var(--amber-soft); color: var(--amber); }
+      .chip.red { background: var(--red-soft); color: var(--red); }
+      .chip.teal { background: var(--teal-soft); color: var(--teal); }
+      .chip.violet { background: var(--violet-soft); color: var(--violet); }
+      .chip.grey { background: var(--card-2); color: var(--muted); }
+      .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; color: var(--muted); font-weight: 600; }
+
+      /* donut legend list */
+      .donut-flex { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+      .donut-list { flex: 1; min-width: 130px; }
+      .donut-list .dl-row { display: flex; align-items: center; gap: 8px; font-size: 12.5px; padding: 4px 0; }
+      .donut-list .dl-row .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+      .donut-list .dl-row b { margin-left: auto; font-variant-numeric: tabular-nums; }
+      .donut-list .dl-row span.pct { color: var(--faint); font-weight: 600; width: 44px; text-align: right; }
+
+      /* stacked stage bars */
+      .stack-row { display: grid; grid-template-columns: 108px 1fr 26px; gap: 10px; align-items: center; padding: 5px 0; font-size: 12.5px; }
+      .stack-row .s-name { color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .stack { display: flex; height: 16px; border-radius: 5px; overflow: hidden; background: var(--card-2); }
+      .stack > i { display: block; height: 100%; font-style: normal; color: #fff; font-size: 10.5px; font-weight: 700;
+        display: grid; place-items: center; min-width: 0; overflow: hidden; }
+
+      /* money summary */
+      .money-box { border-radius: 11px; padding: 12px 14px; display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+      .money-box .m-ico { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; flex: none; }
+      .money-box .m-ico svg { width: 18px; height: 18px; }
+      .money-box small { display: block; color: var(--muted); font-weight: 600; font-size: 12px; }
+      .money-box b { font-size: 18px; letter-spacing: -.01em; }
+
+      /* deal progress list */
+      .deal-row { padding: 9px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+      .deal-row:last-child { border-bottom: 0; }
+      .deal-row .d-top { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+      .deal-row .d-top b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .deal-row .d-meta { font-size: 12px; color: var(--faint); display: flex; gap: 10px; flex-wrap: wrap; margin-top: 3px; }
+      .deal-row:hover .d-top b { color: var(--accent); }
+
+      /* activity */
+      .activity { display: flex; flex-direction: column; }
+      .act-row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 12.5px; align-items: flex-start; }
+      .act-row:last-child { border-bottom: 0; }
+      .act-row .a-time { color: var(--faint); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 11.5px; padding-top: 2px; }
+      .act-row .a-body { flex: 1; min-width: 0; }
+      .act-row .a-body b { font-weight: 700; }
+
+      .empty { text-align: center; color: var(--faint); padding: 26px 10px; font-size: 13px; font-weight: 600; }
+      .search-input { font: inherit; font-size: 13px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 8px;
+        background: var(--card-2); color: var(--ink); width: 210px; max-width: 100%; }
+      .show-more { width: 100%; margin-top: 10px; background: var(--card-2); border: 1px solid var(--line); color: var(--accent);
+        font: inherit; font-weight: 700; font-size: 13px; padding: 8px; border-radius: 9px; cursor: pointer; }
+
+      svg text { font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+      .axis-txt { fill: var(--faint); font-size: 10.5px; font-weight: 600; }
+      .grid-line { stroke: var(--line); stroke-width: 1; }
+
+      /* ---------- drawer ---------- */
+      .overlay { position: fixed; inset: 0; background: rgba(10, 18, 32, .5); opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 80; }
+      .overlay.open { opacity: 1; pointer-events: auto; }
+      .drawer { position: fixed; top: 0; right: 0; height: 100dvh; width: min(560px, 100vw); background: var(--bg);
+        z-index: 90; transform: translateX(102%); transition: transform .3s cubic-bezier(.32, .72, .28, 1);
+        overflow-y: auto; box-shadow: -12px 0 32px rgba(0, 0, 0, .25); }
+      .drawer.open { transform: translateX(0); }
+      .drawer-inner { padding: 20px 20px 40px; }
+      .drawer .d-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+      .drawer h2 { margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
+      .drawer .d-sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+      .close-btn { border: 1px solid var(--line); background: var(--card); color: var(--ink); width: 34px; height: 34px;
+        border-radius: 9px; font-size: 16px; cursor: pointer; flex: none; }
+      .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin: 16px 0; background: var(--card);
+        border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+      .meta-grid small { display: block; color: var(--faint); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+      .meta-grid b { font-size: 13.5px; }
+      .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 6px; }
+      .stat-strip .ss { background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 10px 12px; }
+      .stat-strip .ss small { color: var(--faint); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; display: block; }
+      .stat-strip .ss b { font-size: 17px; }
+      .drawer h4 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 20px 0 8px; }
+      .item-card { background: var(--card); border: 1px solid var(--line); border-radius: 11px; padding: 12px 14px; margin-bottom: 9px; }
+      .item-card .i-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+      .item-card .i-meta { font-size: 12px; color: var(--faint); margin-top: 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+      .item-card.clickable { cursor: pointer; }
+      .item-card.clickable:hover { border-color: var(--accent); }
+      .back-link { background: none; border: 0; color: var(--accent); font: inherit; font-weight: 700; font-size: 13px; cursor: pointer; padding: 0 0 10px; }
+
+      .foot-note { margin-top: 30px; text-align: center; color: var(--faint); font-size: 12px; }
+
+      @media (max-width: 1240px) {
+        .g-leads, .g-quotes { grid-template-columns: 1fr 1fr; }
+        .g-deals { grid-template-columns: 1fr 1fr; }
+        .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 640px) {
+        .seg { flex-wrap: wrap; }
+        .seg button { padding: 6px 9px; font-size: 12.5px; }
+        .toolbar select { max-width: 100%; flex: 1 1 140px; }
+        th, td { padding: 7px 6px; }
+        table { font-size: 12.5px; }
+        #leadTable th:nth-child(2), #leadTable td:nth-child(2),
+        #leadTable th:nth-child(3), #leadTable td:nth-child(3),
+        #paymentTable th:nth-child(4), #paymentTable td:nth-child(4),
+        #paymentTable th:nth-child(5), #paymentTable td:nth-child(5),
+        #leadQuoteTable th:nth-child(2), #leadQuoteTable td:nth-child(2),
+        #leadQuoteTable th:nth-child(7), #leadQuoteTable td:nth-child(7) { display: none; }
+      }
+      @media (max-width: 820px) {
+        .g-leads, .g-quotes, .g-deals, .g-orders, .g-tables { grid-template-columns: 1fr; }
+        .g-deals > .card:nth-child(4) { grid-column: span 1; }
+        .wrap { padding: 12px 12px 50px; }
+        .toolbar { position: static; }
+        .stat-strip { grid-template-columns: 1fr 1fr; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <!-- ======== FILTERS ======== -->
+      <div class="toolbar" role="region" aria-label="Dashboard filters">
+        <div class="seg" id="presetSeg" role="group" aria-label="Date range presets">
+          <button type="button" data-preset="today">Today</button>
+          <button type="button" data-preset="7d">Last 7 Days</button>
+          <button type="button" data-preset="30d" class="active">Last 30 Days</button>
+          <button type="button" data-preset="custom">Custom Range</button>
+        </div>
+        <span class="custom-range" id="customRange">
+          <input type="date" id="dateFrom" aria-label="Start date" />
+          <span aria-hidden="true">→</span>
+          <input type="date" id="dateTo" aria-label="End date" />
+          <button type="button" class="btn" id="applyCustom" style="padding:6px 12px;">Apply</button>
+        </span>
+        <select id="ownerFilter" aria-label="Filter by sales owner">
+          <option value="">All Users</option>
+        </select>
+        <select id="serviceFilter" aria-label="Filter by service">
+          <option value="">All Services</option>
+        </select>
+        <span class="spacer"></span>
+        <span class="period-label" id="periodLabel"></span>
+        <button type="button" class="btn" id="exportBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export CSV
+        </button>
+      </div>
+
+      <!-- ======== KPI ROW ======== -->
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <!-- ======== LEAD ANALYTICS ======== -->
+      <div class="grid g-leads" style="margin-top:12px;">
+        <div class="card" id="targetCard"></div>
+        <div class="card">
+          <h3>Lead Funnel</h3>
+          <p class="hint">How leads progress through qualification to conversion in this period.</p>
+          <div id="funnelChart"></div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <div><h3>Daily Lead Trend</h3><p class="hint">New, qualified and converted leads per day.</p></div>
+            <div class="legend">
+              <span><i class="dot" style="background:#7d766a"></i>New Leads</span>
+              <span><i class="dot" style="background:var(--accent)"></i>Qualified</span>
+              <span><i class="dot" style="background:#3d9e74"></i>Converted</span>
+            </div>
+          </div>
+          <div id="leadTrend"></div>
+        </div>
+        <div class="card">
+          <h3>Lead Sources</h3>
+          <p class="hint">Where this period's leads came from.</p>
+          <div id="sourceDonut"></div>
+        </div>
+      </div>
+
+      <div class="grid g-tables" style="margin-top:12px;">
+        <div class="card">
+          <h3>Lead Status Breakdown</h3>
+          <p class="hint">Current pipeline status of leads created in this period.</p>
+          <div id="statusBars"></div>
+        </div>
+        <div class="card">
+          <h3>Leads by Source — Trend Detail</h3>
+          <p class="hint">Volume and conversion performance per acquisition channel.</p>
+          <div class="tbl-wrap"><table id="sourceTable"></table></div>
+        </div>
+      </div>
+
+      <!-- ======== QUOTATION ANALYTICS ======== -->
+      <div class="section-head">
+        <span class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+        <div><h2>Quotation Analytics</h2><p>Volume, value and conversion of quotations raised in this period.</p></div>
+      </div>
+      <div class="grid g-quotes">
+        <div class="card">
+          <h3>Quotations by Service / Category</h3>
+          <p class="hint">Number of quotations raised per service.</p>
+          <div id="quotesByService"></div>
+        </div>
+        <div class="card">
+          <h3>Quotation Value by Service</h3>
+          <p class="hint">Total quoted amount and share of pipeline value.</p>
+          <div id="quoteValueBars"></div>
+        </div>
+        <div class="card">
+          <h3>Service-wise Quotation Details</h3>
+          <p class="hint">Acceptance pipeline for every service line.</p>
+          <div class="tbl-wrap"><table id="quoteServiceTable"></table></div>
+        </div>
+        <div class="card">
+          <h3>Quote → Deal Conversion</h3>
+          <p class="hint">Share of quotations that became deals.</p>
+          <div id="quoteGauge" style="text-align:center;"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px;">
+        <div class="card-head">
+          <div><h3>Lead-wise Quotation History</h3><p class="hint">Every lead that received a quotation in this period. Select a row to drill into the full lead record.</p></div>
+        </div>
+        <div class="tbl-wrap"><table id="leadQuoteTable"></table></div>
+      </div>
+
+      <!-- ======== DEALS & REVENUE ======== -->
+      <div class="section-head">
+        <span class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div><h2>Deals &amp; Revenue</h2><p>Deal flow, revenue mix and collection health for this period.</p></div>
+      </div>
+      <div class="grid g-deals">
+        <div class="card">
+          <div class="card-head">
+            <div><h3>Deals Created vs Deal Revenue (by Service)</h3></div>
+            <div class="legend">
+              <span><i class="dot" style="background:#8a8378"></i>Deals</span>
+              <span><i class="dot" style="background:var(--accent)"></i>Revenue</span>
+            </div>
+          </div>
+          <div id="dealsByService"></div>
+        </div>
+        <div class="card">
+          <h3>Revenue by Category</h3>
+          <p class="hint">Deal value grouped by service category.</p>
+          <div id="revCategory"></div>
+        </div>
+        <div class="card">
+          <h3>Priority Breakdown</h3>
+          <p class="hint">Deals and revenue by deal priority.</p>
+          <div class="tbl-wrap"><table id="priorityTable"></table></div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <div><h3>Daily Revenue Trend</h3></div>
+            <div class="legend">
+              <span><i class="dot" style="background:#8a8378"></i>Booked</span>
+              <span><i class="dot" style="background:var(--accent)"></i>Collected</span>
+            </div>
+          </div>
+          <div id="revTrend"></div>
+        </div>
+        <div class="card">
+          <h3>Total vs Collected Revenue</h3>
+          <div id="moneySummary"></div>
+        </div>
+      </div>
+      <div class="grid g-tables" style="margin-top:12px;">
+        <div class="card">
+          <h3>Deal Progress</h3>
+          <p class="hint">Largest open deals in this period. Select a deal to see its orders and payments.</p>
+          <div id="dealProgress"></div>
+        </div>
+        <div class="card">
+          <h3>All Deals in Period</h3>
+          <p class="hint">Select any row for the deal drill-down.</p>
+          <div class="tbl-wrap"><table id="dealTable"></table></div>
+        </div>
+      </div>
+
+      <!-- ======== ORDERS & PAYMENTS ======== -->
+      <div class="section-head">
+        <span class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+        <div><h2>Orders &amp; Payments</h2><p>Fulfilment progress, completed orders and money collected.</p></div>
+      </div>
+      <div class="grid g-orders">
+        <div class="card">
+          <h3>Order Status</h3>
+          <p class="hint">Orders created in this period, by fulfilment status.</p>
+          <div id="orderDonut"></div>
+          <div id="orderKpis" style="margin-top:10px;"></div>
+        </div>
+        <div class="card">
+          <h3>Orders &amp; Stage Progress by Service</h3>
+          <div class="legend" style="margin-bottom:8px;">
+            <span><i class="dot" style="background:#cf9432"></i>Pending</span>
+            <span><i class="dot" style="background:var(--accent)"></i>In Progress</span>
+            <span><i class="dot" style="background:#3d9e74"></i>Completed</span>
+            <span><i class="dot" style="background:#c9403d"></i>On Hold</span>
+          </div>
+          <div id="orderStages"></div>
+        </div>
+        <div class="card">
+          <h3>Collection Trend</h3>
+          <p class="hint">Payments collected per day in this period.</p>
+          <div id="collectionTrend"></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px;">
+        <h3>Payment History</h3>
+        <p class="hint">Most recent payments recorded in this period. Select a row to open the related deal.</p>
+        <div class="tbl-wrap"><table id="paymentTable"></table></div>
+      </div>
+
+      <!-- ======== LEADS TABLE + TEAMS ======== -->
+      <div class="section-head">
+        <span class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div><h2>Leads &amp; Team Performance</h2><p>Drill into any lead to see its quotations, deals, orders and payments.</p></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div><h3>Leads in Period</h3><p class="hint" id="leadCountHint"></p></div>
+          <input class="search-input" id="leadSearch" type="search" placeholder="Search name or company…" aria-label="Search leads" />
+        </div>
+        <div class="tbl-wrap"><table id="leadTable"></table></div>
+        <button type="button" class="show-more" id="leadShowMore">Show all leads</button>
+      </div>
+      <div class="grid g-tables" style="margin-top:12px;">
+        <div class="card">
+          <div class="card-head"><h3>Sales Team Activity</h3><span class="chip blue">Sales Team</span></div>
+          <div class="tbl-wrap"><table id="salesTable"></table></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Operations Team Activity</h3><span class="chip violet">Operations</span></div>
+          <div class="tbl-wrap"><table id="opsTable"></table></div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:12px;">
+        <h3>Recent CRM Activity</h3>
+        <p class="hint">Latest record changes across leads, quotations, deals, orders and payments.</p>
+        <div class="activity" id="activityFeed"></div>
+      </div>
+
+      <p class="foot-note">Demonstration dashboard populated with sample CRM data · Period anchor: 18 Oct 2026 · All figures recalculate from the filters above.</p>
+    </div>
+
+    <!-- ======== DRILL-DOWN DRAWER ======== -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer" id="drawer" aria-label="Record details">
+      <div class="drawer-inner" id="drawerContent"></div>
+    </aside>
+
+    <script>
+    "use strict";
+    /* ================================================================
+       Dummy CRM dataset — generated deterministically (seeded) so the
+       dashboard is identical on every load. Relationships:
+       Lead 1─n Quotation, Lead 1─n Deal, Deal 1─n Order, Deal 1─n Payment
+       ================================================================ */
+    function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+    var rnd = mulberry32(20261018);
+    function ri(min,max){return Math.floor(rnd()*(max-min+1))+min;}
+    function pick(arr){return arr[Math.floor(rnd()*arr.length)];}
+    function wpick(pairs){var t=0,i;for(i=0;i<pairs.length;i++)t+=pairs[i][1];var r=rnd()*t;for(i=0;i<pairs.length;i++){r-=pairs[i][1];if(r<=0)return pairs[i][0];}return pairs[pairs.length-1][0];}
+
+    /* ---- date helpers (all dates are YYYY-MM-DD strings) ---- */
+    var MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    function dstr(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+    function parseD(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
+    function addDays(s,n){var d=parseD(s);d.setDate(d.getDate()+n);return dstr(d);}
+    function diffDays(a,b){return Math.round((parseD(b)-parseD(a))/86400000);}
+    function fmtDate(s){var d=parseD(s);return d.getDate()+" "+MONTHS[d.getMonth()];}
+    function fmtDateFull(s){var d=parseD(s);return d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear();}
+    var ANCHOR="2026-10-18";               /* "today" for the demo dataset */
+    var DATA_START=addDays(ANCHOR,-119);   /* 120 days of history */
+
+    /* ---- catalogue ---- */
+    var SERVICES=[
+      {name:"Private Limited Company", cat:"Incorporation",     base:14999, spread:3.6},
+      {name:"LLP Registration",        cat:"Incorporation",     base:9999,  spread:2.6},
+      {name:"GST Filing",              cat:"Tax & Compliance",  base:4999,  spread:2.4},
+      {name:"Trademark Registration",  cat:"Legal & IP",        base:8999,  spread:2.2},
+      {name:"FSSAI License",           cat:"Licensing",         base:5999,  spread:2.6},
+      {name:"ISO Certification",       cat:"Licensing",         base:24999, spread:2.8},
+      {name:"Annual Compliance",       cat:"Tax & Compliance",  base:19999, spread:2.4},
+      {name:"Website Development",     cat:"Digital Services",  base:34999, spread:3.4}
+    ];
+    var SOURCES=["Google Ads","Website","Referral","JustDial","Walk-in","Social Media"];
+    var SOURCE_COLORS={"Google Ads":"#f4501e","Website":"#6e675c","Referral":"#b7b0a2","JustDial":"#8a8378","Walk-in":"#d5cfc2","Social Media":"#c97b57","Other":"#e0dacf"};
+    var SALES_TEAM=["Nancy Singh","Sneha Choudhary","Tannu Kumari","Rahul Verma"];
+    var OPS_TEAM=["Gaurav Pant","Srishti Upadhyay","Azam Afaroz"];
+    var FIRST=["Aarav","Priya","Rohan","Ananya","Vikram","Kavita","Arjun","Meera","Karan","Divya","Aditya","Pooja","Nikhil","Ritu","Sanjay","Neha","Varun","Ishita","Manish","Shreya","Rajesh","Anjali","Deepak","Nidhi","Amit","Komal","Suresh","Rekha","Harsh","Tanvi"];
+    var LAST=["Sharma","Patel","Gupta","Mehta","Iyer","Khan","Reddy","Nair","Singh","Joshi","Rao","Verma","Das","Kaur","Mishra","Pillai","Chopra","Bose","Malhotra","Kulkarni"];
+    var BIZ=["Foods","Traders","Textiles","Enterprises","Solutions","Retail","Garments","Electronics","Interiors","Pharma","Logistics","Apparels","Jewels","Agro","Wellness","Studios","Motors","Constructions","Healthcare","Bakers"];
+    var METHODS=["UPI","Bank Transfer","Card","Cash"];
+    var AVATAR_COLORS=["#2b2823","#f4501e","#8a8378","#b7b0a2","#5c564c","#c97b57","#7a7264","#3e3a33"];
+
+    function quoteAmount(svc){return Math.round(svc.base*(0.7+rnd()*svc.spread)/10)*10;}
+
+    /* ---- generate leads ---- */
+    var leads=[], quotations=[], deals=[], orders=[], payments=[];
+    var N_LEADS=340;
+    for(var i=0;i<N_LEADS;i++){
+      var offset=Math.floor(120*Math.pow(rnd(),0.82)); if(offset>119)offset=119;
+      var date=addDays(DATA_START,offset);
+      if(i<5) date=ANCHOR; else if(i<9) date=addDays(ANCHOR,-1); else if(i<12) date=addDays(ANCHOR,-2);
+      var fn=pick(FIRST), ln=pick(LAST);
+      var status=wpick([["unqualified",48],["qualified",26],["converted",26]]);
+      var svc=wpick([[SERVICES[0],26],[SERVICES[1],13],[SERVICES[2],15],[SERVICES[3],10],[SERVICES[4],9],[SERVICES[5],8],[SERVICES[6],10],[SERVICES[7],9]]);
+      var lead={
+        id:"L-"+(209001+i), name:fn+" "+ln,
+        company:fn+" "+pick(BIZ),
+        phone:"+91 "+ri(70000,99999)+" "+ri(10000,99999),
+        email:(fn+"."+ln+"@gmail.com").toLowerCase(),
+        source:wpick([["Google Ads",34],["Website",22],["Referral",14],["JustDial",12],["Walk-in",9],["Social Media",9]]),
+        service:svc.name, category:svc.cat, status:status,
+        owner:wpick([["Nancy Singh",34],["Sneha Choudhary",26],["Tannu Kumari",22],["Rahul Verma",18]]),
+        date:date
+      };
+      leads.push(lead);
+
+      /* quotations for this lead */
+      var nQ = status==="converted" ? ri(2,3) : status==="qualified" ? ri(1,2) : (rnd()<0.3 ? 1 : 0);
+      var leadQuotes=[];
+      for(var q=0;q<nQ;q++){
+        var qSvc = q===0 ? svc : pick(SERVICES);
+        var qStatus;
+        if(status==="converted" && q===0) qStatus="Accepted";
+        else qStatus=wpick([["Pending",62],["Rejected",38]]);
+        var quote={ id:"Q-"+(10401+quotations.length), leadId:lead.id, service:qSvc.name, category:qSvc.cat,
+          amount:quoteAmount(qSvc), status:qStatus, date:date };
+        var qd=addDays(date,ri(0,6)); if(qd>ANCHOR)qd=ANCHOR; quote.date=qd;
+        quotations.push(quote); leadQuotes.push(quote);
+      }
+
+      /* deals from converted leads */
+      if(status==="converted"){
+        var nD = rnd()<0.25 ? 2 : 1;
+        for(var dI=0;dI<nD;dI++){
+          var accQ = dI===0 ? leadQuotes[0] : null;
+          var dSvc = accQ ? SERVICES.filter(function(s){return s.name===accQ.service;})[0] : svc;
+          var dDate = addDays(date,ri(2,10)); if(dDate>ANCHOR)dDate=ANCHOR;
+          var value = accQ ? Math.round(accQ.amount*(0.92+rnd()*0.13)/10)*10 : quoteAmount(dSvc);
+          var age=diffDays(dDate,ANCHOR);
+          var progress = Math.max(5,Math.min(100, Math.round(age*3.3 + ri(-6,24))));
+          var deal={ id:"D-"+(701+deals.length), leadId:lead.id, quotationId:accQ?accQ.id:"—",
+            service:dSvc.name, category:dSvc.cat, value:value,
+            priority:wpick([["High",34],["Medium",46],["Low",20]]),
+            stage: progress>=100?"Closed":progress>=70?"Delivery":progress>=40?"In Progress":progress>=15?"Confirmed":"Negotiation",
+            progress:progress, date:dDate, owner:lead.owner };
+          deals.push(deal);
+
+          /* orders for this deal */
+          var nO=ri(1,3), remaining=value;
+          for(var oI=0;oI<nO;oI++){
+            var oAmt = oI===nO-1 ? remaining : Math.round(value*(0.25+rnd()*0.35)/10)*10;
+            remaining-=oAmt;
+            var oProg = Math.max(0,Math.min(100, progress+ri(-25,15)));
+            if(oI===0 && progress>=85) oProg=100;
+            var oStatus = oProg>=100?"Completed":oProg<=0?"Pending":(rnd()<0.09?"On Hold":"In Progress");
+            if(oStatus==="Completed")oProg=100;
+            var oDate=addDays(dDate,ri(0,8)); if(oDate>ANCHOR)oDate=ANCHOR;
+            orders.push({ id:"O-"+(3001+orders.length), dealId:deal.id, leadId:lead.id,
+              service:deal.service, amount:oAmt, progress:oProg, status:oStatus,
+              ops:pick(OPS_TEAM), date:oDate });
+          }
+
+          /* payments for this deal — collected grows with progress */
+          var collectedTarget = Math.round(value * (progress>=100 ? (rnd()<0.88?1:0.82) : (0.25 + (progress/100)*0.6)) /10)*10;
+          var nP = collectedTarget>=100 ? ri(1,4) : 0;
+          var weights=[], wsum=0;
+          for(var wI=0;wI<nP;wI++){ var wv=0.6+rnd()*0.9; weights.push(wv); wsum+=wv; }
+          var acc=0;
+          for(var pI=0;pI<nP;pI++){
+            var pAmt = pI===nP-1 ? collectedTarget-acc : Math.max(10,Math.round(collectedTarget*weights[pI]/wsum/10)*10);
+            acc+=pAmt;
+            var pDate=addDays(dDate,ri(0,Math.max(0,Math.min(30,age)))); if(pDate>ANCHOR)pDate=ANCHOR;
+            payments.push({ id:"P-"+(5001+payments.length), dealId:deal.id, leadId:lead.id,
+              amount:pAmt, method:wpick([["UPI",40],["Bank Transfer",34],["Card",16],["Cash",10]]),
+              status: rnd()<0.06 ? "Pending" : "Cleared", date:pDate });
+          }
+        }
+      }
+    }
+    /* attach collected totals to deals */
+    deals.forEach(function(dl){
+      dl.collected = payments.filter(function(p){return p.dealId===dl.id && p.status==="Cleared";})
+        .reduce(function(s,p){return s+p.amount;},0);
+      dl.outstanding = Math.max(0, dl.value - dl.collected);
+    });
+    var leadById={}, dealById={};
+    leads.forEach(function(l){leadById[l.id]=l;});
+    deals.forEach(function(d){dealById[d.id]=d;});
+
+    /* ---- formatting helpers ---- */
+    function inr(n){return "₹"+Math.round(n).toLocaleString("en-IN");}
+    function inrShort(n){
+      if(Math.abs(n)>=100000) return "₹"+(n/100000).toFixed(n>=1000000?1:2).replace(/\.?0+$/,"")+"L";
+      if(Math.abs(n)>=1000) return "₹"+(n/1000).toFixed(1).replace(/\.0$/,"")+"K";
+      return "₹"+Math.round(n);
+    }
+    function pct(part,whole){return whole? (part/whole*100) : 0;}
+    function fmtPct(x,d){return x.toFixed(d===undefined?1:d)+"%";}
+    function initials(name){return name.split(" ").map(function(w){return w[0];}).join("").slice(0,2).toUpperCase();}
+    function avatarColor(name){var h=0;for(var i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))>>>0;return AVATAR_COLORS[h%AVATAR_COLORS.length];}
+    function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+    function statusChip(st){
+      var map={"converted":"green","qualified":"blue","unqualified":"red","Converted":"green","Qualified":"blue","Unqualified":"red","Accepted":"green","Pending":"amber","Rejected":"red",
+        "Completed":"green","In Progress":"blue","On Hold":"red","Cleared":"green","Closed":"green","High":"red","Medium":"amber","Low":"teal"};
+      return '<span class="chip '+(map[st]||"grey")+'">'+esc(st)+'</span>';
+    }
+
+    /* ================================================================
+       State + filtering
+       ================================================================ */
+    var state={ preset:"30d", from:addDays(ANCHOR,-29), to:ANCHOR, owner:"", service:"", leadLimit:12, leadQuery:"" };
+
+    function periodRange(){
+      if(state.preset==="today") return {from:ANCHOR,to:ANCHOR};
+      if(state.preset==="7d") return {from:addDays(ANCHOR,-6),to:ANCHOR};
+      if(state.preset==="30d") return {from:addDays(ANCHOR,-29),to:ANCHOR};
+      return {from:state.from,to:state.to};
+    }
+    function prevRange(r){
+      var len=diffDays(r.from,r.to)+1;
+      return {from:addDays(r.from,-len), to:addDays(r.from,-1), len:len};
+    }
+    function inRange(ds,r){return ds>=r.from && ds<=r.to;}
+
+    function filtered(r){
+      function ownerOk(leadId){return !state.owner || (leadById[leadId] && leadById[leadId].owner===state.owner);}
+      var L=leads.filter(function(l){return inRange(l.date,r) && (!state.owner||l.owner===state.owner) && (!state.service||l.service===state.service);});
+      var Q=quotations.filter(function(q){return inRange(q.date,r) && ownerOk(q.leadId) && (!state.service||q.service===state.service);});
+      var D=deals.filter(function(d){return inRange(d.date,r) && ownerOk(d.leadId) && (!state.service||d.service===state.service);});
+      var O=orders.filter(function(o){return inRange(o.date,r) && ownerOk(o.leadId) && (!state.service||o.service===state.service);});
+      var P=payments.filter(function(p){return inRange(p.date,r) && ownerOk(p.leadId);});
+      return {leads:L,quotes:Q,deals:D,orders:O,payments:P};
+    }
+    function stats(f){
+      var qualified=f.leads.filter(function(l){return l.status==="qualified"||l.status==="converted";}).length;
+      var converted=f.leads.filter(function(l){return l.status==="converted";}).length;
+      var revenue=f.deals.reduce(function(s,d){return s+d.value;},0);
+      /* Collected is measured on the same deal cohort as Total and Outstanding,
+         so Total - Collected = Outstanding always reconciles. */
+      var collected=f.deals.reduce(function(s,d){return s+d.collected;},0);
+      return {
+        total:f.leads.length, qualified:qualified, converted:converted,
+        unqualified:f.leads.filter(function(l){return l.status==="unqualified";}).length,
+        convRate:pct(converted,f.leads.length),
+        quotes:f.quotes.length, quoteValue:f.quotes.reduce(function(s,q){return s+q.amount;},0),
+        acceptedQuotes:f.quotes.filter(function(q){return q.status==="Accepted";}).length,
+        deals:f.deals.length, revenue:revenue, collected:collected,
+        outstanding:Math.max(0,revenue-collected),
+        orders:f.orders.length,
+        ordersCompleted:f.orders.filter(function(o){return o.status==="Completed";}).length
+      };
+    }
+    function deltaHTML(cur,prev,invert){
+      if(prev===0 && cur===0) return '<span class="delta flat">— <span class="vs">no change vs previous period</span></span>';
+      if(prev===0) return '<span class="delta up">▲ new <span class="vs">vs previous period</span></span>';
+      var ch=(cur-prev)/prev*100, good = invert ? ch<0 : ch>0;
+      var cls = Math.abs(ch)<0.05 ? "flat" : (good?"up":"down");
+      var arrow = Math.abs(ch)<0.05 ? "—" : (ch>0?"▲":"▼");
+      return '<span class="delta '+cls+'">'+arrow+" "+Math.abs(ch).toFixed(1)+'% <span class="vs">vs previous period</span></span>';
+    }
+
+    /* ================================================================
+       SVG chart helpers
+       ================================================================ */
+    function buckets(r){
+      var days=diffDays(r.from,r.to)+1, out=[];
+      if(days<=45){ for(var i=0;i<days;i++) out.push({from:addDays(r.from,i),to:addDays(r.from,i),label:fmtDate(addDays(r.from,i))}); }
+      else { var step=Math.ceil(days/30);
+        for(var s=r.from;s<=r.to;s=addDays(s,step)){ var e=addDays(s,step-1); if(e>r.to)e=r.to; out.push({from:s,to:e,label:fmtDate(s)}); } }
+      return out;
+    }
+    function seriesByDate(items,r,fn){
+      var bs=buckets(r);
+      return {labels:bs.map(function(b){return b.label;}),
+        values:bs.map(function(b){return items.filter(function(it){return it.date>=b.from&&it.date<=b.to;}).reduce(fn,0);})};
+    }
+    function countByDate(items,r,pred){
+      return seriesByDate(items,r,function(s,it){return s+((!pred||pred(it))?1:0);}).values;
+    }
+    function lineChart(el,seriesList,r,yFmt){
+      yFmt=yFmt||function(v){return String(Math.round(v));};
+      var W=560,H=190,pl=40,pr=18,pt=12,pb=24, iw=W-pl-pr, ih=H-pt-pb;
+      var bs=buckets(r), n=bs.length;
+      var max=1; seriesList.forEach(function(s){s.values.forEach(function(v){if(v>max)max=v;});});
+      max=Math.ceil(max*1.15);
+      function X(i){return pl+(n<=1?iw/2:iw*i/(n-1));}
+      function Y(v){return pt+ih-(v/max)*ih;}
+      var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Trend chart">';
+      for(var g=0;g<=3;g++){var gy=pt+ih*g/3;svg+='<line class="grid-line" x1="'+pl+'" y1="'+gy+'" x2="'+(W-pr)+'" y2="'+gy+'"/><text class="axis-txt" x="'+(pl-5)+'" y="'+(gy+3)+'" text-anchor="end">'+yFmt(max*(1-g/3))+'</text>';}
+      seriesList.forEach(function(s){
+        var pts=s.values.map(function(v,i){return X(i)+","+Y(v);}).join(" ");
+        if(s.fill && s.values.length>1){
+          svg+='<polygon points="'+pl+","+(pt+ih)+" "+pts+" "+X(s.values.length-1)+","+(pt+ih)+'" fill="'+s.color+'" opacity="0.10"/>';
+        }
+        svg+='<polyline points="'+pts+'" fill="none" stroke="'+s.color+'" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>';
+        s.values.forEach(function(v,i){ if(n<=16) svg+='<circle cx="'+X(i)+'" cy="'+Y(v)+'" r="2.6" fill="'+s.color+'"/>'; });
+      });
+      var step=Math.max(1,Math.ceil(n/8));
+      bs.forEach(function(b,i){ if(i%step===0||i===n-1){ var last=i===n-1; svg+='<text class="axis-txt" x="'+(last?W-3:X(i))+'" y="'+(H-6)+'" text-anchor="'+(last?"end":"middle")+'">'+b.label+'</text>'; } });
+      svg+="</svg>";
+      el.innerHTML = n? svg : '<div class="empty">No data in this period</div>';
+    }
+    function barChart(el,labels,values,fmt,color){
+      var W=560,H=200,pl=30,pr=6,pt=18,pb=34, iw=W-pl-pr, ih=H-pt-pb;
+      var max=Math.max.apply(null,values.concat([1])); max=Math.ceil(max*1.15);
+      var bw=iw/Math.max(labels.length,1);
+      var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Bar chart">';
+      for(var g=0;g<=3;g++){var gy=pt+ih*g/3;svg+='<line class="grid-line" x1="'+pl+'" y1="'+gy+'" x2="'+(W-pr)+'" y2="'+gy+'"/><text class="axis-txt" x="'+(pl-5)+'" y="'+(gy+3)+'" text-anchor="end">'+fmt(Math.round(max*(1-g/3)))+'</text>';}
+      values.forEach(function(v,i){
+        var h=(v/max)*ih, x=pl+bw*i+bw*0.22, w=bw*0.56;
+        svg+='<rect x="'+x+'" y="'+(pt+ih-h)+'" width="'+w+'" height="'+h+'" rx="3" fill="'+color+'"><title>'+esc(labels[i])+": "+fmt(v)+'</title></rect>';
+        svg+='<text x="'+(x+w/2)+'" y="'+(pt+ih-h-5)+'" text-anchor="middle" style="font-size:11px;font-weight:700;fill:var(--ink)">'+fmt(v)+'</text>';
+        var lab=labels[i].length>11?labels[i].slice(0,10)+"…":labels[i];
+        svg+='<text class="axis-txt" x="'+(x+w/2)+'" y="'+(H-16)+'" text-anchor="middle">'+esc(lab)+'</text>';
+      });
+      svg+="</svg>";
+      el.innerHTML = labels.length? svg : '<div class="empty">No data in this period</div>';
+    }
+    function donut(el,segments,centerTop,centerBottom){
+      var total=segments.reduce(function(s,x){return s+x.value;},0);
+      var R=52,C=2*Math.PI*R, off=0, circles="";
+      if(total>0){
+        segments.forEach(function(sg){
+          if(sg.value<=0)return;
+          var frac=sg.value/total, len=Math.max(0,frac*C-2.5);
+          circles+='<circle cx="70" cy="70" r="'+R+'" fill="none" stroke="'+sg.color+'" stroke-width="17" stroke-dasharray="'+len+" "+C+'" stroke-dashoffset="'+(-off)+'" transform="rotate(-90 70 70)"><title>'+esc(sg.label)+": "+sg.value+'</title></circle>';
+          off+=frac*C;
+        });
+      } else { circles='<circle cx="70" cy="70" r="'+R+'" fill="none" stroke="var(--line)" stroke-width="17"/>'; }
+      var list=segments.map(function(sg){
+        return '<div class="dl-row"><span class="dot" style="background:'+sg.color+'"></span>'+esc(sg.label)+'<b>'+sg.value+'</b><span class="pct">('+fmtPct(pct(sg.value,total),0)+')</span></div>';
+      }).join("");
+      el.innerHTML='<div class="donut-flex"><svg viewBox="0 0 140 140" width="132" height="132" role="img" aria-label="Donut chart">'+circles+
+        '<text x="70" y="66" text-anchor="middle" style="font-size:21px;font-weight:800;fill:var(--ink)">'+centerTop+'</text>'+
+        '<text x="70" y="84" text-anchor="middle" style="font-size:9.5px;font-weight:700;fill:var(--faint);letter-spacing:.06em">'+centerBottom+'</text></svg>'+
+        '<div class="donut-list">'+(list||'<div class="empty">No data</div>')+'</div></div>';
+    }
+    function gauge(el,percent,bottomText){
+      var R=54,C=Math.PI*R, filled=Math.max(0,Math.min(1,percent/100))*C;
+      el.innerHTML='<svg viewBox="0 0 150 92" width="170" role="img" aria-label="Conversion gauge">'+
+        '<path d="M 14 84 A 54 54 0 0 1 122 84" fill="none" stroke="var(--line)" stroke-width="13" stroke-linecap="round" transform="translate(7,4)"/>'+
+        '<path d="M 14 84 A 54 54 0 0 1 122 84" fill="none" stroke="var(--accent)" stroke-width="13" stroke-linecap="round" stroke-dasharray="'+filled+" "+C+'" transform="translate(7,4)"/>'+
+        '<text x="75" y="72" text-anchor="middle" style="font-size:24px;font-weight:800;fill:var(--ink)">'+fmtPct(percent)+'</text></svg>'+
+        '<div style="font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px;">'+bottomText+'</div>';
+    }
+    function hbars(el,rows){
+      el.innerHTML = rows.length ? rows.map(function(r){
+        return '<div class="hbar-row"><span class="hb-name" title="'+esc(r.name)+'">'+esc(r.name)+'</span>'+
+          '<span class="hbar-track"><span class="hbar-fill" style="width:'+r.pctW+'%;background:'+(r.color||"var(--accent)")+'"></span></span>'+
+          '<span class="hbar-val">'+r.value+' <small>('+fmtPct(r.share,1)+')</small></span></div>';
+      }).join("") : '<div class="empty">No data in this period</div>';
+    }
+
+    /* ================================================================
+       Renderers
+       ================================================================ */
+    var ICONS={
+      leads:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+      target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+      x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+      filter:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>',
+      file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+      brief:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+      rupee:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a6 6 0 0 0 0-10"/></svg>'
+    };
+    function renderKPIs(cur,prev,prevLen){
+      var cards=[
+        {label:"New Leads", icon:ICONS.leads, color:"var(--muted)", soft:"var(--card-2)", value:cur.total, delta:deltaHTML(cur.total,prev.total)},
+        {label:"Qualified Leads", icon:ICONS.check, color:"var(--muted)", soft:"var(--card-2)", value:cur.qualified, sub:'<b>'+fmtPct(pct(cur.qualified,cur.total))+'</b>Qualified %', delta:deltaHTML(cur.qualified,prev.qualified)},
+        {label:"Converted Leads", icon:ICONS.target, color:"var(--muted)", soft:"var(--card-2)", value:cur.converted, sub:'<b>'+fmtPct(cur.convRate)+'</b>Conversion %', delta:deltaHTML(cur.converted,prev.converted)},
+        {label:"Unqualified Leads", icon:ICONS.x, color:"var(--muted)", soft:"var(--card-2)", value:cur.unqualified, sub:'<b>'+fmtPct(pct(cur.unqualified,cur.total))+'</b>Unqualified %', delta:deltaHTML(cur.unqualified,prev.unqualified,true)},
+        {label:"Conversion Rate", icon:ICONS.filter, color:"var(--muted)", soft:"var(--card-2)", value:fmtPct(cur.convRate), delta:deltaHTML(Math.round(cur.convRate*10),Math.round(prev.convRate*10))},
+        {label:"Quotations Created", icon:ICONS.file, color:"var(--muted)", soft:"var(--card-2)", value:cur.quotes, sub:'<b>'+inrShort(cur.quoteValue)+'</b>Quoted value', delta:deltaHTML(cur.quotes,prev.quotes)},
+        {label:"Deals Created", icon:ICONS.brief, color:"var(--muted)", soft:"var(--card-2)", value:cur.deals, sub:'<b>'+inrShort(cur.revenue)+'</b>Deal value', delta:deltaHTML(cur.deals,prev.deals)},
+        {label:"Revenue Collected", icon:ICONS.rupee, color:"var(--muted)", soft:"var(--card-2)", value:inrShort(cur.collected), sub:'<b>'+inrShort(cur.outstanding)+'</b>Outstanding', delta:deltaHTML(cur.collected,prev.collected)}
+      ];
+      document.getElementById("kpiGrid").innerHTML=cards.map(function(c){
+        return '<div class="kpi"><div class="k-label"><span class="k-ico" style="background:'+c.soft+';color:'+c.color+'">'+c.icon+'</span>'+c.label+'</div>'+
+          '<div class="k-main"><span class="k-value">'+c.value+'</span>'+(c.sub?'<span class="k-sub">'+c.sub+'</span>':"")+'</div>'+c.delta+'</div>';
+      }).join("");
+    }
+
+    var MONTHLY_TARGET=1500000;
+    function renderTarget(f,cur,r){
+      var days=diffDays(r.from,r.to)+1;
+      var target=Math.round(MONTHLY_TARGET*days/30);
+      var achieved=cur.collected, remaining=Math.max(0,target-achieved), done=pct(achieved,target);
+      document.getElementById("targetCard").innerHTML=
+        '<h3>◎ Target Achievement</h3><p class="hint">Revenue target for this '+days+'-day period (₹15,00,000 / month, pro-rated).</p>'+
+        '<div class="target-big">'+inr(target)+'</div>'+
+        '<div style="margin-top:8px;"><div class="t-row"><span>● Achieved (collected)</span><span><b>'+inr(achieved)+'</b> · '+fmtPct(done)+'</span></div>'+
+        '<div class="t-row"><span>● Remaining</span><span><b>'+inr(remaining)+'</b> · '+fmtPct(pct(remaining,target))+'</span></div></div>'+
+        '<div class="progress" style="margin-top:8px;"><i class="'+(done>=60?"green":done>=30?"":"amber")+'" style="width:'+Math.min(100,done)+'%"></i></div>'+
+        '<p class="hint" style="margin-top:9px;">'+f.deals.length+' deals worth '+inr(cur.revenue)+' booked; '+inr(cur.outstanding)+' still outstanding.</p>';
+    }
+    function renderFunnel(s){
+      var el=document.getElementById("funnelChart");
+      el.innerHTML='<div class="funnel">'+
+        '<div class="f-stage" style="width:100%;background:#2b2823;"><span>New Leads</span><b>'+s.total+'</b><span>(100%)</span></div>'+
+        '<div class="f-stage" style="width:74%;background:#f4501e;"><span>Qualified</span><b>'+s.qualified+'</b><span>('+fmtPct(pct(s.qualified,s.total))+')</span></div>'+
+        '<div class="f-stage" style="width:48%;background:#ddd6c8;color:#2a2721;"><span>Converted</span><b>'+s.converted+'</b><span>('+fmtPct(pct(s.converted,s.total))+')</span></div></div>'+
+        '<div class="f-note">Unqualified: '+s.unqualified+' leads ('+fmtPct(pct(s.unqualified,s.total))+') dropped out of the funnel</div>';
+    }
+    function renderLeadTrend(f,r){
+      lineChart(document.getElementById("leadTrend"),[
+        {values:countByDate(f.leads,r), color:"#7d766a", fill:true},
+        {values:countByDate(f.leads,r,function(l){return l.status!=="unqualified";}), color:"#f4501e"},
+        {values:countByDate(f.leads,r,function(l){return l.status==="converted";}), color:"#3d9e74"}
+      ],r);
+    }
+    function renderSources(f){
+      var counts={}; f.leads.forEach(function(l){counts[l.source]=(counts[l.source]||0)+1;});
+      var segs=Object.keys(counts).sort(function(a,b){return counts[b]-counts[a];}).map(function(k){return {label:k,value:counts[k],color:SOURCE_COLORS[k]||"#8b9bb2"};});
+      donut(document.getElementById("sourceDonut"),segs,String(f.leads.length),"TOTAL LEADS");
+      var rows=SOURCES.map(function(src){
+        var ls=f.leads.filter(function(l){return l.source===src;});
+        var conv=ls.filter(function(l){return l.status==="converted";}).length;
+        return {name:src,n:ls.length,conv:conv};
+      }).filter(function(x){return x.n>0;}).sort(function(a,b){return b.n-a.n;});
+      document.getElementById("sourceTable").innerHTML='<thead><tr><th>Source</th><th class="num">Leads</th><th class="num">Share</th><th class="num">Converted</th><th class="num">Conv. Rate</th></tr></thead><tbody>'+
+        (rows.map(function(x){return '<tr><td><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+(SOURCE_COLORS[x.name])+'"></span> '+esc(x.name)+'</td><td class="num"><b>'+x.n+'</b></td><td class="num">'+fmtPct(pct(x.n,f.leads.length))+'</td><td class="num">'+x.conv+'</td><td class="num"><b>'+fmtPct(pct(x.conv,x.n))+'</b></td></tr>';}).join("")||'<tr><td colspan="5"><div class="empty">No leads in this period</div></td></tr>')+'</tbody>';
+    }
+    function renderStatus(f){
+      var defs=[["Qualified","qualified","#f4501e"],["Converted","converted","#3d9e74"],["Unqualified","unqualified","#c9403d"]];
+      var rows=defs.map(function(d){
+        var n=f.leads.filter(function(l){return l.status===d[1];}).length;
+        return {name:d[0], color:d[2], n:n};
+      });
+      var max=Math.max.apply(null,rows.map(function(x){return x.n;}).concat([1]));
+      hbars(document.getElementById("statusBars"),rows.map(function(x){
+        return {name:x.name,value:String(x.n),share:pct(x.n,f.leads.length),pctW:pct(x.n,max),color:x.color};
+      }));
+    }
+    function serviceAgg(items,key){
+      var out={};
+      items.forEach(function(it){var k=it[key||"service"]; if(!out[k])out[k]={count:0,amount:0}; out[k].count++; out[k].amount+=it.amount!==undefined?it.amount:(it.value||0);});
+      return out;
+    }
+    function renderQuotes(f){
+      var bySvc=serviceAgg(f.quotes); 
+      var labels=Object.keys(bySvc).sort(function(a,b){return bySvc[b].count-bySvc[a].count;});
+      barChart(document.getElementById("quotesByService"),labels,labels.map(function(k){return bySvc[k].count;}),function(v){return String(v);},"#f4501e");
+      var totVal=f.quotes.reduce(function(s,q){return s+q.amount;},0);
+      var maxV=Math.max.apply(null,labels.map(function(k){return bySvc[k].amount;}).concat([1]));
+      hbars(document.getElementById("quoteValueBars"),labels.map(function(k){
+        return {name:k,value:inrShort(bySvc[k].amount),share:pct(bySvc[k].amount,totVal),pctW:pct(bySvc[k].amount,maxV)};
+      }));
+      var rows=labels.map(function(k){
+        var qs=f.quotes.filter(function(q){return q.service===k;});
+        var acc=qs.filter(function(q){return q.status==="Accepted";}).length;
+        var pen=qs.filter(function(q){return q.status==="Pending";}).length;
+        var rej=qs.filter(function(q){return q.status==="Rejected";}).length;
+        return '<tr><td><b>'+esc(k)+'</b></td><td class="num">'+qs.length+'</td><td class="num">'+inr(bySvc[k].amount)+'</td><td class="num">'+acc+'</td><td class="num">'+pen+'</td><td class="num">'+rej+'</td><td class="num"><b>'+fmtPct(pct(acc,qs.length),0)+'</b></td></tr>';
+      }).join("");
+      document.getElementById("quoteServiceTable").innerHTML='<thead><tr><th>Service / Order</th><th class="num">Quotations</th><th class="num">Quoted Amount</th><th class="num">Accepted</th><th class="num">Pending</th><th class="num">Rejected</th><th class="num">Conv. Rate</th></tr></thead><tbody>'+
+        (rows||'<tr><td colspan="7"><div class="empty">No quotations in this period</div></td></tr>')+'</tbody>';
+      gauge(document.getElementById("quoteGauge"), pct(f.deals.length,f.quotes.length), f.deals.length+" Deals / "+f.quotes.length+" Quotations");
+      /* lead-wise quotation history */
+      var perLead={};
+      f.quotes.forEach(function(q){ if(!perLead[q.leadId])perLead[q.leadId]=[]; perLead[q.leadId].push(q); });
+      var lrows=Object.keys(perLead).map(function(lid){
+        var lead=leadById[lid], qs=perLead[lid];
+        var tot=qs.reduce(function(s,q){return s+q.amount;},0);
+        var acc=qs.filter(function(q){return q.status==="Accepted";}).length;
+        var dl=f.deals.filter(function(d){return d.leadId===lid;}).length;
+        var last=qs.map(function(q){return q.date;}).sort().pop();
+        return {lead:lead,qs:qs.length,tot:tot,acc:acc,deals:dl,last:last};
+      }).sort(function(a,b){return b.tot-a.tot;}).slice(0,12);
+      document.getElementById("leadQuoteTable").innerHTML='<thead><tr><th>Lead</th><th>Owner</th><th class="num">Quotations</th><th class="num">Total Quoted</th><th class="num">Accepted</th><th class="num">Deals Won</th><th>Last Quote</th><th>Lead Status</th></tr></thead><tbody>'+
+        (lrows.map(function(x){
+          return '<tr class="clickable" data-lead="'+x.lead.id+'"><td><div class="who"><span class="avatar" style="background:'+avatarColor(x.lead.name)+'">'+initials(x.lead.name)+'</span><span><span class="w-name">'+esc(x.lead.name)+'</span><br><span class="w-sub">'+esc(x.lead.company)+'</span></span></div></td>'+
+          '<td>'+esc(x.lead.owner)+'</td><td class="num"><b>'+x.qs+'</b></td><td class="num">'+inr(x.tot)+'</td><td class="num">'+x.acc+'</td><td class="num">'+x.deals+'</td><td>'+fmtDate(x.last)+'</td><td>'+statusChip(x.lead.status.charAt(0).toUpperCase()+x.lead.status.slice(1))+'</td></tr>';
+        }).join("")||'<tr><td colspan="8"><div class="empty">No quotations in this period</div></td></tr>')+'</tbody>';
+    }
+
+    function renderDeals(f,cur,r){
+      /* deals vs revenue by service — grouped bars */
+      var bySvc={};
+      f.deals.forEach(function(d){ if(!bySvc[d.service])bySvc[d.service]={n:0,rev:0}; bySvc[d.service].n++; bySvc[d.service].rev+=d.value; });
+      var labels=Object.keys(bySvc).sort(function(a,b){return bySvc[b].rev-bySvc[a].rev;}).slice(0,6);
+      var el=document.getElementById("dealsByService");
+      if(!labels.length){ el.innerHTML='<div class="empty">No deals in this period</div>'; }
+      else{
+        var W=560,H=200,pl=28,pr=44,pt=16,pb=34, iw=W-pl-pr, ih=H-pt-pb;
+        var maxN=Math.max.apply(null,labels.map(function(k){return bySvc[k].n;}).concat([1]));
+        var maxR=Math.max.apply(null,labels.map(function(k){return bySvc[k].rev;}).concat([1]));
+        var bw=iw/labels.length, svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="Deals and revenue by service">';
+        for(var g=0;g<=3;g++){var gy=pt+ih*g/3;svg+='<line class="grid-line" x1="'+pl+'" y1="'+gy+'" x2="'+(W-pr)+'" y2="'+gy+'"/><text class="axis-txt" x="'+(pl-5)+'" y="'+(gy+3)+'" text-anchor="end">'+Math.round(maxN*(1-g/3))+'</text><text class="axis-txt" x="'+(W-pr+5)+'" y="'+(gy+3)+'">'+inrShort(maxR*(1-g/3))+'</text>';}
+        labels.forEach(function(k,i){
+          var cx=pl+bw*i+bw/2, w=Math.min(15,bw*0.2);
+          var hN=bySvc[k].n/maxN*ih, hR=bySvc[k].rev/maxR*ih;
+          svg+='<rect x="'+(cx-w-2)+'" y="'+(pt+ih-hN)+'" width="'+w+'" height="'+hN+'" rx="3" fill="#8a8378"><title>'+esc(k)+" deals: "+bySvc[k].n+'</title></rect>';
+          svg+='<rect x="'+(cx+2)+'" y="'+(pt+ih-hR)+'" width="'+w+'" height="'+hR+'" rx="3" fill="#f4501e"><title>'+esc(k)+" revenue: "+inr(bySvc[k].rev)+'</title></rect>';
+          svg+='<text x="'+(cx-w-2+w/2)+'" y="'+(pt+ih-hN-4)+'" text-anchor="middle" style="font-size:11px;font-weight:700;fill:var(--ink)">'+bySvc[k].n+'</text>';
+          svg+='<text x="'+(cx+2+w/2)+'" y="'+(pt+ih-hR-4)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:var(--accent)">'+inrShort(bySvc[k].rev)+'</text>';
+          var lab=k.length>11?k.slice(0,10)+"…":k;
+          svg+='<text class="axis-txt" x="'+cx+'" y="'+(H-16)+'" text-anchor="middle">'+esc(lab)+'</text>';
+        });
+        el.innerHTML=svg+"</svg>";
+      }
+      /* revenue by category */
+      var byCat={};
+      f.deals.forEach(function(d){byCat[d.category]=(byCat[d.category]||0)+d.value;});
+      var totR=cur.revenue, maxC=Math.max.apply(null,Object.keys(byCat).map(function(k){return byCat[k];}).concat([1]));
+      var catColors={"Incorporation":"#f4501e","Tax & Compliance":"#6e675c","Legal & IP":"#b0a893","Licensing":"#cf9432","Digital Services":"#3d9e74"};
+      hbars(document.getElementById("revCategory"),Object.keys(byCat).sort(function(a,b){return byCat[b]-byCat[a];}).map(function(k){
+        return {name:k,value:inrShort(byCat[k]),share:pct(byCat[k],totR),pctW:pct(byCat[k],maxC),color:catColors[k]};
+      }));
+      /* priority breakdown */
+      var prow=["High","Medium","Low"].map(function(p){
+        var ds=f.deals.filter(function(d){return d.priority===p;});
+        var rev=ds.reduce(function(s,d){return s+d.value;},0);
+        return '<tr><td><span class="dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+(p==="High"?"var(--red)":p==="Medium"?"var(--amber)":"var(--teal)")+'"></span> '+p+'</td><td class="num">'+ds.length+'</td><td class="num">'+inr(rev)+'</td><td class="num"><b>'+fmtPct(pct(rev,totR))+'</b></td></tr>';
+      }).join("");
+      document.getElementById("priorityTable").innerHTML='<thead><tr><th>Priority</th><th class="num">Deals</th><th class="num">Revenue</th><th class="num">%</th></tr></thead><tbody>'+prow+'</tbody>';
+      /* daily revenue trend — grouped bars */
+      var bs=buckets(r);
+      var booked=seriesByDate(f.deals,r,function(s,d){return s+d.value;}).values;
+      var coll=seriesByDate(f.payments.filter(function(p){return p.status==="Cleared";}),r,function(s,p){return s+p.amount;}).values;
+      var rel=document.getElementById("revTrend");
+      var maxV=Math.max.apply(null,booked.concat(coll).concat([1])); maxV*=1.15;
+      var W2=560,H2=190,pl2=52,pr2=10,pt2=10,pb2=24, iw2=W2-pl2-pr2, ih2=H2-pt2-pb2, bw2=iw2/Math.max(bs.length,1);
+      var svg2='<svg viewBox="0 0 '+W2+' '+H2+'" width="100%" role="img" aria-label="Daily revenue trend">';
+      for(var g2=0;g2<=3;g2++){var gy2=pt2+ih2*g2/3;svg2+='<line class="grid-line" x1="'+pl2+'" y1="'+gy2+'" x2="'+(W2-pr2)+'" y2="'+gy2+'"/><text class="axis-txt" x="'+(pl2-5)+'" y="'+(gy2+3)+'" text-anchor="end">'+inrShort(maxV*(1-g2/3))+'</text>';}
+      bs.forEach(function(b,i){
+        var cx=pl2+bw2*i+bw2/2, w=Math.max(2,Math.min(11,bw2*0.3));
+        var hB=booked[i]/maxV*ih2, hC=coll[i]/maxV*ih2;
+        svg2+='<rect x="'+(cx-w-1)+'" y="'+(pt2+ih2-hB)+'" width="'+w+'" height="'+hB+'" rx="2" fill="#8a8378"><title>'+b.label+" booked: "+inr(booked[i])+'</title></rect>';
+        svg2+='<rect x="'+(cx+1)+'" y="'+(pt2+ih2-hC)+'" width="'+w+'" height="'+hC+'" rx="2" fill="#f4501e"><title>'+b.label+" collected: "+inr(coll[i])+'</title></rect>';
+        var step=Math.max(1,Math.ceil(bs.length/7));
+        if(i%step===0||i===bs.length-1) svg2+='<text class="axis-txt" x="'+cx+'" y="'+(H2-6)+'" text-anchor="middle">'+b.label+'</text>';
+      });
+      rel.innerHTML=svg2+"</svg>";
+      /* total vs collected */
+      var collPct=pct(cur.collected,cur.revenue);
+      document.getElementById("moneySummary").innerHTML=
+        '<div class="money-box" style="background:var(--accent-soft);"><span class="m-ico" style="background:var(--accent);color:#fff;">'+ICONS.rupee+'</span><span><small>Total Deal Value</small><b>'+inr(cur.revenue)+'</b></span></div>'+
+        '<div class="money-box" style="background:var(--green-soft);"><span class="m-ico" style="background:var(--green);color:#fff;">'+ICONS.check+'</span><span><small>Net Collected Revenue</small><b>'+inr(cur.collected)+'</b></span></div>'+
+        '<div class="money-box" style="background:var(--amber-soft);"><span class="m-ico" style="background:var(--amber);color:#fff;">'+ICONS.x+'</span><span><small>Outstanding Revenue</small><b>'+inr(cur.outstanding)+'</b></span></div>'+
+        '<div style="margin-top:12px;"><div class="t-row"><span>Collection efficiency</span><b>'+fmtPct(collPct)+'</b></div><div class="progress"><i class="green" style="width:'+Math.min(100,collPct)+'%"></i></div></div>';
+      /* deal progress list */
+      var topDeals=f.deals.slice().sort(function(a,b){return b.value-a.value;}).slice(0,6);
+      document.getElementById("dealProgress").innerHTML= topDeals.length? topDeals.map(function(d){
+        var lead=leadById[d.leadId];
+        return '<div class="deal-row" data-deal="'+d.id+'"><div class="d-top"><b>'+esc(d.service)+' — '+esc(lead?lead.company:"")+'</b><span class="mono">'+d.id+'</span></div>'+
+          '<div class="progress" style="margin:7px 0 5px;"><i class="'+(d.progress>=100?"green":d.progress>=50?"":"amber")+'" style="width:'+d.progress+'%"></i></div>'+
+          '<div class="d-meta"><span>'+d.stage+' · '+d.progress+'%</span><span>Value '+inr(d.value)+'</span><span>Collected '+inr(d.collected)+'</span><span>Outstanding '+inr(d.outstanding)+'</span>'+statusChip(d.priority)+'</div></div>';
+      }).join("") : '<div class="empty">No deals in this period</div>';
+      /* all deals table */
+      var drows=f.deals.slice().sort(function(a,b){return b.date<a.date?-1:1;}).slice(0,14).map(function(d){
+        var lead=leadById[d.leadId];
+        return '<tr class="clickable" data-deal="'+d.id+'"><td class="mono">'+d.id+'</td><td><b>'+esc(lead?lead.name:"—")+'</b><br><span style="color:var(--faint);font-size:12px;">'+esc(d.service)+'</span></td><td>'+fmtDate(d.date)+'</td><td>'+statusChip(d.priority)+'</td><td class="num">'+inr(d.value)+'</td><td class="num">'+inr(d.collected)+'</td><td class="num"><b>'+d.progress+'%</b></td></tr>';
+      }).join("");
+      document.getElementById("dealTable").innerHTML='<thead><tr><th>Deal</th><th>Lead / Service</th><th>Date</th><th>Priority</th><th class="num">Value</th><th class="num">Collected</th><th class="num">Progress</th></tr></thead><tbody>'+
+        (drows||'<tr><td colspan="7"><div class="empty">No deals in this period</div></td></tr>')+'</tbody>';
+    }
+    function renderOrders(f,r){
+      var byStatus={}; f.orders.forEach(function(o){byStatus[o.status]=(byStatus[o.status]||0)+1;});
+      var colors={"Pending":"#cf9432","In Progress":"#f4501e","Completed":"#3d9e74","On Hold":"#c9403d"};
+      var segs=["Pending","In Progress","Completed","On Hold"].filter(function(s){return byStatus[s];}).map(function(s){return {label:s,value:byStatus[s],color:colors[s]};});
+      donut(document.getElementById("orderDonut"),segs,String(f.orders.length),"TOTAL ORDERS");
+      var avgProg=f.orders.length? Math.round(f.orders.reduce(function(s,o){return s+o.progress;},0)/f.orders.length):0;
+      document.getElementById("orderKpis").innerHTML=
+        '<div class="t-row"><span>Completed orders</span><b>'+(byStatus["Completed"]||0)+' / '+f.orders.length+'</b></div>'+
+        '<div class="t-row"><span>Average order progress</span><b>'+avgProg+'%</b></div>'+
+        '<div class="progress"><i class="green" style="width:'+avgProg+'%"></i></div>';
+      /* stage progress by service */
+      var bySvc={};
+      f.orders.forEach(function(o){ if(!bySvc[o.service])bySvc[o.service]={Pending:0,"In Progress":0,Completed:0,"On Hold":0,total:0}; bySvc[o.service][o.status]++; bySvc[o.service].total++; });
+      var keys=Object.keys(bySvc).sort(function(a,b){return bySvc[b].total-bySvc[a].total;});
+      document.getElementById("orderStages").innerHTML= keys.length? keys.map(function(k){
+        var v=bySvc[k];
+        function seg(st){ var n=v[st]; if(!n)return ""; var w=pct(n,v.total); return '<i style="width:'+w+'%;background:'+colors[st]+'">'+(w>9?n:"")+'</i>'; }
+        return '<div class="stack-row"><span class="s-name" title="'+esc(k)+'">'+esc(k)+'</span><span class="stack">'+seg("Pending")+seg("In Progress")+seg("Completed")+seg("On Hold")+'</span><b>'+v.total+'</b></div>';
+      }).join("") : '<div class="empty">No orders in this period</div>';
+      /* collection trend */
+      lineChart(document.getElementById("collectionTrend"),[
+        {values:seriesByDate(f.payments.filter(function(p){return p.status==="Cleared";}),r,function(s,p){return s+p.amount;}).values, color:"#f4501e", fill:true}
+      ],r,inrShort);
+      /* payment history */
+      var pays=f.payments.slice().sort(function(a,b){return b.date<a.date?-1:1;}).slice(0,12);
+      document.getElementById("paymentTable").innerHTML='<thead><tr><th>Payment</th><th>Date</th><th>Lead</th><th>Deal</th><th>Method</th><th class="num">Amount</th><th>Status</th></tr></thead><tbody>'+
+        (pays.map(function(p){ var lead=leadById[p.leadId];
+          return '<tr class="clickable" data-deal="'+p.dealId+'"><td class="mono">'+p.id+'</td><td>'+fmtDate(p.date)+'</td><td><b>'+esc(lead?lead.name:"—")+'</b></td><td class="mono">'+p.dealId+'</td><td>'+esc(p.method)+'</td><td class="num"><b>'+inr(p.amount)+'</b></td><td>'+statusChip(p.status)+'</td></tr>';
+        }).join("")||'<tr><td colspan="7"><div class="empty">No payments in this period</div></td></tr>')+'</tbody>';
+    }
+    function renderLeads(f){
+      var q=state.leadQuery.toLowerCase();
+      var list=f.leads.filter(function(l){return !q || l.name.toLowerCase().indexOf(q)>=0 || l.company.toLowerCase().indexOf(q)>=0;})
+        .slice().sort(function(a,b){return b.date<a.date?-1:1;});
+      document.getElementById("leadCountHint").textContent="Showing "+Math.min(state.leadLimit,list.length)+" of "+list.length+" leads in this period. Select a row to drill down.";
+      var rows=list.slice(0,state.leadLimit).map(function(l){
+        var nq=quotations.filter(function(x){return x.leadId===l.id;}).length;
+        var nd=deals.filter(function(x){return x.leadId===l.id;});
+        var val=nd.reduce(function(s,d){return s+d.value;},0);
+        return '<tr class="clickable" data-lead="'+l.id+'"><td><div class="who"><span class="avatar" style="background:'+avatarColor(l.name)+'">'+initials(l.name)+'</span><span><span class="w-name">'+esc(l.name)+'</span><br><span class="w-sub">'+esc(l.company)+' · '+l.id+'</span></span></div></td>'+
+          '<td>'+esc(l.source)+'</td><td>'+esc(l.service)+'</td><td>'+statusChip(l.status)+'</td><td>'+esc(l.owner)+'</td><td>'+fmtDate(l.date)+'</td><td class="num">'+nq+'</td><td class="num">'+nd.length+'</td><td class="num"><b>'+(val?inr(val):"—")+'</b></td></tr>';
+      }).join("");
+      document.getElementById("leadTable").innerHTML='<thead><tr><th>Lead</th><th>Source</th><th>Interested Service</th><th>Status</th><th>Owner</th><th>Created</th><th class="num">Quotes</th><th class="num">Deals</th><th class="num">Deal Value</th></tr></thead><tbody>'+
+        (rows||'<tr><td colspan="9"><div class="empty">No leads match in this period</div></td></tr>')+'</tbody>';
+      var btn=document.getElementById("leadShowMore");
+      btn.style.display = list.length>12 ? "" : "none";
+      btn.textContent = state.leadLimit>=list.length ? "Show fewer leads" : "Show all "+list.length+" leads";
+    }
+    function renderTeams(f){
+      var srows=SALES_TEAM.map(function(u){
+        var ls=f.leads.filter(function(l){return l.owner===u;});
+        var qual=ls.filter(function(l){return l.status!=="unqualified";}).length;
+        var conv=ls.filter(function(l){return l.status==="converted";}).length;
+        var lids={}; ls.forEach(function(l){lids[l.id]=1;});
+        var qs=f.quotes.filter(function(q){return lids[q.leadId];}).length;
+        var ds=f.deals.filter(function(d){return lids[d.leadId];});
+        var dv=ds.reduce(function(s,d){return s+d.value;},0);
+        var rev=ds.reduce(function(s,d){return s+d.collected;},0);
+        return {u:u,ls:ls.length,qual:qual,conv:conv,qs:qs,ds:ds.length,dv:dv,rev:rev};
+      }).filter(function(x){return x.ls>0||state.owner===x.u;}).sort(function(a,b){return b.rev-a.rev;});
+      document.getElementById("salesTable").innerHTML='<thead><tr><th>User</th><th class="num">Leads Handled</th><th class="num">Qualified</th><th class="num">Converted</th><th class="num">Conv. %</th><th class="num">Quotations</th><th class="num">Deals</th><th class="num">Deal Value</th><th class="num">Revenue</th></tr></thead><tbody>'+
+        (srows.map(function(x){return '<tr><td><div class="who"><span class="avatar" style="background:'+avatarColor(x.u)+'">'+initials(x.u)+'</span><span class="w-name">'+esc(x.u)+'</span></div></td><td class="num">'+x.ls+'</td><td class="num">'+x.qual+'</td><td class="num">'+x.conv+'</td><td class="num"><b>'+fmtPct(pct(x.conv,x.ls))+'</b></td><td class="num">'+x.qs+'</td><td class="num">'+x.ds+'</td><td class="num">'+inr(x.dv)+'</td><td class="num"><b>'+inr(x.rev)+'</b></td></tr>';}).join("")||'<tr><td colspan="9"><div class="empty">No sales activity in this period</div></td></tr>')+'</tbody>';
+      var orows=OPS_TEAM.map(function(u){
+        var os=f.orders.filter(function(o){return o.ops===u;});
+        var done=os.filter(function(o){return o.status==="Completed";}).length;
+        var pending=os.filter(function(o){return o.status!=="Completed";}).length;
+        var overdue=os.filter(function(o){return o.status==="In Progress" && diffDays(o.date,ANCHOR)>21;}).length;
+        return {u:u,n:os.length,done:done,pending:pending,overdue:overdue};
+      });
+      document.getElementById("opsTable").innerHTML='<thead><tr><th>User</th><th class="num">Orders Handled</th><th class="num">Stages Completed</th><th class="num">Pending Stages</th><th class="num">Overdue Orders</th></tr></thead><tbody>'+
+        orows.map(function(x){return '<tr><td><div class="who"><span class="avatar" style="background:'+avatarColor(x.u)+'">'+initials(x.u)+'</span><span class="w-name">'+esc(x.u)+'</span></div></td><td class="num">'+x.n+'</td><td class="num">'+x.done+'</td><td class="num">'+x.pending+'</td><td class="num">'+(x.overdue?'<b style="color:var(--red)">'+x.overdue+'</b>':"0")+'</td></tr>';}).join("")+'</tbody>';
+    }
+    function renderActivity(f){
+      var ev=[];
+      f.leads.forEach(function(l){ev.push({date:l.date,who:l.owner,what:"Lead created",rec:l.id,lead:l.id});});
+      f.quotes.forEach(function(q){var l=leadById[q.leadId];ev.push({date:q.date,who:l?l.owner:"—",what:"Quotation created · "+inr(q.amount),rec:q.id,lead:q.leadId});});
+      f.deals.forEach(function(d){var l=leadById[d.leadId];ev.push({date:d.date,who:l?l.owner:"—",what:"Deal created · "+inr(d.value),rec:d.id,deal:d.id});});
+      f.orders.forEach(function(o){ev.push({date:o.date,who:o.ops,what:"Order "+o.status.toLowerCase()+" · "+o.service,rec:o.id,deal:o.dealId});});
+      f.payments.forEach(function(p){var l=leadById[p.leadId];ev.push({date:p.date,who:l?l.owner:"—",what:"Payment recorded · "+inr(p.amount)+" ("+p.method+")",rec:p.id,deal:p.dealId});});
+      ev.sort(function(a,b){return b.date<a.date?-1:1;});
+      document.getElementById("activityFeed").innerHTML= ev.slice(0,10).map(function(e){
+        return '<div class="act-row"><span class="a-time">'+fmtDateFull(e.date)+'</span><span class="avatar" style="background:'+avatarColor(e.who)+';width:26px;height:26px;font-size:10.5px;">'+initials(e.who)+'</span><span class="a-body"><b>'+esc(e.who)+'</b> — '+esc(e.what)+'</span><span class="mono">'+e.rec+'</span></div>';
+      }).join("")||'<div class="empty">No activity in this period</div>';
+    }
+
+    /* ================================================================
+       Drill-down drawer
+       ================================================================ */
+    var drawer=document.getElementById("drawer"), overlay=document.getElementById("overlay"), drawerContent=document.getElementById("drawerContent");
+    function openDrawer(html){ drawerContent.innerHTML=html; drawer.classList.add("open"); overlay.classList.add("open"); drawer.scrollTop=0; }
+    function closeDrawer(){ drawer.classList.remove("open"); overlay.classList.remove("open"); }
+    overlay.addEventListener("click",closeDrawer);
+    document.addEventListener("keydown",function(e){if(e.key==="Escape")closeDrawer();});
+
+    function orderCard(o){
+      return '<div class="item-card"><div class="i-top"><span class="mono">'+o.id+'</span>'+statusChip(o.status)+'<b>'+inr(o.amount)+'</b></div>'+
+        '<div class="progress" style="margin:8px 0 4px;"><i class="'+(o.progress>=100?"green":o.progress>=40?"":"amber")+'" style="width:'+o.progress+'%"></i></div>'+
+        '<div class="i-meta"><span>'+esc(o.service)+'</span><span>Progress '+o.progress+'%</span><span>Ops: '+esc(o.ops)+'</span><span>'+fmtDateFull(o.date)+'</span></div></div>';
+    }
+    function paymentRow(p){
+      return '<div class="item-card"><div class="i-top"><span class="mono">'+p.id+'</span>'+statusChip(p.status)+'<b>'+inr(p.amount)+'</b></div>'+
+        '<div class="i-meta"><span>'+esc(p.method)+'</span><span>'+fmtDateFull(p.date)+'</span><span>Deal '+p.dealId+'</span></div></div>';
+    }
+    function openLead(id){
+      var l=leadById[id]; if(!l)return;
+      var qs=quotations.filter(function(q){return q.leadId===id;}).sort(function(a,b){return b.date<a.date?-1:1;});
+      var ds=deals.filter(function(d){return d.leadId===id;});
+      var os=orders.filter(function(o){return o.leadId===id;});
+      var ps=payments.filter(function(p){return p.leadId===id;}).sort(function(a,b){return b.date<a.date?-1:1;});
+      var dealValue=ds.reduce(function(s,d){return s+d.value;},0);
+      var collected=ds.reduce(function(s,d){return s+d.collected;},0);
+      var statusLabel=l.status.charAt(0).toUpperCase()+l.status.slice(1);
+      openDrawer(
+        '<div class="d-head"><div><h2>'+esc(l.name)+'</h2><div class="d-sub">'+esc(l.company)+' · '+l.id+'</div></div>'+
+        '<button type="button" class="close-btn" onclick="closeDrawer()" aria-label="Close">✕</button></div>'+
+        '<div style="margin-top:10px;">'+statusChip(statusLabel)+' <span class="chip grey">'+esc(l.service)+'</span></div>'+
+        '<div class="meta-grid">'+
+          '<div><small>Source</small><b>'+esc(l.source)+'</b></div><div><small>Owner</small><b>'+esc(l.owner)+'</b></div>'+
+          '<div><small>Phone</small><b>'+esc(l.phone)+'</b></div><div><small>Email</small><b>'+esc(l.email)+'</b></div>'+
+          '<div><small>Created</small><b>'+fmtDateFull(l.date)+'</b></div><div><small>Category</small><b>'+esc(l.category)+'</b></div></div>'+
+        '<div class="stat-strip">'+
+          '<div class="ss"><small>Quotations</small><b>'+qs.length+'</b></div>'+
+          '<div class="ss"><small>Deals</small><b>'+ds.length+'</b></div>'+
+          '<div class="ss"><small>Orders</small><b>'+os.length+'</b></div>'+
+          '<div class="ss"><small>Deal Value</small><b>'+inr(dealValue)+'</b></div>'+
+          '<div class="ss"><small>Collected</small><b>'+inr(collected)+'</b></div>'+
+          '<div class="ss"><small>Outstanding</small><b>'+inr(Math.max(0,dealValue-collected))+'</b></div></div>'+
+        '<h4>Quotations ('+qs.length+')</h4>'+
+        (qs.map(function(q){return '<div class="item-card"><div class="i-top"><span class="mono">'+q.id+'</span>'+statusChip(q.status)+'<b>'+inr(q.amount)+'</b></div><div class="i-meta"><span>'+esc(q.service)+'</span><span>'+fmtDateFull(q.date)+'</span></div></div>';}).join("")||'<p class="hint">No quotations raised for this lead yet.</p>')+
+        '<h4>Deals ('+ds.length+')</h4>'+
+        (ds.map(function(d){return '<div class="item-card clickable" onclick="openDeal(\''+d.id+'\')"><div class="i-top"><span class="mono">'+d.id+'</span>'+statusChip(d.priority)+'<b>'+inr(d.value)+'</b></div><div class="progress" style="margin:8px 0 4px;"><i style="width:'+d.progress+'%"></i></div><div class="i-meta"><span>'+esc(d.service)+'</span><span>'+d.stage+' · '+d.progress+'%</span><span>Collected '+inr(d.collected)+'</span><span>Outstanding '+inr(d.outstanding)+'</span></div></div>';}).join("")||'<p class="hint">No deals yet — the lead has not converted.</p>')+
+        '<h4>Orders ('+os.length+')</h4>'+ (os.map(orderCard).join("")||'<p class="hint">No orders yet.</p>')+
+        '<h4>Payments ('+ps.length+')</h4>'+ (ps.map(paymentRow).join("")||'<p class="hint">No payments recorded yet.</p>')
+      );
+    }
+    function openDeal(id){
+      var d=dealById[id]; if(!d)return;
+      var l=leadById[d.leadId];
+      var os=orders.filter(function(o){return o.dealId===id;});
+      var ps=payments.filter(function(p){return p.dealId===id;}).sort(function(a,b){return b.date<a.date?-1:1;});
+      openDrawer(
+        '<button type="button" class="back-link" onclick="openLead(\''+d.leadId+'\')">← Back to lead '+(l?esc(l.name):"")+'</button>'+
+        '<div class="d-head"><div><h2>Deal '+d.id+'</h2><div class="d-sub">'+esc(d.service)+' · for '+(l?esc(l.company):"—")+'</div></div>'+
+        '<button type="button" class="close-btn" onclick="closeDrawer()" aria-label="Close">✕</button></div>'+
+        '<div style="margin-top:10px;">'+statusChip(d.priority)+' <span class="chip blue">'+esc(d.stage)+'</span></div>'+
+        '<div class="meta-grid">'+
+          '<div><small>Lead</small><b>'+(l?esc(l.name):"—")+' ('+d.leadId+')</b></div><div><small>Source Quotation</small><b>'+esc(d.quotationId)+'</b></div>'+
+          '<div><small>Deal Date</small><b>'+fmtDateFull(d.date)+'</b></div><div><small>Owner</small><b>'+esc(d.owner)+'</b></div>'+
+          '<div><small>Category</small><b>'+esc(d.category)+'</b></div><div><small>Progress</small><b>'+d.progress+'%</b></div></div>'+
+        '<div class="progress" style="height:12px;"><i class="'+(d.progress>=100?"green":"")+'" style="width:'+d.progress+'%"></i></div>'+
+        '<div class="stat-strip" style="margin-top:12px;">'+
+          '<div class="ss"><small>Deal Value</small><b>'+inr(d.value)+'</b></div>'+
+          '<div class="ss"><small>Collected</small><b>'+inr(d.collected)+'</b></div>'+
+          '<div class="ss"><small>Outstanding</small><b>'+inr(d.outstanding)+'</b></div></div>'+
+        '<h4>Orders ('+os.length+')</h4>'+ (os.map(orderCard).join("")||'<p class="hint">No orders yet.</p>')+
+        '<h4>Payments ('+ps.length+')</h4>'+ (ps.map(paymentRow).join("")||'<p class="hint">No payments recorded yet.</p>')
+      );
+    }
+
+    /* ================================================================
+       Render orchestration + events
+       ================================================================ */
+    function renderAll(){
+      var r=periodRange(), pr=prevRange(r);
+      var f=filtered(r), pf=filtered(pr);
+      var cur=stats(f), prev=stats(pf);
+      document.getElementById("periodLabel").innerHTML="Showing <b>"+fmtDateFull(r.from)+" – "+fmtDateFull(r.to)+"</b> · compared with "+fmtDateFull(pr.from)+" – "+fmtDateFull(pr.to);
+      renderKPIs(cur,prev,pr.len);
+      renderTarget(f,cur,r);
+      renderFunnel(cur);
+      renderLeadTrend(f,r);
+      renderSources(f);
+      renderStatus(f);
+      renderQuotes(f);
+      renderDeals(f,cur,r);
+      renderOrders(f,r);
+      renderLeads(f);
+      renderTeams(f);
+      renderActivity(f);
+    }
+    /* row click delegation for drill-downs */
+    document.addEventListener("click",function(e){
+      var t=e.target.closest("[data-lead],[data-deal]");
+      if(!t)return;
+      if(t.dataset.deal) openDeal(t.dataset.deal);
+      else if(t.dataset.lead) openLead(t.dataset.lead);
+    });
+    /* preset buttons */
+    var seg=document.getElementById("presetSeg");
+    seg.addEventListener("click",function(e){
+      var b=e.target.closest("button[data-preset]"); if(!b)return;
+      seg.querySelectorAll("button").forEach(function(x){x.classList.remove("active");});
+      b.classList.add("active");
+      state.preset=b.dataset.preset;
+      document.getElementById("customRange").classList.toggle("open",state.preset==="custom");
+      if(state.preset!=="custom") renderAll();
+    });
+    var df=document.getElementById("dateFrom"), dt=document.getElementById("dateTo");
+    df.value=addDays(ANCHOR,-13); dt.value=ANCHOR; df.max=ANCHOR; dt.max=ANCHOR;
+    document.getElementById("applyCustom").addEventListener("click",function(){
+      if(!df.value||!dt.value)return;
+      state.from=df.value<=dt.value?df.value:dt.value;
+      state.to=dt.value>=df.value?dt.value:df.value;
+      renderAll();
+    });
+    /* owner + service filters */
+    var ownerSel=document.getElementById("ownerFilter");
+    SALES_TEAM.forEach(function(u){var o=document.createElement("option");o.value=u;o.textContent=u;ownerSel.appendChild(o);});
+    ownerSel.addEventListener("change",function(){state.owner=ownerSel.value;renderAll();});
+    var svcSel=document.getElementById("serviceFilter");
+    SERVICES.forEach(function(s){var o=document.createElement("option");o.value=s.name;o.textContent=s.name;svcSel.appendChild(o);});
+    svcSel.addEventListener("change",function(){state.service=svcSel.value;renderAll();});
+    /* lead search + show more */
+    document.getElementById("leadSearch").addEventListener("input",function(e){state.leadQuery=e.target.value;state.leadLimit=12;renderLeads(filtered(periodRange()));});
+    document.getElementById("leadShowMore").addEventListener("click",function(){
+      var f=filtered(periodRange());
+      state.leadLimit = state.leadLimit>=f.leads.length ? 12 : f.leads.length;
+      renderLeads(f);
+    });
+    /* export filtered leads as CSV */
+    document.getElementById("exportBtn").addEventListener("click",function(){
+      var r=periodRange(), f=filtered(r);
+      var head="Lead ID,Name,Company,Phone,Email,Source,Service,Status,Owner,Created,Quotations,Deals,Deal Value (INR),Collected (INR)";
+      var lines=f.leads.map(function(l){
+        var qs=quotations.filter(function(q){return q.leadId===l.id;}).length;
+        var ds=deals.filter(function(d){return d.leadId===l.id;});
+        var dv=ds.reduce(function(s,d){return s+d.value;},0), col=ds.reduce(function(s,d){return s+d.collected;},0);
+        return [l.id,l.name,l.company,l.phone,l.email,l.source,l.service,l.status,l.owner,l.date,qs,ds.length,dv,col]
+          .map(function(v){return '"'+String(v).replace(/"/g,'""')+'"';}).join(",");
+      });
+      var blob=new Blob([[head].concat(lines).join("\n")],{type:"text/csv"});
+      var a=document.createElement("a");
+      a.href=URL.createObjectURL(blob);
+      a.download="business-performance_"+r.from+"_to_"+r.to+".csv";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+    });
+
+    renderAll();
+    </script>
+  </body>
+</html>

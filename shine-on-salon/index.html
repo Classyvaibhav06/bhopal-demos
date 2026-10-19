@@ -3,167 +3,756 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shine On Family Salon &amp; Academy — Jawahar Chowk, Bhopal</title>
-<meta name="description" content="Shine On Family Salon & Academy, Jawahar Chowk, Bhopal. 5.0-rated family salon for haircuts, bridal makeup and skin care — pick your service, choose a slot, book on WhatsApp.">
+<title>Shine On Family Salon &amp; Academy — Jawahar Chowk, Bhopal | Hair, Skin, Bridal Makeup</title>
+<meta name="description" content="Shine On Family Salon & Academy, Jawahar Chowk, Bhopal. 5.0-rated family salon — haircuts & styling, colour & balayage, keratin, facials, bridal & party makeup, mani-pedi, plus home services and beauty academy courses. Pick your services, choose a slot, book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
 <style>
-:root{--ink:#221a20;--muted:#6f5f68;--rose:#b03a5b;--rose-d:#8c2b47;--gold:#d9a441;--bg:#fdf8f5;--card:#fff;--line:#f0e2da}
+:root{
+  --plum:#2a1420; --plum-2:#3a1626; --rose:#b03a5b; --rose-d:#8c2b47; --rose-soft:#f7e3e9;
+  --gold:#d9a441; --gold-2:#eec27a; --cream:#fdf8f5; --cream-2:#f9ecec; --ink:#221a20;
+  --muted:#6f5f68; --line:#f0e2da; --green:#0f8a3c; --wa:#1faa55; --card:#ffffff;
+  --shadow:0 18px 40px rgba(140,43,71,.14); --r:20px; --header-h:72px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:rgba(253,248,245,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
-.hbar{display:flex;align-items:center;gap:12px;padding:12px 0}
-.logo b{font-size:19px;display:block;line-height:1.15}
-.logo span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.bookbtn{margin-left:auto;background:var(--rose);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:99px;font-size:14.5px}
-.hero{background:linear-gradient(150deg,#3a1626,#8c2b47 60%,#b03a5b);color:#fdf3ec;padding:52px 0 58px}
-.hero h1{font-size:clamp(32px,5.4vw,54px);line-height:1.15}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero p{margin:14px 0 22px;color:#f3d9df;font-size:17px;max-width:56ch}
-.pill{display:inline-block;background:#ffffff22;border:1px solid #ffffff44;padding:5px 13px;border-radius:99px;font-size:13.5px;font-weight:600;margin-bottom:16px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:99px;font-size:15.5px}
-.btn.gold{background:var(--gold);color:#2a1a02}
-.btn.ghost{border:1.5px solid #ffffff66;color:#fdf3ec}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
-@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:#ffffff14;border:1px solid #ffffff26;border-radius:14px;padding:13px 15px}
-.stat b{font-size:22px;display:block}
-.stat span{font-size:12.5px;color:#f3d9df}
-section{padding:54px 0}
-.kicker{color:var(--rose);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
-h2{font-size:clamp(25px,3.6vw,36px);margin:8px 0 10px;line-height:1.2}
-.sub{color:var(--muted);max-width:640px}
-.svc-grid{display:grid;gap:16px;margin-top:26px}
-@media(min-width:760px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;gap:14px;align-items:flex-start}
-.svc .ic{font-size:26px}
-.svc h3{font-size:17.5px}
-.svc p{font-size:14.5px;color:var(--muted)}
-.svc .pr{margin-left:auto;font-weight:800;color:var(--rose-d);white-space:nowrap}
-.bookbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 12px 30px rgba(140,43,71,.08);margin-top:24px}
-.bookbox label{font-size:13.5px;font-weight:700;display:block;margin:14px 0 6px}
-.bookbox select,.bookbox input{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;background:#fff}
-.slots{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
-.slot{border:1.5px solid var(--rose);background:#fff;color:var(--rose-d);font-weight:700;padding:8px 15px;border-radius:99px;cursor:pointer;font-size:14px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--rose-d);color:#fff;padding:.7rem 1rem;z-index:200;border-radius:0 0 12px 0;text-decoration:none;font-weight:700}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#c08a1e);color:#2a1a02;box-shadow:0 12px 26px rgba(217,164,65,.35)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-rose{background:var(--rose);color:#fff;box-shadow:0 12px 26px rgba(176,58,91,.3)}
+.btn-rose:hover{background:var(--rose-d);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--rose-d);border:1.5px solid var(--line)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178a44;transform:translateY(-2px)}
+header.site-head{position:sticky;top:0;z-index:90;background:rgba(253,248,245,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--rose-d),var(--rose));color:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:0 8px 18px rgba(140,43,71,.3)}
+.logo strong{font-family:Fraunces,serif;font-size:1.1rem;line-height:1.1;display:block}
+.logo small{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav.main-nav{display:flex;gap:1.35rem;margin-left:auto}
+nav.main-nav a{text-decoration:none;font-weight:700;font-size:.94rem}
+nav.main-nav a:hover{color:var(--rose-d)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main-nav + .header-actions{margin-left:0}
+.hero{position:relative;background:radial-gradient(900px 480px at 88% -10%,rgba(217,164,65,.28) 0,transparent 55%),linear-gradient(155deg,var(--plum-2),var(--rose-d) 62%,var(--rose));color:#fdf3ec;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.2rem 0 4.6rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:800}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#7be495;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;letter-spacing:-.01em;margin:1.1rem 0 1rem}
+h1 em{font-style:normal;color:var(--gold-2)}
+.hero p.lead{font-size:1.12rem;color:#f3d9df;max-width:34rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.4rem}
+.hero .btn-ghost{background:transparent;color:#fdf3ec;border-color:rgba(255,255,255,.45)}
+.hero-meta{display:flex;gap:1.4rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.stars{color:var(--gold);letter-spacing:.08em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:0 24px 50px rgba(20,4,10,.45);aspect-ratio:4/3.4;object-fit:cover;width:100%;background:var(--plum-2)}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;color:var(--ink);border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:290px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--gold);color:#2a1a02;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow)}
+.strip{background:var(--plum);color:#f3d9df}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.7rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.86rem;font-weight:600;opacity:.85}
+section{padding:4.4rem 0}
+.sec-head{max-width:44rem;margin-bottom:2.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--rose);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;margin:.45rem 0 .6rem}
+.sec-head p{color:var(--muted)}
+.demo-tag{display:inline-block;background:var(--rose-soft);color:var(--rose-d);font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.22rem .6rem;vertical-align:middle}
+.tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.tab{font:inherit;font-weight:800;font-size:.92rem;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.6rem 1.2rem;transition:all .18s}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--rose-d);border-color:var(--rose-d);color:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.svc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(140,43,71,.06);transition:transform .22s ease,box-shadow .22s ease}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.svc-card img{height:170px;width:100%;object-fit:cover;background:var(--cream-2)}
+.svc-body{padding:1.05rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.svc-body h3{font-size:1.05rem;font-weight:800;line-height:1.3}
+.svc-body p{color:var(--muted);font-size:.9rem;flex:1}
+.svc-row{display:flex;justify-content:space-between;align-items:center;margin-top:.55rem;gap:.6rem}
+.price{font-weight:800;font-size:1.08rem;color:var(--rose-d)}
+.price small{display:block;font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.add-btn{background:var(--rose);color:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.9rem;border-radius:999px;padding:.55rem 1.15rem;transition:background .18s,transform .18s;white-space:nowrap}
+.add-btn:hover{background:var(--rose-d);transform:translateY(-1px)}
+.add-btn.added{background:var(--green)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.pkg{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s ease}
+.pkg:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.pkg.featured{border-color:var(--gold);background:linear-gradient(180deg,#fff,#fdf6ea)}
+.pkg h3{font-family:Fraunces,serif;font-size:1.3rem;margin:.4rem 0 .3rem}
+.pkg .amt{font-family:Fraunces,serif;font-size:1.9rem;font-weight:900;color:var(--rose-d)}
+.pkg .amt small{font-size:.8rem;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;color:var(--muted)}
+.pkg ul{list-style:none;margin:.9rem 0 1.2rem;display:flex;flex-direction:column;gap:.45rem;font-size:.93rem;color:var(--muted)}
+.pkg ul li::before{content:"✓ ";color:var(--green);font-weight:800}
+.pkg .btn{margin-top:auto;justify-content:center}
+.why{background:linear-gradient(180deg,#fff,var(--cream))}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.why-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.4rem}
+.why-card .ico{width:52px;height:52px;border-radius:16px;background:var(--rose-soft);display:grid;place-items:center;font-size:1.5rem;margin-bottom:1rem}
+.why-card h3{font-family:Fraunces,serif;font-size:1.15rem;margin-bottom:.4rem}
+.why-card p{color:var(--muted);font-size:.93rem}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal-item{border:0;padding:0;cursor:pointer;border-radius:16px;overflow:hidden;position:relative;background:var(--cream-2);font:inherit}
+.gal-item img{height:220px;width:100%;object-fit:cover;transition:transform .3s ease}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item span{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .8rem .6rem;background:linear-gradient(transparent,rgba(42,20,32,.78));color:#fff;font-size:.82rem;font-weight:700;text-align:left}
+.lightbox{position:fixed;inset:0;z-index:140;background:rgba(30,8,18,.92);display:none;align-items:center;justify-content:center;padding:1.2rem}
+.lightbox.open{display:flex}
+.lightbox figure{max-width:min(880px,94vw);text-align:center}
+.lightbox img{max-height:78vh;width:auto;margin-inline:auto;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.lightbox figcaption{color:#f3d9df;font-weight:700;margin-top:.9rem}
+.lb-close{position:absolute;top:18px;right:18px;background:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.1rem;cursor:pointer}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.reviews{background:#fff;border-block:1px solid var(--line)}
+.rev-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.rev-card blockquote{font-size:.97rem;margin:.6rem 0 .9rem}
+.rev-who{font-weight:800;font-size:.88rem;color:var(--rose-d)}
+.rev-who small{display:block;color:var(--muted);font-weight:600}
+.faq-list{display:flex;flex-direction:column;gap:.8rem;max-width:52rem;margin-inline:auto}
+.faq{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq>button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;cursor:pointer;font:inherit;font-weight:800;text-align:left;padding:1.05rem 1.25rem;font-size:1rem;color:var(--ink)}
+.faq>button .arr{color:var(--rose);transition:transform .25s;flex-shrink:0}
+.faq.open>button .arr{transform:rotate(180deg)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq .ans p{padding:0 1.25rem 1.1rem;color:var(--muted);font-size:.95rem}
+.book-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+.bookbox{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.7rem;box-shadow:0 12px 30px rgba(140,43,71,.08)}
+.bookbox label{font-size:.86rem;font-weight:800;display:block;margin:1rem 0 .4rem}
+.bookbox label:first-child{margin-top:0}
+.bookbox select,.bookbox input{width:100%;padding:.78rem .9rem;border:1.5px solid var(--line);border-radius:11px;font:inherit;background:#fff;color:var(--ink)}
+.bookbox select:focus,.bookbox input:focus{border-color:var(--rose);outline:none}
+.slots{display:flex;flex-wrap:wrap;gap:.5rem}
+.slot{border:1.5px solid var(--rose);background:#fff;color:var(--rose-d);font:inherit;font-weight:700;padding:.5rem .95rem;border-radius:999px;cursor:pointer;font-size:.88rem}
 .slot[aria-pressed="true"]{background:var(--rose);color:#fff}
-.wa{width:100%;margin-top:20px;background:#1faa55;color:#fff;border:0;font-size:16px;cursor:pointer;padding:14px;border-radius:99px;font-weight:700}
-.wa:disabled{opacity:.5}
-.note{font-size:13px;color:var(--muted);margin-top:10px}
-.tgrid{display:grid;gap:16px;margin-top:24px}
-@media(min-width:760px){.tgrid{grid-template-columns:repeat(3,1fr)}}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
-.tcard p{font-size:15px}
-.tcard .who{margin-top:10px;font-size:13px;color:var(--muted);font-weight:700}
-.stars{color:var(--gold);letter-spacing:2px}
-.visit{display:grid;gap:16px;margin-top:22px}
-@media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
-.vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
-.vcard a.tel{font-weight:800;font-size:19px;color:var(--rose-d);text-decoration:none}
-footer{background:#2a1420;color:#e8ccd4;padding:36px 0 28px;font-size:14px}
-.demo-note{margin-top:20px;border-top:1px solid #ffffff22;padding-top:14px;font-size:12.5px;color:#c39dab}
+.picks{background:var(--plum);color:#f3d9df;border-radius:22px;padding:1.7rem;position:sticky;top:calc(var(--header-h) + 16px)}
+.picks h3{font-family:Fraunces,serif;color:#fff;font-size:1.3rem;margin-bottom:.4rem}
+.picks .empty{font-size:.93rem;opacity:.85}
+.pick-row{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.93rem}
+.pick-row button{background:none;border:0;color:#ffb3c2;cursor:pointer;font:inherit;font-weight:800;font-size:.8rem}
+.picks .total{display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;color:#fff;margin:1rem 0 .3rem}
+.picks small{opacity:.8;display:block;margin-bottom:1rem}
+.picks .btn{width:100%;justify-content:center}
+.picks .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.form-err{color:#ffb3c2;font-size:.85rem;font-weight:700;min-height:1.2em;margin-top:.6rem}
+.academy{background:linear-gradient(150deg,var(--plum-2),var(--rose-d));color:#fdf3ec;border-radius:28px;padding:2.6rem;display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:center}
+.academy h2{color:#fff}
+.academy p{color:#f3d9df}
+.academy ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.5rem;font-weight:600}
+.academy ul li::before{content:"🎓 "}
+.academy img{border-radius:20px;height:100%;min-height:260px;object-fit:cover;width:100%}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem}
+.vcard h3{font-family:Fraunces,serif;font-size:1.2rem;margin-bottom:.5rem}
+.vcard p{color:var(--muted);font-size:.95rem}
+.vcard a.tel{font-weight:800;font-size:1.25rem;color:var(--rose-d);text-decoration:none}
+footer{background:var(--plum);color:#e8ccd4;padding:3.4rem 0 6.5rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:Fraunces,serif;color:#fff;margin-bottom:.8rem;font-size:1.1rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--gold-2);text-decoration:underline}
+footer li{list-style:none;margin-bottom:.45rem;font-size:.94rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2.4rem;padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;opacity:.85}
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;padding:.75rem 1.2rem;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:150;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:95;background:var(--plum);color:#fff;border-radius:999px;padding:.55rem .55rem .55rem 1.2rem;display:none;align-items:center;gap:.7rem;box-shadow:0 18px 36px rgba(42,20,32,.45);font-weight:800;max-width:94vw}
+.mobile-bar a{text-decoration:none;border-radius:999px;padding:.55rem 1rem;font-size:.9rem;white-space:nowrap}
+.mobile-bar .mb-book{background:var(--gold);color:#2a1a02}
+.mobile-bar .mb-wa{background:var(--wa);color:#fff}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:1020px){.why-grid{grid-template-columns:1fr 1fr}.gal-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){
+  nav.main-nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;padding:2.8rem 0 3.4rem}
+  .svc-grid,.pkg-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .strip-in{grid-template-columns:1fr 1fr;gap:1.4rem}
+  .book-wrap,.academy{grid-template-columns:1fr}
+  .picks{position:static}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .mobile-bar{display:flex}
+}
+@media (max-width:600px){
+  .svc-grid,.pkg-grid,.rev-grid,.why-grid,.visit,.foot-grid{grid-template-columns:1fr}
+  .logo small{display:none}
+  .hero-card{left:8px}
+  .academy{padding:1.8rem 1.3rem}
+  .gal-item img{height:180px}
+  footer{padding-bottom:6.5rem}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap hbar">
-  <div class="logo"><b>✨ Shine On Family Salon &amp; Academy</b><span>Jawahar Chowk · Bhopal</span></div>
-  <a class="bookbtn" href="#book">Book a slot</a>
-</div></header>
+<a class="skip" href="#services">Skip to services</a>
 
-<div class="hero"><div class="wrap">
-  <span class="pill">★★★★★ 5.0 rated · 95 ratings on Justdial</span>
-  <h1>Bhopal's 5-star family salon, <em>now bookable in 30 seconds.</em></h1>
-  <p>Haircuts, bridal makeup and premium skin care at Jawahar Chowk — with home services too. No more calling and waiting: pick your service, pick your time, and your appointment lands straight on our WhatsApp.</p>
-  <a class="btn gold" href="#book">📅 Book an appointment</a>
-  <a class="btn ghost" href="tel:+918128876216">📞 +91 81288 76216</a>
-  <div class="stats">
-    <div class="stat"><b>5.0★</b><span>Justdial rating · 95 ratings</span></div>
-    <div class="stat"><b>10:30–8:30</b><span>Open all 7 days</span></div>
-    <div class="stat"><b>Home</b><span>Services offered at home</span></div>
-    <div class="stat"><b>Academy</b><span>Beauty courses — enquire below</span></div>
+<header class="site-head">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Shine On Family Salon and Academy — home">
+      <span class="logo-mark" aria-hidden="true">✨</span>
+      <span><strong>Shine On</strong><small>Family Salon &amp; Academy · Bhopal</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#packages">Packages</a><a href="#gallery">Gallery</a><a href="#academy">Academy</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="tel:+918128876216" style="padding:.6rem 1.05rem">📞 Call</a>
+      <a class="btn btn-rose" href="#book" style="padding:.6rem 1.15rem">Book a slot</a>
+    </div>
   </div>
-</div></div>
+</header>
 
-<section id="services"><div class="wrap">
-  <p class="kicker">Services &amp; indicative prices</p>
-  <h2>Everything under one roof</h2>
-  <p class="sub">Prices below are indicative starting prices for the demo — final quote is confirmed on WhatsApp before your visit.</p>
-  <div class="svc-grid">
-    <div class="svc"><span class="ic">✂️</span><div><h3>Haircut &amp; Styling</h3><p>Professional cuts for the whole family, styled to your face and routine.</p></div><span class="pr">₹299+</span></div>
-    <div class="svc"><span class="ic">👰</span><div><h3>Bridal Makeup</h3><p>Complete bridal looks for your big day — trial discussion on booking.</p></div><span class="pr">₹9,999+</span></div>
-    <div class="svc"><span class="ic">🌸</span><div><h3>Skin Care &amp; Facials</h3><p>Premium skin care and facials for a fresh, event-ready glow.</p></div><span class="pr">₹999+</span></div>
-    <div class="svc"><span class="ic">🎯</span><div><h3>Pigmentation Care</h3><p>Targeted treatments for pigmentation and uneven skin tone.</p></div><span class="pr">₹1,499+</span></div>
-    <div class="svc"><span class="ic">💅</span><div><h3>Party Makeup &amp; Grooming</h3><p>Party makeup, cleanup and grooming packages for every occasion.</p></div><span class="pr">₹1,999+</span></div>
-    <div class="svc"><span class="ic">🎓</span><div><h3>Academy Courses</h3><p>Learn hair, makeup and skin professionally at Shine On Academy.</p></div><span class="pr">Enquire</span></div>
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome" style="padding:0">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Now booking online — no more calling &amp; waiting</span>
+        <h1>Bhopal's 5-star family salon, <em>bookable in 30 seconds.</em></h1>
+        <p class="lead">Haircuts, colour, keratin, facials and bridal makeup at Jawahar Chowk — with home services too. Pick your services, pick your time, and your appointment lands straight on our WhatsApp.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#book">📅 Book an appointment</a>
+          <a class="btn btn-ghost" href="tel:+918128876216">📞 +91 81288 76216</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <strong>5.0/5</strong> · 95 ratings on Justdial</span>
+          <span>📍 Jawahar Chowk, Bhopal</span>
+          <span>🏠 Home services available</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop" alt="A stylist finishing a client's hair at a salon" fetchpriority="high" onerror="this.style.display='none'">
+        <span class="hero-badge">⭐ 5.0 · 95 Justdial ratings</span>
+        <div class="hero-card"><span style="font-size:1.7rem" aria-hidden="true">💬</span><span><strong>Book ahead on WhatsApp</strong><small>Your chair is ready when you walk in.</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" role="region" aria-label="Salon facts">
+    <div class="wrap strip-in">
+      <div><b>5.0 / 5</b><span>Justdial rating</span></div>
+      <div><b>95</b><span>Customer ratings</span></div>
+      <div><b>7 days</b><span>Open · 10:30 AM – 8:30 PM</span></div>
+      <div><b>Home</b><span>Services at your doorstep</span></div>
+    </div>
   </div>
-</div></section>
 
-<section id="book" style="padding-top:6px"><div class="wrap">
-  <p class="kicker">Book in 30 seconds</p>
-  <h2>Pick a service, pick a slot</h2>
-  <p class="sub">Your booking goes straight to the salon's WhatsApp — no app, no advance payment.</p>
-  <div class="bookbox">
-    <label for="svc">Service</label>
-    <select id="svc">
-      <option>Haircut &amp; Styling — ₹299+</option>
-      <option>Bridal Makeup — ₹9,999+</option>
-      <option>Skin Care / Facial — ₹999+</option>
-      <option>Pigmentation Care — ₹1,499+</option>
-      <option>Party Makeup &amp; Grooming — ₹1,999+</option>
-      <option>Home Service (any)</option>
-      <option>Academy Course Enquiry</option>
-    </select>
-    <label for="date">Preferred date</label>
-    <input type="date" id="date">
-    <label>Preferred time (salon hours 10:30 AM – 8:30 PM)</label>
-    <div class="slots" id="slots" role="group" aria-label="Time slots"></div>
-    <label for="name">Your name</label>
-    <input type="text" id="name" placeholder="e.g. Priya Sharma" autocomplete="name">
-    <button class="wa" id="waBtn" disabled>📲 Confirm booking on WhatsApp</button>
-    <p class="note">Demo booking flow — the salon confirms your slot on WhatsApp.</p>
+  <!-- SERVICES -->
+  <section id="services" aria-label="Services and prices">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Services &amp; menu</span>
+        <h2>Everything under one roof <span class="demo-tag">Indicative demo prices</span></h2>
+        <p>From everyday haircuts to full bridal transformations. Tap <strong>Add</strong> on anything you like — your picks collect in the booking panel, and the final quote is confirmed on WhatsApp before your visit.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Service categories" id="tabs"></div>
+      <div class="svc-grid" id="svcGrid"></div>
+      <p style="margin-top:1.4rem;color:var(--muted);font-size:.9rem">All prices are indicative starting prices for this demo. Your exact quote — based on hair length, product and artist — is confirmed on WhatsApp, no surprises at the counter.</p>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" aria-label="Bridal and party packages" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Packages</span>
+        <h2>Bridal &amp; party packages <span class="demo-tag">Indicative demo prices</span></h2>
+        <p>Big day coming up? Bundle the essentials, save the running around, and lock your date early — wedding season slots fill fast.</p>
+      </div>
+      <div class="pkg-grid">
+        <article class="pkg reveal">
+          <span class="demo-tag" style="align-self:flex-start">Party ready</span>
+          <h3>Party Glam Package</h3>
+          <p class="amt">₹2,999+ <small>indicative</small></p>
+          <ul>
+            <li>Party makeup (HD finish)</li>
+            <li>Hairstyling of your choice</li>
+            <li>Saree / outfit draping</li>
+            <li>Express glow clean-up</li>
+            <li>Lashes &amp; touch-up kit advice</li>
+          </ul>
+          <button class="btn btn-rose" data-addpkg="Party Glam Package — ₹2,999+">Add package to booking</button>
+        </article>
+        <article class="pkg featured reveal">
+          <span class="demo-tag" style="align-self:flex-start">Most loved 👰</span>
+          <h3>Bridal Signature Package</h3>
+          <p class="amt">₹14,999+ <small>indicative</small></p>
+          <ul>
+            <li>Complete bridal makeup — from ₹9,999+</li>
+            <li>Bridal hairstyling &amp; draping</li>
+            <li>Pre-bridal glow facial sessions</li>
+            <li>Trial discussion before booking</li>
+            <li>Mani-pedi for the bride</li>
+            <li>Home service option for the venue</li>
+          </ul>
+          <button class="btn btn-gold" data-addpkg="Bridal Signature Package — ₹14,999+">Add package to booking</button>
+        </article>
+        <article class="pkg reveal">
+          <span class="demo-tag" style="align-self:flex-start">Glow plan</span>
+          <h3>Pre-Bridal Glow Plan</h3>
+          <p class="amt">₹6,999+ <small>indicative</small></p>
+          <ul>
+            <li>Series of skin care &amp; glow facials</li>
+            <li>Pigmentation care session</li>
+            <li>Hair spa &amp; deep conditioning</li>
+            <li>Mani-pedi combo</li>
+            <li>Planned backwards from your date</li>
+          </ul>
+          <button class="btn btn-rose" data-addpkg="Pre-Bridal Glow Plan — ₹6,999+">Add package to booking</button>
+        </article>
+      </div>
+      <p style="margin-top:1.3rem;color:var(--muted);font-size:.92rem">Planning a family function or a group booking? Tell us on WhatsApp — grooming for the whole family can be planned in one visit, at the salon or at home.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" aria-label="Why choose Shine On">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Why Shine On</span>
+        <h2>The salon Jawahar Chowk rates 5.0</h2>
+        <p>Every one of our 95 Justdial ratings is a perfect-score review. Here's what keeps families coming back.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">⭐</div><h3>Perfect 5.0 rating</h3><p>A <b>5.0/5 average across 95 ratings</b> on Justdial — reviewers consistently praise the expert team, hygiene standards and friendly staff.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">👨‍👩‍👧</div><h3>A true family salon</h3><p>Haircuts, grooming and skin care for <b>everyone in the family</b> — one roof, one visit, no running between separate salons.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🏠</div><h3>Home services</h3><p>Can't come to Jawahar Chowk? <b>Book a home service</b> — mention it in your booking and the team confirms what's possible at your address.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🎓</div><h3>Salon + Academy</h3><p>Shine On also runs a <b>beauty academy</b> — hair, makeup and skin courses taught by the same team that styles Bhopal every day.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" aria-label="Gallery" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Gallery</span>
+        <h2>Inside Shine On</h2>
+        <p>A peek at the work and the vibe — tap any photo to view it up close.</p>
+      </div>
+      <div class="gal-grid" id="galGrid"></div>
+    </div>
+  </section>
+
+  <!-- ACADEMY -->
+  <section aria-label="Shine On Academy" style="padding-top:0">
+    <div class="wrap">
+      <div class="academy reveal" id="academy">
+        <div>
+          <span class="kicker" style="color:var(--gold-2)">Shine On Academy</span>
+          <h2>Learn beauty as a profession</h2>
+          <p>Turn your interest in hair, makeup and skin into a career skill. Academy courses are taught at the salon itself, on real work, by the Shine On team.</p>
+          <ul>
+            <li>Hair — cutting, styling &amp; treatments</li>
+            <li>Makeup — party, bridal &amp; professional looks</li>
+            <li>Skin — facials &amp; professional skin care</li>
+          </ul>
+          <p style="margin-top:1.1rem">Course fees, batches and duration are shared on enquiry — send us a message and we'll walk you through it.</p>
+          <a class="btn btn-gold" style="margin-top:1.2rem" href="https://wa.me/918128876216?text=Namaste%20Shine%20On%20Academy%2C%20mujhe%20beauty%20course%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener">🎓 Enquire about courses</a>
+        </div>
+        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format&fit=crop" alt="Beauty training and salon work in progress" loading="lazy" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews" aria-label="What customers say">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">5.0 ★ · 95 Justdial ratings</span>
+        <h2>Why Jawahar Chowk loves Shine On</h2>
+        <p>Themes that repeat across our customer reviews on Justdial:</p>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 5 out of 5">★★★★★</span><blockquote>"Best experience — truly the best salon in Bhopal for grooming. Professional haircut, bridal makeup or premium skin care, the team is expert in everything. Hygiene standards and friendly staff."</blockquote><p class="rev-who">Review theme<small>Justdial · Apr 2026</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 5 out of 5">★★★★★</span><blockquote>"Wonderful experience — very experienced staff, a luxurious vibe that makes you feel special, highly professional care. I left feeling beautiful and happy."</blockquote><p class="rev-who">Review theme<small>Justdial · Apr 2026</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Rated 5 out of 5">★★★★★</span><blockquote>"Relaxing atmosphere, clean equipment, great offers that make services affordable. Knowledgeable staff helped me choose the right treatments — prices reasonable for the quality."</blockquote><p class="rev-who">Review theme<small>Justdial · Feb 2026</small></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" aria-label="Book an appointment">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Book in 30 seconds</span>
+        <h2>Pick services, pick a slot</h2>
+        <p>Add services from the menu above (or just choose one below), fill your details, and confirm — your booking goes straight to the salon's WhatsApp. No app, no advance payment.</p>
+      </div>
+      <div class="book-wrap">
+        <form class="bookbox reveal" id="bookForm" novalidate>
+          <label for="fName">Your name *</label>
+          <input type="text" id="fName" placeholder="e.g. Priya Sharma" autocomplete="name">
+          <label for="fMobile">Mobile number (WhatsApp) *</label>
+          <input type="tel" id="fMobile" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="13">
+          <label for="fService">Primary service</label>
+          <select id="fService"></select>
+          <label for="fDate">Preferred date *</label>
+          <input type="date" id="fDate">
+          <label>Preferred time (open 10:30 AM – 8:30 PM) *</label>
+          <div class="slots" id="slots" role="group" aria-label="Time slots"></div>
+          <label for="fStylist">Stylist preference</label>
+          <select id="fStylist">
+            <option>No preference</option>
+            <option>Senior stylist</option>
+            <option>First available</option>
+          </select>
+          <label for="fPlace">Where?</label>
+          <select id="fPlace">
+            <option>At the salon — Jawahar Chowk</option>
+            <option>Home service</option>
+          </select>
+          <p class="note" style="font-size:.85rem;color:var(--muted);margin-top:1rem">Demo booking flow — the salon confirms your slot and final quote on WhatsApp.</p>
+        </form>
+        <aside class="picks reveal" aria-label="Your booking summary">
+          <h3>🧾 Your booking</h3>
+          <div id="pickList"><p class="empty">No services added yet. Tap <strong>Add</strong> on any service or package above — or just book the primary service from the form.</p></div>
+          <div class="total"><span>Indicative total</span><span id="pickTotal">₹0</span></div>
+          <small>Starting prices only — final quote confirmed on WhatsApp before your visit.</small>
+          <button class="btn btn-wa" id="waBtn" disabled>💬 Confirm booking on WhatsApp</button>
+          <p class="form-err" id="formErr" role="alert"></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-label="Frequently asked questions" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Good to know</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq reveal"><button aria-expanded="false">How do I book an appointment?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>Add your services from the menu, pick a date and time slot, and tap "Confirm booking on WhatsApp". Your request lands directly with the salon team, who confirm your slot on WhatsApp — no app download and no advance payment.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">Do you offer home services?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>Yes — Shine On offers home services. Choose "Home service" in the booking form (or mention it on WhatsApp) and the team will confirm availability and any visit charges for your address.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">Can I discuss a bridal trial before booking?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>Yes. Bridal bookings include a trial discussion — share your function date and the look you have in mind on WhatsApp, and the team will plan the trial and the full bridal package with you before you commit.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">Are the prices on this page final?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>Prices shown are indicative starting prices for this demo. Your exact quote depends on hair length, products chosen and the artist — it is always confirmed on WhatsApp before your visit, so there are no surprises at the counter.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">What are your timings?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>We are open all 7 days, 10:30 AM – 8:30 PM. Booking ahead on WhatsApp means your chair is ready when you arrive — walk-ins are welcome too, subject to the day's appointments.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">Tell me about the Academy courses.<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>Shine On Academy runs professional courses in hair, makeup and skin at the salon itself. Fees, batch timings and course duration are shared on enquiry — message us on WhatsApp and we'll walk you through the options.</p></div></div>
+        <div class="faq reveal"><button aria-expanded="false">Where exactly is the salon?<span class="arr" aria-hidden="true">▾</span></button><div class="ans"><p>47, Vardhman Apartment, New MLA Colony, Near Depo Square, P&amp;T Road, Jawahar Chowk, Bhopal — 462003. Tap "Get directions" in the Visit section below, or call us on +91 81288 76216 if you need help finding us.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-label="Visit us" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Visit us</span>
+        <h2>Find the salon</h2>
+      </div>
+      <div class="visit">
+        <div class="vcard reveal"><h3>📍 Address</h3><p>47, Vardhman Apartment, New MLA Colony,<br>Near Depo Square, P&amp;T Road, Jawahar Chowk,<br>Bhopal — 462003</p><p style="margin-top:1rem"><a class="btn btn-gold" style="padding:.65rem 1.2rem;font-size:.92rem" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shine+On+Family+Salon+Academy+Jawahar+Chowk+Bhopal">Get directions →</a></p></div>
+        <div class="vcard reveal"><h3>📞 Talk to us</h3><p><a class="tel" href="tel:+918128876216">+91 81288 76216</a></p><p style="margin-top:.5rem">Open all 7 days · 10:30 AM – 8:30 PM<br>Home services available — mention it in your booking.<br>Academy course enquiries welcome on the same number.</p><p style="margin-top:1rem"><a class="btn btn-wa" style="padding:.65rem 1.2rem;font-size:.92rem" href="https://wa.me/918128876216?text=Namaste%20Shine%20On%20Salon%2C%20mujhe%20appointment%20ke%20baare%20mein%20poochhna%20hai." target="_blank" rel="noopener">💬 WhatsApp us</a></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>✨ Shine On Family Salon &amp; Academy</h4>
+        <p style="font-size:.94rem;max-width:26rem">Bhopal's 5.0-rated family salon at Jawahar Chowk — hair, skin, makeup and grooming for the whole family, plus professional beauty courses at the Academy.</p>
+        <p style="margin-top:.9rem;font-size:.94rem">📍 47, Vardhman Apartment, New MLA Colony, Near Depo Square, P&amp;T Road, Jawahar Chowk, Bhopal — 462003</p>
+      </div>
+      <div>
+        <h4>Book / Contact</h4>
+        <ul>
+          <li>📞 <a href="tel:+918128876216">+91 81288 76216</a></li>
+          <li>💬 <a href="https://wa.me/918128876216" target="_blank" rel="noopener">WhatsApp the salon</a></li>
+          <li>🕥 Open all 7 days · 10:30 AM – 8:30 PM</li>
+          <li>🏠 Home services available</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#services">Haircuts &amp; styling</a></li>
+          <li><a href="#services">Colour &amp; balayage</a></li>
+          <li><a href="#packages">Bridal packages</a></li>
+          <li><a href="#academy">Academy courses</a></li>
+          <li><a href="#book">Book a slot</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Shine On Family Salon &amp; Academy, Bhopal. All rights reserved.</span>
+      <span>Demo website — built as a presentation sample. Prices are indicative and confirmed on WhatsApp.</span>
+    </div>
   </div>
-</div></section>
+</footer>
 
-<section style="padding-top:6px"><div class="wrap">
-  <p class="kicker">Reviews · 5.0★</p>
-  <h2>Why Jawahar Chowk loves Shine On</h2>
-  <div class="tgrid">
-    <div class="tcard"><span class="stars">★★★★★</span><p>"Best experience — truly the best salon in Bhopal for grooming. Professional haircut, bridal makeup or premium skin care, the team is expert in everything. Hygiene standards and friendly staff."</p><p class="who">Review theme · Justdial, Apr 2026</p></div>
-    <div class="tcard"><span class="stars">★★★★★</span><p>"Wonderful experience — very experienced staff, a luxurious vibe that makes you feel special, highly professional care. I left feeling beautiful and happy."</p><p class="who">Review theme · Justdial, Apr 2026</p></div>
-    <div class="tcard"><span class="stars">★★★★★</span><p>"Relaxing atmosphere, clean equipment, great offers that make services affordable. Knowledgeable staff helped me choose the right treatments — prices reasonable for the quality."</p><p class="who">Review theme · Justdial, Feb 2026</p></div>
-  </div>
-</div></section>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close photo viewer">✕</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
 
-<section style="padding-top:6px"><div class="wrap">
-  <p class="kicker">Visit us</p>
-  <h2>Find the salon</h2>
-  <div class="visit">
-    <div class="vcard"><h3>📍 Address</h3><p>47, Vardhman Apartment, New MLA Colony,<br>Near Depo Square, P&amp;T Road, Jawahar Chowk,<br>Bhopal — 462003</p><p style="margin-top:10px"><a class="btn gold" style="padding:10px 18px;font-size:14px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shine+On+Family+Salon+Academy+Jawahar+Chowk+Bhopal">Get directions →</a></p></div>
-    <div class="vcard"><h3>📞 Talk to us</h3><p><a class="tel" href="tel:+918128876216">+91 81288 76216</a></p><p>Open all days · 10:30 AM – 8:30 PM<br>Home services available — mention it in your booking.</p></div>
-  </div>
-</div></section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<footer><div class="wrap">
-  <b>✨ Shine On Family Salon &amp; Academy</b> — Jawahar Chowk, Bhopal.
-  <p class="demo-note">Demo website — built as a presentation sample for Shine On Family Salon &amp; Academy. Prices are indicative and confirmed on WhatsApp.</p>
-</div></footer>
+<div class="mobile-bar" aria-label="Quick actions">
+  <span aria-hidden="true">✨</span>
+  <a class="mb-wa" href="https://wa.me/918128876216?text=Namaste%20Shine%20On%20Salon%2C%20mujhe%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a href="tel:+918128876216">📞 Call</a>
+  <a class="mb-book" href="#book">Book a slot</a>
+</div>
 
 <script>
 "use strict";
-const WA="918128876216";
-const slots=["10:30 AM","11:30 AM","12:30 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM"];
-let picked="";
-const box=document.getElementById("slots"), btn=document.getElementById("waBtn");
-slots.forEach(s=>{const b=document.createElement("button");b.className="slot";b.textContent=s;b.setAttribute("aria-pressed","false");
- b.addEventListener("click",()=>{picked=s;box.querySelectorAll(".slot").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));check();});box.appendChild(b);});
-const dateEl=document.getElementById("date"); dateEl.min=new Date().toISOString().slice(0,10);
-function check(){btn.disabled=!(picked&&dateEl.value);}
-dateEl.addEventListener("change",check);
-btn.addEventListener("click",()=>{
-  const svc=document.getElementById("svc").value, name=document.getElementById("name").value.trim();
-  const msg=["Namaste Shine On Salon, mujhe appointment book karna hai:","",
-    "Service: "+svc,"Date: "+dateEl.value,"Time: "+picked, name?("Name: "+name):"Name: ",
-    "Please confirm my slot. Dhanyavaad!"].join("\n");
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+/* ---------- Data ---------- */
+const WA = "918128876216";
+const IMG = {
+  salon:"https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=900&auto=format&fit=crop",
+  styling:"https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=900&auto=format&fit=crop",
+  barber:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=900&auto=format&fit=crop",
+  blowout:"https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=900&auto=format&fit=crop",
+  colour:"https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=900&auto=format&fit=crop",
+  balayage:"https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=900&auto=format&fit=crop",
+  products:"https://images.unsplash.com/photo-1526947425960-945c6e72858f?q=80&w=900&auto=format&fit=crop",
+  portrait:"https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=900&auto=format&fit=crop",
+  keratin:"https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=900&auto=format&fit=crop",
+  spa:"https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=900&auto=format&fit=crop",
+  facial:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop",
+  skin:"https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=900&auto=format&fit=crop",
+  skincare:"https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=900&auto=format&fit=crop",
+  makeup:"https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=900&auto=format&fit=crop",
+  wedding:"https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=900&auto=format&fit=crop",
+  makeup2:"https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=900&auto=format&fit=crop",
+  hands:"https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=900&auto=format&fit=crop",
+  nails:"https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=900&auto=format&fit=crop",
+  pedi:"https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=900&auto=format&fit=crop",
+  nails2:"https://images.unsplash.com/photo-1610992015732-2449b76344bc?q=80&w=900&auto=format&fit=crop",
+  academy:"https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=900&auto=format&fit=crop"
+};
+const SERVICES = [
+  {id:"signature-haircut", name:"Signature Haircut & Styling", cat:"Haircuts & Styling", price:299, desc:"A consultation-led cut shaped to your face, hair texture and daily routine — finished with a wash and style. For the whole family.", img:IMG.styling},
+  {id:"kids-haircut", name:"Kids Haircut", cat:"Haircuts & Styling", price:199, desc:"Patient, gentle haircuts for young clients in a calm chair — first-haircut friendly, no fuss.", img:IMG.barber},
+  {id:"blowout", name:"Blow-Dry & Finish", cat:"Haircuts & Styling", price:499, desc:"A smooth, bouncy blow-dry finish — the fastest way to look put-together for any plan, party or photo.", img:IMG.blowout},
+  {id:"global-colour", name:"Global Hair Colour", cat:"Colour & Balayage", price:2499, desc:"Full-length colour with quality colour products, finished with a gloss and style. Shade consultation included before we mix anything.", img:IMG.colour},
+  {id:"balayage", name:"Balayage / Highlights", cat:"Colour & Balayage", price:3499, desc:"Hand-painted dimension that grows out softly — balayage, babylights or classic highlights, toned to flatter your skin.", img:IMG.balayage},
+  {id:"root-touchup", name:"Root Touch-Up", cat:"Colour & Balayage", price:999, desc:"Grey coverage or regrowth refresh, matched precisely to your existing shade and finished with conditioning care.", img:IMG.products},
+  {id:"hair-spa", name:"Hair Spa & Deep Conditioning", cat:"Hair Spa & Keratin", price:799, desc:"A relaxing ritual for dry, damaged or frizzy hair — cleanse, mask, massage and steam for softness you can actually feel.", img:IMG.portrait},
+  {id:"keratin", name:"Keratin / Smoothening", cat:"Hair Spa & Keratin", price:2999, desc:"Frizz-control smoothening for manageable, shiny hair that behaves every morning — lasts for months with basic care.", img:IMG.keratin},
+  {id:"scalp-care", name:"Scalp Care Ritual", cat:"Hair Spa & Keratin", price:699, desc:"Deep-cleansing scalp treatment for dandruff, oiliness and itch — the reset that healthy hair growth starts with.", img:IMG.spa},
+  {id:"signature-facial", name:"Signature Skin Care Facial", cat:"Facials & Skin", price:999, desc:"Premium facial matched to your skin type — cleanse, exfoliation, massage and mask for a fresh, event-ready glow.", img:IMG.facial},
+  {id:"pigmentation-care", name:"Pigmentation Care", cat:"Facials & Skin", price:1499, desc:"Targeted care for pigmentation, tanning and uneven skin tone — planned as a course with the team for best results.", img:IMG.skin},
+  {id:"cleanup-glow", name:"Clean-Up & Instant Glow", cat:"Facials & Skin", price:599, desc:"A quick refresh before any outing — deep cleanse, gentle exfoliation and a glow mask in one short sitting.", img:IMG.skincare},
+  {id:"party-makeup", name:"Party Makeup & Grooming", cat:"Makeup & Party Looks", price:1999, desc:"Polished party looks — base, eyes, lips and setting that lasts the whole evening. Grooming add-ons for the family too.", img:IMG.makeup},
+  {id:"engagement-makeup", name:"Engagement / Reception Makeup", cat:"Makeup & Party Looks", price:4999, desc:"Softer than bridal, stronger than party — an elegant, photo-ready look for engagements, receptions and sangeet nights.", img:IMG.makeup2},
+  {id:"bridal-makeup", name:"Bridal Makeup", cat:"Makeup & Party Looks", price:9999, desc:"The complete bridal look for your big day — with a trial discussion on booking, so there are no surprises on the morning itself.", img:IMG.wedding},
+  {id:"draping", name:"Saree Draping & Hairstyling", cat:"Makeup & Party Looks", price:799, desc:"Perfect pleats, secure draping and a hairstyle that stays put through the whole function.", img:IMG.hands},
+  {id:"manicure", name:"Classic Manicure", cat:"Mani-Pedi", price:499, desc:"Soak, shape, cuticle care and polish — clean, neat hands that look genuinely cared for.", img:IMG.nails},
+  {id:"pedicure", name:"Classic Pedicure", cat:"Mani-Pedi", price:599, desc:"A relaxing soak, scrub and massage ritual that revives tired feet, finished with polish of your choice.", img:IMG.pedi},
+  {id:"manipedi-combo", name:"Mani-Pedi Combo", cat:"Mani-Pedi", price:999, desc:"Both rituals together in one sitting — the full hand-and-foot reset at a combo price.", img:IMG.nails2}
+];
+const PACKAGES = [
+  {id:"pkg-party", name:"Party Glam Package", price:2999},
+  {id:"pkg-bridal", name:"Bridal Signature Package", price:14999},
+  {id:"pkg-glow", name:"Pre-Bridal Glow Plan", price:6999}
+];
+const CATEGORIES = ["All","Haircuts & Styling","Colour & Balayage","Hair Spa & Keratin","Facials & Skin","Makeup & Party Looks","Mani-Pedi"];
+const GALLERY = [
+  {img:IMG.salon, cap:"The salon floor, Jawahar Chowk"},
+  {img:IMG.styling, cap:"Styling in progress"},
+  {img:IMG.balayage, cap:"Colour & finish work"},
+  {img:IMG.makeup, cap:"The makeup chair"},
+  {img:IMG.wedding, cap:"Bridal mornings at Shine On"},
+  {img:IMG.nails, cap:"The nail bar"},
+  {img:IMG.academy, cap:"Academy in session"},
+  {img:IMG.facial, cap:"The skin studio"}
+];
+const SLOTS = ["10:30 AM","11:30 AM","12:30 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM"];
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+
+/* ---------- State ---------- */
+let activeCat = "All";
+let pickedSlot = "";
+const picks = new Map(); // id -> {name, price}
+const ALL_ITEMS = SERVICES.concat(PACKAGES);
+function itemById(id){ return ALL_ITEMS.find(x => x.id === id); }
+
+/* ---------- Helpers ---------- */
+const $ = s => document.querySelector(s);
+const toastEl = $("#toast");
+let toastTimer;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2400); }
+
+/* ---------- Services render ---------- */
+const tabsEl = $("#tabs"), svcGrid = $("#svcGrid");
+function renderTabs(){
+  tabsEl.innerHTML = CATEGORIES.map(c =>
+    `<button class="tab" role="tab" aria-selected="${c === activeCat}" data-cat="${c}">${c}</button>`).join("");
+}
+function renderServices(){
+  const items = SERVICES.filter(s => activeCat === "All" || s.cat === activeCat);
+  svcGrid.innerHTML = items.map(s => `
+    <article class="svc-card">
+      <img src="${s.img}" alt="${s.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="svc-body">
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <div class="svc-row">
+          <span class="price">${fmt(s.price)}+<small>Indicative · demo</small></span>
+          <button class="add-btn ${picks.has(s.id) ? "added" : ""}" data-add="${s.id}" aria-label="Add ${s.name} to booking">${picks.has(s.id) ? "✓ Added" : "Add +"}</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+
+/* ---------- Booking picks ---------- */
+const pickList = $("#pickList"), pickTotal = $("#pickTotal"), waBtn = $("#waBtn"), formErr = $("#formErr");
+function picksTotal(){ let t = 0; picks.forEach(p => t += p.price); return t; }
+function renderPicks(){
+  if (!picks.size) {
+    pickList.innerHTML = `<p class="empty">No services added yet. Tap <strong>Add</strong> on any service or package above — or just book the primary service from the form.</p>`;
+  } else {
+    pickList.innerHTML = [...picks.entries()].map(([id, p]) => `
+      <div class="pick-row"><span>${p.name}</span><span>${fmt(p.price)}+ <button data-remove="${id}" aria-label="Remove ${p.name} from booking">✕</button></span></div>`).join("");
+  }
+  pickTotal.textContent = fmt(picksTotal()) + (picks.size ? "+" : "");
+  waBtn.disabled = false;
+  renderServices();
+}
+function addPick(id, silent){
+  const item = itemById(id); if (!item || picks.has(id)) return;
+  picks.set(id, { name: item.name, price: item.price });
+  renderPicks();
+  if (!silent) toast(item.name + " added to your booking");
+}
+
+/* ---------- Booking form ---------- */
+const svcSelect = $("#fService");
+svcSelect.innerHTML = `<option value="">— Choose a service —</option>` +
+  SERVICES.map(s => `<option value="${s.id}">${s.name} — ${fmt(s.price)}+</option>`).join("") +
+  PACKAGES.map(p => `<option value="${p.id}">${p.name} — ${fmt(p.price)}+</option>`).join("");
+svcSelect.addEventListener("change", () => { if (svcSelect.value) addPick(svcSelect.value); });
+
+const slotsEl = $("#slots");
+SLOTS.forEach(s => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "slot"; b.textContent = s; b.setAttribute("aria-pressed", "false");
+  b.addEventListener("click", () => {
+    pickedSlot = s;
+    slotsEl.querySelectorAll(".slot").forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+  });
+  slotsEl.appendChild(b);
 });
+const dateEl = $("#fDate");
+dateEl.min = new Date().toISOString().slice(0, 10);
+
+function validate(){
+  const name = $("#fName").value.trim();
+  const mobileRaw = $("#fMobile").value.replace(/\D/g, "");
+  const mobile = mobileRaw.length === 12 && mobileRaw.startsWith("91") ? mobileRaw.slice(2) : mobileRaw;
+  if (!name) return "Please add your name so the salon can hold your slot.";
+  if (!/^[6-9]\d{9}$/.test(mobile)) return "Please enter a valid 10-digit mobile number.";
+  if (!picks.size && !svcSelect.value) return "Please add at least one service — tap Add on the menu, or choose a primary service.";
+  if (!dateEl.value) return "Please pick a preferred date.";
+  if (!pickedSlot) return "Please pick a preferred time slot.";
+  return "";
+}
+waBtn.addEventListener("click", () => {
+  const err = validate();
+  if (err) { formErr.textContent = err; document.getElementById("book").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  formErr.textContent = "";
+  if (!picks.size && svcSelect.value) addPick(svcSelect.value, true);
+  const name = $("#fName").value.trim();
+  const mobileRaw = $("#fMobile").value.replace(/\D/g, "");
+  const mobile = mobileRaw.length === 12 && mobileRaw.startsWith("91") ? mobileRaw.slice(2) : mobileRaw;
+  const lines = ["Namaste Shine On Salon, mujhe appointment book karna hai:", "",
+    "Name: " + name, "Mobile: " + mobile, "",
+    "Services:"];
+  picks.forEach(p => lines.push("• " + p.name + " — " + fmt(p.price) + "+"));
+  lines.push("", "Indicative total: " + fmt(picksTotal()) + "+ (final quote please confirm)",
+    "Date: " + dateEl.value, "Time: " + pickedSlot,
+    "Stylist preference: " + $("#fStylist").value,
+    "Where: " + $("#fPlace").value, "",
+    "Please confirm my slot. Dhanyavaad!");
+  window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+});
+
+/* ---------- Gallery + lightbox ---------- */
+const galGrid = $("#galGrid");
+galGrid.innerHTML = GALLERY.map((g, i) => `
+  <button class="gal-item" data-gal="${i}" aria-label="View photo: ${g.cap}">
+    <img src="${g.img}" alt="${g.cap}" loading="lazy" onerror="this.parentElement.style.display='none'">
+    <span>${g.cap}</span>
+  </button>`).join("");
+const lightbox = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+let lastGalFocus = null;
+function openLB(i){
+  lastGalFocus = document.activeElement;
+  lbImg.src = GALLERY[i].img; lbImg.alt = GALLERY[i].cap; lbCap.textContent = GALLERY[i].cap;
+  lightbox.classList.add("open"); document.body.style.overflow = "hidden";
+  $("#lbClose").focus();
+}
+function closeLB(){
+  lightbox.classList.remove("open"); document.body.style.overflow = "";
+  if (lastGalFocus) lastGalFocus.focus();
+}
+$("#lbClose").addEventListener("click", closeLB);
+lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLB(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && lightbox.classList.contains("open")) closeLB(); });
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll(".faq > button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const faq = btn.parentElement, ans = faq.querySelector(".ans"), open = faq.classList.contains("open");
+    document.querySelectorAll(".faq.open").forEach(f => { f.classList.remove("open"); f.querySelector(".ans").style.maxHeight = "0"; f.querySelector("button").setAttribute("aria-expanded", "false"); });
+    if (!open) { faq.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; btn.setAttribute("aria-expanded", "true"); }
+  });
+});
+
+/* ---------- Global click delegation ---------- */
+document.addEventListener("click", e => {
+  const add = e.target.closest("[data-add]");
+  if (add) {
+    const id = add.dataset.add;
+    if (picks.has(id)) { picks.delete(id); renderPicks(); toast("Removed from booking"); }
+    else addPick(id);
+    return;
+  }
+  const pkg = e.target.closest("[data-addpkg]");
+  if (pkg) {
+    const found = PACKAGES.find(p => pkg.dataset.addpkg.indexOf(p.name) === 0);
+    if (found) { addPick(found.id); document.getElementById("book").scrollIntoView({ behavior: "smooth" }); }
+    return;
+  }
+  const rem = e.target.closest("[data-remove]");
+  if (rem) { picks.delete(rem.dataset.remove); renderPicks(); return; }
+  const tab = e.target.closest("[data-cat]");
+  if (tab) { activeCat = tab.dataset.cat; renderTabs(); renderServices(); return; }
+  const gal = e.target.closest("[data-gal]");
+  if (gal) { openLB(+gal.dataset.gal); return; }
+});
+
+/* ---------- Reveal on scroll ---------- */
+const io = ("IntersectionObserver" in window) ? new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+}, { threshold: 0.12 }) : null;
+document.querySelectorAll(".reveal").forEach(el => { if (io) io.observe(el); else el.classList.add("in"); });
+
+/* ---------- Init ---------- */
+renderTabs(); renderServices(); renderPicks();
 </script>
 </body>
 </html>

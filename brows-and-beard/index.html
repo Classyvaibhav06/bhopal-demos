@@ -3,143 +3,415 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brows and Beard — Salon &amp; Bridal Makeup, Chunabhatti, Bhopal</title>
-<meta name="description" content="Brows and Beard, Raksha Tower, Chunabhatti, Kolar Road, Bhopal. 4.9-rated salon — bridal makeup by Parnika Shrivastava, hair, waxing & grooming. Book your date on WhatsApp.">
+<title>Brows and Beard — Salon, Bridal Makeup &amp; Grooming, Chunabhatti, Bhopal</title>
+<meta name="description" content="Brows and Beard, Raksha Tower, Chunabhatti, Kolar Road, Bhopal. 4.9-rated unisex salon — bridal makeup by Parnika Shrivastava, brows, beard grooming, hair, colour & facials. Book on WhatsApp.">
 <style>
-:root{--ink:#1f1b18;--muted:#6d6157;--plum:#5b2a4a;--plum-d:#3f1c33;--gold:#c9a24b;--bg:#faf6f1;--card:#fff;--line:#eadfd2}
+:root{--ink:#221a16;--muted:#71635a;--plum:#5b2a4a;--plum-d:#37162c;--gold:#c9a24b;--gold-l:#e8cf8f;--bg:#faf6f1;--card:#fff;--line:#eadfd2;--wa:#1faa55;--shadow:0 14px 34px rgba(55,22,44,.10)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:rgba(250,246,241,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
-.hbar{display:flex;align-items:center;gap:12px;padding:12px 0}
-.logo b{font-size:19px;display:block;line-height:1.15}
-.logo span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.bookbtn{margin-left:auto;background:var(--plum);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:99px;font-size:14.5px}
-.hero{background:linear-gradient(150deg,#2c1223,var(--plum-d) 55%,var(--plum));color:#f9efe6;padding:52px 0 58px}
-.hero h1{font-size:clamp(32px,5.4vw,54px);line-height:1.15}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero p{margin:14px 0 22px;color:#ecd9e2;font-size:17px;max-width:56ch}
-.pill{display:inline-block;background:#ffffff22;border:1px solid #ffffff44;padding:5px 13px;border-radius:99px;font-size:13.5px;font-weight:600;margin-bottom:16px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:99px;font-size:15.5px}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:64px}
+@media(min-width:760px){body{padding-bottom:0}}
+img{max-width:100%;display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+a{color:var(--plum)}
+header{position:sticky;top:0;background:rgba(250,246,241,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60}
+.hbar{display:flex;align-items:center;gap:14px;padding:11px 0}
+.logo b{font-size:19px;display:block;line-height:1.15;letter-spacing:.2px}
+.logo span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+nav.desk{display:none;margin-left:18px;gap:18px}
+@media(min-width:900px){nav.desk{display:flex}}
+nav.desk a{color:var(--ink);text-decoration:none;font-size:14.5px;font-weight:600}
+nav.desk a:hover{color:var(--plum)}
+.hcall{margin-left:auto;display:flex;gap:9px;align-items:center}
+.callbtn{display:none;border:1.5px solid var(--plum);color:var(--plum);text-decoration:none;font-weight:700;padding:9px 15px;border-radius:99px;font-size:14px}
+@media(min-width:640px){.callbtn{display:inline-block}}
+.bookbtn{background:var(--plum);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:99px;font-size:14.5px}
+.hero{background:linear-gradient(150deg,#2a0f20,var(--plum-d) 52%,var(--plum));color:#f9efe6;overflow:hidden}
+.hero-in{display:grid;gap:0}
+@media(min-width:900px){.hero-in{grid-template-columns:1.05fr .95fr}}
+.hero-txt{padding:52px 0 46px}
+.hero h1{font-size:clamp(31px,5.2vw,52px);line-height:1.14}
+.hero h1 em{color:var(--gold-l);font-style:normal}
+.hero p.lead{margin:15px 0 22px;color:#ecd9e2;font-size:17px;max-width:52ch}
+.pill{display:inline-block;background:#ffffff1f;border:1px solid #ffffff40;padding:5px 13px;border-radius:99px;font-size:13.5px;font-weight:600;margin-bottom:16px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:99px;font-size:15.5px;border:0;cursor:pointer}
 .btn.gold{background:var(--gold);color:#2a1e02}
-.btn.ghost{border:1.5px solid #ffffff66;color:#f9efe6}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+.btn.ghost{border:1.5px solid #ffffff66;color:#f9efe6;background:transparent}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.plum{background:var(--plum);color:#fff}
+.hero-img{min-height:260px}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px;max-width:640px}
 @media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:#ffffff14;border:1px solid #ffffff26;border-radius:14px;padding:13px 15px}
-.stat b{font-size:22px;display:block}
+.stat{background:#ffffff13;border:1px solid #ffffff26;border-radius:14px;padding:12px 14px}
+.stat b{font-size:21px;display:block}
 .stat span{font-size:12.5px;color:#ecd9e2}
-section{padding:54px 0}
-.kicker{color:var(--plum);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust-in{display:flex;gap:10px;overflow-x:auto;padding:13px 0;scrollbar-width:none}
+.trust-in::-webkit-scrollbar{display:none}
+.tchip{white-space:nowrap;background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:13.5px;font-weight:600;color:var(--plum-d)}
+section{padding:56px 0}
+section.alt{background:#fff}
+.kicker{color:var(--plum);font-weight:800;letter-spacing:1.6px;text-transform:uppercase;font-size:12px}
 h2{font-size:clamp(25px,3.6vw,36px);margin:8px 0 10px;line-height:1.2}
-.sub{color:var(--muted);max-width:640px}
-.svc-grid{display:grid;gap:16px;margin-top:26px}
+.sub{color:var(--muted);max-width:660px}
+.demo-tag{display:inline-block;background:#fdf3d8;border:1px solid var(--gold);color:#7a5c10;font-size:11.5px;font-weight:700;border-radius:6px;padding:1px 7px;vertical-align:middle;margin-left:6px}
+.cats{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0 6px}
+.cat{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:9px 16px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--plum-d)}
+.cat.on{background:var(--plum);color:#fff;border-color:var(--plum)}
+.svc-grid{display:grid;gap:16px;margin-top:20px}
 @media(min-width:760px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;gap:14px;align-items:flex-start}
-.svc .ic{font-size:26px}
-.svc h3{font-size:17.5px}
-.svc p{font-size:14.5px;color:var(--muted)}
-.svc .pr{margin-left:auto;font-weight:800;color:var(--plum);white-space:nowrap}
-.bookbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 12px 30px rgba(63,28,51,.09);margin-top:24px}
+@media(min-width:1020px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:7px;box-shadow:0 4px 14px rgba(55,22,44,.04)}
+.svc .ic{font-size:27px}
+.svc h3{font-size:17px;line-height:1.3}
+.svc p{font-size:14px;color:var(--muted);flex:1}
+.svc .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.svc .pr{font-weight:800;color:var(--plum);font-size:16.5px;white-space:nowrap}
+.svc .pr small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.svc .bk{font-size:13.5px;font-weight:700;color:var(--wa);text-decoration:none;white-space:nowrap}
+.pkg-grid{display:grid;gap:18px;margin-top:26px}
+@media(min-width:860px){.pkg-grid{grid-template-columns:repeat(3,1fr)}}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;display:flex;flex-direction:column}
+.pkg.hot{border:2px solid var(--gold);box-shadow:var(--shadow)}
+.pkg .tag{position:absolute;top:-12px;left:20px;background:var(--gold);color:#2a1e02;font-size:12px;font-weight:800;padding:3px 11px;border-radius:99px}
+.pkg h3{font-size:19px;margin-bottom:4px}
+.pkg .ppr{font-size:26px;font-weight:800;color:var(--plum)}
+.pkg .ppr small{font-size:13px;color:var(--muted);font-weight:600}
+.pkg ul{list-style:none;margin:14px 0 18px;flex:1}
+.pkg li{font-size:14.5px;padding:5px 0 5px 24px;position:relative;color:#463a33}
+.pkg li::before{content:"✓";position:absolute;left:2px;color:var(--wa);font-weight:800}
+.pkg .btn{text-align:center}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+@media(min-width:860px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal figure{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:4/5;background:#e9ded2}
+.gal img{width:100%;height:100%;object-fit:cover}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,8,22,.78));color:#fff;font-size:13px;font-weight:600;padding:26px 12px 10px}
+.why-grid{display:grid;gap:16px;margin-top:26px}
+@media(min-width:760px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1020px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+.why{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.why .ic{font-size:28px;margin-bottom:8px}
+.why h3{font-size:16.5px;margin-bottom:5px}
+.why p{font-size:14px;color:var(--muted)}
+.testi-grid{display:grid;gap:16px;margin-top:26px}
+@media(min-width:860px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.testi{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.testi .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.testi h3{font-size:15.5px;margin:8px 0 5px;color:var(--plum-d)}
+.testi p{font-size:14.5px;color:#4c4038}
+.faq{margin-top:22px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:0}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;padding:16px 20px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--plum);font-size:20px;line-height:1}
+.faq details[open ] summary::after{content:"–"}
+.faq .ans{padding:0 20px 17px;color:var(--muted);font-size:14.5px;max-width:70ch}
+.bookbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);margin-top:24px}
 .bookbox label{font-size:13.5px;font-weight:700;display:block;margin:14px 0 6px}
-.bookbox select,.bookbox input{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;background:#fff}
+.bookbox select,.bookbox input,.bookbox textarea{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:11px;font:inherit;background:#fff}
 .grid2{display:grid;gap:0 16px}
 @media(min-width:700px){.grid2{grid-template-columns:1fr 1fr}}
-.wa{width:100%;margin-top:20px;background:#1faa55;color:#fff;border:0;font-size:16px;cursor:pointer;padding:14px;border-radius:99px;font-weight:700}
+.wa-big{width:100%;margin-top:20px;background:var(--wa);color:#fff;border:0;font-size:16.5px;cursor:pointer;padding:15px;border-radius:99px;font-weight:700}
 .note{font-size:13px;color:var(--muted);margin-top:10px}
+.est{background:#fdf6e3;border:1px dashed var(--gold);border-radius:13px;padding:13px 16px;margin-top:16px;font-size:14.5px;display:none}
+.est b{color:var(--plum-d)}
 .visit{display:grid;gap:16px;margin-top:22px}
 @media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
 .vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
-.vcard a.tel{font-weight:800;font-size:19px;color:var(--plum);text-decoration:none}
-footer{background:#241019;color:#e3cbd8;padding:36px 0 28px;font-size:14px}
-.demo-note{margin-top:20px;border-top:1px solid #ffffff22;padding-top:14px;font-size:12.5px;color:#b99aac}
+.vcard h3{margin-bottom:8px}
+.vcard a.tel{font-weight:800;font-size:20px;color:var(--plum);text-decoration:none}
+.hours{width:100%;font-size:14.5px;border-collapse:collapse;margin-top:6px}
+.hours td{padding:5px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-weight:700;color:var(--plum-d)}
+footer{background:#241019;color:#e3cbd8;padding:38px 0 30px;font-size:14px}
+footer .cols{display:grid;gap:20px}
+@media(min-width:760px){footer .cols{grid-template-columns:1.3fr 1fr 1fr}}
+footer a{color:#e8cf8f;text-decoration:none}
+footer h4{color:#fff;margin-bottom:9px;font-size:15px}
+.demo-note{margin-top:22px;border-top:1px solid #ffffff22;padding-top:14px;font-size:12.5px;color:#b99aac}
+.stickybar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;z-index:70;box-shadow:0 -6px 18px rgba(55,22,44,.08)}
+@media(min-width:760px){.stickybar{display:none}}
+.stickybar a{flex:1;text-align:center;padding:12px 4px;font-weight:700;font-size:14.5px;text-decoration:none;color:var(--plum-d)}
+.stickybar a.wa{background:var(--wa);color:#fff}
+.stickybar a.call{background:var(--plum);color:#fff}
 </style>
 </head>
 <body>
 <header><div class="wrap hbar">
-  <div class="logo"><b>💄 Brows and Beard</b><span>Chunabhatti · Kolar Road · Bhopal</span></div>
-  <a class="bookbtn" href="#book">Book your date</a>
+  <div class="logo"><b>💄 Brows and Beard</b><span>Salon · Chunabhatti · Bhopal</span></div>
+  <nav class="desk">
+    <a href="#services">Services</a><a href="#packages">Packages</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#visit">Visit</a>
+  </nav>
+  <div class="hcall">
+    <a class="callbtn" href="tel:+919343645203">📞 +91 93436 45203</a>
+    <a class="bookbtn" href="#book">Book now</a>
+  </div>
 </div></header>
 
-<div class="hero"><div class="wrap">
-  <span class="pill">★★★★★ 4.9 rated · 474 ratings on Justdial · 8 years in business</span>
-  <h1>Bridal makeup brides trust, <em>booked directly — no middleman.</em></h1>
-  <p>Brows &amp; Beard by Parnika Shrivastava — HD &amp; airbrush bridal makeup, party makeup, hairstyling and everyday salon care at Chunabhatti. Wedding dates fill fast: check yours and lock it on WhatsApp.</p>
-  <a class="btn gold" href="#book">💍 Check my wedding date</a>
-  <a class="btn ghost" href="tel:+919343645203">📞 +91 93436 45203</a>
-  <div class="stats">
-    <div class="stat"><b>4.9★</b><span>Justdial · 474 ratings</span></div>
-    <div class="stat"><b>8 yrs</b><span>In business at Chunabhatti</span></div>
-    <div class="stat"><b>Travel</b><span>Team travels to your venue</span></div>
-    <div class="stat"><b>10:30–8:30</b><span>Open all 7 days</span></div>
+<div class="hero"><div class="wrap hero-in">
+  <div class="hero-txt">
+    <span class="pill">★★★★★ 4.9 rated · 474 ratings on Justdial · 8 years in business</span>
+    <h1>Brows, beard, hair &amp; bridal — <em>one salon that does it all.</em></h1>
+    <p class="lead">Brows &amp; Beard by Parnika Shrivastava at Chunabhatti, Kolar Road — HD &amp; airbrush bridal makeup, precision brow shaping, beard styling, haircuts, colour and facials for women and men. See the full price list, pick your service, and book your slot on WhatsApp.</p>
+    <a class="btn gold" href="#book">📲 Book on WhatsApp</a>
+    <a class="btn ghost" href="#services">See services &amp; prices</a>
+    <div class="stats">
+      <div class="stat"><b>4.9★</b><span>Justdial · 474 ratings</span></div>
+      <div class="stat"><b>8 yrs</b><span>In business at Chunabhatti</span></div>
+      <div class="stat"><b>Unisex</b><span>Women &amp; men, one roof</span></div>
+      <div class="stat"><b>10:30–8:30</b><span>Open all 7 days</span></div>
+    </div>
   </div>
+  <div class="hero-img"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Inside a premium salon — styling chair and mirrors" loading="eager"></div>
+</div></div>
+
+<div class="trust"><div class="wrap trust-in">
+  <span class="tchip">💍 Bridal team travels to your venue</span>
+  <span class="tchip">💄 HD &amp; airbrush makeup</span>
+  <span class="tchip">🧔 Beard styling experts</span>
+  <span class="tchip">🎨 Global hair colour</span>
+  <span class="tchip">🧴 Branded products only</span>
+  <span class="tchip">📅 Same-week appointments</span>
+  <span class="tchip">💬 Booking on WhatsApp — no app needed</span>
 </div></div>
 
 <section id="services"><div class="wrap">
-  <p class="kicker">Services &amp; indicative prices</p>
-  <h2>For the bride — and everyone around her</h2>
-  <p class="sub">Prices are indicative starting prices for this demo — your final package is confirmed on WhatsApp after a short discussion of your functions and venue.</p>
-  <div class="svc-grid">
-    <div class="svc"><span class="ic">👰</span><div><h3>Bridal Makeup — HD</h3><p>Complete bridal look with hairstyling, draping and lashes.</p></div><span class="pr">₹11,000+</span></div>
-    <div class="svc"><span class="ic">✨</span><div><h3>Bridal Makeup — Airbrush</h3><p>Long-stay airbrush finish that survives tears, hugs and dancing.</p></div><span class="pr">₹15,000+</span></div>
-    <div class="svc"><span class="ic">🎉</span><div><h3>Party &amp; Family Makeup</h3><p>Makeup for family and friends — everyone in the frame looks their best.</p></div><span class="pr">₹1,500+</span></div>
-    <div class="svc"><span class="ic">💇</span><div><h3>Hairstyling &amp; Extensions</h3><p>Occasion hairstyling and hair extensions for volume and length.</p></div><span class="pr">₹800+</span></div>
-    <div class="svc"><span class="ic">✂️</span><div><h3>Hair, Brows &amp; Grooming</h3><p>Everyday salon care — cuts, brows, beard styling and cleanup.</p></div><span class="pr">₹299+</span></div>
-    <div class="svc"><span class="ic">🕯️</span><div><h3>Waxing &amp; Essentials</h3><p>Waxing and salon essentials, done hygienically and quickly.</p></div><span class="pr">₹399+</span></div>
+  <p class="kicker">Services &amp; price list</p>
+  <h2>Everything on the menu<span class="demo-tag">Indicative demo prices</span></h2>
+  <p class="sub">Tap a category to browse. Prices below are indicative starting prices for this demo website — your final quote is confirmed by the salon on WhatsApp before your visit, so there are no surprises at the counter.</p>
+  <div class="cats" id="cats"></div>
+  <div class="svc-grid" id="svcGrid"></div>
+  <p class="note" style="margin-top:16px">💡 Getting married? Bridal dates in shaadi season fill weeks ahead — <a href="#book"><b>check your date first</b></a>, browse prices after.</p>
+</div></section>
+
+<section id="packages" class="alt"><div class="wrap">
+  <p class="kicker">Packages</p>
+  <h2>Combos that save you money<span class="demo-tag">Indicative demo prices</span></h2>
+  <p class="sub">Ready-made packages for the three reasons people walk in most — a wedding, a full groom refresh, and a monthly maintenance routine.</p>
+  <div class="pkg-grid">
+    <div class="pkg hot"><span class="tag">MOST BOOKED</span>
+      <h3>💍 The Bridal Signature</h3>
+      <div class="ppr">₹11,000+ <small>HD · Airbrush ₹15,000+</small></div>
+      <ul>
+        <li>Full HD or airbrush bridal makeup by Parnika Shrivastava</li>
+        <li>Bridal hairstyling with extensions &amp; setting</li>
+        <li>Saree / lehenga draping included</li>
+        <li>Lashes, touch-up kit &amp; pre-bridal consultation</li>
+        <li>Team travels to your venue in Bhopal</li>
+      </ul>
+      <a class="btn plum" href="#book" data-pick="Bridal Makeup — HD (₹11,000+)">Check my wedding date</a>
+    </div>
+    <div class="pkg">
+      <h3>🧔 The Groom Refresh</h3>
+      <div class="ppr">₹1,499+ <small>demo combo price</small></div>
+      <ul>
+        <li>Signature haircut &amp; styling</li>
+        <li>Beard design, trim &amp; hot-towel finish</li>
+        <li>Express facial / cleanup for instant glow</li>
+        <li>Brow cleanup &amp; ear/nose tidy</li>
+        <li>Head massage finish</li>
+      </ul>
+      <a class="btn plum" href="#book" data-pick="Groom Refresh Package (₹1,499+)">Book this package</a>
+    </div>
+    <div class="pkg">
+      <h3>✨ Monthly Glow Plan</h3>
+      <div class="ppr">₹999+ <small>demo combo price</small></div>
+      <ul>
+        <li>Brow shaping &amp; upper-lip threading</li>
+        <li>Cleanup facial for your skin type</li>
+        <li>Blow-dry finish or beard tidy-up</li>
+        <li>Priority weekday slots for members</li>
+        <li>Mix services for women &amp; men</li>
+      </ul>
+      <a class="btn plum" href="#book" data-pick="Monthly Glow Plan (₹999+)">Book this package</a>
+    </div>
   </div>
 </div></section>
 
-<section id="book" style="padding-top:6px"><div class="wrap">
-  <p class="kicker">Bridal date checker</p>
-  <h2>Is your date free?</h2>
-  <p class="sub">Shaadi season dates go first. Send your function date now — the team confirms availability on WhatsApp, no advance needed to enquire.</p>
+<section id="gallery"><div class="wrap">
+  <p class="kicker">Gallery</p>
+  <h2>Inside Brows and Beard</h2>
+  <p class="sub">A look at the work — bridal mornings, sharp beards, fresh colour and the salon floor at Chunabhatti.</p>
+  <div class="gal">
+    <figure><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Bridal makeup application in progress" loading="lazy"><figcaption>Bridal makeup, in the chair</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Barber giving a precision haircut and beard trim" loading="lazy"><figcaption>Precision cuts &amp; beard work</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Styled hair portrait" loading="lazy"><figcaption>Hair, styled &amp; finished</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Salon beauty treatment" loading="lazy"><figcaption>Skin &amp; beauty rituals</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Bride and groom on their wedding day" loading="lazy"><figcaption>Wedding-day ready</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1585747860715-452162b0f3f1?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Barbershop interior with chairs" loading="lazy"><figcaption>The grooming corner</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Hair styling with blow dryer" loading="lazy"><figcaption>Colour &amp; blow-out bar</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Makeup artist applying party makeup" loading="lazy"><figcaption>Party &amp; occasion glam</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <p class="kicker">Why choose us</p>
+  <h2>Why Chunabhatti keeps coming back</h2>
+  <div class="why-grid">
+    <div class="why"><div class="ic">⭐</div><h3>4.9★ across 474 ratings</h3><p>One of Bhopal's highest-rated salons on Justdial — eight years of repeat clients, referrals and brides who send their sisters here.</p></div>
+    <div class="why"><div class="ic">💄</div><h3>Makeup by the founder</h3><p>Bridal and party makeup is led personally by Parnika Shrivastava — the same hands in the portfolio are the hands on your big day.</p></div>
+    <div class="why"><div class="ic">💍</div><h3>We travel to your venue</h3><p>Hotel, marriage garden or home — the bridal team reaches your venue with the full kit, so you get ready where the function is.</p></div>
+    <div class="why"><div class="ic">💬</div><h3>Book in one message</h3><p>No apps, no forms that go nowhere. Pick a service, send one WhatsApp message, and get your slot and final price confirmed.</p></div>
+  </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <p class="kicker">Reviews</p>
+  <h2>What Bhopal says about us</h2>
+  <p class="sub">Summarised from recurring themes across the salon's 474 Justdial ratings (4.9★) — the things clients mention again and again.</p>
+  <div class="testi-grid">
+    <div class="testi"><div class="stars">★★★★★</div><h3>"Bridal makeup that lasted all day"</h3><p>A theme brides repeat in reviews: the makeup stayed fresh through the ceremony, photos and vidaai — and looked natural in person, not cakey on camera.</p></div>
+    <div class="testi"><div class="stars">★★★★★</div><h3>"Best beard styling in this area"</h3><p>Men's grooming reviews frequently praise the beard shaping and clean finishing — sharp lines, honest advice on what suits your face.</p></div>
+    <div class="testi"><div class="stars">★★★★★</div><h3>"Honest pricing, no pushing"</h3><p>Clients often note the team suggests only what's needed — brows, cleanup or colour — without overselling packages at the counter.</p></div>
+    <div class="testi"><div class="stars">★★★★★</div><h3>"My go-to before every function"</h3><p>Party makeup and hairstyling get repeat mentions for family functions — the whole family gets ready at one place, on time.</p></div>
+    <div class="testi"><div class="stars">★★★★★</div><h3>"Clean, calm, professional"</h3><p>Hygiene and a relaxed studio atmosphere come up again and again — sterilised tools, fresh linens and unhurried service.</p></div>
+    <div class="testi"><div class="stars">★★★★★</div><h3>"Brows shaped exactly right"</h3><p>The salon's namesake service: reviewers consistently praise brow shaping that matches the face instead of a one-shape-fits-all template.</p></div>
+  </div>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap">
+  <p class="kicker">FAQ</p>
+  <h2>Questions, answered</h2>
+  <div class="faq">
+    <details><summary>How do I book an appointment?</summary><div class="ans">Pick your service in the booking form below (or tap any "Book" link), and it opens WhatsApp with your details pre-filled. The salon confirms your slot and final price on WhatsApp itself. You can also simply call +91 93436 45203.</div></details>
+    <details><summary>Are the prices on this page final?</summary><div class="ans">Prices shown are indicative starting prices for this demo website. Your exact price depends on hair length, product choice and the look you want — it is always confirmed on WhatsApp before your appointment, so you never pay more than agreed.</div></details>
+    <details><summary>Do you travel for bridal makeup?</summary><div class="ans">Yes. The bridal team travels to hotels, marriage gardens and homes in Bhopal for bridal bookings, carrying the complete makeup and hairstyling kit. Share your venue in the booking form and the team will plan the timing with you.</div></details>
+    <details><summary>What's the difference between HD and airbrush bridal makeup?</summary><div class="ans">HD makeup is applied with traditional professional products and gives a natural, skin-like finish that photographs beautifully. Airbrush makeup is sprayed on in a fine mist — it is lighter, water-resistant and typically lasts longer through a long wedding day. The team will recommend based on your skin type and function schedule.</div></details>
+    <details><summary>Is this salon for men too?</summary><div class="ans">Absolutely — it's in the name. Beard styling, men's haircuts, cleanup facials and grooming packages are a big part of the salon, alongside women's hair, brows, makeup and skin services.</div></details>
+    <details><summary>How early should I book for wedding season?</summary><div class="ans">Bridal dates in peak shaadi season often book out weeks in advance. Send your function date on WhatsApp as soon as it is fixed — checking availability is free and needs no advance payment.</div></details>
+    <details><summary>What are your opening hours?</summary><div class="ans">The salon is open all 7 days, 10:30 AM – 8:30 PM. Bridal and early-morning function bookings are taken by appointment outside these hours as well — just ask on WhatsApp.</div></details>
+    <details><summary>Where exactly is the salon?</summary><div class="ans">Shop No. 4, Raksha Tower, Janki Nagar, near Domino's Pizza, Kolar Main Road, Chunabhatti, Bhopal — 462016. Tap "Get directions" in the Visit section below.</div></details>
+  </div>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <p class="kicker">Book your slot</p>
+  <h2>One message and you're booked</h2>
+  <p class="sub">Fill this in — it opens WhatsApp with everything pre-typed. The salon replies with your confirmed slot and final price.</p>
   <div class="bookbox">
     <div class="grid2">
-      <div><label for="svc">Service</label>
-      <select id="svc">
-        <option>Bridal Makeup — HD (₹11,000+)</option>
-        <option>Bridal Makeup — Airbrush (₹15,000+)</option>
-        <option>Party / Family Makeup (₹1,500+)</option>
-        <option>Hairstyling &amp; Extensions (₹800+)</option>
-        <option>Hair, Brows &amp; Grooming (₹299+)</option>
-        <option>Waxing &amp; Essentials (₹399+)</option>
-      </select></div>
-      <div><label for="date">Function / appointment date</label>
-      <input type="date" id="date"></div>
-      <div><label for="venue">Venue / area (for bridal travel)</label>
-      <input type="text" id="venue" placeholder="e.g. Marriage garden, Hoshangabad Road"></div>
       <div><label for="name">Your name</label>
       <input type="text" id="name" placeholder="e.g. Anjali Verma" autocomplete="name"></div>
+      <div><label for="mobile">Mobile number</label>
+      <input type="tel" id="mobile" placeholder="e.g. 98XXXXXXXX" autocomplete="tel" inputmode="numeric"></div>
+      <div><label for="svc">Service</label>
+      <select id="svc"></select></div>
+      <div><label for="date">Preferred date</label>
+      <input type="date" id="date"></div>
+      <div><label for="time">Preferred time (optional)</label>
+      <select id="time">
+        <option value="">No preference</option><option>Morning (10:30 AM – 1 PM)</option><option>Afternoon (1 – 5 PM)</option><option>Evening (5 – 8:30 PM)</option>
+      </select></div>
+      <div><label for="venue">Venue / note (for bridal &amp; events)</label>
+      <input type="text" id="venue" placeholder="e.g. Marriage garden, Hoshangabad Road"></div>
     </div>
-    <button class="wa" id="waBtn">📲 Check availability on WhatsApp</button>
-    <p class="note">Demo booking flow — availability and final package price are confirmed by the salon on WhatsApp.</p>
+    <div class="est" id="est"></div>
+    <button class="wa-big" id="waBtn">📲 Confirm booking on WhatsApp</button>
+    <p class="note">Demo booking flow — your slot and final package price are confirmed by the salon on WhatsApp. No advance needed just to enquire.</p>
   </div>
 </div></section>
 
-<section style="padding-top:6px"><div class="wrap">
+<section id="visit" class="alt"><div class="wrap">
   <p class="kicker">Visit us</p>
   <h2>Find the salon</h2>
   <div class="visit">
-    <div class="vcard"><h3>📍 Address</h3><p>Shop No. 4, Raksha Tower, Janki Nagar,<br>Near Domino's Pizza, Kolar Main Road,<br>Chunabhatti, Bhopal — 462016</p><p style="margin-top:10px"><a class="btn gold" style="padding:10px 18px;font-size:14px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Brows+and+Beard+Raksha+Tower+Chunabhatti+Kolar+Road+Bhopal">Get directions →</a></p></div>
-    <div class="vcard"><h3>📞 Talk to us</h3><p><a class="tel" href="tel:+919343645203">+91 93436 45203</a></p><p>Open all days · 10:30 AM – 8:30 PM<br>Bridal team travels to venues in and outside Bhopal.</p></div>
+    <div class="vcard"><h3>📍 Address</h3><p>Shop No. 4, Raksha Tower, Janki Nagar,<br>Near Domino's Pizza, Kolar Main Road,<br>Chunabhatti, Bhopal — 462016</p><p style="margin-top:12px"><a class="btn gold" style="padding:10px 18px;font-size:14px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Brows+and+Beard+Raksha+Tower+Chunabhatti+Kolar+Road+Bhopal">Get directions →</a></p></div>
+    <div class="vcard"><h3>📞 Talk to us</h3><p><a class="tel" href="tel:+919343645203">+91 93436 45203</a></p>
+      <table class="hours">
+        <tr><td>Monday – Sunday</td><td>10:30 AM – 8:30 PM</td></tr>
+        <tr><td>Bridal bookings</td><td>By appointment · team travels to venue</td></tr>
+      </table>
+      <p style="margin-top:10px;color:var(--muted);font-size:14px">Open all 7 days. Walk-ins welcome for brows, beard &amp; quick services — appointments recommended for makeup, colour and weekends.</p></div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <b>💄 Brows and Beard</b> — Chunabhatti, Kolar Road, Bhopal.
-  <p class="demo-note">Demo website — built as a presentation sample for Brows and Beard. Prices are indicative and confirmed on WhatsApp.</p>
+  <div class="cols">
+    <div><h4>💄 Brows and Beard</h4><p>Unisex salon at Chunabhatti, Kolar Road, Bhopal — bridal makeup by Parnika Shrivastava, brows, beard grooming, hair, colour &amp; skin. 4.9★ rated, 8 years in business.</p></div>
+    <div><h4>Popular</h4><p><a href="#services">Bridal makeup — HD &amp; airbrush</a><br><a href="#services">Beard styling &amp; grooming</a><br><a href="#services">Brow shaping &amp; threading</a><br><a href="#packages">Grooming packages</a><br><a href="#book">Book an appointment</a></p></div>
+    <div><h4>Contact</h4><p>Shop No. 4, Raksha Tower, Janki Nagar, Near Domino's Pizza, Kolar Main Road, Chunabhatti, Bhopal — 462016<br><br><a href="tel:+919343645203">📞 +91 93436 45203</a><br><a href="https://wa.me/919343645203" target="_blank" rel="noopener">💬 WhatsApp us</a><br>Open all days · 10:30 AM – 8:30 PM</p></div>
+  </div>
+  <p class="demo-note">Demo website — built as a presentation sample for Brows and Beard. Not the salon's official website. All prices are indicative/demo prices and are confirmed by the salon on WhatsApp before booking.</p>
 </div></footer>
+
+<div class="stickybar">
+  <a class="call" href="tel:+919343645203">📞 Call</a>
+  <a class="wa" href="https://wa.me/919343645203?text=Namaste%20Brows%20and%20Beard%2C%20mujhe%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a href="#book">📅 Book</a>
+</div>
 
 <script>
 "use strict";
 const WA="919343645203";
-const dateEl=document.getElementById("date"); dateEl.min=new Date().toISOString().slice(0,10);
+const SERVICES=[
+ {c:"Bridal & Makeup",ic:"👰",n:"Bridal Makeup — HD",d:"Complete bridal look by Parnika Shrivastava — base, eyes, lashes, hairstyling and saree/lehenga draping, finished to last the whole function.",p:11000},
+ {c:"Bridal & Makeup",ic:"✨",n:"Bridal Makeup — Airbrush",d:"Feather-light airbrush finish that is water-resistant and stays put through tears, hugs, garlands and hours of dancing.",p:15000},
+ {c:"Bridal & Makeup",ic:"🎉",n:"Party & Family Makeup",d:"Polished makeup for family, friends and guests — everyone in the wedding frame looks their best, at the salon or your venue.",p:1500},
+ {c:"Bridal & Makeup",ic:"🌸",n:"Engagement / Reception Makeup",d:"A softer, camera-ready look for engagement, sangeet and reception functions, matched to your outfit and lighting.",p:3500},
+ {c:"Brows & Face",ic:"🏹",n:"Eyebrow Shaping & Threading",d:"The salon's namesake skill — brows mapped to your face shape, threaded clean and finished with a soothing gel. Includes forehead on request.",p:99},
+ {c:"Brows & Face",ic:"💫",n:"Brow Tint & Lamination",d:"Tint and lamination for fuller, brushed-up brows that hold their shape for weeks — no daily brow pencil needed.",p:899},
+ {c:"Brows & Face",ic:"🧵",n:"Full Face Threading",d:"Gentle full-face threading — brows, upper lip, chin, forehead and sides — for a smooth base that makes makeup sit better.",p:299},
+ {c:"Beard & Grooming",ic:"🧔",n:"Beard Styling & Design",d:"Beard shaping designed around your jawline and growth pattern — sharp cheek lines, clean neckline, hot-towel and oil finish.",p:349},
+ {c:"Beard & Grooming",ic:"🪒",n:"Classic Shave & Beard Trim",d:"Traditional shave or precision trim with pre-shave oil, hot towel and a cooling post-shave balm. Hygienic, single-use blades.",p:249},
+ {c:"Beard & Grooming",ic:"🎨",n:"Beard Colour & Grey Blending",d:"Natural-looking beard colour that blends greys without harsh lines — matched to your hair so it never looks dyed.",p:499},
+ {c:"Hair — Women",ic:"💇‍♀️",n:"Women's Haircut & Styling",d:"Consultation-led cuts — layers, bobs, U/V cuts and fringe — washed, cut and blow-finished so you leave salon-ready.",p:599},
+ {c:"Hair — Women",ic:"🔥",n:"Hair Spa & Keratin Care",d:"Deep-conditioning spa rituals for dry, frizzy or damaged hair, with steam, massage and a smooth blow-out finish.",p:1499},
+ {c:"Hair — Women",ic:"💁‍♀️",n:"Hairstyling & Extensions",d:"Occasion hairstyling — curls, braids, updos — plus extensions for instant volume and length on your big day.",p:800},
+ {c:"Hair — Men",ic:"💇‍♂️",n:"Men's Haircut & Styling",d:"Fades, classics and modern crops, finished with styling product and honest advice on what suits your face and routine.",p:299},
+ {c:"Hair — Men",ic:"💆‍♂️",n:"Head Massage & Hair Care",d:"Relaxing oil head massage with a wash — relieves a long week and preps hair and scalp for a healthier routine.",p:449},
+ {c:"Hair Colour",ic:"🎨",n:"Global Hair Colour",d:"Full-head colour with branded, ammonia-conscious colour ranges — shade consultation first, so the result matches the reference.",p:2999},
+ {c:"Hair Colour",ic:"🌈",n:"Balayage / Highlights",d:"Hand-painted balayage, highlights and lowlights for dimension that grows out softly — no harsh regrowth lines.",p:3499},
+ {c:"Hair Colour",ic:"🌿",n:"Root Touch-Up",d:"Quick, precise root and grey coverage blended into your existing shade — in and out within the hour.",p:999},
+ {c:"Skin & Facials",ic:"🧖‍♀️",n:"Signature Facial",d:"A full ritual facial matched to your skin type — cleanse, exfoliate, extract, massage and mask — for an event-ready glow.",p:1299},
+ {c:"Skin & Facials",ic:"✨",n:"Cleanup & De-Tan",d:"Express cleanup with de-tan treatment that lifts sun dullness and evens tone — the quick pre-function refresh.",p:699},
+ {c:"Skin & Facials",ic:"🕯️",n:"Waxing & Essentials",d:"Full-body and part waxing with quality wax options for sensitive skin — quick, hygienic and as painless as it gets.",p:399},
+ {c:"Events & Occasions",ic:"🥂",n:"Event Styling — Full Look",d:"Makeup + hairstyling combo for sangeet, cocktail, office parties and shoots — one sitting, complete look, zero running around.",p:2499},
+ {c:"Events & Occasions",ic:"👨‍👩‍👧",n:"Family Function Group Booking",d:"Getting the whole family ready for one function? Group slots for makeup, hair and grooming, sequenced so everyone is ready on time.",p:4999}
+];
+const CATS=["All"].concat(Array.from(new Set(SERVICES.map(s=>s.c))));
+const catsEl=document.getElementById("cats"),grid=document.getElementById("svcGrid");
+let activeCat="All";
+function fmt(n){return "₹"+n.toLocaleString("en-IN")+"+"}
+function waLink(s){
+  const msg="Namaste Brows and Beard, mujhe ye service book karni hai:\n\nService: "+s.n+" ("+fmt(s.p)+" indicative)\n\nPlease slot aur final price confirm kar dijiye. Dhanyavaad!";
+  return "https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+}
+function renderCats(){
+  catsEl.innerHTML=CATS.map(c=>'<button type="button" class="cat'+(c===activeCat?" on":"")+'" data-cat="'+c+'">'+c+"</button>").join("");
+  catsEl.querySelectorAll(".cat").forEach(b=>b.addEventListener("click",()=>{activeCat=b.dataset.cat;renderCats();renderGrid();}));
+}
+function renderGrid(){
+  const list=SERVICES.filter(s=>activeCat==="All"||s.c===activeCat);
+  grid.innerHTML=list.map(s=>'<article class="svc"><span class="ic">'+s.ic+'</span><h3>'+s.n+'</h3><p>'+s.d+'</p><div class="row"><span class="pr">'+fmt(s.p)+'<small>indicative · demo</small></span><a class="bk" target="_blank" rel="noopener" href="'+waLink(s)+'">Book →</a></div></article>').join("");
+}
+renderCats();renderGrid();
+/* booking form */
+const svcSel=document.getElementById("svc");
+svcSel.innerHTML=SERVICES.map(s=>"<option>"+s.n+" ("+fmt(s.p)+")</option>").join("")+'<option>Groom Refresh Package (₹1,499+)</option><option>Monthly Glow Plan (₹999+)</option><option>Something else — advise me</option>';
+const dateEl=document.getElementById("date");dateEl.min=new Date().toISOString().slice(0,10);
+const est=document.getElementById("est");
+function showEst(){
+  const v=svcSel.value,m=v.match(/₹([\d,]+)\+/);
+  if(m){est.style.display="block";est.innerHTML="Indicative starting price for <b>"+v.split(" (")[0]+"</b>: <b>₹"+m[1]+"</b> — final quote confirmed by the salon on WhatsApp.";}
+  else{est.style.display="none";}
+}
+svcSel.addEventListener("change",showEst);
+document.querySelectorAll("[data-pick]").forEach(a=>a.addEventListener("click",()=>{svcSel.value=a.dataset.pick;showEst();}));
 document.getElementById("waBtn").addEventListener("click",()=>{
-  const svc=document.getElementById("svc").value, name=document.getElementById("name").value.trim(),
+  const name=document.getElementById("name").value.trim(),
+        mobile=document.getElementById("mobile").value.trim(),
+        time=document.getElementById("time").value,
         venue=document.getElementById("venue").value.trim();
-  const msg=["Namaste Brows and Beard, mujhe booking enquiry karni hai:","",
-    "Service: "+svc, dateEl.value?("Date: "+dateEl.value):"Date: ",
-    venue?("Venue: "+venue):null, name?("Name: "+name):"Name: ",
-    "Kya ye date available hai? Please confirm. Dhanyavaad!"].filter(Boolean).join("\n");
+  const msg=["Namaste Brows and Beard, mujhe appointment book karna hai:","",
+    "Service: "+svcSel.value,
+    dateEl.value?("Preferred date: "+dateEl.value):"Preferred date: ",
+    time?("Preferred time: "+time):null,
+    venue?("Venue / note: "+venue):null,
+    name?("Name: "+name):"Name: ",
+    mobile?("Mobile: "+mobile):null,
+    "Please mera slot aur final price confirm kar dijiye. Dhanyavaad!"].filter(Boolean).join("\n");
   window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
 });
 </script>

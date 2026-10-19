@@ -3,140 +3,786 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Makers Salon — Ashoka Garden, Bhopal</title>
-<meta name="description" content="Makers Salon, 80 Feet Road, Ashoka Garden, Bhopal. 4.9-rated unisex salon since 2019 — hair, skin, nails, makeup & home services. Build your visit and book on WhatsApp.">
+<title>Makers Salon — Ashoka Garden, Bhopal | Hair, Skin, Makeup, Nails & Bridal</title>
+<meta name="description" content="Makers Salon, 80 Feet Road, Ashoka Garden, Bhopal. 4.9-rated unisex salon since 2019 — haircuts, colour, keratin, facials, makeup, nails, bridal & home services. See the full price list, build your visit and book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
 <style>
-:root{--ink:#191919;--muted:#636363;--teal:#0e6b5c;--teal-d:#084c40;--sand:#e9b44c;--bg:#f7f5f0;--card:#fff;--line:#e5ded0}
+:root{
+  --teal:#0e6b5c; --teal-d:#07332b; --teal-m:#0a4a3f;
+  --gold:#e9b44c; --gold-2:#f5cd78;
+  --cream:#faf7f1; --cream-2:#f1e9da; --ink:#1c1a17; --muted:#6d675c; --line:#e7ddc9;
+  --card:#ffffff; --wa:#1faa55; --shadow:0 18px 40px rgba(7,51,43,.14);
+  --r:20px; --header-h:70px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:rgba(247,245,240,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
-.hbar{display:flex;align-items:center;gap:12px;padding:12px 0}
-.logo b{font-size:19px;display:block;line-height:1.15}
-.logo span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
-.bookbtn{margin-left:auto;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:99px;font-size:14.5px}
-.hero{background:linear-gradient(150deg,#06231d,var(--teal-d) 55%,var(--teal));color:#eef7f2;padding:52px 0 58px}
-.hero h1{font-size:clamp(32px,5.4vw,54px);line-height:1.15}
-.hero h1 em{color:var(--sand);font-style:normal}
-.hero p{margin:14px 0 22px;color:#cfe6dc;font-size:17px;max-width:56ch}
-.pill{display:inline-block;background:#ffffff22;border:1px solid #ffffff44;padding:5px 13px;border-radius:99px;font-size:13.5px;font-weight:600;margin-bottom:16px}
-.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:99px;font-size:15.5px}
-.btn.gold{background:var(--sand);color:#241a02}
-.btn.ghost{border:1.5px solid #ffffff66;color:#eef7f2}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
-@media(min-width:700px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{background:#ffffff14;border:1px solid #ffffff26;border-radius:14px;padding:13px 15px}
-.stat b{font-size:22px;display:block}
-.stat span{font-size:12.5px;color:#cfe6dc}
-section{padding:54px 0}
-.kicker{color:var(--teal);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
-h2{font-size:clamp(25px,3.6vw,36px);margin:8px 0 10px;line-height:1.2}
-.sub{color:var(--muted);max-width:640px}
-.menu{display:grid;gap:14px;margin-top:26px}
-@media(min-width:760px){.menu{grid-template-columns:repeat(2,1fr)}}
-.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;gap:12px;align-items:center}
-.item h3{font-size:17px}
-.item p{font-size:14px;color:var(--muted)}
-.item .pr{font-weight:800;color:var(--teal-d);white-space:nowrap}
-.add{margin-left:auto;background:var(--teal);color:#fff;border:0;font-weight:700;padding:9px 16px;border-radius:99px;cursor:pointer;font-size:14px;white-space:nowrap}
-.add[aria-pressed="true"]{background:var(--sand);color:#241a02}
-.cartbar{position:sticky;bottom:14px;margin-top:22px;background:var(--teal-d);color:#eef7f2;border-radius:16px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:0 14px 30px rgba(8,76,64,.25)}
-.cartbar b{font-size:17px}
-.cartbar .wa{margin-left:auto;background:#1faa55;color:#fff;border:0;font-weight:700;padding:12px 20px;border-radius:99px;cursor:pointer;font-size:15px}
-.cartbar .wa:disabled{opacity:.5}
-.visit{display:grid;gap:16px;margin-top:22px}
-@media(min-width:760px){.visit{grid-template-columns:1fr 1fr}}
-.vcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
-.vcard a.tel{font-weight:800;font-size:19px;color:var(--teal-d);text-decoration:none}
-footer{background:#0a2420;color:#cfe0d8;padding:36px 0 28px;font-size:14px}
-.demo-note{margin-top:20px;border-top:1px solid #ffffff22;padding-top:14px;font-size:12.5px;color:#93b3a7}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 14px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--teal-d);color:#fff;padding:.7rem 1rem;z-index:300;border-radius:0 0 12px 0;text-decoration:none;font-weight:700}
+.skip:focus{left:0}
+.wrap{width:min(1160px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;font-size:.98rem}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#d99a26);color:#241a02;box-shadow:0 12px 26px rgba(217,154,38,.32)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-m);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--teal-d);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--gold)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178a44;transform:translateY(-2px)}
+.demo-tag{display:inline-block;background:#fdf0d3;color:#7a5200;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.18rem .55rem;vertical-align:middle}
+/* Header */
+header{position:sticky;top:0;z-index:90;background:rgba(250,247,241,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.45rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:0 8px 18px rgba(7,51,43,.3)}
+.logo strong{font-family:Fraunces,serif;font-size:1.12rem;line-height:1.1;display:block}
+.logo small{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav.main-nav{display:flex;gap:1.35rem;margin-left:auto}
+nav.main-nav a{text-decoration:none;font-weight:700;font-size:.93rem;color:var(--ink)}
+nav.main-nav a:hover{color:var(--teal)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main-nav + .header-actions{margin-left:0}
+.header-actions .btn{padding:.62rem 1.15rem;font-size:.9rem}
+/* Hero */
+.hero{position:relative;background:radial-gradient(900px 480px at 88% -10%,rgba(233,180,76,.35) 0,transparent 55%),linear-gradient(155deg,#0a4a3f,var(--teal-d) 62%,#052a23);color:#eafaf3;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:3rem;align-items:center;padding:4rem 0 4.4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:.42rem .95rem;font-size:.83rem;font-weight:700;color:#fdf3d0}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.35rem,5.2vw,3.9rem);line-height:1.05;letter-spacing:-.01em;margin:1.05rem 0 1rem;color:#fff}
+h1 em{font-style:normal;color:var(--gold-2);background:linear-gradient(transparent 64%,rgba(233,180,76,.35) 64%)}
+.hero p.lead{font-size:1.1rem;color:#cfe6dc;max-width:33rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.55rem 0 1.35rem}
+.hero-meta{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.hero-meta span{display:flex;gap:.4rem;align-items:center}
+.stars{color:var(--gold);letter-spacing:.08em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:0 24px 50px rgba(0,0,0,.35);aspect-ratio:4/3.3;object-fit:cover;width:100%;background:var(--teal-m)}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;color:var(--ink);border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:290px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--gold);color:#241a02;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow)}
+/* Trust strip */
+.strip{background:var(--teal-d);color:#ffeec4;border-top:1px solid rgba(255,255,255,.12)}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.65rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.85rem;font-weight:600;opacity:.85}
+/* Sections */
+section{padding:4.2rem 0}
+.sec-head{max-width:44rem;margin-bottom:2.1rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--teal);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.55rem);line-height:1.12;margin:.45rem 0 .6rem}
+.sec-head p{color:var(--muted)}
+/* Tabs + services */
+.tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.7rem}
+.tab{font:inherit;font-weight:800;font-size:.9rem;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.58rem 1.15rem;transition:all .18s}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--teal-d);border-color:var(--teal-d);color:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(7,51,43,.06);transition:transform .22s ease,box-shadow .22s ease}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.svc-card img{height:150px;width:100%;object-fit:cover;background:var(--cream-2)}
+.svc-body{padding:1.05rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.42rem;flex:1}
+.svc-body h3{font-size:1.03rem;font-weight:800;line-height:1.3}
+.svc-body p{color:var(--muted);font-size:.88rem;flex:1}
+.svc-row{display:flex;justify-content:space-between;align-items:center;margin-top:.45rem;gap:.6rem}
+.price{font-weight:800;font-size:1.08rem;color:var(--teal-d)}
+.price small{display:block;font-size:.64rem;font-weight:700;color:#9a7a1e;letter-spacing:.05em;text-transform:uppercase}
+.add-btn{background:var(--teal);color:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.88rem;border-radius:999px;padding:.55rem 1.1rem;transition:background .18s,transform .18s;white-space:nowrap}
+.add-btn:hover{background:var(--teal-m);transform:translateY(-1px)}
+.add-btn[aria-pressed="true"]{background:var(--gold);color:#241a02}
+/* Selection bar */
+.selbar{position:sticky;bottom:14px;z-index:60;margin-top:1.6rem;background:var(--teal-d);color:#eef7f2;border-radius:18px;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;box-shadow:0 16px 34px rgba(7,51,43,.32)}
+.selbar b{font-size:1.02rem}
+.selbar .items{font-size:.9rem;color:#cfe6dc;max-width:32rem}
+.selbar .actions{margin-left:auto;display:flex;gap:.55rem;flex-wrap:wrap}
+.selbar .btn{padding:.62rem 1.15rem;font-size:.9rem}
+/* Packages */
+.pkgs{background:linear-gradient(180deg,#fff,var(--cream))}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pkg-card{background:var(--cream);border:1.5px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem;display:flex;flex-direction:column;position:relative}
+.pkg-card.featured{background:var(--teal-d);color:#eef7f2;border-color:var(--teal-d);box-shadow:var(--shadow)}
+.pkg-card h3{font-family:Fraunces,serif;font-size:1.28rem;margin-bottom:.3rem}
+.pkg-card .for{font-size:.83rem;font-weight:700;opacity:.75;text-transform:uppercase;letter-spacing:.07em}
+.pkg-price{font-family:Fraunces,serif;font-size:1.9rem;font-weight:900;margin:.7rem 0 .2rem}
+.pkg-card ul{list-style:none;margin:.9rem 0 1.3rem;display:flex;flex-direction:column;gap:.5rem;font-size:.93rem}
+.pkg-card li::before{content:"✓ ";color:var(--teal);font-weight:800}
+.pkg-card.featured li::before{color:var(--gold)}
+.pkg-card .btn{margin-top:auto;justify-content:center}
+.pkg-flag{position:absolute;top:-13px;right:18px;background:var(--gold);color:#241a02;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.3rem .75rem}
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.why-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.55rem 1.4rem}
+.why-card .ico{width:50px;height:50px;border-radius:15px;background:#fdf0d3;display:grid;place-items:center;font-size:1.45rem;margin-bottom:.95rem}
+.why-card h3{font-family:Fraunces,serif;font-size:1.16rem;margin-bottom:.35rem}
+.why-card p{color:var(--muted);font-size:.93rem}
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.35rem;position:relative;margin-top:.6rem}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-15px;left:18px;width:32px;height:32px;border-radius:50%;background:var(--gold);color:#241a02;font-weight:800;display:grid;place-items:center;font-size:.95rem;box-shadow:0 6px 14px rgba(217,154,38,.35)}
+.step h3{font-size:1.02rem;margin:.35rem 0 .3rem}
+.step p{color:var(--muted);font-size:.9rem}
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal-item{border:0;padding:0;background:none;cursor:pointer;border-radius:16px;overflow:hidden;position:relative;font:inherit}
+.gal-item img{height:210px;width:100%;object-fit:cover;transition:transform .35s ease;background:var(--cream-2)}
+.gal-item:hover img,.gal-item:focus-visible img{transform:scale(1.06)}
+.gal-item span{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .8rem .6rem;background:linear-gradient(transparent,rgba(7,51,43,.78));color:#fff;font-size:.82rem;font-weight:700;text-align:left}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(10,20,17,.93);z-index:200;display:none;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:1.2rem}
+.lightbox.open{display:flex}
+.lightbox img{max-height:76vh;max-width:min(920px,94vw);border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.lightbox .cap{color:#eafaf3;font-weight:700}
+.lb-btn{position:absolute;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.15rem;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(255,255,255,.25)}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+.lb-next{right:14px;top:50%;transform:translateY(-50%)}
+/* Review themes */
+.themes{background:#fff;border-block:1px solid var(--line)}
+.theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.theme-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.theme-card .stars{font-size:1.05rem}
+.theme-card h3{font-family:Fraunces,serif;font-size:1.15rem;margin:.5rem 0 .35rem}
+.theme-card p{color:var(--muted);font-size:.93rem}
+.themes-note{margin-top:1.3rem;font-size:.85rem;color:var(--muted);text-align:center}
+/* FAQ */
+.faq-list{max-width:820px;margin-inline:auto;display:flex;flex-direction:column;gap:.8rem}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:1rem;text-align:left;padding:1.05rem 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--ink)}
+.faq-q .arrow{color:var(--teal);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 1.25rem 1.1rem;color:var(--muted);font-size:.94rem}
+/* Booking */
+.book{background:linear-gradient(160deg,#0a4a3f,var(--teal-d));color:#eafaf3}
+.book h2{color:#fff}
+.book .sec-head p{color:#cfe6dc}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start}
+.book-points{display:flex;flex-direction:column;gap:1.1rem;margin-top:.4rem}
+.book-point{display:flex;gap:.9rem;align-items:flex-start}
+.book-point .ico{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+.book-point h3{font-size:1.02rem;color:#fff}
+.book-point p{color:#cfe6dc;font-size:.92rem}
+form.book-form{background:#fff;color:var(--ink);border-radius:24px;padding:1.8rem;box-shadow:0 24px 50px rgba(0,0,0,.3)}
+form.book-form h3{font-family:Fraunces,serif;font-size:1.3rem;margin-bottom:1.1rem;color:var(--teal-d)}
+.field{margin-bottom:1rem}
+.field label{display:block;font-weight:800;font-size:.86rem;margin-bottom:.35rem}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:.96rem;border:1.5px solid var(--line);border-radius:12px;padding:.72rem .9rem;background:#fffdf8;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(14,107,92,.15)}
+.field .err{display:none;color:#b3261e;font-size:.8rem;font-weight:700;margin-top:.3rem}
+.field.invalid input{border-color:#b3261e}
+.field.invalid .err{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.picked-box{background:var(--cream);border:1px dashed var(--gold);border-radius:12px;padding:.8rem .95rem;font-size:.88rem;margin-bottom:1rem;color:var(--muted)}
+.picked-box b{color:var(--teal-d)}
+form.book-form .btn{width:100%;justify-content:center;font-size:1rem;padding:.95rem}
+.form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:.7rem}
+/* Visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.6rem}
+.vcard h3{font-family:Fraunces,serif;font-size:1.22rem;margin-bottom:.6rem}
+.vcard p{color:var(--muted);font-size:.95rem}
+.vcard a.tel{font-weight:800;font-size:1.25rem;color:var(--teal-d);text-decoration:none}
+.vcard a.tel:hover{text-decoration:underline}
+.hours{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:.45rem 0;font-size:.94rem}
+.hours:last-of-type{border-bottom:0}
+.hours b{color:var(--ink)}
+/* Footer */
+footer{background:#06231d;color:#cfe0d8;padding:3.2rem 0 6.4rem;font-size:.94rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:Fraunces,serif;color:#fff;margin-bottom:.8rem;font-size:1.08rem}
+footer a{text-decoration:none}
+footer a:hover{color:var(--gold-2);text-decoration:underline}
+footer li{list-style:none;margin-bottom:.45rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2.2rem;padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;opacity:.85}
+/* Toast + sticky mobile bar */
+.toast{position:fixed;left:50%;bottom:100px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;padding:.75rem 1.2rem;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:250;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:95;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:.55rem .8rem;display:none;gap:.55rem}
+.sticky-bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:.9rem;border-radius:12px;padding:.7rem .4rem}
+.sticky-bar .call{background:var(--cream-2);color:var(--teal-d)}
+.sticky-bar .wa{background:var(--wa);color:#fff}
+.sticky-bar .bk{background:var(--teal-d);color:#fff}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:1020px){.why-grid,.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){
+  nav.main-nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;padding:2.7rem 0 3.2rem}
+  .svc-grid,.pkg-grid,.theme-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .strip-in{grid-template-columns:1fr 1fr;gap:1.3rem}
+  .book-grid,.visit-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .sticky-bar{display:flex}
+}
+@media (max-width:600px){
+  .svc-grid,.pkg-grid,.theme-grid,.why-grid,.steps,.foot-grid{grid-template-columns:1fr}
+  .logo small{display:none}
+  .header-actions .btn .txt{display:none}
+  .hero-card{left:8px}
+  .form-row{grid-template-columns:1fr}
+  .selbar .actions{margin-left:0;width:100%}
+  .selbar .actions .btn{flex:1;justify-content:center}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap hbar">
-  <div class="logo"><b>✂️ Makers Salon</b><span>Ashoka Garden · Bhopal</span></div>
-  <a class="bookbtn" href="#menu">Build my visit</a>
-</div></header>
+<a class="skip" href="#services">Skip to services</a>
 
-<div class="hero"><div class="wrap">
-  <span class="pill">★★★★★ 4.9 rated on Justdial · Unisex salon since 2019</span>
-  <h1>Ashoka Garden's own salon, <em>with prices upfront — finally.</em></h1>
-  <p>Hair, skin, nails, makeup and bridal — plus home services. Stop guessing prices on the phone: build your visit here, see the indicative total, and book it on WhatsApp in one tap.</p>
-  <a class="btn gold" href="#menu">🧾 Build my visit</a>
-  <a class="btn ghost" href="tel:+919303449993">📞 +91 93034 49993</a>
-  <div class="stats">
-    <div class="stat"><b>4.9★</b><span>Justdial rating</span></div>
-    <div class="stat"><b>2019</b><span>Serving Ashoka Garden since</span></div>
-    <div class="stat"><b>Home</b><span>Services offered at home</span></div>
-    <div class="stat"><b>10–9</b><span>Open all 7 days</span></div>
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Makers Salon — home">
+      <span class="logo-mark" aria-hidden="true">✂️</span>
+      <span><strong>Makers Salon</strong><small>Ashoka Garden · Bhopal</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#services">Services</a><a href="#packages">Packages</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="tel:+919303449993">📞 <span class="txt">+91 93034 49993</span></a>
+      <a class="btn btn-teal" href="#book">Book a visit</a>
+    </div>
   </div>
-</div></div>
+</header>
 
-<section id="menu"><div class="wrap">
-  <p class="kicker">Service menu · indicative prices</p>
-  <h2>Tap, add, book — that's it</h2>
-  <p class="sub">Add the services you want; the indicative total updates as you go. Final quote is confirmed on WhatsApp — no advance payment.</p>
-  <div class="menu" id="menuGrid"></div>
-  <div class="cartbar">
-    <span>🧾 Your visit: <b id="cartLine">nothing selected yet</b></span>
-    <button class="wa" id="waBtn" disabled>📲 Book on WhatsApp</button>
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome" style="padding:0">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Unisex salon · Ashoka Garden · Since 2019</span>
+        <h1>Great hair days, <em>with prices upfront.</em></h1>
+        <p class="lead">Hair, skin, nails, makeup and bridal — plus salon services at your home. No more calling just to ask rates: see the full price list, build your visit, and book it on WhatsApp in one tap.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#services">🧾 See prices &amp; build my visit</a>
+          <a class="btn btn-wa" href="https://wa.me/919303449993?text=Namaste%20Makers%20Salon%2C%20mujhe%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp us</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <span><strong>4.9/5</strong> on Justdial</span></span>
+          <span>🕙 Open all 7 days · 10 AM – 9 PM</span>
+          <span>🏠 Home services available</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop" alt="A stylist washing and caring for a client's hair at a salon" fetchpriority="high" onerror="this.style.display='none'">
+        <span class="hero-badge">⭐ 4.9 rated on Justdial</span>
+        <div class="hero-card"><span style="font-size:1.7rem" aria-hidden="true">🏠</span><span><strong>Salon at your home</strong><small>Home service visits available — add a note when you book.</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" role="region" aria-label="Salon facts">
+    <div class="wrap strip-in">
+      <div><b>4.9 / 5</b><span>Justdial rating</span></div>
+      <div><b>2019</b><span>Serving Ashoka Garden since</span></div>
+      <div><b>7 days</b><span>Open every day, 10 AM – 9 PM</span></div>
+      <div><b>Home</b><span>Services offered at your home</span></div>
+    </div>
   </div>
-</div></section>
 
-<section style="padding-top:6px"><div class="wrap">
-  <p class="kicker">Visit us</p>
-  <h2>Find the salon</h2>
-  <div class="visit">
-    <div class="vcard"><h3>📍 Address</h3><p>House No. 04, Shop No. 02,<br>Near Sangam Tent House, 80 Feet Road,<br>Ashoka Garden, Bhopal — 462023</p><p style="margin-top:10px"><a class="btn gold" style="padding:10px 18px;font-size:14px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Makers+Salon+Near+Sangam+Tent+House+80+Feet+Road+Ashoka+Garden+Bhopal">Get directions →</a></p></div>
-    <div class="vcard"><h3>📞 Talk to us</h3><p><a class="tel" href="tel:+919303449993">+91 93034 49993</a></p><p>Open all days · 10:00 AM – 9:00 PM<br>Home services available across the area — add a note when you book.</p></div>
+  <!-- SERVICES -->
+  <section id="services" aria-label="Services and price list">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Full price list · Indicative prices</span>
+        <h2>Every service, every price — no phone call needed</h2>
+        <p>Tap <strong>Add</strong> on the services you want. Your visit total updates as you go, and the booking goes straight to our WhatsApp. All prices are <span class="demo-tag">Demo · Indicative</span> — the final quote is confirmed on WhatsApp, with no advance payment.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Service categories" id="tabs"></div>
+      <div class="svc-grid" id="svcGrid"></div>
+      <div class="selbar" id="selBar" aria-live="polite">
+        <span>🧾 <b id="selCount">No services selected</b><br><span class="items" id="selItems">Add services above to build your visit.</span></span>
+        <span class="actions">
+          <button class="btn btn-ghost" id="clearBtn" type="button">Clear</button>
+          <a class="btn btn-gold" href="#book" id="selBookBtn">Book this visit →</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="pkgs" id="packages" aria-label="Makeover and bridal packages" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Packages · Indicative demo prices</span>
+        <h2>Makeover &amp; bridal packages</h2>
+        <p>One booking, complete look. Package prices are indicative — tell us your date and occasion on WhatsApp and we will confirm the final quote.</p>
+      </div>
+      <div class="pkg-grid" id="pkgGrid"></div>
+    </div>
+  </section>
+
+  <!-- WHY + HOW -->
+  <section aria-label="Why choose Makers Salon" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Why Makers Salon</span>
+        <h2>A neighbourhood salon that works like a big-city one</h2>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">⭐</div><h3>4.9-rated on Justdial</h3><p>Ashoka Garden has rated us <b>4.9 out of 5</b> — the kind of score a salon earns one honest haircut at a time.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🧾</div><h3>Prices before you arrive</h3><p>The full price list is right here. Build your visit, see the indicative total, and get the final quote confirmed on WhatsApp — <b>no surprises at the counter</b>.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🏠</div><h3>We come home, too</h3><p>Can't step out? Makers Salon offers <b>home service visits</b> — pick your services, add a note while booking, and the salon comes to you.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">📅</div><h3>Open all 7 days</h3><p>Since 2019, we've been Ashoka Garden's own unisex salon — open <b>every day, 10 AM to 9 PM</b>, for women and men alike.</p></article>
+      </div>
+      <div class="sec-head reveal" style="margin-top:3.2rem">
+        <span class="kicker">How booking works</span>
+        <h2>Booked in under a minute</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Pick your services</h3><p>Browse the price list above and tap Add on everything you want done.</p></div>
+        <div class="step reveal"><h3>See your total</h3><p>Your indicative total builds up live — no guessing, no "rate on call".</p></div>
+        <div class="step reveal"><h3>Send on WhatsApp</h3><p>Fill the short form and your booking lands on our WhatsApp with every detail.</p></div>
+        <div class="step reveal"><h3>Walk in, look great</h3><p>We confirm your slot and final quote on WhatsApp. Just arrive — no advance payment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" aria-label="Gallery" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Inside the salon</span>
+        <h2>Looks we love creating</h2>
+        <p>Tap any photo to view it up close. (Representative style photos.)</p>
+      </div>
+      <div class="gal-grid" id="galGrid"></div>
+    </div>
+  </section>
+
+  <!-- REVIEW THEMES -->
+  <section class="themes" id="reviews" aria-label="What customers appreciate">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">4.9 ★ on Justdial</span>
+        <h2>What customers keep appreciating</h2>
+        <p>The themes that come up again and again in our Justdial reviews:</p>
+      </div>
+      <div class="theme-grid">
+        <article class="theme-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><h3>Work that matches the rating</h3><p>Reviewers consistently praise the quality of the hair and grooming work — the 4.9 score is built on results people can see in the mirror.</p></article>
+        <article class="theme-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><h3>A salon for the whole family</h3><p>As a unisex salon in the heart of Ashoka Garden, families appreciate getting everyone's hair, skin and grooming done under one roof.</p></article>
+        <article class="theme-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><h3>Convenience that fits the day</h3><p>Open all seven days till 9 PM — and with home service visits, customers appreciate not having to plan their week around a haircut.</p></article>
+      </div>
+      <p class="themes-note">Summarised from recurring themes in public Justdial reviews of Makers Salon — not individual testimonials.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Good to know</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="book" id="book" aria-label="Book an appointment">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Book a visit</span>
+        <h2>Your chair is waiting</h2>
+        <p>Fill this in and your booking opens in WhatsApp, pre-filled with your services and slot — just press send.</p>
+      </div>
+      <div class="book-grid">
+        <div class="book-points reveal">
+          <div class="book-point"><span class="ico" aria-hidden="true">💬</span><span><h3>Confirmed on WhatsApp</h3><p>We reply on WhatsApp with your confirmed slot and final quote. No advance payment, ever.</p></span></div>
+          <div class="book-point"><span class="ico" aria-hidden="true">🏠</span><span><h3>Home service? Just say so</h3><p>Add "Home service" in the notes and we'll plan your visit at your home instead.</p></span></div>
+          <div class="book-point"><span class="ico" aria-hidden="true">👰</span><span><h3>Bridal &amp; party dates fill fast</h3><p>For weddings and big occasions, book a few days ahead so your date is locked in.</p></span></div>
+          <div class="book-point"><span class="ico" aria-hidden="true">📞</span><span><h3>Prefer talking?</h3><p>Call us any day between 10 AM and 9 PM on <a href="tel:+919303449993" style="color:#fff;font-weight:800">+91 93034 49993</a>.</p></span></div>
+        </div>
+        <form class="book-form reveal" id="bookForm" novalidate>
+          <h3>Book your appointment</h3>
+          <div class="picked-box" id="pickedBox">No services added yet — <b>pick from the price list above</b>, or just choose a service below.</div>
+          <div class="field" id="fName">
+            <label for="bkName">Your name</label>
+            <input id="bkName" name="name" type="text" autocomplete="name" placeholder="e.g. Priya Sharma">
+            <span class="err">Please tell us your name.</span>
+          </div>
+          <div class="field" id="fMobile">
+            <label for="bkMobile">Mobile number (WhatsApp)</label>
+            <input id="bkMobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" maxlength="13">
+            <span class="err">Please enter a valid 10-digit mobile number.</span>
+          </div>
+          <div class="field">
+            <label for="bkService">Main service</label>
+            <select id="bkService" name="service"></select>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="bkDate">Preferred date</label>
+              <input id="bkDate" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="bkTime">Preferred time</label>
+              <select id="bkTime" name="time">
+                <option value="">Any time</option>
+                <option>Morning (10 AM – 12 PM)</option>
+                <option>Afternoon (12 – 4 PM)</option>
+                <option>Evening (4 – 7 PM)</option>
+                <option>Late evening (7 – 9 PM)</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkNote">Anything we should know? <span style="color:var(--muted);font-weight:600">(optional)</span></label>
+            <textarea id="bkNote" name="note" rows="2" placeholder="e.g. Home service chahiye, ya bridal date ke liye enquiry hai"></textarea>
+          </div>
+          <button class="btn btn-wa" type="submit">💬 Send booking on WhatsApp</button>
+          <p class="form-note">Opens WhatsApp with your booking pre-filled to +91 93034 49993. Prices shown are indicative demo prices; final quote is confirmed on WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-label="Visit us">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Visit us</span>
+        <h2>Find us on 80 Feet Road</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="vcard reveal">
+          <h3>📍 Address</h3>
+          <p>House No. 04, Shop No. 02,<br>Near Sangam Tent House, 80 Feet Road,<br>Ashoka Garden, Bhopal — 462023</p>
+          <p style="margin-top:1rem"><a class="btn btn-gold" style="padding:.65rem 1.2rem;font-size:.92rem" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Makers+Salon+Near+Sangam+Tent+House+80+Feet+Road+Ashoka+Garden+Bhopal">Get directions →</a></p>
+          <h3 style="margin-top:1.6rem">🕙 Opening hours</h3>
+          <div class="hours"><span>Monday – Sunday</span><b>10:00 AM – 9:00 PM</b></div>
+          <div class="hours"><span>Home service visits</span><b>On booking</b></div>
+        </div>
+        <div class="vcard reveal">
+          <h3>📞 Talk to us</h3>
+          <p><a class="tel" href="tel:+919303449993">+91 93034 49993</a></p>
+          <p style="margin-top:.5rem">Call or WhatsApp — whichever is easier. We confirm every booking and final quote on WhatsApp, with no advance payment.</p>
+          <p style="margin-top:1rem">
+            <a class="btn btn-wa" style="padding:.65rem 1.2rem;font-size:.92rem" href="https://wa.me/919303449993?text=Namaste%20Makers%20Salon%2C%20mujhe%20ek%20service%20ke%20baare%20mein%20poochna%20hai." target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+            <a class="btn btn-ghost" style="padding:.65rem 1.2rem;font-size:.92rem" href="#services">See price list</a>
+          </p>
+          <h3 style="margin-top:1.6rem">✂️ At a glance</h3>
+          <p>Unisex salon · Ashoka Garden, Bhopal<br>Serving since 2019 · Rated 4.9★ on Justdial<br>Hair · Skin · Makeup · Nails · Bridal · Home services</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>✂️ Makers Salon</h4>
+        <p style="max-width:25rem">Ashoka Garden's own unisex salon since 2019 — hair, skin, makeup, nails and bridal, at the salon or at your home.</p>
+        <p style="margin-top:.9rem">📍 House No. 04, Shop No. 02, Near Sangam Tent House,<br>80 Feet Road, Ashoka Garden, Bhopal — 462023</p>
+      </div>
+      <div>
+        <h4>Book / Contact</h4>
+        <ul>
+          <li>📞 <a href="tel:+919303449993">+91 93034 49993</a></li>
+          <li>💬 <a href="https://wa.me/919303449993" target="_blank" rel="noopener">WhatsApp us</a></li>
+          <li>🕙 Open all 7 days · 10 AM – 9 PM</li>
+          <li>🏠 Home services on booking</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular services</h4>
+        <ul>
+          <li><a href="#services">Haircut &amp; Styling</a></li>
+          <li><a href="#services">Colour &amp; Highlights</a></li>
+          <li><a href="#services">Keratin &amp; Smoothening</a></li>
+          <li><a href="#packages">Bridal Packages</a></li>
+          <li><a href="#book">Book a visit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Makers Salon, Ashoka Garden, Bhopal.</span>
+      <span>Demo website — built as a preview for Makers Salon. All prices are indicative demo prices, confirmed on WhatsApp.</span>
+    </div>
   </div>
-</div></section>
+</footer>
 
-<footer><div class="wrap">
-  <b>✂️ Makers Salon</b> — Ashoka Garden, Bhopal.
-  <p class="demo-note">Demo website — built as a presentation sample for Makers Salon. Prices are indicative and confirmed on WhatsApp.</p>
-</div></footer>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close photo viewer">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" src="" alt="">
+  <p class="cap" id="lbCap"></p>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<nav class="sticky-bar" aria-label="Quick actions">
+  <a class="call" href="tel:+919303449993">📞 Call</a>
+  <a class="wa" href="https://wa.me/919303449993?text=Namaste%20Makers%20Salon%2C%20mujhe%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="bk" href="#book">✂️ Book</a>
+</nav>
 
 <script>
 "use strict";
-const WA="919303449993";
-const fmt=n=>"₹"+n.toLocaleString("en-IN");
-const SERVICES=[
- {id:"cut",name:"Haircut & Styling",desc:"Cuts and styling for men & women",price:299,ic:"✂️"},
- {id:"color",name:"Hair Colour",desc:"Global colour & highlights",price:1499,ic:"🎨"},
- {id:"facial",name:"Facial & Skin Care",desc:"Facials and cleanups for every skin type",price:799,ic:"🌿"},
- {id:"bridal",name:"Bridal Makeup",desc:"Complete bridal look for your big day",price:9999,ic:"👰"},
- {id:"makeup",name:"Party Makeup",desc:"Makeup for parties and occasions",price:1499,ic:"💄"},
- {id:"nails",name:"Nails",desc:"Manicure, pedicure & nail care",price:599,ic:"💅"},
- {id:"wax",name:"Hair Removal / Waxing",desc:"Smooth, hygienic waxing services",price:499,ic:"🕯️"},
- {id:"home",name:"Home Service Visit",desc:"Salon services at your home",price:999,ic:"🏠"}
+/* ---------- Data (prices are indicative demo prices) ---------- */
+const WA = "919303449993";
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+const IMG = {
+  cut:"https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=900&auto=format&fit=crop",
+  blowdry:"https://images.unsplash.com/photo-1522337094846-8a818192de1f?q=80&w=900&auto=format&fit=crop",
+  beard:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=900&auto=format&fit=crop",
+  colour:"https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=900&auto=format&fit=crop",
+  highlights:"https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=900&auto=format&fit=crop",
+  keratin:"https://images.unsplash.com/photo-1523263685509-57c1d050d19b?q=80&w=900&auto=format&fit=crop",
+  facial:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=900&auto=format&fit=crop",
+  wax:"https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=900&auto=format&fit=crop",
+  makeup:"https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=900&auto=format&fit=crop",
+  bridal:"https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=900&auto=format&fit=crop",
+  nails:"https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=900&auto=format&fit=crop",
+  salon:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=900&auto=format&fit=crop",
+  products:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=900&auto=format&fit=crop",
+  style:"https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=900&auto=format&fit=crop"
+};
+const CATEGORIES = ["All","Haircuts & Styling","Colour & Highlights","Keratin & Smoothening","Skin & Facials","Makeup","Nails"];
+const SERVICES = [
+  {id:"haircut", cat:"Haircuts & Styling", name:"Haircut & Styling", price:299, img:IMG.cut, desc:"A cut shaped to your face and lifestyle, finished with a wash and styling — for women and men. Our most-booked chair."},
+  {id:"blowdry", cat:"Haircuts & Styling", name:"Blow-Dry & Finish", price:499, img:IMG.blowdry, desc:"Smooth, bouncy blow-out with a polished finish — party-ready hair in under an hour."},
+  {id:"beard", cat:"Haircuts & Styling", name:"Beard Trim & Styling", price:199, img:IMG.beard, desc:"Sharp beard shaping, clean lines and a tidy finish — pair it with your haircut for the complete look."},
+  {id:"global-colour", cat:"Colour & Highlights", name:"Global Hair Colour", price:1499, img:IMG.colour, desc:"Full-head colour with rich, even coverage. Grey coverage or a brand-new shade — the makeover classic."},
+  {id:"highlights", cat:"Colour & Highlights", name:"Highlights & Balayage", price:2499, img:IMG.highlights, desc:"Dimension and shine with streaks, global highlights or soft balayage, toned to suit your skin."},
+  {id:"root-touchup", cat:"Colour & Highlights", name:"Root Touch-Up", price:799, img:IMG.colour, desc:"Quick regrowth and grey coverage at the roots, matched to your existing colour."},
+  {id:"keratin", cat:"Keratin & Smoothening", name:"Keratin Treatment", price:3499, img:IMG.keratin, desc:"Frizz-control keratin that leaves hair smooth, shiny and far easier to manage for months."},
+  {id:"smoothening", cat:"Keratin & Smoothening", name:"Smoothening / Rebonding", price:2999, img:IMG.highlights, desc:"Silky-straight results for unruly hair, with a natural fall — no stiff, stuck-down look."},
+  {id:"hair-spa", cat:"Keratin & Smoothening", name:"Hair Spa Ritual", price:899, img:IMG.salon, desc:"Deep conditioning, scalp massage and steam — the reset button for dry, damaged, tired hair."},
+  {id:"facial", cat:"Skin & Facials", name:"Signature Facial", price:799, img:IMG.facial, desc:"Facials and clean-ups for every skin type — glow, hydration and tan removal, finished with a relaxing massage."},
+  {id:"cleanup", cat:"Skin & Facials", name:"Clean-Up & Glow", price:499, img:IMG.products, desc:"A quick deep-cleanse, exfoliation and mask for an instant fresh, bright look before any occasion."},
+  {id:"waxing", cat:"Skin & Facials", name:"Waxing & Hair Removal", price:499, img:IMG.wax, desc:"Smooth, hygienic waxing for arms, legs and full body, plus threading and brow shaping."},
+  {id:"party-makeup", cat:"Makeup", name:"Party Makeup", price:1499, img:IMG.makeup, desc:"A complete occasion look — base, eyes and lips matched to your outfit, made to last all evening."},
+  {id:"engagement-look", cat:"Makeup", name:"Engagement / Reception Look", price:4999, img:IMG.style, desc:"A step above party makeup: HD finish, hairstyling and draping help for your big pre-wedding events."},
+  {id:"bridal-makeup", cat:"Makeup", name:"Bridal Makeup", price:9999, img:IMG.bridal, desc:"The complete bridal look for your wedding day — long-wear, photo-ready and calmly done, start to finish."},
+  {id:"manicure", cat:"Nails", name:"Manicure", price:599, img:IMG.nails, desc:"Soak, cuticle care, massage and polish — hands that look as cared-for as they feel."},
+  {id:"pedicure", cat:"Nails", name:"Pedicure", price:699, img:IMG.products, desc:"A relaxing foot soak, scrub and massage with a clean polish finish. Pure unwind."},
+  {id:"nail-art", cat:"Nails", name:"Nail Art & Extensions", price:999, img:IMG.nails, desc:"Extensions and nail art for weddings, festivals and every photo in between."}
 ];
-const picked=new Set();
-const grid=document.getElementById("menuGrid"), line=document.getElementById("cartLine"), btn=document.getElementById("waBtn");
-SERVICES.forEach(s=>{
-  const d=document.createElement("div"); d.className="item";
-  d.innerHTML=`<span style="font-size:24px">${s.ic}</span><div><h3>${s.name}</h3><p>${s.desc}</p></div><span class="pr">${fmt(s.price)}+</span>`;
-  const b=document.createElement("button"); b.className="add"; b.textContent="Add"; b.setAttribute("aria-pressed","false");
-  b.addEventListener("click",()=>{ if(picked.has(s.id)){picked.delete(s.id);b.textContent="Add";b.setAttribute("aria-pressed","false");}
-    else{picked.add(s.id);b.textContent="✓ Added";b.setAttribute("aria-pressed","true");} render(); });
-  d.appendChild(b); grid.appendChild(d);
-});
-function render(){
-  const list=SERVICES.filter(s=>picked.has(s.id));
-  const total=list.reduce((a,s)=>a+s.price,0);
-  line.textContent=list.length? list.map(s=>s.name).join(", ")+" — "+fmt(total)+"+ (indicative)" : "nothing selected yet";
-  btn.disabled=!list.length;
+const PACKAGES = [
+  {id:"pkg-grooming", name:"Everyday Grooming Combo", for:"Haircut regulars", price:1499, featured:false,
+   points:["Haircut & styling","Beard trim & styling (for him) or brow shaping","Clean-up & glow session","Hair spa add-on at a combo price"]},
+  {id:"pkg-bridal", name:"Complete Bridal Package", for:"Brides of Ashoka Garden", price:14999, featured:true, flag:"Most booked",
+   points:["Bridal makeup (HD, long-wear)","Bridal hairstyling & draping","Pre-bridal facial & glow sessions","Manicure + pedicure","Touch-up support on the day"]},
+  {id:"pkg-party", name:"Party Makeover Package", for:"Parties & occasions", price:2499, featured:false,
+   points:["Party makeup","Blow-dry or hairstyling finish","Brow shaping & cleanup","Ready in one sitting"]}
+];
+const GALLERY = [
+  {img:IMG.cut, cap:"Precision cuts & styling"},
+  {img:IMG.colour, cap:"Colour, washed & finished"},
+  {img:IMG.makeup, cap:"Occasion makeup looks"},
+  {img:IMG.nails, cap:"Nails, polished & detailed"},
+  {img:IMG.salon, cap:"At the salon chair"},
+  {img:IMG.bridal, cap:"Bridal-day ready"},
+  {img:IMG.facial, cap:"Skin care & facials"},
+  {img:IMG.beard, cap:"Grooming for him"}
+];
+const FAQS = [
+  {q:"Are the prices on this website final?", a:"The prices here are indicative demo prices to help you plan. Your final quote is confirmed on WhatsApp before your visit — and there is no advance payment. No surprises at the counter."},
+  {q:"How do I book an appointment?", a:"Pick your services from the price list, fill the short booking form, and it opens in WhatsApp pre-filled — just press send. You can also call us on +91 93034 49993 between 10 AM and 9 PM, any day."},
+  {q:"Do you offer home services?", a:"Yes — Makers Salon offers home service visits. Choose your services, add a note saying 'Home service' while booking, and we will plan the visit at your home and confirm the details on WhatsApp."},
+  {q:"Is Makers Salon only for women?", a:"No — we are a unisex salon. Haircuts, beard styling, skin care and grooming for men, and the full hair, makeup, bridal and nail menu for women, all under one roof in Ashoka Garden."},
+  {q:"What are your opening hours?", a:"We are open all 7 days, 10:00 AM to 9:00 PM — including weekends, when most people finally get time for themselves."},
+  {q:"I am getting married. How early should I book bridal?", a:"As early as you can — bridal dates fill fast in wedding season. Send us your date on WhatsApp and we will lock it in, plan your pre-bridal sessions, and confirm the complete package quote."},
+  {q:"Where exactly is the salon?", a:"House No. 04, Shop No. 02, Near Sangam Tent House, 80 Feet Road, Ashoka Garden, Bhopal — 462023. Tap 'Get directions' in the Visit section and Google Maps will bring you to us."}
+];
+
+/* ---------- State ---------- */
+const picked = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem("makers-picked") || "[]");
+  saved.forEach(id => { if (SERVICES.some(s => s.id === id) || PACKAGES.some(p => p.id === id)) picked.add(id); });
+} catch(e) {}
+let activeCat = "All";
+function persist(){ try { localStorage.setItem("makers-picked", JSON.stringify([...picked])); } catch(e) {} }
+function itemById(id){ return SERVICES.find(s => s.id === id) || PACKAGES.find(p => p.id === id); }
+
+/* ---------- Helpers ---------- */
+const $ = s => document.querySelector(s);
+const toastEl = $("#toast");
+let toastTimer;
+function toast(msg){ toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toastEl.classList.remove("show"), 2400); }
+
+/* ---------- Render: tabs + services ---------- */
+function renderTabs(){
+  $("#tabs").innerHTML = CATEGORIES.map(c =>
+    `<button class="tab" role="tab" aria-selected="${c === activeCat}" data-cat="${c}">${c}</button>`).join("");
 }
-btn.addEventListener("click",()=>{
-  const list=SERVICES.filter(s=>picked.has(s.id));
-  const total=list.reduce((a,s)=>a+s.price,0);
-  const msg=["Namaste Makers Salon, mujhe ye services book karni hain:","",
-    ...list.map(s=>"• "+s.name+" — "+fmt(s.price)+"+"),
-    "","Total (indicative): "+fmt(total)+"+",
-    "Please mera slot confirm kar dijiye. Dhanyavaad!"].join("\n");
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank","noopener");
+function renderServices(){
+  const list = SERVICES.filter(s => activeCat === "All" || s.cat === activeCat);
+  $("#svcGrid").innerHTML = list.map(s => `
+    <article class="svc-card">
+      <img src="${s.img}" alt="${s.name} at Makers Salon" loading="lazy" onerror="this.style.display='none'">
+      <div class="svc-body">
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <div class="svc-row">
+          <span class="price">${fmt(s.price)}+<small>Indicative demo price</small></span>
+          <button class="add-btn" data-add="${s.id}" aria-pressed="${picked.has(s.id)}" aria-label="Add ${s.name} to my visit">${picked.has(s.id) ? "✓ Added" : "Add +"}</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+/* ---------- Render: packages ---------- */
+function renderPackages(){
+  $("#pkgGrid").innerHTML = PACKAGES.map(p => `
+    <article class="pkg-card ${p.featured ? "featured" : ""}">
+      ${p.flag ? `<span class="pkg-flag">${p.flag}</span>` : ""}
+      <span class="for">${p.for}</span>
+      <h3>${p.name}</h3>
+      <div class="pkg-price">${fmt(p.price)}+ <span class="demo-tag">Demo price</span></div>
+      <ul>${p.points.map(pt => `<li>${pt}</li>`).join("")}</ul>
+      <button class="btn ${p.featured ? "btn-gold" : "btn-teal"}" data-add="${p.id}" aria-pressed="${picked.has(p.id)}">${picked.has(p.id) ? "✓ Added to my visit" : "Add package to my visit"}</button>
+    </article>`).join("");
+}
+/* ---------- Selection ---------- */
+function renderSelection(){
+  const items = [...picked].map(itemById).filter(Boolean);
+  const total = items.reduce((a, s) => a + s.price, 0);
+  $("#selCount").textContent = items.length ? `${items.length} selected · ${fmt(total)}+ indicative total` : "No services selected";
+  $("#selItems").textContent = items.length ? items.map(s => s.name).join(", ") : "Add services above to build your visit.";
+  const box = $("#pickedBox");
+  box.innerHTML = items.length
+    ? `<b>Your visit:</b> ${items.map(s => s.name + " (" + fmt(s.price) + "+)").join(", ")}<br><b>Indicative total: ${fmt(total)}+</b> — final quote confirmed on WhatsApp.`
+    : `No services added yet — <b>pick from the price list above</b>, or just choose a service below.`;
+  document.querySelectorAll("[data-add]").forEach(btn => {
+    const on = picked.has(btn.dataset.add);
+    btn.setAttribute("aria-pressed", on);
+    if (btn.classList.contains("add-btn")) btn.textContent = on ? "✓ Added" : "Add +";
+  });
+  PACKAGES.forEach(p => {
+    const btn = document.querySelector(`.pkg-card [data-add="${p.id}"]`);
+    if (btn) btn.textContent = picked.has(p.id) ? "✓ Added to my visit" : "Add package to my visit";
+  });
+  persist();
+}
+function togglePick(id){
+  const item = itemById(id); if (!item) return;
+  if (picked.has(id)) { picked.delete(id); toast(item.name + " removed"); }
+  else { picked.add(id); toast(item.name + " added to your visit"); }
+  renderSelection();
+}
+/* Delegated clicks for tabs + add buttons */
+document.addEventListener("click", e => {
+  const tab = e.target.closest("[data-cat]");
+  if (tab) { activeCat = tab.dataset.cat; renderTabs(); renderServices(); renderSelection(); return; }
+  const add = e.target.closest("[data-add]");
+  if (add) { togglePick(add.dataset.add); }
 });
-render();
+$("#clearBtn").addEventListener("click", () => { picked.clear(); renderSelection(); toast("Visit cleared"); });
+
+/* ---------- Gallery + lightbox ---------- */
+$("#galGrid").innerHTML = GALLERY.map((g, i) => `
+  <button class="gal-item" data-gal="${i}" aria-label="View photo: ${g.cap}">
+    <img src="${g.img}" alt="${g.cap} — Makers Salon" loading="lazy" onerror="this.parentElement.style.display='none'">
+    <span>${g.cap}</span>
+  </button>`).join("");
+const lb = $("#lightbox"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+let lbIndex = 0, lastFocus = null;
+function showLb(i){
+  lbIndex = (i + GALLERY.length) % GALLERY.length;
+  lbImg.src = GALLERY[lbIndex].img; lbImg.alt = GALLERY[lbIndex].cap + " — Makers Salon";
+  lbCap.textContent = GALLERY[lbIndex].cap + " · " + (lbIndex + 1) + " / " + GALLERY.length;
+}
+function openLb(i){ lastFocus = document.activeElement; showLb(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; $("#lbClose").focus(); }
+function closeLb(){ lb.classList.remove("open"); document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-gal]");
+  if (g) openLb(Number(g.dataset.gal));
+});
+$("#lbClose").addEventListener("click", closeLb);
+$("#lbPrev").addEventListener("click", () => showLb(lbIndex - 1));
+$("#lbNext").addEventListener("click", () => showLb(lbIndex + 1));
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb();
+  if (e.key === "ArrowLeft") showLb(lbIndex - 1);
+  if (e.key === "ArrowRight") showLb(lbIndex + 1);
+});
+
+/* ---------- FAQ ---------- */
+$("#faqList").innerHTML = FAQS.map((f, i) => `
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false" aria-controls="faqA${i}" id="faqQ${i}">${f.q}<span class="arrow" aria-hidden="true">▾</span></button>
+    <div class="faq-a" id="faqA${i}" role="region" aria-labelledby="faqQ${i}"><p>${f.a}</p></div>
+  </div>`).join("");
+document.querySelectorAll(".faq-q").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement, ans = item.querySelector(".faq-a"), open = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(o => { o.classList.remove("open"); o.querySelector(".faq-a").style.maxHeight = "0"; o.querySelector(".faq-q").setAttribute("aria-expanded", "false"); });
+    if (!open) { item.classList.add("open"); ans.style.maxHeight = ans.scrollHeight + "px"; btn.setAttribute("aria-expanded", "true"); }
+  });
+});
+
+/* ---------- Booking form ---------- */
+const svcSelect = $("#bkService");
+svcSelect.innerHTML = `<option value="">Choose a service…</option>` +
+  CATEGORIES.slice(1).map(c => `<optgroup label="${c}">` +
+    SERVICES.filter(s => s.cat === c).map(s => `<option value="${s.name}">${s.name} — ${fmt(s.price)}+</option>`).join("") + `</optgroup>`).join("") +
+  `<optgroup label="Packages">` + PACKAGES.map(p => `<option value="${p.name}">${p.name} — ${fmt(p.price)}+</option>`).join("") + `</optgroup>` +
+  `<option value="Home Service Visit">Home Service Visit — ${fmt(999)}+</option><option value="Other / Not sure yet">Other / Not sure yet</option>`;
+const dateEl = $("#bkDate");
+dateEl.min = new Date().toISOString().split("T")[0];
+function setInvalid(fieldId, bad){ document.getElementById(fieldId).classList.toggle("invalid", bad); return !bad; }
+$("#bookForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("#bkName").value.trim();
+  let mobile = $("#bkMobile").value.replace(/\D/g, "");
+  if (mobile.length === 12 && mobile.startsWith("91")) mobile = mobile.slice(2);
+  if (mobile.length === 11 && mobile.startsWith("0")) mobile = mobile.slice(1);
+  let ok = setInvalid("fName", !name);
+  ok = setInvalid("fMobile", !/^[6-9]\d{9}$/.test(mobile)) && ok;
+  if (!ok) { toast("Please check the highlighted fields"); return; }
+  const items = [...picked].map(itemById).filter(Boolean);
+  const total = items.reduce((a, s) => a + s.price, 0);
+  const mainService = svcSelect.value;
+  const lines = ["Namaste Makers Salon! Mujhe appointment book karna hai.", "",
+    "Name: " + name, "Mobile: " + mobile];
+  if (items.length) {
+    lines.push("", "Services selected:");
+    items.forEach(s => lines.push("• " + s.name + " — " + fmt(s.price) + "+"));
+    lines.push("Indicative total: " + fmt(total) + "+");
+  } else if (mainService) {
+    lines.push("Service: " + mainService);
+  }
+  if (mainService && items.length && !items.some(s => s.name === mainService)) lines.push("Main service: " + mainService);
+  if (dateEl.value) lines.push("Preferred date: " + dateEl.value);
+  const time = $("#bkTime").value; if (time) lines.push("Preferred time: " + time);
+  const note = $("#bkNote").value.trim(); if (note) lines.push("Note: " + note);
+  lines.push("", "Please mera slot aur final quote confirm kar dijiye. Dhanyavaad!");
+  window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
+  toast("Opening WhatsApp with your booking…");
+});
+["bkName","bkMobile"].forEach(id => {
+  document.getElementById(id).addEventListener("input", e => e.target.closest(".field").classList.remove("invalid"));
+});
+
+/* ---------- Reveal on scroll ---------- */
+const io = ("IntersectionObserver" in window) ? new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+}, { threshold: 0.1 }) : null;
+document.querySelectorAll(".reveal").forEach(el => { if (io) io.observe(el); else el.classList.add("in"); });
+
+/* ---------- Init ---------- */
+renderTabs(); renderServices(); renderPackages(); renderSelection();
 </script>
 </body>
 </html>

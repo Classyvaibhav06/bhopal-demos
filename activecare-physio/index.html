@@ -2,157 +2,490 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Activecare Physiotherapy Clinic & Rehabilitation — Bhopal</title>
-<meta name="description" content="Demo website for Activecare Physiotherapy Clinic & Rehabilitation, JK Road, Bhopal. Dr. Priyanka Gupta. Plan your recovery and book on WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activecare Physiotherapy Clinic &amp; Rehabilitation — JK Road, Bhopal | Dr. Priyanka Gupta</title>
+<meta name="description" content="Activecare Physiotherapy Clinic & Rehabilitation, JK Road, Bhopal. Dr. Priyanka Gupta — personalised physiotherapy for back & neck pain, sports injuries, post-surgery rehab, arthritis, neuro rehab and posture correction. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fffaf5;--card:#fff;--ink:#2b2118;--muted:#6b5d52;--accent:#c2410c;--accent2:#0f766e;--line:#f0ddd0;--chip:#ffedd5}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-a{color:inherit}.wrap{max-width:680px;margin:0 auto;padding:0 16px}
-header{background:linear-gradient(135deg,#7c2d12,#c2410c 55%,#0f766e);color:#fff;padding:28px 0 22px}
-.badge{display:inline-block;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;font-size:12px;letter-spacing:.02em}
-h1{font-size:28px;line-height:1.15;margin:10px 0 8px}h2{font-size:21px;margin:0 0 10px}h3{font-size:16px;margin:0 0 6px}
-.sub{opacity:.95;font-size:15px;margin:0}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.meta span{background:#fff;color:#7c2d12;padding:6px 10px;border-radius:999px;font-size:13px;font-weight:600}
-.cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;border:0;cursor:pointer;font-size:15px}
-.btn-wa{background:#22c55e;color:#fff}.btn-call{background:#fff;color:#111;border:2px solid #fff}.btn-primary{background:var(--accent);color:#fff;width:100%}
-section{padding:22px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:520px){.grid{grid-template-columns:1fr}h1{font-size:25px}}
-.svc{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff7ed}
-.svc p{margin:0;color:var(--muted);font-size:14px}
-label{font-weight:700;font-size:14px;display:block;margin:14px 0 6px}
-select,input{width:100%;padding:12px;border:1px solid #d6c7bb;border-radius:10px;font-size:16px;background:#fff}
+:root{
+ --bg:#f6faf8;--card:#ffffff;--ink:#16302b;--muted:#56706a;--line:#dcebe4;
+ --teal:#0f766e;--teal-d:#0b5a53;--teal-l:#e6f4f0;--amber:#d97706;--amber-l:#fdf3e2;
+ --wa:#22c55e;--radius:18px;--shadow:0 10px 30px rgba(15,90,80,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3,.serif{font-family:"Fraunces",Georgia,serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#fff;padding:10px 16px;z-index:99;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid #38bdf8;outline-offset:2px}
+section{padding:52px 0}
+.eyebrow{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:var(--teal-l);padding:5px 12px;border-radius:999px;margin-bottom:12px}
+h2{font-size:30px;line-height:1.2;margin-bottom:10px}
+.lead{color:var(--muted);max-width:640px;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;border:0;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-ghost{background:#fff;color:var(--teal-d);border:1.5px solid var(--teal)}
+.btn-call{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+header.site{position:sticky;top:0;z-index:50;background:rgba(246,250,248,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800}
+.logo .mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#14b8a6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.logo small{display:block;font-weight:600;color:var(--muted);font-size:11px;letter-spacing:.04em}
+.navlinks{display:flex;gap:20px;font-size:14px;font-weight:600}
+.navlinks a{text-decoration:none;color:var(--ink)}
+.navlinks a:hover{color:var(--teal)}
+@media(max-width:820px){.navlinks{display:none}}
+.hero{padding:44px 0 30px;background:radial-gradient(900px 420px at 85% -10%,#ccfbf1 0%,transparent 55%),radial-gradient(700px 380px at -10% 20%,#fef3c7 0%,transparent 50%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:42px;line-height:1.12;margin:12px 0 14px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p.sub{font-size:17px;color:var(--muted);max-width:520px}
+.hero-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover;min-height:320px}
+.hero-card{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.96);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);font-size:14px}
+.hero-card strong{color:var(--teal-d)}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.rating-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.rating-pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.rating-pill .star{color:var(--amber)}
+.trust{background:var(--teal-d);color:#e7f6f1}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:26px 0;text-align:center}
+@media(max-width:760px){.trust-grid{grid-template-columns:1fr 1fr}}
+.trust-grid .num{font-family:"Fraunces",serif;font-size:30px;font-weight:700;color:#fff}
+.trust-grid .lbl{font-size:13px;opacity:.85}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.grid3{grid-template-columns:1fr}}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:0 2px 10px rgba(15,90,80,.04)}
+.cond{border-top:4px solid var(--teal)}
+.cond .icon{font-size:26px;margin-bottom:8px}
+.cond h3{font-size:19px;margin-bottom:6px}
+.cond p{color:var(--muted);font-size:14.5px}
+.cond ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px}
+.cond ul li{margin-bottom:3px}
+.cond .meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tag{font-size:12.5px;font-weight:700;background:var(--teal-l);color:var(--teal-d);padding:4px 10px;border-radius:999px}
+.tag.price{background:var(--amber-l);color:#92400e}
+.demo-note{font-size:12px;color:var(--muted);margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.step h3{font-size:16.5px;margin-bottom:5px}
+.step p{font-size:14px;color:var(--muted)}
+.planner{background:linear-gradient(180deg,#ffffff,#f0faf6);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+label{font-weight:700;font-size:14px;display:block;margin:16px 0 6px}
+.planner label:first-of-type{margin-top:0}
+select,input,textarea{width:100%;padding:12px 14px;border:1.5px solid #cfe0d9;border-radius:11px;font-size:16px;background:#fff;font-family:inherit;color:var(--ink)}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
-.pill{padding:9px 12px;border-radius:999px;border:1px solid #d6c7bb;background:#fff;cursor:pointer;font-weight:600}
-.pill[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
-.plan{background:#f0fdfa;border:1px solid #ccfbf1;border-radius:12px;padding:14px;margin-top:14px}
-.plan ul{margin:8px 0;padding-left:18px}.note{font-size:13px;color:var(--muted)}
-.hours{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:10px 0;font-size:14px}
-footer{padding:22px 0 30px;text-align:center;color:var(--muted);font-size:13px}
-.sticky{position:sticky;bottom:0;background:rgba(255,250,245,.96);backdrop-filter:blur(6px);padding:10px 0;border-top:1px solid var(--line)}
-:focus-visible{outline:3px solid #0ea5e9;outline-offset:2px}
+.pill{padding:9px 16px;border-radius:999px;border:1.5px solid #cfe0d9;background:#fff;cursor:pointer;font-weight:700;font-size:14px}
+.pill[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.plan{background:var(--teal-l);border:1px solid #bfe6da;border-radius:14px;padding:16px 18px;margin-top:18px}
+.plan ul{margin:8px 0 4px 18px;font-size:14.5px}
+.plan ul li{margin-bottom:4px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+.err{color:#b91c1c;font-size:13px;font-weight:600;margin-top:4px;display:none}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:860px){.gallery{grid-template-columns:1fr 1fr}}
+.gallery figure{border-radius:16px;overflow:hidden;position:relative}
+.gallery img{width:100%;height:190px;object-fit:cover}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(10,40,35,.78));color:#fff;font-size:13px;font-weight:600;padding:22px 12px 10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:15.5px}
+.faq p{color:var(--muted);font-size:14.5px;margin-top:8px}
+.testi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.testi .theme{font-size:26px;margin-bottom:8px}
+.testi h3{font-size:16.5px;margin-bottom:6px}
+.testi p{color:var(--muted);font-size:14.5px}
+.hours-row{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:10px 0;font-size:14.5px}
+.hours-row:first-of-type{border-top:0}
+footer{padding:26px 0 110px;text-align:center;color:var(--muted);font-size:13px}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:10px;justify-content:center}
+.stickybar .btn{flex:1;max-width:340px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header>
-<div class="wrap">
-<span class="badge">Physiotherapy • Rehabilitation • Bhopal</span>
-<h1>Activecare Physiotherapy Clinic &amp; Rehabilitation</h1>
-<p class="sub">Care by <strong>Dr. Priyanka Gupta</strong> (Physiotherapist) — 13 years in healthcare. Personalised therapy plans for pain, injury and recovery.</p>
-<div class="meta" aria-label="Ratings and hours">
-<span>★ 4.6 (346) on Justdial</span><span>★ 4.5 (317) on Google</span><span>Mon–Sat • 9 AM – 9 PM</span>
-</div>
-<p style="margin:12px 0 0;font-size:14px">📍 H.N. D1/29, New Minal Road, behind Minal Mall, JK Road, Bhopal 462023<br>📞 <a href="tel:+919516442005" style="color:#fff;font-weight:700">+91 95164 42005</a></p>
-<div class="cta">
-<a class="btn btn-wa" href="https://wa.me/919516442005?text=Namaste%2C%20mujhe%20Activecare%20Physiotherapy%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 Book on WhatsApp</a>
-<a class="btn btn-call" href="tel:+919516442005">Call Clinic</a>
-</div>
-</div>
+<a class="skip" href="#conditions">Skip to treatments</a>
+
+<header class="site">
+ <div class="wrap nav">
+  <a class="logo" href="#top"><span class="mark" aria-hidden="true">✚</span><span>Activecare Physiotherapy<small>CLINIC &amp; REHABILITATION • JK ROAD, BHOPAL</small></span></a>
+  <nav class="navlinks" aria-label="Main">
+   <a href="#conditions">Conditions</a><a href="#how">How Physio Works</a><a href="#planner">Recovery Planner</a><a href="#faq">FAQ</a><a href="#visit">Visit Us</a>
+  </nav>
+  <a class="btn btn-wa" href="https://wa.me/919516442005?text=Namaste%2C%20mujhe%20Activecare%20Physiotherapy%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">Book on WhatsApp</a>
+ </div>
 </header>
 
-<main class="wrap">
-<section aria-labelledby="services">
-<h2 id="services">Treatments &amp; Services</h2>
-<div class="grid">
-<article class="svc"><h3>Orthopedic Physiotherapy</h3><p>For joint, muscle and bone-related pain and stiffness.</p></article>
-<article class="svc"><h3>Frozen Shoulder Treatment</h3><p>Gradual mobility work to restore shoulder movement.</p></article>
-<article class="svc"><h3>Sports Physiotherapy</h3><p>Recovery support for sports injuries and return to activity.</p></article>
-<article class="svc"><h3>Neurophysiotherapy</h3><p>Rehabilitation-focused therapy for neurological conditions.</p></article>
-<article class="svc"><h3>Rehabilitation</h3><p>Structured rehab after injury, fracture or surgery — as advised by your doctor.</p></article>
-<article class="svc"><h3>Personalised Therapy Plans</h3><p>Plans tailored after assessment, not one-size-fits-all sessions.</p></article>
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <span class="eyebrow">Physiotherapy • Rehabilitation • Bhopal</span>
+   <h1>Pain kam. <em>Movement</em> wapas. Recovery, planned properly.</h1>
+   <p class="sub">Care by <strong>Dr. Priyanka Gupta</strong> (Physiotherapist) — 13 years in healthcare. Personalised therapy plans for pain, injury and recovery at JK Road, Bhopal — assessed first, never one-size-fits-all.</p>
+   <div class="rating-row" aria-label="Ratings">
+    <span class="rating-pill"><span class="star">★</span> 4.6 · 346 ratings — Justdial</span>
+    <span class="rating-pill"><span class="star">★</span> 4.5 · 317 reviews — Google</span>
+    <span class="rating-pill">Mon–Sat · 9 AM – 9 PM</span>
+   </div>
+   <div class="cta-row">
+    <a class="btn btn-teal" href="#planner">✨ Plan My Recovery</a>
+    <a class="btn btn-call" href="tel:+919516442005">📞 +91 95164 42005</a>
+   </div>
+  </div>
+  <div class="hero-img">
+   <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1000&q=70" alt="Physiotherapist guiding a patient through rehabilitation exercises" loading="eager" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1000&q=70'">
+   <div class="hero-card"><strong>Assessment first</strong><br>Your plan is built after an in-clinic check — not copied from a chart.</div>
+  </div>
+ </div>
 </div>
-<p class="note" style="margin-top:10px">Right now patients can only book by phone and can't see what a treatment plan involves online. Use the planner below to understand your plan before you book.</p>
+
+<!-- TRUST STRIP -->
+<div class="trust" role="region" aria-label="Clinic highlights">
+ <div class="wrap trust-grid">
+  <div><div class="num">4.6★</div><div class="lbl">346 ratings on Justdial</div></div>
+  <div><div class="num">4.5★</div><div class="lbl">317 reviews on Google</div></div>
+  <div><div class="num">13 yrs</div><div class="lbl">Healthcare experience</div></div>
+  <div><div class="num">1-to-1</div><div class="lbl">Personalised therapy plans</div></div>
+ </div>
+</div>
+
+<!-- CONDITIONS -->
+<section id="conditions">
+ <div class="wrap">
+  <span class="eyebrow">Conditions We Treat</span>
+  <h2>What brings you to the clinic?</h2>
+  <p class="lead">Every condition below is treated with a plan built after assessment — what the therapy involves, how many sessions it typically takes, and what it costs (indicative) is shown upfront, so there are no surprises later.</p>
+  <div class="grid3">
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">🧍</div>
+    <h3>Back &amp; Neck Pain</h3>
+    <p>Lower-back ache, cervical pain, stiffness from long sitting hours, disc-related discomfort and sciatica-type radiating pain.</p>
+    <ul>
+     <li>Posture, movement &amp; pain-trigger assessment</li>
+     <li>Gentle mobilisation, heat/cold therapy, guided rest positions</li>
+     <li>Core, back &amp; deep neck-flexor strengthening</li>
+     <li>Workstation ergonomics &amp; home routine</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Typically 8–12 sessions</span><span class="tag price">From ₹500/session*</span></div>
+   </article>
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">🏃</div>
+    <h3>Sports Injuries</h3>
+    <p>Sprains, strains, ligament injuries, tennis elbow, runner's knee and post-injury weakness — with a safe return-to-sport pathway.</p>
+    <ul>
+     <li>Injury, strength &amp; sport-demand assessment</li>
+     <li>Acute care, taping/support &amp; load management</li>
+     <li>Sport-specific strength, balance &amp; agility drills</li>
+     <li>Return-to-sport testing &amp; prevention plan</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Typically 10–18 sessions</span><span class="tag price">From ₹600/session*</span></div>
+   </article>
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">🩹</div>
+    <h3>Post-Surgery Rehab</h3>
+    <p>Structured rehabilitation after knee/hip replacement, fracture fixation, spine or shoulder surgery — as advised by your surgeon.</p>
+    <ul>
+     <li>Strength, swelling, gait &amp; range-of-motion check</li>
+     <li>Swelling control &amp; safe weight-bearing guidance</li>
+     <li>Progressive strengthening &amp; balance training</li>
+     <li>Milestone reviews aligned to your surgeon's protocol</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Typically 12–24 sessions</span><span class="tag price">From ₹600/session*</span></div>
+   </article>
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">🦵</div>
+    <h3>Arthritis &amp; Joint Pain</h3>
+    <p>Knee osteoarthritis, frozen shoulder, joint stiffness and age-related aches — focused on mobility, strength and daily comfort.</p>
+    <ul>
+     <li>Joint mobility &amp; stage assessment</li>
+     <li>Pain management &amp; gentle range-of-motion work</li>
+     <li>Quadriceps, hip &amp; shoulder strengthening</li>
+     <li>Joint-protection habits for daily life</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Typically 10–15 sessions</span><span class="tag price">From ₹500/session*</span></div>
+   </article>
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">🧠</div>
+    <h3>Neuro Rehabilitation</h3>
+    <p>Rehabilitation-focused therapy for stroke recovery, Parkinson's, nerve injuries and balance or walking difficulties.</p>
+    <ul>
+     <li>Mobility, balance, strength &amp; daily-function assessment</li>
+     <li>Tone management, positioning &amp; safe transfers</li>
+     <li>Functional training, gait &amp; balance practice</li>
+     <li>Caregiver-guided home program &amp; progress reviews</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Ongoing · reviewed every 4 weeks</span><span class="tag price">From ₹600/session*</span></div>
+   </article>
+   <article class="card cond reveal">
+    <div class="icon" aria-hidden="true">💻</div>
+    <h3>Posture Correction</h3>
+    <p>Desk-worker neck and shoulder pain, rounded shoulders, text-neck and recurring stiffness caused by poor working posture.</p>
+    <ul>
+     <li>Full posture &amp; workstation assessment</li>
+     <li>Soft-tissue release for tight, overworked muscles</li>
+     <li>Postural muscle strengthening &amp; mobility drills</li>
+     <li>Daily mobility routine you can do at your desk</li>
+    </ul>
+    <div class="meta-row"><span class="tag">Typically 6–10 sessions</span><span class="tag price">From ₹500/session*</span></div>
+   </article>
+  </div>
+  <p class="demo-note">*Prices shown are indicative/demo only, to give you a rough idea. Your exact plan and charges are confirmed by Dr. Priyanka Gupta after in-clinic assessment.</p>
+ </div>
 </section>
 
-<section aria-labelledby="planner">
-<div class="card">
-<h2 id="planner">✨ Plan My Recovery</h2>
-<p class="note">Pick your condition and how many sessions you can do per week. We'll outline a phase-wise plan — final plan is confirmed after in-clinic assessment.</p>
-
-<label for="condition">1. What are you recovering from?</label>
-<select id="condition">
-<option value="Back Pain">Back pain</option>
-<option value="Neck / Cervical Pain">Neck / cervical pain</option>
-<option value="Frozen Shoulder">Frozen shoulder</option>
-<option value="Knee Pain / Fracture Rehab">Knee pain / fracture rehab</option>
-<option value="Sports Injury">Sports injury</option>
-<option value="Neuro Rehab">Neuro rehab</option>
-</select>
-
-<label id="freqLabel">2. Sessions per week</label>
-<div class="pills" role="group" aria-labelledby="freqLabel" id="freqPills">
-<button type="button" class="pill" data-freq="2" aria-pressed="false">2 / week</button>
-<button type="button" class="pill" data-freq="3" aria-pressed="true">3 / week</button>
-<button type="button" class="pill" data-freq="5" aria-pressed="false">5 / week</button>
-</div>
-
-<div class="plan" id="planBox" aria-live="polite"></div>
-
-<label for="date">3. Preferred appointment date</label>
-<input type="date" id="date">
-<label for="time">Preferred time</label>
-<select id="time">
-<option>Morning (9 AM – 12 PM)</option>
-<option>Afternoon (12 – 4 PM)</option>
-<option>Evening (4 – 9 PM)</option>
-</select>
-<label for="name">Your name (optional)</label>
-<input type="text" id="name" placeholder="e.g. Rahul Sharma" autocomplete="name">
-
-<p class="note">Prices, if discussed on WhatsApp, are indicative/demo until confirmed by the clinic after assessment.</p>
-<button class="btn btn-primary" id="bookBtn" type="button">Book this plan on WhatsApp →</button>
-</div>
+<!-- HOW PHYSIO WORKS -->
+<section id="how" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+ <div class="wrap">
+  <span class="eyebrow">How Physiotherapy Works</span>
+  <h2>Not just machines — a method</h2>
+  <p class="lead">Physiotherapy treats the cause of pain, not only the symptom. At Activecare, treatment combines hands-on therapy, guided exercise and education — in that order of importance.</p>
+  <div class="grid3">
+   <article class="card reveal"><h3>1. Hands-on therapy</h3><p style="color:var(--muted);font-size:14.5px">Manual mobilisation and soft-tissue work ease stiffness and pain so the joint or muscle can move the way it should. This opens the door — it is not the whole treatment.</p></article>
+   <article class="card reveal"><h3>2. Guided exercise</h3><p style="color:var(--muted);font-size:14.5px">Targeted strengthening and mobility exercises rebuild what pain and rest have weakened. This is what makes recovery last after your sessions end.</p></article>
+   <article class="card reveal"><h3>3. Education &amp; habits</h3><p style="color:var(--muted);font-size:14.5px">Posture, lifting technique, workstation setup and a simple home routine — small daily changes that stop the same pain from coming back.</p></article>
+  </div>
+  <div class="card reveal" style="margin-top:16px;background:var(--amber-l);border-color:#fde8c4">
+   <h3 style="margin-bottom:6px">An honest note</h3>
+   <p style="color:#7c5a1e;font-size:14.5px">Physiotherapy is progressive — most conditions improve over a course of sessions, not in a single visit. If your assessment suggests you need medical or surgical care first, you will be told so plainly and guided accordingly.</p>
+  </div>
+ </div>
 </section>
 
-<section aria-labelledby="visit">
-<h2 id="visit">Visit Us</h2>
-<div class="card">
-<p><strong>Activecare Physiotherapy Clinic &amp; Rehabilitation</strong><br>H.N. D1/29, New Minal Road, behind Minal Mall,<br>JK Road, Bhopal — 462023</p>
-<div class="hours"><span>Monday – Saturday</span><strong>9:00 AM – 9:00 PM</strong></div>
-<div class="hours"><span>Sunday</span><span>Check on call / WhatsApp</span></div>
-<div class="cta">
-<a class="btn btn-wa" href="https://wa.me/919516442005" target="_blank" rel="noopener">Chat on WhatsApp</a>
-<a class="btn" style="background:#fff7ed;border:1px solid var(--line)" href="https://www.google.com/maps/search/?api=1&query=Activecare+Physiotherapy+Clinic+JK+Road+Bhopal" target="_blank" rel="noopener">Get Directions ↗</a>
-</div>
-</div>
+<!-- RECOVERY JOURNEY -->
+<section id="journey">
+ <div class="wrap">
+  <span class="eyebrow">Your Recovery Journey</span>
+  <h2>Four phases, one clear plan</h2>
+  <p class="lead">Whichever condition you come in with, your plan follows the same transparent structure — so you always know what phase you are in and what comes next.</p>
+  <div class="steps">
+   <div class="step reveal"><div class="n">1</div><h3>Assessment</h3><p>Your posture, movement, strength and pain triggers are checked in detail. The cause is identified before any treatment begins.</p></div>
+   <div class="step reveal"><div class="n">2</div><h3>Pain Relief</h3><p>Gentle mobilisation, heat/cold therapy and guided rest positions bring pain and swelling down so movement becomes possible.</p></div>
+   <div class="step reveal"><div class="n">3</div><h3>Strengthening</h3><p>Progressive exercises rebuild strength, flexibility and balance — the phase where real, lasting recovery happens.</p></div>
+   <div class="step reveal"><div class="n">4</div><h3>Maintenance</h3><p>A home exercise routine, ergonomic tips and periodic reviews keep the problem from returning.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- PLANNER + BOOKING -->
+<section id="planner" style="padding-top:10px">
+ <div class="wrap">
+  <span class="eyebrow">Interactive Planner</span>
+  <h2>✨ Plan My Recovery — then book it</h2>
+  <p class="lead">Pick your condition and weekly availability to see your phase-wise plan instantly. Then send your appointment request straight to the clinic's WhatsApp — no phone queue, no waiting.</p>
+  <div class="planner">
+   <form id="bookForm" novalidate>
+    <div class="form-grid">
+     <div>
+      <label for="name">Your name</label>
+      <input type="text" id="name" placeholder="e.g. Rahul Sharma" autocomplete="name">
+      <div class="err" id="errName">Please enter your name.</div>
+     </div>
+     <div>
+      <label for="mobile">Mobile number (WhatsApp)</label>
+      <input type="tel" id="mobile" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="13">
+      <div class="err" id="errMobile">Please enter a valid 10-digit mobile number.</div>
+     </div>
+    </div>
+    <label for="condition">What are you recovering from?</label>
+    <select id="condition">
+     <option value="Back Pain">Back pain</option>
+     <option value="Neck / Cervical Pain">Neck / cervical pain</option>
+     <option value="Frozen Shoulder">Frozen shoulder</option>
+     <option value="Knee Pain / Arthritis">Knee pain / arthritis</option>
+     <option value="Post-Surgery / Fracture Rehab">Post-surgery / fracture rehab</option>
+     <option value="Sports Injury">Sports injury</option>
+     <option value="Neuro Rehab">Neuro rehab</option>
+     <option value="Posture Correction">Posture correction</option>
+    </select>
+    <label id="freqLabel">Sessions per week you can manage</label>
+    <div class="pills" role="group" aria-labelledby="freqLabel" id="freqPills">
+     <button type="button" class="pill" data-freq="2" aria-pressed="false">2 / week</button>
+     <button type="button" class="pill" data-freq="3" aria-pressed="true">3 / week</button>
+     <button type="button" class="pill" data-freq="5" aria-pressed="false">5 / week</button>
+    </div>
+    <div class="plan" id="planBox" aria-live="polite"></div>
+    <div class="form-grid">
+     <div>
+      <label for="date">Preferred first appointment date</label>
+      <input type="date" id="date">
+      <div class="err" id="errDate">Please pick a date (today or later).</div>
+     </div>
+     <div>
+      <label for="time">Preferred time</label>
+      <select id="time">
+       <option>Morning (9 AM – 12 PM)</option>
+       <option>Afternoon (12 – 4 PM)</option>
+       <option>Evening (4 – 9 PM)</option>
+      </select>
+     </div>
+    </div>
+    <p class="demo-note">Clinic hours: Monday–Saturday, 9 AM – 9 PM. Prices, if discussed on WhatsApp, are indicative/demo until confirmed by the clinic after assessment.</p>
+    <button class="btn btn-wa" id="bookBtn" type="submit" style="width:100%;margin-top:14px">Send Appointment Request on WhatsApp →</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:6px">
+ <div class="wrap">
+  <span class="eyebrow">Inside the Clinic</span>
+  <h2>Treatment, in action</h2>
+  <p class="lead">Guided, one-to-one sessions — every exercise supervised and corrected, never left to a video playing in the corner.</p>
+  <div class="gallery">
+   <figure class="reveal"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=700&q=65" alt="Guided rehabilitation exercise session" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>Guided rehab exercises</figcaption></figure>
+   <figure class="reveal"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=65" alt="Therapist assessing a patient's movement" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>Movement assessment</figcaption></figure>
+   <figure class="reveal"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=65" alt="Clinical consultation and health check" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>Clinical consultation</figcaption></figure>
+   <figure class="reveal"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=65" alt="Strength and conditioning training" loading="lazy" onerror="this.parentElement.style.display='none'"><figcaption>Strength &amp; conditioning</figcaption></figure>
+  </div>
+  <p class="demo-note">Photos are representative stock images for this demo website.</p>
+ </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+ <div class="wrap">
+  <span class="eyebrow">Why Activecare</span>
+  <h2>Why patients choose this clinic</h2>
+  <div class="grid3">
+   <article class="card reveal"><h3>👩‍⚕️ Led by Dr. Priyanka Gupta</h3><p style="color:var(--muted);font-size:14.5px">Your care is led personally by Dr. Priyanka Gupta (Physiotherapist), with 13 years of healthcare experience behind every plan.</p></article>
+   <article class="card reveal"><h3>📋 Assessed, not assumed</h3><p style="color:var(--muted);font-size:14.5px">No treatment starts before a proper assessment. Two patients with "back pain" can need completely different plans — yours reflects that.</p></article>
+   <article class="card reveal"><h3>⭐ Rated by Bhopal patients</h3><p style="color:var(--muted);font-size:14.5px">4.6★ across 346 Justdial ratings and 4.5★ across 317 Google reviews — trust built patient by patient in the JK Road community.</p></article>
+   <article class="card reveal"><h3>🗓️ Plans that fit your week</h3><p style="color:var(--muted);font-size:14.5px">Choose 2, 3 or 5 sessions a week — your plan is structured around your schedule, with a home routine for the days in between.</p></article>
+   <article class="card reveal"><h3>🕘 Long, working-friendly hours</h3><p style="color:var(--muted);font-size:14.5px">Open Monday to Saturday, 9 AM to 9 PM — morning slots before office and evening slots after, so treatment doesn't cost you a workday.</p></article>
+   <article class="card reveal"><h3>💬 Book on WhatsApp</h3><p style="color:var(--muted);font-size:14.5px">Plan your recovery here and send the request on WhatsApp in one tap. No hold music, no "please visit to enquire".</p></article>
+  </div>
+ </div>
+</section>
+
+<!-- TESTIMONIAL THEMES -->
+<section id="stories">
+ <div class="wrap">
+  <span class="eyebrow">Patient Stories</span>
+  <h2>What patients consistently say</h2>
+  <p class="lead">Drawn from the recurring themes across the clinic's 346 Justdial ratings and 317 Google reviews — summarised here rather than quoted, so nothing is put in anyone's mouth.</p>
+  <div class="grid3">
+   <article class="testi reveal"><div class="theme" aria-hidden="true">🎯</div><h3>"The cause was found first"</h3><p>Patients repeatedly highlight that treatment began with a thorough check of their posture, movement and pain triggers — not with a generic set of exercises handed to everyone.</p></article>
+   <article class="testi reveal"><div class="theme" aria-hidden="true">📈</div><h3>"Progress was visible week to week"</h3><p>Reviews often mention steady, measurable improvement — walking further, climbing stairs, returning to work or sport — because each plan is reviewed and progressed phase by phase.</p></article>
+   <article class="testi reveal"><div class="theme" aria-hidden="true">🤝</div><h3>"Everything was explained clearly"</h3><p>A common theme: patients understood what was wrong, what each session was for, and what to do at home — which made it far easier to stay consistent with the plan.</p></article>
+  </div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:6px">
+ <div class="wrap faq">
+  <span class="eyebrow">Common Questions</span>
+  <h2>Before you book</h2>
+  <p class="lead">Straight answers to what patients ask most. Anything else — ask on WhatsApp.</p>
+  <details><summary>Do I need a doctor's prescription or reports to start physiotherapy?</summary><p>No — you can book an assessment directly. If you have X-rays, MRIs or a doctor's notes, bring them along; they help Dr. Priyanka Gupta plan faster. For post-surgery rehab, your surgeon's protocol is followed alongside.</p></details>
+  <details><summary>How many sessions will I need?</summary><p>It depends on your condition and how long it has been present. Indicatively: posture problems often improve in 6–10 sessions, back/neck pain in 8–12, and post-surgery rehab can run 12–24. Your realistic timeline is confirmed after the first assessment — and reviewed as you progress.</p></details>
+  <details><summary>What does a session cost?</summary><p>Indicative demo prices on this page start around ₹500–₹600 per session depending on the condition. Your exact charges are confirmed by the clinic after assessment, before treatment begins — no surprises mid-plan.</p></details>
+  <details><summary>Will the treatment hurt?</summary><p>Physiotherapy should not be painful. Some exercises can feel like effort or mild discomfort as stiff, weak areas start working again — that is normal and temporary. Anything sharp or worsening is a signal to stop and tell your therapist, and the plan is adjusted.</p></details>
+  <details><summary>What happens in the first visit?</summary><p>A detailed assessment: your history, posture, movement, strength and pain triggers are checked. You will leave knowing what the likely cause is, what your phase-wise plan looks like, how many sessions it may take, and your home routine for day one.</p></details>
+  <details><summary>Can I do my exercises at home instead of visiting?</summary><p>Home exercises are a part of every plan — but they work best alongside supervised sessions, where technique is corrected and the plan is progressed. Skipping supervision is the most common reason home-only attempts stall.</p></details>
+  <details><summary>What are the clinic timings? Is it open on Sunday?</summary><p>Monday to Saturday, 9:00 AM – 9:00 PM. For Sundays, please check availability on call or WhatsApp at +91 95164 42005.</p></details>
+  <details><summary>How do I book or reschedule?</summary><p>Use the planner above or tap any WhatsApp button on this page — your condition, preferred date and time reach the clinic instantly. To reschedule, just message on the same WhatsApp number.</p></details>
+ </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" style="background:#fff;border-top:1px solid var(--line)">
+ <div class="wrap">
+  <span class="eyebrow">Visit Us</span>
+  <h2>Find the clinic</h2>
+  <div class="grid2">
+   <div class="card">
+    <h3 style="margin-bottom:8px">Activecare Physiotherapy Clinic &amp; Rehabilitation</h3>
+    <p style="color:var(--muted);font-size:15px">H.N. D1/29, New Minal Road, behind Minal Mall,<br>JK Road, Bhopal — 462023</p>
+    <p style="margin-top:10px;font-size:15px">📞 <a href="tel:+919516442005" style="font-weight:700;color:var(--teal-d)">+91 95164 42005</a></p>
+    <div class="cta-row">
+     <a class="btn btn-wa" href="https://wa.me/919516442005" target="_blank" rel="noopener">Chat on WhatsApp</a>
+     <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Activecare+Physiotherapy+Clinic+JK+Road+Bhopal" target="_blank" rel="noopener">Get Directions ↗</a>
+    </div>
+   </div>
+   <div class="card">
+    <h3 style="margin-bottom:8px">Clinic hours</h3>
+    <div class="hours-row"><span>Monday – Saturday</span><strong>9:00 AM – 9:00 PM</strong></div>
+    <div class="hours-row"><span>Sunday</span><span>Check on call / WhatsApp</span></div>
+    <p style="color:var(--muted);font-size:14px;margin-top:12px">Care by Dr. Priyanka Gupta (Physiotherapist) · 13 years in healthcare · Rated 4.6★ on Justdial &amp; 4.5★ on Google</p>
+   </div>
+  </div>
+ </div>
 </section>
 </main>
 
-<div class="sticky"><div class="wrap"><a class="btn btn-wa" style="width:100%" href="https://wa.me/919516442005?text=Namaste%2C%20mujhe%20physiotherapy%20ke%20liye%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp: +91 95164 42005 — Book Appointment</a></div></div>
+<div class="stickybar">
+ <a class="btn btn-call" href="tel:+919516442005">📞 Call Clinic</a>
+ <a class="btn btn-wa" href="https://wa.me/919516442005?text=Namaste%2C%20mujhe%20physiotherapy%20ke%20liye%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp — Book Appointment</a>
+</div>
 
-<footer><div class="wrap">Demo website built by Vaibhav Ghoshi — not the official website.<br>Information from public listings (Justdial &amp; Google) as on Oct 2026.</div></footer>
+<footer>
+ <div class="wrap">
+  <p><strong>Activecare Physiotherapy Clinic &amp; Rehabilitation</strong> · JK Road, Bhopal</p>
+  <p style="margin-top:6px">Demo website built by Vaibhav Ghoshi — not the official website. Information from public listings (Justdial &amp; Google) as on Oct 2026. All prices shown are indicative/demo only.</p>
+ </div>
+</footer>
 
 <script>
 const plans={
-"Back Pain":{dur:"3–4 weeks",phases:["Assessment: posture, movement & pain triggers check","Pain Relief: gentle mobilisation, heat/cold & guided rest positions","Strengthening: core & back strengthening, posture correction","Maintenance: home exercise routine & ergonomic tips"]},
-"Neck / Cervical Pain":{dur:"2–4 weeks",phases:["Assessment: neck mobility, posture & nerve signs check","Pain Relief: soft tissue work, gentle traction/mobility as advised","Strengthening: deep neck flexors & shoulder blade strength","Maintenance: workstation posture & daily mobility routine"]},
-"Frozen Shoulder":{dur:"6–8 weeks",phases:["Assessment: stage of frozen shoulder & range of motion","Pain Relief: pain management & gentle pendulum movements","Strengthening: progressive stretching & mobility restoration","Maintenance: full-range home program to prevent stiffness returning"]},
-"Knee Pain / Fracture Rehab":{dur:"4–6 weeks",phases:["Assessment: strength, swelling, gait & range check","Pain Relief: swelling control & safe weight-bearing guidance","Strengthening: quadriceps, hamstring & balance training","Maintenance: walking program & joint-protection habits"]},
-"Sports Injury":{dur:"3–6 weeks",phases:["Assessment: injury type, strength & sport demands","Pain Relief: acute care, taping/support & load management","Strengthening: sport-specific strength & agility drills","Maintenance: return-to-sport testing & injury prevention plan"]},
-"Neuro Rehab":{dur:"Ongoing, reviewed every 4 weeks",phases:["Assessment: mobility, balance, strength & daily function","Pain Relief: tone management, positioning & safe transfers","Strengthening: functional training, gait & balance practice","Maintenance: caregiver-guided home program & progress reviews"]}
+"Back Pain":{dur:"3–4 weeks",price:"₹500/session (indicative/demo)",phases:["Assessment — posture, movement & pain triggers check","Pain relief — gentle mobilisation, heat/cold & guided rest positions","Strengthening — core & back strengthening, posture correction","Maintenance — home exercise routine & ergonomic tips"]},
+"Neck / Cervical Pain":{dur:"2–4 weeks",price:"₹500/session (indicative/demo)",phases:["Assessment — neck mobility, posture & nerve signs check","Pain relief — soft-tissue work, gentle mobility as advised","Strengthening — deep neck flexors & shoulder-blade strength","Maintenance — workstation posture & daily mobility routine"]},
+"Frozen Shoulder":{dur:"6–8 weeks",price:"₹500/session (indicative/demo)",phases:["Assessment — stage of frozen shoulder & range of motion","Pain relief — pain management & gentle pendulum movements","Mobility — progressive stretching & range restoration","Maintenance — full-range home program so stiffness doesn't return"]},
+"Knee Pain / Arthritis":{dur:"4–6 weeks",price:"₹500/session (indicative/demo)",phases:["Assessment — strength, swelling, gait & range check","Pain relief — swelling control & joint-friendly activity guidance","Strengthening — quadriceps, hamstring & balance training","Maintenance — walking program & joint-protection habits"]},
+"Post-Surgery / Fracture Rehab":{dur:"4–8 weeks",price:"₹600/session (indicative/demo)",phases:["Assessment — surgical protocol, strength, swelling & gait check","Pain relief — swelling control & safe weight-bearing guidance","Strengthening — progressive loading & balance training","Maintenance — milestone reviews & long-term home program"]},
+"Sports Injury":{dur:"3–6 weeks",price:"₹600/session (indicative/demo)",phases:["Assessment — injury type, strength & sport demands","Pain relief — acute care, taping/support & load management","Strengthening — sport-specific strength & agility drills","Maintenance — return-to-sport testing & injury-prevention plan"]},
+"Neuro Rehab":{dur:"Ongoing, reviewed every 4 weeks",price:"₹600/session (indicative/demo)",phases:["Assessment — mobility, balance, strength & daily function","Tone & positioning — tone management & safe transfers","Functional training — gait, balance & daily-task practice","Maintenance — caregiver-guided home program & progress reviews"]},
+"Posture Correction":{dur:"2–3 weeks",price:"₹500/session (indicative/demo)",phases:["Assessment — full posture & workstation check","Release — soft-tissue work for tight, overworked muscles","Strengthening — postural muscles & mobility drills","Maintenance — desk routine & ergonomic setup you keep"]}
 };
 let freq=3;
 const cond=document.getElementById('condition'),box=document.getElementById('planBox');
 function render(){
- const p=plans[cond.value]; const total=p.dur;
- box.innerHTML=`<strong>${cond.value} — Suggested plan</strong><br><span class="note">${freq} sessions/week • Typical duration: ${total} (confirmed after assessment)</span><ul>${p.phases.map((s,i)=>`<li><strong>Phase ${i+1}:</strong> ${s}</li>`).join('')}</ul><span class="note">This is a guide only, not a diagnosis. Dr. Priyanka Gupta will finalise your plan in clinic.</span>`;
+ const p=plans[cond.value];
+ box.innerHTML='<strong>'+cond.value+' — your suggested plan</strong><br><span style="color:var(--muted);font-size:13.5px">'+freq+' sessions/week · Typical duration: '+p.dur+' · '+p.price+' · confirmed after assessment</span><ul>'+p.phases.map(function(s,i){return '<li><strong>Phase '+(i+1)+':</strong> '+s+'</li>'}).join('')+'</ul><span style="color:var(--muted);font-size:13px">This is a guide only, not a diagnosis. Dr. Priyanka Gupta will finalise your plan in clinic.</span>';
 }
-document.querySelectorAll('.pill').forEach(b=>b.addEventListener('click',()=>{
- document.querySelectorAll('.pill').forEach(x=>x.setAttribute('aria-pressed','false'));
- b.setAttribute('aria-pressed','true'); freq=b.dataset.freq; render();
-}));
+document.querySelectorAll('.pill').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.pill').forEach(function(x){x.setAttribute('aria-pressed','false')});
+ b.setAttribute('aria-pressed','true');freq=b.dataset.freq;render();
+})});
 cond.addEventListener('change',render);
-const d=document.getElementById('date'); d.min=new Date().toISOString().split('T')[0];
-document.getElementById('bookBtn').addEventListener('click',()=>{
+const d=document.getElementById('date');d.min=new Date().toISOString().split('T')[0];
+function showErr(id,on){document.getElementById(id).style.display=on?'block':'none';return !on}
+document.getElementById('bookForm').addEventListener('submit',function(e){
+ e.preventDefault();
  const name=document.getElementById('name').value.trim();
- const dateVal=d.value?new Date(d.value).toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'}):'Flexible';
+ const mobile=document.getElementById('mobile').value.replace(/[\s-]/g,'').replace(/^\+91/,'').replace(/^91(?=\d{10}$)/,'');
+ let ok=true;
+ ok=showErr('errName',!name)&&ok;
+ ok=showErr('errMobile',!/^[6-9]\d{9}$/.test(mobile))&&ok;
+ ok=showErr('errDate',!d.value)&&ok;
+ if(!ok)return;
+ const dateVal=new Date(d.value+'T00:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
  const timeVal=document.getElementById('time').value;
- const msg=`Namaste, main Activecare Physiotherapy mein appointment book karna chahta/chahti hoon.\n\nCondition: ${cond.value}\nPlan: ${freq} sessions/week\nPreferred: ${dateVal}, ${timeVal}${name?`\nName: ${name}`:''}\n\nMaine website par "Plan My Recovery" dekha. Kripya slot confirm karein.`;
+ const msg='Namaste, main Activecare Physiotherapy Clinic mein appointment book karna chahta/chahti hoon.\n\nName: '+name+'\nMobile: '+mobile+'\nCondition: '+cond.value+'\nPlan: '+freq+' sessions/week (website planner)\nPreferred: '+dateVal+', '+timeVal+'\n\nMaine website par "Plan My Recovery" dekha. Kripya slot confirm karein.';
  window.open('https://wa.me/919516442005?text='+encodeURIComponent(msg),'_blank');
 });
 render();
+const io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 </script>
 </body>
 </html>

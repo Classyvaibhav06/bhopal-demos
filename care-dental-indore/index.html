@@ -1,9 +1,735 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Care Dental Clinic &amp; Implant Centre — Vijay Nagar, Indore</title><meta name="description" content="Demo website for Care Dental Clinic & Implant Centre, Scheme No. 54, Vijay Nagar, Indore. Implant & treatment estimator with WhatsApp appointment booking.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f4f8f4;color:#16241a;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#dcefe0}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#22703c;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px #22703c14}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#f4f8f4;color:#16241a}button,.wa{display:block;width:100%;text-align:center;background:#22703c;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:17px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#f4f8f4;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">DENTAL · VIJAY NAGAR, INDORE</span><h1>Care Dental Clinic &amp; Implant Centre</h1><p class="sub">4.8★ rated implant &amp; periodontics care — 19 years in healthcare</p></header>
-<main><section><h2>Plan your treatment — instant estimate</h2><p class="small">Pick a treatment, see an indicative estimate, then book on WhatsApp. Final cost is confirmed after examination.</p><label>Treatment</label><select id="t"><option value="500">Consultation — ₹500 (as listed on Practo)</option><option value="25000">Dental Implant (per tooth) — ₹25,000*</option><option value="4500">Root Canal Treatment — ₹4,500*</option><option value="5500">Dental Crown (Ceramic) — ₹5,500*</option><option value="800">Cleaning &amp; Polishing (Scaling) — ₹800*</option><option value="3500">Teeth Whitening — ₹3,500*</option><option value="6000">Gum Treatment (Periodontics) — ₹6,000*</option><option value="1200">Tooth Filling — ₹1,200*</option></select><label>Number of teeth / visits</label><input id="q" type="number" min="1" max="10" value="1"><button onclick="calc()">See my estimate</button><p class="out" id="o"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Book this on WhatsApp →</a></section><section><h2>Popular treatments</h2><div class="grid"><div class="card"><b>Dental Implants</b><span class="small">from ₹25,000*</span></div><div class="card"><b>Gum Care (Periodontics)</b><span class="small">from ₹6,000*</span></div><div class="card"><b>Root Canal Treatment</b><span class="small">from ₹4,500*</span></div><div class="card"><b>Dental Crown (Ceramic)</b><span class="small">from ₹5,500*</span></div><div class="card"><b>Teeth Whitening</b><span class="small">from ₹3,500*</span></div><div class="card"><b>Consultation</b><span class="small">₹500 (Practo)</span></div></div><p class="small" style="margin-top:10px">*Indicative/demo prices. Consultation ₹500 as listed on Practo.</p></section><section><h2>Why patients trust Care Dental</h2><p>⭐ 4.8 on Justdial (461 ratings) · 96% recommendation on Practo (155 patient stories). Led by Dr. Gagan Jaiswal (BDS, MDS — Periodontics), with Dr. Shradha Jaiswal. Today the clinic is found only through Justdial/Practo — this demo shows how patients could check treatment estimates and book directly.</p></section>
-<section><h2>Visit / Call</h2><p>1st Floor, 102 Royal Glory Apartment, Opposite Hotel Sayaji, Scheme No. 54, Vijay Nagar, Indore 452010</p><p style="margin-top:8px">📞 <a href="tel:+918147531100" style="color:inherit">081475 31100</a></p><a class="wa" href="https://wa.me/918147531100" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>function calc(){var t=document.getElementById('t'),q=Math.max(1,+document.getElementById('q').value||1),p=+t.value,tot=p*q;document.getElementById('o').textContent='Indicative estimate: ₹'+tot.toLocaleString('en-IN')+'*\nFinal plan & cost after clinical examination.';var w=document.getElementById('w');w.style.display='block';w.href='https://wa.me/918147531100?text='+encodeURIComponent('Namaste, mujhe Care Dental Clinic Indore se appointment chahiye. Treatment: '+t.options[t.selectedIndex].text.split(' — ')[0]+' (Qty: '+q+').')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Care Dental Clinic &amp; Implant Centre — Vijay Nagar, Indore | Implants, Root Canal &amp; Painless Dentistry</title>
+<meta name="description" content="Care Dental Clinic & Implant Centre, Scheme No. 54, Vijay Nagar, Indore. Led by Dr. Gagan Jaiswal (BDS, MDS — Periodontics). Rated 4.8★ on Justdial (461 ratings), 96% recommendation on Practo. Check indicative treatment estimates and book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+<style>
+:root{
+  --teal:#0b5563; --teal-2:#083f49; --mint:#e7f4f1; --mint-2:#d3ebe4;
+  --cream:#fbfaf6; --ink:#12262b; --muted:#5c737a; --line:#dcebe7;
+  --gold:#e8a33d; --green:#0f8a3c; --wa:#1faa55; --red:#c1272d;
+  --card:#ffffff; --shadow:0 18px 40px rgba(11,85,99,.13); --r:20px; --header-h:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#fff;padding:.7rem 1rem;z-index:200;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:linear-gradient(135deg,var(--teal),#0d6e80);color:#fff;box-shadow:0 12px 26px rgba(11,85,99,.3)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#f2b04a,#e08a12);color:#fff;box-shadow:0 12px 26px rgba(224,138,18,.32)}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--teal);border:1.5px solid var(--line)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#178a44;transform:translateY(-2px)}
+/* Header */
+header{position:sticky;top:0;z-index:90;background:rgba(251,250,246,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--teal),#0d7c8f);color:#fff;display:grid;place-items:center;font-size:1.3rem;box-shadow:0 8px 18px rgba(11,85,99,.3)}
+.logo strong{font-family:Fraunces,serif;font-size:1.08rem;line-height:1.1;display:block}
+.logo small{color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav.main-nav{display:flex;gap:1.35rem;margin-left:auto}
+nav.main-nav a{text-decoration:none;font-weight:700;font-size:.94rem;color:var(--ink)}
+nav.main-nav a:hover{color:var(--teal)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main-nav + .header-actions{margin-left:0}
+.call-chip{display:inline-flex;align-items:center;gap:.45rem;font-weight:800;color:var(--teal);text-decoration:none;background:var(--mint);border:1.5px solid var(--line);border-radius:999px;padding:.55rem 1rem;font-size:.92rem}
+.call-chip:hover{background:var(--mint-2)}
+/* Hero */
+.hero{position:relative;background:radial-gradient(900px 480px at 88% -10%,#bfe6da 0,transparent 55%),linear-gradient(160deg,#eef7f3,var(--cream) 62%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4.2rem 0 4.6rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:800;color:var(--teal);box-shadow:0 6px 16px rgba(11,85,99,.07)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.3rem,5.2vw,3.9rem);line-height:1.05;letter-spacing:-.01em;margin:1.1rem 0 1rem}
+h1 em{font-style:normal;color:var(--teal);background:linear-gradient(transparent 62%,#bfe6da 62%)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:34rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.4rem}
+.hero-meta{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.hero-meta span{display:flex;gap:.4rem;align-items:center}
+.stars{color:var(--gold);letter-spacing:.08em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/3.4;object-fit:cover;width:100%;background:var(--mint-2)}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:290px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--teal);color:#fff;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow)}
+/* Trust strip */
+.strip{background:var(--teal);color:#dff2ec}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.7rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.86rem;font-weight:600;opacity:.88}
+/* Sections */
+section{padding:4.4rem 0}
+.sec-head{max-width:44rem;margin-bottom:2.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;margin:.45rem 0 .6rem}
+.sec-head p{color:var(--muted)}
+/* Estimator */
+.est-band{background:linear-gradient(160deg,var(--teal-2),var(--teal));color:#eaf6f2}
+.est-band .sec-head p{color:#bcd9d2}
+.est-card{background:#fff;color:var(--ink);border-radius:24px;padding:2rem;box-shadow:0 24px 50px rgba(0,0,0,.25);display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.est-card label{display:block;font-weight:700;font-size:.9rem;margin:0 0 .45rem;color:var(--teal-2)}
+.est-card label:not(:first-child){margin-top:1.1rem}
+.est-card select,.est-card input{width:100%;padding:.85rem 1rem;border-radius:12px;border:1.5px solid var(--line);font:inherit;background:#f6fbfa;color:var(--ink)}
+.est-out{background:var(--mint);border:1.5px dashed #9fd3c2;border-radius:16px;padding:1.4rem}
+.est-out .lbl{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.est-out .amt{font-family:Fraunces,serif;font-weight:900;font-size:2.3rem;color:var(--teal-2);line-height:1.15;margin:.3rem 0}
+.est-out p{font-size:.9rem;color:var(--muted)}
+.est-out .btn{width:100%;justify-content:center;margin-top:1rem}
+/* Treatments */
+.treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.treat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(11,85,99,.06);transition:transform .22s ease,box-shadow .22s ease}
+.treat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.treat-card img{height:170px;width:100%;object-fit:cover;background:var(--mint-2)}
+.treat-body{padding:1.2rem 1.25rem 1.35rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.treat-body h3{font-family:Fraunces,serif;font-size:1.22rem;line-height:1.25}
+.treat-body p{color:var(--muted);font-size:.93rem}
+.treat-meta{font-size:.86rem;display:flex;flex-direction:column;gap:.3rem}
+.treat-meta span{display:flex;gap:.45rem;align-items:flex-start}
+.treat-meta b{color:var(--teal-2)}
+.tag{display:inline-block;background:#fdeed3;color:#8a5a00;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.22rem .6rem;align-self:flex-start}
+.treat-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:.6rem;border-top:1px solid var(--line)}
+.price{font-weight:800;font-size:1.05rem;color:var(--teal)}
+.price small{display:block;font-weight:600;color:var(--muted);font-size:.72rem}
+.mini-btn{background:var(--teal);color:#fff;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.86rem;border-radius:999px;padding:.5rem 1.05rem;text-decoration:none}
+.mini-btn:hover{background:var(--teal-2)}
+/* Painless */
+.painless{background:#fff;border-block:1px solid var(--line)}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.pain-list{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.4rem}
+.pain-item{display:flex;gap:.9rem;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:1.05rem 1.15rem}
+.pain-item .ico{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem}
+.pain-item h3{font-size:1.02rem;margin-bottom:.15rem}
+.pain-item p{color:var(--muted);font-size:.92rem}
+.pain-img{border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/3.6;object-fit:cover;width:100%;background:var(--mint-2)}
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal-grid figure{border-radius:18px;overflow:hidden;position:relative;box-shadow:0 10px 24px rgba(11,85,99,.1)}
+.gal-grid img{height:220px;width:100%;object-fit:cover;transition:transform .4s ease;background:var(--mint-2)}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .7rem;background:linear-gradient(transparent,rgba(8,63,73,.85));color:#fff;font-size:.84rem;font-weight:700}
+/* Why us + steps */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.7rem 1.5rem}
+.why-card .ico{width:52px;height:52px;border-radius:16px;background:var(--mint);display:grid;place-items:center;font-size:1.5rem;margin-bottom:1rem}
+.why-card h3{font-family:Fraunces,serif;font-size:1.2rem;margin-bottom:.4rem}
+.why-card p{color:var(--muted);font-size:.95rem}
+.why-card b{color:var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.step-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.4rem}
+.step-card .num{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-family:Fraunces,serif;font-weight:900;font-size:1.15rem;display:grid;place-items:center;margin-bottom:.9rem}
+.step-card h3{font-size:1.05rem;margin-bottom:.35rem}
+.step-card p{color:var(--muted);font-size:.92rem}
+/* Reviews */
+.reviews{background:#fff;border-block:1px solid var(--line)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.rev-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.rev-card blockquote{font-size:.98rem;margin:.6rem 0 .9rem}
+.rev-who{font-weight:800;font-size:.9rem;color:var(--teal)}
+.rev-who small{display:block;color:var(--muted);font-weight:600}
+/* FAQ */
+.faq-wrap{max-width:820px;margin-inline:auto}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:.8rem;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;font:inherit;font-weight:800;text-align:left;padding:1.1rem 1.25rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;color:var(--ink)}
+.faq-q .chev{color:var(--teal);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-q .chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 1.25rem 1.15rem;color:var(--muted);font-size:.95rem}
+/* Booking */
+.book-band{background:linear-gradient(160deg,#eef7f3,var(--cream))}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.6rem;align-items:start}
+.book-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:var(--shadow)}
+.book-card label{display:block;font-weight:700;font-size:.9rem;margin:0 0 .45rem;color:var(--teal-2)}
+.book-card .fld{margin-bottom:1.05rem}
+.book-card input,.book-card select{width:100%;padding:.85rem 1rem;border-radius:12px;border:1.5px solid var(--line);font:inherit;background:#f6fbfa;color:var(--ink)}
+.book-card input.err,.book-card select.err{border-color:var(--red)}
+.err-msg{color:var(--red);font-size:.82rem;font-weight:700;margin-top:.3rem;display:none}
+.book-card .submit-btn{width:100%;justify-content:center}
+.confirm{display:none;background:var(--mint);border:1.5px solid #9fd3c2;border-radius:16px;padding:1.3rem;margin-top:1.2rem}
+.confirm.show{display:block}
+.confirm h3{font-family:Fraunces,serif;color:var(--teal-2);margin-bottom:.4rem}
+.confirm p{font-size:.93rem;color:var(--muted)}
+.confirm .btn{margin-top:1rem}
+.doc-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.5rem;margin-bottom:1.2rem}
+.doc-card h3{font-family:Fraunces,serif;font-size:1.25rem;margin-bottom:.3rem}
+.doc-card p{color:var(--muted);font-size:.94rem}
+.doc-card .cred{display:inline-block;margin-top:.6rem;background:var(--mint);color:var(--teal-2);font-weight:800;font-size:.8rem;border-radius:999px;padding:.3rem .8rem}
+/* Visit */
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.6rem;align-items:start}
+.visit-card{background:var(--teal);color:#eaf6f2;border-radius:24px;padding:2rem}
+.visit-card h3{font-family:Fraunces,serif;color:#fff;font-size:1.4rem;margin-bottom:.8rem}
+.visit-card p{font-size:.98rem;margin-bottom:.7rem}
+.visit-card a{color:#ffd9a0;font-weight:800;text-decoration:none}
+.visit-card a:hover{text-decoration:underline}
+.visit-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+/* Footer */
+footer{background:#07272e;color:#c4ded8;padding:3.4rem 0 1.6rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.2rem}
+footer h4{font-family:Fraunces,serif;color:#fff;margin-bottom:.8rem;font-size:1.1rem}
+footer a{text-decoration:none}
+footer a:hover{color:#ffd9a0;text-decoration:underline}
+footer li{list-style:none;margin-bottom:.45rem;font-size:.94rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2.4rem;padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;opacity:.85}
+/* Sticky mobile bar + toast */
+.mobile-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:95;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:.45rem;display:none;gap:.45rem;box-shadow:0 18px 36px rgba(8,63,73,.3)}
+.mobile-bar a{font-weight:800;font-size:.9rem;text-decoration:none;border-radius:999px;padding:.6rem 1.05rem}
+.mobile-bar .mb-call{background:var(--mint);color:var(--teal-2)}
+.mobile-bar .mb-wa{background:var(--wa);color:#fff}
+.mobile-bar .mb-book{background:var(--teal);color:#fff}
+.toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;padding:.75rem 1.2rem;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:130;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:960px){
+  nav.main-nav{display:none}
+  .hero-grid,.pain-grid,.book-grid,.visit-grid{grid-template-columns:1fr;gap:2rem}
+  .treat-grid,.why-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .est-card{grid-template-columns:1fr;gap:1.4rem}
+  .strip-in{grid-template-columns:1fr 1fr;gap:1.4rem}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .mobile-bar{display:flex}
+  body{padding-bottom:64px}
+}
+@media (max-width:600px){
+  .treat-grid,.why-grid,.rev-grid,.steps,.foot-grid{grid-template-columns:1fr}
+  .logo small{display:none}
+  .hero-card{left:8px}
+  .call-chip .lbl{display:none}
+  .est-card,.book-card{padding:1.4rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#treatments">Skip to treatments</a>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Care Dental Clinic and Implant Centre — home">
+      <span class="logo-mark" aria-hidden="true">🦷</span>
+      <span><strong>Care Dental Clinic</strong><small>&amp; Implant Centre · Indore</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#treatments">Treatments</a><a href="#estimate">Estimate</a><a href="#why-us">Why Us</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="call-chip" href="tel:+918147531100">📞 <span class="lbl">081475 31100</span></a>
+      <a class="btn btn-primary" href="#book" style="padding:.65rem 1.2rem">Book visit</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome" style="padding:0">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Vijay Nagar, Indore · Implants &amp; periodontics specialists</span>
+        <h1>A healthier smile, <em>without the fear.</em></h1>
+        <p class="lead">Care Dental Clinic &amp; Implant Centre is led by Dr. Gagan Jaiswal (BDS, MDS — Periodontics) — 19 years in healthcare, gentle, painless-first treatment, and honest estimates you can check before you visit.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#estimate">🧮 Check my treatment estimate</a>
+          <a class="btn btn-wa" href="https://wa.me/918147531100?text=Namaste%2C%20mujhe%20Care%20Dental%20Clinic%20Indore%20mein%20appointment%20chahiye." target="_blank" rel="noopener">💬 Book on WhatsApp</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <span><strong>4.8/5</strong> · 461 Justdial ratings</span></span>
+          <span>👍 96% recommend on Practo</span>
+          <span>📍 Opp. Hotel Sayaji, Vijay Nagar</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop" alt="Dentist examining a patient at a modern dental clinic" fetchpriority="high" onerror="this.style.display='none'">
+        <span class="hero-badge">⭐ 4.8 · 461 ratings</span>
+        <div class="hero-card"><span style="font-size:1.7rem" aria-hidden="true">🪥</span><span><strong>Consultation ₹500</strong><small>As listed on Practo — examination &amp; honest advice first.</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" role="region" aria-label="Ratings and facts">
+    <div class="wrap strip-in">
+      <div><b>4.8 / 5</b><span>Justdial rating · 461 ratings</span></div>
+      <div><b>96%</b><span>Patients recommend on Practo</span></div>
+      <div><b>155</b><span>Patient stories on Practo</span></div>
+      <div><b>19 yrs</b><span>In healthcare</span></div>
+    </div>
+  </div>
+
+  <!-- ESTIMATOR -->
+  <section class="est-band" id="estimate" aria-label="Treatment cost estimator">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">No surprise bills</span>
+        <h2>Plan your treatment — see an estimate first</h2>
+        <p>Most patients delay treatment because they fear an unknown bill. Pick a treatment below, see an indicative estimate instantly, then book on WhatsApp. The final plan and cost are confirmed after examination — no pressure, no obligation.</p>
+      </div>
+      <div class="est-card reveal">
+        <div>
+          <label for="estTreat">Treatment</label>
+          <select id="estTreat"></select>
+          <label for="estQty">Number of teeth / sessions</label>
+          <input id="estQty" type="number" min="1" max="20" value="1" inputmode="numeric">
+          <label for="estNote">Anything we should know? <span style="color:var(--muted);font-weight:600">(optional)</span></label>
+          <input id="estNote" type="text" placeholder="e.g. Pain in lower right molar since a week" maxlength="120">
+        </div>
+        <div class="est-out" aria-live="polite">
+          <span class="lbl">Your indicative estimate</span>
+          <div class="amt" id="estAmt">₹500</div>
+          <p id="estDesc">Consultation — as listed on Practo. Final plan &amp; cost are confirmed after clinical examination.</p>
+          <a class="btn btn-wa" id="estWa" href="#" target="_blank" rel="noopener">💬 Book this on WhatsApp</a>
+          <p style="margin-top:.8rem;font-size:.8rem">*Indicative/demo estimate only. Actual cost depends on your clinical condition and is confirmed at the clinic before treatment begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments" aria-label="Treatments in detail">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Treatments, explained simply</span>
+        <h2>What we treat — and what it actually involves</h2>
+        <p>No jargon, no upselling. Every treatment below explains what happens in the chair, how many sittings it usually takes, and how to look after it afterwards.</p>
+      </div>
+      <div class="treat-grid" id="treatGrid"></div>
+      <p style="margin-top:1.4rem;color:var(--muted);font-size:.88rem">*All prices are indicative/demo "starting at" figures. Your exact cost is confirmed after examination — the consultation is ₹500, as listed on Practo.</p>
+    </div>
+  </section>
+
+  <!-- PAINLESS DENTISTRY -->
+  <section class="painless" aria-label="Painless dentistry">
+    <div class="wrap pain-grid">
+      <div class="reveal">
+        <span class="kicker">Scared of the dentist?</span>
+        <h2>Dentistry that respects your fear</h2>
+        <p style="color:var(--muted)">Dental fear is the #1 reason people in Indore live with tooth pain for months. Our approach is built around one idea: <b style="color:var(--teal-2)">you should never be surprised by pain.</b></p>
+        <div class="pain-list">
+          <div class="pain-item"><span class="ico" aria-hidden="true">💉</span><span><h3>Numb first, always</h3><p>Local anaesthesia is applied and given time to work before any procedure begins — and checked with you before we start.</p></span></div>
+          <div class="pain-item"><span class="ico" aria-hidden="true">✋</span><span><h3>Your stop-signal rule</h3><p>Raise a hand at any point and we stop. You control the pace of your treatment, especially during root canals and implants.</p></span></div>
+          <div class="pain-item"><span class="ico" aria-hidden="true">🗣️</span><span><h3>Everything explained first</h3><p>What we found, what we recommend, what it costs, what it feels like — explained in simple words before treatment, not after.</p></span></div>
+          <div class="pain-item"><span class="ico" aria-hidden="true">📋</span><span><h3>Written aftercare, every time</h3><p>Medicines, food precautions and warning signs — written down for you to take home, so recovery has no guesswork.</p></span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <img class="pain-img" src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" alt="A calm, modern dental treatment room" loading="lazy" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- SMILE GALLERY -->
+  <section id="gallery" aria-label="Smile gallery" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Inside the clinic</span>
+        <h2>Care, up close</h2>
+        <p>A look at the kind of treatment spaces and smile work patients come to Vijay Nagar for.</p>
+      </div>
+      <div class="gal-grid">
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Modern dental chair and equipment" loading="lazy" onerror="this.style.display='none'"><figcaption>Modern, sterilised treatment setup</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=800&auto=format&fit=crop" alt="Bright, welcoming dental clinic interior" loading="lazy" onerror="this.style.display='none'"><figcaption>A calm space, not a scary one</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="A woman smiling confidently" loading="lazy" onerror="this.style.display='none'"><figcaption>Whitening &amp; smile design results</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="A man with a healthy, confident smile" loading="lazy" onerror="this.style.display='none'"><figcaption>Implants that feel like your own teeth</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why-us" aria-label="Why choose Care Dental" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Why Care Dental?</span>
+        <h2>Specialist care, honest pricing</h2>
+        <p>Today, patients find us only through Justdial and Practo. Here's what those 461 ratings and 155 patient stories keep pointing to.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🎓</div><h3>Implant &amp; gum specialist</h3><p>The clinic is led by <b>Dr. Gagan Jaiswal (BDS, MDS — Periodontics)</b> — a postgraduate specialist in gums and implants, the two treatments where expertise matters most.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">⭐</div><h3>Ratings that hold up</h3><p><b>4.8★ across 461 Justdial ratings</b> and a <b>96% recommendation rate from 155 patient stories on Practo</b> — consistent trust, not a handful of reviews.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🧾</div><h3>Estimate before treatment</h3><p>Check an indicative estimate right here, then get your exact plan and cost confirmed after examination — <b>before</b> any treatment starts. Consultation is ₹500, as listed on Practo.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">🕰️</div><h3>19 years in healthcare</h3><p>Nearly two decades of clinical experience means most problems walking in have been seen — and solved — many times before.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">📍</div><h3>Easy to reach in Vijay Nagar</h3><p>Located opposite Hotel Sayaji in Scheme No. 54 — one of Indore's most accessible neighbourhoods, simple to reach from anywhere in the city.</p></article>
+        <article class="why-card reveal"><div class="ico" aria-hidden="true">💬</div><h3>Book in one message</h3><p>No hold music, no front-desk queues. Send a WhatsApp message and your appointment request reaches the clinic directly.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section aria-label="Your visit, step by step" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">How it works</span>
+        <h2>Your visit, in four simple steps</h2>
+      </div>
+      <div class="steps">
+        <article class="step-card reveal"><div class="num">1</div><h3>Book on WhatsApp</h3><p>Use the booking form or estimator below — your request lands on the clinic's WhatsApp with your treatment and preferred date.</p></article>
+        <article class="step-card reveal"><div class="num">2</div><h3>Examination (₹500)</h3><p>The doctor examines your teeth and gums, explains what they find in simple words, and answers your questions.</p></article>
+        <article class="step-card reveal"><div class="num">3</div><h3>Plan &amp; confirmed cost</h3><p>You get a clear treatment plan — sittings, timeline and exact cost — before anything begins. Decide at your own pace.</p></article>
+        <article class="step-card reveal"><div class="num">4</div><h3>Treatment &amp; aftercare</h3><p>Gentle, numb-first treatment followed by written aftercare instructions, so recovery at home is simple and stress-free.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS / THEMES -->
+  <section class="reviews" id="reviews" aria-label="What patients say">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">4.8 ★ · 461 ratings · 96% recommend</span>
+        <h2>The themes in our patient stories</h2>
+        <p>Rather than cherry-picked quotes, here's what patients consistently highlight across 461 Justdial ratings and 155 Practo patient stories.</p>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><blockquote>The most repeated theme: implant and gum treatment done by a specialist who explains the full plan and cost upfront — no surprises mid-treatment.</blockquote><p class="rev-who">Implant &amp; periodontics patients<small>Recurring theme · Practo patient stories</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><blockquote>Patients who arrived nervous about pain — especially for root canals — consistently describe a gentle, patient approach that changed how they feel about dentists.</blockquote><p class="rev-who">Root canal patients<small>Recurring theme · Justdial ratings</small></p></article>
+        <article class="rev-card reveal"><span class="stars" aria-label="Highly rated">★★★★★</span><blockquote>Families from Vijay Nagar and across Indore mention honest advice: being told what can wait, what can't, and never being pushed into treatment they don't need.</blockquote><p class="rev-who">Families &amp; regular check-up patients<small>Recurring theme · 96% recommend on Practo</small></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="kicker">Good questions</span>
+        <h2>Before you book</h2>
+      </div>
+      <div class="faq-wrap" id="faqWrap">
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How much does a consultation cost?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>The consultation fee is ₹500, as listed on Practo. It covers your examination and an honest explanation of what treatment — if any — you actually need, along with the confirmed cost before you decide.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Will my root canal or implant hurt?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>Treatment is numb-first: local anaesthesia is given time to work and checked with you before we begin, and you can raise a hand to pause at any time. Most patients are surprised at how comfortable modern, unhurried dentistry feels. You'll also get written aftercare and medicine guidance for home.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does a dental implant take, start to finish?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>Typically the implant is placed in one sitting, then given a few months to fuse with the jawbone before the final crown is fitted — usually 2–3 visits spread over 2–4 months. Your exact timeline depends on bone health and is confirmed after examination. Indicative starting price: ₹25,000* per tooth (demo pricing).</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Are the prices on this website final?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>No — prices marked with * are indicative/demo "starting at" figures to help you plan. Your exact cost depends on your clinical condition (for example, whether a root canal needs a crown, or an implant needs bone support) and is always confirmed in writing after examination, before treatment begins.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you treat children?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>Yes — kids' dentistry includes check-ups, fluoride application, fillings and habit correction, done patiently and at the child's pace. The first visit can simply be a friendly look-around so your child isn't scared of the chair.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I book an appointment?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>Fill the booking form below, use the estimator's WhatsApp button, or simply message the clinic on WhatsApp at 081475 31100 with your name, concern and preferred date. You can also call the same number.</p></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false">Where exactly is the clinic?<span class="chev" aria-hidden="true">▾</span></button><div class="faq-a"><p>1st Floor, 102 Royal Glory Apartment, Opposite Hotel Sayaji, Scheme No. 54, Vijay Nagar, Indore — 452010. The Sayaji landmark makes it easy to find from anywhere in Indore.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="book-band" id="book" aria-label="Book an appointment">
+    <div class="wrap book-grid">
+      <div class="reveal">
+        <span class="kicker">Book a visit</span>
+        <h2>Your doctors</h2>
+        <div class="doc-card">
+          <h3>Dr. Gagan Jaiswal</h3>
+          <p>Leads the clinic's implant and periodontics care — the specialist behind its reputation for honest advice and gentle treatment across 19 years in healthcare.</p>
+          <span class="cred">BDS, MDS — Periodontics</span>
+        </div>
+        <div class="doc-card">
+          <h3>Dr. Shradha Jaiswal</h3>
+          <p>Part of the clinic's dental team, caring for patients alongside Dr. Gagan Jaiswal at Vijay Nagar, Indore.</p>
+        </div>
+        <p style="color:var(--muted);font-size:.93rem">Prefer to talk first? Call <a href="tel:+918147531100" style="color:var(--teal);font-weight:800">081475 31100</a> or tap the WhatsApp button — your request goes straight to the clinic.</p>
+      </div>
+      <div class="book-card reveal">
+        <h2 style="font-size:1.6rem;margin-bottom:.4rem">Appointment request</h2>
+        <p style="color:var(--muted);font-size:.93rem;margin-bottom:1.3rem">Fill this in — you'll get an on-screen confirmation and a ready-to-send WhatsApp message to the clinic.</p>
+        <form id="bookForm" novalidate>
+          <div class="fld">
+            <label for="bkName">Your name</label>
+            <input id="bkName" type="text" placeholder="e.g. Priya Sharma" autocomplete="name" maxlength="60">
+            <p class="err-msg" id="errName">Please enter your name.</p>
+          </div>
+          <div class="fld">
+            <label for="bkMobile">Mobile number (WhatsApp)</label>
+            <input id="bkMobile" type="tel" placeholder="10-digit mobile number" autocomplete="tel" inputmode="numeric" maxlength="13">
+            <p class="err-msg" id="errMobile">Please enter a valid 10-digit mobile number.</p>
+          </div>
+          <div class="fld">
+            <label for="bkTreat">Treatment needed</label>
+            <select id="bkTreat"></select>
+            <p class="err-msg" id="errTreat">Please choose a treatment.</p>
+          </div>
+          <div class="fld">
+            <label for="bkDate">Preferred date</label>
+            <input id="bkDate" type="date">
+            <p class="err-msg" id="errDate">Please pick a date (today or later).</p>
+          </div>
+          <button class="btn btn-primary submit-btn" type="submit">Request appointment →</button>
+        </form>
+        <div class="confirm" id="confirmBox" role="status" aria-live="polite">
+          <h3>✅ Request ready, <span id="cfName">friend</span>!</h3>
+          <p id="cfText">Your appointment request is prepared. Tap below to send it to Care Dental Clinic on WhatsApp — the clinic confirms your slot from there.</p>
+          <a class="btn btn-wa" id="cfWa" href="#" target="_blank" rel="noopener">💬 Confirm on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-label="Visit us">
+    <div class="wrap visit-grid">
+      <div class="visit-card reveal">
+        <h3>📍 Visit the clinic</h3>
+        <p><strong>Care Dental Clinic &amp; Implant Centre</strong><br>1st Floor, 102 Royal Glory Apartment,<br>Opposite Hotel Sayaji, Scheme No. 54,<br>Vijay Nagar, Indore — 452010</p>
+        <p>📞 <a href="tel:+918147531100">081475 31100</a> &nbsp;·&nbsp; 💬 <a href="https://wa.me/918147531100" target="_blank" rel="noopener">WhatsApp the clinic</a></p>
+        <div class="visit-actions">
+          <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Care+Dental+Clinic+%26+Implant+Centre+Opposite+Hotel+Sayaji+Scheme+No.+54+Vijay+Nagar+Indore+452010" target="_blank" rel="noopener">🧭 Get directions</a>
+          <a class="btn btn-ghost" href="#book">Book a visit</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="kicker">First visit?</span>
+        <h2 style="font-size:1.7rem">What to expect</h2>
+        <p style="color:var(--muted);margin-bottom:1rem">Walk in with a problem; walk out with a plan. Your first consultation (₹500, as listed on Practo) covers a full examination, a simple-English explanation of what's going on, and a confirmed treatment plan with exact costs — with zero obligation to start treatment the same day.</p>
+        <p style="color:var(--muted)">Not sure what you need? Choose <b style="color:var(--teal-2)">"Not sure — need a check-up"</b> in the booking form and the doctors will guide you.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Care Dental Clinic &amp; Implant Centre</h4>
+        <p style="font-size:.94rem;max-width:26rem">Implant and periodontics-led dental care in Vijay Nagar, Indore — rated 4.8★ by 461 patients on Justdial, with a 96% recommendation rate on Practo.</p>
+        <p style="margin-top:.9rem;font-size:.94rem">📍 1st Floor, 102 Royal Glory Apartment, Opp. Hotel Sayaji,<br>Scheme No. 54, Vijay Nagar, Indore — 452010</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 <a href="tel:+918147531100">081475 31100</a></li>
+          <li>💬 <a href="https://wa.me/918147531100" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+          <li>🧮 <a href="#estimate">Treatment estimator</a></li>
+          <li>📅 <a href="#book">Book an appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Treatments</h4>
+        <ul>
+          <li><a href="#treatments">Dental Implants</a></li>
+          <li><a href="#treatments">Root Canal Treatment</a></li>
+          <li><a href="#treatments">Braces &amp; Clear Aligners</a></li>
+          <li><a href="#treatments">Teeth Whitening</a></li>
+          <li><a href="#treatments">Kids Dentistry</a></li>
+          <li><a href="#treatments">General Dentistry</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Care Dental Clinic &amp; Implant Centre, Indore.</span>
+      <span>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a class="mb-call" href="tel:+918147531100">📞 Call</a>
+  <a class="mb-wa" href="https://wa.me/918147531100?text=Namaste%2C%20mujhe%20Care%20Dental%20Clinic%20Indore%20mein%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="mb-book" href="#book">📅 Book</a>
+</nav>
+
+<script>
+"use strict";
+var WA_NUM = "918147531100";
+var CLINIC = "Care Dental Clinic & Implant Centre, Vijay Nagar, Indore";
+var fmt = function (n) { return "₹" + n.toLocaleString("en-IN"); };
+var $ = function (s) { return document.querySelector(s); };
+
+/* ---------- Estimator data (indicative/demo prices from the clinic's listings) ---------- */
+var EST = [
+  { name: "Consultation", price: 500, note: "Consultation — ₹500 as listed on Practo. Includes examination and an honest treatment plan." },
+  { name: "Dental Implant (per tooth)", price: 25000, note: "Per tooth. Usually 2–3 visits over 2–4 months, including healing time before the crown." },
+  { name: "Root Canal Treatment", price: 4500, note: "Per tooth. Often completed in 1–2 sittings; a crown is usually advised afterwards." },
+  { name: "Dental Crown (Ceramic)", price: 5500, note: "Per tooth. Protects a root-treated or heavily filled tooth." },
+  { name: "Cleaning & Polishing (Scaling)", price: 800, note: "Per session. Recommended every 6 months to keep gums healthy." },
+  { name: "Teeth Whitening", price: 3500, note: "Full-mouth professional whitening, usually in a single sitting." },
+  { name: "Gum Treatment (Periodontics)", price: 6000, note: "Specialist gum care by Dr. Gagan Jaiswal (MDS — Periodontics). Scope confirmed after examination." },
+  { name: "Tooth Filling", price: 1200, note: "Per tooth, tooth-coloured filling for cavities." }
+];
+
+/* ---------- Treatment detail cards ---------- */
+var DETAILS = [
+  { name: "Dental Implants", tag: "Specialist care", img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=900&auto=format&fit=crop", alt: "Dental implant treatment setup",
+    involves: "A titanium implant post is placed in the jawbone to replace a missing tooth's root. Once it fuses with the bone, a natural-looking ceramic crown is fitted on top — it looks, feels and chews like your own tooth, and protects the neighbouring teeth from shifting.",
+    sittings: "2–3 visits spread over 2–4 months", aftercare: "Soft food for the first few days, gentle brushing around the site, and review visits as advised.",
+    priceLabel: fmt(25000) + "*", priceSub: "starting at · per tooth (demo)", book: "Dental Implant (per tooth)" },
+  { name: "Root Canal Treatment", tag: "Save your tooth", img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=900&auto=format&fit=crop", alt: "Dentist performing a root canal treatment",
+    involves: "The infected pulp inside the tooth is removed, the root canals are cleaned, disinfected and sealed, and the tooth is restored — usually protected with a crown. It saves a tooth that would otherwise have to be extracted.",
+    sittings: "Often 1–2 sittings", aftercare: "Avoid hard chewing on the tooth until the crown is fitted; mild sensitivity for a few days is normal.",
+    priceLabel: fmt(4500) + "*", priceSub: "starting at · per tooth (demo)", book: "Root Canal Treatment" },
+  { name: "Braces & Clear Aligners", tag: "Straighter smiles", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=900&auto=format&fit=crop", alt: "A confident, well-aligned smile",
+    involves: "Braces use brackets and wires to gradually move teeth into alignment; clear aligners are nearly invisible, removable trays changed every few weeks. Which suits you depends on your case, age and lifestyle — decided after an assessment of your bite and jaw.",
+    sittings: "Monthly reviews over typically 12–24 months", aftercare: "Retainers after treatment hold the result; careful brushing around brackets or trays is essential.",
+    priceLabel: "After consult", priceSub: "plan & price confirmed at consultation · ₹500", book: "Braces / Clear Aligners" },
+  { name: "Teeth Whitening", tag: "Single sitting", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=900&auto=format&fit=crop", alt: "A bright, white smile",
+    involves: "Professional cleaning first, then a whitening gel applied in-clinic lifts stains from tea, coffee, tobacco and ageing. The shade is matched to look bright but natural — never artificial.",
+    sittings: "Single sitting, about an hour", aftercare: "Avoid strongly coloured food and drinks for 24–48 hours; results last longer with six-monthly cleaning.",
+    priceLabel: fmt(3500) + "*", priceSub: "starting at · full mouth (demo)", book: "Teeth Whitening" },
+  { name: "Kids Dentistry", tag: "Gentle & patient", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=900&auto=format&fit=crop", alt: "A happy child smiling",
+    involves: "Gentle check-ups, fluoride application, painless cavity fillings and habit correction for thumb-sucking or bottle feeding — all done at your child's pace, with parents in the room and every step explained before it happens.",
+    sittings: "Check-ups every 6 months recommended", aftercare: "Twice-daily brushing with a pea-sized amount of fluoride toothpaste; limit sticky, sugary snacks.",
+    priceLabel: fmt(500), priceSub: "check-up · as listed on Practo", book: "Kids Dentistry" },
+  { name: "General Dentistry", tag: "Everyday care", img: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=900&auto=format&fit=crop", alt: "Routine dental examination at the clinic",
+    involves: "The everyday care that keeps small problems small: ultrasonic cleaning & polishing, tooth-coloured fillings, ceramic crowns, and specialist gum treatment (periodontics) for bleeding gums, deep cleaning and loose teeth.",
+    sittings: "Usually a single sitting per treatment", aftercare: "A cleaning and check-up every 6 months prevents most major dental problems.",
+    priceLabel: fmt(800) + "*", priceSub: "cleaning · starting at (demo)", book: "Cleaning & Polishing (Scaling)" }
+];
+
+function renderTreatments() {
+  $("#treatGrid").innerHTML = DETAILS.map(function (t) {
+    return '<article class="treat-card reveal">' +
+      '<img src="' + t.img + '" alt="' + t.alt + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+      '<div class="treat-body">' +
+        '<span class="tag">' + t.tag + '</span>' +
+        '<h3>' + t.name + '</h3>' +
+        '<p>' + t.involves + '</p>' +
+        '<div class="treat-meta">' +
+          '<span>🗓️ <span><b>Sittings:</b> ' + t.sittings + '</span></span>' +
+          '<span>🩹 <span><b>Aftercare:</b> ' + t.aftercare + '</span></span>' +
+        '</div>' +
+        '<div class="treat-foot"><span class="price">' + t.priceLabel + '<small>' + t.priceSub + '</small></span>' +
+        '<a class="mini-btn" href="#book" data-book="' + t.book + '">Book →</a></div>' +
+      '</div></article>';
+  }).join("");
+}
+
+/* ---------- Estimator ---------- */
+var estTreat = $("#estTreat"), estQty = $("#estQty"), estNote = $("#estNote");
+function fillEstimator() {
+  estTreat.innerHTML = EST.map(function (t, i) {
+    return '<option value="' + i + '">' + t.name + " — " + fmt(t.price) + (i === 0 ? "" : "*") + "</option>";
+  }).join("");
+}
+function calcEst() {
+  var t = EST[+estTreat.value || 0];
+  var q = Math.min(20, Math.max(1, parseInt(estQty.value, 10) || 1));
+  estQty.value = q;
+  $("#estAmt").textContent = fmt(t.price * q) + (t.price === 500 ? "" : "*");
+  $("#estDesc").textContent = t.note + " Final plan & cost confirmed after clinical examination.";
+  var lines = ["Namaste, mujhe " + CLINIC + " se appointment chahiye.",
+    "Treatment: " + t.name, "Teeth / sessions: " + q,
+    "Website par indicative estimate dikha: " + fmt(t.price * q) + "*"];
+  var note = estNote.value.trim();
+  if (note) lines.push("Note: " + note);
+  lines.push("Kripya mera appointment confirm karein.");
+  $("#estWa").href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(lines.join("\n"));
+}
+
+/* ---------- Booking form ---------- */
+var BOOK_OPTIONS = ["Not sure — need a check-up", "Consultation"].concat(EST.slice(1).map(function (t) { return t.name; }), ["Braces / Clear Aligners", "Kids Dentistry"]);
+function fillBookOptions() {
+  var sel = $("#bkTreat");
+  sel.innerHTML = '<option value="">— Choose a treatment —</option>' + BOOK_OPTIONS.map(function (n) {
+    return '<option value="' + n + '">' + n + "</option>";
+  }).join("");
+}
+function setErr(input, msgEl, bad) {
+  input.classList.toggle("err", bad);
+  msgEl.style.display = bad ? "block" : "none";
+  return !bad;
+}
+function fmtDate(iso) {
+  var p = iso.split("-");
+  if (p.length !== 3) return iso;
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return (+p[2]) + " " + months[(+p[1]) - 1] + " " + p[0];
+}
+function submitBooking(e) {
+  e.preventDefault();
+  var name = $("#bkName"), mob = $("#bkMobile"), treat = $("#bkTreat"), date = $("#bkDate");
+  var ok = true;
+  ok = setErr(name, $("#errName"), name.value.trim().length < 2) && ok;
+  var digits = mob.value.replace(/\D/g, "").replace(/^91(?=\d{10}$)/, "");
+  ok = setErr(mob, $("#errMobile"), !/^[6-9]\d{9}$/.test(digits)) && ok;
+  ok = setErr(treat, $("#errTreat"), !treat.value) && ok;
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var picked = date.value ? new Date(date.value + "T00:00:00") : null;
+  ok = setErr(date, $("#errDate"), !picked || picked < today) && ok;
+  if (!ok) { toast("Please fix the highlighted fields."); return; }
+  var lines = ["Namaste, mujhe " + CLINIC + " mein appointment chahiye.",
+    "Name: " + name.value.trim(), "Mobile: " + digits,
+    "Treatment: " + treat.value, "Preferred date: " + fmtDate(date.value),
+    "Kripya mera slot confirm karein."];
+  $("#cfName").textContent = name.value.trim().split(" ")[0];
+  $("#cfText").textContent = "Your request for " + treat.value + " on " + fmtDate(date.value) + " is ready. Tap below to send it to the clinic on WhatsApp — they will confirm your slot from there.";
+  $("#cfWa").href = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(lines.join("\n"));
+  var box = $("#confirmBox");
+  box.classList.add("show");
+  box.scrollIntoView({ behavior: "smooth", block: "center" });
+  toast("Appointment request ready — confirm it on WhatsApp ✓");
+}
+
+/* ---------- FAQ accordion ---------- */
+function initFaq() {
+  document.querySelectorAll(".faq-item").forEach(function (item) {
+    var q = item.querySelector(".faq-q"), a = item.querySelector(".faq-a");
+    q.addEventListener("click", function () {
+      var open = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function (o) {
+        o.classList.remove("open");
+        o.querySelector(".faq-a").style.maxHeight = "0px";
+        o.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+      });
+      if (!open) {
+        item.classList.add("open");
+        a.style.maxHeight = a.scrollHeight + "px";
+        q.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+}
+
+/* ---------- Treatment card → prefill booking ---------- */
+document.addEventListener("click", function (e) {
+  var b = e.target.closest("[data-book]");
+  if (!b) return;
+  var sel = $("#bkTreat");
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === b.dataset.book) { sel.selectedIndex = i; break; }
+  }
+});
+
+/* ---------- Toast ---------- */
+var toastTimer;
+function toast(msg) {
+  var el = $("#toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function () { el.classList.remove("show"); }, 2600);
+}
+
+/* ---------- Reveal on scroll ---------- */
+var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+  entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+}, { threshold: 0.1 }) : null;
+function initReveal() {
+  document.querySelectorAll(".reveal").forEach(function (el) { if (io) io.observe(el); else el.classList.add("in"); });
+}
+
+/* ---------- Init ---------- */
+renderTreatments();
+fillEstimator();
+fillBookOptions();
+calcEst();
+estTreat.addEventListener("change", calcEst);
+estQty.addEventListener("input", calcEst);
+estNote.addEventListener("input", calcEst);
+$("#bookForm").addEventListener("submit", submitBooking);
+(function () { var d = new Date(); var iso = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); $("#bkDate").min = iso; })();
+initFaq();
+initReveal();
+</script>
+</body>
+</html>

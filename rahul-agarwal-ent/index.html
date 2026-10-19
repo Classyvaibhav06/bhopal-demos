@@ -1,9 +1,706 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Rahul Agarwal ENT Clinic — Arera Colony, Bhopal</title><meta name="description" content="Demo website for Dr. Rahul Agarwal ENT Clinic, 10 No. Market, Arera Colony, Bhopal. ENT symptom guide and WhatsApp appointment booking.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f2f6fb;color:#14222e;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#d7e6f5}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#1c5d8f;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px #1c5d8f14}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#f2f6fb;color:#14222e}button,.wa{display:block;width:100%;text-align:center;background:#1c5d8f;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:16px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#f2f6fb;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">ENT · 10 NO. MARKET, ARERA COLONY, BHOPAL</span><h1>Dr. Rahul Agarwal ENT Clinic</h1><p class="sub">4.9★ rated ENT care — 23 years in healthcare, consultation ₹500 (per Justdial)</p></header>
-<main><section><h2>What's troubling you? — symptom guide &amp; booking</h2><p class="small">Choose your concern, read simple guidance, then book your visit on WhatsApp. This is general information, not a diagnosis.</p><label>Your concern</label><select id="t"><option value="Ear pain, discharge or blocked ear — aksar wax, infection ya fluid ki wajah se hota hai. Khud saaf karne ki koshish na karein; ENT check-up se sahi kaaran pata chalta hai.">Ear pain / discharge / blockage</option><option value="Sinus &amp; baar-baar sardi — naak band, chehre par bhaari-pan aur sir dard sinus ki nishaani ho sakte hain. Agar 10 din se zyada rahe to ENT evaluation zaroori hai.">Sinus / repeated cold &amp; blocked nose</option><option value="Tonsil &amp; gale mein dard — baar-baar tonsil infection, kharrate ya nigalne mein takleef ho to doctor se salah lein; kuch cases mein surgery par vichaar hota hai.">Tonsil / throat pain / snoring</option><option value="Hearing loss / kaan mein awaaz (tinnitus) — sunai kam dena ya seeti jaisi awaaz aana hearing test se pehle pakda ja sakta hai. Jitni jaldi check, utna behtar.">Hearing loss / ringing in ear</option><option value="Chakkar / vertigo — ghoomne jaisa mehsoos hona aksar kaan ke balance system se juda hota hai. ENT check-up se kaaran clear hota hai.">Vertigo / dizziness</option><option value="Allergy — baar-baar chheenk, naak behna aur aankhon mein khujli allergy ho sakti hai. Trigger pehchan kar ilaaj plan banta hai.">Nose allergy / sneezing</option></select><button onclick="show()">See guidance &amp; book</button><p class="out" id="o"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Book appointment on WhatsApp →</a></section><section><h2>Common ENT concerns we help with</h2><div class="grid"><div class="card"><b>Ear Care</b><span class="small">Pain, wax, discharge, hearing</span></div><div class="card"><b>Sinus &amp; Nose</b><span class="small">Blockage, allergy, sinusitis</span></div><div class="card"><b>Tonsil &amp; Throat</b><span class="small">Infection, snoring, voice</span></div><div class="card"><b>Hearing &amp; Vertigo</b><span class="small">Hearing loss, tinnitus, balance</span></div></div><p class="small" style="margin-top:10px">Consultation fee ₹500 as listed on Justdial.</p></section><section><h2>Why patients trust Dr. Agarwal</h2><p>⭐ 4.9 on Justdial (330+ ratings) · 23 years in healthcare (per Justdial). Right now every enquiry comes only through Justdial — this demo shows how patients could read about their concern and book directly on WhatsApp.</p></section>
-<section><h2>Visit / Call</h2><p>E4/205, Near 10 No. Market, Behind Starbucks, Arera Colony, Bhopal 462016</p><p style="margin-top:8px">📞 <a href="tel:+917089224000" style="color:inherit">+91 70892 24000</a></p><a class="wa" href="https://wa.me/917089224000" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Guidance shown is general information, not medical advice.</footer>
-<script>function show(){var t=document.getElementById('t');document.getElementById('o').textContent=t.value;var w=document.getElementById('w');w.style.display='block';w.href='https://wa.me/917089224000?text='+encodeURIComponent('Namaste, mujhe Dr. Rahul Agarwal ENT Clinic se appointment chahiye. Concern: '+t.options[t.selectedIndex].text+'.')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Rahul Agarwal ENT Clinic — Arera Colony, Bhopal | Ear, Nose, Throat, Sinus &amp; Hearing Care</title>
+<meta name="description" content="Dr. Rahul Agarwal ENT Clinic, 10 No. Market, Arera Colony, Bhopal. Rated 4.9★ on Justdial (330+ ratings), 23 years in healthcare. Ear, nose, throat, sinus, tonsil, vertigo & hearing care. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👂</text></svg>">
+<style>
+:root{
+  --teal:#0c5a63; --teal-2:#073f46; --teal-soft:#e3f0f2; --sky:#eef6f7;
+  --bg:#f4f8f9; --ink:#12262b; --muted:#5b7178; --line:#d5e4e7;
+  --amber:#e79a1e; --green:#0f8a3c; --red:#b3372e; --card:#ffffff;
+  --shadow:0 18px 40px rgba(12,90,99,.14); --r:20px; --header-h:72px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#fff;padding:.7rem 1rem;z-index:200;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:linear-gradient(135deg,var(--teal),#0e6d78);color:#fff;box-shadow:0 12px 26px rgba(12,90,99,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(12,90,99,.38)}
+.btn-ghost{background:#fff;color:var(--teal);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--teal)}
+.btn-wa{background:#1faa55;color:#fff}
+.btn-wa:hover{background:#178a44;transform:translateY(-2px)}
+.btn-sm{padding:.6rem 1.1rem;font-size:.92rem}
+/* Header */
+header.site{position:sticky;top:0;z-index:90;background:rgba(244,248,249,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:900;font-size:1.05rem;box-shadow:0 8px 18px rgba(12,90,99,.3)}
+.logo strong{font-family:Fraunces,serif;font-size:1.05rem;line-height:1.1;display:block}
+.logo small{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+nav.main{display:flex;gap:1.35rem;margin-left:auto}
+nav.main a{text-decoration:none;font-weight:700;font-size:.94rem;color:var(--ink)}
+nav.main a:hover{color:var(--teal)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main + .header-actions{margin-left:0}
+.burger{display:none;background:#fff;border:1.5px solid var(--line);width:42px;height:42px;border-radius:12px;cursor:pointer;font-size:1.1rem;color:var(--teal)}
+/* Hero */
+.hero{position:relative;background:radial-gradient(900px 480px at 88% -10%,#bfe3e8 0,transparent 55%),linear-gradient(160deg,#e9f4f5,var(--bg) 62%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4rem 0 4.4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:800;color:var(--teal);box-shadow:0 6px 16px rgba(12,90,99,.07)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.3rem,5.2vw,3.9rem);line-height:1.05;letter-spacing:-.01em;margin:1.1rem 0 1rem}
+h1 em{font-style:normal;color:var(--teal);background:linear-gradient(transparent 62%,#bfe3e8 62%)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:34rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.4rem}
+.hero-meta{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.hero-meta span{display:flex;gap:.4rem;align-items:center}
+.stars{color:var(--amber);letter-spacing:.06em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/3.3;object-fit:cover;width:100%;background:var(--teal-soft)}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:290px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--teal);color:#fff;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow)}
+/* Trust strip */
+.strip{background:var(--teal-2);color:#d9eef1}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.65rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.85rem;font-weight:600;opacity:.85}
+/* Sections */
+section{padding:4.2rem 0}
+.sec-head{max-width:44rem;margin-bottom:2.1rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--teal);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.55rem);line-height:1.12;margin:.45rem 0 .6rem}
+.sec-head p{color:var(--muted)}
+.sec-head p a{color:var(--teal);font-weight:700}
+/* Condition tabs */
+.tabs{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.tab{font:inherit;font-weight:800;font-size:.92rem;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:.6rem 1.15rem;transition:all .18s}
+.tab:hover{border-color:var(--teal)}
+.tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 12px 30px rgba(12,90,99,.08);padding:1.9rem;display:grid;grid-template-columns:1.15fr .85fr;gap:2rem}
+.panel h3{font-family:Fraunces,serif;font-size:1.5rem;margin-bottom:.4rem}
+.panel .intro{color:var(--muted);margin-bottom:1rem}
+.panel h4{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:1.1rem 0 .5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{background:var(--sky);border:1px solid var(--line);border-radius:999px;padding:.32rem .8rem;font-size:.86rem;font-weight:600}
+.panel ul{list-style:none}
+.panel ul li{padding:.32rem 0 .32rem 1.4rem;position:relative;font-size:.96rem}
+.panel ul li::before{content:"•";position:absolute;left:.4rem;color:var(--teal);font-weight:900}
+.panel ul.flags li::before{content:"⚑";color:var(--red);font-size:.8rem;top:.45rem}
+.panel-side{background:var(--sky);border:1px solid var(--line);border-radius:16px;padding:1.3rem;align-self:start}
+.panel-side h4{margin-top:0}
+.panel-side p{font-size:.94rem}
+.panel-side .fee{margin:1rem 0;padding:.8rem .95rem;background:#fff;border:1px dashed var(--teal);border-radius:12px;font-size:.9rem}
+.panel-side .fee b{color:var(--teal)}
+.panel-side .btn{width:100%;justify-content:center;margin-top:.4rem}
+.fineprint{font-size:.82rem;color:var(--muted);margin-top:1rem}
+/* Treatment cards */
+.treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.treat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.5rem;box-shadow:0 8px 22px rgba(12,90,99,.05);transition:transform .22s ease,box-shadow .22s ease;display:flex;flex-direction:column}
+.treat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.treat-card .ico{width:52px;height:52px;border-radius:16px;background:var(--teal-soft);display:grid;place-items:center;font-size:1.5rem;margin-bottom:1rem}
+.treat-card h3{font-family:Fraunces,serif;font-size:1.18rem;margin-bottom:.4rem}
+.treat-card p{color:var(--muted);font-size:.94rem;flex:1}
+.treat-card .meta{margin-top:1rem;padding-top:.9rem;border-top:1px solid var(--line);font-size:.86rem;font-weight:700;color:var(--teal)}
+/* Why + journey */
+.why-sec{background:linear-gradient(180deg,#fff,var(--bg))}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.why-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.4rem}
+.why-card .ico{width:50px;height:50px;border-radius:15px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:1.4rem;margin-bottom:.9rem}
+.why-card h3{font-family:Fraunces,serif;font-size:1.14rem;margin-bottom:.35rem}
+.why-card p{color:var(--muted);font-size:.93rem}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;margin-top:2.8rem}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.35rem;margin-top:16px}
+.step .num{position:absolute;top:-16px;left:20px;width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Fraunces,serif}
+.step h3{font-size:1.02rem;margin:.4rem 0 .3rem}
+.step p{color:var(--muted);font-size:.9rem}
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal-grid figure{border-radius:18px;overflow:hidden;position:relative;box-shadow:0 10px 24px rgba(12,90,99,.1)}
+.gal-grid img{height:210px;width:100%;object-fit:cover;background:var(--teal-soft);transition:transform .4s ease}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .7rem;background:linear-gradient(transparent,rgba(7,63,70,.82));color:#fff;font-size:.85rem;font-weight:700}
+/* Reviews */
+.reviews{background:#fff;border-block:1px solid var(--line)}
+.rev-summary{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;background:var(--sky);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.7rem;margin-bottom:1.6rem}
+.rev-summary .big{font-family:Fraunces,serif;font-size:3rem;font-weight:900;color:var(--teal);line-height:1}
+.rev-summary p{color:var(--muted);font-size:.95rem;max-width:34rem}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.rev-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
+.rev-card blockquote{font-size:.97rem;margin:.55rem 0 .8rem}
+.rev-theme{font-weight:800;font-size:.86rem;color:var(--teal)}
+.rev-theme small{display:block;color:var(--muted);font-weight:600;margin-top:.15rem}
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:.8rem;max-width:820px}
+.faq{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;cursor:pointer;font:inherit;font-weight:800;text-align:left;padding:1.05rem 1.25rem;color:var(--ink)}
+.faq button .arr{color:var(--teal);transition:transform .25s;flex-shrink:0}
+.faq.open button .arr{transform:rotate(180deg)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq .ans p{padding:0 1.25rem 1.15rem;color:var(--muted);font-size:.95rem}
+.faq .ans a{color:var(--teal);font-weight:700}
+/* Booking */
+.book-sec{background:linear-gradient(160deg,var(--teal-2),var(--teal));color:#eaf6f7}
+.book-sec h2{color:#fff}
+.book-sec .kicker{color:#9fd3da}
+.book-sec .sec-head p{color:#c4e2e6}
+.book-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:start}
+form.book{background:#fff;color:var(--ink);border-radius:var(--r);padding:1.7rem;box-shadow:var(--shadow)}
+.field{margin-bottom:1.05rem}
+.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:.4rem}
+.field input,.field select,.field textarea{width:100%;font:inherit;padding:.8rem .95rem;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--teal);outline:none;background:#fff}
+.field .err{display:none;color:var(--red);font-size:.82rem;font-weight:700;margin-top:.3rem}
+.field.invalid input,.field.invalid select{border-color:var(--red)}
+.field.invalid .err{display:block}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.summary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:var(--r);padding:1.6rem}
+.summary h3{font-family:Fraunces,serif;font-size:1.25rem;color:#fff;margin-bottom:1rem}
+.summary dl{display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.1rem;font-size:.95rem}
+.summary dt{font-weight:700;color:#9fd3da}
+.summary dd{font-weight:600}
+.summary .btn{width:100%;justify-content:center;margin-top:1.3rem}
+.summary .btn.disabled{opacity:.45;pointer-events:none}
+.confirm{display:none;background:#e9f9ee;border:1.5px solid var(--green);color:#0b5223;border-radius:16px;padding:1.1rem 1.2rem;margin-top:1.1rem;font-size:.95rem}
+.confirm.show{display:block}
+.confirm b{display:block;font-size:1.02rem;margin-bottom:.2rem}
+/* Visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.visit-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;box-shadow:0 8px 22px rgba(12,90,99,.05)}
+.visit-card h3{font-family:Fraunces,serif;font-size:1.25rem;margin-bottom:.7rem}
+.visit-card p{color:var(--muted);margin-bottom:.5rem}
+.visit-card p b{color:var(--ink)}
+.visit-card .btn{margin-top:.8rem;margin-right:.5rem}
+/* Footer */
+footer.site{background:#082a2f;color:#c3dcdf;padding:3.2rem 0 1.5rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.2rem}
+footer.site h4{font-family:Fraunces,serif;color:#fff;margin-bottom:.8rem;font-size:1.08rem}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:#fff;text-decoration:underline}
+footer.site li{list-style:none;margin-bottom:.45rem;font-size:.94rem}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:2.3rem;padding-top:1.15rem;font-size:.84rem;opacity:.85;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+/* Toast + mobile bar */
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;padding:.75rem 1.2rem;border-radius:999px;opacity:0;pointer-events:none;transition:all .3s;z-index:130;box-shadow:var(--shadow);max-width:92vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.mobile-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:95;background:var(--teal-2);color:#fff;border-radius:999px;padding:.55rem;display:none;gap:.45rem;box-shadow:0 18px 36px rgba(7,63,70,.45)}
+.mobile-bar a{color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;border-radius:999px;padding:.55rem 1rem;background:rgba(255,255,255,.12)}
+.mobile-bar a.wa{background:#1faa55}
+.mobile-bar a.bk{background:#fff;color:var(--teal-2)}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media (max-width:1020px){
+  .why-grid,.journey{grid-template-columns:1fr 1fr}
+  .treat-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:880px){
+  nav.main{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:1rem 4%;gap:.9rem;box-shadow:var(--shadow)}
+  nav.main.open{display:flex}
+  .burger{display:grid;place-items:center;margin-left:auto}
+  .header-actions{margin-left:0}
+  .header-actions .btn-ghost{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;padding:2.8rem 0 3.4rem}
+  .panel{grid-template-columns:1fr;gap:1.2rem;padding:1.4rem}
+  .book-grid,.visit-grid{grid-template-columns:1fr}
+  .strip-in{grid-template-columns:1fr 1fr;gap:1.4rem}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .mobile-bar{display:flex}
+}
+@media (max-width:600px){
+  .treat-grid,.rev-grid,.why-grid,.journey,.gal-grid,.foot-grid,.frow{grid-template-columns:1fr}
+  .logo small{display:none}
+  .hero-card{left:8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conditions">Skip to symptom guide</a>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Dr. Rahul Agarwal ENT Clinic — home">
+      <span class="logo-mark">RA</span>
+      <span><strong>Dr. Rahul Agarwal</strong><small>ENT Clinic · Arera Colony</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav">☰</button>
+    <nav class="main" id="mainnav" aria-label="Main navigation">
+      <a href="#conditions">Symptoms</a>
+      <a href="#treatments">Treatments</a>
+      <a href="#why">Why Us</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-ghost btn-sm" href="tel:+917089224000">📞 70892 24000</a>
+      <a class="btn btn-wa btn-sm" href="https://wa.me/917089224000?text=Namaste%2C%20mujhe%20Dr.%20Rahul%20Agarwal%20ENT%20Clinic%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">Book on WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> ENT · 10 No. Market, Arera Colony, Bhopal</span>
+        <h1>Ear, nose &amp; throat problems? <em>Samjhiye pehle, ilaaj phir.</em></h1>
+        <p class="lead">Kaan ka dard, band naak, sinus, tonsil, sunai kam dena ya chakkar — apni takleef ko simple bhasha mein samjhiye, aur appointment seedha WhatsApp par book kijiye. Bina kisi middleman app ke.</p>
+        <div class="hero-cta">
+          <a class="btn btn-wa" href="#book">📅 Book Appointment</a>
+          <a class="btn btn-primary" href="#conditions">Apni takleef check karein ↓</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="stars">★★★★★</span> 4.9 on Justdial</span>
+          <span>👥 330+ patient ratings</span>
+          <span>🩺 23 years in healthcare</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Doctor at Dr. Rahul Agarwal ENT Clinic, Bhopal" width="1000" height="825">
+        <span class="hero-badge">Consultation ₹500 · as listed on Justdial</span>
+        <div class="hero-card">
+          <span style="font-size:1.6rem">💬</span>
+          <span><strong>Seedha WhatsApp par booking</strong><small>Koi app nahi, koi commission nahi — clinic se direct baat</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="strip" aria-label="Clinic highlights">
+    <div class="wrap strip-in">
+      <div><b>4.9 ★</b><span>Justdial rating</span></div>
+      <div><b>330+</b><span>patient ratings on Justdial</span></div>
+      <div><b>23 yrs</b><span>in healthcare (per Justdial)</span></div>
+      <div><b>₹500</b><span>consultation — as listed on Justdial</span></div>
+    </div>
+  </div>
+
+  <!-- CONDITIONS -->
+  <section id="conditions" aria-labelledby="cond-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Symptom Guide</p>
+        <h2 id="cond-h">What's troubling you? Pehle samjhiye.</h2>
+        <p>Apni takleef chunein — common symptoms, kab doctor ko dikhana zaroori hai, aur ilaaj aam taur par kis disha mein hota hai. Yeh general jaankari hai, diagnosis nahi — sahi kaaran examination se hi pata chalta hai.</p>
+      </div>
+      <div class="tabs reveal" role="tablist" aria-label="ENT conditions" id="tablist"></div>
+      <div id="panelHost" class="reveal"></div>
+      <p class="fineprint">⚠️ Agar saans lene mein takleef, tez bukhaar ke saath gale/kaan mein soojan, achanak sunai band hona, ya khoon aana ho — to intezaar na karein, turant doctor ya emergency care se sampark karein.</p>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section id="treatments" aria-labelledby="treat-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Treatments &amp; Procedures</p>
+        <h2 id="treat-h">What happens at the clinic — explained simply</h2>
+        <p>Har treatment mein kya hota hai, pehle hi jaan lijiye. Procedure ki fees examination ke baad confirm hoti hai — consultation fee <b>₹500</b> hai, jaisa Justdial par listed hai. (Demo website: koi aur price online listed nahi hai.)</p>
+      </div>
+      <div class="treat-grid">
+        <article class="treat-card reveal"><span class="ico">🔬</span><h3>Ear Examination &amp; Wax Cleaning</h3><p>Kaan ko microscope/otoscope se dekha jata hai. Jama hua wax surakshit tareeke se nikala jata hai — ghar par ear-bud ya pin ka istemal dard aur infection badha sakta hai, isliye khud saaf karne ki koshish na karein.</p><p class="meta">OPD procedure · Fee confirmed at clinic</p></article>
+        <article class="treat-card reveal"><span class="ico">👃</span><h3>Nasal Endoscopy Evaluation</h3><p>Ek patli camera-wali tube se naak aur sinus ke raste ko andar se dekha jata hai — band naak, baar-baar sinus ya naak ki haddi tedhi (DNS) jaise kaaran saaf nazar aate hain, aur ilaaj ki disha tai hoti hai.</p><p class="meta">OPD evaluation · Fee confirmed at clinic</p></article>
+        <article class="treat-card reveal"><span class="ico">🌡️</span><h3>Sinusitis Treatment</h3><p>Sinus ka ilaaj aksar dawa, steam aur nasal spray se shuru hota hai. Lamba chalne wale ya baar-baar ke cases mein CT scan aur zaroorat padne par endoscopic sinus surgery (FESS) par vichaar hota hai — nirnay examination ke baad hi liya jata hai.</p><p class="meta">Medicine first · Surgery only if needed</p></article>
+        <article class="treat-card reveal"><span class="ico">🗣️</span><h3>Tonsil &amp; Adenoid Care</h3><p>Baar-baar tonsil infection, kharrate ya neend mein saans rukna — pehle dawa aur observation. Jab infection saal mein kai baar ho ya saans/neend par asar pade, tab tonsillectomy ki salah di ja sakti hai, woh bhi poori jaanch ke baad.</p><p class="meta">For kids &amp; adults · Advice after examination</p></article>
+        <article class="treat-card reveal"><span class="ico">🎧</span><h3>Hearing Test Guidance</h3><p>Sunai kam dena ya kaan mein seeti jaisi awaaz (tinnitus) ho to hearing test (audiometry) se samasya ki gehrai pata chalti hai. Kaaran ke hisaab se dawa, safai ya hearing aid ki disha tai hoti hai — jaldi jaanch, behtar result.</p><p class="meta">Audiometry guidance · Fee confirmed at clinic</p></article>
+        <article class="treat-card reveal"><span class="ico">🌀</span><h3>Vertigo &amp; Balance Assessment</h3><p>Ghoomne jaisa chakkar (vertigo) aksar kaan ke balance system se juda hota hai. Examination se BPPV, kaan ka infection ya anya kaaran alag kiye jate hain, aur usi ke hisaab se dawa ya special exercises diye jate hain.</p><p class="meta">Cause-based treatment · OPD assessment</p></article>
+        <article class="treat-card reveal"><span class="ico">🤧</span><h3>Allergy Management</h3><p>Baar-baar chheenk, naak behna aur aankhon mein khujli — pehle trigger pehchana jata hai (dhool, pollen, thand), phir spray, dawa aur bachav ka lamba plan banta hai taaki baar-baar ki takleef kam ho.</p><p class="meta">Long-term plan · Trigger-based care</p></article>
+        <article class="treat-card reveal"><span class="ico">🎤</span><h3>Voice &amp; Throat Care</h3><p>Lambi awaaz baithna, gale mein kuch atka mehsoos hona ya baar-baar kharaash — gala aur vocal cords ki jaanch se kaaran pata chalta hai. Teachers, singers aur zyada bolne walon ke liye voice-care salah bhi di jati hai.</p><p class="meta">OPD evaluation · Fee confirmed at clinic</p></article>
+        <article class="treat-card reveal"><span class="ico">😴</span><h3>Snoring Evaluation</h3><p>Tez kharrate aur neend mein saans ka rukna (sleep apnoea) sirf shor nahi hai — din ki thakaan aur sehat par asar pad sakta hai. Naak-gale ki jaanch se rukawat ki jagah pata chalti hai aur ilaaj ki disha tai hoti hai.</p><p class="meta">Sleep &amp; breathing check · Advice after examination</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY + JOURNEY -->
+  <section class="why-sec" id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Why This Clinic</p>
+        <h2 id="why-h">Why patients choose Dr. Agarwal</h2>
+        <p>Sirf ek listing nahi — 330+ patients ne Justdial par 4.9★ ki rating di hai. Yahan har cheez pehle samjhayi jati hai, phir ilaaj tai hota hai.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why-card reveal"><span class="ico">⭐</span><h3>4.9★ rated by patients</h3><p>330+ ratings on Justdial — Bhopal ke patients ka bharosa, ek hi jagah par verifiable.</p></article>
+        <article class="why-card reveal"><span class="ico">🩺</span><h3>23 years in healthcare</h3><p>Do dashak se zyada ka tajurba (per Justdial) — kaan, naak, gale ki har aam aur mushkil takleef pehle dekhi hui.</p></article>
+        <article class="why-card reveal"><span class="ico">💬</span><h3>Direct WhatsApp booking</h3><p>Koi platform commission ya app-jhanjhat nahi — appointment seedha clinic ke WhatsApp par, jawab bhi wahin.</p></article>
+        <article class="why-card reveal"><span class="ico">📍</span><h3>Easy to reach</h3><p>10 No. Market, Arera Colony — Bhopal ke beechon-beech, Starbucks ke peeche. Aana-jaana aasan.</p></article>
+      </div>
+      <div class="journey" aria-label="Your visit, step by step">
+        <div class="step reveal"><span class="num">1</span><h3>Book karein</h3><p>Neeche form bharein ya WhatsApp par message karein — apni takleef aur pasandeeda date ke saath.</p></div>
+        <div class="step reveal"><span class="num">2</span><h3>Consultation</h3><p>Doctor aapki history sunte hain aur kaan-naak-gale ki jaanch karte hain. Consultation ₹500 (as listed on Justdial).</p></div>
+        <div class="step reveal"><span class="num">3</span><h3>Saaf plan</h3><p>Dawa, test ya procedure — jo bhi chahiye, pehle samjhaya jata hai. Surgery ki salah tabhi, jab sach mein zaroori ho.</p></div>
+        <div class="step reveal"><span class="num">4</span><h3>Follow-up</h3><p>Dawa ka course, savdhaniyan aur dobara dikhane ki date — sab likhit salah ke saath, taaki recovery track par rahe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section aria-labelledby="gal-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Inside an ENT Visit</p>
+        <h2 id="gal-h">What to expect at your visit</h2>
+        <p>Ek aam ENT visit kaisa dikhta hai — jaanch, samjhaya gaya plan aur saaf salah. (Photos: representative images for this demo website.)</p>
+      </div>
+      <div class="gal-grid">
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Doctor consulting a patient" loading="lazy" width="700" height="210"><figcaption>Consultation &amp; history</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Doctor examining a patient" loading="lazy" width="700" height="210"><figcaption>Examination</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Doctor reviewing reports on a tablet" loading="lazy" width="700" height="210"><figcaption>Reports explained clearly</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Modern clinic equipment" loading="lazy" width="700" height="210"><figcaption>Modern clinic setup</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews" aria-labelledby="rev-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Patient Reviews</p>
+        <h2 id="rev-h">Rated 4.9 ★ by 330+ patients</h2>
+      </div>
+      <div class="rev-summary reveal">
+        <span class="big">4.9</span>
+        <div>
+          <span class="stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+          <p>Yeh rating Dr. Rahul Agarwal ENT Clinic ki <b>Justdial listing</b> ki hai, jahan 330+ patients ne apne reviews diye hain. Neeche koi banaye hue naam ya nakli quotes nahi hain — sirf woh themes hain jo in reviews mein baar-baar nazar aati hain.</p>
+        </div>
+      </div>
+      <div class="rev-grid">
+        <article class="rev-card reveal"><span class="stars">★★★★★</span><blockquote>"Doctor pehle poori baat sunte hain, phir jaanch karte hain — ilaaj ki har step samjha kar batayi jati hai."</blockquote><p class="rev-theme">Theme: Clear explanation<small>Recurring theme — 330+ Justdial ratings</small></p></article>
+        <article class="rev-card reveal"><span class="stars">★★★★★</span><blockquote>"Faltu tests aur dawaon ka bojh nahi — jo zaroori hai, wahi salah milti hai. Bharosa isiliye banta hai."</blockquote><p class="rev-theme">Theme: Honest, need-based advice<small>Recurring theme — 330+ Justdial ratings</small></p></article>
+        <article class="rev-card reveal"><span class="stars">★★★★★</span><blockquote>"Arera Colony mein hi itna experienced ENT mil jana bada aaram hai — poora parivaar yahin dikhata hai."</blockquote><p class="rev-theme">Theme: Trusted family ENT, nearby<small>Recurring theme — 330+ Justdial ratings</small></p></article>
+      </div>
+      <p class="fineprint">Review themes are paraphrased from the clinic's public Justdial presence for this demo — they are not verbatim quotes from named patients.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Common Questions</p>
+        <h2 id="faq-h">Sawaal? Pehle yahan dekhiye</h2>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq"><button aria-expanded="false">Consultation fee kitni hai?<span class="arr">▾</span></button><div class="ans"><p>Consultation fee <b>₹500</b> hai, jaisa clinic ki Justdial listing par diya hai. Kisi test ya procedure ki fees, agar zaroorat pade, examination ke baad pehle bata kar hi aage badha jata hai.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Appointment kaise book karun?<span class="arr">▾</span></button><div class="ans"><p>Sabse aasan tareeka — neeche wala form bharein, ya seedha <a href="https://wa.me/917089224000" target="_blank" rel="noopener">WhatsApp (70892 24000)</a> par message karein. Aap chahein to isi number par call bhi kar sakte hain. Form bharne par aapki details WhatsApp par bhejne ke liye taiyaar mil jati hain.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Clinic kahan hai?<span class="arr">▾</span></button><div class="ans"><p>Clinic ka pata hai: <b>E4/205, Near 10 No. Market, Behind Starbucks, Arera Colony, Bhopal 462016</b>. 10 No. Market area Bhopal ke sabse aasan-pahunch ilaakon mein se hai. Directions ke liye neeche Visit section mein Maps link diya hai.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Clinic ke timings kya hain?<span class="arr">▾</span></button><div class="ans"><p>Timings phone ya WhatsApp par confirm karke aana sabse behtar hai, taaki aapko intezaar na karna pade — khaas taur par Sunday ya chhutti ke din. Appointment pehle se book karne par aapka time lagbhag tai rehta hai.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Kya tonsil ya sinus ka matlab hamesha surgery hota hai?<span class="arr">▾</span></button><div class="ans"><p>Bilkul nahi. Zyaadaatar cases mein ilaaj dawa se hi shuru hota hai. Surgery par vichaar tabhi hota hai jab takleef baar-baar ho, dawa kaam na kare, ya saans/neend par asar padne lage — aur woh bhi poori jaanch ke baad, saare vikalp samjha kar.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Pehli baar aane par kya saath laaun?<span class="arr">▾</span></button><div class="ans"><p>Purani prescriptions, koi CT scan / X-ray / hearing test ki reports, aur jo dawaein abhi chal rahi hain unki list — bas yehi kaafi hai. Agar takleef kab se hai aur pehle kya ilaaj liya, yeh bata payein to diagnosis aur aasan ho jata hai.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Sunai kam dena ya kaan mein awaaz — kab dikhana chahiye?<span class="arr">▾</span></button><div class="ans"><p>Jitni jaldi, utna behtar. Hearing loss ka kaaran kabhi sirf jama hua wax hota hai jo ek visit mein saaf ho jata hai; kabhi hearing test ki zaroorat padti hai. Agar sunai <b>achanak</b> band ho jaye to use emergency samajh kar turant dikhayein.</p></div></div>
+        <div class="faq"><button aria-expanded="false">Kya bacho ko bhi dikha sakte hain?<span class="arr">▾</span></button><div class="ans"><p>Kaan-naak-gale ki takleefein bacho mein bahut aam hain — tonsil, adenoid, kaan ka infection. Bahut chhote bache ke liye aane se pehle WhatsApp par ek baar pooch lene se visit aur smooth ho jata hai.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="book-sec" id="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Appointment</p>
+        <h2 id="book-h">Book in under a minute</h2>
+        <p>Details bharein → summary check karein → ek tap mein WhatsApp par bhejein. Clinic wahi se aapka time confirm karega.</p>
+      </div>
+      <div class="book-grid">
+        <form class="book reveal" id="bookForm" novalidate aria-label="Appointment request form">
+          <div class="field" id="f-name">
+            <label for="pname">Your name *</label>
+            <input id="pname" name="pname" type="text" autocomplete="name" placeholder="e.g. Ramesh Gupta" required>
+            <span class="err">Please enter your name.</span>
+          </div>
+          <div class="frow">
+            <div class="field" id="f-phone">
+              <label for="pphone">Mobile number *</label>
+              <input id="pphone" name="pphone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile" maxlength="13" required>
+              <span class="err">Enter a valid 10-digit mobile number.</span>
+            </div>
+            <div class="field" id="f-date">
+              <label for="pdate">Preferred date *</label>
+              <input id="pdate" name="pdate" type="date" required>
+              <span class="err">Please pick a date (today or later).</span>
+            </div>
+          </div>
+          <div class="field" id="f-concern">
+            <label for="pconcern">Your concern *</label>
+            <select id="pconcern" name="pconcern" required>
+              <option value="">— Select your concern —</option>
+            </select>
+            <span class="err">Please select your concern.</span>
+          </div>
+          <div class="field">
+            <label for="pnote">Anything we should know? (optional)</label>
+            <textarea id="pnote" name="pnote" rows="3" placeholder="Symptoms, kab se hai, previous treatment…"></textarea>
+          </div>
+          <div class="confirm" id="confirmBox" role="status">
+            <b>✅ Appointment request ready!</b>
+            <span id="confirmText">Reference: —</span><br>
+            Ab neeche <b>"Confirm on WhatsApp"</b> dabayein — aapki details clinic ko bhej di jayengi aur clinic aapka time confirm karega.
+          </div>
+        </form>
+        <aside class="summary reveal" aria-label="Appointment summary">
+          <h3>Your appointment summary</h3>
+          <dl>
+            <dt>Patient</dt><dd id="sName">—</dd>
+            <dt>Mobile</dt><dd id="sPhone">—</dd>
+            <dt>Concern</dt><dd id="sConcern">—</dd>
+            <dt>Date</dt><dd id="sDate">—</dd>
+            <dt>Clinic</dt><dd>Dr. Rahul Agarwal ENT Clinic, Arera Colony</dd>
+            <dt>Consult fee</dt><dd>₹500 (as listed on Justdial)</dd>
+          </dl>
+          <a class="btn btn-wa disabled" id="waSend" href="#" target="_blank" rel="noopener" aria-disabled="true">💬 Confirm on WhatsApp →</a>
+          <p class="fineprint" style="color:#c4e2e6">Form bharne se koi booking confirm nahi hoti — clinic WhatsApp par aapka time confirm karega. Timings wahin confirm kar lein.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="kicker">Visit Us</p>
+        <h2 id="visit-h">Dr. Rahul Agarwal ENT Clinic</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card reveal">
+          <h3>📍 Address</h3>
+          <p><b>E4/205, Near 10 No. Market,</b><br>Behind Starbucks, Arera Colony,<br>Bhopal — 462016</p>
+          <p>Landmark: 10 No. Market, Starbucks ke peeche.</p>
+          <a class="btn btn-primary btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Dr.+Rahul+Agarwal+ENT+Clinic+10+No.+Market+Arera+Colony+Bhopal" target="_blank" rel="noopener">🧭 Get Directions</a>
+        </div>
+        <div class="visit-card reveal">
+          <h3>📞 Call / WhatsApp</h3>
+          <p>Phone &amp; WhatsApp: <b>+91 70892 24000</b></p>
+          <p>Consultation fee: <b>₹500</b> (as listed on Justdial). Timings aane se pehle call ya WhatsApp par confirm kar lein.</p>
+          <a class="btn btn-ghost btn-sm" href="tel:+917089224000">📞 Call the Clinic</a>
+          <a class="btn btn-wa btn-sm" href="https://wa.me/917089224000?text=Namaste%2C%20mujhe%20Dr.%20Rahul%20Agarwal%20ENT%20Clinic%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Dr. Rahul Agarwal ENT Clinic</h4>
+        <p style="font-size:.94rem;max-width:26rem">Ear, nose, throat, sinus, tonsil, hearing &amp; vertigo care at 10 No. Market, Arera Colony, Bhopal. Rated 4.9★ by 330+ patients on Justdial.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#conditions">Symptom Guide</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#book">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>E4/205, Near 10 No. Market, Arera Colony, Bhopal 462016</li>
+          <li><a href="tel:+917089224000">+91 70892 24000</a></li>
+          <li><a href="https://wa.me/917089224000" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Demo website built by Vaibhav Ghoshi — not the official website of the clinic.</span>
+      <span>Consultation fee as listed on Justdial. Medical information here is general guidance, not a diagnosis.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+917089224000">📞 Call</a>
+  <a class="wa" href="https://wa.me/917089224000?text=Namaste%2C%20mujhe%20Dr.%20Rahul%20Agarwal%20ENT%20Clinic%20mein%20appointment%20book%20karna%20hai." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="bk" href="#book">Book Visit</a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+var WA_NUMBER = "917089224000";
+
+/* ---------- Condition data (general information, not a diagnosis) ---------- */
+var CONDITIONS = [
+  { id:"ear", tab:"👂 Ear Pain & Discharge",
+    title:"Ear pain, discharge or blocked ear",
+    intro:"Kaan ka dard ya band mehsoos hona aksar jama hue wax, infection ya kaan ke parde ke peeche fluid ki wajah se hota hai. Ghar par ear-bud, pin ya tel daalna samasya badha sakta hai — khud saaf karne ki koshish na karein.",
+    symptoms:["Kaan mein dard ya bhaari-pan","Kaan se paani / discharge aana","Sunai achanak kam hona","Kaan band-band sa lagna","Khujli ya badboo"],
+    flags:["Bukhaar ke saath kaan ke peeche soojan","Discharge mein khoon aana","Chot lagne ke baad dard ya sunai kam hona","Chakkar ke saath sunai kam hona"],
+    care:"Examination se pehle wax, infection ya fluid — kaaran saaf hota hai. Wax ho to surakshit safai, infection ho to dawa; sahi ilaaj kaaran par nirbhar karta hai." },
+  { id:"sinus", tab:"🤧 Sinus & Blocked Nose",
+    title:"Sinus & repeated cold, blocked nose",
+    intro:"Naak band, chehre par bhaari-pan aur sir dard sinus ki nishaani ho sakte hain. Aam sardi 7–10 din mein theek hoti hai; usse lamba chale ya baar-baar ho, to ENT evaluation zaroori hai.",
+    symptoms:["Naak band ya baar-baar behna","Gaalo / maathe par bhaari-pan ya dard","Sir dard, khaas kar jhukne par","Soonghne ki shakti kam hona","Gale mein balgam girna (post-nasal drip)"],
+    flags:["10 din se zyada theek na hona","Tez bukhaar ya aankhon ke aas-paas soojan","Ek hi taraf se baar-baar khoon mila balgam","Saans lene mein takleef"],
+    care:"Peeche ka kaaran dekha jata hai — allergy, infection ya naak ki haddi tedhi (DNS). Ilaaj aksar dawa, steam aur nasal spray se shuru hota hai; lambe cases mein scan aur aage ki salah di jati hai." },
+  { id:"tonsil", tab:"🌡️ Tonsil & Throat",
+    title:"Tonsil, throat pain & snoring",
+    intro:"Baar-baar tonsil infection, nigalne mein takleef ya tez kharrate — ye sab jude ho sakte hain. Har tonsil ka ilaaj surgery nahi hota; pehle dawa aur observation hi pehla kadam hai.",
+    symptoms:["Gale mein baar-baar dard / infection","Nigalne mein takleef","Mu se badboo, tonsil par safed daag","Tez kharrate, neend mein saans rukna","Bacho ka mu khol kar sona"],
+    flags:["Saans lene ya nigalne mein zyada takleef","Ek taraf zyada soojan ya mu na khulna","Tez bukhaar ke saath gardan mein akad","Awaaz mein bhari badlav"],
+    care:"Infection ki frequency aur saans/neend par asar dekh kar plan banta hai. Baar-baar (saal mein kai baar) infection ya neend mein saans rukne par hi tonsillectomy par vichaar hota hai." },
+  { id:"hearing", tab:"🎧 Hearing & Tinnitus",
+    title:"Hearing loss / ringing in the ear (tinnitus)",
+    intro:"Sunai kam dena ya kaan mein seeti jaisi awaaz aana — kaaran kabhi sirf wax hota hai, kabhi kaan ke andar ki samasya. Hearing test se samasya jaldi pakdi jati hai, aur jitni jaldi check, utna behtar.",
+    symptoms:["Baatein saaf samajh na aana","TV / phone ki awaaz tez rakhna","Kaan mein seeti / ghanti jaisi awaaz","Ek kaan se kam sunai dena","Bheed mein baat samajhne mein dikkat"],
+    flags:["Achanak (24–72 ghante mein) sunai band hona","Ek hi kaan mein lagatar awaaz ke saath chakkar","Chot ya tez awaaz ke baad sunai kam hona","Kaan se discharge ke saath sunai kam hona"],
+    care:"Pehle kaan ki jaanch — wax ya infection ho to wahi ilaaj. Zaroorat pade to hearing test (audiometry) ki salah di jati hai, jisse aage ki disha — dawa ya hearing aid — tai hoti hai." },
+  { id:"vertigo", tab:"🌀 Vertigo & Chakkar",
+    title:"Vertigo / dizziness (chakkar aana)",
+    intro:"Ghoomne jaisa mehsoos hona (vertigo) aksar kaan ke balance system se juda hota hai — jaise BPPV, jismein sir ghumane par kuch seconds ka tez chakkar aata hai. ENT check-up se kaaran clear hota hai.",
+    symptoms:["Kamra ghoomta sa lagna","Sir ghumane / uthne par chakkar badhna","Chalne mein ladkhadaahat","Matli ya ulti jaisa man","Kaan mein bhaari-pan ya awaaz ke saath chakkar"],
+    flags:["Bolne mein ladkhadaahat ya chehre/haath mein kamzori","Tez sir dard ke saath chakkar","Behoshi ya gir jana","Chot ke baad shuru hua chakkar"],
+    care:"Examination aur kuch simple position tests se BPPV jaise kaaran pehchane jate hain. Ilaaj mein khaas exercises (repositioning) aur dawa shamil ho sakti hai — khud se dawa na lein." },
+  { id:"allergy", tab:"🌼 Nose Allergy",
+    title:"Allergy — sneezing, runny nose, itching",
+    intro:"Baar-baar chheenk, naak behna aur aankhon mein khujli allergy ho sakti hai — dhool, pollen ya thand jaise triggers se badhti hai. Trigger pehchan kar hi lamba aur kaargar plan banta hai.",
+    symptoms:["Subah-subah chheenko ki bauchar","Naak behna ya band hona","Aankhon mein khujli / paani","Gale mein kharaash, khansi","Mausam badalte hi takleef badhna"],
+    flags:["Saans ki seeti (wheezing) ya saans phoolna","Chehre / hothon par soojan","Dawa ke baad bhi lagatar badhti takleef","Neend kharab hone ki had tak naak band"],
+    care:"Pehle trigger ki pehchan, phir nasal spray, dawa aur bachav ka plan. Allergy ka ilaaj course mein hota hai — beech mein chhodne se takleef laut aati hai." },
+  { id:"voice", tab:"🎤 Voice & Throat",
+    title:"Voice problems & persistent throat irritation",
+    intro:"Awaaz ka baithna, bhari hona ya baar-baar gale ki kharaash — vocal cords par zor, reflux ya infection iske peeche ho sakte hain. Do hafte se zyada awaaz baithi rahe to jaanch zaroori hai.",
+    symptoms:["Awaaz baithna ya bhari hona","Bolne par gala thakna / dard","Gale mein kuch atka sa mehsoos hona","Baar-baar gala saaf karne ki aadat","Khansi ke saath awaaz badalna"],
+    flags:["2 hafte se zyada awaaz baithi rehna","Nigalne mein takleef ya kaan tak jata dard","Khansi mein khoon","Gale / gardan mein ganth mehsoos hona"],
+    care:"Gale aur vocal cords ki jaanch se kaaran pata chalta hai. Ilaaj mein voice rest, dawa aur bolne ki sahi technique ki salah shamil ho sakti hai — teachers aur singers ke liye khaas taur par." }
+];
+
+/* ---------- Tabs ---------- */
+var tablist = document.getElementById("tablist");
+var panelHost = document.getElementById("panelHost");
+function waLink(text){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text); }
+function renderPanel(c){
+  var chips = c.symptoms.map(function(s){ return '<span class="chip">' + s + "</span>"; }).join("");
+  var flags = c.flags.map(function(s){ return "<li>" + s + "</li>"; }).join("");
+  panelHost.innerHTML =
+    '<article class="panel" role="tabpanel" id="panel-' + c.id + '" aria-labelledby="tab-' + c.id + '" tabindex="0">' +
+      "<div><h3>" + c.title + "</h3>" +
+      '<p class="intro">' + c.intro + "</p>" +
+      "<h4>Common symptoms</h4>" + '<div class="chips">' + chips + "</div>" +
+      "<h4>See a doctor soon if</h4>" + '<ul class="flags">' + flags + "</ul></div>" +
+      '<aside class="panel-side"><h4>How it is usually handled</h4><p>' + c.care + "</p>" +
+      '<div class="fee">Consultation: <b>₹500</b> (as listed on Justdial). Any test/procedure fee is confirmed after examination.</div>' +
+      '<a class="btn btn-wa" target="_blank" rel="noopener" href="' + waLink("Namaste, mujhe Dr. Rahul Agarwal ENT Clinic mein appointment chahiye. Concern: " + c.title + ".") + '">💬 Discuss this on WhatsApp</a>' +
+      '<a class="btn btn-ghost" href="#book" style="width:100%;justify-content:center;margin-top:.5rem">Book a visit instead</a></aside>' +
+    "</article>";
+}
+CONDITIONS.forEach(function(c, i){
+  var b = document.createElement("button");
+  b.className = "tab"; b.type = "button"; b.id = "tab-" + c.id;
+  b.setAttribute("role", "tab"); b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+  b.textContent = c.tab;
+  b.addEventListener("click", function(){
+    tablist.querySelectorAll(".tab").forEach(function(t){ t.setAttribute("aria-selected", "false"); });
+    b.setAttribute("aria-selected", "true");
+    renderPanel(c);
+  });
+  tablist.appendChild(b);
+});
+renderPanel(CONDITIONS[0]);
+
+/* ---------- Concern select (booking form) ---------- */
+var concernSel = document.getElementById("pconcern");
+CONDITIONS.forEach(function(c){
+  var o = document.createElement("option"); o.value = c.title; o.textContent = c.title; concernSel.appendChild(o);
+});
+var oOther = document.createElement("option"); oOther.value = "Other ENT problem"; oOther.textContent = "Other ENT problem"; concernSel.appendChild(oOther);
+
+/* ---------- Booking form ---------- */
+var form = document.getElementById("bookForm");
+var el = { name:document.getElementById("pname"), phone:document.getElementById("pphone"), date:document.getElementById("pdate"), note:document.getElementById("pnote") };
+var wrap = { name:document.getElementById("f-name"), phone:document.getElementById("f-phone"), date:document.getElementById("f-date"), concern:document.getElementById("f-concern") };
+var sum = { name:document.getElementById("sName"), phone:document.getElementById("sPhone"), concern:document.getElementById("sConcern"), date:document.getElementById("sDate") };
+var waSend = document.getElementById("waSend");
+var confirmBox = document.getElementById("confirmBox");
+var confirmText = document.getElementById("confirmText");
+var toast = document.getElementById("toast");
+var refCode = "";
+function todayStr(){ var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+el.date.min = todayStr();
+function showToast(msg){ toast.textContent = msg; toast.classList.add("show"); setTimeout(function(){ toast.classList.remove("show"); }, 3200); }
+function validPhone(v){ var d = v.replace(/\D/g, ""); if (d.length === 12 && d.indexOf("91") === 0) d = d.slice(2); if (d.length === 11 && d.charAt(0) === "0") d = d.slice(1); return /^[6-9]\d{9}$/.test(d) ? d : null; }
+function fmtDate(v){ if (!v) return "—"; var p = v.split("-"); var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; return p[2] + " " + months[parseInt(p[1], 10) - 1] + " " + p[0]; }
+function validate(showErrors){
+  var ok = true;
+  var nameOk = el.name.value.trim().length >= 3;
+  var phoneOk = validPhone(el.phone.value) !== null;
+  var concernOk = concernSel.value !== "";
+  var dateOk = el.date.value !== "" && el.date.value >= todayStr();
+  [[wrap.name, nameOk], [wrap.phone, phoneOk], [wrap.concern, concernOk], [wrap.date, dateOk]].forEach(function(pair){
+    if (showErrors) pair[0].classList.toggle("invalid", !pair[1]);
+    if (!pair[1]) ok = false;
+  });
+  sum.name.textContent = el.name.value.trim() || "—";
+  sum.phone.textContent = el.phone.value.trim() || "—";
+  sum.concern.textContent = concernSel.value || "—";
+  sum.date.textContent = fmtDate(el.date.value);
+  if (ok) {
+    if (!refCode) refCode = "ENT-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+    var lines = ["Namaste, mujhe Dr. Rahul Agarwal ENT Clinic mein appointment book karna hai.",
+      "Name: " + el.name.value.trim(),
+      "Mobile: " + validPhone(el.phone.value),
+      "Concern: " + concernSel.value,
+      "Preferred date: " + fmtDate(el.date.value),
+      "Reference: " + refCode];
+    if (el.note.value.trim()) lines.push("Note: " + el.note.value.trim());
+    lines.push("Kripya mera time confirm kar dein. Dhanyavaad.");
+    waSend.href = waLink(lines.join("\n"));
+    waSend.classList.remove("disabled"); waSend.setAttribute("aria-disabled", "false");
+    confirmText.textContent = "Reference: " + refCode + " · " + concernSel.value + " · " + fmtDate(el.date.value);
+    confirmBox.classList.add("show");
+  } else {
+    waSend.classList.add("disabled"); waSend.setAttribute("aria-disabled", "true");
+    confirmBox.classList.remove("show");
+  }
+  return ok;
+}
+[el.name, el.phone, el.date, el.note, concernSel].forEach(function(input){
+  input.addEventListener("input", function(){ validate(false); });
+  input.addEventListener("change", function(){ validate(false); });
+});
+form.addEventListener("submit", function(e){ e.preventDefault(); if (validate(true)) { showToast("Details taiyaar hain — ab WhatsApp par confirm karein ✅"); waSend.focus(); } else { showToast("Kuch details adhuri hain — laal nishan wale fields check karein."); } });
+waSend.addEventListener("click", function(e){ if (waSend.classList.contains("disabled")) { e.preventDefault(); validate(true); showToast("Pehle form ki details bhar dein."); } });
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll(".faq").forEach(function(f){
+  var btn = f.querySelector("button"), ans = f.querySelector(".ans");
+  btn.addEventListener("click", function(){
+    var open = f.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    ans.style.maxHeight = open ? ans.scrollHeight + "px" : "0px";
+  });
+});
+
+/* ---------- Mobile nav + reveal ---------- */
+var burger = document.getElementById("burger"), mainnav = document.getElementById("mainnav");
+burger.addEventListener("click", function(){
+  var open = mainnav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+});
+mainnav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ mainnav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); }); });
+if ("IntersectionObserver" in window) {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll(".reveal").forEach(function(n){ io.observe(n); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(n){ n.classList.add("in"); });
+}
+</script>
+</body>
+</html>

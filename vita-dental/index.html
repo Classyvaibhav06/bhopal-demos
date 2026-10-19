@@ -1,9 +1,694 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vita Dental Superspeciality — Shivaji Nagar, Bhopal</title><meta name="description" content="Demo website for Vita Dental Superspeciality / Vita Dental & Smile Studio, 7 No. Stop, Shivaji Nagar, Bhopal. Treatment estimator and WhatsApp appointment booking.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#fdf6f9;color:#2a1520;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#f6dfe9}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#b03a6b;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px #b03a6b14}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#fdf6f9;color:#2a1520}button,.wa{display:block;width:100%;text-align:center;background:#b03a6b;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:17px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#fdf6f9;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">DENTAL · 7 NO. STOP, SHIVAJI NAGAR, BHOPAL</span><h1>Vita Dental Superspeciality</h1><p class="sub">Vita Dental &amp; Smile Studio — 4.9★ rated implants, smile design &amp; complete dental care</p></header>
-<main><section><h2>Plan your smile — instant estimate</h2><p class="small">Pick a treatment, see an indicative estimate, then book on WhatsApp. Final cost is confirmed after examination.</p><label>Treatment</label><select id="t"><option value="3500">Teeth Whitening — ₹3,500 (as listed on Google)</option><option value="800">Cleaning &amp; Polishing (Scaling) — ₹800*</option><option value="1200">Tooth Filling — ₹1,200*</option><option value="4500">Root Canal Treatment — ₹4,500*</option><option value="5500">Dental Crown (Ceramic) — ₹5,500*</option><option value="25000">Dental Implant — ₹25,000*</option><option value="30000">Smile Design Consultation + Plan — ₹30,000*</option><option value="500">Braces / Aligners Consultation — ₹500*</option></select><label>Number of teeth / visits</label><input id="q" type="number" min="1" max="10" value="1"><button onclick="calc()">See my estimate</button><p class="out" id="o"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Book this on WhatsApp →</a></section><section><h2>Popular treatments</h2><div class="grid"><div class="card"><b>Teeth Whitening</b><span class="small">₹3,500 (Google-listed)</span></div><div class="card"><b>Dental Implants</b><span class="small">from ₹25,000*</span></div><div class="card"><b>Smile Design</b><span class="small">from ₹30,000*</span></div><div class="card"><b>Root Canal Treatment</b><span class="small">from ₹4,500*</span></div><div class="card"><b>Dental Crown (Ceramic)</b><span class="small">from ₹5,500*</span></div><div class="card"><b>Cleaning &amp; Polishing</b><span class="small">from ₹800*</span></div></div><p class="small" style="margin-top:10px">*Indicative/demo prices. Teeth whitening ₹3,500 as listed in the clinic's Google services.</p></section><section><h2>Why patients trust Vita Dental</h2><p>⭐ 4.9 on Google (155 reviews) · 4.9 on Justdial (167 ratings). Led by Dr. Alankrita Singh. Today, offers and updates exist only as Google posts — this demo shows how patients could check prices and book directly, without calling first.</p></section>
-<section><h2>Visit / Call</h2><p>7 No, BDA Complex, Bus Stop, SBI 7 No. Road, Shivaji Nagar, Near Arera Colony, Bhopal 462016</p><p style="margin-top:8px">📞 <a href="tel:+919993997420" style="color:inherit">+91 99939 97420</a></p><a class="wa" href="https://wa.me/919993997420" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>function calc(){var t=document.getElementById('t'),q=Math.max(1,+document.getElementById('q').value||1),p=+t.value,tot=p*q;document.getElementById('o').textContent='Indicative estimate: ₹'+tot.toLocaleString('en-IN')+'*\nFinal plan & cost after clinical examination.';var w=document.getElementById('w');w.style.display='block';w.href='https://wa.me/919993997420?text='+encodeURIComponent('Namaste, mujhe Vita Dental se appointment chahiye. Treatment: '+t.options[t.selectedIndex].text.split(' — ')[0]+' (Qty: '+q+').')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vita Dental Superspeciality — Dental Clinic &amp; Implant Centre | Shivaji Nagar, Bhopal</title>
+<meta name="description" content="Vita Dental Superspeciality / Vita Dental & Smile Studio at 7 No. Stop, Shivaji Nagar, Bhopal — led by Dr. Alankrita Singh. Rated 4.9★ on Google (155 reviews) and Justdial (167 ratings). Implants, smile design, root canal, braces & complete dental care. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+<style>
+:root{
+  --blue:#0b6bcb; --blue-d:#084e96; --mint:#e6f6f0; --mint2:#cdeee0; --ink:#10222e; --mut:#55707f;
+  --bg:#fbfdfe; --card:#ffffff; --line:#dcecf3; --gold:#c9962e; --wa:#1faa55; --wa-d:#178a44;
+  --shadow:0 10px 30px rgba(11,107,203,.09); --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.15}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:10px 16px;z-index:200;border-radius:0 0 10px 0;box-shadow:var(--shadow)}
+.skip:focus{left:0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:99px;padding:12px 22px;font-size:15px;transition:transform .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:var(--shadow)}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-d)}
+.btn-ghost{background:#fff;border:1.5px solid var(--blue);color:var(--blue-d)}
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{display:flex;gap:11px;align-items:center;text-decoration:none;color:var(--ink)}
+.logo-badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#25b98a);display:grid;place-items:center;color:#fff;font-size:22px}
+.logo b{font-family:'Fraunces',serif;font-size:19px;display:block;line-height:1.15}
+.logo small{color:var(--mut);font-size:12px;font-weight:600}
+.navlinks{display:none;gap:22px}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14.5px}
+.navlinks a:hover{color:var(--blue)}
+.cta{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px;box-shadow:var(--shadow)}
+.cta:hover{background:var(--blue-d)}
+@media(min-width:900px){.navlinks{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,#eaf6fd,var(--mint) 135%);padding:52px 0 64px}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--blue-d);box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(32px,5.4vw,52px);margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.lead{font-size:17px;color:#33505f;max-width:34em}
+.hero-img{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 24px 50px rgba(8,78,150,.18)}
+.hero-img img{width:100%;height:360px;object-fit:cover}
+.hero-card{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.96);border-radius:14px;padding:11px 15px;box-shadow:var(--shadow);max-width:290px}
+.hero-card b{display:block;font-size:14.5px}
+.hero-card span{font-size:12.5px;color:var(--mut);font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:26px}
+@media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:center}
+.stat b{font-family:'Fraunces',serif;font-size:clamp(19px,3vw,26px);color:var(--blue-d);display:block;line-height:1.2}
+.stat span{font-size:12px;color:var(--mut);font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+/* trust strip */
+.trust{background:var(--blue-d);color:#dff1ff}
+.trust-in{display:flex;gap:14px 34px;flex-wrap:wrap;justify-content:center;padding:18px 0;font-weight:700;font-size:14.5px;text-align:center}
+.trust-in span{display:inline-flex;gap:8px;align-items:center}
+/* sections */
+section{padding:60px 0}
+.sec-head{max-width:720px;margin-bottom:30px}
+.sec-head .kicker{color:var(--blue);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(26px,4vw,36px);margin:8px 0 10px}
+.sec-head p{color:var(--mut)}
+/* treatment cards */
+.grid{display:grid;gap:18px}
+@media(min-width:720px){.grid.cols2{grid-template-columns:1fr 1fr}.grid.cols3{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.tcard .ic{font-size:30px;margin-bottom:10px}
+.tcard h3{font-size:20px;margin-bottom:8px}
+.tcard p{color:var(--mut);font-size:15px}
+.tcard ul{list-style:none;margin-top:12px;font-size:14.5px}
+.tcard li{padding:4px 0 4px 24px;position:relative;color:#33505f}
+.tcard li::before{content:"✓";position:absolute;left:0;color:#159a6c;font-weight:800}
+.tcard .price-tag{margin-top:auto;padding-top:14px}
+.price-tag span{display:inline-block;background:var(--mint);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:700;color:#0c5c41}
+.detail-line{font-size:13.5px;color:var(--mut);margin-top:10px}
+.detail-line b{color:var(--ink)}
+.note{font-size:13px;color:var(--mut);margin-top:14px}
+/* implant explainer */
+.implant-band{background:linear-gradient(120deg,#084e96,#0b6bcb 55%,#159a6c);color:#fff;border-radius:26px;padding:38px 28px;display:grid;gap:26px}
+@media(min-width:880px){.implant-band{grid-template-columns:1fr 1fr;align-items:start}}
+.implant-band h2{font-size:clamp(25px,4vw,34px);margin-bottom:12px}
+.implant-band p{color:#dff1ff;max-width:42em}
+.implant-band .step{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.implant-band .step b{display:block;margin-bottom:4px}
+.implant-band .step span{font-size:14px;color:#dff1ff}
+.implant-band .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.implant-band .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:7px 15px;font-size:13.5px;font-weight:700}
+.band-kicker{color:#9fd3ff;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+/* estimator */
+.est{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:30px 26px}
+.est .row{display:grid;gap:14px}
+@media(min-width:720px){.est .row{grid-template-columns:1fr 1fr}}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+input,select{width:100%;padding:13px 14px;border:1.5px solid #bcd8e4;border-radius:12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#d33}
+.err{color:#b3261e;font-size:13px;font-weight:600;margin-top:4px;min-height:1em}
+.est-out{margin-top:18px;background:var(--mint);border-radius:14px;padding:16px 18px;font-size:16px;font-weight:700;color:#0c5c41;white-space:pre-line;display:none}
+.est-out.show{display:block}
+.est .wa-book{display:none;margin-top:14px;width:100%}
+.est .wa-book.show{display:inline-flex}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:820px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal figure{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#e8f2f7}
+.gal img{width:100%;height:210px;object-fit:cover;transition:transform .4s ease}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{padding:10px 14px;font-size:13px;font-weight:700;color:var(--blue-d);background:#fff}
+/* why / steps / testimonials */
+.why-card,.step-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.why-card .ic,.step-card .ic{font-size:26px;margin-bottom:8px}
+.why-card h3,.step-card h3{font-size:18px;margin-bottom:6px}
+.why-card p,.step-card p{color:var(--mut);font-size:14.5px}
+.step-num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-family:'Fraunces',serif;margin-bottom:10px}
+.tst{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.tst .stars{color:var(--gold);letter-spacing:2px;font-size:17px}
+.tst h3{font-size:17px;margin:8px 0 6px}
+.tst p{font-size:15px;color:#33505f}
+.tst footer{font-size:13px;color:var(--mut);font-weight:600;margin-top:12px}
+/* FAQ */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px;box-shadow:var(--shadow)}
+.faq summary{font-weight:800;font-size:16px;cursor:pointer;font-family:'Fraunces',serif}
+.faq details p{color:var(--mut);font-size:15px;margin-top:10px}
+/* booker */
+.booker{background:var(--mint);border-radius:26px;padding:34px 26px}
+form .frow{display:grid;gap:14px}
+@media(min-width:720px){form .frow{grid-template-columns:1fr 1fr}}
+.submit{margin-top:18px;background:var(--blue);color:#fff;border:0;width:100%;padding:15px;border-radius:99px;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.submit:hover{background:var(--blue-d)}
+.confirm{display:none;margin-top:22px;background:#fff;border:2px solid #159a6c;border-radius:16px;padding:22px}
+.confirm.show{display:block}
+.confirm h3{color:#0c5c41;margin-bottom:8px}
+.confirm dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px;margin-top:10px}
+.confirm dt{font-weight:700;color:var(--mut)}
+.confirm .wa-row{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+/* contact + footer */
+.contact-grid{display:grid;gap:18px}
+@media(min-width:720px){.contact-grid{grid-template-columns:1fr 1fr}}
+.acard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.acard h3{margin-bottom:8px}
+.acard p{color:var(--mut);font-size:15px}
+.acard .big{font-size:18px;color:var(--ink);font-weight:700}
+footer.site{background:#0d2735;color:#cfe4ee;padding:36px 0 110px;font-size:14px}
+footer.site b{color:#fff}
+footer.site a{color:#9fd3ff}
+.demo-note{margin-top:14px;font-size:12.5px;color:#8fb2c2}
+/* sticky mobile bar */
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;background:#fff;border-top:1.5px solid var(--line);box-shadow:0 -6px 24px rgba(8,78,150,.12)}
+.stickybar a{flex:1;text-align:center;padding:13px 6px;font-weight:800;font-size:14.5px;text-decoration:none;color:var(--blue-d)}
+.stickybar a.wa{background:var(--wa);color:#fff}
+@media(min-width:860px){.stickybar{display:none}footer.site{padding-bottom:36px}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Vita Dental Superspeciality — home">
+      <span class="logo-badge" aria-hidden="true">🦷</span>
+      <span><b>Vita Dental</b><small>Superspeciality · Smile Studio</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#treatments">Treatments</a>
+      <a href="#implants">Implants</a>
+      <a href="#estimate">Estimate</a>
+      <a href="#gallery">Smile Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="cta" href="#book">Book Appointment</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">📍 7 No. Stop · Shivaji Nagar · Bhopal</span>
+      <h1>A healthier smile, planned <em>before you pay.</em></h1>
+      <p class="lead">Vita Dental Superspeciality (Vita Dental &amp; Smile Studio) — implants, smile design, root canals and complete family dental care, led by <strong>Dr. Alankrita Singh</strong>. Check your treatment and an indicative estimate online first, then book straight on WhatsApp — no calling around for prices.</p>
+      <div class="hero-btns">
+        <a class="btn btn-blue" href="#book">📅 Book an appointment</a>
+        <a class="btn btn-wa" href="https://wa.me/919993997420?text=Namaste%2C%20mujhe%20Vita%20Dental%20se%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp the clinic</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>4.9★</b><span>Google rating · 155 reviews</span></div>
+        <div class="stat"><b>4.9★</b><span>Justdial rating · 167 ratings</span></div>
+        <div class="stat"><b>Implants</b><span>&amp; Smile Design centre</span></div>
+        <div class="stat"><b>Online</b><span>Estimate before you visit</span></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=70" alt="Dentist treating a patient at a modern dental clinic" loading="eager">
+      <div class="hero-card"><div><b>⭐ 4.9 rated by patients</b><span>155 Google reviews · 167 Justdial ratings</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap trust-in">
+    <span>🦷 Implants &amp; smile design</span>
+    <span>💳 Estimate first — pay after the plan</span>
+    <span>📲 Booking on WhatsApp</span>
+    <span>👨‍👩‍👧 Care for the whole family</span>
+  </div>
+</div>
+
+<!-- TREATMENTS -->
+<section id="treatments">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Treatments</div>
+      <h2>Complete dental care under one roof</h2>
+      <p>Every treatment starts with an examination and a clear written plan — what will be done, how many sittings it takes, and what it costs. Prices marked * are indicative demo prices; your final plan is confirmed at the clinic after examination.</p>
+    </div>
+    <div class="grid cols2">
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🔩</div>
+        <h3>Dental Implants</h3>
+        <p>A permanent, fixed replacement for a missing tooth — a titanium root placed in the jaw, topped with a natural-looking ceramic crown. No slipping like a denture, no grinding down of neighbouring teeth like a bridge.</p>
+        <ul>
+          <li>Assessment of bone &amp; bite before planning</li>
+          <li>Implant placement, healing check, then crown fitting</li>
+          <li>Single tooth, multiple teeth or full-arch options</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> 2–3 visits over a few weeks (placement → healing → crown) · <b>Aftercare:</b> soft diet for the first days, regular brushing &amp; flossing, review visits as advised</p>
+        <div class="price-tag"><span>Starting at ₹25,000* per implant</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">😁</div>
+        <h3>Smile Design</h3>
+        <p>A planned makeover of your smile — tooth shape, shade, alignment and gum line designed together, so the result looks natural on your face, not like a set of identical white teeth.</p>
+        <ul>
+          <li>Consultation + smile plan before treatment starts</li>
+          <li>May combine veneers, crowns, whitening &amp; contouring</li>
+          <li>You approve the plan and estimate before any work begins</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> consultation + plan first, then treatment visits as per the plan · <b>Aftercare:</b> as advised for the treatments included in your plan</p>
+        <div class="price-tag"><span>Consultation + plan from ₹30,000*</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🩺</div>
+        <h3>Root Canal Treatment (RCT)</h3>
+        <p>Saves a tooth that is deeply decayed or infected — the infected pulp is removed, the canal is cleaned and sealed, and the tooth is usually protected with a crown. The aim: relieve pain and keep your natural tooth.</p>
+        <ul>
+          <li>Painless technique with proper anaesthesia</li>
+          <li>Rotary RCT for precise, faster cleaning</li>
+          <li>Ceramic crown option to protect the tooth after</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> often 1–2 (single-visit possible in many cases) · <b>Aftercare:</b> avoid hard food on the tooth until crowned; mild sensitivity for a few days is normal</p>
+        <div class="price-tag"><span>Starting at ₹4,500* per tooth</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🦷</div>
+        <h3>Braces &amp; Clear Aligners</h3>
+        <p>Straighter teeth for teens and adults — traditional braces or near-invisible clear aligners that you remove while eating. The right option depends on your bite and lifestyle; it is decided after a consultation.</p>
+        <ul>
+          <li>Metal &amp; ceramic braces options</li>
+          <li>Clear aligners — discreet, removable, no food restrictions</li>
+          <li>Periodic reviews to track progress</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> consultation first, then fitting + review visits over the treatment period · <b>Aftercare:</b> aligner wear as advised (typically most of the day), retainer after completion</p>
+        <div class="price-tag"><span>Consultation from ₹500*</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">✨</div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional in-clinic whitening that lifts stains from tea, coffee, tobacco and ageing — visibly brighter teeth in a single sitting, gentler and more even than home remedies.</p>
+        <ul>
+          <li>Shade checked before and after, so you see the difference</li>
+          <li>Enamel-safe professional whitening gel</li>
+          <li>Pairs well with cleaning &amp; polishing for best results</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> usually 1 sitting of about an hour · <b>Aftercare:</b> avoid strongly coloured food &amp; drinks for 24–48 hours</p>
+        <div class="price-tag"><span>₹3,500 — as listed on Google</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🧒</div>
+        <h3>Kids Dentistry</h3>
+        <p>Gentle, unhurried dental care for children — first check-ups, milk-tooth fillings, fluoride protection and habit guidance, in a friendly setting that doesn't scare them off the dentist for life.</p>
+        <ul>
+          <li>First dental visit &amp; check-up for children</li>
+          <li>Fillings for milk teeth &amp; early decay care</li>
+          <li>Fluoride application &amp; brushing guidance for parents</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> usually 1 visit per issue · <b>Aftercare:</b> supervised brushing twice a day, limit sticky sweets between meals</p>
+        <div class="price-tag"><span>Estimate at clinic after check-up*</span></div>
+      </article>
+
+      <article class="tcard reveal">
+        <div class="ic" aria-hidden="true">🪥</div>
+        <h3>General &amp; Family Dentistry</h3>
+        <p>The everyday care that prevents big bills later — cleaning &amp; polishing, tooth-coloured fillings, ceramic crowns, and routine check-ups for the whole family.</p>
+        <ul>
+          <li>Cleaning &amp; polishing (scaling) — from ₹800*</li>
+          <li>Tooth-coloured fillings — from ₹1,200*</li>
+          <li>Ceramic crowns — from ₹5,500*</li>
+        </ul>
+        <p class="detail-line"><b>Sittings:</b> cleaning &amp; most fillings in 1 visit; crowns in 2 visits · <b>Aftercare:</b> a check-up every 6 months keeps small issues small</p>
+        <div class="price-tag"><span>Cleaning &amp; polishing from ₹800*</span></div>
+      </article>
+
+    </div>
+    <p class="note">* Indicative/demo prices for guidance only. Teeth whitening ₹3,500 is as listed in the clinic's Google services. Your final treatment plan and exact cost are confirmed after a clinical examination at the clinic.</p>
+  </div>
+</section>
+
+<!-- IMPLANT EXPLAINER -->
+<section id="implants" style="padding-top:0">
+  <div class="wrap">
+    <div class="implant-band reveal">
+      <div>
+        <div class="band-kicker">Headline Speciality</div>
+        <h2>Dental implants, explained simply</h2>
+        <p>An implant replaces a missing tooth from the root up — it doesn't depend on neighbouring teeth and it doesn't come out at night. At Vita Dental, assessment, placement and the final crown are planned as one treatment, with the full cost explained before you commit.</p>
+        <div class="chips">
+          <span class="chip">Fixed — feels like your own tooth</span>
+          <span class="chip">No damage to adjacent teeth</span>
+          <span class="chip">Eat &amp; speak normally</span>
+          <span class="chip">Implants from ₹25,000*</span>
+        </div>
+      </div>
+      <div>
+        <div class="step"><b>1 · Assessment &amp; plan</b><span>Examination and imaging to check bone, bite and exact position. You get the full plan and cost in writing.</span></div>
+        <div class="step"><b>2 · Implant placement</b><span>The titanium implant is placed in the jaw under local anaesthesia — most patients return to routine work quickly.</span></div>
+        <div class="step"><b>3 · Healing period</b><span>The implant bonds with the bone over a few weeks. A temporary option is discussed if the tooth is visible.</span></div>
+        <div class="step"><b>4 · Crown fitting</b><span>A custom ceramic crown is fitted on top — matched to the shade and shape of your natural teeth.</span></div>
+        <p style="font-size:13px;margin-top:6px">* Indicative/demo price. Suitability and final cost depend on examination and imaging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTIMATOR -->
+<section id="estimate" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Price Estimate</div>
+      <h2>Plan your smile — instant indicative estimate</h2>
+      <p>Pick a treatment, see an indicative estimate, then book on WhatsApp. Final cost is confirmed after examination — no surprises at the billing counter.</p>
+    </div>
+    <div class="est reveal">
+      <div class="row">
+        <div>
+          <label for="estTreat">Treatment</label>
+          <select id="estTreat">
+            <option value="3500" data-name="Teeth Whitening">Teeth Whitening — ₹3,500 (as listed on Google)</option>
+            <option value="800" data-name="Cleaning &amp; Polishing (Scaling)">Cleaning &amp; Polishing (Scaling) — ₹800*</option>
+            <option value="1200" data-name="Tooth Filling">Tooth Filling — ₹1,200*</option>
+            <option value="4500" data-name="Root Canal Treatment">Root Canal Treatment — ₹4,500*</option>
+            <option value="5500" data-name="Dental Crown (Ceramic)">Dental Crown (Ceramic) — ₹5,500*</option>
+            <option value="25000" data-name="Dental Implant">Dental Implant — ₹25,000*</option>
+            <option value="30000" data-name="Smile Design Consultation + Plan">Smile Design Consultation + Plan — ₹30,000*</option>
+            <option value="500" data-name="Braces / Aligners Consultation">Braces / Aligners Consultation — ₹500*</option>
+          </select>
+        </div>
+        <div>
+          <label for="estQty">Number of teeth / visits</label>
+          <input id="estQty" type="number" min="1" max="10" value="1" inputmode="numeric">
+        </div>
+      </div>
+      <button class="btn btn-blue" type="button" id="estBtn" style="margin-top:18px;width:100%">See my estimate</button>
+      <p class="est-out" id="estOut" role="status" aria-live="polite"></p>
+      <a class="btn btn-wa wa-book" id="estWa" href="#" target="_blank" rel="noopener">Book this on WhatsApp →</a>
+      <p style="font-size:13px;color:var(--mut);margin-top:12px">* Indicative/demo estimate only — final plan &amp; cost after clinical examination.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SMILE GALLERY -->
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Smile Gallery</div>
+      <h2>Inside a modern dental visit</h2>
+      <p>A look at the kind of care you can expect — calm setting, modern equipment, unhurried explanations.</p>
+    </div>
+    <div class="gal">
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=70" alt="Dentist examining a patient" loading="lazy"><figcaption>Gentle, thorough examinations</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=70" alt="Dental treatment in progress" loading="lazy"><figcaption>Modern, precise treatment</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=70" alt="Bright modern dental clinic interior" loading="lazy"><figcaption>Clean, calm clinic setting</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=800&q=70" alt="A confident, healthy smile" loading="lazy"><figcaption>Smiles worth showing off</figcaption></figure>
+    </div>
+    <p class="note">Representative images for this demo website.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Why Vita Dental</div>
+      <h2>Why patients choose Vita Dental</h2>
+    </div>
+    <div class="grid cols3">
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">⭐</div><h3>Rated 4.9★ by patients</h3><p>4.9 on Google across 155 reviews, and 4.9 on Justdial across 167 ratings — consistent praise on both platforms.</p></div>
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">👩‍⚕️</div><h3>Led by Dr. Alankrita Singh</h3><p>A named doctor leads your care — assessment, plan and treatment are explained by the person responsible for them.</p></div>
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">🔩</div><h3>Implant &amp; smile-design focus</h3><p>Implants and smile design planned in-house, end to end — assessment, surgery and the final crown as one treatment.</p></div>
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">🧾</div><h3>Estimate before treatment</h3><p>Check indicative prices on this page and get your final written plan after examination — before any work begins.</p></div>
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">📲</div><h3>Book without calling</h3><p>Fill the form or tap WhatsApp — your appointment request lands directly with the clinic, with your treatment noted.</p></div>
+      <div class="why-card reveal"><div class="ic" aria-hidden="true">📍</div><h3>Easy to reach</h3><p>At 7 No. Stop, Shivaji Nagar, near Arera Colony — a landmark location most of Bhopal already knows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PATIENT JOURNEY -->
+<section id="journey" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Your Visit</div>
+      <h2>What happens, step by step</h2>
+    </div>
+    <div class="grid cols2">
+      <div class="step-card reveal"><span class="step-num">1</span><h3>Book in under a minute</h3><p>Use the form below or WhatsApp — pick your treatment and a preferred date. The clinic confirms your slot on WhatsApp.</p></div>
+      <div class="step-card reveal"><span class="step-num">2</span><h3>Examination &amp; honest advice</h3><p>Your teeth are examined, and only the treatment you actually need is recommended — with options where they exist.</p></div>
+      <div class="step-card reveal"><span class="step-num">3</span><h3>Written plan &amp; final cost</h3><p>Sittings, timeline and exact cost are put in writing before treatment starts, so you decide with full information.</p></div>
+      <div class="step-card reveal"><span class="step-num">4</span><h3>Treatment &amp; aftercare</h3><p>Treatment in comfortable sittings, with aftercare instructions and a review schedule to keep the result lasting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS / REVIEW THEMES -->
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Patient Reviews</div>
+      <h2>What the 4.9★ ratings are made of</h2>
+      <p>Recurring themes from Vita Dental's public reviews on Google (155 reviews) and Justdial (167 ratings) — summarised as themes, not individual quotes.</p>
+    </div>
+    <div class="grid cols3">
+      <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>Painless, and properly explained</h3><p>Patients repeatedly mention treatments — including root canals — being painless, with every step explained before it happens.</p><footer>Recurring review theme · Google &amp; Justdial</footer></div>
+      <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>Smiles planned, not sold</h3><p>Implant and smile-design patients highlight getting a clear plan and cost upfront, instead of discovering charges mid-treatment.</p><footer>Recurring review theme · Google &amp; Justdial</footer></div>
+      <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>Good with kids and families</h3><p>Families note a gentle, patient approach with children and elders — one clinic the whole household is comfortable visiting.</p><footer>Recurring review theme · Google &amp; Justdial</footer></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">FAQ</div>
+      <h2>Questions patients ask first</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>How much does a dental implant cost at Vita Dental?</summary><p>Indicative demo price on this page starts at ₹25,000* per implant. Your final cost depends on the examination and imaging — bone condition, crown type, and whether any preparatory treatment is needed. You receive the full written plan and cost before deciding.</p></details>
+      <details class="reveal"><summary>Which price on this page is confirmed?</summary><p>Teeth whitening at ₹3,500 is as listed in the clinic's Google services. All other prices marked * are indicative demo prices to help you plan — the clinic confirms your exact cost after a clinical examination, before treatment begins.</p></details>
+      <details class="reveal"><summary>Is root canal treatment painful?</summary><p>With proper local anaesthesia, an RCT should not hurt during the procedure — relieving your existing pain is the point of the treatment. Mild sensitivity for a few days afterwards is normal, and most cases finish in 1–2 sittings.</p></details>
+      <details class="reveal"><summary>How long does an implant take from start to finish?</summary><p>Typically 2–3 visits spread over a few weeks: placement first, a healing period while the implant bonds with the bone, then the crown fitting. Your exact timeline is mapped out in your written plan at the assessment visit.</p></details>
+      <details class="reveal"><summary>Braces or clear aligners — which is right for me?</summary><p>It depends on your bite, the movement needed, and how discreet you need treatment to be. Aligners are removable and near-invisible; braces handle some movements more predictably. A consultation (from ₹500*) decides this properly — book one below.</p></details>
+      <details class="reveal"><summary>How do I book an appointment?</summary><p>Fill the booking form on this page or tap the WhatsApp button — your name, treatment and preferred date are sent straight to the clinic at +91 99939 97420, and your slot is confirmed on WhatsApp. You can also simply call the same number.</p></details>
+      <details class="reveal"><summary>Where exactly is the clinic?</summary><p>Vita Dental Superspeciality is at 7 No, BDA Complex, Bus Stop, SBI 7 No. Road, Shivaji Nagar, near Arera Colony, Bhopal 462016 — at the well-known 7 No. Stop.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Book Appointment</div>
+      <h2>Request your appointment</h2>
+      <p>Tell us what you need and when suits you. You'll see a confirmation here, and one tap sends the same details to the clinic on WhatsApp.</p>
+    </div>
+    <div class="booker reveal">
+      <form id="bookForm" novalidate>
+        <div class="frow">
+          <div>
+            <label for="fName">Your name *</label>
+            <input id="fName" name="name" type="text" autocomplete="name" placeholder="e.g. Priya Sharma" required>
+            <p class="err" id="eName" role="alert"></p>
+          </div>
+          <div>
+            <label for="fMobile">Mobile number (WhatsApp) *</label>
+            <input id="fMobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" maxlength="13" required>
+            <p class="err" id="eMobile" role="alert"></p>
+          </div>
+          <div>
+            <label for="fTreat">Treatment needed *</label>
+            <select id="fTreat" name="treatment" required>
+              <option value="">— Select a treatment —</option>
+              <option>Dental Implant</option>
+              <option>Smile Design</option>
+              <option>Root Canal Treatment</option>
+              <option>Braces / Clear Aligners</option>
+              <option>Teeth Whitening</option>
+              <option>Kids Dentistry</option>
+              <option>Cleaning &amp; Polishing</option>
+              <option>Tooth Filling / Crown</option>
+              <option>General Check-up / Not sure</option>
+            </select>
+            <p class="err" id="eTreat" role="alert"></p>
+          </div>
+          <div>
+            <label for="fDate">Preferred date *</label>
+            <input id="fDate" name="date" type="date" required>
+            <p class="err" id="eDate" role="alert"></p>
+          </div>
+        </div>
+        <button class="submit" type="submit">Request appointment →</button>
+        <p style="font-size:13px;color:var(--mut);margin-top:10px">Submitting shows your confirmation here and prepares a WhatsApp message to the clinic — nothing is sent until you tap it.</p>
+      </form>
+      <div class="confirm" id="confirmBox" role="status" aria-live="polite">
+        <h3>✅ Request ready — one tap left</h3>
+        <p>Your appointment details are set. Tap the WhatsApp button to send them to Vita Dental; the clinic will confirm your slot on WhatsApp.</p>
+        <dl>
+          <dt>Name</dt><dd id="cName"></dd>
+          <dt>Mobile</dt><dd id="cMobile"></dd>
+          <dt>Treatment</dt><dd id="cTreat"></dd>
+          <dt>Preferred date</dt><dd id="cDate"></dd>
+        </dl>
+        <div class="wa-row">
+          <a class="btn btn-wa" id="cWa" href="#" target="_blank" rel="noopener">💬 Confirm on WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+919993997420">📞 Call +91 99939 97420</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / CONTACT -->
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">Visit Us</div>
+      <h2>Find the clinic</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="acard reveal">
+        <h3>📍 Address</h3>
+        <p class="big">Vita Dental Superspeciality<br><span style="font-size:15px;font-weight:600">Vita Dental &amp; Smile Studio</span></p>
+        <p style="margin-top:8px">7 No, BDA Complex, Bus Stop, SBI 7 No. Road,<br>Shivaji Nagar, Near Arera Colony,<br>Bhopal 462016</p>
+        <p style="margin-top:12px"><a href="https://www.google.com/maps/search/?api=1&query=Vita+Dental+Shivaji+Nagar+Bhopal" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+      </div>
+      <div class="acard reveal">
+        <h3>📞 Call or WhatsApp</h3>
+        <p>Led by <b style="color:var(--ink)">Dr. Alankrita Singh</b></p>
+        <p class="big" style="margin-top:8px"><a href="tel:+919993997420" style="color:inherit;text-decoration:none">+91 99939 97420</a></p>
+        <p style="margin-top:8px">Share your preferred date in the booking form above, or message the clinic directly — your slot is confirmed on WhatsApp.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+          <a class="btn btn-wa" href="https://wa.me/919993997420?text=Namaste%2C%20mujhe%20Vita%20Dental%20se%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+919993997420">📞 Call now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><b>Vita Dental Superspeciality</b> · Vita Dental &amp; Smile Studio — 7 No. Stop, Shivaji Nagar, Bhopal 462016 · <a href="tel:+919993997420">+91 99939 97420</a></p>
+    <p class="demo-note">Demo website built by Vaibhav Ghoshi — not the official website of Vita Dental. Prices shown are indicative/demo only (teeth whitening ₹3,500 as listed on Google); final treatment plan and cost are confirmed at the clinic after examination.</p>
+  </div>
+</footer>
+
+<div class="stickybar" aria-label="Quick actions">
+  <a href="tel:+919993997420">📞 Call</a>
+  <a class="wa" href="https://wa.me/919993997420?text=Namaste%2C%20mujhe%20Vita%20Dental%20se%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a href="#book">📅 Book</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var WA = "919993997420";
+
+  /* ---------- Estimator ---------- */
+  var estTreat = document.getElementById("estTreat"),
+      estQty   = document.getElementById("estQty"),
+      estBtn   = document.getElementById("estBtn"),
+      estOut   = document.getElementById("estOut"),
+      estWa    = document.getElementById("estWa");
+
+  function fmt(n){ return "₹" + n.toLocaleString("en-IN"); }
+
+  estBtn.addEventListener("click", function(){
+    var opt  = estTreat.options[estTreat.selectedIndex];
+    var name = opt.getAttribute("data-name").replace(/&amp;/g, "&");
+    var qty  = Math.max(1, Math.min(10, parseInt(estQty.value, 10) || 1));
+    estQty.value = qty;
+    var tot = (parseInt(opt.value, 10) || 0) * qty;
+    estOut.textContent = "Indicative estimate: " + fmt(tot) + "*\n" +
+      name + " × " + qty + " — final plan & cost after clinical examination.";
+    estOut.classList.add("show");
+    var msg = "Namaste, mujhe Vita Dental se appointment chahiye. Treatment: " + name +
+              " (Qty: " + qty + "). Website par indicative estimate " + fmt(tot) + " dikha tha.";
+    estWa.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+    estWa.classList.add("show");
+  });
+
+  /* ---------- Booking form ---------- */
+  var form = document.getElementById("bookForm");
+  var fName = document.getElementById("fName"),
+      fMobile = document.getElementById("fMobile"),
+      fTreat = document.getElementById("fTreat"),
+      fDate = document.getElementById("fDate");
+
+  // Prevent past dates
+  var today = new Date();
+  var iso = today.getFullYear() + "-" +
+            String(today.getMonth() + 1).padStart(2, "0") + "-" +
+            String(today.getDate()).padStart(2, "0");
+  fDate.min = iso;
+
+  function setErr(input, errEl, msg){
+    document.getElementById(errEl).textContent = msg || "";
+    if (msg) { input.setAttribute("aria-invalid", "true"); }
+    else { input.removeAttribute("aria-invalid"); }
+    return !msg;
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var name = fName.value.trim();
+    var mobileRaw = fMobile.value.replace(/[\s-]/g, "").replace(/^\+91/, "").replace(/^91(?=\d{10}$)/, "");
+    var treat = fTreat.value;
+    var dateVal = fDate.value;
+
+    var okName = setErr(fName, "eName", name.length >= 2 ? "" : "Please enter your name.");
+    var okMobile = setErr(fMobile, "eMobile", /^[6-9]\d{9}$/.test(mobileRaw) ? "" : "Please enter a valid 10-digit mobile number.");
+    var okTreat = setErr(fTreat, "eTreat", treat ? "" : "Please select a treatment.");
+    var okDate = setErr(fDate, "eDate", (dateVal && dateVal >= iso) ? "" : "Please pick a date (today or later).");
+    if (!(okName && okMobile && okTreat && okDate)) {
+      var firstBad = form.querySelector('[aria-invalid="true"]');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var niceDate = dateVal;
+    try {
+      niceDate = new Date(dateVal + "T00:00:00").toLocaleDateString("en-IN",
+        { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+    } catch (e) { /* keep ISO date */ }
+
+    document.getElementById("cName").textContent = name;
+    document.getElementById("cMobile").textContent = "+91 " + mobileRaw;
+    document.getElementById("cTreat").textContent = treat;
+    document.getElementById("cDate").textContent = niceDate;
+
+    var msg = "Namaste, main " + name + ". Mujhe Vita Dental se appointment chahiye.\n" +
+              "Treatment: " + treat + "\n" +
+              "Preferred date: " + niceDate + "\n" +
+              "Mera number: +91 " + mobileRaw + "\n" +
+              "Kripya slot confirm kar dijiye.";
+    document.getElementById("cWa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+
+    var box = document.getElementById("confirmBox");
+    box.classList.add("show");
+    box.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  /* ---------- Scroll reveal ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>

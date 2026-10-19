@@ -1,9 +1,405 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diamond Family Restaurant &amp; Dhaba — Narsinghgarh Road, Bhopal</title><meta name="description" content="Demo website for Diamond Family Restaurant & Dhaba, Parwaliya Sadak, Narsinghgarh Road, Bhopal. Full menu with direct WhatsApp ordering — no app commission.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#faf5ec;color:#2b2013;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#f0dfba}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#9a6b1e;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px #9a6b1e14}h2{font-size:21px;margin-bottom:12px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.item{background:#faf5ec;border-radius:12px;padding:14px}.item b{display:block;margin-bottom:2px}.item .p{font-weight:700;color:#9a6b1e}.item button{margin-top:8px;width:100%;background:#9a6b1e;color:#fff;border:none;padding:9px;border-radius:9px;font-weight:700;cursor:pointer}.row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #9a6b1e33}.qty button{background:#9a6b1e;color:#fff;border:none;width:28px;height:28px;border-radius:8px;font-weight:800;cursor:pointer}.wa{display:block;width:100%;text-align:center;background:#22703c;color:#fff;padding:14px;border-radius:12px;font-size:16px;font-weight:700;margin-top:16px;text-decoration:none}.out{margin-top:12px;font-size:17px;font-weight:700}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">FAMILY RESTAURANT &amp; DHABA · NARSINGHGARH ROAD, BHOPAL</span><h1>Diamond Family Restaurant &amp; Dhaba</h1><p class="sub">4.7★ rated highway family dhaba — open 24 hours (per listings). Order direct on WhatsApp, skip the app commission.</p></header>
-<main><section><h2>Menu — build your order</h2><p class="small">Tap "Add" on items, then send the order straight to our WhatsApp. Prices are indicative/demo.</p><div class="grid" id="menu"></div><div id="cart"></div><p class="out" id="tot"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Send order on WhatsApp →</a></section><section><h2>Why travellers stop here</h2><p>⭐ 4.7 on Justdial (1,215 ratings) — one of the most-reviewed family restaurants on the Narsinghgarh Road highway stretch. Open 24 hours per listings, so highway travellers and families can stop any time. Today there is no menu or directions page anywhere online — this demo shows how customers could see the menu and order ahead before they arrive.</p></section>
-<section><h2>Visit / Call</h2><p>Narsinghgarh Road, Near Axis Bank, Parwaliya Sadak / Chandukhedi, Bhopal 462030</p><p style="margin-top:8px">📞 <a href="tel:+919630857234" style="color:inherit">+91 96308 57234</a></p><a class="wa" href="https://wa.me/919630857234" target="_blank" rel="noopener" style="background:#9a6b1e">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>var M=[['Dal Tadka Fry',180],['Paneer Butter Masala',260],['Shahi Paneer',240],['Mix Veg',200],['Butter Chicken',340],['Chicken Curry (Dhaba Style)',300],['Egg Curry',180],['Jeera Rice',150],['Veg Biryani',190],['Chicken Biryani',260],['Butter Tandoori Roti',40],['Butter Naan',60],['Masala Papad',50],['Sweet Lassi',80]],C={};function render(){var h='';M.forEach(function(m,i){h+='<div class="item"><b>'+m[0]+'</b><span class="p">₹'+m[1]+'*</span><button onclick="add('+i+')">Add +</button></div>'});document.getElementById('menu').innerHTML=h;var c='',t=0;Object.keys(C).forEach(function(i){if(C[i]>0){c+='<div class="row"><span>'+M[i][0]+' — ₹'+(M[i][1]*C[i])+'</span><span class="qty"><button onclick="ch('+i+',-1)">−</button> '+C[i]+' <button onclick="ch('+i+',1)">+</button></span></div>';t+=M[i][1]*C[i]}});document.getElementById('cart').innerHTML=c;document.getElementById('tot').textContent=t?('Total: ₹'+t.toLocaleString('en-IN')+'* (indicative)') :'';var w=document.getElementById('w');if(t){w.style.display='block';var lines=Object.keys(C).filter(function(i){return C[i]>0}).map(function(i){return M[i][0]+' x '+C[i]}).join(', ');w.href='https://wa.me/919630857234?text='+encodeURIComponent('Namaste, mujhe Diamond Family Restaurant se order karna hai: '+lines+'. Total (indicative): ₹'+t)}else w.style.display='none'}function add(i){C[i]=(C[i]||0)+1;render()}function ch(i,d){C[i]=Math.max(0,(C[i]||0)+d);render()}render();</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Family Restaurant &amp; Dhaba — Narsinghgarh Road, Bhopal | Menu, Table Booking &amp; WhatsApp Order</title>
+<meta name="description" content="Diamond Family Restaurant & Dhaba, Parwaliya Sadak, Narsinghgarh Road, Bhopal. 4.7★ on Justdial (1,215 ratings), open 24 hours per listings. See the full menu, book a table or a group party, and order direct on WhatsApp — no app commission.">
+<style>
+:root{--bg:#faf5ec;--card:#fffdf8;--ink:#2b2013;--muted:#6f5f45;--gold:#9a6b1e;--gold-d:#7c5514;--maroon:#7a2e1d;--green:#22703c;--line:#e7dcc2;--shadow:0 2px 10px #9a6b1e1f}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+img{max-width:100%;display:block}
+a{color:var(--gold-d)}
+.wrap{max-width:1020px;margin:0 auto;padding:0 16px}
+header.site{position:sticky;top:0;z-index:50;background:#fff8eaee;backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px}
+.logo{font-weight:800;font-size:18px;line-height:1.15}
+.logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.4px}
+nav.main{display:flex;gap:14px;flex-wrap:wrap}
+nav.main a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:600}
+nav.main a:hover{color:var(--gold-d)}
+.btn{display:inline-block;border:none;cursor:pointer;text-decoration:none;font-weight:700;border-radius:11px;padding:12px 18px;font-size:15px;text-align:center}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#1a5c31}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-d)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--gold)}
+.hero{background:linear-gradient(#2b2013b8,#2b2013d9),url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1400&q=70') center/cover;color:#fdf6e3;padding:56px 0 44px;text-align:center}
+.badge{display:inline-block;background:var(--gold);color:#fff;font-size:12px;font-weight:700;letter-spacing:.6px;padding:5px 14px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,6.5vw,48px);line-height:1.12;font-family:Georgia,'Times New Roman',serif}
+.hero p.lead{max-width:640px;margin:14px auto 0;font-size:17px;opacity:.94}
+.hero .cta{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.trust{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.trust span{background:#ffffff1f;border:1px solid #ffffff40;border-radius:99px;padding:7px 14px;font-size:13.5px;font-weight:600}
+section.block{padding:34px 0 6px}
+h2.sec{font-size:clamp(22px,4.5vw,28px);font-family:Georgia,serif;margin-bottom:6px}
+p.sec-sub{color:var(--muted);font-size:15px;margin-bottom:18px;max-width:680px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:20px}
+.grid{display:grid;gap:14px}
+.grid.c3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid.c2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1.5px solid var(--gold);background:#fff;color:var(--ink);font-weight:700;font-size:14px;padding:9px 15px;border-radius:99px;cursor:pointer}
+.tabs button.on{background:var(--gold);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.dish{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.dish b{font-size:15.5px}
+.dish .d{font-size:13px;color:var(--muted);margin:4px 0 8px;flex:1}
+.dish .rowb{display:flex;justify-content:space-between;align-items:center}
+.dish .p{font-weight:800;color:var(--gold-d);font-size:16px}
+.tag{font-size:10.5px;font-weight:800;letter-spacing:.4px;padding:2px 8px;border-radius:99px;vertical-align:middle;white-space:nowrap}
+.tag.veg{background:#e5f3e7;color:var(--green);border:1px solid #9fd3ab}
+.tag.nonveg{background:#fbe9e4;color:var(--maroon);border:1px solid #e5ab9c}
+.tag.pop{background:#fdf0d2;color:var(--gold-d);border:1px solid #e3c98a}
+.addbtn{background:var(--gold);color:#fff;border:none;padding:8px 14px;border-radius:9px;font-weight:700;cursor:pointer;font-size:14px}
+.addbtn:hover{background:var(--gold-d)}
+.cartbox{margin-top:18px}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed #9a6b1e3d;font-size:15px;gap:8px}
+.qty button{background:var(--gold);color:#fff;border:none;width:28px;height:28px;border-radius:8px;font-weight:800;cursor:pointer;font-size:15px}
+.qty b{display:inline-block;min-width:22px;text-align:center}
+.tot{margin-top:12px;font-size:18px;font-weight:800}
+.demo-note{font-size:12.5px;color:var(--muted)}
+form.f{display:grid;gap:12px}
+form.f .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){form.f .two{grid-template-columns:1fr}}
+label.fl{font-size:13.5px;font-weight:700;display:block}
+label.fl span{display:block;margin-bottom:5px}
+input,select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid #9a6b1e66;border-color:var(--gold)}
+.occ{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.occ img{height:150px;width:100%;object-fit:cover}
+.occ div{padding:16px}
+.occ h3{font-size:17px;margin-bottom:5px}
+.occ p{font-size:14px;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gal img{height:140px;width:100%;object-fit:cover;border-radius:12px}
+.rev .stars{color:var(--gold);font-size:17px;letter-spacing:2px}
+.rev h3{font-size:16px;margin:6px 0 4px}
+.rev p{color:var(--muted);font-size:14.5px}
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
+details.faq summary{font-weight:700;cursor:pointer;font-size:15.5px}
+details.faq p{margin-top:8px;color:var(--muted);font-size:14.5px}
+.visit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.visit-grid h3{font-size:16px;margin-bottom:6px}
+footer{text-align:center;padding:30px 16px 96px;font-size:13.5px;color:var(--muted)}
+.stickybar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff8ea;border-top:1px solid var(--line);display:flex;gap:8px;padding:9px 12px}
+.stickybar a{flex:1;padding:12px 6px;font-size:14.5px}
+@media(min-width:760px){.stickybar{display:none}footer{padding-bottom:30px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="logo">💎 Diamond Family Restaurant<small>&amp; DHABA · NARSINGHGARH ROAD, BHOPAL</small></div>
+    <nav class="main" aria-label="Main">
+      <a href="#menu">Menu</a><a href="#book">Book a Table</a><a href="#occasions">Occasions</a><a href="#group">Group Booking</a><a href="#faq">FAQ</a><a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Welcome">
+  <div class="wrap">
+    <span class="badge">FAMILY RESTAURANT &amp; DHABA · OPEN 24 HOURS*</span>
+    <h1>Diamond Family Restaurant &amp; Dhaba</h1>
+    <p class="lead">The highway halt families trust on Narsinghgarh Road — fresh tandoor, dhaba-style curries and proper family seating, day or night. See the full menu, book your table ahead, and order direct on WhatsApp.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="#menu">🍽️ See Menu &amp; Order</a>
+      <a class="btn btn-ghost" href="#book">📅 Book a Table</a>
+    </div>
+    <div class="trust">
+      <span>⭐ 4.7 on Justdial</span><span>📝 1,215 ratings</span><span>🕛 Open 24 hours*</span><span>🚗 Easy highway halt</span><span>👨‍👩‍👧 Family seating</span>
+    </div>
+    <p class="demo-note" style="color:#e9dcbc;margin-top:12px">*Hours as shown on public listings. This is a demo website — menu prices are indicative/demo.</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+<section class="block" aria-label="Why travellers stop here">
+  <h2 class="sec">Why travellers &amp; families stop here</h2>
+  <p class="sec-sub">One of the most-reviewed family restaurants on the Narsinghgarh Road stretch — and until now, with no menu or booking page anywhere online.</p>
+  <div class="grid c3">
+    <div class="card"><h3>🌙 Open round the clock*</h3><p style="color:var(--muted);font-size:14.5px;margin-top:5px">Listings show the dhaba open 24 hours — early-morning travellers, late-night family dinners and everyone in between can plan a halt without guessing.</p></div>
+    <div class="card"><h3>🔥 Dhaba taste, family comfort</h3><p style="color:var(--muted);font-size:14.5px;margin-top:5px">Tandoor-fresh rotis, slow-cooked dals and dhaba-style chicken curry — with clean family seating instead of a truck-stop compromise.</p></div>
+    <div class="card"><h3>📲 Order ahead on WhatsApp</h3><p style="color:var(--muted);font-size:14.5px;margin-top:5px">Build your order from the menu below and send it straight to the restaurant's WhatsApp. Food can be ready when you arrive — no app, no commission in between.</p></div>
+  </div>
+</section>
+
+<section class="block" id="menu" aria-label="Full menu">
+  <h2 class="sec">Full Menu — build your order</h2>
+  <p class="sec-sub">Tap a category, add dishes, and send the whole order to our WhatsApp in one tap. Travelling? Order ahead and it will be on the table when you reach. <b>All prices are indicative/demo.</b></p>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Menu categories"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+  <div class="card cartbox">
+    <h3 style="font-size:18px">🧺 Your order</h3>
+    <div id="cartRows"><p class="demo-note" style="margin-top:8px">Nothing added yet — pick a few dishes above.</p></div>
+    <p class="tot" id="cartTot"></p>
+    <p class="demo-note">*Indicative/demo total. Final bill is confirmed by the restaurant on WhatsApp.</p>
+    <a class="btn btn-wa" id="orderBtn" href="#" target="_blank" rel="noopener" style="display:none;width:100%;margin-top:12px">Send order on WhatsApp →</a>
+  </div>
+</section>
+
+<section class="block" id="book" aria-label="Book a table">
+  <h2 class="sec">Book a Table</h2>
+  <p class="sec-sub">Reserve ahead — especially on weekends and for family groups. Fill this in and the booking lands straight on our WhatsApp.</p>
+  <div class="card">
+    <form class="f" id="bookForm">
+      <div class="two">
+        <label class="fl"><span>Your name</span><input type="text" id="bName" required placeholder="e.g. Ramesh Gupta" autocomplete="name"></label>
+        <label class="fl"><span>Mobile number</span><input type="tel" id="bPhone" required pattern="[0-9+ ]{10,15}" placeholder="10-digit mobile" autocomplete="tel"></label>
+      </div>
+      <div class="two">
+        <label class="fl"><span>Number of guests (party size)</span>
+          <select id="bGuests" required>
+            <option value="2">2 guests</option><option value="3">3 guests</option><option value="4" selected>4 guests</option>
+            <option value="5">5 guests</option><option value="6">6 guests</option><option value="8">8 guests</option>
+            <option value="10">10 guests</option><option value="12">12 guests</option><option value="15+">15+ guests (group)</option>
+          </select></label>
+        <label class="fl"><span>Occasion</span>
+          <select id="bOcc">
+            <option>Family dinner</option><option>Highway halt / travelling</option><option>Birthday</option>
+            <option>Kitty party</option><option>Anniversary</option><option>Just a meal</option>
+          </select></label>
+      </div>
+      <div class="two">
+        <label class="fl"><span>Date</span><input type="date" id="bDate" required></label>
+        <label class="fl"><span>Time</span><input type="time" id="bTime" required></label>
+      </div>
+      <label class="fl"><span>Anything we should know? (optional)</span><textarea id="bNote" rows="2" placeholder="e.g. Window-side table, less spicy food, wheelchair access"></textarea></label>
+      <button type="submit" class="btn btn-wa" style="width:100%">📲 Confirm booking on WhatsApp</button>
+      <p class="demo-note">Opens WhatsApp with your booking details prefilled — just press send. The restaurant confirms availability in the chat.</p>
+    </form>
+  </div>
+</section>
+
+<section class="block" id="occasions" aria-label="Occasions">
+  <h2 class="sec">Made for every occasion</h2>
+  <p class="sec-sub">A family dhaba that works as well for a quick highway halt as it does for a full celebration.</p>
+  <div class="grid c2">
+    <div class="occ"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=70" alt="Family dining area" loading="lazy"><div><h3>👨‍👩‍👧 Family dinners</h3><p>Comfortable family seating, quick service and food everyone at the table agrees on — from dal tadka for the elders to chilli chicken for the kids.</p></div></div>
+    <div class="occ"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=70" alt="Birthday celebration" loading="lazy"><div><h3>🎂 Birthdays &amp; anniversaries</h3><p>Celebrate on the highway side of Bhopal without driving into city traffic. Reserve a table, pre-order the favourites, and let the family just show up and enjoy.</p></div></div>
+    <div class="occ"><img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=900&q=70" alt="Friends sharing a meal" loading="lazy"><div><h3>☕ Kitty parties &amp; get-togethers</h3><p>A relaxed spot for kitty groups and friend circles — snacks, Chinese starters and endless chai, at dhaba prices. Book the group form below for 15+ guests.</p></div></div>
+    <div class="occ"><img src="https://images.unsplash.com/photo-1466978913421-501180b1ec31?auto=format&fit=crop&w=900&q=70" alt="Travellers taking a food break" loading="lazy"><div><h3>🛣️ Highway halts &amp; group bookings</h3><p>On the Narsinghgarh Road route and open 24 hours* — tour groups, wedding parties on the move and night travellers can halt, eat hot food and get back on the road.</p></div></div>
+  </div>
+</section>
+
+<section class="block" id="group" aria-label="Group and bulk booking">
+  <h2 class="sec">Group / Bulk Booking Enquiry</h2>
+  <p class="sec-sub">Planning for 15 or more people — a wedding party halt, office group, tour bus or a big family function? Tell us the numbers and get a group quote on WhatsApp.</p>
+  <div class="card">
+    <form class="f" id="groupForm">
+      <div class="two">
+        <label class="fl"><span>Your name</span><input type="text" id="gName" required placeholder="Your name"></label>
+        <label class="fl"><span>Mobile number</span><input type="tel" id="gPhone" required pattern="[0-9+ ]{10,15}" placeholder="10-digit mobile"></label>
+      </div>
+      <div class="two">
+        <label class="fl"><span>Group type</span>
+          <select id="gType"><option>Wedding party / baraat halt</option><option>Tour / bus group</option><option>Office / staff group</option><option>Big family function</option><option>Birthday / kitty (15+)</option><option>Other</option></select></label>
+        <label class="fl"><span>Expected guests</span><input type="number" id="gGuests" min="15" max="500" value="30" required></label>
+      </div>
+      <div class="two">
+        <label class="fl"><span>Date</span><input type="date" id="gDate" required></label>
+        <label class="fl"><span>Preferred time</span><input type="time" id="gTime" required></label>
+      </div>
+      <label class="fl"><span>Menu preference / notes (optional)</span><textarea id="gNote" rows="2" placeholder="e.g. Veg only, fixed thali for all, tea + snacks on arrival"></textarea></label>
+      <button type="submit" class="btn btn-gold" style="width:100%">📩 Ask for group quote on WhatsApp</button>
+      <p class="demo-note">Opens WhatsApp with your group details prefilled. Per-plate group pricing (demo menu above) is confirmed by the restaurant in the chat.</p>
+    </form>
+  </div>
+</section>
+
+<section class="block" aria-label="Gallery">
+  <h2 class="sec">From the kitchen &amp; the dining hall</h2>
+  <p class="sec-sub">A taste of what lands on the table. (Demo gallery — representative food photography.)</p>
+  <div class="gal">
+    <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=70" alt="Butter chicken with naan" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=70" alt="Indian curries and breads" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=70" alt="Crisp samosas with chutney" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=600&q=70" alt="Slow-cooked curry" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=600&q=70" alt="Restaurant seating" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=70" alt="Fresh plated food" loading="lazy">
+  </div>
+</section>
+
+<section class="block" aria-label="What guests say">
+  <h2 class="sec">What guests keep talking about</h2>
+  <p class="sec-sub">With 1,215 ratings and a 4.7★ average on Justdial, the same themes come up in review after review:</p>
+  <div class="grid c3">
+    <div class="card rev"><div class="stars">★★★★★</div><h3>"Proper dhaba taste"</h3><p>Guests consistently praise the homestyle, dhaba-style flavour — dal tadka, chicken curry and fresh-off-the-tandoor rotis are the dishes reviewers mention most.</p></div>
+    <div class="card rev"><div class="stars">★★★★★</div><h3>"Best halt on this road"</h3><p>Travellers on the Narsinghgarh Road route call it their default stop — hot food at any hour, quick service and no time wasted getting back on the road.</p></div>
+    <div class="card rev"><div class="stars">★★★★☆</div><h3>"Good for the whole family"</h3><p>Families highlight the comfortable seating and a menu wide enough for grandparents, kids and everyone in between — veg, non-veg, Chinese and thalis.</p></div>
+  </div>
+  <p class="demo-note" style="margin-top:10px">Review themes summarised from the restaurant's public Justdial profile (4.7★ · 1,215 ratings) — paraphrased, not individual quotes.</p>
+</section>
+
+<section class="block" id="faq" aria-label="Frequently asked questions">
+  <h2 class="sec">Good to know</h2>
+  <p class="sec-sub">Quick answers before you plan your halt or booking.</p>
+  <details class="faq"><summary>What are the restaurant's timings?</summary><p>Public listings show Diamond Family Restaurant &amp; Dhaba open 24 hours, all days. Timings can change on festivals or for maintenance — a quick WhatsApp message confirms before a late-night halt.</p></details>
+  <details class="faq"><summary>Where exactly is the restaurant?</summary><p>On Narsinghgarh Road, near Axis Bank, at Parwaliya Sadak / Chandukhedi, Bhopal 462030 — right on the highway stretch, so travellers don't need to enter city traffic for a meal break.</p></details>
+  <details class="faq"><summary>Can I order food before I arrive?</summary><p>Yes. Build your order in the menu above and send it on WhatsApp, or simply message your order to <a href="https://wa.me/919630857234" target="_blank" rel="noopener">+91 96308 57234</a>. Mention your arrival time and the kitchen can keep it ready.</p></details>
+  <details class="faq"><summary>Do you take table bookings for families?</summary><p>Yes — use the Book a Table form above. It is especially worth booking ahead for weekend dinners and groups of 8 or more.</p></details>
+  <details class="faq"><summary>Can you handle a big group or a wedding-party halt?</summary><p>Groups are a regular part of highway business here. Use the Group Booking form with your date, time and guest count (15–500) and the restaurant will confirm seating and per-plate pricing on WhatsApp.</p></details>
+  <details class="faq"><summary>Is there both veg and non-veg food?</summary><p>Yes — the menu spans veg mains and thalis, dhaba-style chicken and egg dishes, Chinese, breads, rice and desserts. Every dish is marked Veg / Non-Veg in the menu above.</p></details>
+  <details class="faq"><summary>Are the prices on this website final?</summary><p>No — this is a demo website and all prices are indicative/demo. Your final bill or group quote is always confirmed by the restaurant on WhatsApp or at the counter.</p></details>
+</section>
+
+<section class="block" id="visit" aria-label="Visit us">
+  <h2 class="sec">Visit / Call</h2>
+  <div class="card">
+    <div class="visit-grid">
+      <div><h3>📍 Address</h3><p style="color:var(--muted);font-size:14.5px">Narsinghgarh Road, Near Axis Bank,<br>Parwaliya Sadak / Chandukhedi,<br>Bhopal 462030</p><p style="margin-top:8px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Diamond+Family+Restaurant+Narsinghgarh+Road+Bhopal" target="_blank" rel="noopener">Get directions on Google Maps →</a></p></div>
+      <div><h3>🕛 Hours</h3><p style="color:var(--muted);font-size:14.5px">Open 24 hours*<br>All days of the week<br><span class="demo-note">*As shown on public listings</span></p></div>
+      <div><h3>📞 Contact</h3><p style="color:var(--muted);font-size:14.5px">Call: <a href="tel:+919630857234">+91 96308 57234</a><br>WhatsApp orders &amp; bookings on the same number.</p><p style="margin-top:10px"><a class="btn btn-wa" href="https://wa.me/919630857234?text=Namaste%2C%20mujhe%20Diamond%20Family%20Restaurant%20ke%20baare%20mein%20jaankari%20chahiye" target="_blank" rel="noopener" style="padding:10px 14px;font-size:14px">Chat on WhatsApp</a></p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><b>💎 Diamond Family Restaurant &amp; Dhaba</b> · Narsinghgarh Road, Bhopal · ⭐ 4.7 on Justdial (1,215 ratings)</p>
+  <p style="margin-top:6px">Demo website built by Vaibhav Ghoshi — not the official website. Menu, prices and group rates shown are indicative/demo only; hours as per public listings.</p>
+</footer>
+
+<div class="stickybar">
+  <a class="btn btn-gold" href="tel:+919630857234">📞 Call Now</a>
+  <a class="btn btn-wa" href="https://wa.me/919630857234?text=Namaste%2C%20mujhe%20Diamond%20Family%20Restaurant%20se%20order%20%2F%20booking%20karni%20hai" target="_blank" rel="noopener">💬 WhatsApp</a>
+  <a class="btn btn-ghost" href="#book">📅 Book Table</a>
+</div>
+
+<script>
+var WA = '919630857234';
+var MENU = [
+ // Starters & Snacks
+ {c:'starters', n:'Masala Papad', p:50, v:1, d:'Crisp roasted papad topped with onion, tomato and masala — the classic dhaba start.'},
+ {c:'starters', n:'Veg Pakora Basket', p:120, v:1, d:'Mixed vegetable fritters, fried fresh and served with green chutney.'},
+ {c:'starters', n:'Hara Bhara Kebab', p:190, v:1, d:'Spinach, peas and potato patties — light, green and full of flavour.'},
+ {c:'starters', n:'Paneer Tikka (Tandoor)', p:240, v:1, pop:1, d:'Smoky cottage-cheese cubes marinated in spiced curd, charred in the tandoor.'},
+ {c:'starters', n:'Veg Spring Rolls', p:150, v:1, d:'Crisp rolls stuffed with glass noodles and vegetables, sweet-chilli dip alongside.'},
+ {c:'starters', n:'French Fries', p:110, v:1, d:'Golden, salted and simple — the kids\u2019 table favourite.'},
+ {c:'starters', n:'Chicken Tikka', p:280, v:0, pop:1, d:'Boneless chicken pieces, overnight marinade, tandoor-roasted with onion rings and lemon.'},
+ // Main Course — Veg
+ {c:'veg', n:'Dal Tadka Fry', p:180, v:1, pop:1, d:'Yellow dal finished with a ghee-garlic tadka — the dish this dhaba is known for.'},
+ {c:'veg', n:'Dal Makhani', p:210, v:1, d:'Black dal simmered overnight with butter and cream, restaurant-rich.'},
+ {c:'veg', n:'Paneer Butter Masala', p:260, v:1, pop:1, d:'Paneer in a creamy tomato-butter gravy — the family-table bestseller.'},
+ {c:'veg', n:'Shahi Paneer', p:240, v:1, d:'Royal cashew-tomato gravy, mildly sweet, made for butter naan.'},
+ {c:'veg', n:'Kadhai Paneer', p:250, v:1, d:'Paneer tossed with capsicum, onion and crushed kadhai masala — drier and spicier.'},
+ {c:'veg', n:'Malai Kofta', p:240, v:1, d:'Soft paneer-potato dumplings in a rich, mildly sweet cashew gravy.'},
+ {c:'veg', n:'Mix Veg', p:200, v:1, d:'Seasonal vegetables in a homestyle masala — light and everyday.'},
+ {c:'veg', n:'Sev Bhaji', p:170, v:1, d:'The MP favourite — tangy tomato-onion gravy topped with crunchy sev.'},
+ {c:'veg', n:'Baingan Bharta', p:180, v:1, d:'Smoky roasted brinjal mashed with onion, tomato and peas.'},
+ // Main Course — Non-Veg
+ {c:'nonveg', n:'Butter Chicken', p:340, v:0, pop:1, d:'Tandoor-roasted chicken folded into makhani gravy — creamy, tangy, famous.'},
+ {c:'nonveg', n:'Chicken Curry (Dhaba Style)', p:300, v:0, pop:1, d:'The highway original — rustic onion-tomato masala, garam masala finish, no shortcuts.'},
+ {c:'nonveg', n:'Chicken Handi', p:320, v:0, d:'Slow-cooked in a handi with curd and whole spices — deeper, homelier flavour.'},
+ {c:'nonveg', n:'Chicken Masala', p:310, v:0, d:'Thick, spicy masala gravy that clings to every piece.'},
+ {c:'nonveg', n:'Egg Curry', p:180, v:0, d:'Boiled eggs simmered in dhaba masala — simple, hearty, budget-friendly.'},
+ {c:'nonveg', n:'Egg Masala Fry', p:170, v:0, d:'Eggs fried with onion-masala — a quick, punchy side or main.'},
+ // Chinese
+ {c:'chinese', n:'Veg Hakka Noodles', p:160, v:1, d:'Wok-tossed noodles with crunchy vegetables and soy-garlic seasoning.'},
+ {c:'chinese', n:'Veg Fried Rice', p:150, v:1, d:'Smoky wok rice with fine-chopped vegetables.'},
+ {c:'chinese', n:'Chicken Fried Rice', p:210, v:0, d:'Fried rice loaded with chicken and egg, wok hei in every bite.'},
+ {c:'chinese', n:'Veg Manchurian', p:170, v:1, d:'Vegetable dumplings in a glossy garlic-soy gravy — great with fried rice.'},
+ {c:'chinese', n:'Chilli Paneer', p:240, v:1, pop:1, d:'Crisp paneer tossed with peppers in a spicy chilli-garlic sauce.'},
+ {c:'chinese', n:'Chilli Chicken', p:260, v:0, d:'Batter-fried chicken, peppers and a proper chilli kick.'},
+ // Thalis & Combos
+ {c:'thalis', n:'Diamond Veg Thali', p:250, v:1, pop:1, d:'Dal, seasonal sabzi, rice, 3 rotis, salad, papad and a sweet — the complete meal.'},
+ {c:'thalis', n:'Dhaba Special Thali', p:320, v:1, d:'Bigger portions, paneer dish of the day, butter rotis, jeera rice and dessert.'},
+ {c:'thalis', n:'Non-Veg Thali', p:380, v:0, d:'Chicken curry, egg, rice, rotis, salad and papad — the full highway feast.'},
+ {c:'thalis', n:'Family Combo (Serves 4)', p:899, v:1, d:'Paneer butter masala, dal tadka, mix veg, jeera rice, 8 butter naans and 4 lassis.*'},
+ // Breads & Rice
+ {c:'breads', n:'Butter Tandoori Roti', p:40, v:1, d:'Whole-wheat roti from the clay tandoor, brushed with butter.'},
+ {c:'breads', n:'Plain Tandoori Roti', p:25, v:1, d:'Everyday whole-wheat tandoor roti.'},
+ {c:'breads', n:'Butter Naan', p:60, v:1, pop:1, d:'Soft, blistered naan with a butter glaze.'},
+ {c:'breads', n:'Garlic Naan', p:70, v:1, d:'Naan topped with garlic and coriander — made for makhani gravies.'},
+ {c:'breads', n:'Jeera Rice', p:150, v:1, d:'Basmati tempered with cumin and ghee.'},
+ {c:'breads', n:'Steamed Rice', p:120, v:1, d:'Plain steamed rice for dal and curry.'},
+ {c:'breads', n:'Veg Biryani', p:190, v:1, d:'Layered, fragrant biryani with vegetables, served with raita.'},
+ {c:'breads', n:'Chicken Biryani', p:260, v:0, pop:1, d:'Dum-cooked with whole spices — served with raita and salad.'},
+ // Desserts & Beverages
+ {c:'desserts', n:'Sweet Lassi', p:80, v:1, pop:1, d:'Thick, creamy Punjabi-style lassi — the dhaba signature drink.'},
+ {c:'desserts', n:'Masala Chaas', p:50, v:1, d:'Thin spiced buttermilk with roasted jeera — the meal\u2019s best friend.'},
+ {c:'desserts', n:'Gulab Jamun (2 pc)', p:70, v:1, d:'Warm, soft and soaked just right.'},
+ {c:'desserts', n:'Kulfi', p:60, v:1, d:'Dense, traditional malai kulfi to finish.'},
+ {c:'desserts', n:'Masala Chai', p:30, v:1, d:'Strong highway chai with ginger and masala.'},
+ {c:'desserts', n:'Cold Drink (300 ml)', p:40, v:1, d:'Chilled soft drink of your choice.'},
+ {c:'desserts', n:'Mineral Water (1 L)', p:25, v:1, d:'Sealed bottled water.'}
+];
+var CATS = [
+ ['starters','🥗 Starters & Snacks'],['veg','🍛 Main Course — Veg'],['nonveg','🍗 Main Course — Non-Veg'],
+ ['chinese','🥡 Chinese'],['thalis','🍱 Thalis & Combos'],['breads','🫓 Breads & Rice'],['desserts','🍨 Desserts & Beverages']
+];
+var cart = {}, curCat = 'starters';
+function inr(n){ return '₹' + n.toLocaleString('en-IN'); }
+function renderTabs(){
+  var h = '';
+  CATS.forEach(function(c){ h += '<button role="tab" class="' + (c[0]===curCat?'on':'') + '" onclick="setCat(\'' + c[0] + '\')">' + c[1] + '</button>'; });
+  document.getElementById('tabs').innerHTML = h;
+}
+function setCat(c){ curCat = c; renderTabs(); renderMenu(); }
+function renderMenu(){
+  var h = '';
+  MENU.forEach(function(m, i){
+    if (m.c !== curCat) return;
+    h += '<div class="dish"><b>' + m.n + ' ' + (m.v ? '<span class="tag veg">VEG</span>' : '<span class="tag nonveg">NON-VEG</span>') + (m.pop ? ' <span class="tag pop">POPULAR</span>' : '') + '</b>' +
+      '<p class="d">' + m.d + '</p><div class="rowb"><span class="p">' + inr(m.p) + '*</span>' +
+      '<button class="addbtn" onclick="addItem(' + i + ')">Add +</button></div></div>';
+  });
+  document.getElementById('menuGrid').innerHTML = h;
+}
+function addItem(i){ cart[i] = (cart[i]||0) + 1; renderCart(); }
+function chQty(i, d){ cart[i] = Math.max(0, (cart[i]||0) + d); if (!cart[i]) delete cart[i]; renderCart(); }
+function renderCart(){
+  var rows = '', tot = 0, lines = [];
+  Object.keys(cart).forEach(function(i){
+    var m = MENU[i], q = cart[i], amt = m.p * q; tot += amt;
+    lines.push(m.n + ' x ' + q + ' — ' + inr(amt));
+    rows += '<div class="crow"><span>' + m.n + ' — ' + inr(amt) + '</span><span class="qty"><button onclick="chQty(' + i + ',-1)" aria-label="Decrease">−</button> <b>' + q + '</b> <button onclick="chQty(' + i + ',1)" aria-label="Increase">+</button></span></div>';
+  });
+  document.getElementById('cartRows').innerHTML = rows || '<p class="demo-note" style="margin-top:8px">Nothing added yet — pick a few dishes above.</p>';
+  document.getElementById('cartTot').textContent = tot ? 'Total: ' + inr(tot) + '* (indicative)' : '';
+  var btn = document.getElementById('orderBtn');
+  if (tot) {
+    btn.style.display = 'block';
+    btn.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Namaste, mujhe Diamond Family Restaurant se order karna hai:\n' + lines.join('\n') + '\nTotal (indicative): ' + inr(tot) + '\nKripya confirm karein.');
+  } else { btn.style.display = 'none'; }
+}
+function todayStr(){ var d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+function fmtDate(v){ if(!v) return ''; var p = v.split('-'); return p[2] + '-' + p[1] + '-' + p[0]; }
+document.getElementById('bDate').min = todayStr();
+document.getElementById('gDate').min = todayStr();
+document.getElementById('bookForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var msg = 'Namaste, mujhe Diamond Family Restaurant mein table book karni hai.\n' +
+    'Naam: ' + document.getElementById('bName').value + '\n' +
+    'Mobile: ' + document.getElementById('bPhone').value + '\n' +
+    'Guests: ' + document.getElementById('bGuests').value + '\n' +
+    'Occasion: ' + document.getElementById('bOcc').value + '\n' +
+    'Date: ' + fmtDate(document.getElementById('bDate').value) + '\n' +
+    'Time: ' + document.getElementById('bTime').value;
+  var note = document.getElementById('bNote').value.trim();
+  if (note) msg += '\nNote: ' + note;
+  msg += '\nKripya availability confirm karein.';
+  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+});
+document.getElementById('groupForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var msg = 'Namaste, mujhe Diamond Family Restaurant mein GROUP booking ke liye quote chahiye.\n' +
+    'Naam: ' + document.getElementById('gName').value + '\n' +
+    'Mobile: ' + document.getElementById('gPhone').value + '\n' +
+    'Group type: ' + document.getElementById('gType').value + '\n' +
+    'Expected guests: ' + document.getElementById('gGuests').value + '\n' +
+    'Date: ' + fmtDate(document.getElementById('gDate').value) + '\n' +
+    'Time: ' + document.getElementById('gTime').value;
+  var note = document.getElementById('gNote').value.trim();
+  if (note) msg += '\nMenu preference / note: ' + note;
+  msg += '\nKripya per-plate group rate aur availability batayein.';
+  window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+});
+renderTabs(); renderMenu(); renderCart();
+</script>
+</body>
+</html>

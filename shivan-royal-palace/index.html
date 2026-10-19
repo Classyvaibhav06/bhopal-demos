@@ -1,9 +1,808 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivan Royal Palace Marriage Garden</title><meta name="description" content="Demo website for Shivan Royal Palace Marriage Garden, Kolar Road, Bhopal. Date checker, cost estimator and WhatsApp booking enquiry.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#fdf6f8;color:#2a1220;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#f2dbe4}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#7c2d4e;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#ffffff;border-radius:16px;padding:22px;margin-bottom:18px}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#fdf6f8;color:#2a1220}button,.wa{display:block;width:100%;text-align:center;background:#7c2d4e;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:17px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#fdf6f8;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">WEDDING VENUE · KOLAR ROAD, BHOPAL</span><h1>Shivan Royal Palace Marriage Garden</h1><p class="sub">Royal lawns & banquet spaces for weddings and celebrations — 4.9★ rated</p></header>
-<main><section><h2>Check your date & get an estimate</h2><p class="small">Wedding dates fill fast in season. Pick your date and guest count — see an indicative per-plate estimate and send a booking enquiry on WhatsApp.</p><label>Event date</label><input id="d" type="date"><label>Expected guests</label><input id="g" type="number" min="100" step="50" value="500"><label>Menu type</label><select id="m"><option value="800">Veg — ₹800/plate*</option><option value="1000">Premium Veg — ₹1,000/plate*</option></select><button onclick="calc()">Check & estimate</button><p class="out" id="o"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Send date enquiry on WhatsApp →</a><p class="small" style="margin-top:8px">*Per-plate figures as listed on Weddingz.in — indicative/demo only. Venue charges confirmed on enquiry.</p></section><section><h2>The venue</h2><div class="grid"><div class="card"><b>Grand Lawn</b><span class="small">Garden weddings & receptions</span></div><div class="card"><b>Banquet Spaces</b><span class="small">For 500+ guest events</span></div><div class="card"><b>Guest Rooms</b><span class="small">Clean rooms for family stay</span></div><div class="card"><b>Full Support</b><span class="small">Decor, catering & management</span></div></div></section><section><h2>Why families choose Shivan</h2><p>⭐ 4.9 on Justdial (395 ratings) · 4.7 on Google (282 reviews). Praised for its beautiful lawn, spacious venue and cooperative staff. Open daily 10 AM–10 PM.</p></section>
-<section><h2>Visit / Call</h2><p>Rasuliya Inayatpur, Kolar Road, near Mother Teresa School, Bhopal – 462042</p><p style="margin-top:8px">📞 <a href="tel:919522300541" style="color:inherit">+91 95223 00541</a></p><a class="wa" href="https://wa.me/919522300541" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>function calc(){var d=document.getElementById('d').value,g=+document.getElementById('g').value||0,p=+document.getElementById('m').value;if(!d){document.getElementById('o').textContent='Pehle apni event date chunein.';return}var tot=g*p;document.getElementById('o').textContent='Indicative catering estimate for '+g+' guests: ₹'+tot.toLocaleString('en-IN')+'*\nDate availability is confirmed by the venue on enquiry.';var w=document.getElementById('w');w.style.display='block';w.href='https://wa.me/919522300541?text='+encodeURIComponent('Namaste, mujhe Shivan Royal Palace mein '+d+' ko event book karna hai. Expected guests: '+g+'. Kripya availability aur charges batayein.')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivan Royal Palace Marriage Garden — Kolar Road, Bhopal | Weddings, Receptions &amp; Celebrations</title>
+<meta name="description" content="Shivan Royal Palace Marriage Garden, Kolar Road, Bhopal. Royal lawns & banquet spaces for weddings, receptions, engagements and celebrations. Rated 4.9/5 on Justdial (395 ratings) and 4.7/5 on Google (282 reviews). Check your date and get an instant estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<style>
+:root{
+  --ivory:#fdfaf2; --ivory-2:#f7efdb; --gold:#b8860b; --gold-2:#d4a017; --gold-soft:#f3e3b8;
+  --green:#123f2c; --green-2:#0b2c1e; --ink:#221d12; --muted:#77694f; --line:#ecdfc2;
+  --card:#ffffff; --shadow:0 18px 42px rgba(18,63,44,.16); --r:20px; --header-h:72px;
+  --wa:#1faa55; --wa-2:#178a44;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 14px)}
+body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:0;background:var(--green);color:#fff;padding:.7rem 1rem;z-index:200;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;font:inherit;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#fff;box-shadow:0 12px 26px rgba(184,134,11,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 32px rgba(184,134,11,.42)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-2);transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--green);border:1.5px solid var(--line)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 26px rgba(31,170,85,.32)}
+.btn-wa:hover{background:var(--wa-2);transform:translateY(-2px)}
+/* Header */
+header.site{position:sticky;top:0;z-index:90;background:rgba(253,250,242,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:1rem;min-height:var(--header-h);padding:.5rem 0}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
+.logo-mark{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--green),#1d5c3f);color:var(--gold-soft);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:900;font-size:1.05rem;box-shadow:0 8px 18px rgba(18,63,44,.3);border:1.5px solid var(--gold-2)}
+.logo strong{font-family:Fraunces,serif;font-size:1.06rem;line-height:1.1;display:block;color:var(--green-2)}
+.logo small{color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+nav.main-nav{display:flex;gap:1.35rem;margin-left:auto}
+nav.main-nav a{text-decoration:none;font-weight:700;font-size:.93rem;color:var(--ink)}
+nav.main-nav a:hover{color:var(--gold)}
+.header-actions{display:flex;align-items:center;gap:.6rem;margin-left:auto}
+nav.main-nav + .header-actions{margin-left:0}
+.call-link{font-weight:800;text-decoration:none;color:var(--green);font-size:.95rem;white-space:nowrap}
+.menu-btn{display:none;background:var(--green);color:#fff;border:0;border-radius:10px;padding:.55rem .8rem;font:inherit;font-weight:800;cursor:pointer}
+/* Hero */
+.hero{position:relative;background:radial-gradient(900px 480px at 88% -10%,#f7e7bd 0,transparent 55%),linear-gradient(165deg,#fdf6df,var(--ivory) 62%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:4rem 0 4.4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.82rem;font-weight:800;color:var(--green);box-shadow:0 6px 16px rgba(18,63,44,.07)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-family:Fraunces,serif;font-weight:900;font-size:clamp(2.3rem,5.2vw,3.9rem);line-height:1.05;letter-spacing:-.01em;margin:1.1rem 0 1rem;color:var(--green-2)}
+h1 em{font-style:normal;color:var(--gold);background:linear-gradient(transparent 63%,var(--gold-soft) 63%)}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:34rem}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0 1.4rem}
+.hero-meta{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.92rem;font-weight:700}
+.hero-meta span{display:flex;gap:.4rem;align-items:center}
+.stars{color:var(--gold-2);letter-spacing:.06em}
+.hero-visual{position:relative}
+.hero-img{border-radius:28px;box-shadow:var(--shadow);aspect-ratio:4/3.4;object-fit:cover;width:100%;background:var(--ivory-2);border:4px solid #fff}
+.hero-card{position:absolute;left:-14px;bottom:22px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:.85rem 1.05rem;display:flex;gap:.7rem;align-items:center;max-width:290px}
+.hero-card strong{display:block;font-size:.92rem;line-height:1.25}
+.hero-card small{color:var(--muted);font-weight:600}
+.hero-badge{position:absolute;top:18px;right:18px;background:var(--green);color:#fff;border-radius:999px;padding:.5rem .95rem;font-weight:800;font-size:.84rem;box-shadow:var(--shadow);border:1.5px solid var(--gold-2)}
+/* Rating strip */
+.strip{background:linear-gradient(120deg,var(--green-2),var(--green));color:#f3e9cf}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.5rem 0;text-align:center}
+.strip b{font-family:Fraunces,serif;font-size:1.65rem;display:block;color:#fff;line-height:1.1}
+.strip span{font-size:.85rem;font-weight:600;opacity:.85}
+/* Sections */
+section{padding:4.3rem 0}
+.sec-head{max-width:44rem;margin-bottom:2.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:.78rem}
+h2{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.12;margin:.45rem 0 .6rem;color:var(--green-2)}
+.sec-head p{color:var(--muted)}
+/* Spaces */
+.space-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.space-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 26px rgba(18,63,44,.07);transition:transform .25s ease,box-shadow .25s ease}
+.space-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.space-card img{height:195px;width:100%;object-fit:cover;background:var(--ivory-2)}
+.space-body{padding:1.15rem 1.25rem 1.35rem}
+.space-body h3{font-family:Fraunces,serif;font-size:1.22rem;color:var(--green-2)}
+.space-body p{color:var(--muted);font-size:.94rem;margin:.35rem 0 .8rem}
+.chips{display:flex;gap:.45rem;flex-wrap:wrap}
+.chip{display:inline-block;background:var(--ivory-2);color:var(--green);font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:.24rem .62rem;border:1px solid var(--line)}
+/* Decor themes */
+.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.theme-card{position:relative;border-radius:var(--r);overflow:hidden;min-height:220px;display:flex;align-items:flex-end;box-shadow:0 10px 26px rgba(18,63,44,.12)}
+.theme-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--ivory-2)}
+.theme-card .t-body{position:relative;padding:1rem 1.1rem;background:linear-gradient(transparent,rgba(11,44,30,.88));color:#fff;width:100%}
+.theme-card h3{font-family:Fraunces,serif;font-size:1.08rem}
+.theme-card p{font-size:.84rem;opacity:.88}
+/* Events */
+.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.event-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.45rem;transition:transform .22s ease,box-shadow .22s ease}
+.event-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.event-card .ico{width:52px;height:52px;border-radius:16px;background:var(--ivory-2);border:1px solid var(--line);display:grid;place-items:center;font-size:1.5rem;margin-bottom:.95rem}
+.event-card h3{font-family:Fraunces,serif;font-size:1.18rem;color:var(--green-2);margin-bottom:.35rem}
+.event-card p{color:var(--muted);font-size:.94rem}
+/* Packages */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;align-items:stretch}
+.pkg{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:1.8rem 1.55rem;display:flex;flex-direction:column;position:relative;box-shadow:0 10px 26px rgba(18,63,44,.06)}
+.pkg.featured{border-color:var(--gold-2);box-shadow:var(--shadow)}
+.pkg .flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border-radius:999px;padding:.32rem .85rem;white-space:nowrap}
+.pkg h3{font-family:Fraunces,serif;font-size:1.3rem;color:var(--green-2)}
+.pkg .per{color:var(--muted);font-size:.9rem;font-weight:600}
+.pkg .rate{font-family:Fraunces,serif;font-size:2.15rem;font-weight:900;color:var(--green);margin:.55rem 0 .1rem}
+.pkg .rate small{font-size:.95rem;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;color:var(--muted)}
+.pkg ul{list-style:none;margin:1rem 0 1.4rem;display:grid;gap:.5rem;font-size:.94rem}
+.pkg ul li{padding-left:1.5rem;position:relative;color:var(--ink)}
+.pkg ul li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900}
+.pkg .btn{margin-top:auto}
+.pkg-note{text-align:center;color:var(--muted);font-size:.86rem;margin-top:1.15rem}
+/* Estimator */
+.est{background:linear-gradient(150deg,var(--green-2),var(--green) 70%);border-radius:28px;padding:2.4rem;color:#fdf6df;box-shadow:var(--shadow)}
+.est h2{color:#fff}
+.est .kicker{color:var(--gold-soft)}
+.est-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.4rem}
+.est p.sub{color:#e9dfc3;font-size:.97rem}
+.field{margin-bottom:1.05rem}
+.field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.4rem;color:#fff}
+.field input,.field select{width:100%;font:inherit;padding:.78rem .95rem;border-radius:12px;border:1.5px solid rgba(243,227,184,.4);background:rgba(255,255,255,.08);color:#fff;color-scheme:dark}
+.field input::placeholder{color:#cfc39f}
+.field select option{color:#221d12}
+.field .hint{font-size:.8rem;color:#cfc39f;margin-top:.3rem}
+.range-row{display:flex;align-items:center;gap:.9rem}
+.range-row input[type=range]{flex:1;accent-color:var(--gold-2)}
+.range-val{font-family:Fraunces,serif;font-weight:900;font-size:1.25rem;color:var(--gold-soft);min-width:5.2rem;text-align:right}
+.est-out{background:rgba(255,255,255,.07);border:1.5px dashed rgba(243,227,184,.55);border-radius:18px;padding:1.4rem 1.35rem;align-self:start}
+.est-out h3{font-family:Fraunces,serif;font-size:1.15rem;color:var(--gold-soft);margin-bottom:.5rem}
+.est-out .big{font-family:Fraunces,serif;font-weight:900;font-size:clamp(1.6rem,3.4vw,2.2rem);color:#fff;line-height:1.15}
+.est-out p{font-size:.9rem;color:#e9dfc3;margin-top:.5rem}
+.est-out .btn{width:100%;margin-top:1.05rem}
+.err{color:#ffb4a2;font-size:.86rem;font-weight:700;margin-top:.35rem;min-height:1.1em}
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.gal-grid figure{border-radius:16px;overflow:hidden;cursor:pointer;position:relative;box-shadow:0 8px 20px rgba(18,63,44,.1)}
+.gal-grid img{height:210px;width:100%;object-fit:cover;transition:transform .35s ease;background:var(--ivory-2)}
+.gal-grid figure:hover img{transform:scale(1.06)}
+.gal-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:.55rem .8rem;background:linear-gradient(transparent,rgba(11,44,30,.85));color:#fff;font-size:.82rem;font-weight:700}
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(11,30,20,.93);display:none;place-items:center;z-index:300;padding:1.2rem}
+.lb.open{display:grid}
+.lb img{max-width:min(1000px,94vw);max-height:82vh;border-radius:16px;border:3px solid var(--gold-soft);object-fit:contain;background:#000}
+.lb figcaption{color:#f3e9cf;text-align:center;margin-top:.8rem;font-weight:700}
+.lb button{position:absolute;top:16px;right:18px;background:var(--gold);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1.05rem}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.35rem 1.15rem;position:relative}
+.step .num{font-family:Fraunces,serif;font-weight:900;font-size:1.9rem;color:var(--gold-soft);line-height:1}
+.step h3{font-family:Fraunces,serif;font-size:1.05rem;color:var(--green-2);margin:.5rem 0 .3rem}
+.step p{color:var(--muted);font-size:.88rem}
+/* Testimonials */
+.testi{background:linear-gradient(180deg,#fff,var(--ivory))}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.testi-card{background:var(--ivory);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.45rem}
+.testi-card .stars{font-size:1.05rem}
+.testi-card h3{font-family:Fraunces,serif;font-size:1.12rem;color:var(--green-2);margin:.55rem 0 .4rem}
+.testi-card p{color:var(--muted);font-size:.94rem}
+.testi-card .src{margin-top:.9rem;font-size:.8rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold)}
+/* FAQ */
+.faq-list{max-width:820px;margin-inline:auto;display:grid;gap:.8rem}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;font:inherit;font-weight:800;text-align:left;padding:1.05rem 1.25rem;cursor:pointer;color:var(--green-2)}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq .ans p{padding:0 1.25rem 1.15rem;color:var(--muted);font-size:.95rem}
+.faq .chev{transition:transform .25s ease;color:var(--gold);font-size:1.15rem}
+.faq.open .chev{transform:rotate(180deg)}
+/* Enquiry form */
+.enq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.4rem;align-items:start}
+.enq-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:1.9rem 1.7rem;box-shadow:0 12px 30px rgba(18,63,44,.08)}
+.enq-card .field label{color:var(--green-2)}
+.enq-card .field input,.enq-card .field select{background:var(--ivory);border-color:var(--line);color:var(--ink);color-scheme:light}
+.enq-card .field textarea{width:100%;font:inherit;padding:.78rem .95rem;border-radius:12px;border:1.5px solid var(--line);background:var(--ivory);color:var(--ink);resize:vertical;min-height:84px}
+.enq-card .err{color:#b3401e}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.visit-list{display:grid;gap:1.05rem;margin-top:1.3rem}
+.visit-item{display:flex;gap:.85rem;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.05rem 1.15rem}
+.visit-item .ico{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:var(--ivory-2);border:1px solid var(--line);display:grid;place-items:center;font-size:1.2rem}
+.visit-item b{display:block;color:var(--green-2)}
+.visit-item span,.visit-item a{color:var(--muted);font-size:.94rem;text-decoration:none}
+.visit-item a:hover{color:var(--gold)}
+/* Footer */
+footer{background:var(--green-2);color:#e9dfc3;padding:3rem 0 5.6rem;margin-top:1rem}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+footer h3{font-family:Fraunces,serif;color:#fff;font-size:1.15rem;margin-bottom:.7rem}
+footer p,footer a{font-size:.92rem;color:#d9cda6;text-decoration:none}
+footer a:hover{color:#fff}
+.foot-links{display:grid;gap:.45rem}
+.demo-note{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid rgba(243,227,184,.25);font-size:.84rem;color:#bfae83;text-align:center}
+/* Sticky WA */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:120;background:var(--wa);color:#fff;text-decoration:none;font-weight:800;border-radius:999px;padding:.85rem 1.3rem;box-shadow:0 14px 30px rgba(23,138,68,.45);display:inline-flex;gap:.5rem;align-items:center}
+.wa-float:hover{background:var(--wa-2)}
+.wa-bar{display:none}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* Responsive */
+@media(max-width:1020px){
+  .space-grid,.event-grid,.pkg-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+  .theme-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-grid{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .est-grid,.enq-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  nav.main-nav{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:var(--ivory);flex-direction:column;padding:1rem 5%;gap:.9rem;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  nav.main-nav.open{display:flex}
+  .menu-btn{display:block}
+  .call-link{display:none}
+  .header-in .btn-gold{display:none}
+  .hero-grid{grid-template-columns:1fr;padding:2.6rem 0 3rem;gap:2rem}
+  .hero-card{left:8px;bottom:10px}
+  .strip-in{grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  .space-grid,.event-grid,.pkg-grid,.testi-grid,.theme-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-grid img{height:150px}
+  .steps{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  section{padding:3.2rem 0}
+  .est{padding:1.7rem 1.25rem}
+  .wa-float{display:none}
+  .wa-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:120;background:#fff;border-top:1px solid var(--line);padding:.6rem .8rem;gap:.6rem;box-shadow:0 -8px 24px rgba(18,63,44,.12)}
+  .wa-bar a{flex:1;text-align:center}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#enquire">Skip to booking enquiry</a>
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" aria-label="Shivan Royal Palace Marriage Garden — home">
+      <span class="logo-mark">SR</span>
+      <span><strong>Shivan Royal Palace</strong><small>Marriage Garden · Kolar Road</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#spaces">Venue Spaces</a>
+      <a href="#events">Events</a>
+      <a href="#packages">Packages</a>
+      <a href="#estimate">Estimate</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="call-link" href="tel:+919522300541">📞 +91 95223 00541</a>
+      <a class="btn btn-gold" href="#enquire" style="padding:.6rem 1.15rem">Check Your Date</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰ Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> Wedding Venue · Kolar Road, Bhopal</span>
+      <h1>A royal setting for the <em>biggest day</em> of your life</h1>
+      <p class="lead">Shivan Royal Palace Marriage Garden brings grand lawns, banquet spaces and guest rooms together on Kolar Road — with decor, catering and full event support under one roof, so your family can celebrate while we handle the rest.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#enquire">Check Date Availability</a>
+        <a class="btn btn-wa" href="https://wa.me/919522300541?text=Namaste%2C%20mujhe%20Shivan%20Royal%20Palace%20Marriage%20Garden%20mein%20event%20booking%20ki%20jaankari%20chahiye." target="_blank" rel="noopener">💬 WhatsApp the Venue</a>
+      </div>
+      <div class="hero-meta">
+        <span><span class="stars" aria-hidden="true">★★★★★</span> 4.9 on Justdial</span>
+        <span><span class="stars" aria-hidden="true">★★★★★</span> 4.7 on Google</span>
+        <span>🕙 Open daily 10 AM–10 PM</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Elegantly decorated wedding banquet hall with round tables and warm lighting" fetchpriority="high">
+      <span class="hero-badge">🌿 Grand Lawn + Banquet</span>
+      <div class="hero-card">
+        <span style="font-size:1.6rem" aria-hidden="true">💍</span>
+        <span><strong>Dates fill fast in wedding season</strong><small>Send your date on WhatsApp — availability is confirmed by the venue team on enquiry.</small></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RATING STRIP -->
+<div class="strip" role="region" aria-label="Ratings and highlights">
+  <div class="wrap strip-in">
+    <div><b>4.9 ★</b><span>Justdial rating · 395 ratings</span></div>
+    <div><b>4.7 ★</b><span>Google rating · 282 reviews</span></div>
+    <div><b>500+</b><span>Guest events hosted in banquet spaces*</span></div>
+    <div><b>10–10</b><span>Open every day · 10 AM to 10 PM</span></div>
+  </div>
+</div>
+
+<!-- SPACES -->
+<section id="spaces">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Venue</span>
+      <h2>Spaces that make a celebration feel royal</h2>
+      <p>From open-air pheras under the sky to elegant indoor receptions — pick the space that fits your guest list and your style.</p>
+    </div>
+    <div class="space-grid">
+      <article class="space-card reveal">
+        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Outdoor wedding lawn decorated with string lights at dusk" loading="lazy">
+        <div class="space-body">
+          <h3>🌿 The Grand Lawn</h3>
+          <p>The heart of Shivan Royal Palace — a green, open-air lawn that families praise again and again in reviews. Made for garden weddings, pheras under the open sky, sangeet nights and grand receptions.</p>
+          <div class="chips"><span class="chip">Open-air</span><span class="chip">Weddings</span><span class="chip">Receptions</span></div>
+        </div>
+      </article>
+      <article class="space-card reveal">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Banquet hall set for a large wedding dinner" loading="lazy">
+        <div class="space-body">
+          <h3>🏛️ Banquet Spaces</h3>
+          <p>Spacious indoor banquet areas suited to 500+ guest events — receptions, engagement dinners and family functions that need room to breathe, whatever the weather outside.</p>
+          <div class="chips"><span class="chip">500+ guests*</span><span class="chip">Indoor</span><span class="chip">All-weather</span></div>
+        </div>
+      </article>
+      <article class="space-card reveal">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Clean, comfortable guest room for family stay" loading="lazy">
+        <div class="space-body">
+          <h3>🛏️ Guest Rooms</h3>
+          <p>Clean rooms on the premises for the family to stay, dress and rest between functions — no running across the city on the wedding day; the baraat and the bride's family stay right here.</p>
+          <div class="chips"><span class="chip">Family stay</span><span class="chip">On-premises</span><span class="chip">Getting-ready</span></div>
+        </div>
+      </article>
+    </div>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:1rem">*Guest capacity as described in the venue's listings; exact capacity for your function layout is confirmed on enquiry.</p>
+
+    <div class="sec-head reveal" style="margin-top:3.2rem">
+      <span class="kicker">Decor Themes</span>
+      <h2>One venue, many looks</h2>
+      <p>Decor and stage themes can be styled around your family's taste — from classic royal to soft pastel. Final decor is planned with the venue team during your booking visit.</p>
+    </div>
+    <div class="theme-grid">
+      <div class="theme-card reveal">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Royal wedding stage in red and gold" loading="lazy">
+        <div class="t-body"><h3>Royal Red &amp; Gold</h3><p>The classic shaadi look — deep reds, gold drapes and a grand stage.</p></div>
+      </div>
+      <div class="theme-card reveal">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Pastel floral wedding decor with soft lights" loading="lazy">
+        <div class="t-body"><h3>Pastel Garden</h3><p>Soft florals and fairy lights made for lawn evenings and receptions.</p></div>
+      </div>
+      <div class="theme-card reveal">
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Traditional marigold and drapes decor" loading="lazy">
+        <div class="t-body"><h3>Marigold Traditional</h3><p>Genda phool, drapes and diyas — perfect for haldi and mehendi.</p></div>
+      </div>
+      <div class="theme-card reveal">
+        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Elegant evening reception table setting" loading="lazy">
+        <div class="t-body"><h3>Evening Elegance</h3><p>Candle-lit tables and warm tones for receptions and engagements.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="background:linear-gradient(180deg,var(--ivory),#fff)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Events We Host</span>
+      <h2>Every celebration of the wedding season — and beyond</h2>
+      <p>One booking covers the venue, and the team supports decor, catering and event management so each function flows into the next.</p>
+    </div>
+    <div class="event-grid">
+      <article class="event-card reveal"><div class="ico">💍</div><h3>Weddings</h3><p>Full wedding ceremonies on the grand lawn or in the banquet spaces — mandap, stage, seating and guest flow planned around your rituals and guest count.</p></article>
+      <article class="event-card reveal"><div class="ico">🥂</div><h3>Receptions</h3><p>Grand reception evenings with stage, dining and photo corners — the night the whole city comes to bless the couple, hosted in style.</p></article>
+      <article class="event-card reveal"><div class="ico">💛</div><h3>Engagements</h3><p>Ring ceremonies and sagais in an elegant, intimate setting — decor themes and dining arranged for your closest family and friends.</p></article>
+      <article class="event-card reveal"><div class="ico">🎶</div><h3>Sangeet &amp; Mehendi</h3><p>Music, dance and colour on the lawn — sangeet nights, mehendi afternoons and haldi functions full of energy, with space for every performance.</p></article>
+      <article class="event-card reveal"><div class="ico">🎂</div><h3>Birthdays &amp; Anniversaries</h3><p>Milestone birthdays, anniversaries and family get-togethers — a royal backdrop for the celebrations that matter most to your family.</p></article>
+      <article class="event-card reveal"><div class="ico">🏢</div><h3>Corporate Events</h3><p>Company offsites, dealer meets and office celebrations in a spacious garden setting on Kolar Road — a refreshing break from hotel conference rooms.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Packages</span>
+      <h2>Simple per-plate packages, priced on plates</h2>
+      <p>Venue catering is priced per plate, so your budget scales with your guest list. Per-plate rates below are as listed on Weddingz.in and are indicative — final quotation is confirmed by the venue on enquiry.</p>
+    </div>
+    <div class="pkg-grid">
+      <article class="pkg reveal">
+        <h3>Classic Veg</h3>
+        <p class="per">The essential wedding spread</p>
+        <p class="rate">₹800<small> / plate*</small></p>
+        <ul>
+          <li>Vegetarian catering per plate</li>
+          <li>Grand lawn or banquet space</li>
+          <li>Standard stage &amp; seating setup</li>
+          <li>Guest rooms for family stay</li>
+          <li>Venue team support on the day</li>
+        </ul>
+        <button class="btn btn-green" data-pkg="800" data-pkgname="Classic Veg (₹800/plate)">Estimate with Classic Veg</button>
+      </article>
+      <article class="pkg featured reveal">
+        <span class="flag">Most Booked</span>
+        <h3>Premium Veg</h3>
+        <p class="per">A richer menu for grand guest lists</p>
+        <p class="rate">₹1,000<small> / plate*</small></p>
+        <ul>
+          <li>Premium vegetarian catering per plate</li>
+          <li>Grand lawn + banquet spaces</li>
+          <li>Enhanced stage &amp; decor styling</li>
+          <li>Guest rooms for family stay</li>
+          <li>Dedicated event coordination</li>
+        </ul>
+        <button class="btn btn-gold" data-pkg="1000" data-pkgname="Premium Veg (₹1,000/plate)">Estimate with Premium Veg</button>
+      </article>
+      <article class="pkg reveal">
+        <h3>Custom Celebration</h3>
+        <p class="per">For sangeet, engagement &amp; corporate events</p>
+        <p class="rate">On enquiry</p>
+        <ul>
+          <li>Menu planned around your function</li>
+          <li>Lawn / banquet space of your choice</li>
+          <li>Decor theme of your choice</li>
+          <li>Flexible guest counts</li>
+          <li>Quotation within one call</li>
+        </ul>
+        <a class="btn btn-ghost" href="#enquire">Ask for a Custom Quote</a>
+      </article>
+    </div>
+    <p class="pkg-note">*Per-plate figures as listed on Weddingz.in — indicative/demo only. Venue rental, decor and final charges are confirmed by the venue on enquiry and may vary by date and season.</p>
+  </div>
+</section>
+
+<!-- ESTIMATOR -->
+<section id="estimate" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="est reveal">
+      <div class="est-grid">
+        <div>
+          <span class="kicker">Date Checker &amp; Cost Estimator</span>
+          <h2>Pick your date. See your estimate.</h2>
+          <p class="sub">Wedding dates fill fast in season. Choose your date, guest count and package — get an indicative catering estimate instantly, then send the enquiry on WhatsApp. The venue confirms date availability personally.</p>
+          <form id="estForm" style="margin-top:1.5rem" novalidate>
+            <div class="field">
+              <label for="estDate">Event date</label>
+              <input type="date" id="estDate" required>
+            </div>
+            <div class="field">
+              <label for="estGuests">Expected guests — <span id="guestEcho">500 guests</span></label>
+              <div class="range-row">
+                <input type="range" id="estRange" min="100" max="3000" step="50" value="500" aria-label="Expected guests slider">
+                <span class="range-val" id="rangeVal">500</span>
+              </div>
+              <input type="number" id="estGuests" min="50" step="10" value="500" style="margin-top:.55rem" aria-label="Expected guests number">
+              <p class="hint">Banquet spaces are described for 500+ guest events; the lawn suits larger gatherings — confirm your layout on enquiry.</p>
+            </div>
+            <div class="field">
+              <label for="estPkg">Package (per-plate)</label>
+              <select id="estPkg">
+                <option value="800">Classic Veg — ₹800 / plate*</option>
+                <option value="1000" selected>Premium Veg — ₹1,000 / plate*</option>
+                <option value="0">Custom — quote on enquiry</option>
+              </select>
+            </div>
+            <p class="err" id="estErr" role="alert"></p>
+            <button type="submit" class="btn btn-gold" style="width:100%">Calculate My Estimate</button>
+          </form>
+        </div>
+        <div class="est-out" aria-live="polite">
+          <h3>Your indicative estimate</h3>
+          <p class="big" id="estBig">Choose a date to begin</p>
+          <p id="estDetail">Your estimate appears here — catering for your guest count at the selected per-plate rate, shown as an indicative range. Venue and decor charges are confirmed separately on enquiry.</p>
+          <a class="btn btn-wa" id="estWa" href="https://wa.me/919522300541" target="_blank" rel="noopener" style="display:none">💬 Send This Enquiry on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Gallery</span>
+      <h2>Glimpses of celebrations at palace-style venues</h2>
+      <p>A feel of the lawns, stages and evenings a venue like ours is made for. Tap any photo to view it larger. (Representative imagery for this demo.)</p>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Banquet hall dressed for a wedding dinner" loading="lazy"><figcaption>Banquet evenings</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Lawn celebration under string lights" loading="lazy"><figcaption>Lawn under lights</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Couple on a decorated wedding stage" loading="lazy"><figcaption>The royal stage</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Floral wedding decor details" loading="lazy"><figcaption>Floral details</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Traditional wedding decor with drapes and lights" loading="lazy"><figcaption>Traditional decor</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Reception dinner table setting" loading="lazy"><figcaption>Reception dining</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Wedding aisle with flowers" loading="lazy"><figcaption>The aisle</figcaption></figure>
+      <figure class="reveal"><img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Wedding mandap with traditional styling" loading="lazy"><figcaption>Mandap styling</figcaption></figure>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="lbClose" aria-label="Close photo viewer">✕</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<!-- PROCESS -->
+<section id="process" style="background:linear-gradient(180deg,#fff,var(--ivory))">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">How Booking Works</span>
+      <h2>From first call to the big day, in five steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Send Your Date</h3><p>WhatsApp or call with your date and guest count — the fastest way to start.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Visit the Venue</h3><p>Walk the lawn and banquet spaces any day between 10 AM and 10 PM, meet the team.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Plan Menu &amp; Decor</h3><p>Choose your package, plan the menu direction and finalise your decor theme.</p></div>
+      <div class="step reveal"><div class="num">04</div><h3>Confirm Booking</h3><p>Lock your date with the venue's booking confirmation and a clear, written quotation.</p></div>
+      <div class="step reveal"><div class="num">05</div><h3>Celebrate</h3><p>Decor, catering and management are handled — your family just enjoys the day.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="reviews">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">What Guests Say</span>
+      <h2>The themes behind a 4.9★ Justdial rating</h2>
+      <p>Shivan Royal Palace holds 4.9/5 from 395 ratings on Justdial and 4.7/5 from 282 reviews on Google. These are the things reviewers praise most:</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi-card reveal">
+        <span class="stars" aria-label="Highly rated">★★★★★</span>
+        <h3>🌿 "The beautiful lawn"</h3>
+        <p>The lawn is the most-loved feature in guest reviews — green, open and made for evening functions, pheras and photographs that families keep coming back to.</p>
+        <p class="src">Review theme · Justdial &amp; Google</p>
+      </article>
+      <article class="testi-card reveal">
+        <span class="stars" aria-label="Highly rated">★★★★★</span>
+        <h3>🏛️ "So spacious"</h3>
+        <p>Reviewers repeatedly note how spacious the venue feels — large guest lists can celebrate, dine and move around without the crush of smaller halls.</p>
+        <p class="src">Review theme · Justdial &amp; Google</p>
+      </article>
+      <article class="testi-card reveal">
+        <span class="stars" aria-label="Highly rated">★★★★★</span>
+        <h3>🤝 "Cooperative staff"</h3>
+        <p>Families praise the venue team's cooperative attitude — the kind of support that keeps a wedding day calm for the hosts and smooth for the guests.</p>
+        <p class="src">Review theme · Justdial &amp; Google</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq reveal"><button aria-expanded="false">How do I check if my wedding date is available?<span class="chev">▾</span></button><div class="ans"><p>Send your date and guest count on WhatsApp at <a href="https://wa.me/919522300541" target="_blank" rel="noopener">+91 95223 00541</a> or use the estimator and enquiry form on this page. The venue team confirms availability personally — popular season dates go first, so earlier is better.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">What does the per-plate price include?<span class="chev">▾</span></button><div class="ans"><p>Catering is priced per plate — ₹800/plate for Classic Veg and ₹1,000/plate for Premium Veg, as listed on Weddingz.in (indicative). Venue rental, decor and other charges are quoted separately by the venue based on your date, spaces and requirements.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">How many guests can the venue host?<span class="chev">▾</span></button><div class="ans"><p>The venue's banquet spaces are described for 500+ guest events, and the grand lawn suits larger open-air gatherings. Exact capacity depends on your function layout (stage, seating, dining), which the team confirms on your enquiry or visit.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">Can we host haldi, mehendi and sangeet along with the wedding?<span class="chev">▾</span></button><div class="ans"><p>Yes — families commonly book the venue across the wedding functions: haldi and mehendi, sangeet night, the wedding itself and the reception. Multi-function bookings are planned together during your booking visit.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">Are rooms available for the family to stay?<span class="chev">▾</span></button><div class="ans"><p>Yes, the venue has clean guest rooms on the premises for family stay and getting ready between functions. Room count and charges for your dates are confirmed on enquiry.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">Where exactly is the venue, and when can we visit?<span class="chev">▾</span></button><div class="ans"><p>Shivan Royal Palace Marriage Garden is at Rasuliya Inayatpur, Kolar Road, near Mother Teresa School, Bhopal – 462042. The venue is open daily from 10 AM to 10 PM — walk in for a visit, or call ahead on +91 95223 00541.</p></div></div>
+      <div class="faq reveal"><button aria-expanded="false">Do you host corporate events and birthdays too?<span class="chev">▾</span></button><div class="ans"><p>Yes — alongside weddings, the lawn and banquet spaces host corporate events, birthdays, anniversaries and family functions. Use the Custom Celebration enquiry and the team will quote for your event type and guest count.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRE + VISIT -->
+<section id="enquire" style="background:linear-gradient(180deg,var(--ivory),#fff)">
+  <div class="wrap">
+    <div class="enq-grid">
+      <div class="reveal">
+        <span class="kicker">Visit / Contact</span>
+        <h2>Come, see the lawn yourself</h2>
+        <p style="color:var(--muted)">Photos only go so far — the lawn at golden hour is the real pitch. Visit any day, or start with a WhatsApp enquiry and the team will take it from there.</p>
+        <div class="visit-list" id="visit">
+          <div class="visit-item"><span class="ico">📍</span><span><b>Address</b><span>Rasuliya Inayatpur, Kolar Road, near Mother Teresa School, Bhopal – 462042</span></span></div>
+          <div class="visit-item"><span class="ico">📞</span><span><b>Call the venue</b><a href="tel:+919522300541">+91 95223 00541</a></span></div>
+          <div class="visit-item"><span class="ico">🕙</span><span><b>Open hours</b><span>Open daily · 10:00 AM – 10:00 PM</span></span></div>
+          <div class="visit-item"><span class="ico">🗺️</span><span><b>Directions</b><a href="https://www.google.com/maps/search/?api=1&amp;query=Shivan+Royal+Palace+Marriage+Garden+Kolar+Road+Bhopal" target="_blank" rel="noopener">Open in Google Maps →</a></span></div>
+        </div>
+      </div>
+      <div class="enq-card reveal">
+        <h3 style="font-family:Fraunces,serif;font-size:1.35rem;color:var(--green-2)">Booking enquiry</h3>
+        <p style="color:var(--muted);font-size:.93rem;margin:.35rem 0 1.2rem">Fill this in — your enquiry opens in WhatsApp, addressed to the venue, ready to send.</p>
+        <form id="enqForm" novalidate>
+          <div class="field">
+            <label for="fName">Your name</label>
+            <input type="text" id="fName" placeholder="e.g. Rohit Sharma" autocomplete="name" required>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="fType">Event type</label>
+              <select id="fType">
+                <option>Wedding</option><option>Reception</option><option>Engagement</option>
+                <option>Sangeet / Mehendi</option><option>Birthday / Anniversary</option><option>Corporate Event</option><option>Other Function</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fDate">Event date</label>
+              <input type="date" id="fDate" required>
+            </div>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="fGuests">Expected guests</label>
+              <input type="number" id="fGuests" min="50" step="10" placeholder="e.g. 800" required>
+            </div>
+            <div class="field">
+              <label for="fPkg">Package interest</label>
+              <select id="fPkg">
+                <option>Premium Veg (₹1,000/plate*)</option>
+                <option>Classic Veg (₹800/plate*)</option>
+                <option>Custom / Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fNote">Anything else? (optional)</label>
+            <textarea id="fNote" placeholder="Functions you want to host, decor ideas, questions…"></textarea>
+          </div>
+          <p class="err" id="enqErr" role="alert"></p>
+          <button type="submit" class="btn btn-wa" style="width:100%">💬 Send Enquiry on WhatsApp</button>
+          <p style="font-size:.8rem;color:var(--muted);margin-top:.7rem;text-align:center">No advance is taken on this page. The venue confirms availability and charges on WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Shivan Royal Palace Marriage Garden</h3>
+        <p>Royal lawns &amp; banquet spaces for weddings and celebrations on Kolar Road, Bhopal. Rated 4.9★ on Justdial (395 ratings) and 4.7★ on Google (282 reviews).</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <div class="foot-links">
+          <a href="#spaces">Venue Spaces</a><a href="#events">Events We Host</a><a href="#packages">Packages</a><a href="#estimate">Date &amp; Cost Estimator</a><a href="#gallery">Gallery</a><a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="foot-links">
+          <span>Rasuliya Inayatpur, Kolar Road, near Mother Teresa School, Bhopal – 462042</span>
+          <a href="tel:+919522300541">📞 +91 95223 00541</a>
+          <span>Open daily · 10 AM – 10 PM</span>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Demo website built by Vaibhav Ghoshi — not the official website of Shivan Royal Palace Marriage Garden. Prices marked * are indicative/demo (per-plate rates as listed on Weddingz.in); all charges are confirmed by the venue on enquiry.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919522300541?text=Namaste%2C%20mujhe%20Shivan%20Royal%20Palace%20mein%20apni%20event%20date%20ki%20availability%20check%20karni%20hai." target="_blank" rel="noopener">💬 Check Your Date</a>
+<div class="wa-bar">
+  <a class="btn btn-green" href="tel:+919522300541">📞 Call Venue</a>
+  <a class="btn btn-wa" href="#enquire">💬 Enquire Now</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+var WA="919522300541";
+var inr=function(n){return "₹"+Math.round(n).toLocaleString("en-IN")};
+var today=new Date(); today.setHours(0,0,0,0);
+var iso=function(d){return d.toISOString().slice(0,10)};
+
+/* Mobile menu */
+var menuBtn=document.getElementById("menuBtn"), mainNav=document.getElementById("mainNav");
+menuBtn.addEventListener("click",function(){
+  var open=mainNav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",open?"true":"false");
+});
+mainNav.addEventListener("click",function(e){ if(e.target.tagName==="A"){ mainNav.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); }});
+
+/* Reveal on scroll */
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+}else{
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+
+/* Estimator */
+var estDate=document.getElementById("estDate"), estGuests=document.getElementById("estGuests"),
+    estRange=document.getElementById("estRange"), rangeVal=document.getElementById("rangeVal"),
+    guestEcho=document.getElementById("guestEcho"), estPkg=document.getElementById("estPkg"),
+    estErr=document.getElementById("estErr"), estBig=document.getElementById("estBig"),
+    estDetail=document.getElementById("estDetail"), estWa=document.getElementById("estWa");
+estDate.min=iso(today);
+function syncGuests(fromRange){
+  var v=parseInt(fromRange?estRange.value:estGuests.value,10);
+  if(isNaN(v)) return;
+  if(fromRange){ estGuests.value=v; } else { estRange.value=Math.min(3000,Math.max(100,v)); }
+  rangeVal.textContent=v.toLocaleString("en-IN");
+  guestEcho.textContent=v.toLocaleString("en-IN")+" guests";
+}
+estRange.addEventListener("input",function(){ syncGuests(true); });
+estGuests.addEventListener("input",function(){ syncGuests(false); });
+
+/* Package buttons jump to estimator */
+document.querySelectorAll("[data-pkg]").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    estPkg.value=btn.getAttribute("data-pkg");
+    document.getElementById("estimate").scrollIntoView({behavior:"smooth"});
+    estDate.focus({preventScroll:true});
+  });
+});
+
+document.getElementById("estForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  estErr.textContent="";
+  var dval=estDate.value, guests=parseInt(estGuests.value,10), rate=parseInt(estPkg.value,10);
+  if(!dval){ estErr.textContent="Please choose your event date first."; estDate.focus(); return; }
+  var d=new Date(dval+"T00:00:00");
+  if(d<today){ estErr.textContent="That date has already passed — please pick an upcoming date."; estDate.focus(); return; }
+  if(isNaN(guests)||guests<50){ estErr.textContent="Please enter expected guests (minimum 50)."; estGuests.focus(); return; }
+  var niceDate=d.toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  var pkgName=estPkg.options[estPkg.selectedIndex].text;
+  if(rate===0){
+    estBig.textContent="Custom quote on enquiry";
+    estDetail.textContent="For "+guests.toLocaleString("en-IN")+" guests on "+niceDate+", the venue will prepare a custom quotation — menu, spaces and decor planned around your function. Send the enquiry and the team will call it in.";
+    var msg0="Namaste, mujhe Shivan Royal Palace Marriage Garden mein "+niceDate+" ko event karna hai. Expected guests: "+guests+". Package: Custom. Kripya availability aur quotation batayein.";
+    estWa.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg0);
+    estWa.style.display="inline-flex";
+    return;
+  }
+  var total=guests*rate, low=total*0.95, high=total*1.10;
+  estBig.textContent=inr(low)+" – "+inr(high);
+  estDetail.textContent="Indicative catering estimate for "+guests.toLocaleString("en-IN")+" guests on "+niceDate+" at "+inr(rate)+"/plate ("+pkgName+"). Exact total at this rate: "+inr(total)+". Venue rental and decor are confirmed separately — dates in peak wedding season fill fast, so send the enquiry today.";
+  var msg="Namaste, mujhe Shivan Royal Palace Marriage Garden mein "+niceDate+" ko event book karna hai. Expected guests: "+guests+". Package: "+pkgName+". Website par indicative estimate "+inr(low)+" – "+inr(high)+" dikha hai. Kripya date ki availability aur final charges batayein.";
+  estWa.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+  estWa.style.display="inline-flex";
+});
+
+/* FAQ accordion */
+document.querySelectorAll(".faq").forEach(function(item){
+  var btn=item.querySelector("button"), ans=item.querySelector(".ans");
+  btn.addEventListener("click",function(){
+    var isOpen=item.classList.contains("open");
+    document.querySelectorAll(".faq.open").forEach(function(o){
+      o.classList.remove("open"); o.querySelector(".ans").style.maxHeight=null;
+      o.querySelector("button").setAttribute("aria-expanded","false");
+    });
+    if(!isOpen){
+      item.classList.add("open");
+      ans.style.maxHeight=ans.scrollHeight+"px";
+      btn.setAttribute("aria-expanded","true");
+    }
+  });
+});
+
+/* Gallery lightbox */
+var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg"), lbCap=document.getElementById("lbCap");
+document.querySelectorAll("#galGrid figure").forEach(function(fig){
+  fig.addEventListener("click",function(){
+    var img=fig.querySelector("img");
+    lbImg.src=img.src.replace("w=800","w=1400"); lbImg.alt=img.alt;
+    lbCap.textContent=fig.querySelector("figcaption").textContent;
+    lb.classList.add("open");
+  });
+});
+function closeLb(){ lb.classList.remove("open"); lbImg.src=""; }
+document.getElementById("lbClose").addEventListener("click",closeLb);
+lb.addEventListener("click",function(e){ if(e.target===lb) closeLb(); });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeLb(); });
+
+/* Enquiry form -> WhatsApp */
+var fDate=document.getElementById("fDate"); fDate.min=iso(today);
+document.getElementById("enqForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var err=document.getElementById("enqErr"); err.textContent="";
+  var name=document.getElementById("fName").value.trim(),
+      type=document.getElementById("fType").value,
+      dval=fDate.value,
+      guests=parseInt(document.getElementById("fGuests").value,10),
+      pkg=document.getElementById("fPkg").value,
+      note=document.getElementById("fNote").value.trim();
+  if(name.length<2){ err.textContent="Please enter your name."; document.getElementById("fName").focus(); return; }
+  if(!dval){ err.textContent="Please choose your event date."; fDate.focus(); return; }
+  var d=new Date(dval+"T00:00:00");
+  if(d<today){ err.textContent="That date has already passed — please pick an upcoming date."; fDate.focus(); return; }
+  if(isNaN(guests)||guests<50){ err.textContent="Please enter expected guests (minimum 50)."; document.getElementById("fGuests").focus(); return; }
+  var niceDate=d.toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  var lines=["Namaste, mera naam "+name+" hai.",
+    "Mujhe Shivan Royal Palace Marriage Garden mein "+type+" book karna hai.",
+    "Event date: "+niceDate,
+    "Expected guests: "+guests.toLocaleString("en-IN"),
+    "Package interest: "+pkg];
+  if(note) lines.push("Note: "+note);
+  lines.push("Kripya date ki availability aur final charges batayein.");
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("\n")),"_blank");
+});
+})();
+</script>
+</body>
+</html>

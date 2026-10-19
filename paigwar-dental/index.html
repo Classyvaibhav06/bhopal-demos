@@ -1,9 +1,573 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paigwar The Multi Speciality Dental Clinic</title><meta name="description" content="Demo website for Paigwar The Multi Speciality Dental Clinic, Bag Mungalia, Bhopal. Treatment estimator and WhatsApp appointment booking.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f4fafa;color:#123;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#d9eef2}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#0e7c86;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#ffffff;border-radius:16px;padding:22px;margin-bottom:18px}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#f4fafa;color:#123}button,.wa{display:block;width:100%;text-align:center;background:#0e7c86;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:17px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#f4fafa;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">DENTAL · BAG MUNGALIA, BHOPAL</span><h1>Paigwar The Multi Speciality Dental Clinic</h1><p class="sub">4.9★ rated multi-speciality dental care — root canal, implants, braces & more</p></header>
-<main><section><h2>Plan your treatment — instant estimate</h2><p class="small">Pick a treatment, see an indicative estimate, then book on WhatsApp. Final cost is confirmed after examination.</p><label>Treatment</label><select id="t"><option value="300">Consultation + Digital X-Ray — ₹300*</option><option value="800">Cleaning & Polishing (Scaling) — ₹800*</option><option value="1200">Tooth Filling — ₹1,200*</option><option value="4500">Root Canal Treatment (Single Visit) — ₹4,500*</option><option value="5500">Dental Crown (Ceramic) — ₹5,500*</option><option value="25000">Dental Implant — ₹25,000*</option><option value="500">Braces / Aligners Consultation — ₹500*</option><option value="400">Kids Dentistry Visit — ₹400*</option></select><label>Number of teeth / visits</label><input id="q" type="number" min="1" max="10" value="1"><button onclick="calc()">See my estimate</button><p class="out" id="o"></p><a class="wa" id="w" href="#" target="_blank" rel="noopener" style="display:none">Book this on WhatsApp →</a></section><section><h2>Popular treatments</h2><div class="grid"><div class="card"><b>Consultation + Digital X-Ray</b><span class="small">from ₹300*</span></div><div class="card"><b>Cleaning & Polishing (Scaling)</b><span class="small">from ₹800*</span></div><div class="card"><b>Tooth Filling</b><span class="small">from ₹1,200*</span></div><div class="card"><b>Root Canal Treatment (Single Visit)</b><span class="small">from ₹4,500*</span></div><div class="card"><b>Dental Crown (Ceramic)</b><span class="small">from ₹5,500*</span></div><div class="card"><b>Dental Implant</b><span class="small">from ₹25,000*</span></div><div class="card"><b>Braces / Aligners Consultation</b><span class="small">from ₹500*</span></div><div class="card"><b>Kids Dentistry Visit</b><span class="small">from ₹400*</span></div></div><p class="small" style="margin-top:10px">*Indicative/demo prices. Consultation ₹300 as listed on Practo.</p></section><section><h2>Why patients trust Paigwar</h2><p>⭐ 4.9 on Justdial (493 ratings) · 5.0 on Practo (287 patient stories). Led by Dr. Krishnakant Paigwar (Dental Surgeon). Open Mon–Sat 9:30 AM–9:30 PM, Sun 9:30 AM–2:00 PM (per Places listing).</p></section>
-<section><h2>Visit / Call</h2><p>H/225, Bagmugalia Extension, Main Market, Bag Mungalia, Bhopal</p><p style="margin-top:8px">📞 <a href="tel:919981985255" style="color:inherit">+91 99819 85255</a></p><a class="wa" href="https://wa.me/919981985255" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>function calc(){var t=document.getElementById('t'),q=Math.max(1,+document.getElementById('q').value||1),p=+t.value,tot=p*q;document.getElementById('o').textContent='Indicative estimate: ₹'+tot.toLocaleString('en-IN')+'*\nFinal plan & cost after clinical examination.';var w=document.getElementById('w');w.style.display='block';w.href='https://wa.me/919981985255?text='+encodeURIComponent('Namaste, mujhe Paigwar Dental se appointment chahiye. Treatment: '+t.options[t.selectedIndex].text.split(' — ')[0]+' (Qty: '+q+').')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paigwar The Multi Speciality Dental Clinic — Bag Mungalia, Bhopal | Root Canal, Implants, Braces</title>
+<meta name="description" content="Paigwar The Multi Speciality Dental Clinic, Bag Mungalia, Bhopal — led by Dr. Krishnakant Paigwar. 4.9★ on Justdial (493 ratings), 5.0 on Practo (287 patient stories). Root canal, implants, braces, whitening & kids dentistry with transparent indicative pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0e7c86; --teal-d:#095a62; --teal-x:#063f45; --aqua:#e7f5f5; --aqua2:#cdebec;
+  --ink:#0e2429; --mut:#4f6a70; --bg:#fbffff; --card:#ffffff; --line:#d8e9ea;
+  --gold:#d99a26; --green:#1d9e6c; --shadow:0 12px 32px rgba(9,90,98,.10); --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:'Fraunces',serif;line-height:1.16}
+img{max-width:100%;display:block}
+a{color:var(--teal-d)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:10px 16px;z-index:300;border-radius:0 0 10px 0}
+.skip:focus{left:0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+/* header */
+header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 0}
+.logo{display:flex;gap:11px;align-items:center;text-decoration:none;color:var(--ink)}
+.logo-badge{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#2fb3a6);display:grid;place-items:center;color:#fff;font-size:22px}
+.logo b{font-family:'Fraunces',serif;font-size:18.5px;display:block;line-height:1.1}
+.logo small{color:var(--mut);font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.navlinks{display:none;gap:20px}
+.navlinks a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
+.navlinks a:hover{color:var(--teal-d)}
+.cta{background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px;box-shadow:var(--shadow);white-space:nowrap}
+.cta:hover{background:var(--teal-d)}
+@media(min-width:920px){.navlinks{display:flex}}
+/* hero */
+.hero{background:linear-gradient(180deg,#eaf7f7,var(--aqua) 135%);padding:50px 0 62px;overflow:hidden}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:920px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:12.8px;font-weight:700;color:var(--teal-d);box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(31px,5.2vw,50px);margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p.lead{font-size:16.8px;color:#2e4a4f;max-width:35em}
+.hero-img{border-radius:26px;overflow:hidden;box-shadow:0 24px 50px rgba(6,63,69,.20);background:var(--aqua2)}
+.hero-img img{width:100%;height:350px;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 6px;text-align:center}
+.stat b{font-family:'Fraunces',serif;font-size:clamp(17px,2.6vw,24px);color:var(--teal-d);display:block}
+.stat span{font-size:11px;color:var(--mut);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn-ghost{background:#fff;border:1.5px solid var(--teal);color:var(--teal-d);text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px}
+.btn-wa{background:#22a95c;color:#fff;text-decoration:none;font-weight:700;padding:11px 20px;border-radius:99px;font-size:14.5px}
+/* trust strip */
+.trust{background:var(--teal-x);color:#dff4f3}
+.trust .wrap{display:flex;gap:10px 34px;flex-wrap:wrap;justify-content:center;padding-top:15px;padding-bottom:15px;font-size:14px;font-weight:700}
+.trust span::before{content:"✓ ";color:#57d9a3;font-weight:800}
+/* sections */
+section{padding:58px 0}
+.sec-head{max-width:740px;margin-bottom:28px}
+.sec-head .kicker{color:var(--teal);font-weight:800;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase}
+.sec-head h2{font-size:clamp(25px,3.8vw,35px);margin:8px 0 10px}
+.sec-head p{color:var(--mut)}
+.note{font-size:13px;color:var(--mut);margin-top:14px}
+/* treatment cards */
+.grid{display:grid;gap:18px}
+@media(min-width:720px){.grid.cols2{grid-template-columns:1fr 1fr}.grid.cols3{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:25px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.tcard .ic{font-size:30px;margin-bottom:10px}
+.tcard h3{font-size:20px;margin-bottom:8px}
+.tcard>p{color:var(--mut);font-size:14.8px}
+.tcard .meta{margin-top:13px;font-size:14.3px}
+.tcard .meta div{padding:5px 0 5px 24px;position:relative;color:#2e4a4f}
+.tcard .meta div::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.tcard .meta b{color:var(--ink)}
+.price-tag{margin-top:auto;padding-top:14px}
+.price-tag span{display:block;background:var(--aqua);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:700;color:var(--teal-d)}
+/* estimator */
+.est{background:linear-gradient(120deg,var(--teal-d),var(--teal) 60%,#2fb3a6);border-radius:26px;padding:34px 26px;color:#fff}
+.est h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:8px}
+.est p{color:#d9f2f0;max-width:44em}
+.est .panel{background:#fff;color:var(--ink);border-radius:18px;padding:24px;margin-top:22px}
+.est label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+.est select,.est input{width:100%;padding:13px 14px;border:1.5px solid #bcd8e4;border-radius:12px;font:inherit;font-size:15px;background:#fff}
+.est .erow{display:grid;gap:14px}
+@media(min-width:720px){.est .erow{grid-template-columns:1.4fr .6fr}}
+.est .go{margin-top:16px;background:var(--teal-x);color:#fff;border:0;width:100%;padding:14px;border-radius:99px;font:inherit;font-weight:800;font-size:15.5px;cursor:pointer}
+.est .out{margin-top:16px;font-size:16.5px;font-weight:700;white-space:pre-line;display:none}
+.est .wa-book{display:none;margin-top:12px;background:#22a95c;color:#fff;text-align:center;text-decoration:none;font-weight:800;padding:13px;border-radius:99px;font-size:15px}
+.est .fine{font-size:12.5px;color:#5c7c80;margin-top:12px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:820px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal figure{border-radius:16px;overflow:hidden;position:relative;box-shadow:var(--shadow);background:var(--aqua2)}
+.gal img{width:100%;height:210px;object-fit:cover;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.05)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(6,40,44,.85));color:#fff;font-size:13px;font-weight:700;padding:26px 12px 10px}
+/* why + steps */
+.wcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:23px;box-shadow:var(--shadow)}
+.wcard .ic{font-size:27px;margin-bottom:9px}
+.wcard h3{font-size:17.5px;margin-bottom:7px}
+.wcard p{color:var(--mut);font-size:14.6px}
+.steps{display:grid;gap:16px;counter-reset:st}
+@media(min-width:820px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);position:relative;margin-top:14px}
+.step::before{counter-increment:st;content:counter(st);position:absolute;top:-15px;left:18px;width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px}
+.step h3{font-size:16.5px;margin:8px 0 6px}
+.step p{color:var(--mut);font-size:14.3px}
+/* doctor */
+.doctor{background:var(--aqua);border-radius:26px;padding:34px 28px;display:grid;gap:26px;align-items:center}
+@media(min-width:820px){.doctor{grid-template-columns:.9fr 1.1fr}}
+.doctor img{border-radius:18px;width:100%;height:290px;object-fit:cover;box-shadow:var(--shadow);background:var(--aqua2)}
+.doctor h2{font-size:clamp(24px,3.6vw,32px);margin-bottom:10px}
+.doctor p{color:#2e4a4f;font-size:15.5px}
+.doctor .chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.doctor .chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:var(--teal-d)}
+/* testimonials */
+.tst{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.tst .stars{color:var(--gold);letter-spacing:2px}
+.tst h3{font-size:16.5px;margin:9px 0 7px}
+.tst p{font-size:15px;color:#2e4a4f}
+.tst footer{font-size:13px;color:var(--mut);font-weight:600;margin-top:10px}
+/* faq */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:11px;box-shadow:var(--shadow)}
+.faq summary{cursor:pointer;font-weight:700;font-size:15.5px;padding:17px 20px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--teal);font-size:21px;font-weight:800;line-height:1}
+.faq details[open ] summary::after{content:"–"}
+.faq .ans{padding:0 20px 18px;color:var(--mut);font-size:14.8px}
+/* booker */
+.booker{background:var(--aqua);border-radius:26px;padding:34px 26px}
+form .frow{display:grid;gap:14px}
+@media(min-width:720px){form .frow{grid-template-columns:1fr 1fr}}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:6px}
+input,select{width:100%;padding:13px 14px;border:1.5px solid #a9ced1;border-radius:12px;font:inherit;font-size:15px;background:#fff}
+input[aria-invalid="true"]{border-color:#d33}
+.err{color:#b3261e;font-size:13px;font-weight:600;margin-top:4px;min-height:1em}
+.submit{margin-top:18px;background:var(--teal);color:#fff;border:0;width:100%;padding:15px;border-radius:99px;font:inherit;font-weight:800;font-size:16px;cursor:pointer}
+.submit:hover{background:var(--teal-d)}
+.confirm{display:none;margin-top:22px;background:#fff;border:2px solid var(--green);border-radius:16px;padding:22px}
+.confirm.show{display:block}
+.confirm h3{color:#0c5c41;margin-bottom:8px}
+.confirm dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:15px;margin:10px 0 16px}
+.confirm dt{font-weight:700;color:var(--mut)}
+.confirm .cwa{display:inline-block;background:#22a95c;color:#fff;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:99px;font-size:14.5px}
+/* contact + footer */
+.contact-grid{display:grid;gap:18px}
+@media(min-width:720px){.contact-grid{grid-template-columns:1fr 1fr}}
+.acard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.acard h3{margin-bottom:9px}
+.acard p{color:var(--mut);font-size:15px}
+.acard .big{color:var(--ink);font-size:16px;font-weight:600}
+.hours{list-style:none;font-size:15px}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.hours li:last-child{border-bottom:0}
+footer.site{background:var(--teal-x);color:#c8e6e4;padding:38px 0 92px;font-size:14px}
+footer.site b{color:#fff}
+.demo-note{margin-top:14px;font-size:12.5px;color:#8fb8b5}
+/* sticky cta */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(6,63,69,.12)}
+.sticky-cta a{flex:1;text-align:center;padding:13px 6px;font-weight:800;font-size:14.5px;text-decoration:none;color:var(--teal-d)}
+.sticky-cta a.wa{background:#22a95c;color:#fff}
+.sticky-cta a.bk{background:var(--teal);color:#fff}
+@media(min-width:860px){.sticky-cta{display:none}footer.site{padding-bottom:38px}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Paigwar The Multi Speciality Dental Clinic — home">
+      <span class="logo-badge" aria-hidden="true">🦷</span>
+      <span><b>Paigwar Dental</b><small>THE MULTI SPECIALITY DENTAL CLINIC</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="#treatments">Treatments</a><a href="#estimate">Estimate</a><a href="#gallery">Smiles</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#visit">Visit Us</a>
+    </nav>
+    <a class="cta" href="#book">Book a Slot</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill">★ 4.9 on Justdial (493 ratings) · ★ 5.0 on Practo (287 patient stories)</span>
+        <h1>Complete dental care for the <em>whole family</em>, in Bag Mungalia.</h1>
+        <p class="lead">Led by <strong>Dr. Krishnakant Paigwar</strong> (Dental Surgeon), Paigwar The Multi Speciality Dental Clinic brings root canals, implants, braces, whitening and gentle kids' dentistry under one roof — with the cost explained <em>before</em> treatment begins, not after.</p>
+        <div class="hero-btns">
+          <a class="cta" href="#book">Book an Appointment</a>
+          <a class="btn-wa" href="https://wa.me/919981985255?text=Namaste%2C%20mujhe%20Paigwar%20Dental%20mein%20appointment%20chahiye." target="_blank" rel="noopener">WhatsApp the Clinic</a>
+          <a class="btn-ghost" href="#estimate">Get a Cost Estimate</a>
+        </div>
+        <div class="stats" role="list" aria-label="Clinic highlights">
+          <div class="stat" role="listitem"><b>4.9★</b><span>Justdial · 493 ratings</span></div>
+          <div class="stat" role="listitem"><b>5.0★</b><span>Practo · 287 stories</span></div>
+          <div class="stat" role="listitem"><b>₹300</b><span>Consultation*</span></div>
+          <div class="stat" role="listitem"><b>7 days</b><span>Open every week</span></div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop" alt="Dentist treating a patient with modern equipment" loading="eager" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="trust" aria-label="Why patients choose Paigwar Dental">
+    <div class="wrap">
+      <span>Multi-speciality clinic</span><span>Single-visit RCT options</span><span>Digital X-ray</span><span>Estimate before treatment</span><span>Open Sunday mornings</span>
+    </div>
+  </div>
+
+  <!-- TREATMENTS -->
+  <section id="treatments">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Treatments</span>
+        <h2>Every treatment, explained honestly</h2>
+        <p>What the treatment involves, how many sittings it usually takes, and how to care for your teeth afterwards — plus an indicative starting price so there are no surprises. Final plans are always confirmed after a clinical examination.</p>
+      </div>
+      <div class="grid cols2" id="treatmentGrid"><!-- treatment cards rendered by JavaScript --></div>
+      <p class="note">*Indicative demo prices for guidance only. Consultation ₹300 as listed on Practo. Your final estimate is confirmed after examination and X-ray, before any treatment starts.</p>
+    </div>
+  </section>
+
+  <!-- ESTIMATOR -->
+  <section id="estimate" style="padding-top:0">
+    <div class="wrap">
+      <div class="est reveal">
+        <h2>Plan your treatment — instant indicative estimate</h2>
+        <p>Pick a treatment, see a ballpark cost right away, then book it on WhatsApp. No phone tag, no guessing.</p>
+        <div class="panel">
+          <div class="erow">
+            <div>
+              <label for="estT">Treatment</label>
+              <select id="estT"></select>
+            </div>
+            <div>
+              <label for="estQ">Number of teeth / visits</label>
+              <input id="estQ" type="number" min="1" max="10" value="1" inputmode="numeric">
+            </div>
+          </div>
+          <button class="go" id="estGo" type="button">See my estimate</button>
+          <p class="out" id="estOut" role="status" aria-live="polite"></p>
+          <a class="wa-book" id="estWa" href="#" target="_blank" rel="noopener">Book this on WhatsApp →</a>
+          <p class="fine">*Indicative/demo estimate only — final plan and cost are confirmed after clinical examination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SMILE GALLERY -->
+  <section id="gallery" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Smile Gallery</span>
+        <h2>Healthy teeth. Confident smiles.</h2>
+        <p>From a child's first check-up to a full smile makeover with aligners and whitening — this is what regular, honest dental care looks like. (Representative images.)</p>
+      </div>
+      <div class="gal">
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" alt="Woman with a bright, healthy smile" loading="lazy" onerror="this.style.display='none'"><figcaption>Whitening &amp; smile design</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop" alt="Dentist examining a patient's teeth" loading="lazy" onerror="this.style.display='none'"><figcaption>Gentle, thorough check-ups</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Man smiling confidently" loading="lazy" onerror="this.style.display='none'"><figcaption>Implants that feel natural</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Young woman with straight, even teeth" loading="lazy" onerror="this.style.display='none'"><figcaption>Braces &amp; clear aligners</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop" alt="Modern dental clinic treatment room" loading="lazy" onerror="this.style.display='none'"><figcaption>Modern, hygienic clinic</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" alt="Smiling patient after treatment" loading="lazy" onerror="this.style.display='none'"><figcaption>Painless root canals</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=800&auto=format&fit=crop" alt="Dental treatment in progress" loading="lazy" onerror="this.style.display='none'"><figcaption>Precision dentistry</figcaption></figure>
+        <figure class="reveal"><img src="https://images.unsplash.com/photo-1588776813677-77aaf5595b83?q=80&w=800&auto=format&fit=crop" alt="Dentist with patient during a procedure" loading="lazy" onerror="this.style.display='none'"><figcaption>Care for every age</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Why Paigwar Dental</span>
+        <h2>Why Bag Mungalia trusts this clinic</h2>
+        <p>The ratings say it first — 4.9★ across 493 Justdial ratings and a perfect 5.0 across 287 Practo patient stories. Here's what earns them.</p>
+      </div>
+      <div class="grid cols3">
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">⭐</div><h3>Rated by your neighbours</h3><p>493 ratings on Justdial and 287 patient stories on Practo — real feedback from families across Bag Mungalia and Bhopal, not advertising.</p></div>
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">🏥</div><h3>Multi-speciality, one roof</h3><p>Root canal, implants, braces, kids' dentistry and cosmetic work in a single clinic — no running between specialists across the city.</p></div>
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">🧾</div><h3>Estimate before treatment</h3><p>Your plan and its indicative cost are explained before work begins. Consultation is ₹300, as listed on Practo — no surprises later.</p></div>
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">⏱️</div><h3>Single-visit RCT options</h3><p>Where the tooth allows, root canals are completed in one sitting — less time in the chair, fewer trips, faster relief from pain.</p></div>
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">🩻</div><h3>Digital X-ray diagnosis</h3><p>Problems are shown and explained on the X-ray first, so you understand exactly what is being treated — and what can simply be watched.</p></div>
+        <div class="wcard reveal"><div class="ic" aria-hidden="true">🕤</div><h3>Hours that fit real life</h3><p>Open Monday to Saturday, 9:30 AM–9:30 PM, and Sunday mornings too — so a toothache never has to wait for Monday.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Your Visit</span>
+        <h2>How a visit works, step by step</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Book your slot</h3><p>Use the booking form below, call, or WhatsApp. Pick a time that suits you — evenings and Sunday mornings included.</p></div>
+        <div class="step reveal"><h3>Examine &amp; X-ray</h3><p>Dr. Paigwar examines the problem tooth, takes a digital X-ray if needed, and explains what he finds in simple words.</p></div>
+        <div class="step reveal"><h3>Plan &amp; clear estimate</h3><p>You get the treatment options, sittings needed and an indicative cost — and you decide. Nothing starts without your yes.</p></div>
+        <div class="step reveal"><h3>Treat &amp; aftercare</h3><p>Treatment is completed gently, with written aftercare and medicines guidance, plus a review visit if your case needs one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="doctor reveal">
+        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=900&auto=format&fit=crop" alt="Dental surgeon at the clinic" loading="lazy" onerror="this.style.display='none'">
+        <div>
+          <span class="kicker" style="color:var(--teal);font-weight:800;font-size:12.5px;letter-spacing:.13em;text-transform:uppercase">Meet Your Dentist</span>
+          <h2>Dr. Krishnakant Paigwar</h2>
+          <p><strong>Dental Surgeon</strong> and the doctor behind Paigwar The Multi Speciality Dental Clinic at Bag Mungalia, Bhopal. Patients across Justdial and Practo consistently rate the clinic among the best in the area — 4.9★ and 5.0 respectively — for careful diagnosis, clear explanations and treatment that is planned around the patient, not the bill.</p>
+          <div class="chips">
+            <span class="chip">Dental Surgeon</span><span class="chip">4.9★ · 493 Justdial ratings</span><span class="chip">5.0★ · 287 Practo stories</span><span class="chip">Bag Mungalia, Bhopal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Patient Reviews</span>
+        <h2>What patients keep saying</h2>
+        <p>Themes that repeat across the clinic's 493 Justdial ratings and 287 Practo patient stories:</p>
+      </div>
+      <div class="grid cols3">
+        <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>"Pain-free, honestly explained"</h3><p>Root canal patients frequently mention that the procedure was explained step-by-step beforehand — and far less painful than they feared.</p><footer>Recurring theme · Root canal reviews</footer></div>
+        <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>"No unnecessary treatment"</h3><p>Many reviews praise the clinic for suggesting only what the tooth actually needs — a filling where a filling works, instead of jumping to costlier options.</p><footer>Recurring theme · General dentistry reviews</footer></div>
+        <div class="tst reveal"><div class="stars" aria-hidden="true">★★★★★</div><h3>"Great with kids &amp; families"</h3><p>Families from Bag Mungalia mention gentle handling of children's teeth and one clinic for the whole family's check-ups, cleanings and braces.</p><footer>Recurring theme · Family &amp; kids dentistry reviews</footer></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">FAQ</span>
+        <h2>Questions patients ask us</h2>
+      </div>
+      <div class="faq">
+        <details><summary>How much does a consultation cost?</summary><div class="ans">Consultation is ₹300, as listed on Practo. It includes a full oral examination; if an X-ray is needed, the doctor will tell you why and what it shows before planning anything.</div></details>
+        <details><summary>Can a root canal really be finished in one visit?</summary><div class="ans">In many cases, yes — where the infection is limited and the tooth's canals are straightforward, a single-visit RCT is possible. If your tooth needs the infection to settle first, the doctor will explain why two sittings are safer for you.</div></details>
+        <details><summary>Will I know the full cost before treatment starts?</summary><div class="ans">Yes. After examination and X-ray, you receive the treatment plan with an indicative cost for each option. The prices on this website are indicative/demo starting prices; your written estimate at the clinic is what you go by.</div></details>
+        <details><summary>Do you treat children?</summary><div class="ans">Yes — kids' dentistry is a regular part of the clinic, from first check-ups and fluoride applications to fillings for milk teeth. A kids' visit starts at ₹400* (indicative/demo).</div></details>
+        <details><summary>What are the clinic hours?</summary><div class="ans">Monday to Saturday, 9:30 AM to 9:30 PM, and Sunday, 9:30 AM to 2:00 PM — as per the clinic's Places listing. For a holiday or an emergency, a quick call or WhatsApp message is the fastest way to confirm.</div></details>
+        <details><summary>I'm nervous about pain. How is it handled?</summary><div class="ans">Local anaesthesia is given time to work fully before treatment begins, and the doctor checks in during the procedure. Post-treatment medicines and aftercare are explained in writing so you know exactly what to expect.</div></details>
+        <details><summary>How do I book an appointment?</summary><div class="ans">Use the booking form on this page, call <a href="tel:+919981985255">+91 99819 85255</a>, or message the clinic on WhatsApp — whichever is easiest. Evening slots fill fastest, so booking a day ahead helps.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="padding-top:0">
+    <div class="wrap">
+      <div class="booker reveal">
+        <div class="sec-head" style="margin-bottom:20px">
+          <span class="kicker">Book an Appointment</span>
+          <h2>Reserve your slot</h2>
+          <p>Fill this in and we'll generate your booking — confirm it on WhatsApp in one tap, or just show the booking reference when you arrive.</p>
+        </div>
+        <form id="bookForm" novalidate>
+          <div class="frow">
+            <div>
+              <label for="bkName">Patient name</label>
+              <input id="bkName" name="name" type="text" autocomplete="name" placeholder="e.g. Priya Verma">
+              <p class="err" id="errName" role="alert"></p>
+            </div>
+            <div>
+              <label for="bkPhone">Mobile number</label>
+              <input id="bkPhone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number">
+              <p class="err" id="errPhone" role="alert"></p>
+            </div>
+            <div>
+              <label for="bkTreat">Treatment needed</label>
+              <select id="bkTreat" name="treatment"></select>
+              <p class="err" id="errTreat" role="alert"></p>
+            </div>
+            <div>
+              <label for="bkDate">Preferred date</label>
+              <input id="bkDate" name="date" type="date">
+              <p class="err" id="errDate" role="alert"></p>
+            </div>
+          </div>
+          <button class="submit" type="submit">Request this slot →</button>
+        </form>
+        <div class="confirm" id="bkConfirm" role="status" aria-live="polite">
+          <h3>✓ Slot request ready</h3>
+          <p>Your appointment request is noted below. To confirm instantly, send it to the clinic on WhatsApp:</p>
+          <dl>
+            <dt>Reference</dt><dd id="cfRef">—</dd>
+            <dt>Patient</dt><dd id="cfName">—</dd>
+            <dt>Mobile</dt><dd id="cfPhone">—</dd>
+            <dt>Treatment</dt><dd id="cfTreat">—</dd>
+            <dt>Date</dt><dd id="cfDate">—</dd>
+          </dl>
+          <a class="cwa" id="cfWa" href="#" target="_blank" rel="noopener">Confirm on WhatsApp →</a>
+          <p class="note">Demo booking — the clinic confirms your exact time on call/WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Visit Us</span>
+        <h2>Find the clinic</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="acard reveal">
+          <h3>📍 Address &amp; contact</h3>
+          <p class="big">Paigwar The Multi Speciality Dental Clinic</p>
+          <p>H/225, Bagmugalia Extension, Main Market,<br>Bag Mungalia, Bhopal</p>
+          <p style="margin-top:12px">📞 <a href="tel:+919981985255"><strong>+91 99819 85255</strong></a></p>
+          <p style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn-wa" style="padding:9px 16px;font-size:13.5px" href="https://wa.me/919981985255" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <a class="btn-ghost" style="padding:9px 16px;font-size:13.5px" href="https://www.google.com/maps/search/?api=1&amp;query=Paigwar+The+Multi+Speciality+Dental+Clinic+Bag+Mungalia+Bhopal" target="_blank" rel="noopener">Get Directions →</a>
+          </p>
+        </div>
+        <div class="acard reveal">
+          <h3>🕤 Clinic hours</h3>
+          <ul class="hours">
+            <li><span>Monday – Saturday</span><strong>9:30 AM – 9:30 PM</strong></li>
+            <li><span>Sunday</span><strong>9:30 AM – 2:00 PM</strong></li>
+          </ul>
+          <p style="margin-top:12px">Led by <strong>Dr. Krishnakant Paigwar</strong>, Dental Surgeon. Walk-ins are seen when slots allow — a booked appointment is always seen first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><b>Paigwar The Multi Speciality Dental Clinic</b> · H/225, Bagmugalia Extension, Main Market, Bag Mungalia, Bhopal · 📞 +91 99819 85255</p>
+    <p style="margin-top:8px">Root Canal · Implants · Braces &amp; Aligners · Whitening · Kids Dentistry · General Dentistry</p>
+    <p class="demo-note">Demo website built by Vaibhav Ghoshi — not the official website of the clinic. All prices marked * are indicative/demo starting prices; the final estimate is confirmed after clinical examination. Consultation ₹300 as listed on Practo. Ratings: Justdial &amp; Practo listings.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-label="Quick actions">
+  <a href="tel:+919981985255">📞 Call</a>
+  <a class="wa" href="https://wa.me/919981985255" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="bk" href="#book">Book Slot</a>
+</div>
+
+<script>
+"use strict";
+var WA = "919981985255";
+var TREATMENTS = [
+  {id:"consult", icon:"🩺", name:"Consultation + Digital X-Ray", price:300, unit:"per visit",
+   desc:"A complete oral examination with digital X-ray where needed, so the problem — and the plan — are clear before anything else is suggested.",
+   involves:"Full check-up of teeth & gums, X-ray of the problem tooth, written diagnosis and treatment options explained in simple words.",
+   sittings:"1 visit (30–40 minutes)", after:"No downtime — you leave with a clear plan and an indicative estimate.", tag:"Consultation + Digital X-Ray — from ₹300*"},
+  {id:"rct", icon:"🦷", name:"Root Canal Treatment (RCT)", price:4500, unit:"per tooth",
+   desc:"Saves a tooth that is deeply decayed or in pain, instead of removing it. Done gently, with single-visit options where the tooth allows.",
+   involves:"The infected pulp is cleaned out under full local anaesthesia, canals are shaped and sealed, and the tooth is usually protected with a crown.",
+   sittings:"1 visit in many cases (single-visit RCT); 2 where infection must settle first", after:"Mild sensitivity for 2–3 days is normal; avoid chewing hard food on the tooth until the crown is placed.", tag:"Root Canal Treatment — from ₹4,500* per tooth"},
+  {id:"implant", icon:"🔩", name:"Dental Implants", price:25000, unit:"per implant",
+   desc:"The closest replacement for a missing natural tooth — a titanium implant that holds a crown you can bite and smile with, confidently.",
+   involves:"A titanium post is placed in the jawbone, allowed to fuse over a few weeks, and then fitted with a natural-looking ceramic crown.",
+   sittings:"2–3 visits spread over 6–12 weeks (healing time included)", after:"Soft diet for the first week; regular brushing and a 6-monthly check-up keep implants healthy for years.", tag:"Dental Implant — from ₹25,000* per implant"},
+  {id:"braces", icon:"😁", name:"Braces & Clear Aligners", price:500, unit:"consultation",
+   desc:"Straighten crowded, gapped or misaligned teeth — metal/ceramic braces for all ages, and near-invisible clear aligners for working professionals.",
+   involves:"It starts with an orthodontic consultation (₹500*): photographs, X-rays and a bite assessment, after which your braces or aligner plan and timeline are mapped out.",
+   sittings:"Consultation first; treatment typically 12–24 months with monthly reviews", after:"Retainers after treatment keep teeth in place; aligners need 20–22 hrs/day wear for best results.", tag:"Braces / Aligners Consultation — ₹500* (full plan quoted after assessment)"},
+  {id:"whitening", icon:"✨", name:"Teeth Whitening", price:2500, unit:"per session",
+   desc:"Lift years of tea, coffee and tobacco stains in a single sitting for a visibly brighter smile — a favourite before weddings and big events.",
+   involves:"A protective barrier is applied to the gums, a professional whitening gel is used on the teeth, and shade improvement is checked with you in the mirror.",
+   sittings:"1 session (about 60 minutes)", after:"Avoid strongly coloured food and drinks for 48 hours; results last longer with 6-monthly cleaning.", tag:"Teeth Whitening — from ₹2,500* per session"},
+  {id:"kids", icon:"🧒", name:"Kids Dentistry", price:400, unit:"per visit",
+   desc:"Gentle, fear-free dentistry for children — first check-ups, fluoride, and painless fillings for milk teeth, handled with patience.",
+   involves:"A friendly first visit to build trust, examination of milk and erupting permanent teeth, fluoride application and fillings where needed.",
+   sittings:"1 visit for check-up & cleaning; fillings as planned", after:"Twice-daily brushing with a pea-sized fluoride toothpaste; limit sticky sweets between meals.", tag:"Kids Dentistry Visit — from ₹400*"},
+  {id:"general", icon:"🪥", name:"General Dentistry — Cleaning, Fillings & Crowns", price:800, unit:"cleaning onwards",
+   desc:"The everyday care that prevents big bills later: ultrasonic cleaning & polishing (₹800*), tooth-coloured fillings (₹1,200*) and ceramic crowns (₹5,500*).",
+   involves:"Cleaning removes tartar and stains with an ultrasonic scaler; fillings rebuild small cavities with tooth-coloured material; crowns cap and protect weakened teeth.",
+   sittings:"Cleaning & fillings: 1 visit · Crowns: 2 visits", after:"Cleaning every 6 months keeps gums healthy; avoid very hard foods on a new crown for the first day.", tag:"Cleaning & Polishing — from ₹800* · Filling ₹1,200* · Ceramic Crown ₹5,500*"}
+];
+function inr(n){return "₹" + n.toLocaleString("en-IN");}
+/* ---- treatment cards ---- */
+var grid = document.getElementById("treatmentGrid");
+TREATMENTS.slice(1).forEach(function(t){
+  var el = document.createElement("article");
+  el.className = "tcard reveal";
+  el.innerHTML = '<div class="ic" aria-hidden="true">' + t.icon + '</div><h3>' + t.name + '</h3><p>' + t.desc + '</p>' +
+    '<div class="meta"><div><b>What it involves:</b> ' + t.involves + '</div>' +
+    '<div><b>Sittings:</b> ' + t.sittings + '</div>' +
+    '<div><b>Aftercare:</b> ' + t.after + '</div></div>' +
+    '<div class="price-tag"><span>' + t.tag + '</span></div>';
+  grid.appendChild(el);
+});
+/* ---- estimator ---- */
+var estT = document.getElementById("estT"), estQ = document.getElementById("estQ"),
+    estOut = document.getElementById("estOut"), estWa = document.getElementById("estWa");
+TREATMENTS.forEach(function(t){
+  var o = document.createElement("option");
+  o.value = t.id; o.textContent = t.name + " — " + inr(t.price) + "* (" + t.unit + ")";
+  estT.appendChild(o);
+});
+document.getElementById("estGo").addEventListener("click", function(){
+  var t = TREATMENTS.find(function(x){return x.id === estT.value;});
+  var q = Math.max(1, Math.min(10, parseInt(estQ.value, 10) || 1));
+  estQ.value = q;
+  var tot = t.price * q;
+  estOut.style.display = "block";
+  estOut.textContent = "Indicative estimate for " + t.name + " × " + q + ": " + inr(tot) + "*\nFinal plan & cost confirmed after clinical examination.";
+  estWa.style.display = "block";
+  estWa.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent("Namaste, mujhe Paigwar Dental se appointment chahiye. Treatment: " + t.name + " (Qty: " + q + ", indicative estimate " + inr(tot) + ").");
+});
+/* ---- booking form ---- */
+var bkTreat = document.getElementById("bkTreat");
+var bo = document.createElement("option"); bo.value = ""; bo.textContent = "Select a treatment…"; bkTreat.appendChild(bo);
+TREATMENTS.forEach(function(t){
+  var o = document.createElement("option");
+  o.value = t.name; o.textContent = t.name;
+  bkTreat.appendChild(o);
+});
+var go = document.createElement("option"); go.value = "Not sure / Tooth pain"; go.textContent = "Not sure / Tooth pain"; bkTreat.appendChild(go);
+var bkDate = document.getElementById("bkDate");
+bkDate.min = new Date().toISOString().split("T")[0];
+function setErr(id, msg){ document.getElementById(id).textContent = msg; }
+document.getElementById("bookForm").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var name = document.getElementById("bkName"), phone = document.getElementById("bkPhone");
+  var ok = true;
+  var nm = name.value.trim();
+  if (nm.length < 3){ setErr("errName", "Please enter the patient's full name."); name.setAttribute("aria-invalid","true"); ok = false; }
+  else { setErr("errName", ""); name.removeAttribute("aria-invalid"); }
+  var ph = phone.value.replace(/[\s+\-]/g, "").replace(/^91(?=\d{10}$)/, "");
+  if (!/^[6-9]\d{9}$/.test(ph)){ setErr("errPhone", "Please enter a valid 10-digit mobile number."); phone.setAttribute("aria-invalid","true"); ok = false; }
+  else { setErr("errPhone", ""); phone.removeAttribute("aria-invalid"); }
+  if (!bkTreat.value){ setErr("errTreat", "Please choose a treatment."); ok = false; } else setErr("errTreat", "");
+  if (!bkDate.value){ setErr("errDate", "Please pick a preferred date."); ok = false; } else setErr("errDate", "");
+  if (!ok) return;
+  var ref = "PGW-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+  var niceDate = new Date(bkDate.value + "T00:00:00").toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short", year:"numeric"});
+  document.getElementById("cfRef").textContent = ref;
+  document.getElementById("cfName").textContent = nm;
+  document.getElementById("cfPhone").textContent = "+91 " + ph;
+  document.getElementById("cfTreat").textContent = bkTreat.value;
+  document.getElementById("cfDate").textContent = niceDate;
+  document.getElementById("cfWa").href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(
+    "Namaste, mujhe Paigwar Dental mein appointment book karna hai.\nRef: " + ref + "\nName: " + nm + "\nMobile: " + ph + "\nTreatment: " + bkTreat.value + "\nPreferred date: " + niceDate);
+  var c = document.getElementById("bkConfirm");
+  c.classList.add("show");
+  c.scrollIntoView({behavior:"smooth", block:"center"});
+});
+/* ---- reveal on scroll ---- */
+var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+}, {threshold: .12}) : null;
+document.querySelectorAll(".reveal").forEach(function(el){ if (io) io.observe(el); else el.classList.add("in"); });
+</script>
+</body>
+</html>

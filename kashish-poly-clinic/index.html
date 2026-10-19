@@ -1,9 +1,793 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Kashish's Poly Clinic — Skin, Hair, Laser & Physiotherapy</title><meta name="description" content="Demo website for Dr. Kashish's Poly Clinic, Geeta Bhawan, Indore. Service picker and WhatsApp appointment booking.">
-<style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f6f5fd;color:#171233;line-height:1.55}header{padding:44px 20px 30px;text-align:center;background:#e2ddf7}h1{font-size:clamp(26px,6vw,40px);line-height:1.15}.sub{opacity:.85;margin-top:10px;font-size:16px}.badge{display:inline-block;background:#5b4bc4;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:14px}main{max-width:860px;margin:0 auto;padding:24px 16px 40px}section{background:#ffffff;border-radius:16px;padding:22px;margin-bottom:18px}h2{font-size:21px;margin-bottom:12px}label{display:block;font-weight:600;margin:12px 0 6px;font-size:14px}select,input{width:100%;padding:12px;border-radius:10px;border:1px solid #8884;font:inherit;background:#f6f5fd;color:#171233}button,.wa{display:block;width:100%;text-align:center;background:#5b4bc4;color:#fff;border:none;padding:14px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;text-decoration:none}.out{margin-top:14px;font-size:17px;font-weight:600;white-space:pre-line}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.card{background:#f6f5fd;border-radius:12px;padding:14px}.card b{display:block;margin-bottom:4px}.small{font-size:13px;opacity:.75}footer{text-align:center;padding:24px 16px;font-size:13px;opacity:.7}</style></head><body>
-<header><span class="badge">SKIN · HAIR · LASER · GEETA BHAWAN, INDORE</span><h1>Dr. Kashish's Poly Clinic — Skin, Hair, Laser & Physiotherapy</h1><p class="sub">4.9★ rated poly clinic — skin, hair, laser & physiotherapy under one roof</p></header>
-<main><section><h2>Book your visit in 30 seconds</h2><p class="small">Choose what you need help with and a preferred time — your booking goes straight to the clinic's WhatsApp.</p><label>I need help with</label><select id="s"><option>Skin Consultation</option><option>Hair Loss / PRP Consultation</option><option>Laser Hair Reduction Enquiry</option><option>Physiotherapy Session Enquiry</option><option>General Poly Clinic Visit</option></select><label>Preferred time</label><select id="tm"><option>Morning</option><option>Afternoon</option><option>Evening</option></select><button onclick="book()">Confirm on WhatsApp</button><p class="out" id="o"></p></section><section><h2>Services</h2><div class="grid"><div class="card"><b>Skin Consultation</b><span class="small">Skin problems, acne, pigmentation</span></div><div class="card"><b>Hair Loss / PRP Consultation</b><span class="small">Hair fall, PRP & mesotherapy guidance</span></div><div class="card"><b>Laser Hair Reduction Enquiry</b><span class="small">Laser treatment planning</span></div><div class="card"><b>Physiotherapy Session Enquiry</b><span class="small">Pain & rehab physiotherapy</span></div><div class="card"><b>General Poly Clinic Visit</b><span class="small">Multi-speciality consultation</span></div></div></section><section><h2>Why patients trust Dr. Kashish's</h2><p>⭐ 4.9 on Justdial with 1,894 ratings — one of Indore's most-reviewed skin, hair & laser clinics. 12 years in healthcare, open 24 hrs as listed on Justdial, high call pick-up rate.</p></section>
-<section><h2>Visit / Call</h2><p>Greater Tirupati Colony Road, Geeta Bhawan, Indore</p><p style="margin-top:8px">📞 <a href="tel:918488909467" style="color:inherit">+91 84889 09467 (Justdial-listed)</a></p><a class="wa" href="https://wa.me/918488909467" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
-</main><footer>Demo website built by Vaibhav Ghoshi — not the official website. Prices shown are indicative/demo only.</footer>
-<script>function book(){var s=document.getElementById('s').value,t=document.getElementById('tm').value;document.getElementById('o').textContent='Opening WhatsApp — bas send dabayein, booking clinic tak pahunch jayegi.';window.open('https://wa.me/918488909467?text='+encodeURIComponent('Namaste, mujhe Dr. Kashish Poly Clinic mein appointment chahiye. Service: '+s+'. Preferred time: '+t+'.'),'_blank')}</script></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Kashish's Poly Clinic — Skin, Hair, Laser & Physiotherapy | Geeta Bhawan, Indore</title>
+<meta name="description" content="Dr. Kashish's Poly Clinic, Geeta Bhawan, Indore — 4.9★ rated skin, hair, laser & physiotherapy clinic. Explore treatments and book your appointment on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2a1650; --plum2:#3d2070; --violet:#5b4bc4; --violet-d:#4636a8;
+  --lav:#efeafd; --lav2:#e2dcfa; --gold:#c9a24b; --gold-l:#f3e7c8;
+  --ink:#1d1433; --mut:#5d5478; --bg:#faf9fe; --card:#ffffff;
+  --wa:#25d366; --wa-d:#1eb85a; --line:#e6e1f5; --rad:18px;
+  --shadow:0 10px 34px rgba(42,22,80,.10); --shadow-lg:0 22px 54px rgba(42,22,80,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{color:var(--violet-d)}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+.skip{position:absolute;left:-999px;top:0;background:var(--plum);color:#fff;padding:10px 16px;z-index:200;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(250,249,254,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:14px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);margin-right:auto}
+.logo .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--plum2),var(--violet));color:#fff;display:grid;place-items:center;font-family:'Fraunces',serif;font-size:22px;font-weight:700;box-shadow:var(--shadow)}
+.logo b{font-size:16.5px;line-height:1.2;display:block}
+.logo span{font-size:11.5px;color:var(--mut);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+nav.mainnav{display:none;gap:22px}
+nav.mainnav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14.5px}
+nav.mainnav a:hover{color:var(--violet-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 22px;font-size:15px;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-wa{background:var(--wa);color:#08351a;box-shadow:0 8px 22px rgba(37,211,102,.35)}
+.btn-wa:hover{background:var(--wa-d)}
+.btn-violet{background:var(--violet);color:#fff}
+.btn-violet:hover{background:var(--violet-d)}
+.btn-ghost{background:#fff;color:var(--plum);border:1.5px solid var(--line)}
+.btn-sm{padding:9px 17px;font-size:14px}
+.burger{background:#fff;border:1.5px solid var(--line);border-radius:11px;width:44px;height:44px;font-size:19px;cursor:pointer;color:var(--plum)}
+.mnav{display:none;border-top:1px solid var(--line);padding:10px 0 14px}
+.mnav.open{display:block}
+.mnav a{display:block;padding:9px 4px;color:var(--ink);text-decoration:none;font-weight:600}
+@media(min-width:900px){nav.mainnav{display:flex}.burger{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(160deg,#24104a 0%,#3d2070 55%,#5b4bc4 130%);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,75,.35),transparent 65%)}
+.hero .wrap{display:grid;gap:28px;padding:44px 18px 52px;position:relative;z-index:1}
+@media(min-width:920px){.hero .wrap{grid-template-columns:1.08fr .92fr;align-items:center;padding:64px 18px 72px}}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:12px;font-weight:700;letter-spacing:.07em;padding:6px 13px;border-radius:999px;text-transform:uppercase}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--wa);display:inline-block}
+.hero h1{font-size:clamp(31px,5.6vw,50px);line-height:1.12;font-weight:600;margin:16px 0 14px}
+.hero h1 em{font-style:normal;color:var(--gold-l);border-bottom:3px solid var(--gold)}
+.hero p.lede{font-size:clamp(15.5px,2.4vw,18px);color:#ddd4f7;max-width:34em}
+.ratepill{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--plum);border-radius:999px;padding:8px 15px;font-weight:800;font-size:14px;margin:20px 0 4px;box-shadow:var(--shadow)}
+.ratepill .stars{color:#e9a13b;letter-spacing:1px}
+.ratepill small{font-weight:600;color:var(--mut)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-ctas .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.hero-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);border:5px solid rgba(255,255,255,.16);min-height:280px;background:#4a2d8f}
+.hero-photo img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
+@media(min-width:920px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:16px 14px;text-align:center;box-shadow:var(--shadow)}
+.stat b{font-family:'Fraunces',serif;font-size:24px;color:var(--plum);display:block;line-height:1.1}
+.stat span{font-size:12.5px;color:var(--mut);font-weight:600}
+
+/* trust strip */
+.trust{background:var(--plum);color:#e9e2ff}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;padding-top:14px;padding-bottom:14px;font-size:13.5px;font-weight:600}
+.trust b{color:var(--gold-l)}
+
+/* sections */
+section{padding:52px 0}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kicker{color:var(--violet-d);font-weight:800;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.sec-head{max-width:44em}
+.sec-head h2{font-size:clamp(25px,4vw,35px);line-height:1.18;margin:8px 0 10px;color:var(--plum)}
+.sec-head p{color:var(--mut)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* specialty cards */
+.spec-grid{display:grid;gap:16px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:640px){.spec-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.spec-grid{grid-template-columns:repeat(4,1fr)}}
+.spec{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.spec .ic{width:50px;height:50px;border-radius:14px;background:var(--lav);display:grid;place-items:center;font-size:24px}
+.spec h3{font-size:19px;color:var(--plum)}
+.spec p{color:var(--mut);font-size:14.5px;flex:1}
+.spec a{font-weight:700;font-size:14px;text-decoration:none}
+.spec a:hover{text-decoration:underline}
+
+/* treatment tabs + cards */
+.tabs{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 6px}
+.tab{border:1.5px solid var(--line);background:#fff;color:var(--plum);font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:999px;cursor:pointer;font-family:inherit}
+.tab[aria-selected="true"]{background:var(--plum);color:#fff;border-color:var(--plum)}
+.treat-note{font-size:13px;color:var(--mut);margin:10px 0 18px}
+.tgrid{display:grid;gap:15px;grid-template-columns:1fr}
+@media(min-width:640px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.tgrid{grid-template-columns:repeat(3,1fr)}}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:7px}
+.tcard h3{font-size:17.5px;color:var(--plum);line-height:1.3}
+.tcard p{color:var(--mut);font-size:14px;flex:1}
+.tcard .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--line);padding-top:11px;margin-top:4px}
+.price{font-weight:800;color:var(--plum);font-size:15px}
+.price small{display:block;font-weight:600;color:var(--mut);font-size:11px;letter-spacing:.03em}
+.sessions{font-size:12.5px;background:var(--lav);color:var(--violet-d);font-weight:700;border-radius:999px;padding:4px 11px;white-space:nowrap}
+.tcard button{align-self:flex-start;background:none;border:none;color:var(--violet-d);font-weight:800;font-size:14px;cursor:pointer;padding:2px 0;font-family:inherit}
+.tcard button:hover{text-decoration:underline}
+
+/* estimator */
+.est{background:linear-gradient(150deg,var(--plum) 0%,var(--plum2) 100%);border-radius:24px;color:#fff;padding:28px 24px;box-shadow:var(--shadow-lg)}
+.est h3{font-size:23px;margin-bottom:6px}
+.est p{color:#d9d0f5;font-size:14.5px}
+.est-grid{display:grid;gap:14px;margin-top:18px}
+@media(min-width:820px){.est-grid{grid-template-columns:1fr 1fr auto;align-items:end}}
+.est label{font-size:13px;font-weight:700;display:block;margin-bottom:6px;color:#e9e2ff}
+.est select{width:100%;padding:12px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:#fff;color:var(--ink);font:inherit;font-size:15px}
+.est-out{margin-top:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:15px 17px;font-size:15px;display:none}
+.est-out.show{display:block}
+.est-out b{color:var(--gold-l)}
+
+/* why + process */
+.why-grid{display:grid;gap:15px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:640px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:21px;box-shadow:var(--shadow)}
+.why .ic{font-size:24px;margin-bottom:8px}
+.why h3{font-size:17px;color:var(--plum);margin-bottom:5px}
+.why p{color:var(--mut);font-size:14.5px}
+.steps{display:grid;gap:14px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1020px){.steps{grid-template-columns:repeat(5,1fr)}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:19px;position:relative;box-shadow:var(--shadow)}
+.step .num{width:34px;height:34px;border-radius:50%;background:var(--violet);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px;margin-bottom:10px}
+.step h3{font-size:15.5px;color:var(--plum);margin-bottom:4px}
+.step p{color:var(--mut);font-size:13.5px}
+
+/* gallery */
+.gal{display:grid;gap:13px;margin-top:28px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.gal{grid-template-columns:repeat(3,1fr)}}
+.gal figure{border-radius:var(--rad);overflow:hidden;position:relative;box-shadow:var(--shadow);background:var(--lav2);min-height:170px}
+.gal img{width:100%;height:100%;object-fit:cover;min-height:170px;aspect-ratio:4/3}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(29,20,51,.82));color:#fff;font-size:13px;font-weight:700;padding:26px 13px 11px}
+
+/* testimonials */
+.testi{display:grid;gap:15px;margin-top:28px;grid-template-columns:1fr}
+@media(min-width:860px){.testi{grid-template-columns:repeat(3,1fr)}}
+.tst{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px;box-shadow:var(--shadow)}
+.tst .stars{color:#e9a13b;letter-spacing:2px;font-size:15px}
+.tst h3{font-size:16.5px;color:var(--plum);margin:9px 0 6px}
+.tst p{color:var(--mut);font-size:14.5px}
+.tst .src{margin-top:12px;font-size:12px;font-weight:700;color:var(--violet-d);letter-spacing:.05em;text-transform:uppercase}
+
+/* faq */
+.faq{margin-top:24px;display:grid;gap:11px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;font:inherit;font-weight:700;font-size:15.5px;color:var(--plum);padding:16px 18px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq-q .arr{transition:transform .25s ease;color:var(--violet);font-size:18px}
+.faq-item.open .faq-q .arr{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 18px 17px;color:var(--mut);font-size:14.5px}
+.faq-item.open .faq-a{display:block}
+
+/* booking */
+.book-grid{display:grid;gap:26px;margin-top:28px}
+@media(min-width:920px){.book-grid{grid-template-columns:1.05fr .95fr;align-items:start}}
+form.book{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:var(--shadow-lg)}
+form.book label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px;color:var(--plum)}
+form.book label:first-child{margin-top:0}
+form.book input,form.book select,form.book textarea{width:100%;padding:12.5px 13px;border-radius:12px;border:1.5px solid var(--line);font:inherit;font-size:15px;background:#fcfbff;color:var(--ink)}
+form.book input:focus,form.book select:focus,form.book textarea:focus{border-color:var(--violet);outline:none;box-shadow:0 0 0 3px var(--lav)}
+.err{color:#b3261e;font-size:13px;font-weight:600;display:none;margin-top:5px}
+.err.show{display:block}
+.book .btn{width:100%;margin-top:20px;padding:14px}
+.form-note{font-size:12.5px;color:var(--mut);margin-top:11px;text-align:center}
+.success{display:none;background:#e9f9ef;border:1.5px solid #9fe3b6;color:#0d5a2c;border-radius:14px;padding:15px 17px;font-size:14.5px;font-weight:600;margin-top:16px}
+.success.show{display:block}
+.visit-card{background:var(--plum);color:#fff;border-radius:22px;padding:27px;box-shadow:var(--shadow-lg)}
+.visit-card h3{font-size:21px;margin-bottom:13px}
+.visit-card p{color:#ddd4f7;font-size:15px;margin-bottom:11px}
+.visit-card b{color:#fff}
+.visit-card a{color:var(--gold-l)}
+.visit-card .btn{margin-top:8px;margin-right:9px}
+
+/* sticky cta + footer */
+.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:120;display:flex;gap:10px}
+.sticky-cta .btn{flex:1;padding:14px;font-size:15.5px;box-shadow:var(--shadow-lg)}
+@media(min-width:860px){.sticky-cta{left:auto;right:22px;bottom:22px}.sticky-cta .btn{flex:none;padding:13px 24px}}
+footer{background:var(--plum);color:#cfc4ef;padding:38px 0 108px;margin-top:0}
+@media(min-width:860px){footer{padding-bottom:38px}}
+footer .fbrand{font-family:'Fraunces',serif;font-size:19px;color:#fff;margin-bottom:7px}
+footer p{font-size:13.5px;max-width:56em}
+footer .demo{margin-top:16px;border-top:1px solid rgba(255,255,255,.18);padding-top:14px;font-size:12.5px;color:#a99bd8}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+
+<header>
+  <div class="wrap">
+    <div class="hbar">
+      <a class="logo" href="#top" aria-label="Dr. Kashish's Poly Clinic — home">
+        <span class="mark" aria-hidden="true">K</span>
+        <span><b>Dr. Kashish's Poly Clinic</b><span>Skin · Hair · Laser · Physiotherapy</span></span>
+      </a>
+      <nav class="mainnav" aria-label="Main navigation">
+        <a href="#treatments">Treatments</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="btn btn-wa btn-sm" href="https://wa.me/918488909467?text=Namaste%2C%20mujhe%20Dr.%20Kashish%27s%20Poly%20Clinic%20mein%20appointment%20chahiye." target="_blank" rel="noopener">💬 Book on WhatsApp</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav">☰</button>
+    </div>
+    <nav class="mnav" id="mnav" aria-label="Mobile navigation">
+      <a href="#treatments">Treatments</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="badge"><i></i> Geeta Bhawan · Indore</span>
+        <h1>Skin, hair, laser &amp; physiotherapy — <em>under one roof</em></h1>
+        <p class="lede">Dr. Kashish's Poly Clinic brings complete skin care, hair restoration, laser treatments and physiotherapy together in one clinic at Geeta Bhawan, Indore — so you don't run from clinic to clinic for connected problems.</p>
+        <div>
+          <span class="ratepill"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 <small>· 1,894 ratings on Justdial</small></span>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-wa" href="#book">📅 Book an Appointment</a>
+          <a class="btn btn-ghost" href="#treatments">Explore Treatments ↓</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&amp;fit=crop&amp;w=1000&amp;q=70" alt="Aesthetic skin treatment being performed at a clinic" loading="eager" onerror="this.style.display='none'">
+      </div>
+      <div class="stats" style="grid-column:1/-1">
+        <div class="stat"><b>4.9★</b><span>Justdial rating</span></div>
+        <div class="stat"><b>1,894</b><span>Patient ratings</span></div>
+        <div class="stat"><b>12 yrs</b><span>In healthcare</span></div>
+        <div class="stat"><b>24 hrs</b><span>Open, as listed on Justdial</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="trust" aria-label="Clinic highlights">
+    <div class="wrap">
+      <span>✦ <b>4 specialties</b> in one visit</span>
+      <span>✦ <b>Open 24 hrs</b> (as listed on Justdial)</span>
+      <span>✦ <b>High call response</b> rate</span>
+      <span>✦ <b>WhatsApp</b> appointment booking</span>
+      <span>✦ <b>Geeta Bhawan</b>, Indore</span>
+    </div>
+  </div>
+
+  <!-- SPECIALTIES -->
+  <section id="specialties">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Our Specialities</span>
+        <h2>One clinic, complete care</h2>
+        <p>Skin, hair, laser and physiotherapy problems are often connected — acne scars need laser, hair fall needs scalp care, joint pain needs guided rehab. Here, your treatment plan is made looking at the full picture.</p>
+      </div>
+      <div class="spec-grid">
+        <article class="spec reveal">
+          <div class="ic" aria-hidden="true">🌿</div>
+          <h3>Skin Treatments</h3>
+          <p>Acne, pigmentation, dullness, scars and ageing — medical skin care from consultation to advanced peels and medi-facials.</p>
+          <a href="#treatments" data-goto-tab="skin">See skin treatments →</a>
+        </article>
+        <article class="spec reveal">
+          <div class="ic" aria-hidden="true">💇</div>
+          <h3>Hair Treatments</h3>
+          <p>Hair fall, thinning and scalp problems assessed properly first — then PRP, mesotherapy or a care plan that suits you.</p>
+          <a href="#treatments" data-goto-tab="hair">See hair treatments →</a>
+        </article>
+        <article class="spec reveal">
+          <div class="ic" aria-hidden="true">✨</div>
+          <h3>Laser Treatments</h3>
+          <p>Laser hair reduction and skin toning with a plan made for your skin type — patch test and session planning included.</p>
+          <a href="#treatments" data-goto-tab="laser">See laser treatments →</a>
+        </article>
+        <article class="spec reveal">
+          <div class="ic" aria-hidden="true">🦵</div>
+          <h3>Physiotherapy</h3>
+          <p>Back, neck, joint and sports-injury rehabilitation with structured sessions that track your recovery week by week.</p>
+          <a href="#treatments" data-goto-tab="physio">See physiotherapy →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="alt" id="treatments">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Treatments &amp; Pricing</span>
+        <h2>Detailed treatments, honest indicative prices</h2>
+        <p>Choose a department to see every treatment with what it involves and an indicative starting price. Final pricing is always confirmed at the clinic after assessment — no surprises.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Treatment departments">
+        <button class="tab" role="tab" id="tab-skin" aria-controls="panel-treat" aria-selected="true" data-tab="skin">🌿 Skin</button>
+        <button class="tab" role="tab" id="tab-hair" aria-controls="panel-treat" aria-selected="false" data-tab="hair">💇 Hair</button>
+        <button class="tab" role="tab" id="tab-laser" aria-controls="panel-treat" aria-selected="false" data-tab="laser">✨ Laser</button>
+        <button class="tab" role="tab" id="tab-physio" aria-controls="panel-treat" aria-selected="false" data-tab="physio">🦵 Physiotherapy</button>
+      </div>
+      <p class="treat-note">All prices below are <b>indicative demo prices</b> ("starting at") to help you plan. Your actual plan and cost are confirmed after a proper assessment at the clinic.</p>
+      <div class="tgrid" id="panel-treat" role="tabpanel" aria-live="polite"></div>
+
+      <!-- ESTIMATOR -->
+      <div class="est reveal" style="margin-top:34px">
+        <h3>🧮 Quick Treatment Estimator</h3>
+        <p>Pick a department and a treatment to instantly see the indicative price and the typical number of sessions. Tap "Book this treatment" and it fills your booking form below.</p>
+        <div class="est-grid">
+          <div>
+            <label for="estDept">Department</label>
+            <select id="estDept"></select>
+          </div>
+          <div>
+            <label for="estTreat">Treatment</label>
+            <select id="estTreat"></select>
+          </div>
+          <button class="btn btn-wa" type="button" id="estBook">Book this treatment →</button>
+        </div>
+        <div class="est-out" id="estOut" role="status"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Why Choose Us</span>
+        <h2>Why patients across Indore trust this clinic</h2>
+        <p>A 4.9★ rating across 1,894 Justdial ratings doesn't happen by accident. Here's what patients consistently get here.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">⭐</div>
+          <h3>4.9★ rated by 1,894 patients</h3>
+          <p>One of Indore's most-reviewed skin, hair &amp; laser clinics on Justdial — real patients, real ratings, built over years of consistent care.</p>
+        </article>
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">🏥</div>
+          <h3>Four specialties, one roof</h3>
+          <p>Skin, hair, laser and physiotherapy together means connected problems get one connected plan — not four separate clinic visits.</p>
+        </article>
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">🕑</div>
+          <h3>Open 24 hours</h3>
+          <p>Listed as open 24 hrs on Justdial, so help is reachable when you need it — not only during fixed OPD hours.</p>
+        </article>
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">📞</div>
+          <h3>Calls actually get answered</h3>
+          <p>The clinic is noted for a high call pick-up rate — and with WhatsApp booking, your appointment request never sits unheard.</p>
+        </article>
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">🩺</div>
+          <h3>12 years in healthcare</h3>
+          <p>Over a decade of healthcare experience behind every treatment plan — assessment first, treatment second, never the other way around.</p>
+        </article>
+        <article class="why reveal">
+          <div class="ic" aria-hidden="true">💬</div>
+          <h3>Clear plans, clear pricing</h3>
+          <p>You know your sessions, expected timeline and indicative cost before you begin. Questions are answered on WhatsApp, not brushed aside.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="alt" id="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">How It Works</span>
+        <h2>Your treatment journey, step by step</h2>
+        <p>Whether it's your first chemical peel or a six-week physiotherapy program, the path is the same — structured, explained, and tracked.</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <div class="num">1</div>
+          <h3>Book on WhatsApp</h3>
+          <p>Send the booking form or a simple message. The clinic confirms your slot — no waiting on hold.</p>
+        </article>
+        <article class="step reveal">
+          <div class="num">2</div>
+          <h3>Consultation &amp; Assessment</h3>
+          <p>Your concern is examined properly — skin type, hair/scalp condition, pain history — before anything is recommended.</p>
+        </article>
+        <article class="step reveal">
+          <div class="num">3</div>
+          <h3>Personalised Plan</h3>
+          <p>You get a clear plan: which treatment, how many sessions, what results to expect, and the confirmed cost.</p>
+        </article>
+        <article class="step reveal">
+          <div class="num">4</div>
+          <h3>Treatment Sessions</h3>
+          <p>Sessions are scheduled around you, with aftercare guidance after every visit so results keep building.</p>
+        </article>
+        <article class="step reveal">
+          <div class="num">5</div>
+          <h3>Review &amp; Follow-up</h3>
+          <p>Progress is reviewed against the plan and adjusted if needed — you always know where your treatment stands.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Inside the Clinic</span>
+        <h2>A look at the care we offer</h2>
+        <p>A glimpse of the treatment areas and services at Dr. Kashish's Poly Clinic, Geeta Bhawan.</p>
+      </div>
+      <div class="gal">
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Facial skin treatment in progress" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>Skin &amp; medi-facial treatments</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Professional skincare products used in treatments" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>Clinical-grade skincare</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Hair and beauty care session" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>Hair care &amp; restoration</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Doctor consulting with a patient" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>One-on-one consultations</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Guided physiotherapy and rehabilitation exercise" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>Physiotherapy &amp; rehab</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Doctor at the clinic" loading="lazy" onerror="this.style.display='none'">
+          <figcaption>Experienced medical care</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / REVIEW THEMES -->
+  <section class="alt" id="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Patient Reviews</span>
+        <h2>What 1,894 Justdial ratings say</h2>
+        <p>Rather than cherry-picked quotes, here are the themes that repeat again and again in this clinic's Justdial reviews.</p>
+      </div>
+      <div class="testi">
+        <article class="tst reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <h3>"Treatment that actually works"</h3>
+          <p>Patients reviewing skin and hair treatments frequently mention visible improvement within the planned sessions — and that the expected timeline given at consultation matched reality.</p>
+          <div class="src">Review theme · Skin &amp; Hair, Justdial</div>
+        </article>
+        <article class="tst reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <h3>"Easy to reach, quick to respond"</h3>
+          <p>A recurring theme is how reachable the clinic is — calls picked up, queries answered, and appointments arranged without repeated follow-ups from the patient's side.</p>
+          <div class="src">Review theme · Accessibility, Justdial</div>
+        </article>
+        <article class="tst reveal">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <h3>"One place for the whole family"</h3>
+          <p>Reviewers often note bringing different problems — a skin concern, a parent's joint pain, a laser course — to the same clinic, and being guided properly for each one.</p>
+          <div class="src">Review theme · Poly clinic care, Justdial</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Common Questions</span>
+        <h2>Before you book</h2>
+        <p>Quick answers to what patients ask us most. Anything else — just WhatsApp us.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I need an appointment, or can I walk in?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">Walk-ins are welcome, but a WhatsApp appointment saves your waiting time — send the booking form above and the clinic will confirm your slot before you arrive.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How many sessions will my treatment take?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">It depends on your concern and its severity. Most skin and hair programs run 3–6 sessions, laser hair reduction typically 6–8, and physiotherapy is planned week by week. Your exact plan is set after assessment — the session guides on the treatment cards above give you a fair idea.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Are the prices on this page final?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">The prices here are indicative starting prices to help you plan. Your confirmed cost is shared at the clinic after assessment, before treatment begins — you'll never be surprised mid-treatment.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Is laser hair reduction safe for Indian skin?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">Laser settings are chosen for your skin and hair type, and a patch test is done first. At your consultation, tell the clinic about any medication, recent tanning or skin sensitivity so the plan is set safely for you.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Does PRP hurt, and when do results show?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">PRP involves small injections in the scalp; most patients describe it as mild discomfort that settles quickly. Hair results build gradually — visible improvement is usually assessed over 3–4 sessions, and your progress is reviewed at each visit.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What should I bring for a physiotherapy session?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">Bring any X-ray, MRI or doctor's prescription related to your pain, and wear comfortable clothing you can move in. Your first session includes an assessment so the program targets the actual cause, not just the symptom.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What are the clinic's hours?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">The clinic is listed on Justdial as open 24 hours. For a guaranteed slot with minimal waiting, we still recommend booking on WhatsApp — especially for laser and PRP sessions, which are scheduled in dedicated blocks.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Where exactly is the clinic located?<span class="arr" aria-hidden="true">▾</span></button>
+          <div class="faq-a">We're at Geeta Bhawan, Indore — Greater Tirupati Colony Road. Tap "Get Directions" in the Visit section below, or call/WhatsApp us on +91 84889 09467 and we'll guide you in.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING + VISIT -->
+  <section class="alt" id="book">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">Book a Visit</span>
+        <h2>Book your appointment in 30 seconds</h2>
+        <p>Fill this in and your appointment request opens in WhatsApp, addressed to the clinic — just press send there. No app, no login, no waiting on hold.</p>
+      </div>
+      <div class="book-grid">
+        <form class="book reveal" id="bookForm" novalidate>
+          <label for="fName">Your name *</label>
+          <input id="fName" name="name" type="text" autocomplete="name" placeholder="e.g. Priya Sharma" required>
+          <p class="err" id="eName">Please enter your name.</p>
+
+          <label for="fPhone">Mobile number (WhatsApp) *</label>
+          <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number" required>
+          <p class="err" id="ePhone">Please enter a valid 10-digit mobile number.</p>
+
+          <label for="fConcern">What do you need help with? *</label>
+          <select id="fConcern" required>
+            <option value="">— Choose a treatment / concern —</option>
+          </select>
+          <p class="err" id="eConcern">Please choose what you need help with.</p>
+
+          <label for="fDate">Preferred date</label>
+          <input id="fDate" name="date" type="date">
+
+          <label for="fTime">Preferred time</label>
+          <select id="fTime">
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+            <option>Any time</option>
+          </select>
+
+          <label for="fNote">Anything we should know? (optional)</label>
+          <textarea id="fNote" rows="3" placeholder="e.g. Acne since 6 months, tried home remedies…"></textarea>
+
+          <button class="btn btn-wa" type="submit">💬 Confirm Appointment on WhatsApp</button>
+          <p class="form-note">Your details open as a ready-to-send WhatsApp message to the clinic at +91 84889 09467. Nothing is submitted anywhere else.</p>
+          <div class="success" id="bookSuccess" role="status">✅ Opening WhatsApp — bas <b>send</b> dabayein, aapki booking clinic tak pahunch jayegi. Clinic slot confirm karke reply karega.</div>
+        </form>
+
+        <div class="visit-card reveal" id="visit">
+          <h3>📍 Visit the Clinic</h3>
+          <p><b>Dr. Kashish's Poly Clinic</b><br>Skin · Hair · Laser &amp; Physiotherapy Center</p>
+          <p>📌 <b>Address:</b> Greater Tirupati Colony Road,<br>Geeta Bhawan, Indore</p>
+          <p>🕑 <b>Hours:</b> Open 24 hours <span style="color:#a99bd8">(as listed on Justdial)</span></p>
+          <p>📞 <b>Call / WhatsApp:</b> <a href="tel:+918488909467">+91 84889 09467</a> <span style="color:#a99bd8">(Justdial-listed number)</span></p>
+          <p>⭐ <b>Rated:</b> 4.9★ from 1,894 ratings on Justdial · 12 years in healthcare</p>
+          <a class="btn btn-wa" href="https://www.google.com/maps/search/?api=1&amp;query=Dr.+Kashish%27s+Poly+Clinic+Geeta+Bhawan+Indore" target="_blank" rel="noopener">🧭 Get Directions</a>
+          <a class="btn btn-ghost" href="tel:+918488909467">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Dr. Kashish's Poly Clinic</div>
+    <p>Skin, Hair, Laser &amp; Physiotherapy Center — Greater Tirupati Colony Road, Geeta Bhawan, Indore. Rated 4.9★ by 1,894 patients on Justdial. Call or WhatsApp: +91 84889 09467.</p>
+    <p class="demo">Demo website built by Vaibhav Ghoshi — this is a demonstration website, not the clinic's official website. All treatment prices shown are indicative/demo only and are confirmed at the clinic after assessment.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-wa" href="https://wa.me/918488909467?text=Namaste%2C%20mujhe%20Dr.%20Kashish%27s%20Poly%20Clinic%20mein%20appointment%20chahiye." target="_blank" rel="noopener">💬 WhatsApp the Clinic</a>
+  <a class="btn btn-violet" href="#book">📅 Book Visit</a>
+</div>
+
+<script>
+"use strict";
+var WA = "918488909467";
+
+/* ---------- Treatment data (indicative demo prices) ---------- */
+var TREATMENTS = {
+  skin: { label: "Skin Treatments", items: [
+    { name: "Skin Consultation & Analysis", desc: "A complete skin examination and diagnosis for any concern — acne, marks, rashes, dullness or sensitivity — with a written care plan and product guidance.", price: "₹500", per: "per consultation", sessions: "Single visit" },
+    { name: "Acne & Pimple Treatment", desc: "Medical treatment for active acne and breakouts: deep cleansing, extraction where needed, and a home-care routine to stop acne from coming back.", price: "₹1,299", per: "per session", sessions: "3–6 sessions typical" },
+    { name: "Chemical Peel", desc: "A controlled exfoliation treatment that lifts dead, damaged skin layers — improving acne marks, tanning, fine lines and overall skin texture and glow.", price: "₹1,499", per: "per session", sessions: "3–5 sessions typical" },
+    { name: "Medi-Facial / Hydra Glow Facial", desc: "A clinical facial that deep-cleanses, exfoliates, hydrates and nourishes the skin — ideal before events, and for dull, tired or dehydrated skin.", price: "₹1,999", per: "per session", sessions: "Single / monthly" },
+    { name: "Pigmentation & Tan Removal", desc: "Targeted treatment for melasma, dark spots, sun tan and uneven tone, combining in-clinic procedures with a strict home-care and sun-protection plan.", price: "₹1,799", per: "per session", sessions: "4–6 sessions typical" },
+    { name: "Anti-Ageing & Skin Tightening", desc: "Treatments aimed at fine lines, sagging and loss of glow — stimulating collagen and improving firmness for skin that looks fresher and younger.", price: "₹2,499", per: "per session", sessions: "4–6 sessions typical" }
+  ]},
+  hair: { label: "Hair Treatments", items: [
+    { name: "Hair Fall Consultation & Scalp Analysis", desc: "Hair fall is a symptom, not a diagnosis. This assessment checks your scalp, hair density and likely causes so treatment targets the root problem.", price: "₹500", per: "per consultation", sessions: "Single visit" },
+    { name: "PRP Therapy for Hair", desc: "Platelet-Rich Plasma from your own blood is prepared and injected into the scalp to strengthen weak follicles, reduce hair fall and support regrowth.", price: "₹3,999", per: "per session", sessions: "3–6 sessions typical" },
+    { name: "Mesotherapy for Hair", desc: "Micro-injections of vitamins, peptides and growth-supporting nutrients directly into the scalp to nourish follicles and improve hair thickness.", price: "₹2,499", per: "per session", sessions: "4–6 sessions typical" },
+    { name: "Hair Fall Control Program", desc: "A combined program of in-clinic sessions, medicated care and nutrition guidance for diffuse hair fall, seasonal shedding and early thinning.", price: "₹1,499", per: "per session", sessions: "Program based" },
+    { name: "Dandruff & Scalp Treatment", desc: "Clinical treatment for dandruff, itching, flaking and scalp build-up, with a medicated home routine so the problem stays away after the sessions end.", price: "₹999", per: "per session", sessions: "2–4 sessions typical" }
+  ]},
+  laser: { label: "Laser Treatments", items: [
+    { name: "Laser Hair Reduction — Small Area", desc: "Upper lip, chin, underarms or similar small areas. Smooth, hair-free skin without waxing pain or razor cuts — with a patch test first.", price: "₹1,299", per: "per session", sessions: "6–8 sessions typical" },
+    { name: "Laser Hair Reduction — Full Face", desc: "Complete facial hair reduction planned around your skin type and hair thickness, for even, lasting smoothness across the face.", price: "₹2,999", per: "per session", sessions: "6–8 sessions typical" },
+    { name: "Laser Hair Reduction — Arms / Legs", desc: "Large-area hair reduction for arms or legs — fewer, shorter sessions than waxing routines, and skin that stays smooth far longer.", price: "₹4,999", per: "per session", sessions: "6–8 sessions typical" },
+    { name: "Laser Hair Reduction — Full Body", desc: "The complete package: full-body hair reduction in planned blocks, mapped session by session so every area gets its full course.", price: "₹14,999", per: "per session", sessions: "6–8 sessions typical" },
+    { name: "Laser Skin Toning / Glow", desc: "A gentle laser treatment that evens out skin tone, reduces dullness and pigmentation, and gives the skin a clearer, brighter finish.", price: "₹2,499", per: "per session", sessions: "3–5 sessions typical" }
+  ]},
+  physio: { label: "Physiotherapy", items: [
+    { name: "Physiotherapy Consultation & Assessment", desc: "A full assessment of your pain, posture, movement and strength, with any reports reviewed — the base on which your recovery program is built.", price: "₹499", per: "per session", sessions: "Single visit" },
+    { name: "Back & Neck Pain Program", desc: "Structured therapy for lower-back pain, cervical pain and stiffness from desk work or injury — pain relief first, then strengthening so it stays away.", price: "₹599", per: "per session", sessions: "Planned weekly" },
+    { name: "Joint Pain & Arthritis Care", desc: "Gentle, progressive therapy for knee, shoulder and other joint pain — improving mobility, reducing stiffness and supporting daily movement.", price: "₹599", per: "per session", sessions: "Planned weekly" },
+    { name: "Sports Injury Rehabilitation", desc: "Rehab for sprains, strains and sports injuries — restoring strength, balance and confidence to return to your sport safely.", price: "₹699", per: "per session", sessions: "Program based" },
+    { name: "Post-Surgery Rehabilitation", desc: "Guided recovery after orthopaedic or other surgery — rebuilding movement and strength stage by stage, coordinated with your surgeon's advice.", price: "₹699", per: "per session", sessions: "Program based" },
+    { name: "Home Physiotherapy Visit", desc: "For patients who can't travel — elderly patients, post-surgery recovery or severe pain — a physiotherapy session at your home in Indore.", price: "₹899", per: "per visit", sessions: "As needed" }
+  ]}
+};
+var DEPT_ORDER = ["skin", "hair", "laser", "physio"];
+
+/* ---------- Treatment tabs ---------- */
+var panel = document.getElementById("panel-treat");
+function renderTreatments(dept) {
+  var d = TREATMENTS[dept];
+  panel.innerHTML = d.items.map(function (t, i) {
+    return '<article class="tcard">' +
+      "<h3>" + t.name + "</h3><p>" + t.desc + "</p>" +
+      '<div class="meta"><span class="price">' + t.price + "<small>indicative · " + t.per + "</small></span>" +
+      '<span class="sessions">' + t.sessions + "</span></div>" +
+      '<button type="button" data-book="' + dept + ":" + i + '">Book this treatment →</button></article>';
+  }).join("");
+  panel.querySelectorAll("[data-book]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var parts = b.getAttribute("data-book").split(":");
+      setConcern(parts[0], parseInt(parts[1], 10));
+      document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
+var tabs = document.querySelectorAll(".tab");
+function selectTab(dept) {
+  tabs.forEach(function (t) { t.setAttribute("aria-selected", t.getAttribute("data-tab") === dept ? "true" : "false"); });
+  renderTreatments(dept);
+}
+tabs.forEach(function (t) { t.addEventListener("click", function () { selectTab(t.getAttribute("data-tab")); }); });
+document.querySelectorAll("[data-goto-tab]").forEach(function (a) {
+  a.addEventListener("click", function () { selectTab(a.getAttribute("data-goto-tab")); });
+});
+selectTab("skin");
+
+/* ---------- Booking concern dropdown ---------- */
+var concernSel = document.getElementById("fConcern");
+DEPT_ORDER.forEach(function (dept) {
+  var og = document.createElement("optgroup");
+  og.label = TREATMENTS[dept].label;
+  TREATMENTS[dept].items.forEach(function (t, i) {
+    var o = document.createElement("option");
+    o.value = dept + ":" + i; o.textContent = t.name;
+    og.appendChild(o);
+  });
+  concernSel.appendChild(og);
+});
+var general = document.createElement("option");
+general.value = "general"; general.textContent = "General Poly Clinic Visit";
+concernSel.appendChild(general);
+function setConcern(dept, idx) { concernSel.value = dept + ":" + idx; hideErr("eConcern"); }
+
+/* ---------- Estimator ---------- */
+var estDept = document.getElementById("estDept"), estTreat = document.getElementById("estTreat"), estOut = document.getElementById("estOut");
+DEPT_ORDER.forEach(function (dept) {
+  var o = document.createElement("option");
+  o.value = dept; o.textContent = TREATMENTS[dept].label;
+  estDept.appendChild(o);
+});
+function fillEstTreats() {
+  estTreat.innerHTML = "";
+  TREATMENTS[estDept.value].items.forEach(function (t, i) {
+    var o = document.createElement("option");
+    o.value = i; o.textContent = t.name;
+    estTreat.appendChild(o);
+  });
+  showEst();
+}
+function showEst() {
+  var t = TREATMENTS[estDept.value].items[parseInt(estTreat.value || "0", 10)];
+  if (!t) { estOut.classList.remove("show"); return; }
+  estOut.innerHTML = "<b>" + t.name + "</b> — indicative price <b>" + t.price + "</b> (" + t.per + ") · " + t.sessions + ". Final price confirmed at the clinic after assessment.";
+  estOut.classList.add("show");
+}
+estDept.addEventListener("change", fillEstTreats);
+estTreat.addEventListener("change", showEst);
+document.getElementById("estBook").addEventListener("click", function () {
+  setConcern(estDept.value, parseInt(estTreat.value || "0", 10));
+  document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+});
+fillEstTreats();
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll(".faq-item").forEach(function (item) {
+  var q = item.querySelector(".faq-q");
+  q.addEventListener("click", function () {
+    var open = item.classList.toggle("open");
+    q.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+});
+
+/* ---------- Mobile nav ---------- */
+var burger = document.getElementById("burger"), mnav = document.getElementById("mnav");
+burger.addEventListener("click", function () {
+  var open = mnav.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+});
+mnav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { mnav.classList.remove("open"); }); });
+
+/* ---------- Booking form → WhatsApp ---------- */
+function showErr(id) { document.getElementById(id).classList.add("show"); }
+function hideErr(id) { document.getElementById(id).classList.remove("show"); }
+var dateInput = document.getElementById("fDate");
+dateInput.min = new Date().toISOString().split("T")[0];
+function concernText() {
+  var v = concernSel.value;
+  if (v === "general") return "General Poly Clinic Visit";
+  var p = v.split(":");
+  return TREATMENTS[p[0]].items[parseInt(p[1], 10)].name + " (" + TREATMENTS[p[0]].label + ")";
+}
+document.getElementById("bookForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var name = document.getElementById("fName").value.trim();
+  var phone = document.getElementById("fPhone").value.replace(/\D/g, "").replace(/^91(?=\d{10}$)/, "");
+  var ok = true;
+  if (name.length < 2) { showErr("eName"); ok = false; } else hideErr("eName");
+  if (!/^[6-9]\d{9}$/.test(phone)) { showErr("ePhone"); ok = false; } else hideErr("ePhone");
+  if (!concernSel.value) { showErr("eConcern"); ok = false; } else hideErr("eConcern");
+  if (!ok) return;
+  var date = dateInput.value, time = document.getElementById("fTime").value, note = document.getElementById("fNote").value.trim();
+  var msg = "Namaste, mujhe Dr. Kashish's Poly Clinic mein appointment chahiye.\n" +
+    "Naam: " + name + "\n" +
+    "Mobile: " + phone + "\n" +
+    "Treatment/Concern: " + concernText() +
+    (date ? "\nPreferred date: " + date : "") +
+    "\nPreferred time: " + time +
+    (note ? "\nNote: " + note : "");
+  document.getElementById("bookSuccess").classList.add("show");
+  window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(msg), "_blank");
+});
+
+/* ---------- Scroll reveal ---------- */
+if ("IntersectionObserver" in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+}
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 # Bhopal Business Demo Websites
 
 Demo websites built for established Bhopal businesses that don't have a website yet — by **Vaibhav Ghoshi**.
@@ -15,5 +16,9 @@ Landing: https://classyvaibhav06.github.io/bhopal-demos/
 8. **Shri Ganesh Jewellers** — gold-rate ticker & bridal catalog: https://classyvaibhav06.github.io/bhopal-demos/ganesh-jewellers/
 9. **MP Catering & Event Management** — corporate B2B portal: https://classyvaibhav06.github.io/bhopal-demos/mp-catering/
 10. **Jaipur Handloom Bhopal** — lookbook with SKU-wise WhatsApp inquiry: https://classyvaibhav06.github.io/bhopal-demos/jaipur-handloom/
+11. **Veera Di Hatti** — https://classyvaibhav06.github.io/bhopal-demos/veera-di-hatti/
+12. **Rediscover Aesthetics** — https://classyvaibhav06.github.io/bhopal-demos/rediscover-aesthetics/
+13. **Artistry Salon** — https://classyvaibhav06.github.io/bhopal-demos/artistry-salon/
+14. **Elegant Greens** — https://classyvaibhav06.github.io/bhopal-demos/elegant-greens/
 
 Plain HTML/CSS/vanilla JS, single-file sites, no build step.
